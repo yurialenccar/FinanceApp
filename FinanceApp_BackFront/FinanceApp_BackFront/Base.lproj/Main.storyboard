@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,20 +29,20 @@
             </objects>
             <point key="canvasLocation" x="-760" y="1265"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Mais_Tela-->
         <scene sceneID="cY4-EN-FTE">
             <objects>
-                <viewControllerPlaceholder id="TJf-yK-Zr9" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Mais_Tela" storyboardName="Mais_Tela" referencedIdentifier="Mais_Tela" id="TJf-yK-Zr9" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3j8-b2-w3t"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LaB-h3-oPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1602" y="2737"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Cambio_Tela-->
         <scene sceneID="AjX-IE-oRv">
             <objects>
-                <viewControllerPlaceholder id="rbk-XC-wAW" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Cambio_Tela" storyboardName="Cambio_Tela" referencedIdentifier="Cambio_Tela" id="rbk-XC-wAW" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="oAb-Q9-0UU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SuI-VG-U2w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -58,31 +59,33 @@
             </objects>
             <point key="canvasLocation" x="1686" y="-104"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Add_Tela-->
         <scene sceneID="uWj-ue-3i5">
             <objects>
-                <viewControllerPlaceholder id="3xf-eO-Z1Y" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Add_Tela" storyboardName="Add_Tela" referencedIdentifier="Add_Tela" id="3xf-eO-Z1Y" colorLabel="IBBuiltInLabel-Blue" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="siC-ey-5D5"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rD-EF-zex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1739.6946564885495" y="1980.9859154929579"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Relatorios-->
         <scene sceneID="YfC-Hd-tMX">
             <objects>
-                <viewControllerPlaceholder id="T1Z-F0-LPS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Relatorios" storyboardName="Relatorios" referencedIdentifier="Relatorios" id="T1Z-F0-LPS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="p0N-TN-giE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYZ-kB-lgo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1815" y="615"/>
         </scene>
-        <!--Item-->
+        <!--Mais-->
         <scene sceneID="SUu-B9-2Io">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j8W-w3-nlM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ar4-My-bhz"/>
+                    <tabBarItem key="tabBarItem" title="Mais" image="note.text.badge.plus" catalog="system" id="Ar4-My-bhz">
+                        <color key="badgeColor" systemColor="labelColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wik-8q-wet">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -103,6 +106,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zfc-3Y-SPc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tela_Inicio" id="2wH-rn-xMA">
                         <imageReference key="image" image="homekit" catalog="system" symbolScale="large"/>
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DPH-GU-aX2">
@@ -118,11 +122,13 @@
             </objects>
             <point key="canvasLocation" x="772" y="-104"/>
         </scene>
-        <!--Item-->
+        <!--Relatorios-->
         <scene sceneID="nqe-nh-Dxc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9wr-tD-3cW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cQA-IY-vay"/>
+                    <tabBarItem key="tabBarItem" title="Relatorios" id="cQA-IY-vay">
+                        <imageReference key="image" image="doc.text" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="to6-fg-OS6">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -137,11 +143,13 @@
             </objects>
             <point key="canvasLocation" x="772" y="615"/>
         </scene>
-        <!--Item-->
+        <!--Add-->
         <scene sceneID="6vO-YT-45j">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OlF-Ai-dOU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="3MR-Z6-UIA"/>
+                    <tabBarItem key="tabBarItem" title="Add" id="3MR-Z6-UIA">
+                        <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AB5-1o-PAw">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -156,11 +164,11 @@
             </objects>
             <point key="canvasLocation" x="772" y="1283"/>
         </scene>
-        <!--Item-->
+        <!--Cambio-->
         <scene sceneID="Hvb-4p-7C7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mse-Gc-zvV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yuD-og-nDS"/>
+                    <tabBarItem key="tabBarItem" title="Cambio" image="coloncurrencysign.circle.fill" catalog="system" id="yuD-og-nDS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="o1X-fz-yIe">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -177,6 +185,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="coloncurrencysign.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="note.text.badge.plus" catalog="system" width="128" height="108"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

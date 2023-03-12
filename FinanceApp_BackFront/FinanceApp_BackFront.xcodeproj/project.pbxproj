@@ -16,6 +16,14 @@
 		E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */; };
 		E35D086129BDB0310098F0B5 /* Tela_Inicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */; };
 		E35D086329BDB03D0098F0B5 /* Tela_Inicio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */; };
+		E35D086529BDB1A20098F0B5 /* Relatorios.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086429BDB1A20098F0B5 /* Relatorios.swift */; };
+		E35D086729BDB1AD0098F0B5 /* Relatorios.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086629BDB1AD0098F0B5 /* Relatorios.storyboard */; };
+		E35D086929BDB1C60098F0B5 /* Add_Tela.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086829BDB1C60098F0B5 /* Add_Tela.swift */; };
+		E35D086B29BDB1D00098F0B5 /* Add_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */; };
+		E35D086D29BDB1E60098F0B5 /* Cambio_Tela.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086C29BDB1E60098F0B5 /* Cambio_Tela.swift */; };
+		E35D086F29BDB1EF0098F0B5 /* Cambio_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086E29BDB1EF0098F0B5 /* Cambio_Tela.storyboard */; };
+		E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D087029BDB2030098F0B5 /* Mais_Tela.swift */; };
+		E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		E35D085A29BDAD110098F0B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela_Inicio.swift; sourceTree = "<group>"; };
 		E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tela_Inicio.storyboard; sourceTree = "<group>"; };
+		E35D086429BDB1A20098F0B5 /* Relatorios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relatorios.swift; sourceTree = "<group>"; };
+		E35D086629BDB1AD0098F0B5 /* Relatorios.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Relatorios.storyboard; sourceTree = "<group>"; };
+		E35D086829BDB1C60098F0B5 /* Add_Tela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add_Tela.swift; sourceTree = "<group>"; };
+		E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add_Tela.storyboard; sourceTree = "<group>"; };
+		E35D086C29BDB1E60098F0B5 /* Cambio_Tela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cambio_Tela.swift; sourceTree = "<group>"; };
+		E35D086E29BDB1EF0098F0B5 /* Cambio_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cambio_Tela.storyboard; sourceTree = "<group>"; };
+		E35D087029BDB2030098F0B5 /* Mais_Tela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mais_Tela.swift; sourceTree = "<group>"; };
+		E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mais_Tela.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,14 @@
 				E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */,
 				E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */,
 				E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */,
+				E35D086429BDB1A20098F0B5 /* Relatorios.swift */,
+				E35D086629BDB1AD0098F0B5 /* Relatorios.storyboard */,
+				E35D086829BDB1C60098F0B5 /* Add_Tela.swift */,
+				E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */,
+				E35D086C29BDB1E60098F0B5 /* Cambio_Tela.swift */,
+				E35D086E29BDB1EF0098F0B5 /* Cambio_Tela.storyboard */,
+				E35D087029BDB2030098F0B5 /* Mais_Tela.swift */,
+				E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */,
 			);
 			path = FinanceApp_BackFront;
 			sourceTree = "<group>";
@@ -134,9 +158,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E35D086729BDB1AD0098F0B5 /* Relatorios.storyboard in Resources */,
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
+				E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */,
 				E35D086329BDB03D0098F0B5 /* Tela_Inicio.storyboard in Resources */,
 				E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */,
+				E35D086F29BDB1EF0098F0B5 /* Cambio_Tela.storyboard in Resources */,
+				E35D086B29BDB1D00098F0B5 /* Add_Tela.storyboard in Resources */,
 				E35D085129BDAD100098F0B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,8 +177,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */,
+				E35D086529BDB1A20098F0B5 /* Relatorios.swift in Sources */,
+				E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */,
 				E35D086129BDB0310098F0B5 /* Tela_Inicio.swift in Sources */,
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
+				E35D086D29BDB1E60098F0B5 /* Cambio_Tela.swift in Sources */,
+				E35D086929BDB1C60098F0B5 /* Add_Tela.swift in Sources */,
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
 			);
