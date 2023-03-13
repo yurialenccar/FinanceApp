@@ -8,6 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Storyboard Reference-->
+        <scene sceneID="nOI-Qy-cxg">
+            <objects>
+                <viewControllerPlaceholder id="Pw2-kE-6OL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8be-q5-8kF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fDD-wC-4XY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2726" y="1044"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7Br-te-xcc">
             <objects>
@@ -141,7 +151,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rlL-M9-xBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="615"/>
+            <point key="canvasLocation" x="1698.4732824427481" y="614.78873239436621"/>
         </scene>
         <!--Add-->
         <scene sceneID="6vO-YT-45j">
@@ -149,6 +159,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OlF-Ai-dOU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Add" id="3MR-Z6-UIA">
                         <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AB5-1o-PAw">
@@ -182,6 +193,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fhj-JC-3As" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="825" y="2042"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="It6-3i-0gy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="05B-Hb-CEh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oLj-MN-beK">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pw2-kE-6OL" kind="relationship" relationship="rootViewController" id="kvs-Fo-dOu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysb-rq-wIF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2727" y="592"/>
         </scene>
     </scenes>
     <resources>

@@ -16,15 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="chart.pie.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rbF-aW-cAI">
-                                <rect key="frame" x="91" y="200" width="210" height="232"/>
+                                <rect key="frame" x="91" y="248" width="210" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xxi-jc-FYj">
-                                <rect key="frame" x="0.0" y="136" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tOB-en-eCl">
-                                <rect key="frame" x="16" y="473" width="361" height="44"/>
+                                <rect key="frame" x="15" y="473" width="362" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Casa" id="Sk3-zd-khX"/>
@@ -32,7 +28,7 @@
                                 <color key="tintColor" red="0.050980392156862744" green="0.10980392156862745" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E5E-zS-0XR">
-                                <rect key="frame" x="16" y="531" width="361" height="44"/>
+                                <rect key="frame" x="15" y="530" width="362" height="45"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Carro" id="RWd-gP-rHn"/>
@@ -40,7 +36,7 @@
                                 <color key="tintColor" red="1" green="0.52941176470588236" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cy1-K7-EUG">
-                                <rect key="frame" x="16" y="644" width="361" height="44"/>
+                                <rect key="frame" x="15" y="644" width="362" height="43"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Educação" id="2Gp-YB-zTW"/>
@@ -48,7 +44,7 @@
                                 <color key="tintColor" red="0.90980392156862744" green="0.24705882352941178" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KTQ-jd-nJw">
-                                <rect key="frame" x="16" y="589" width="361" height="44"/>
+                                <rect key="frame" x="15" y="588" width="362" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Alimentação" id="ZI2-Lr-pOT">
@@ -58,11 +54,24 @@
                                 <color key="tintColor" red="0.14509803921568626" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </toolbar>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4c-qc-eVE">
+                                <rect key="frame" x="0.0" y="154" width="393" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NH2-9I-wxU">
+                                <rect key="frame" x="-397" y="-66" width="790" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.089616781345565749" green="0.33296737272890808" blue="0.36942134938837923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="NTS-58-Zno"/>
+                    <connections>
+                        <outlet property="Ref_Picker" destination="i4c-qc-eVE" id="HBW-Jo-aRN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

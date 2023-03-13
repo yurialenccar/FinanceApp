@@ -7,23 +7,44 @@
 
 import UIKit
 
-class Relatorios: UIViewController {
-
+class Relatorios: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    // Define an array of data to display in the picker view
+    let data = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+    
+    
+    @IBOutlet weak var Ref_Picker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Check if the pickerView outlet is properly connected
+        guard Ref_Picker != nil else {
+            fatalError("pickerView outlet is not connected")
+        }
+        
+        // Set the data source and delegate for the picker view
+        Ref_Picker.dataSource = self
+        Ref_Picker.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - UIPickerViewDataSource
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
-
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return data.count
+    }
+    
+    // MARK: - UIPickerViewDelegate
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return data[row]
+    }
 }
+
+
+
+
