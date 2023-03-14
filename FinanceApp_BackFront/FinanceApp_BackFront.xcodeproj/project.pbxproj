@@ -61,6 +61,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A16B56A229C1076500E53727 /* Telas */ = {
+			isa = PBXGroup;
+			children = (
+				A16B56A429C1079000E53727 /* Tela_Inicio */,
+				A16B56A529C1079900E53727 /* Add_Tela */,
+				A16B56A629C107A400E53727 /* Mais_Tela */,
+				A16B56A729C107AC00E53727 /* MetasVC */,
+				A16B56A829C107BC00E53727 /* RelatoriosVC */,
+			);
+			path = Telas;
+			sourceTree = "<group>";
+		};
+		A16B56A429C1079000E53727 /* Tela_Inicio */ = {
+			isa = PBXGroup;
+			children = (
+				E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */,
+				E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */,
+			);
+			path = Tela_Inicio;
+			sourceTree = "<group>";
+		};
+		A16B56A529C1079900E53727 /* Add_Tela */ = {
+			isa = PBXGroup;
+			children = (
+				E35D086829BDB1C60098F0B5 /* Add_Tela.swift */,
+				E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */,
+			);
+			path = Add_Tela;
+			sourceTree = "<group>";
+		};
+		A16B56A629C107A400E53727 /* Mais_Tela */ = {
+			isa = PBXGroup;
+			children = (
+				E35D087029BDB2030098F0B5 /* Mais_Tela.swift */,
+				E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */,
+			);
+			path = Mais_Tela;
+			sourceTree = "<group>";
+		};
+		A16B56A729C107AC00E53727 /* MetasVC */ = {
+			isa = PBXGroup;
+			children = (
+				E35D087C29BFAC1B0098F0B5 /* MetasVC.swift */,
+				E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */,
+			);
+			path = MetasVC;
+			sourceTree = "<group>";
+		};
+		A16B56A829C107BC00E53727 /* RelatoriosVC */ = {
+			isa = PBXGroup;
+			children = (
+				E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */,
+				E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */,
+			);
+			path = RelatoriosVC;
+			sourceTree = "<group>";
+		};
 		E35D083D29BDAD100098F0B5 = {
 			isa = PBXGroup;
 			children = (
@@ -88,16 +145,7 @@
 				E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */,
 				E35D085A29BDAD110098F0B5 /* Info.plist */,
 				E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */,
-				E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */,
-				E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */,
-				E35D086829BDB1C60098F0B5 /* Add_Tela.swift */,
-				E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */,
-				E35D087029BDB2030098F0B5 /* Mais_Tela.swift */,
-				E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */,
-				E35D087C29BFAC1B0098F0B5 /* MetasVC.swift */,
-				E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */,
-				E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */,
-				E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */,
+				A16B56A229C1076500E53727 /* Telas */,
 				E3E9089529BFF95D00B34864 /* Poppins */,
 			);
 			path = FinanceApp_BackFront;
