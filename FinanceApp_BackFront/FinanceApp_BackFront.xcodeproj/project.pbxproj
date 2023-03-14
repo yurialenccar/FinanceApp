@@ -24,6 +24,7 @@
 		E35D087F29BFAC260098F0B5 /* MetasVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */; };
 		E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */; };
 		E3E9089329BFAF2A00B34864 /* RelatoriosVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */; };
+		E3E9089629BFF95D00B34864 /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089529BFF95D00B34864 /* Poppins */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MetasVC.storyboard; sourceTree = "<group>"; };
 		E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoriosVC.swift; sourceTree = "<group>"; };
 		E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RelatoriosVC.storyboard; sourceTree = "<group>"; };
+		E3E9089529BFF95D00B34864 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */,
 				E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */,
 				E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */,
+				E3E9089529BFF95D00B34864 /* Poppins */,
 			);
 			path = FinanceApp_BackFront;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				E35D087F29BFAC260098F0B5 /* MetasVC.storyboard in Resources */,
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
 				E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */,
+				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
 				E3E9089329BFAF2A00B34864 /* RelatoriosVC.storyboard in Resources */,
 				E35D086329BDB03D0098F0B5 /* Tela_Inicio.storyboard in Resources */,
 				E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */,
@@ -336,8 +340,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,8 +368,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
