@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="Relatorios" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="Relatorios" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOB-en-eCl">
+                                <rect key="frame" x="20" y="616" width="374" height="44"/>
+                                <items>
+                                    <barButtonItem title="Casa" id="Sk3-zd-khX"/>
+                                </items>
+                                <color key="tintColor" red="0.050980392156862744" green="0.10980392156862745" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5E-zS-0XR">
+                                <rect key="frame" x="20" y="670" width="374" height="44"/>
+                                <items>
+                                    <barButtonItem title="Carro" id="RWd-gP-rHn"/>
+                                </items>
+                                <color key="tintColor" red="1" green="0.52941176470588236" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTQ-jd-nJw">
+                                <rect key="frame" x="20" y="724" width="374" height="44"/>
+                                <items>
+                                    <barButtonItem title="Alimentação" id="ZI2-Lr-pOT">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.14509803921568626" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mqm-fL-8So">
+                                <rect key="frame" x="-15" y="0.0" width="474" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.31372550129999999" green="0.59215688710000003" blue="0.46666663889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gastos por Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf1-ws-yDd">
+                                <rect key="frame" x="126" y="93" width="162" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cy1-K7-EUG">
+                                <rect key="frame" x="20" y="778" width="374" height="44"/>
+                                <items>
+                                    <barButtonItem title="Educação" id="2Gp-YB-zTW"/>
+                                </items>
+                                <color key="tintColor" red="0.90980392156862744" green="0.24705882352941178" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Chart" translatesAutoresizingMaskIntoConstraints="NO" id="Pon-qR-7Bd">
+                                <rect key="frame" x="93" y="309" width="229" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cy1-K7-EUG" firstAttribute="top" secondItem="KTQ-jd-nJw" secondAttribute="bottom" constant="10" id="8FR-eD-08a"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KTQ-jd-nJw" secondAttribute="trailing" constant="20" id="9EU-Yk-ZsD"/>
+                            <constraint firstItem="KTQ-jd-nJw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ENe-dj-9F1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tOB-en-eCl" secondAttribute="trailing" constant="20" id="LMG-cm-k6y"/>
+                            <constraint firstItem="E5E-zS-0XR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="RjU-o6-aDd"/>
+                            <constraint firstItem="KTQ-jd-nJw" firstAttribute="top" secondItem="E5E-zS-0XR" secondAttribute="bottom" constant="10" id="S47-Xi-fis"/>
+                            <constraint firstItem="E5E-zS-0XR" firstAttribute="top" secondItem="tOB-en-eCl" secondAttribute="bottom" constant="10" id="SvU-no-uel"/>
+                            <constraint firstItem="tOB-en-eCl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="VCU-pO-j54"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="cy1-K7-EUG" secondAttribute="bottom" constant="40" id="Xaz-qZ-e4u"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="E5E-zS-0XR" secondAttribute="trailing" constant="20" id="iL1-tm-47O"/>
+                            <constraint firstItem="cy1-K7-EUG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="typ-G6-izQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cy1-K7-EUG" secondAttribute="trailing" constant="20" id="wYn-oO-gZM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="NTS-58-Zno"/>
+                    <connections>
+                        <outletCollection property="gradientLayer" destination="mqm-fL-8So" collectionClass="NSMutableArray" id="zac-gu-HH3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127.57009345794391" y="-35.637149028077758"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Chart" width="245" height="245"/>
+    </resources>
+</document>

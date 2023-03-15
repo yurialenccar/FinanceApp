@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084929BDAD100098F0B5 /* AppDelegate.swift */; };
+		E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */; };
+		E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084D29BDAD100098F0B5 /* ViewController.swift */; };
+		E35D085129BDAD100098F0B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D084F29BDAD100098F0B5 /* Main.storyboard */; };
+		E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */; };
+		E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35D085529BDAD110098F0B5 /* Assets.xcassets */; };
+		E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */; };
+		E35D086129BDB0310098F0B5 /* Tela_Inicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */; };
+		E35D086329BDB03D0098F0B5 /* Tela_Inicio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */; };
+		E35D086929BDB1C60098F0B5 /* Add_Tela.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086829BDB1C60098F0B5 /* Add_Tela.swift */; };
+		E35D086B29BDB1D00098F0B5 /* Add_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */; };
+		E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D087029BDB2030098F0B5 /* Mais_Tela.swift */; };
+		E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */; };
+		E35D087D29BFAC1B0098F0B5 /* MetasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D087C29BFAC1B0098F0B5 /* MetasVC.swift */; };
+		E35D087F29BFAC260098F0B5 /* MetasVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */; };
+		E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */; };
+		E3E9089329BFAF2A00B34864 /* RelatoriosVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */; };
+		E3E9089629BFF95D00B34864 /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089529BFF95D00B34864 /* Poppins */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp_BackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35D084929BDAD100098F0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E35D084D29BDAD100098F0B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E35D085029BDAD100098F0B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E35D085329BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceApp_BackFront.xcdatamodel; sourceTree = "<group>"; };
+		E35D085529BDAD110098F0B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E35D085829BDAD110098F0B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E35D085A29BDAD110098F0B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela_Inicio.swift; sourceTree = "<group>"; };
+		E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tela_Inicio.storyboard; sourceTree = "<group>"; };
+		E35D086829BDB1C60098F0B5 /* Add_Tela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add_Tela.swift; sourceTree = "<group>"; };
+		E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add_Tela.storyboard; sourceTree = "<group>"; };
+		E35D087029BDB2030098F0B5 /* Mais_Tela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mais_Tela.swift; sourceTree = "<group>"; };
+		E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mais_Tela.storyboard; sourceTree = "<group>"; };
+		E35D087C29BFAC1B0098F0B5 /* MetasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetasVC.swift; sourceTree = "<group>"; };
+		E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MetasVC.storyboard; sourceTree = "<group>"; };
+		E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoriosVC.swift; sourceTree = "<group>"; };
+		E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RelatoriosVC.storyboard; sourceTree = "<group>"; };
+		E3E9089529BFF95D00B34864 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E35D084329BDAD100098F0B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A16B56A229C1076500E53727 /* Telas */ = {
+			isa = PBXGroup;
+			children = (
+				A16B56A429C1079000E53727 /* Tela_Inicio */,
+				A16B56A529C1079900E53727 /* Add_Tela */,
+				A16B56A629C107A400E53727 /* Mais_Tela */,
+				A16B56A729C107AC00E53727 /* MetasVC */,
+				A16B56A829C107BC00E53727 /* RelatoriosVC */,
+			);
+			path = Telas;
+			sourceTree = "<group>";
+		};
+		A16B56A429C1079000E53727 /* Tela_Inicio */ = {
+			isa = PBXGroup;
+			children = (
+				E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */,
+				E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */,
+			);
+			path = Tela_Inicio;
+			sourceTree = "<group>";
+		};
+		A16B56A529C1079900E53727 /* Add_Tela */ = {
+			isa = PBXGroup;
+			children = (
+				E35D086829BDB1C60098F0B5 /* Add_Tela.swift */,
+				E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */,
+			);
+			path = Add_Tela;
+			sourceTree = "<group>";
+		};
+		A16B56A629C107A400E53727 /* Mais_Tela */ = {
+			isa = PBXGroup;
+			children = (
+				E35D087029BDB2030098F0B5 /* Mais_Tela.swift */,
+				E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */,
+			);
+			path = Mais_Tela;
+			sourceTree = "<group>";
+		};
+		A16B56A729C107AC00E53727 /* MetasVC */ = {
+			isa = PBXGroup;
+			children = (
+				E35D087C29BFAC1B0098F0B5 /* MetasVC.swift */,
+				E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */,
+			);
+			path = MetasVC;
+			sourceTree = "<group>";
+		};
+		A16B56A829C107BC00E53727 /* RelatoriosVC */ = {
+			isa = PBXGroup;
+			children = (
+				E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */,
+				E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */,
+			);
+			path = RelatoriosVC;
+			sourceTree = "<group>";
+		};
+		E35D083D29BDAD100098F0B5 = {
+			isa = PBXGroup;
+			children = (
+				E35D084829BDAD100098F0B5 /* FinanceApp_BackFront */,
+				E35D084729BDAD100098F0B5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E35D084729BDAD100098F0B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E35D084829BDAD100098F0B5 /* FinanceApp_BackFront */ = {
+			isa = PBXGroup;
+			children = (
+				E35D084929BDAD100098F0B5 /* AppDelegate.swift */,
+				E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */,
+				E35D084D29BDAD100098F0B5 /* ViewController.swift */,
+				E35D084F29BDAD100098F0B5 /* Main.storyboard */,
+				E35D085529BDAD110098F0B5 /* Assets.xcassets */,
+				E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */,
+				E35D085A29BDAD110098F0B5 /* Info.plist */,
+				E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */,
+				A16B56A229C1076500E53727 /* Telas */,
+				E3E9089529BFF95D00B34864 /* Poppins */,
+			);
+			path = FinanceApp_BackFront;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E35D084529BDAD100098F0B5 /* FinanceApp_BackFront */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E35D085D29BDAD110098F0B5 /* Build configuration list for PBXNativeTarget "FinanceApp_BackFront" */;
+			buildPhases = (
+				E35D084229BDAD100098F0B5 /* Sources */,
+				E35D084329BDAD100098F0B5 /* Frameworks */,
+				E35D084429BDAD100098F0B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinanceApp_BackFront;
+			productName = FinanceApp_BackFront;
+			productReference = E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E35D083E29BDAD100098F0B5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					E35D084529BDAD100098F0B5 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = E35D084129BDAD100098F0B5 /* Build configuration list for PBXProject "FinanceApp_BackFront" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E35D083D29BDAD100098F0B5;
+			productRefGroup = E35D084729BDAD100098F0B5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E35D084529BDAD100098F0B5 /* FinanceApp_BackFront */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E35D084429BDAD100098F0B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E35D087F29BFAC260098F0B5 /* MetasVC.storyboard in Resources */,
+				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
+				E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */,
+				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
+				E3E9089329BFAF2A00B34864 /* RelatoriosVC.storyboard in Resources */,
+				E35D086329BDB03D0098F0B5 /* Tela_Inicio.storyboard in Resources */,
+				E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */,
+				E35D086B29BDB1D00098F0B5 /* Add_Tela.storyboard in Resources */,
+				E35D085129BDAD100098F0B5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E35D084229BDAD100098F0B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */,
+				E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */,
+				E35D086129BDB0310098F0B5 /* Tela_Inicio.swift in Sources */,
+				E35D087D29BFAC1B0098F0B5 /* MetasVC.swift in Sources */,
+				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
+				E35D086929BDB1C60098F0B5 /* Add_Tela.swift in Sources */,
+				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
+				E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */,
+				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E35D084F29BDAD100098F0B5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E35D085029BDAD100098F0B5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E35D085829BDAD110098F0B5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E35D085B29BDAD110098F0B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E35D085C29BDAD110098F0B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E35D085E29BDAD110098F0B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinanceApp_BackFront/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yurialencar.FinanceApp-BackFront";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E35D085F29BDAD110098F0B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinanceApp_BackFront/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yurialencar.FinanceApp-BackFront";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E35D084129BDAD100098F0B5 /* Build configuration list for PBXProject "FinanceApp_BackFront" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E35D085B29BDAD110098F0B5 /* Debug */,
+				E35D085C29BDAD110098F0B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E35D085D29BDAD110098F0B5 /* Build configuration list for PBXNativeTarget "FinanceApp_BackFront" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E35D085E29BDAD110098F0B5 /* Debug */,
+				E35D085F29BDAD110098F0B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E35D085329BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodel */,
+			);
+			currentVersion = E35D085329BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodel */;
+			path = FinanceApp_BackFront.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E35D083E29BDAD100098F0B5 /* Project object */;
+}
