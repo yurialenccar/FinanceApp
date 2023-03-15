@@ -14,14 +14,28 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="19o-M3-meM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="19o-M3-meM" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="M5y-qa-m4Z"/>
+                            <constraint firstAttribute="bottom" secondItem="19o-M3-meM" secondAttribute="bottom" id="S5z-FG-oFs"/>
+                            <constraint firstItem="19o-M3-meM" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Sik-r6-ruV"/>
+                            <constraint firstAttribute="trailing" secondItem="19o-M3-meM" secondAttribute="trailing" id="TCV-B4-QiM"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="130.40000000000001" y="-34.632683658170919"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SplashScreen" width="750" height="1624"/>
+    </resources>
 </document>
