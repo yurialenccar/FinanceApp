@@ -20,8 +20,8 @@
 		E35D086B29BDB1D00098F0B5 /* Add_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */; };
 		E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D087029BDB2030098F0B5 /* Mais_Tela.swift */; };
 		E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */; };
-		E35D087D29BFAC1B0098F0B5 /* MetasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D087C29BFAC1B0098F0B5 /* MetasVC.swift */; };
-		E35D087F29BFAC260098F0B5 /* MetasVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */; };
+		E3C0915929C21CC900BE4441 /* Metas_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0915829C21CC900BE4441 /* Metas_VC.swift */; };
+		E3C0915B29C21CD400BE4441 /* Metas_VC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */; };
 		E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */; };
 		E3E9089329BFAF2A00B34864 /* RelatoriosVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */; };
 		E3E9089629BFF95D00B34864 /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089529BFF95D00B34864 /* Poppins */; };
@@ -43,8 +43,8 @@
 		E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add_Tela.storyboard; sourceTree = "<group>"; };
 		E35D087029BDB2030098F0B5 /* Mais_Tela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mais_Tela.swift; sourceTree = "<group>"; };
 		E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mais_Tela.storyboard; sourceTree = "<group>"; };
-		E35D087C29BFAC1B0098F0B5 /* MetasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetasVC.swift; sourceTree = "<group>"; };
-		E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MetasVC.storyboard; sourceTree = "<group>"; };
+		E3C0915829C21CC900BE4441 /* Metas_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metas_VC.swift; sourceTree = "<group>"; };
+		E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Metas_VC.storyboard; sourceTree = "<group>"; };
 		E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoriosVC.swift; sourceTree = "<group>"; };
 		E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RelatoriosVC.storyboard; sourceTree = "<group>"; };
 		E3E9089529BFF95D00B34864 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
@@ -64,10 +64,10 @@
 		A16B56A229C1076500E53727 /* Telas */ = {
 			isa = PBXGroup;
 			children = (
+				E3C0915729C21C9100BE4441 /* Metas_VC */,
 				A16B56A429C1079000E53727 /* Tela_Inicio */,
 				A16B56A529C1079900E53727 /* Add_Tela */,
 				A16B56A629C107A400E53727 /* Mais_Tela */,
-				A16B56A729C107AC00E53727 /* MetasVC */,
 				A16B56A829C107BC00E53727 /* RelatoriosVC */,
 			);
 			path = Telas;
@@ -98,15 +98,6 @@
 				E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */,
 			);
 			path = Mais_Tela;
-			sourceTree = "<group>";
-		};
-		A16B56A729C107AC00E53727 /* MetasVC */ = {
-			isa = PBXGroup;
-			children = (
-				E35D087C29BFAC1B0098F0B5 /* MetasVC.swift */,
-				E35D087E29BFAC260098F0B5 /* MetasVC.storyboard */,
-			);
-			path = MetasVC;
 			sourceTree = "<group>";
 		};
 		A16B56A829C107BC00E53727 /* RelatoriosVC */ = {
@@ -149,6 +140,15 @@
 				E3E9089529BFF95D00B34864 /* Poppins */,
 			);
 			path = FinanceApp_BackFront;
+			sourceTree = "<group>";
+		};
+		E3C0915729C21C9100BE4441 /* Metas_VC */ = {
+			isa = PBXGroup;
+			children = (
+				E3C0915829C21CC900BE4441 /* Metas_VC.swift */,
+				E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */,
+			);
+			path = Metas_VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,8 +209,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E35D087F29BFAC260098F0B5 /* MetasVC.storyboard in Resources */,
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
+				E3C0915B29C21CD400BE4441 /* Metas_VC.storyboard in Resources */,
 				E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */,
 				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
 				E3E9089329BFAF2A00B34864 /* RelatoriosVC.storyboard in Resources */,
@@ -231,8 +231,8 @@
 				E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */,
 				E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */,
 				E35D086129BDB0310098F0B5 /* Tela_Inicio.swift in Sources */,
-				E35D087D29BFAC1B0098F0B5 /* MetasVC.swift in Sources */,
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
+				E3C0915929C21CC900BE4441 /* Metas_VC.swift in Sources */,
 				E35D086929BDB1C60098F0B5 /* Add_Tela.swift in Sources */,
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
 				E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */,
