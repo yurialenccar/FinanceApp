@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E341E08E29C2B64900FC6C30 /* CadastarMetaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E341E08D29C2B64900FC6C30 /* CadastarMetaVC.swift */; };
+		E341E09029C2B65800FC6C30 /* CadastarMetaVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E341E08F29C2B65800FC6C30 /* CadastarMetaVC.storyboard */; };
+		E341E09229C2B6AD00FC6C30 /* ConsultarMetaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E341E09129C2B6AD00FC6C30 /* ConsultarMetaVC.swift */; };
+		E341E09429C2B6C700FC6C30 /* ConsultarMetaVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E341E09329C2B6C700FC6C30 /* ConsultarMetaVC.storyboard */; };
 		E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084929BDAD100098F0B5 /* AppDelegate.swift */; };
 		E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */; };
 		E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084D29BDAD100098F0B5 /* ViewController.swift */; };
@@ -28,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E341E08D29C2B64900FC6C30 /* CadastarMetaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastarMetaVC.swift; sourceTree = "<group>"; };
+		E341E08F29C2B65800FC6C30 /* CadastarMetaVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CadastarMetaVC.storyboard; sourceTree = "<group>"; };
+		E341E09129C2B6AD00FC6C30 /* ConsultarMetaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultarMetaVC.swift; sourceTree = "<group>"; };
+		E341E09329C2B6C700FC6C30 /* ConsultarMetaVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConsultarMetaVC.storyboard; sourceTree = "<group>"; };
 		E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp_BackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35D084929BDAD100098F0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +155,10 @@
 			children = (
 				E3C0915829C21CC900BE4441 /* Metas_VC.swift */,
 				E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */,
+				E341E08D29C2B64900FC6C30 /* CadastarMetaVC.swift */,
+				E341E08F29C2B65800FC6C30 /* CadastarMetaVC.storyboard */,
+				E341E09129C2B6AD00FC6C30 /* ConsultarMetaVC.swift */,
+				E341E09329C2B6C700FC6C30 /* ConsultarMetaVC.storyboard */,
 			);
 			path = Metas_VC;
 			sourceTree = "<group>";
@@ -218,6 +230,8 @@
 				E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */,
 				E35D086B29BDB1D00098F0B5 /* Add_Tela.storyboard in Resources */,
 				E35D085129BDAD100098F0B5 /* Main.storyboard in Resources */,
+				E341E09029C2B65800FC6C30 /* CadastarMetaVC.storyboard in Resources */,
+				E341E09429C2B6C700FC6C30 /* ConsultarMetaVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +249,9 @@
 				E3C0915929C21CC900BE4441 /* Metas_VC.swift in Sources */,
 				E35D086929BDB1C60098F0B5 /* Add_Tela.swift in Sources */,
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
+				E341E09229C2B6AD00FC6C30 /* ConsultarMetaVC.swift in Sources */,
 				E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */,
+				E341E08E29C2B64900FC6C30 /* CadastarMetaVC.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
