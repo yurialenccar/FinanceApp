@@ -226,12 +226,12 @@
         <!--Metas_VC-->
         <scene sceneID="GXM-iC-2qm">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MetasVC" storyboardName="Metas_VC" referencedIdentifier="Metas_VC" id="yDg-Vi-m4N" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Metas_VC" storyboardName="Metas_VC" referencedIdentifier="Metas_VC" id="yDg-Vi-m4N" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3BE-0x-gAo"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYF-lm-gvi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2618" y="485"/>
+            <point key="canvasLocation" x="2750" y="937"/>
         </scene>
         <!--Add-->
         <scene sceneID="6vO-YT-45j">
