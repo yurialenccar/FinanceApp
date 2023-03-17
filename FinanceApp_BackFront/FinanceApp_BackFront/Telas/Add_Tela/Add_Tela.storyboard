@@ -228,10 +228,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" textContentType="name"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ttn-Uz-efg">
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttn-Uz-efg">
                                         <rect key="frame" x="0.0" y="160" width="335" height="60"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9l-Wk-3hq">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9l-Wk-3hq">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="ctj-6o-J5e"/>
@@ -239,18 +239,27 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" textContentType="name"/>
                                             </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="onK-pD-9Dn">
-                                                <rect key="frame" x="292" y="18" width="35" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="QA2-XG-dv5">
+                                                <rect key="frame" x="292" y="18" width="35" height="20"/>
                                                 <color key="tintColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="aji-0c-0pE"/>
+                                                    <constraint firstAttribute="height" constant="20" id="tLX-5K-NiT"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="QA2-XG-dv5" secondAttribute="trailing" constant="8" id="RbM-pE-ynM"/>
+                                            <constraint firstItem="i9l-Wk-3hq" firstAttribute="centerX" secondItem="ttn-Uz-efg" secondAttribute="centerX" id="Sip-a3-4A7"/>
+                                            <constraint firstItem="i9l-Wk-3hq" firstAttribute="leading" secondItem="ttn-Uz-efg" secondAttribute="leading" id="VEe-zn-ugr"/>
+                                            <constraint firstItem="QA2-XG-dv5" firstAttribute="top" secondItem="ttn-Uz-efg" secondAttribute="top" constant="18" id="grz-a2-fPe"/>
+                                            <constraint firstItem="i9l-Wk-3hq" firstAttribute="centerY" secondItem="ttn-Uz-efg" secondAttribute="centerY" id="vdy-Gb-S2V"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CXB-X1-Zke">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXB-X1-Zke">
                                         <rect key="frame" x="0.0" y="240" width="335" height="60"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Conta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LTb-LI-2ia">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Conta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LTb-LI-2ia">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="JvV-kR-nrc"/>
@@ -258,13 +267,23 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" textContentType="name"/>
                                             </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="F2Z-88-d6X">
-                                                <rect key="frame" x="292" y="18" width="35" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="F2Z-88-d6X">
+                                                <rect key="frame" x="292" y="18" width="35" height="20"/>
                                                 <color key="tintColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="GHn-LP-6CA"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="F2Z-88-d6X" firstAttribute="trailing" secondItem="CXB-X1-Zke" secondAttribute="trailingMargin" id="Mm3-B1-AYr"/>
+                                            <constraint firstItem="LTb-LI-2ia" firstAttribute="leading" secondItem="CXB-X1-Zke" secondAttribute="leading" id="XZa-Vw-g0R"/>
+                                            <constraint firstItem="F2Z-88-d6X" firstAttribute="top" secondItem="CXB-X1-Zke" secondAttribute="top" constant="18" id="jjC-Fx-JcV"/>
+                                            <constraint firstItem="LTb-LI-2ia" firstAttribute="centerX" secondItem="CXB-X1-Zke" secondAttribute="centerX" id="k4v-BT-ogl"/>
+                                            <constraint firstItem="LTb-LI-2ia" firstAttribute="centerY" secondItem="F2Z-88-d6X" secondAttribute="centerY" id="lIJ-NV-CAK"/>
+                                            <constraint firstItem="LTb-LI-2ia" firstAttribute="centerY" secondItem="CXB-X1-Zke" secondAttribute="centerY" id="pvv-tG-Uug"/>
+                                        </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Observações" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hS-mP-PqE">
                                         <rect key="frame" x="0.0" y="320" width="335" height="60"/>
