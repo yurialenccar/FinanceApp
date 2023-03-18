@@ -149,11 +149,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LaB-h3-oPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="2612" y="2871"/>
-=======
             <point key="canvasLocation" x="2816" y="3035"/>
->>>>>>> features-y
         </scene>
         <!--Add_Tela-->
         <scene sceneID="AjX-IE-oRv">
@@ -173,11 +169,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SN2-XZ-9f9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="2607" y="-305"/>
-=======
             <point key="canvasLocation" x="2780" y="-232"/>
->>>>>>> features-y
         </scene>
         <!--Mais-->
         <scene sceneID="SUu-B9-2Io">
@@ -197,21 +189,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHP-Mr-W4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="1637" y="2871"/>
-        </scene>
-        <!--ConsultarMetaVC-->
-        <scene sceneID="m7a-eZ-n8Q">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ConsultarMetaVC" storyboardName="ConsultarMetaVC" referencedIdentifier="ConsultarMetaVC" id="RpK-Fh-v2A" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="DU8-ea-XjF"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zop-M8-QbN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3569.0625" y="216.5492957746479"/>
-=======
-            <point key="canvasLocation" x="1766" y="3035"/>
->>>>>>> features-y
         </scene>
         <!--Tela_Inicio-->
         <scene sceneID="XTK-o3-Snn">
@@ -232,11 +210,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNs-Zz-r9I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="1693" y="-305"/>
-=======
             <point key="canvasLocation" x="1768" y="-232"/>
->>>>>>> features-y
         </scene>
         <!--Metas_VC-->
         <scene sceneID="GXM-iC-2qm">
@@ -246,11 +220,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYF-lm-gvi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="2750" y="937"/>
-=======
             <point key="canvasLocation" x="2793" y="525"/>
->>>>>>> features-y
         </scene>
         <!--Add-->
         <scene sceneID="6vO-YT-45j">
@@ -281,11 +251,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jha-u9-Br5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="2595" y="2119"/>
-=======
             <point key="canvasLocation" x="2792" y="2176"/>
->>>>>>> features-y
         </scene>
         <!--Metas-->
         <scene sceneID="5ne-vX-MKd">
@@ -306,11 +272,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEu-la-Xf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="1637" y="485"/>
-=======
             <point key="canvasLocation" x="1768" y="525"/>
->>>>>>> features-y
         </scene>
         <!--Relatorio-->
         <scene sceneID="Mo2-1J-hFp">
@@ -328,11 +290,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gw3-qj-5zx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="1637" y="2120"/>
-=======
             <point key="canvasLocation" x="1768" y="2177"/>
->>>>>>> features-y
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n9W-NT-Zoj">

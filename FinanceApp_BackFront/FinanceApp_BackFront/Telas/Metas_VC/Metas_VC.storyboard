@@ -22,11 +22,7 @@
         <!--Metas e Planejamentos-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-<<<<<<< HEAD
-                <viewController storyboardIdentifier="Metas_VC" title="Metas_VC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" userLabel="Metas e Planejamentos" sceneMemberID="viewController">
-=======
                 <viewController storyboardIdentifier="Metas_VC" title="MetasVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" userLabel="Metas e Planejamentos" sceneMemberID="viewController">
->>>>>>> features-y
                     <view key="view" contentMode="scaleToFill" id="jh5-iI-sM9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -374,7 +370,7 @@ meta.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Wjn-3f-6DT"/>
+        <segue reference="LUy-gm-9Tu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Casa" width="35" height="35"/>
