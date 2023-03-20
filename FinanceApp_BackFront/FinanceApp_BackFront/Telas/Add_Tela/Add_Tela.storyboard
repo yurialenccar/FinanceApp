@@ -30,7 +30,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="o8d-eG-yjk" kind="presentation" id="NNN-YH-Xiv"/>
+                                    <segue destination="o8d-eG-yjk" kind="show" id="NNN-YH-Xiv"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rX-bG-AvS">
@@ -66,7 +66,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="FsX-d6-VQU" kind="presentation" id="Kmu-2w-PDi"/>
+                                    <segue destination="FsX-d6-VQU" kind="show" id="Kmu-2w-PDi"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u99-J7-Qux">
@@ -102,7 +102,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="MLs-hh-knK" kind="presentation" id="dn6-lc-Zw3"/>
+                                    <segue destination="MLs-hh-knK" kind="show" id="dn6-lc-Zw3"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-ea-S4W">
@@ -333,7 +333,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Att-V1-Nv6">
-                                <rect key="frame" x="137.5" y="577" width="100" height="40"/>
+                                <rect key="frame" x="137.5" y="575" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="HVM-gn-OGf"/>
                                     <constraint firstAttribute="width" constant="100" id="Y6I-nU-SKE"/>
@@ -353,13 +353,14 @@
                             <constraint firstItem="hDZ-ts-R6k" firstAttribute="top" secondItem="JNz-RC-k8M" secondAttribute="bottom" constant="20" id="6Au-Zc-Yrx"/>
                             <constraint firstItem="hDZ-ts-R6k" firstAttribute="leading" secondItem="e3f-k7-EMv" secondAttribute="leading" constant="20" id="6IS-eK-KsY"/>
                             <constraint firstItem="JNz-RC-k8M" firstAttribute="leading" secondItem="GBa-NP-RaW" secondAttribute="leading" id="Pcb-eg-Adp"/>
-                            <constraint firstItem="e3f-k7-EMv" firstAttribute="bottom" secondItem="Att-V1-Nv6" secondAttribute="bottom" constant="50" id="UGN-Ce-yng"/>
+                            <constraint firstItem="Att-V1-Nv6" firstAttribute="top" secondItem="hDZ-ts-R6k" secondAttribute="bottom" constant="20" id="kSJ-jd-f8I"/>
                             <constraint firstAttribute="trailing" secondItem="JNz-RC-k8M" secondAttribute="trailing" id="keS-BO-kIn"/>
                             <constraint firstItem="Att-V1-Nv6" firstAttribute="centerX" secondItem="GBa-NP-RaW" secondAttribute="centerX" id="mVc-iV-t50"/>
                             <constraint firstItem="JNz-RC-k8M" firstAttribute="top" secondItem="e3f-k7-EMv" secondAttribute="top" id="rf0-EO-GJA"/>
                             <constraint firstItem="e3f-k7-EMv" firstAttribute="trailing" secondItem="hDZ-ts-R6k" secondAttribute="trailing" constant="20" id="tv6-B2-3ke"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="re4-Co-PCA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82Q-Z8-mOI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,7 +508,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvc-TI-cOb">
-                                <rect key="frame" x="137.5" y="577" width="100" height="40"/>
+                                <rect key="frame" x="137.5" y="575" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7qe-Z3-wuk"/>
                                     <constraint firstAttribute="width" constant="100" id="ovh-DD-tMj"/>
@@ -525,15 +526,16 @@
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7Ei-I5-KVF" firstAttribute="trailing" secondItem="GuW-O0-JZO" secondAttribute="trailing" constant="20" id="4Hq-P8-xqK"/>
-                            <constraint firstItem="7Ei-I5-KVF" firstAttribute="bottom" secondItem="Vvc-TI-cOb" secondAttribute="bottom" constant="50" id="6jS-fO-lpP"/>
                             <constraint firstItem="rXZ-QO-CB9" firstAttribute="leading" secondItem="oOB-Gt-9c3" secondAttribute="leading" id="8uK-40-Tex"/>
                             <constraint firstItem="rXZ-QO-CB9" firstAttribute="top" secondItem="7Ei-I5-KVF" secondAttribute="top" id="CPA-nS-KIO"/>
                             <constraint firstItem="GuW-O0-JZO" firstAttribute="leading" secondItem="7Ei-I5-KVF" secondAttribute="leading" constant="20" id="bRO-5v-W5S"/>
+                            <constraint firstItem="Vvc-TI-cOb" firstAttribute="top" secondItem="GuW-O0-JZO" secondAttribute="bottom" constant="20" id="fsP-3C-R8X"/>
                             <constraint firstAttribute="trailing" secondItem="rXZ-QO-CB9" secondAttribute="trailing" id="nhC-WK-JhP"/>
                             <constraint firstItem="Vvc-TI-cOb" firstAttribute="centerX" secondItem="oOB-Gt-9c3" secondAttribute="centerX" id="rRu-j7-sqI"/>
                             <constraint firstItem="GuW-O0-JZO" firstAttribute="top" secondItem="rXZ-QO-CB9" secondAttribute="bottom" constant="20" id="zsX-FG-K2J"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xvP-VT-aFF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1Q-r4-nF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -681,7 +683,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAD-mG-JE0">
-                                <rect key="frame" x="137.5" y="577" width="100" height="40"/>
+                                <rect key="frame" x="137.5" y="575" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8aB-Yn-omY"/>
                                     <constraint firstAttribute="width" constant="100" id="Vsx-0Y-5Op"/>
@@ -699,15 +701,16 @@
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="eTg-M9-Obd" firstAttribute="top" secondItem="NGT-kg-nC8" secondAttribute="bottom" constant="20" id="9cC-2N-hvI"/>
+                            <constraint firstItem="vAD-mG-JE0" firstAttribute="top" secondItem="eTg-M9-Obd" secondAttribute="bottom" constant="20" id="Ct8-n5-Nqf"/>
                             <constraint firstItem="NGT-kg-nC8" firstAttribute="leading" secondItem="Kgu-Bd-VJ5" secondAttribute="leading" id="FFH-fB-3JR"/>
                             <constraint firstItem="eTg-M9-Obd" firstAttribute="leading" secondItem="85f-je-0oo" secondAttribute="leading" constant="20" id="G9J-FS-6GR"/>
                             <constraint firstItem="85f-je-0oo" firstAttribute="trailing" secondItem="eTg-M9-Obd" secondAttribute="trailing" constant="20" id="XO1-9K-hZJ"/>
                             <constraint firstAttribute="trailing" secondItem="NGT-kg-nC8" secondAttribute="trailing" id="d6T-0m-1ha"/>
                             <constraint firstItem="vAD-mG-JE0" firstAttribute="centerX" secondItem="Kgu-Bd-VJ5" secondAttribute="centerX" id="jck-iC-XPa"/>
                             <constraint firstItem="NGT-kg-nC8" firstAttribute="top" secondItem="85f-je-0oo" secondAttribute="top" id="nOJ-e5-Mlc"/>
-                            <constraint firstItem="85f-je-0oo" firstAttribute="bottom" secondItem="vAD-mG-JE0" secondAttribute="bottom" constant="50" id="zZf-PY-Cwj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hp2-Me-xHL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JL7-ar-ev8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -68,11 +68,11 @@
 		A16B56A229C1076500E53727 /* Telas */ = {
 			isa = PBXGroup;
 			children = (
-				E3C0915729C21C9100BE4441 /* Metas_VC */,
 				A16B56A429C1079000E53727 /* Tela_Inicio */,
-				A16B56A529C1079900E53727 /* Add_Tela */,
-				A16B56A629C107A400E53727 /* Mais_Tela */,
 				A16B56A829C107BC00E53727 /* RelatoriosVC */,
+				A16B56A529C1079900E53727 /* Add_Tela */,
+				E3C0915729C21C9100BE4441 /* Metas_VC */,
+				A16B56A629C107A400E53727 /* Mais_Tela */,
 			);
 			path = Telas;
 			sourceTree = "<group>";
