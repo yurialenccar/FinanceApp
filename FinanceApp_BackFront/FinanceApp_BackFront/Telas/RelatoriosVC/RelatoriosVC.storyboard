@@ -26,75 +26,40 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="YxT-dj-BwN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="SDG-w5-n2y">
-                                <rect key="frame" x="10" y="62" width="355" height="543.5"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="SDG-w5-n2y">
+                                <rect key="frame" x="10" y="26" width="355" height="615"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="IWV-dt-vfv">
-                                        <rect key="frame" x="21" y="0.0" width="313" height="25.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWV-dt-vfv">
+                                        <rect key="frame" x="36" y="0.0" width="283" height="55"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKD-Kz-KFe">
-                                                <rect key="frame" x="0.0" y="2" width="35" height="22"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rap-sf-acc">
+                                                <rect key="frame" x="8" y="22" width="247" height="25"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="CiC-rV-V6C"/>
-                                                    <constraint firstAttribute="height" constant="25.5" id="Mvh-UD-4LT"/>
-                                                    <constraint firstAttribute="width" constant="35" id="qho-ua-Q5S"/>
+                                                    <constraint firstAttribute="width" constant="247" id="VqF-Ge-oT6"/>
+                                                    <constraint firstAttribute="height" constant="25" id="tia-lZ-nl4"/>
                                                 </constraints>
-                                                <menu key="menu" id="cuK-KP-Kn9">
-                                                    <children>
-                                                        <command title="Janeiro" id="0mO-wI-wFc"/>
-                                                        <command title="Fevereiro" id="PVu-gy-fCj"/>
-                                                        <command title="Março" id="wo4-iJ-9KZ"/>
-                                                        <command title="Abril" id="aNP-Mb-uh6"/>
-                                                    </children>
-                                                </menu>
-                                                <state key="normal" backgroundImage="chevron.left" catalog="system">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Maio, 2023" cornerStyle="large">
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.18823529410000001" green="0.59999999999999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-vf-h1d">
-                                                <rect key="frame" x="33" y="0.0" width="247" height="25.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25.5" id="E0F-Tb-Atq"/>
-                                                    <constraint firstAttribute="width" constant="247" id="sSQ-2Q-A4c"/>
-                                                </constraints>
-                                                <menu key="menu" id="qWd-VC-mxa">
+                                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="979-Zd-R6F">
+                                                <rect key="frame" x="255" y="22" width="20" height="25"/>
+                                                <menu key="menu" id="MHc-cf-yAm">
                                                     <children>
-                                                        <command title="Maio" id="W7u-ig-uzu"/>
+                                                        <command title="Janeiro" id="vNY-Rg-u0h"/>
+                                                        <command title="Fevereiro" id="t8a-Nr-e3j"/>
                                                     </children>
                                                 </menu>
-                                                <state key="normal" title="Maio 2022">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYT-Mf-hVS">
-                                                <rect key="frame" x="278" y="2" width="35" height="22"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25.5" id="2aR-ZA-CAC"/>
-                                                    <constraint firstAttribute="width" constant="35" id="9Rz-qs-AWC"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="sRl-Bn-TFr"/>
-                                                </constraints>
-                                                <menu key="menu" id="dVs-oI-CN6">
-                                                    <children>
-                                                        <command title="Junho" id="r6g-IX-SaW"/>
-                                                        <command title="Julho" id="yXm-oj-S1C"/>
-                                                        <command title="Agosto" id="xGb-3V-ItU"/>
-                                                        <command title="Setembro" id="G52-88-cWU"/>
-                                                        <command title="Outubro" id="Iwd-bg-5x0"/>
-                                                        <command title="Novembro" id="30e-sZ-0Bj"/>
-                                                        <command title="Dezembro" id="2hN-QF-tWN"/>
-                                                    </children>
-                                                </menu>
-                                                <state key="normal" backgroundImage="chevron.right" catalog="system">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <state key="normal" backgroundImage="chevron-left.png"/>
                                             </button>
                                         </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="22" leading="8" bottom="8" trailing="8"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EGt-GN-ZRW">
-                                        <rect key="frame" x="58" y="58.5" width="239" height="252"/>
+                                        <rect key="frame" x="58" y="109" width="239" height="252"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chart" translatesAutoresizingMaskIntoConstraints="NO" id="YLL-2w-8ux">
                                                 <rect key="frame" x="0.0" y="0.0" width="239" height="252"/>
@@ -106,7 +71,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PSk-7x-eVY">
-                                        <rect key="frame" x="0.0" y="343.5" width="355" height="200"/>
+                                        <rect key="frame" x="0.0" y="415" width="355" height="200"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xM8-08-ssd" userLabel="Card Gastos por Categoria">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="200"/>
@@ -233,8 +198,10 @@
                                                     <constraint firstAttribute="trailing" secondItem="Jw4-y9-n2M" secondAttribute="trailing" constant="20" id="Kun-A6-fuR"/>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="MA9-gZ-71I"/>
                                                     <constraint firstItem="Jw4-y9-n2M" firstAttribute="top" secondItem="xM8-08-ssd" secondAttribute="top" constant="10" id="MXa-fk-2kG"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="Uyh-Fl-4eY"/>
                                                     <constraint firstAttribute="trailing" secondItem="jp9-0S-ThL" secondAttribute="trailing" constant="10" id="eLk-gJ-X7n"/>
                                                     <constraint firstItem="Jw4-y9-n2M" firstAttribute="leading" secondItem="xM8-08-ssd" secondAttribute="leading" constant="10" id="mZL-3N-Ye2"/>
+                                                    <constraint firstAttribute="width" constant="355" id="nT5-HH-tv6"/>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="oOX-kY-e7b"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="zWj-0Z-jSR"/>
                                                 </constraints>
@@ -247,14 +214,19 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="EGt-GN-ZRW" firstAttribute="centerX" secondItem="SDG-w5-n2y" secondAttribute="centerX" id="Cl0-Np-LIe"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SDG-w5-n2y" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="OJi-vr-w4t"/>
-                            <constraint firstItem="SDG-w5-n2y" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="OXQ-Or-vrD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SDG-w5-n2y" secondAttribute="trailing" constant="10" id="4Ly-83-AUJ"/>
+                            <constraint firstItem="SDG-w5-n2y" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="26" id="IGL-kH-0Y9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SDG-w5-n2y" secondAttribute="bottom" constant="26" id="Qm1-6I-61H"/>
                             <constraint firstAttribute="bottom" secondItem="YxT-dj-BwN" secondAttribute="bottom" id="Qxl-2n-tP3"/>
+                            <constraint firstItem="SDG-w5-n2y" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="S19-aY-7Ir"/>
                             <constraint firstItem="YxT-dj-BwN" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="TlB-hs-PkV"/>
                             <constraint firstItem="YxT-dj-BwN" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Xn1-ht-lIt"/>
                             <constraint firstAttribute="trailing" secondItem="YxT-dj-BwN" secondAttribute="trailing" id="z6l-Zn-MXz"/>
@@ -269,8 +241,7 @@
     <resources>
         <image name="Chart" width="245" height="245"/>
         <image name="SplashScreen" width="750" height="1624"/>
-        <image name="chevron.left" catalog="system" width="97" height="128"/>
-        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <image name="chevron-left.png" width="20" height="20"/>
         <namedColor name="GreenAddIncomes">
             <color red="0.14509803921568629" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
