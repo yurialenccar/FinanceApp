@@ -688,12 +688,7 @@ meta.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="qYh-ru-5e4"/>
-        <segue reference="36b-qz-qqf"/>
-=======
         <segue reference="Fhi-1p-FGz"/>
->>>>>>> features/metas
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Casa" width="35" height="35"/>
