@@ -207,6 +207,7 @@
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="LE7-KH-2Tb" kind="presentation" id="AEY-iJ-zyj"/>
@@ -640,7 +641,7 @@
             <objects>
                 <viewController modalPresentationStyle="currentContext" id="kRp-E4-xJF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bPG-x4-Ul4">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="K2l-ZE-SC5">
@@ -648,7 +649,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADp-vd-gvS">
-                                <rect key="frame" x="0.0" y="483" width="430" height="380"/>
+                                <rect key="frame" x="0.0" y="518" width="430" height="380"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ya2-8Y-sEl">
                                         <rect key="frame" x="20" y="280" width="390" height="50"/>
@@ -814,8 +815,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="L4b-Bv-3PK"/>
-        <segue reference="3R5-cy-7vl"/>
+        <segue reference="XdU-Qk-lcV"/>
+        <segue reference="9Kq-5h-AO4"/>
         <segue reference="PYR-0c-tHm"/>
     </inferredMetricsTieBreakers>
     <resources>
