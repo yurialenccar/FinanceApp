@@ -310,7 +310,7 @@
                                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <segue destination="2z9-kO-W80" kind="show" id="gEe-zC-DfJ"/>
+                                                            <action selector="tappedLogoutButton:" destination="8Uf-zB-Ba5" eventType="touchUpInside" id="3aX-EV-PPl"/>
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron-left-1" translatesAutoresizingMaskIntoConstraints="NO" id="f8E-50-XO6">
@@ -1174,14 +1174,14 @@
             <objects>
                 <viewController id="2z9-kO-W80" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3AQ-ob-H20">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="jjw-78-HLL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="64S-u9-kMg">
-                                <rect key="frame" x="11" y="34" width="353" height="579"/>
+                                <rect key="frame" x="11" y="44" width="353" height="579"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RGu-tj-xQr">
                                         <rect key="frame" x="21.5" y="0.0" width="310" height="248"/>

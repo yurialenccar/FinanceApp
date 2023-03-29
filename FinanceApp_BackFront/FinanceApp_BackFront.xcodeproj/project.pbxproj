@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A14DAE5A29D4C52C00714208 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE5929D4C52C00714208 /* SplashViewController.swift */; };
+		A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5B29D4E51400714208 /* TabBarController.storyboard */; };
 		E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084929BDAD100098F0B5 /* AppDelegate.swift */; };
 		E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */; };
 		E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084D29BDAD100098F0B5 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		A14DAE5929D4C52C00714208 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A14DAE5B29D4E51400714208 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp_BackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35D084929BDAD100098F0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,9 +65,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A14DAE5D29D4E52000714208 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E35D084D29BDAD100098F0B5 /* ViewController.swift */,
+				A14DAE5929D4C52C00714208 /* SplashViewController.swift */,
+				E35D084F29BDAD100098F0B5 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A14DAE5E29D4E53600714208 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				A14DAE5B29D4E51400714208 /* TabBarController.storyboard */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
 		A16B56A229C1076500E53727 /* Telas */ = {
 			isa = PBXGroup;
 			children = (
+				A14DAE5D29D4E52000714208 /* Main */,
+				A14DAE5E29D4E53600714208 /* TabBarController */,
 				A16B56A429C1079000E53727 /* Tela_Inicio */,
 				A16B56A829C107BC00E53727 /* RelatoriosVC */,
 				A16B56A529C1079900E53727 /* Add_Tela */,
@@ -132,9 +154,6 @@
 			children = (
 				E35D084929BDAD100098F0B5 /* AppDelegate.swift */,
 				E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */,
-				E35D084D29BDAD100098F0B5 /* ViewController.swift */,
-				A14DAE5929D4C52C00714208 /* SplashViewController.swift */,
-				E35D084F29BDAD100098F0B5 /* Main.storyboard */,
 				E35D085529BDAD110098F0B5 /* Assets.xcassets */,
 				E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */,
 				E35D085A29BDAD110098F0B5 /* Info.plist */,
@@ -214,6 +233,7 @@
 			files = (
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
 				E3C0915B29C21CD400BE4441 /* Metas_VC.storyboard in Resources */,
+				A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */,
 				E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */,
 				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
 				E3E9089329BFAF2A00B34864 /* RelatoriosVC.storyboard in Resources */,

@@ -15,7 +15,11 @@ class Mais_Tela: UIViewController {
         
     }
     
-
+    @IBAction func tappedLogoutButton(_ sender: UIButton) {
+        tabBarController?.navigationController?.popViewController(animated: true)
+        print("Botao pressionado")
+    }
+    
 }
 
 
