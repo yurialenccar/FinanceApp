@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="1766" y="1264"/>
         </scene>
-        <!--RelatoriosVC-->
+        <!--Registros-->
         <scene sceneID="eUo-BF-fqP">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="RelatoriosVC" storyboardName="RelatoriosVC" referencedIdentifier="RelatoriosVC" id="4lp-b4-zJf" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="RelatoriosVC" storyboardName="Registros" referencedIdentifier="Registros" id="4lp-b4-zJf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="331-Tt-ahE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGs-ZP-dhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -164,11 +164,11 @@
             </objects>
             <point key="canvasLocation" x="1766" y="525"/>
         </scene>
-        <!--Relatorio-->
+        <!--Registros-->
         <scene sceneID="Dz6-Wb-Zkf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="uSs-uY-cSp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Relatorio" image="doc" catalog="system" id="XYa-F9-8xU"/>
+                    <tabBarItem key="tabBarItem" title="Registros" image="doc" catalog="system" id="XYa-F9-8xU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6ye-Dk-kvL">
                         <autoresizingMask key="autoresizingMask"/>

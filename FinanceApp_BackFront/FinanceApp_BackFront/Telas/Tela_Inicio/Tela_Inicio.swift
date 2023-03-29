@@ -16,4 +16,7 @@ class Tela_Inicio: UIViewController {
     }
     
 
+    @IBAction func tappedShowRelatoriosScreen(_ sender: UIButton) {
+        performSegue(withIdentifier: "showRelatoriosVC", sender: nil)
+    }
 }
