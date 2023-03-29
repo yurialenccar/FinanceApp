@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A14DAE5A29D4C52C00714208 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE5929D4C52C00714208 /* SplashViewController.swift */; };
 		E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084929BDAD100098F0B5 /* AppDelegate.swift */; };
 		E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */; };
 		E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084D29BDAD100098F0B5 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A14DAE5929D4C52C00714208 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp_BackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35D084929BDAD100098F0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				E35D084929BDAD100098F0B5 /* AppDelegate.swift */,
 				E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */,
 				E35D084D29BDAD100098F0B5 /* ViewController.swift */,
+				A14DAE5929D4C52C00714208 /* SplashViewController.swift */,
 				E35D084F29BDAD100098F0B5 /* Main.storyboard */,
 				E35D085529BDAD110098F0B5 /* Assets.xcassets */,
 				E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */,
@@ -237,6 +240,7 @@
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
 				E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
+				A14DAE5A29D4C52C00714208 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

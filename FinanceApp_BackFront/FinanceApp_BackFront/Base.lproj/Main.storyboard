@@ -183,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="1766" y="2176"/>
         </scene>
-        <!--View Controller-->
+        <!--Splash View Controller-->
         <scene sceneID="UlX-i8-q9d">
             <objects>
-                <viewController id="rSH-h7-8gl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rSH-h7-8gl" customClass="SplashViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vHZ-av-j4e">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,27 +200,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="2ZT-PB-8A9">
                                 <rect key="frame" x="71" y="307" width="288" height="318"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eQ-AH-XI8">
-                                <rect key="frame" x="30" y="783.66666666666663" width="370" height="34.333333333333371"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="iniciar">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="LE7-KH-2Tb" kind="presentation" id="AEY-iJ-zyj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WOi-sy-N8L"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3eQ-AH-XI8" firstAttribute="leading" secondItem="WOi-sy-N8L" secondAttribute="leading" constant="30" id="4Mi-nn-iTh"/>
-                            <constraint firstItem="WOi-sy-N8L" firstAttribute="trailing" secondItem="3eQ-AH-XI8" secondAttribute="trailing" constant="30" id="8kj-O7-f8o"/>
                             <constraint firstItem="UIH-YJ-RDw" firstAttribute="leading" secondItem="vHZ-av-j4e" secondAttribute="leading" constant="-35" id="BPk-lC-jpx"/>
-                            <constraint firstItem="WOi-sy-N8L" firstAttribute="bottom" secondItem="3eQ-AH-XI8" secondAttribute="bottom" constant="80" id="G4o-ft-gds"/>
                             <constraint firstAttribute="trailing" secondItem="UIH-YJ-RDw" secondAttribute="trailing" constant="-35" id="PXX-zm-hMG"/>
                             <constraint firstItem="UIH-YJ-RDw" firstAttribute="top" secondItem="vHZ-av-j4e" secondAttribute="top" id="R8Z-6J-qyv"/>
                             <constraint firstItem="2ZT-PB-8A9" firstAttribute="centerX" secondItem="vHZ-av-j4e" secondAttribute="centerX" id="fds-dH-fQm"/>
@@ -228,6 +212,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0HB-kQ-uqA"/>
+                    <connections>
+                        <segue destination="LE7-KH-2Tb" kind="show" identifier="showSelectLoginScreen" id="LSF-Br-Rox"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9f-Wr-Cdu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -495,7 +482,7 @@
             <objects>
                 <viewController id="F86-4x-Pss" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gev-Hi-uYp">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="dBI-mV-iTG">
@@ -503,7 +490,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2WH-yD-EXX">
-                                <rect key="frame" x="0.0" y="563" width="430" height="300"/>
+                                <rect key="frame" x="0.0" y="598" width="430" height="300"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="18c-V7-8zb">
                                         <rect key="frame" x="60" y="100" width="350" height="50"/>
@@ -596,7 +583,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="c1c-bg-904">
-                                <rect key="frame" x="71" y="159" width="288" height="185"/>
+                                <rect key="frame" x="71" y="203" width="288" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="Osu-NF-J4x"/>
                                 </constraints>
@@ -791,7 +778,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="d8y-NJ-KY8">
-                                <rect key="frame" x="71" y="159" width="288" height="185"/>
+                                <rect key="frame" x="71" y="203" width="288" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="Wet-O1-6gS"/>
                                 </constraints>
