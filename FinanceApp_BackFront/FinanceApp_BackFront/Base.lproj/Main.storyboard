@@ -213,7 +213,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0HB-kQ-uqA"/>
                     <connections>
-                        <segue destination="LE7-KH-2Tb" kind="show" identifier="showSelectLoginScreen" id="LSF-Br-Rox"/>
+                        <segue destination="LE7-KH-2Tb" kind="showDetail" identifier="showSelectLoginScreen" animates="NO" id="LSF-Br-Rox"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9f-Wr-Cdu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -482,7 +482,7 @@
             <objects>
                 <viewController id="F86-4x-Pss" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gev-Hi-uYp">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="dBI-mV-iTG">
@@ -490,7 +490,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2WH-yD-EXX">
-                                <rect key="frame" x="0.0" y="598" width="430" height="300"/>
+                                <rect key="frame" x="0.0" y="563" width="430" height="300"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="18c-V7-8zb">
                                         <rect key="frame" x="60" y="100" width="350" height="50"/>
@@ -583,7 +583,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="c1c-bg-904">
-                                <rect key="frame" x="71" y="203" width="288" height="185"/>
+                                <rect key="frame" x="71" y="159" width="288" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="Osu-NF-J4x"/>
                                 </constraints>
@@ -628,7 +628,7 @@
             <objects>
                 <viewController modalPresentationStyle="currentContext" id="kRp-E4-xJF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bPG-x4-Ul4">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="K2l-ZE-SC5">
@@ -636,7 +636,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADp-vd-gvS">
-                                <rect key="frame" x="0.0" y="518" width="430" height="380"/>
+                                <rect key="frame" x="0.0" y="483" width="430" height="380"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ya2-8Y-sEl">
                                         <rect key="frame" x="20" y="280" width="390" height="50"/>
@@ -778,7 +778,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="d8y-NJ-KY8">
-                                <rect key="frame" x="71" y="203" width="288" height="185"/>
+                                <rect key="frame" x="71" y="159" width="288" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="Wet-O1-6gS"/>
                                 </constraints>
