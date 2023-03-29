@@ -348,11 +348,6 @@ meta.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="uby-Fn-mLi" secondAttribute="trailing" constant="20" id="Hss-8r-MSR"/>
-                                            <constraint firstItem="uby-Fn-mLi" firstAttribute="leading" secondItem="Qf3-5d-eDS" secondAttribute="leading" constant="20" id="S50-Rs-iHk"/>
-                                            <constraint firstAttribute="bottom" secondItem="uby-Fn-mLi" secondAttribute="bottom" constant="50" id="whD-Ke-wdO"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-kc-HVP">
                                         <rect key="frame" x="94.666666666666671" y="756" width="230.66666666666663" height="62"/>
@@ -707,7 +702,6 @@ meta.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BSU-lT-3WN"/>
         <segue reference="MiI-0l-SUW"/>
     </inferredMetricsTieBreakers>
     <resources>

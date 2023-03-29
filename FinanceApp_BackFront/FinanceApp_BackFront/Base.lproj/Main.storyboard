@@ -232,8 +232,8 @@
                                 <rect key="frame" x="-11" y="0.0" width="452" height="932"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="9Mo-r5-n1J">
-                                <rect key="frame" x="38.666666666666657" y="176.66666666666663" width="353" height="579"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="9Mo-r5-n1J">
+                                <rect key="frame" x="38.666666666666657" y="201.66666666666663" width="353" height="529"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uGF-Ch-l7V">
                                         <rect key="frame" x="21.333333333333343" y="0.0" width="310" height="248"/>
@@ -248,7 +248,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WEX-O5-BmZ">
-                                        <rect key="frame" x="0.0" y="398" width="353" height="181"/>
+                                        <rect key="frame" x="0.0" y="348" width="353" height="181"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nKn-fX-lnv">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
