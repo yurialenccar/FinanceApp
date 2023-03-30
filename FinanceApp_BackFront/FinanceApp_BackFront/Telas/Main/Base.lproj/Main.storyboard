@@ -420,7 +420,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="c1c-bg-904" firstAttribute="centerX" secondItem="Gev-Hi-uYp" secondAttribute="centerX" id="5LM-AI-bpf"/>
-                            <constraint firstItem="2WH-yD-EXX" firstAttribute="bottom" secondItem="Gf7-2l-yqa" secondAttribute="bottom" id="DMR-Sm-gGZ"/>
+                            <constraint firstItem="2WH-yD-EXX" firstAttribute="bottom" secondItem="Gev-Hi-uYp" secondAttribute="bottom" id="DMR-Sm-gGZ"/>
                             <constraint firstItem="2WH-yD-EXX" firstAttribute="leading" secondItem="Gf7-2l-yqa" secondAttribute="leading" id="QcW-Yn-C7p"/>
                             <constraint firstItem="2WH-yD-EXX" firstAttribute="trailing" secondItem="Gf7-2l-yqa" secondAttribute="trailing" id="QgU-d5-kfq"/>
                             <constraint firstItem="c1c-bg-904" firstAttribute="top" secondItem="Gf7-2l-yqa" secondAttribute="top" constant="100" id="yAo-sk-axX"/>
@@ -608,7 +608,7 @@
                         <viewLayoutGuide key="safeArea" id="YlN-gp-uk4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ADp-vd-gvS" firstAttribute="bottom" secondItem="YlN-gp-uk4" secondAttribute="bottom" id="0dR-Xe-PPh"/>
+                            <constraint firstItem="ADp-vd-gvS" firstAttribute="bottom" secondItem="bPG-x4-Ul4" secondAttribute="bottom" id="0dR-Xe-PPh"/>
                             <constraint firstItem="d8y-NJ-KY8" firstAttribute="centerX" secondItem="bPG-x4-Ul4" secondAttribute="centerX" id="F5Z-ic-wgS"/>
                             <constraint firstItem="ADp-vd-gvS" firstAttribute="trailing" secondItem="YlN-gp-uk4" secondAttribute="trailing" id="GEL-vP-CVX"/>
                             <constraint firstItem="ADp-vd-gvS" firstAttribute="leading" secondItem="YlN-gp-uk4" secondAttribute="leading" id="KQl-N5-6aO"/>
