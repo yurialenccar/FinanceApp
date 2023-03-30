@@ -20,6 +20,10 @@ class Mais_Tela: UIViewController {
         print("Botao pressionado")
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.navigationController?.isNavigationBarHidden = false
+    }
+    
 }
 
 

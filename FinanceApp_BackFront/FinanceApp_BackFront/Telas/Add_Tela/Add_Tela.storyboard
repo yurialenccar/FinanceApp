@@ -30,7 +30,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="o8d-eG-yjk" kind="show" id="NNN-YH-Xiv"/>
+                                    <segue destination="o8d-eG-yjk" kind="presentation" id="NNN-YH-Xiv"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rX-bG-AvS">
@@ -66,7 +66,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="FsX-d6-VQU" kind="show" id="Kmu-2w-PDi"/>
+                                    <segue destination="FsX-d6-VQU" kind="presentation" id="Kmu-2w-PDi"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u99-J7-Qux">
@@ -102,7 +102,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="MLs-hh-knK" kind="show" id="dn6-lc-Zw3"/>
+                                    <segue destination="MLs-hh-knK" kind="presentation" id="dn6-lc-Zw3"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-ea-S4W">
@@ -194,9 +194,9 @@
         <!--View Controller-->
         <scene sceneID="m5g-vF-6RA">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="FsX-d6-VQU" sceneMemberID="viewController">
+                <viewController id="FsX-d6-VQU" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBa-NP-RaW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNz-RC-k8M">
@@ -369,9 +369,9 @@
         <!--View Controller-->
         <scene sceneID="GGj-96-Iev">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="MLs-hh-knK" sceneMemberID="viewController">
+                <viewController id="MLs-hh-knK" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oOB-Gt-9c3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXZ-QO-CB9">
@@ -544,9 +544,9 @@
         <!--View Controller-->
         <scene sceneID="6KV-OB-n0C">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="o8d-eG-yjk" sceneMemberID="viewController">
+                <viewController id="o8d-eG-yjk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kgu-Bd-VJ5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGT-kg-nC8">

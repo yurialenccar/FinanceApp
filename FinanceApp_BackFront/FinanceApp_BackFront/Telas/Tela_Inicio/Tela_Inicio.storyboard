@@ -843,7 +843,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="wyk-Yc-78f" kind="show" identifier="showRelatoriosVC" id="U5h-j5-9BE"/>
+                        <segue destination="wyk-Yc-78f" kind="presentation" identifier="showRelatoriosVC" id="U5h-j5-9BE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

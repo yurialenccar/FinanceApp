@@ -11,10 +11,14 @@ class Tela_Inicio: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //self.tabBarController?.navigationItem.hidesBackButton = true
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+        self.tabBarController?.navigationController?.isNavigationBarHidden = true
+    }
 
     @IBAction func tappedShowRelatoriosScreen(_ sender: UIButton) {
         performSegue(withIdentifier: "showRelatoriosVC", sender: nil)
