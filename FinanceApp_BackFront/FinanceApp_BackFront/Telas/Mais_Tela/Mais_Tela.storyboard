@@ -788,8 +788,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="yDO-Ma-x37">
-                                <rect key="frame" x="0.0" y="83" width="375" height="481"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Vj8-Xa-Cjd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="pcr-2x-e8w"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversão de Câmbio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoG-fF-Cqz">
+                                <rect key="frame" x="0.0" y="35" width="375" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Mcb-Qs-lHK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yDO-Ma-x37">
+                                <rect key="frame" x="0.0" y="107" width="375" height="463"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="uvl-3v-1tp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
@@ -841,7 +856,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EcQ-Xh-S1a">
-                                        <rect key="frame" x="0.0" y="74" width="375" height="284"/>
+                                        <rect key="frame" x="0.0" y="65" width="375" height="284"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Zy-lH-mwn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
@@ -898,7 +913,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T4d-vb-XD2">
-                                        <rect key="frame" x="0.0" y="377" width="375" height="104"/>
+                                        <rect key="frame" x="0.0" y="359" width="375" height="104"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4t-tP-Yek">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
@@ -944,21 +959,6 @@
                                     <constraint firstAttribute="trailing" secondItem="uvl-3v-1tp" secondAttribute="trailing" id="OKs-8W-uNZ"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Vj8-Xa-Cjd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="94" id="pcr-2x-e8w"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversão de Câmbio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoG-fF-Cqz">
-                                <rect key="frame" x="0.0" y="35" width="375" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="Mcb-Qs-lHK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uOD-ha-x7l"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -967,8 +967,8 @@
                             <constraint firstItem="Vj8-Xa-Cjd" firstAttribute="top" secondItem="vTz-4h-8GI" secondAttribute="top" id="C7I-lZ-YfU"/>
                             <constraint firstItem="Vj8-Xa-Cjd" firstAttribute="leading" secondItem="vTz-4h-8GI" secondAttribute="leading" id="EL2-7m-lfc"/>
                             <constraint firstItem="GoG-fF-Cqz" firstAttribute="top" secondItem="uOD-ha-x7l" secondAttribute="top" constant="35" id="I0I-KV-bh2"/>
-                            <constraint firstItem="yDO-Ma-x37" firstAttribute="centerY" secondItem="vTz-4h-8GI" secondAttribute="centerY" id="TGO-MI-OHW"/>
                             <constraint firstAttribute="trailing" secondItem="Vj8-Xa-Cjd" secondAttribute="trailing" id="dIm-2Z-xbF"/>
+                            <constraint firstItem="yDO-Ma-x37" firstAttribute="centerY" secondItem="vTz-4h-8GI" secondAttribute="centerY" constant="15" id="h2w-cb-SZN"/>
                             <constraint firstItem="yDO-Ma-x37" firstAttribute="centerX" secondItem="vTz-4h-8GI" secondAttribute="centerX" id="hCF-9v-PYt"/>
                             <constraint firstItem="GoG-fF-Cqz" firstAttribute="trailing" secondItem="uOD-ha-x7l" secondAttribute="trailing" id="whX-8w-dd4"/>
                         </constraints>
