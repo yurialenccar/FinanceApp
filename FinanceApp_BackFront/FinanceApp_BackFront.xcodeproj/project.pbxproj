@@ -11,6 +11,8 @@
 		A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5B29D4E51400714208 /* TabBarController.storyboard */; };
 		A14DAE6029D4E91900714208 /* Registros.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5F29D4E91900714208 /* Registros.storyboard */; };
 		A14DAE6329D4E94200714208 /* Registros.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE6229D4E94200714208 /* Registros.swift */; };
+		A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */; };
+		A16636EF29DE33C500162872 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EE29DE33C500162872 /* Transactions.swift */; };
 		E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084929BDAD100098F0B5 /* AppDelegate.swift */; };
 		E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */; };
 		E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084D29BDAD100098F0B5 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 		A14DAE5B29D4E51400714208 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		A14DAE5F29D4E91900714208 /* Registros.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registros.storyboard; sourceTree = "<group>"; };
 		A14DAE6229D4E94200714208 /* Registros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registros.swift; sourceTree = "<group>"; };
+		A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A16636EE29DE33C500162872 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp_BackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35D084929BDAD100098F0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,8 +96,17 @@
 			children = (
 				A14DAE5F29D4E91900714208 /* Registros.storyboard */,
 				A14DAE6229D4E94200714208 /* Registros.swift */,
+				A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */,
 			);
 			path = Registros;
+			sourceTree = "<group>";
+		};
+		A16636ED29DE1B0400162872 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A16636EE29DE33C500162872 /* Transactions.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A16B56A229C1076500E53727 /* Telas */ = {
@@ -173,6 +186,7 @@
 				E35D085A29BDAD110098F0B5 /* Info.plist */,
 				E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */,
 				A16B56A229C1076500E53727 /* Telas */,
+				A16636ED29DE1B0400162872 /* Models */,
 				E3E9089529BFF95D00B34864 /* Poppins */,
 			);
 			path = FinanceApp_BackFront;
@@ -273,8 +287,10 @@
 				E3C0915929C21CC900BE4441 /* Metas_VC.swift in Sources */,
 				E35D086929BDB1C60098F0B5 /* Add_Tela.swift in Sources */,
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
+				A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */,
 				A14DAE6329D4E94200714208 /* Registros.swift in Sources */,
 				E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */,
+				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
 				A14DAE5A29D4C52C00714208 /* SplashViewController.swift in Sources */,
 			);

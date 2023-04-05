@@ -9,21 +9,44 @@ import UIKit
 
 class Registros: UIViewController {
 
+    @IBOutlet weak var transactionsCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        transactionsCollectionView.delegate = self
+        transactionsCollectionView.dataSource = self
+        transactionsCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
 
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension Registros: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        transactionsCollectionView.deselectItem(at: indexPath, animated: true)
+        print("you tapped collection cell \(indexPath.row)")
     }
-    */
+}
 
+extension Registros: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return transactions.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "transactionsCollectionViewCell", for: indexPath) as! TransactionsCollectionViewCell
+        
+        cell.setup(with: transactions[indexPath.row])
+        return cell
+    }
+    
+    
+}
+
+extension Registros:UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize (width: 361, height: 175)
+    }
 }
