@@ -47,6 +47,6 @@ extension Registros: UICollectionViewDataSource {
 
 extension Registros:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize (width: 361, height: 175)
+        return CGSize (width: 361, height: 90)
     }
 }
