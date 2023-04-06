@@ -16,7 +16,7 @@ struct Transactions{
 }
 
 let transactions: [Transactions] = [
-    Transactions(desc: "Hamburgueria", value: -59.00, categoryIndex: 1, date: "29/03/2023"),
+    Transactions(desc: "Hamburgueria", value: -59.00, categoryIndex: 0, date: "29/03/2023"),
     Transactions(desc: "Aluguel", value: -1500.00, categoryIndex: 1, date: "28/03/2023"),
-    Transactions(desc: "Aplicativo", value: 12000.00, categoryIndex: 1, date: "27/03/2023")
+    Transactions(desc: "Aplicativo", value: 12000.00, categoryIndex: 2, date: "27/03/2023")
 ]

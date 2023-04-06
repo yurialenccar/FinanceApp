@@ -19,12 +19,17 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var categoryPanelView: UIView!
+    
+    
     func setup(with transactions:Transactions){
         descLabel.text = transactions.desc
         valueLabel.text = "R$ \(String(format: "%.2f", transactions.value))"
-        categoryLabel.text = "Alimentação"
-        categoryImage.image = UIImage(imageLiteralResourceName: "Alimentação")
+        categoryLabel.text = listedCategories[transactions.categoryIndex].name
+        categoryImage.image = listedCategories[transactions.categoryIndex].image
         dateLabel.text = transactions.date
+        
+        categoryPanelView.backgroundColor = listedCategories[transactions.categoryIndex].color
         
         if transactions.value > 0{
             valueLabel.textColor = .green
