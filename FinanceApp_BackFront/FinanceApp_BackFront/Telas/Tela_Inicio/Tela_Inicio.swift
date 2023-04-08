@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Charts
 
 class Tela_Inicio: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.tabBarController?.navigationItem.hidesBackButton = true

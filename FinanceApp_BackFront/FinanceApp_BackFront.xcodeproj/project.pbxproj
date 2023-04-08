@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77C95F712D80F1F287355889 /* Pods_FinanceApp_BackFront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851463C049845516B8F4A4A8 /* Pods_FinanceApp_BackFront.framework */; };
 		A14DAE5A29D4C52C00714208 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE5929D4C52C00714208 /* SplashViewController.swift */; };
 		A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5B29D4E51400714208 /* TabBarController.storyboard */; };
 		A14DAE6029D4E91900714208 /* Registros.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5F29D4E91900714208 /* Registros.storyboard */; };
@@ -27,6 +28,8 @@
 		E35D086B29BDB1D00098F0B5 /* Add_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */; };
 		E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D087029BDB2030098F0B5 /* Mais_Tela.swift */; };
 		E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */; };
+		E366E3B729E0D8A200F89209 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E366E3B629E0D8A200F89209 /* Charts.framework */; };
+		E366E3B929E0D8A700F89209 /* Algorithms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E366E3B829E0D8A700F89209 /* Algorithms.framework */; };
 		E3C0915929C21CC900BE4441 /* Metas_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0915829C21CC900BE4441 /* Metas_VC.swift */; };
 		E3C0915B29C21CD400BE4441 /* Metas_VC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */; };
 		E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C974D3A11D911F04F2A9C80 /* Pods-FinanceApp_BackFront.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp_BackFront.release.xcconfig"; path = "Target Support Files/Pods-FinanceApp_BackFront/Pods-FinanceApp_BackFront.release.xcconfig"; sourceTree = "<group>"; };
+		692476B1F1F3BEC20C43432B /* Pods-FinanceApp_BackFront.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp_BackFront.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp_BackFront/Pods-FinanceApp_BackFront.debug.xcconfig"; sourceTree = "<group>"; };
+		851463C049845516B8F4A4A8 /* Pods_FinanceApp_BackFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp_BackFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14DAE5929D4C52C00714208 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		A14DAE5B29D4E51400714208 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		A14DAE5F29D4E91900714208 /* Registros.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registros.storyboard; sourceTree = "<group>"; };
@@ -57,6 +63,8 @@
 		E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add_Tela.storyboard; sourceTree = "<group>"; };
 		E35D087029BDB2030098F0B5 /* Mais_Tela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mais_Tela.swift; sourceTree = "<group>"; };
 		E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mais_Tela.storyboard; sourceTree = "<group>"; };
+		E366E3B629E0D8A200F89209 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E366E3B829E0D8A700F89209 /* Algorithms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Algorithms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C0915829C21CC900BE4441 /* Metas_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metas_VC.swift; sourceTree = "<group>"; };
 		E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Metas_VC.storyboard; sourceTree = "<group>"; };
 		E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoriosVC.swift; sourceTree = "<group>"; };
@@ -69,12 +77,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E366E3B929E0D8A700F89209 /* Algorithms.framework in Frameworks */,
+				E366E3B729E0D8A200F89209 /* Charts.framework in Frameworks */,
+				77C95F712D80F1F287355889 /* Pods_FinanceApp_BackFront.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A570D5CBF68D44959199050 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				692476B1F1F3BEC20C43432B /* Pods-FinanceApp_BackFront.debug.xcconfig */,
+				0C974D3A11D911F04F2A9C80 /* Pods-FinanceApp_BackFront.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A14DAE5D29D4E52000714208 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,11 +183,23 @@
 			path = RelatoriosVC;
 			sourceTree = "<group>";
 		};
+		B150CEFEE079F7249876CA80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E366E3B829E0D8A700F89209 /* Algorithms.framework */,
+				E366E3B629E0D8A200F89209 /* Charts.framework */,
+				851463C049845516B8F4A4A8 /* Pods_FinanceApp_BackFront.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E35D083D29BDAD100098F0B5 = {
 			isa = PBXGroup;
 			children = (
 				E35D084829BDAD100098F0B5 /* FinanceApp_BackFront */,
 				E35D084729BDAD100098F0B5 /* Products */,
+				1A570D5CBF68D44959199050 /* Pods */,
+				B150CEFEE079F7249876CA80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35D085D29BDAD110098F0B5 /* Build configuration list for PBXNativeTarget "FinanceApp_BackFront" */;
 			buildPhases = (
+				508F1C797E342E0395898767 /* [CP] Check Pods Manifest.lock */,
 				E35D084229BDAD100098F0B5 /* Sources */,
 				E35D084329BDAD100098F0B5 /* Frameworks */,
 				E35D084429BDAD100098F0B5 /* Resources */,
+				8824D3F8F61A3C561032BE1B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -277,6 +311,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		508F1C797E342E0395898767 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinanceApp_BackFront-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8824D3F8F61A3C561032BE1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinanceApp_BackFront/Pods-FinanceApp_BackFront-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinanceApp_BackFront/Pods-FinanceApp_BackFront-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinanceApp_BackFront/Pods-FinanceApp_BackFront-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E35D084229BDAD100098F0B5 /* Sources */ = {
@@ -438,6 +514,7 @@
 		};
 		E35D085E29BDAD110098F0B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 692476B1F1F3BEC20C43432B /* Pods-FinanceApp_BackFront.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -466,6 +543,7 @@
 		};
 		E35D085F29BDAD110098F0B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C974D3A11D911F04F2A9C80 /* Pods-FinanceApp_BackFront.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
