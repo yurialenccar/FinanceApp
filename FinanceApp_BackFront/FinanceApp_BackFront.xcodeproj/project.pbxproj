@@ -38,6 +38,7 @@
 		E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */; };
 		E366E3B729E0D8A200F89209 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E366E3B629E0D8A200F89209 /* Charts.framework */; };
 		E366E3B929E0D8A700F89209 /* Algorithms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E366E3B829E0D8A700F89209 /* Algorithms.framework */; };
+		E366E3BB29E502D400F89209 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E366E3BA29E502D400F89209 /* File.swift */; };
 		E3C0915929C21CC900BE4441 /* Metas_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0915829C21CC900BE4441 /* Metas_VC.swift */; };
 		E3C0915B29C21CD400BE4441 /* Metas_VC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */; };
 		E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */; };
@@ -81,6 +82,7 @@
 		E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mais_Tela.storyboard; sourceTree = "<group>"; };
 		E366E3B629E0D8A200F89209 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E366E3B829E0D8A700F89209 /* Algorithms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Algorithms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E366E3BA29E502D400F89209 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E3C0915829C21CC900BE4441 /* Metas_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metas_VC.swift; sourceTree = "<group>"; };
 		E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Metas_VC.storyboard; sourceTree = "<group>"; };
 		E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoriosVC.swift; sourceTree = "<group>"; };
@@ -159,10 +161,14 @@
 				A16B56A529C1079900E53727 /* Add_Tela */,
 				E3C0915729C21C9100BE4441 /* Metas_VC */,
 				A16B56A629C107A400E53727 /* Mais_Tela */,
+<<<<<<< HEAD
 				A1E107B129E4E977005A3F4F /* AccountsScreen */,
 				A1E107B929E4F410005A3F4F /* CreditCardsScreen */,
 				A1E107C529E4F773005A3F4F /* CurrencyScreen */,
 				A1E107BE29E4F628005A3F4F /* ProfileScreen */,
+=======
+				E366E3BA29E502D400F89209 /* File.swift */,
+>>>>>>> features/telaProgramatica
 			);
 			path = Telas;
 			sourceTree = "<group>";
@@ -431,7 +437,11 @@
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
 				A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */,
 				A14DAE6329D4E94200714208 /* Registros.swift in Sources */,
+<<<<<<< HEAD
 				A1E107BD29E4F432005A3F4F /* CreditCardsScreen.swift in Sources */,
+=======
+				E366E3BB29E502D400F89209 /* File.swift in Sources */,
+>>>>>>> features/telaProgramatica
 				E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */,
 				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
