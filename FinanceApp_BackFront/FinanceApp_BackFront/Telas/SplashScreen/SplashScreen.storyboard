@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="87R-Ob-zTW">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash Screen-->
+        <scene sceneID="Knh-eS-XvQ">
+            <objects>
+                <viewController storyboardIdentifier="SplashScreen" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RDR-Jg-aJd" customClass="SplashScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qRB-Pi-G0K">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="i1e-Aq-l0c">
+                                <rect key="frame" x="-35" y="0.0" width="463" height="945"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="945" id="6XB-2x-sDY"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="zIk-gO-2r9">
+                                <rect key="frame" x="52.666666666666657" y="267" width="288" height="318"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="p59-7R-c74"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="i1e-Aq-l0c" secondAttribute="trailing" constant="-35" id="56M-BM-WJf"/>
+                            <constraint firstItem="zIk-gO-2r9" firstAttribute="centerY" secondItem="qRB-Pi-G0K" secondAttribute="centerY" id="K72-Rt-KZF"/>
+                            <constraint firstItem="i1e-Aq-l0c" firstAttribute="leading" secondItem="qRB-Pi-G0K" secondAttribute="leading" constant="-35" id="Zms-bJ-lF1"/>
+                            <constraint firstItem="i1e-Aq-l0c" firstAttribute="top" secondItem="qRB-Pi-G0K" secondAttribute="top" id="cDd-D6-aVg"/>
+                            <constraint firstItem="zIk-gO-2r9" firstAttribute="centerX" secondItem="qRB-Pi-G0K" secondAttribute="centerX" id="xTz-Ic-h5G"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lUW-OD-sGV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IY5-Qw-9WN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1121.3740458015266" y="1560.5633802816901"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3aB-4Z-cpv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="87R-Ob-zTW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qbg-qt-A5Q">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RDR-Jg-aJd" kind="relationship" relationship="rootViewController" id="SAZ-ah-4tW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4h-Ld-2JG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2048.0916030534349" y="1560.5633802816901"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="750" height="1624"/>
+        <image name="logo-finances" width="288" height="318"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
