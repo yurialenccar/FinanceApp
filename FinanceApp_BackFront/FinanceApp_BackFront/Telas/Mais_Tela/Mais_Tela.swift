@@ -15,14 +15,37 @@ class Mais_Tela: UIViewController {
         
     }
     
-    @IBAction func tappedLogoutButton(_ sender: UIButton) {
-        tabBarController?.navigationController?.popViewController(animated: true)
-        print("Botao pressionado")
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         tabBarController?.navigationController?.isNavigationBarHidden = false
     }
+    
+    @IBAction func tappedCategoriesButton(_ sender: UIButton) {
+        let vc: RelatoriosVC? = UIStoryboard(name: "RelatoriosVC", bundle: nil).instantiateViewController(withIdentifier: "RelatoriosVC") as? RelatoriosVC
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+    }
+    @IBAction func tappedCurrencyButton(_ sender: UIButton) {
+        let vc: CurrencyScreen? = UIStoryboard(name: "CurrencyScreen", bundle: nil).instantiateViewController(withIdentifier: "CurrencyScreen") as? CurrencyScreen
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+    }
+    @IBAction func tappedProfileButton(_ sender: UIButton) {
+        let vc: ProfileScreen? = UIStoryboard(name: "ProfileScreen", bundle: nil).instantiateViewController(withIdentifier: "ProfileScreen") as? ProfileScreen
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+    }
+    @IBAction func tappedAccountsButton(_ sender: UIButton) {
+        let vc: AccountsScreen? = UIStoryboard(name: "AccountsScreen", bundle: nil).instantiateViewController(withIdentifier: "AccountsScreen") as? AccountsScreen
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+    }
+    
+    @IBAction func tappedCreditCardsButton(_ sender: UIButton) {
+        let vc: CreditCardsScreen? = UIStoryboard(name: "CreditCardsScreen", bundle: nil).instantiateViewController(withIdentifier: "CreditCardsScreen") as? CreditCardsScreen
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+    }
+    
+    @IBAction func tappedLogoutButton(_ sender: UIButton) {
+        tabBarController?.navigationController?.popViewController(animated: true)
+    }
+    
+    
     
 }
 

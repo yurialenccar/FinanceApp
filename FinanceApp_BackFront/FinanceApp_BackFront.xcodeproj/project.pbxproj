@@ -15,6 +15,14 @@
 		A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */; };
 		A16636EF29DE33C500162872 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EE29DE33C500162872 /* Transactions.swift */; };
 		A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166B96129DF4BD600F33A98 /* ListedCategories.swift */; };
+		A1E107B329E4E9A6005A3F4F /* AccountsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E107B229E4E9A6005A3F4F /* AccountsScreen.storyboard */; };
+		A1E107B729E4EDB9005A3F4F /* AccountsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E107B629E4EDB9005A3F4F /* AccountsScreen.swift */; };
+		A1E107BB29E4F426005A3F4F /* CreditCardsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E107BA29E4F426005A3F4F /* CreditCardsScreen.storyboard */; };
+		A1E107BD29E4F432005A3F4F /* CreditCardsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E107BC29E4F432005A3F4F /* CreditCardsScreen.swift */; };
+		A1E107C029E4F63D005A3F4F /* ProfileScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E107BF29E4F63D005A3F4F /* ProfileScreen.storyboard */; };
+		A1E107C229E4F646005A3F4F /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E107C129E4F646005A3F4F /* ProfileScreen.swift */; };
+		A1E107C729E4F784005A3F4F /* CurrencyScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E107C629E4F784005A3F4F /* CurrencyScreen.storyboard */; };
+		A1E107C929E4F78F005A3F4F /* CurrencyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E107C829E4F78F005A3F4F /* CurrencyScreen.swift */; };
 		E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084929BDAD100098F0B5 /* AppDelegate.swift */; };
 		E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */; };
 		E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084D29BDAD100098F0B5 /* ViewController.swift */; };
@@ -48,6 +56,14 @@
 		A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A16636EE29DE33C500162872 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		A166B96129DF4BD600F33A98 /* ListedCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedCategories.swift; sourceTree = "<group>"; };
+		A1E107B229E4E9A6005A3F4F /* AccountsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountsScreen.storyboard; sourceTree = "<group>"; };
+		A1E107B629E4EDB9005A3F4F /* AccountsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreen.swift; sourceTree = "<group>"; };
+		A1E107BA29E4F426005A3F4F /* CreditCardsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreditCardsScreen.storyboard; sourceTree = "<group>"; };
+		A1E107BC29E4F432005A3F4F /* CreditCardsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardsScreen.swift; sourceTree = "<group>"; };
+		A1E107BF29E4F63D005A3F4F /* ProfileScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileScreen.storyboard; sourceTree = "<group>"; };
+		A1E107C129E4F646005A3F4F /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		A1E107C629E4F784005A3F4F /* CurrencyScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrencyScreen.storyboard; sourceTree = "<group>"; };
+		A1E107C829E4F78F005A3F4F /* CurrencyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyScreen.swift; sourceTree = "<group>"; };
 		E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp_BackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35D084929BDAD100098F0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +159,10 @@
 				A16B56A529C1079900E53727 /* Add_Tela */,
 				E3C0915729C21C9100BE4441 /* Metas_VC */,
 				A16B56A629C107A400E53727 /* Mais_Tela */,
+				A1E107B129E4E977005A3F4F /* AccountsScreen */,
+				A1E107B929E4F410005A3F4F /* CreditCardsScreen */,
+				A1E107C529E4F773005A3F4F /* CurrencyScreen */,
+				A1E107BE29E4F628005A3F4F /* ProfileScreen */,
 			);
 			path = Telas;
 			sourceTree = "<group>";
@@ -181,6 +201,42 @@
 				E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */,
 			);
 			path = RelatoriosVC;
+			sourceTree = "<group>";
+		};
+		A1E107B129E4E977005A3F4F /* AccountsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A1E107B229E4E9A6005A3F4F /* AccountsScreen.storyboard */,
+				A1E107B629E4EDB9005A3F4F /* AccountsScreen.swift */,
+			);
+			path = AccountsScreen;
+			sourceTree = "<group>";
+		};
+		A1E107B929E4F410005A3F4F /* CreditCardsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A1E107BA29E4F426005A3F4F /* CreditCardsScreen.storyboard */,
+				A1E107BC29E4F432005A3F4F /* CreditCardsScreen.swift */,
+			);
+			path = CreditCardsScreen;
+			sourceTree = "<group>";
+		};
+		A1E107BE29E4F628005A3F4F /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A1E107BF29E4F63D005A3F4F /* ProfileScreen.storyboard */,
+				A1E107C129E4F646005A3F4F /* ProfileScreen.swift */,
+			);
+			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
+		A1E107C529E4F773005A3F4F /* CurrencyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A1E107C629E4F784005A3F4F /* CurrencyScreen.storyboard */,
+				A1E107C829E4F78F005A3F4F /* CurrencyScreen.swift */,
+			);
+			path = CurrencyScreen;
 			sourceTree = "<group>";
 		};
 		B150CEFEE079F7249876CA80 /* Frameworks */ = {
@@ -296,16 +352,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E107BB29E4F426005A3F4F /* CreditCardsScreen.storyboard in Resources */,
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
+				A1E107C729E4F784005A3F4F /* CurrencyScreen.storyboard in Resources */,
 				E3C0915B29C21CD400BE4441 /* Metas_VC.storyboard in Resources */,
 				A14DAE6029D4E91900714208 /* Registros.storyboard in Resources */,
 				A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */,
+				A1E107B329E4E9A6005A3F4F /* AccountsScreen.storyboard in Resources */,
 				E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */,
 				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
 				E3E9089329BFAF2A00B34864 /* RelatoriosVC.storyboard in Resources */,
 				E35D086329BDB03D0098F0B5 /* Tela_Inicio.storyboard in Resources */,
 				E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */,
 				E35D086B29BDB1D00098F0B5 /* Add_Tela.storyboard in Resources */,
+				A1E107C029E4F63D005A3F4F /* ProfileScreen.storyboard in Resources */,
 				E35D085129BDAD100098F0B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,15 +423,19 @@
 				E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */,
 				E35D086129BDB0310098F0B5 /* Tela_Inicio.swift in Sources */,
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
+				A1E107C929E4F78F005A3F4F /* CurrencyScreen.swift in Sources */,
 				E3C0915929C21CC900BE4441 /* Metas_VC.swift in Sources */,
 				E35D086929BDB1C60098F0B5 /* Add_Tela.swift in Sources */,
+				A1E107C229E4F646005A3F4F /* ProfileScreen.swift in Sources */,
 				A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */,
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
 				A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */,
 				A14DAE6329D4E94200714208 /* Registros.swift in Sources */,
+				A1E107BD29E4F432005A3F4F /* CreditCardsScreen.swift in Sources */,
 				E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */,
 				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
+				A1E107B729E4EDB9005A3F4F /* AccountsScreen.swift in Sources */,
 				A14DAE5A29D4C52C00714208 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
