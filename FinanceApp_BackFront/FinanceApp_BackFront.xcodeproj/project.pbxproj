@@ -161,14 +161,10 @@
 				A16B56A529C1079900E53727 /* Add_Tela */,
 				E3C0915729C21C9100BE4441 /* Metas_VC */,
 				A16B56A629C107A400E53727 /* Mais_Tela */,
-<<<<<<< HEAD
 				A1E107B129E4E977005A3F4F /* AccountsScreen */,
 				A1E107B929E4F410005A3F4F /* CreditCardsScreen */,
 				A1E107C529E4F773005A3F4F /* CurrencyScreen */,
 				A1E107BE29E4F628005A3F4F /* ProfileScreen */,
-=======
-				E366E3BA29E502D400F89209 /* File.swift */,
->>>>>>> features/telaProgramatica
 			);
 			path = Telas;
 			sourceTree = "<group>";
@@ -437,11 +433,7 @@
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
 				A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */,
 				A14DAE6329D4E94200714208 /* Registros.swift in Sources */,
-<<<<<<< HEAD
 				A1E107BD29E4F432005A3F4F /* CreditCardsScreen.swift in Sources */,
-=======
-				E366E3BB29E502D400F89209 /* File.swift in Sources */,
->>>>>>> features/telaProgramatica
 				E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */,
 				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
