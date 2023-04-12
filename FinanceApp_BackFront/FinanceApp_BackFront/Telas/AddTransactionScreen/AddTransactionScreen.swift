@@ -15,14 +15,28 @@ class AddTransactionScreen: UIViewController {
         // Create a gradient layer
     
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func tappedIncomeButton(_ sender: UIButton) {
+        let vc: RegisterIncomeScreen? = UIStoryboard(name: "RegisterIncomeScreen", bundle: nil).instantiateViewController(withIdentifier: "RegisterIncomeScreen") as? RegisterIncomeScreen
+        present(vc ?? UIViewController(), animated: true)
     }
-    */
+    
+    @IBAction func tappedExpenseButton(_ sender: UIButton) {
+        let vc: RegisterExpenseScreen? = UIStoryboard(name: "RegisterExpenseScreen", bundle: nil).instantiateViewController(withIdentifier: "RegisterExpenseScreen") as? RegisterExpenseScreen
+        present(vc ?? UIViewController(), animated: true)
+    }
+    
+        
 
+    
+    
+        
+
+    
+    @IBAction func tappedCardExpButton(_ sender: UIButton) {
+        let vc: RegisterCardExpScreen? = UIStoryboard(name: "RegisterCardExpScreen", bundle: nil).instantiateViewController(withIdentifier: "RegisterCardExpScreen") as? RegisterCardExpScreen
+        present(vc ?? UIViewController(), animated: true)
+    }
+
+    
 }

@@ -31,10 +31,10 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
         
         categoryPanelView.backgroundColor = listedCategories[transactions.categoryIndex].color
         
-        if transactions.amount > 0{
-            valueLabel.textColor = .green
+        if transactions.type == .income{
+            valueLabel.textColor = UIColor(named: "GreenGeneralIncomes")
         } else {
-            valueLabel.textColor = .red
+            valueLabel.textColor = UIColor(named: "RedGeneralExpenses")
         }
     }
 }

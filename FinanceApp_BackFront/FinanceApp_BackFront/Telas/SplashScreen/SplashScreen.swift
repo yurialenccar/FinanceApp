@@ -18,10 +18,7 @@ class SplashScreen: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
 
-//            let vc: MainScreen? = UIStoryboard(name: "MainScreen", bundle: nil).instantiateViewController(withIdentifier: "MainScreen") as? MainScreen
-//            self.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
-            
-            let vc: CategoriesGraphScreen? = UIStoryboard(name: "CategoriesGraphScreen", bundle: nil).instantiateViewController(withIdentifier: "CategoriesGraphScreen") as? CategoriesGraphScreen
+            let vc: MainScreen? = UIStoryboard(name: "MainScreen", bundle: nil).instantiateViewController(withIdentifier: "MainScreen") as? MainScreen
             self.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
             
             
