@@ -21,3 +21,4 @@ let listedCategories:[ListedCategories] = [
     ListedCategories(id: 2, name: "Esportes", image: UIImage(imageLiteralResourceName: "football"), color: UIColor.purple)
     
 ]
+

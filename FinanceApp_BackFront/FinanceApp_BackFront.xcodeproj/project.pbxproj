@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		77C95F712D80F1F287355889 /* Pods_FinanceApp_BackFront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851463C049845516B8F4A4A8 /* Pods_FinanceApp_BackFront.framework */; };
+		A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140933C29E6EC3D0037662B /* CategoriesSum.swift */; };
 		A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5B29D4E51400714208 /* TabBarController.storyboard */; };
 		A14DAE6029D4E91900714208 /* TransactionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */; };
 		A14DAE6329D4E94200714208 /* TransactionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE6229D4E94200714208 /* TransactionsScreen.swift */; };
@@ -57,6 +58,7 @@
 		0C974D3A11D911F04F2A9C80 /* Pods-FinanceApp_BackFront.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp_BackFront.release.xcconfig"; path = "Target Support Files/Pods-FinanceApp_BackFront/Pods-FinanceApp_BackFront.release.xcconfig"; sourceTree = "<group>"; };
 		692476B1F1F3BEC20C43432B /* Pods-FinanceApp_BackFront.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp_BackFront.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp_BackFront/Pods-FinanceApp_BackFront.debug.xcconfig"; sourceTree = "<group>"; };
 		851463C049845516B8F4A4A8 /* Pods_FinanceApp_BackFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp_BackFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A140933C29E6EC3D0037662B /* CategoriesSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSum.swift; sourceTree = "<group>"; };
 		A14DAE5B29D4E51400714208 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionsScreen.storyboard; sourceTree = "<group>"; };
 		A14DAE6229D4E94200714208 /* TransactionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsScreen.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				A16636EE29DE33C500162872 /* Transactions.swift */,
 				A166B96129DF4BD600F33A98 /* ListedCategories.swift */,
+				A140933C29E6EC3D0037662B /* CategoriesSum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1C9EFEC29E60D080029B69F /* RegisterScreen.swift in Sources */,
+				A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */,
 				E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */,
 				E35D087129BDB2030098F0B5 /* MoreOptionsScreen.swift in Sources */,
 				E35D086129BDB0310098F0B5 /* HomeScreen.swift in Sources */,

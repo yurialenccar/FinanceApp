@@ -20,6 +20,7 @@ class CategoriesGraphScreen: UIViewController {
         configureChartDescription()
         configureChartConstraints()
         updateChartData(for: "Janeiro")
+        //sumExpensesByCategory()
     }
     
     // MARK: - Private Methods
@@ -93,8 +94,11 @@ class CategoriesGraphScreen: UIViewController {
     }
     
     private func updateChartData(for mes: String) {
-        let values: [Double] = [2500, 500, 500, 500]
-        let labels = ["Casa", "Carro", "Alimentação", "Educação"]
+//        let values: [Double] = [2500, 500, 500, 500]
+//        let labels = ["Casa", "Carro", "Alimentação", "Educação"]
+        let sum:[CategoriesSum]=sumExpensesByCategory() 
+        let values: [Double] = sum.map{$0.amount}
+        let labels: [String] = sum.map{$0.category}
         
         let dataSet = PieChartDataSet(entries: values.enumerated().map { PieChartDataEntry(value: $1, label: labels[$0]) }, label: "")
         dataSet.colors = [.systemMint, .systemPink, .gray, .systemOrange] // Define as cores das fatias do gráfico

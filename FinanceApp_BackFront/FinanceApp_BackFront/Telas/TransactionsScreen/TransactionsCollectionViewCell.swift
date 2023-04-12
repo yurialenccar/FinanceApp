@@ -24,14 +24,14 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
     
     func setup(with transactions:Transactions){
         descLabel.text = transactions.desc
-        valueLabel.text = "R$ \(String(format: "%.2f", transactions.value))"
+        valueLabel.text = "R$ \(String(format: "%.2f", transactions.amount))"
         categoryLabel.text = listedCategories[transactions.categoryIndex].name
         categoryImage.image = listedCategories[transactions.categoryIndex].image
         dateLabel.text = transactions.date
         
         categoryPanelView.backgroundColor = listedCategories[transactions.categoryIndex].color
         
-        if transactions.value > 0{
+        if transactions.amount > 0{
             valueLabel.textColor = .green
         } else {
             valueLabel.textColor = .red
