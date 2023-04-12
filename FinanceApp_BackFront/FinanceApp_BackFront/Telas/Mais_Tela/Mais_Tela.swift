@@ -16,7 +16,7 @@ class Mais_Tela: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        tabBarController?.navigationController?.isNavigationBarHidden = false
+        tabBarController?.navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func tappedCategoriesButton(_ sender: UIButton) {

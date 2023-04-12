@@ -15,10 +15,21 @@ class RegisterScreen: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    @IBAction func tappedCreateButton(_ sender: UIButton) {
+        let storyboard:UIStoryboard = UIStoryboard(name: "TabBarController", bundle: nil)
+        if let tbc = storyboard.instantiateViewController(withIdentifier:"TabBarController") as? UITabBarController{
+            navigationController?.pushViewController(tbc, animated: true)
+        }
+    }
+    
     @IBAction func tappedLoginButton(_ sender: UIButton) {
         let vc: LoginScreen? = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateViewController(withIdentifier: "LoginScreen") as? LoginScreen
-        self.present(vc ?? UIViewController(), animated: true)
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
 

@@ -34,6 +34,9 @@
                                         <buttonConfiguration key="configuration" style="gray" title="Criar Conta">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tappedCreateButton:" destination="9sb-Nc-RX3" eventType="touchUpInside" id="2Qg-Ls-zJK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrB-OV-bjF">
                                         <rect key="frame" x="20" y="335" width="353" height="35"/>

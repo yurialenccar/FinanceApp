@@ -12,6 +12,10 @@ class SplashScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
 //            self.performSegue(withIdentifier: "showSelectLoginScreen", sender: nil)
             let vc: MainScreen? = UIStoryboard(name: "MainScreen", bundle: nil).instantiateViewController(withIdentifier: "MainScreen") as? MainScreen

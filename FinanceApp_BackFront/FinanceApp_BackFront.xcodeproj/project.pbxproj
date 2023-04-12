@@ -22,6 +22,7 @@
 		A1C9EFEF29E60D7D0029B69F /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFEE29E60D7D0029B69F /* LoginScreen.swift */; };
 		A1C9EFF129E60D840029B69F /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFF029E60D840029B69F /* LoginScreen.storyboard */; };
 		A1C9EFF329E60E200029B69F /* ErrorScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFF229E60E200029B69F /* ErrorScreen.storyboard */; };
+		A1C9F01E29E64E340029B69F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9F01D29E64E340029B69F /* TabBarController.swift */; };
 		A1E107B329E4E9A6005A3F4F /* AccountsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E107B229E4E9A6005A3F4F /* AccountsScreen.storyboard */; };
 		A1E107B729E4EDB9005A3F4F /* AccountsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E107B629E4EDB9005A3F4F /* AccountsScreen.swift */; };
 		A1E107BB29E4F426005A3F4F /* CreditCardsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E107BA29E4F426005A3F4F /* CreditCardsScreen.storyboard */; };
@@ -70,6 +71,7 @@
 		A1C9EFEE29E60D7D0029B69F /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		A1C9EFF029E60D840029B69F /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		A1C9EFF229E60E200029B69F /* ErrorScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ErrorScreen.storyboard; sourceTree = "<group>"; };
+		A1C9F01D29E64E340029B69F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A1E107B229E4E9A6005A3F4F /* AccountsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountsScreen.storyboard; sourceTree = "<group>"; };
 		A1E107B629E4EDB9005A3F4F /* AccountsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreen.swift; sourceTree = "<group>"; };
 		A1E107BA29E4F426005A3F4F /* CreditCardsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreditCardsScreen.storyboard; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				A14DAE5B29D4E51400714208 /* TabBarController.storyboard */,
+				A1C9F01D29E64E340029B69F /* TabBarController.swift */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -180,7 +183,7 @@
 				A1E107B929E4F410005A3F4F /* CreditCardsScreen */,
 				A1E107C529E4F773005A3F4F /* CurrencyScreen */,
 				A1E107BE29E4F628005A3F4F /* ProfileScreen */,
-				A1C9EFF229E60E200029B69F /* ErrorScreen.storyboard */,
+				A1C9F01C29E64DAB0029B69F /* ErrorScreen */,
 			);
 			path = Telas;
 			sourceTree = "<group>";
@@ -246,6 +249,14 @@
 				A1C9EFEE29E60D7D0029B69F /* LoginScreen.swift */,
 			);
 			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		A1C9F01C29E64DAB0029B69F /* ErrorScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A1C9EFF229E60E200029B69F /* ErrorScreen.storyboard */,
+			);
+			path = ErrorScreen;
 			sourceTree = "<group>";
 		};
 		A1E107B129E4E977005A3F4F /* AccountsScreen */ = {
@@ -472,6 +483,7 @@
 				E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */,
 				E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */,
 				E35D086129BDB0310098F0B5 /* Tela_Inicio.swift in Sources */,
+				A1C9F01E29E64E340029B69F /* TabBarController.swift in Sources */,
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
 				A1E107C929E4F78F005A3F4F /* CurrencyScreen.swift in Sources */,
 				E3C0915929C21CC900BE4441 /* Metas_VC.swift in Sources */,
