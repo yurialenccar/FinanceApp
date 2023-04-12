@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Mais_Tela: UIViewController {
+class MoreOptionsScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class Mais_Tela: UIViewController {
     }
     
     @IBAction func tappedCategoriesButton(_ sender: UIButton) {
-        let vc: RelatoriosVC? = UIStoryboard(name: "RelatoriosVC", bundle: nil).instantiateViewController(withIdentifier: "RelatoriosVC") as? RelatoriosVC
+        let vc: CategoriesGraphScreen? = UIStoryboard(name: "CategoriesGraphScreen", bundle: nil).instantiateViewController(withIdentifier: "CategoriesGraphScreen") as? CategoriesGraphScreen
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     @IBAction func tappedCurrencyButton(_ sender: UIButton) {

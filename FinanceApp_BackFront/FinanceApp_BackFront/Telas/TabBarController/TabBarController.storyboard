@@ -31,30 +31,30 @@
             </objects>
             <point key="canvasLocation" x="101" y="1278"/>
         </scene>
-        <!--Mais_Tela-->
+        <!--MoreOptionsScreen-->
         <scene sceneID="kBN-9q-jxe">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Mais_Tela" storyboardName="Mais_Tela" referencedIdentifier="Mais_Tela" id="bnQ-ke-9dr" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="MoreOptionsScreen" storyboardName="MoreOptionsScreen" referencedIdentifier="MoreOptionsScreen" id="bnQ-ke-9dr" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ISA-bt-X0f"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1SP-KE-0uF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2627" y="3034"/>
         </scene>
-        <!--Add_Tela-->
+        <!--AddTransactionScreen-->
         <scene sceneID="e6G-Pr-2Y9">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Add_Tela" storyboardName="Add_Tela" referencedIdentifier="Add_Tela" id="2Vt-n0-LVQ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="AddTransactionScreen" storyboardName="AddTransactionScreen" referencedIdentifier="AddTransactionScreen" id="2Vt-n0-LVQ" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Zq4-kt-Zj6"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C18-32-U6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2630" y="1263"/>
         </scene>
-        <!--Tela_Inicio-->
+        <!--HomeScreen-->
         <scene sceneID="Q57-Y2-bPC">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Tela_Inicio" storyboardName="Tela_Inicio" referencedIdentifier="Tela_Inicio" id="YpL-Xh-idu" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="HomeScreen" storyboardName="HomeScreen" referencedIdentifier="HomeScreen" id="YpL-Xh-idu" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ZHz-Nd-wqS"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHX-8a-bgx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="1766" y="-357"/>
         </scene>
-        <!--Metas_VC-->
+        <!--GoalsScreen-->
         <scene sceneID="ZiG-W0-3WA">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Metas_VC" storyboardName="Metas_VC" referencedIdentifier="Metas_VC" id="xyb-Qm-fLr" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="GoalsScreen" storyboardName="GoalsScreen" referencedIdentifier="GoalsScreen" id="xyb-Qm-fLr" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Bm3-3Y-qQO"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tF-GW-Bz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="1766" y="1264"/>
         </scene>
-        <!--Registros-->
+        <!--TransactionsScreen-->
         <scene sceneID="eUo-BF-fqP">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="RelatoriosVC" storyboardName="Registros" referencedIdentifier="Registros" id="4lp-b4-zJf" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="TransactionsScreen" storyboardName="TransactionsScreen" referencedIdentifier="TransactionsScreen" id="4lp-b4-zJf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="331-Tt-ahE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGs-ZP-dhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

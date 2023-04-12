@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		77C95F712D80F1F287355889 /* Pods_FinanceApp_BackFront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851463C049845516B8F4A4A8 /* Pods_FinanceApp_BackFront.framework */; };
 		A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5B29D4E51400714208 /* TabBarController.storyboard */; };
-		A14DAE6029D4E91900714208 /* Registros.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5F29D4E91900714208 /* Registros.storyboard */; };
-		A14DAE6329D4E94200714208 /* Registros.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE6229D4E94200714208 /* Registros.swift */; };
+		A14DAE6029D4E91900714208 /* TransactionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */; };
+		A14DAE6329D4E94200714208 /* TransactionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE6229D4E94200714208 /* TransactionsScreen.swift */; };
 		A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */; };
 		A16636EF29DE33C500162872 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EE29DE33C500162872 /* Transactions.swift */; };
 		A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166B96129DF4BD600F33A98 /* ListedCategories.swift */; };
@@ -38,18 +38,18 @@
 		E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */; };
 		E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35D085529BDAD110098F0B5 /* Assets.xcassets */; };
 		E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */; };
-		E35D086129BDB0310098F0B5 /* Tela_Inicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */; };
-		E35D086329BDB03D0098F0B5 /* Tela_Inicio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */; };
-		E35D086929BDB1C60098F0B5 /* Add_Tela.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086829BDB1C60098F0B5 /* Add_Tela.swift */; };
-		E35D086B29BDB1D00098F0B5 /* Add_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */; };
-		E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D087029BDB2030098F0B5 /* Mais_Tela.swift */; };
-		E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */; };
+		E35D086129BDB0310098F0B5 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086029BDB0310098F0B5 /* HomeScreen.swift */; };
+		E35D086329BDB03D0098F0B5 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086229BDB03D0098F0B5 /* HomeScreen.storyboard */; };
+		E35D086929BDB1C60098F0B5 /* AddTransactionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086829BDB1C60098F0B5 /* AddTransactionScreen.swift */; };
+		E35D086B29BDB1D00098F0B5 /* AddTransactionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086A29BDB1D00098F0B5 /* AddTransactionScreen.storyboard */; };
+		E35D087129BDB2030098F0B5 /* MoreOptionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D087029BDB2030098F0B5 /* MoreOptionsScreen.swift */; };
+		E35D087329BDB20C0098F0B5 /* MoreOptionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087229BDB20C0098F0B5 /* MoreOptionsScreen.storyboard */; };
 		E366E3B729E0D8A200F89209 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E366E3B629E0D8A200F89209 /* Charts.framework */; };
 		E366E3B929E0D8A700F89209 /* Algorithms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E366E3B829E0D8A700F89209 /* Algorithms.framework */; };
-		E3C0915929C21CC900BE4441 /* Metas_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0915829C21CC900BE4441 /* Metas_VC.swift */; };
-		E3C0915B29C21CD400BE4441 /* Metas_VC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */; };
-		E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */; };
-		E3E9089329BFAF2A00B34864 /* RelatoriosVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */; };
+		E3C0915929C21CC900BE4441 /* GoalsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0915829C21CC900BE4441 /* GoalsScreen.swift */; };
+		E3C0915B29C21CD400BE4441 /* GoalsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C0915A29C21CD400BE4441 /* GoalsScreen.storyboard */; };
+		E3E9089129BFAF1B00B34864 /* CategoriesGraphScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9089029BFAF1B00B34864 /* CategoriesGraphScreen.swift */; };
+		E3E9089329BFAF2A00B34864 /* CategoriesGraphScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089229BFAF2A00B34864 /* CategoriesGraphScreen.storyboard */; };
 		E3E9089629BFF95D00B34864 /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089529BFF95D00B34864 /* Poppins */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +58,8 @@
 		692476B1F1F3BEC20C43432B /* Pods-FinanceApp_BackFront.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp_BackFront.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp_BackFront/Pods-FinanceApp_BackFront.debug.xcconfig"; sourceTree = "<group>"; };
 		851463C049845516B8F4A4A8 /* Pods_FinanceApp_BackFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp_BackFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14DAE5B29D4E51400714208 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
-		A14DAE5F29D4E91900714208 /* Registros.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registros.storyboard; sourceTree = "<group>"; };
-		A14DAE6229D4E94200714208 /* Registros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registros.swift; sourceTree = "<group>"; };
+		A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionsScreen.storyboard; sourceTree = "<group>"; };
+		A14DAE6229D4E94200714208 /* TransactionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsScreen.swift; sourceTree = "<group>"; };
 		A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A16636EE29DE33C500162872 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		A166B96129DF4BD600F33A98 /* ListedCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedCategories.swift; sourceTree = "<group>"; };
@@ -89,18 +89,18 @@
 		E35D085529BDAD110098F0B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E35D085829BDAD110098F0B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E35D085A29BDAD110098F0B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela_Inicio.swift; sourceTree = "<group>"; };
-		E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tela_Inicio.storyboard; sourceTree = "<group>"; };
-		E35D086829BDB1C60098F0B5 /* Add_Tela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add_Tela.swift; sourceTree = "<group>"; };
-		E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add_Tela.storyboard; sourceTree = "<group>"; };
-		E35D087029BDB2030098F0B5 /* Mais_Tela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mais_Tela.swift; sourceTree = "<group>"; };
-		E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mais_Tela.storyboard; sourceTree = "<group>"; };
+		E35D086029BDB0310098F0B5 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		E35D086229BDB03D0098F0B5 /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
+		E35D086829BDB1C60098F0B5 /* AddTransactionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionScreen.swift; sourceTree = "<group>"; };
+		E35D086A29BDB1D00098F0B5 /* AddTransactionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTransactionScreen.storyboard; sourceTree = "<group>"; };
+		E35D087029BDB2030098F0B5 /* MoreOptionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsScreen.swift; sourceTree = "<group>"; };
+		E35D087229BDB20C0098F0B5 /* MoreOptionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreOptionsScreen.storyboard; sourceTree = "<group>"; };
 		E366E3B629E0D8A200F89209 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E366E3B829E0D8A700F89209 /* Algorithms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Algorithms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3C0915829C21CC900BE4441 /* Metas_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metas_VC.swift; sourceTree = "<group>"; };
-		E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Metas_VC.storyboard; sourceTree = "<group>"; };
-		E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoriosVC.swift; sourceTree = "<group>"; };
-		E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RelatoriosVC.storyboard; sourceTree = "<group>"; };
+		E3C0915829C21CC900BE4441 /* GoalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScreen.swift; sourceTree = "<group>"; };
+		E3C0915A29C21CD400BE4441 /* GoalsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalsScreen.storyboard; sourceTree = "<group>"; };
+		E3E9089029BFAF1B00B34864 /* CategoriesGraphScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGraphScreen.swift; sourceTree = "<group>"; };
+		E3E9089229BFAF2A00B34864 /* CategoriesGraphScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoriesGraphScreen.storyboard; sourceTree = "<group>"; };
 		E3E9089529BFF95D00B34864 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,14 +146,14 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
-		A14DAE6129D4E92300714208 /* Registros */ = {
+		A14DAE6129D4E92300714208 /* TransactionsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A14DAE5F29D4E91900714208 /* Registros.storyboard */,
-				A14DAE6229D4E94200714208 /* Registros.swift */,
+				A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */,
+				A14DAE6229D4E94200714208 /* TransactionsScreen.swift */,
 				A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */,
 			);
-			path = Registros;
+			path = TransactionsScreen;
 			sourceTree = "<group>";
 		};
 		A16636ED29DE1B0400162872 /* Models */ = {
@@ -172,15 +172,15 @@
 				A14DAE5D29D4E52000714208 /* Main */,
 				A1C9EFED29E60D620029B69F /* LoginScreen */,
 				A1C9EFE829E60CD60029B69F /* RegisterScreen */,
-				A14DAE6129D4E92300714208 /* Registros */,
 				A14DAE5E29D4E53600714208 /* TabBarController */,
-				A16B56A429C1079000E53727 /* Tela_Inicio */,
-				A16B56A829C107BC00E53727 /* RelatoriosVC */,
-				A16B56A529C1079900E53727 /* Add_Tela */,
-				E3C0915729C21C9100BE4441 /* Metas_VC */,
-				A16B56A629C107A400E53727 /* Mais_Tela */,
+				A16B56A429C1079000E53727 /* HomeScreen */,
+				A14DAE6129D4E92300714208 /* TransactionsScreen */,
+				A16B56A529C1079900E53727 /* AddTransactionScreen */,
+				E3C0915729C21C9100BE4441 /* GoalsScreen */,
+				A16B56A629C107A400E53727 /* MoreOptionsScreen */,
 				A1E107B129E4E977005A3F4F /* AccountsScreen */,
 				A1E107B929E4F410005A3F4F /* CreditCardsScreen */,
+				A16B56A829C107BC00E53727 /* CategoriesGraphScreen */,
 				A1E107C529E4F773005A3F4F /* CurrencyScreen */,
 				A1E107BE29E4F628005A3F4F /* ProfileScreen */,
 				A1C9F01C29E64DAB0029B69F /* ErrorScreen */,
@@ -188,40 +188,40 @@
 			path = Telas;
 			sourceTree = "<group>";
 		};
-		A16B56A429C1079000E53727 /* Tela_Inicio */ = {
+		A16B56A429C1079000E53727 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E35D086029BDB0310098F0B5 /* Tela_Inicio.swift */,
-				E35D086229BDB03D0098F0B5 /* Tela_Inicio.storyboard */,
+				E35D086029BDB0310098F0B5 /* HomeScreen.swift */,
+				E35D086229BDB03D0098F0B5 /* HomeScreen.storyboard */,
 			);
-			path = Tela_Inicio;
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
-		A16B56A529C1079900E53727 /* Add_Tela */ = {
+		A16B56A529C1079900E53727 /* AddTransactionScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E35D086829BDB1C60098F0B5 /* Add_Tela.swift */,
-				E35D086A29BDB1D00098F0B5 /* Add_Tela.storyboard */,
+				E35D086829BDB1C60098F0B5 /* AddTransactionScreen.swift */,
+				E35D086A29BDB1D00098F0B5 /* AddTransactionScreen.storyboard */,
 			);
-			path = Add_Tela;
+			path = AddTransactionScreen;
 			sourceTree = "<group>";
 		};
-		A16B56A629C107A400E53727 /* Mais_Tela */ = {
+		A16B56A629C107A400E53727 /* MoreOptionsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E35D087029BDB2030098F0B5 /* Mais_Tela.swift */,
-				E35D087229BDB20C0098F0B5 /* Mais_Tela.storyboard */,
+				E35D087029BDB2030098F0B5 /* MoreOptionsScreen.swift */,
+				E35D087229BDB20C0098F0B5 /* MoreOptionsScreen.storyboard */,
 			);
-			path = Mais_Tela;
+			path = MoreOptionsScreen;
 			sourceTree = "<group>";
 		};
-		A16B56A829C107BC00E53727 /* RelatoriosVC */ = {
+		A16B56A829C107BC00E53727 /* CategoriesGraphScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E3E9089029BFAF1B00B34864 /* RelatoriosVC.swift */,
-				E3E9089229BFAF2A00B34864 /* RelatoriosVC.storyboard */,
+				E3E9089029BFAF1B00B34864 /* CategoriesGraphScreen.swift */,
+				E3E9089229BFAF2A00B34864 /* CategoriesGraphScreen.storyboard */,
 			);
-			path = RelatoriosVC;
+			path = CategoriesGraphScreen;
 			sourceTree = "<group>";
 		};
 		A1C9EFDC29E607A40029B69F /* SplashScreen */ = {
@@ -339,13 +339,13 @@
 			path = FinanceApp_BackFront;
 			sourceTree = "<group>";
 		};
-		E3C0915729C21C9100BE4441 /* Metas_VC */ = {
+		E3C0915729C21C9100BE4441 /* GoalsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E3C0915829C21CC900BE4441 /* Metas_VC.swift */,
-				E3C0915A29C21CD400BE4441 /* Metas_VC.storyboard */,
+				E3C0915829C21CC900BE4441 /* GoalsScreen.swift */,
+				E3C0915A29C21CD400BE4441 /* GoalsScreen.storyboard */,
 			);
-			path = Metas_VC;
+			path = GoalsScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,20 +411,20 @@
 				A1E107BB29E4F426005A3F4F /* CreditCardsScreen.storyboard in Resources */,
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
 				A1E107C729E4F784005A3F4F /* CurrencyScreen.storyboard in Resources */,
-				E3C0915B29C21CD400BE4441 /* Metas_VC.storyboard in Resources */,
+				E3C0915B29C21CD400BE4441 /* GoalsScreen.storyboard in Resources */,
 				A1C9EFF129E60D840029B69F /* LoginScreen.storyboard in Resources */,
-				A14DAE6029D4E91900714208 /* Registros.storyboard in Resources */,
+				A14DAE6029D4E91900714208 /* TransactionsScreen.storyboard in Resources */,
 				A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */,
 				A1E107B329E4E9A6005A3F4F /* AccountsScreen.storyboard in Resources */,
-				E35D087329BDB20C0098F0B5 /* Mais_Tela.storyboard in Resources */,
+				E35D087329BDB20C0098F0B5 /* MoreOptionsScreen.storyboard in Resources */,
 				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
 				A1C9EFEA29E60CF50029B69F /* RegisterScreen.storyboard in Resources */,
 				A1C9EFE329E60A7D0029B69F /* SplashScreen.storyboard in Resources */,
-				E3E9089329BFAF2A00B34864 /* RelatoriosVC.storyboard in Resources */,
-				E35D086329BDB03D0098F0B5 /* Tela_Inicio.storyboard in Resources */,
+				E3E9089329BFAF2A00B34864 /* CategoriesGraphScreen.storyboard in Resources */,
+				E35D086329BDB03D0098F0B5 /* HomeScreen.storyboard in Resources */,
 				A1C9EFF329E60E200029B69F /* ErrorScreen.storyboard in Resources */,
 				E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */,
-				E35D086B29BDB1D00098F0B5 /* Add_Tela.storyboard in Resources */,
+				E35D086B29BDB1D00098F0B5 /* AddTransactionScreen.storyboard in Resources */,
 				A1E107C029E4F63D005A3F4F /* ProfileScreen.storyboard in Resources */,
 				E35D085129BDAD100098F0B5 /* MainScreen.storyboard in Resources */,
 			);
@@ -481,21 +481,21 @@
 			files = (
 				A1C9EFEC29E60D080029B69F /* RegisterScreen.swift in Sources */,
 				E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */,
-				E35D087129BDB2030098F0B5 /* Mais_Tela.swift in Sources */,
-				E35D086129BDB0310098F0B5 /* Tela_Inicio.swift in Sources */,
+				E35D087129BDB2030098F0B5 /* MoreOptionsScreen.swift in Sources */,
+				E35D086129BDB0310098F0B5 /* HomeScreen.swift in Sources */,
 				A1C9F01E29E64E340029B69F /* TabBarController.swift in Sources */,
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
 				A1E107C929E4F78F005A3F4F /* CurrencyScreen.swift in Sources */,
-				E3C0915929C21CC900BE4441 /* Metas_VC.swift in Sources */,
-				E35D086929BDB1C60098F0B5 /* Add_Tela.swift in Sources */,
+				E3C0915929C21CC900BE4441 /* GoalsScreen.swift in Sources */,
+				E35D086929BDB1C60098F0B5 /* AddTransactionScreen.swift in Sources */,
 				A1E107C229E4F646005A3F4F /* ProfileScreen.swift in Sources */,
 				A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */,
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
 				A1C9EFEF29E60D7D0029B69F /* LoginScreen.swift in Sources */,
 				A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */,
-				A14DAE6329D4E94200714208 /* Registros.swift in Sources */,
+				A14DAE6329D4E94200714208 /* TransactionsScreen.swift in Sources */,
 				A1E107BD29E4F432005A3F4F /* CreditCardsScreen.swift in Sources */,
-				E3E9089129BFAF1B00B34864 /* RelatoriosVC.swift in Sources */,
+				E3E9089129BFAF1B00B34864 /* CategoriesGraphScreen.swift in Sources */,
 				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
 				A1C9EFE529E60A880029B69F /* SplashScreen.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,

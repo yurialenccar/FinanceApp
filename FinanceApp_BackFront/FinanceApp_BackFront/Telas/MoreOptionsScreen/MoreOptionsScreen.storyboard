@@ -13,10 +13,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Mais Tela-->
+        <!--More Options Screen-->
         <scene sceneID="oIl-lz-SHv">
             <objects>
-                <viewController storyboardIdentifier="Mais_Tela" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Uf-zB-Ba5" customClass="Mais_Tela" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreOptionsScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Uf-zB-Ba5" customClass="MoreOptionsScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VqZ-Zg-DaE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

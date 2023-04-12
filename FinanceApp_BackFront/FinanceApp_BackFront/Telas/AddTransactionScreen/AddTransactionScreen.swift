@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Add_Tela: UIViewController {
+class AddTransactionScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

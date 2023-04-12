@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Tela-->
+        <!--Add Transaction Screen-->
         <scene sceneID="c39-CQ-gZB">
             <objects>
-                <viewController storyboardIdentifier="Add_Tela" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nqp-rZ-Wn6" customClass="Add_Tela" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddTransactionScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nqp-rZ-Wn6" customClass="AddTransactionScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w8e-zw-yxQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

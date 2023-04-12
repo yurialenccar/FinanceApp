@@ -211,14 +211,6 @@
             </objects>
             <point key="canvasLocation" x="-560.93023255813955" y="1277.8969957081547"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="Tbb-bp-2zg">
-            <objects>
-                <viewControllerPlaceholder id="Iaq-3E-jNT" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pDB-a6-57Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="69" y="1344"/>
-        </scene>
         <!--Navigation Main Screen-->
         <scene sceneID="W5v-e6-0ah">
             <objects>

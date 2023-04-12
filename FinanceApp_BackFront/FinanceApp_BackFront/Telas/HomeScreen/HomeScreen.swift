@@ -35,7 +35,7 @@
 import UIKit
 import Charts
 
-class Tela_Inicio: UIViewController {
+class HomeScreen: UIViewController {
 
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var expensesLabel: UILabel!
@@ -60,8 +60,10 @@ class Tela_Inicio: UIViewController {
         self.tabBarController?.navigationController?.isNavigationBarHidden = true
     }
 
-    @IBAction func tappedShowRelatoriosScreen(_ sender: UIButton) {
-        performSegue(withIdentifier: "showRelatoriosVC", sender: nil)
+    @IBAction func tappedShowGraphScreen(_ sender: UIButton) {
+        //performSegue(withIdentifier: "showRelatoriosVC", sender: nil)
+        let vc: CategoriesGraphScreen? = UIStoryboard(name: "CategoriesGraphScreen", bundle: nil).instantiateViewController(withIdentifier: "CategoriesGraphScreen") as? CategoriesGraphScreen
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
 
     func updateLabels() {

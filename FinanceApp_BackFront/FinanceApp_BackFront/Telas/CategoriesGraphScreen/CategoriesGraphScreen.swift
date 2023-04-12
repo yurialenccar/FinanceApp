@@ -1,7 +1,7 @@
 import UIKit
 import Charts
 
-class RelatoriosVC: UIViewController {
+class CategoriesGraphScreen: UIViewController {
     
     // MARK: - Properties
     

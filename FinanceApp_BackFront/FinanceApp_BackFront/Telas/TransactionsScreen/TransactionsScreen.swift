@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Registros: UIViewController {
+class TransactionsScreen: UIViewController {
 
     @IBOutlet weak var transactionsCollectionView: UICollectionView!
     
@@ -23,14 +23,14 @@ class Registros: UIViewController {
 
 }
 
-extension Registros: UICollectionViewDelegate{
+extension TransactionsScreen: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         transactionsCollectionView.deselectItem(at: indexPath, animated: true)
         print("you tapped collection cell \(indexPath.row)")
     }
 }
 
-extension Registros: UICollectionViewDataSource {
+extension TransactionsScreen: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return transactions.count
     }
@@ -45,7 +45,7 @@ extension Registros: UICollectionViewDataSource {
     
 }
 
-extension Registros:UICollectionViewDelegateFlowLayout{
+extension TransactionsScreen:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize (width: 361, height: 90)
     }
