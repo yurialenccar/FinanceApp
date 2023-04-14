@@ -15,24 +15,22 @@ class HomeScreen: UIViewController {
     @IBOutlet weak var expensesLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var backgroundBalanceView: UIView!
+    @IBOutlet weak var hideInformationsButton: UIButton!
     
-//    var transactions: [Transaction] = [
-//        Transaction(type: .income, amount: 100.0),
-//        Transaction(type: .expense, amount: 50.0),
-//        Transaction(type: .income, amount: 0.0),
-//        Transaction(type: .expense, amount: 50.0)
-//    ]
+    var informationsHidden = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.tabBarController?.navigationItem.hidesBackButton = true
-        updateLabels()
+        
         //sumExpensesByCategory()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationController?.isNavigationBarHidden = true
+        updateLabels()
     }
 
     @IBAction func tappedShowGraphScreen(_ sender: UIButton) {
@@ -40,6 +38,22 @@ class HomeScreen: UIViewController {
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
 
+    @IBAction func tappedHideNumbersButton(_ sender: UIButton) {
+        if informationsHidden == false {
+            informationsHidden = true
+            incomeLabel.text = "•••••"
+            expensesLabel.text  = "•••••"
+            hideInformationsButton.setImage(UIImage(imageLiteralResourceName: "closed eye"), for: .normal)
+        } else {
+            informationsHidden = false
+            updateLabels()
+            hideInformationsButton.setImage(UIImage(imageLiteralResourceName: "eye"), for: .normal)
+        }
+        
+        
+    }
+    
+    
     func updateLabels() {
         var incomeTotal = 0.0
         var expensesTotal = 0.0
@@ -52,7 +66,7 @@ class HomeScreen: UIViewController {
             }
         }
 
-        let balance = incomeTotal - (-expensesTotal)
+        let balance = incomeTotal - expensesTotal
 
         incomeLabel.text = String(format: "%.2f", incomeTotal)
         expensesLabel.text = String(format: "%.2f", expensesTotal)
