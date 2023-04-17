@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol CategoriesModalScreenDelegate: AnyObject {
+    func didSelectCategory(_ indexCategory: Int)
+}
+
+
 class CategoriesModalScreen: UIViewController {
     
+    weak var delegate: CategoriesModalScreenDelegate?
+
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -45,7 +52,9 @@ extension CategoriesModalScreen:UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("you tapped collection cell \(indexPath.row)")
+        delegate?.didSelectCategory(indexPath.row)
+        dismiss(animated: true, completion:  nil)
+        //print("you tapped collection cell \(indexPath.row)")
     }
     
 }

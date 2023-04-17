@@ -8,20 +8,30 @@
 import UIKit
 
 class RegisterExpenseScreen: UIViewController {
+    
+    private var indexCategorySelected:Int = 0
 
     @IBOutlet weak var descTextField: UITextField!
-    
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var categoryBackgroung: UIView!
+    @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var obsTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateCategoryField(indexCategorySelected)
+    }
+    
     
     @IBAction func tappedCategoryButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "CategoriesModalScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CategoriesModalScreen") as? CategoriesModalScreen
+        vc?.delegate = self
         if let presentationController = vc?.presentationController as? UISheetPresentationController{
             presentationController.detents = [.medium()]
         }
@@ -52,15 +62,30 @@ class RegisterExpenseScreen: UIViewController {
             newTransaction.amount = Double(amountTextField.text ?? "0.0")!
         }
         
+        newTransaction.categoryIndex = indexCategorySelected
+        
         if missingInformations == false {
             transactions.append(newTransaction)
             dismiss(animated: true, completion: nil)
         }
     }
     
-
+    private func updateCategoryField(_ indexCategory:Int){
+        categoryLabel.text = listedCategories[indexCategory].name
+        categoryImage.image = UIImage(imageLiteralResourceName: listedCategories[indexCategory].imageName)
+        categoryBackgroung.backgroundColor = listedCategories[indexCategory].color
+    }
     
 
     
 
+}
+
+extension RegisterExpenseScreen:CategoriesModalScreenDelegate{
+    func didSelectCategory(_ indexCategory: Int) {
+        indexCategorySelected = indexCategory
+        updateCategoryField(indexCategorySelected)
+    }
+    
+    
 }
