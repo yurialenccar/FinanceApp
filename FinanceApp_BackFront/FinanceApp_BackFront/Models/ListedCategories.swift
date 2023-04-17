@@ -11,14 +11,15 @@ import UIKit
 struct ListedCategories {
     var id : Int
     var name: String
-    var image: UIImage
+    var imageName: String
     var color: UIColor
+    var type:TransactionType
 }
 
 let listedCategories:[ListedCategories] = [
-    ListedCategories(id: 0, name: "Alimentação", image: UIImage(imageLiteralResourceName: "star"), color: UIColor.yellow),
-    ListedCategories(id: 1, name: "Casa", image: UIImage(imageLiteralResourceName: "home"), color: UIColor.blue),
-    ListedCategories(id: 2, name: "Esportes", image: UIImage(imageLiteralResourceName: "football"), color: UIColor.purple)
+    ListedCategories(id: 0, name: "Alimentação", imageName: "star", color: UIColor.yellow, type: .expense),
+    ListedCategories(id: 1, name: "Casa", imageName: "home", color: UIColor.blue, type: .expense),
+    ListedCategories(id: 2, name: "Esportes", imageName: "football", color: UIColor.purple, type: .expense)
     
 ]
 

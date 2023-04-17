@@ -19,6 +19,16 @@ class RegisterExpenseScreen: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func tappedCategoryButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "CategoriesModalScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CategoriesModalScreen") as? CategoriesModalScreen
+        if let presentationController = vc?.presentationController as? UISheetPresentationController{
+            presentationController.detents = [.medium()]
+        }
+        
+        self.present(vc ?? UIViewController(), animated: true)
+        
+    }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
         print("botao pressionado")

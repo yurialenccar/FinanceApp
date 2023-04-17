@@ -26,7 +26,7 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
         descLabel.text = transactions.desc
         valueLabel.text = "R$ \(String(format: "%.2f", transactions.amount))"
         categoryLabel.text = listedCategories[transactions.categoryIndex].name
-        categoryImage.image = listedCategories[transactions.categoryIndex].image
+        categoryImage.image = UIImage(imageLiteralResourceName: listedCategories[transactions.categoryIndex].imageName)
         dateLabel.text = transactions.date
         
         categoryPanelView.backgroundColor = listedCategories[transactions.categoryIndex].color

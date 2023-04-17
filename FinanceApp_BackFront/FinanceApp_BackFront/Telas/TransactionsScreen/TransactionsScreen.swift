@@ -16,7 +16,6 @@ class TransactionsScreen: UIViewController {
         transactionsCollectionView.delegate = self
         transactionsCollectionView.dataSource = self
         transactionsCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
-
     }
     
 
