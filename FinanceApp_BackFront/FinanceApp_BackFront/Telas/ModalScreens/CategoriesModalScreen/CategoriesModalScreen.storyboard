@@ -17,17 +17,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PWq-JY-G58">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categorias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUL-6Y-fEZ">
+                                <rect key="frame" x="20" y="15" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="PWq-JY-G58" secondAttribute="bottom" id="5ay-5H-9Yt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PWq-JY-G58" secondAttribute="trailing" id="SB7-rZ-nSl"/>
-                            <constraint firstItem="PWq-JY-G58" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Vfa-0A-Crw"/>
+                            <constraint firstItem="PWq-JY-G58" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="Vfa-0A-Crw"/>
+                            <constraint firstItem="LUL-6Y-fEZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Xhm-vB-eYs"/>
                             <constraint firstItem="PWq-JY-G58" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fJ7-mk-UNL"/>
+                            <constraint firstItem="LUL-6Y-fEZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="rcG-cw-fQZ"/>
                         </constraints>
                     </view>
                     <connections>

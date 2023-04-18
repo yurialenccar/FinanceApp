@@ -8,6 +8,8 @@
 import UIKit
 
 class RegisterIncomeScreen: UIViewController {
+    
+    private var indexCategorySelected:Int = 0
 
     @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!

@@ -15,12 +15,34 @@ protocol CategoriesModalScreenDelegate: AnyObject {
 class CategoriesModalScreen: UIViewController {
     
     weak var delegate: CategoriesModalScreenDelegate?
-
+    
+    let transactionType:TransactionType
+    var filteredCategories:[ListedCategories]
+    
+    init?(coder:NSCoder, transactionType:TransactionType){
+        self.transactionType = transactionType
+        if transactionType == .expense {
+            self.filteredCategories = expenseCategories
+        } else {
+            self.filteredCategories = incomeCategories
+        }
+        super.init(coder: coder)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
     }
     
@@ -37,12 +59,12 @@ class CategoriesModalScreen: UIViewController {
 
 extension CategoriesModalScreen:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listedCategories.count
+        return filteredCategories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesModalCell", for: indexPath) as! CategoriesModalCell
-        cell.setupCell(listedCategories: listedCategories[indexPath.row])
+        cell.setupCell(listedCategories: filteredCategories[indexPath.row])
         return cell
     }
     
@@ -54,7 +76,8 @@ extension CategoriesModalScreen:UITableViewDataSource, UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.didSelectCategory(indexPath.row)
         dismiss(animated: true, completion:  nil)
-        //print("you tapped collection cell \(indexPath.row)")
+        
+        
     }
     
 }

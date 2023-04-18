@@ -20,7 +20,7 @@ func sumExpensesByCategory()->[CategoriesSum]{
     
     for transaction in transactions where transaction.type == .expense{
 
-        let category:String = listedCategories[transaction.categoryIndex].name
+        let category:String = expenseCategories[transaction.categoryIndex].name
         
         if (list[category] != nil){ //Se existir um item com a categoria atual no dicionario entao soma-se
             list[category]! += transaction.amount

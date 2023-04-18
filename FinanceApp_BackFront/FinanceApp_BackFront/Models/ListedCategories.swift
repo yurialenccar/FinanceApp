@@ -9,17 +9,21 @@ import Foundation
 import UIKit
 
 struct ListedCategories {
-    var id : Int
     var name: String
     var imageName: String
     var color: UIColor
-    var type:TransactionType
 }
 
-let listedCategories:[ListedCategories] = [
-    ListedCategories(id: 0, name: "Alimentação", imageName: "star", color: UIColor.yellow, type: .expense),
-    ListedCategories(id: 1, name: "Casa", imageName: "home", color: UIColor.blue, type: .expense),
-    ListedCategories(id: 2, name: "Esportes", imageName: "football", color: UIColor.purple, type: .expense)
+let expenseCategories:[ListedCategories] = [
+    ListedCategories(name: "Alimentação", imageName: "star", color: UIColor.yellow),
+    ListedCategories(name: "Casa", imageName: "home", color: UIColor.blue),
+    ListedCategories(name: "Esportes", imageName: "football", color: UIColor.purple)
+    
     
 ]
 
+let incomeCategories:[ListedCategories] = [
+    ListedCategories(name: "Salario", imageName: "star", color: UIColor.red),
+    ListedCategories(name: "Seguro Desemprego", imageName: "star", color: UIColor.systemPink),
+    ListedCategories(name: "Apostas", imageName: "star", color: UIColor.orange)
+]
