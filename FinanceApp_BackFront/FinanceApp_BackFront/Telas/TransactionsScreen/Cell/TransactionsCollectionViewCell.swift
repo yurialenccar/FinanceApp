@@ -21,6 +21,12 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var categoryPanelView: UIView!
     
+    static let identifier:String = "TransactionsCollectionViewCell"
+    
+    static func nib() -> UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+    
     
     func setup(with transactions:Transactions){
         descLabel.text = transactions.desc
