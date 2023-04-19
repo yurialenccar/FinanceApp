@@ -10,6 +10,8 @@ import UIKit
 import Charts
 
 class HomeScreen: UIViewController {
+    
+    var informationsHidden = false
 
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var expensesLabel: UILabel!
@@ -17,20 +19,18 @@ class HomeScreen: UIViewController {
     @IBOutlet weak var backgroundBalanceView: UIView!
     @IBOutlet weak var hideInformationsButton: UIButton!
     
-    var informationsHidden = false
+    var  viewModel : HomeViewModel = HomeViewModel()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tabBarController?.navigationItem.hidesBackButton = true
-        
-        //sumExpensesByCategory()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationController?.isNavigationBarHidden = true
         updateLabels()
+        //sumExpensesByCategory()
     }
 
     @IBAction func tappedShowGraphScreen(_ sender: UIButton) {
@@ -39,6 +39,10 @@ class HomeScreen: UIViewController {
     }
 
     @IBAction func tappedHideNumbersButton(_ sender: UIButton) {
+        hideNumers()
+    }
+    
+    func hideNumers(){
         if informationsHidden == false {
             informationsHidden = true
             incomeLabel.text = "•••••"
@@ -49,37 +53,26 @@ class HomeScreen: UIViewController {
             updateLabels()
             hideInformationsButton.setImage(UIImage(imageLiteralResourceName: "eye"), for: .normal)
         }
-        
-        
     }
     
-    
-    func updateLabels() {
-        var incomeTotal = 0.0
-        var expensesTotal = 0.0
-
-        for transaction in transactions {
-            if transaction.type == .income {
-                incomeTotal += transaction.amount
-            } else if transaction.type == .expense {
-                expensesTotal += transaction.amount
-            }
-        }
-
-        let balance = incomeTotal - expensesTotal
-
-        incomeLabel.text = String(format: "%.2f", incomeTotal)
-        expensesLabel.text = String(format: "%.2f", expensesTotal)
-        balanceLabel.text = String(format: "%.2f", balance)
+    public func updateLabels() {
         
-        if balance > 0 {
+        let balance = viewModel.updateBalance(transactions: transactions)
+
+        incomeLabel.text = String(format: "%.2f", balance.incomesTotal)
+        expensesLabel.text = String(format: "%.2f", balance.expensesTotal)
+        balanceLabel.text = String(format: "%.2f", balance.total)
+        
+        if balance.total > 0 {
             backgroundBalanceView.backgroundColor = UIColor(named: "PositiveBalance")
-            } else if balance < 0 {
+        } else if balance.total < 0 {
                 backgroundBalanceView.backgroundColor = UIColor(named: "NegativeBalance")
             } else {
                 backgroundBalanceView.backgroundColor = UIColor(named: "GreyInformations")
             }
     }
+        
+    
     
     
 }
