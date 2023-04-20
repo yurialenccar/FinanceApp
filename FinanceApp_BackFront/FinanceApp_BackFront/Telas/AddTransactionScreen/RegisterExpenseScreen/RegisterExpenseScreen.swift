@@ -9,6 +9,7 @@ import UIKit
 
 class RegisterExpenseScreen: UIViewController {
     
+    var transactionsViewModel : TransactionsViewModel = TransactionsViewModel()
     private var indexCategorySelected:Int = 0
 
     @IBOutlet weak var descTextField: UITextField!
@@ -68,7 +69,7 @@ class RegisterExpenseScreen: UIViewController {
         newTransaction.categoryIndex = indexCategorySelected
         
         if missingInformations == false {
-            transactions.append(newTransaction)
+            transactionsViewModel.setNewTransaction(newTransaction)
             dismiss(animated: true, completion: nil)
         }
     }

@@ -57,7 +57,8 @@ class HomeScreen: UIViewController {
     
     public func updateLabels() {
         
-        let balance = viewModel.updateBalance(transactions: transactions)
+        
+        let balance = viewModel.updateBalance()
 
         incomeLabel.text = String(format: "%.2f", balance.incomesTotal)
         expensesLabel.text = String(format: "%.2f", balance.expensesTotal)

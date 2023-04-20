@@ -9,6 +9,7 @@ import UIKit
 
 class RegisterIncomeScreen: UIViewController {
     
+    var transactionsViewModel : TransactionsViewModel = TransactionsViewModel()
     private var indexCategorySelected:Int = 0
 
     @IBOutlet weak var descTextField: UITextField!
@@ -26,6 +27,7 @@ class RegisterIncomeScreen: UIViewController {
     
 
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
+
         var missingInformations = false
         var newTransaction = Transactions(desc: "Vazio", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: .income, account: "", obs: "")
         
@@ -47,7 +49,7 @@ class RegisterIncomeScreen: UIViewController {
         }
         
         if missingInformations == false {
-            transactions.append(newTransaction)
+            transactionsViewModel.setNewTransaction(newTransaction)
             dismiss(animated: true, completion: nil)
         }
     }

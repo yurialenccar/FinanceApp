@@ -9,9 +9,13 @@ import Foundation
 
 struct HomeViewModel {
     
-    public func updateBalance(transactions:[Transactions]) -> BalanceValues {
+    var transactionsViewModel : TransactionsViewModel = TransactionsViewModel()
+    
+    public func updateBalance() -> BalanceValues {
+        
+        let transactions = transactionsViewModel.getTransactions()
         var balance : BalanceValues = BalanceValues(total: 0.0, incomesTotal: 0.0, expensesTotal: 0.0)
-
+        
         
         
         for transaction in transactions {
