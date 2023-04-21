@@ -8,8 +8,7 @@
 import UIKit
 
 class RegisterCardExpScreen: UIViewController {
-    
-    var transactionsViewModel : TransactionsViewModel = TransactionsViewModel()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

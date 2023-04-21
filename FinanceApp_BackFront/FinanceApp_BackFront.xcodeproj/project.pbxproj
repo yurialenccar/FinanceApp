@@ -216,10 +216,9 @@
 		A14DAE6129D4E92300714208 /* TransactionsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A1E703E029F2DD0700CB4021 /* View */,
 				A16688FA29F17E1B00568217 /* ViewModel */,
 				A16688F529F0B2F700568217 /* Cell */,
-				A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */,
-				A14DAE6229D4E94200714208 /* TransactionsScreen.swift */,
 			);
 			path = TransactionsScreen;
 			sourceTree = "<group>";
@@ -441,6 +440,15 @@
 				A1E107C829E4F78F005A3F4F /* CurrencyScreen.swift */,
 			);
 			path = CurrencyScreen;
+			sourceTree = "<group>";
+		};
+		A1E703E029F2DD0700CB4021 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */,
+				A14DAE6229D4E94200714208 /* TransactionsScreen.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B150CEFEE079F7249876CA80 /* Frameworks */ = {

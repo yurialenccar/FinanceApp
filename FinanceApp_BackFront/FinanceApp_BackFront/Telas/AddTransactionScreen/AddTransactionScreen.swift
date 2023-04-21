@@ -26,13 +26,6 @@ class AddTransactionScreen: UIViewController {
         present(vc ?? UIViewController(), animated: true)
     }
     
-        
-
-    
-    
-        
-
-    
     @IBAction func tappedCardExpButton(_ sender: UIButton) {
         let vc: RegisterCardExpScreen? = UIStoryboard(name: "RegisterCardExpScreen", bundle: nil).instantiateViewController(withIdentifier: "RegisterCardExpScreen") as? RegisterCardExpScreen
         present(vc ?? UIViewController(), animated: true)

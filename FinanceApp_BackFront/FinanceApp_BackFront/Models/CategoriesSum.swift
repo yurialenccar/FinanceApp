@@ -13,11 +13,8 @@ struct CategoriesSum {
     var percent:Double
 }
 
-var transactionsViewModel : TransactionsViewModel = TransactionsViewModel()
-
 func sumExpensesByCategory()->[CategoriesSum]{
     
-    let transactions = transactionsViewModel.getTransactions()
     var list=[String:Double]()
     var totalAmount:Double=0.0
     
