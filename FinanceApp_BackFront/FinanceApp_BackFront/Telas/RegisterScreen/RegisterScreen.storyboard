@@ -182,6 +182,14 @@
                     <navigationItem key="navigationItem" id="zH9-rs-Bm4">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="xEQ-zu-xV4"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextfield" destination="fOg-yK-UBf" id="SXt-OY-Wtl"/>
+                        <outlet property="enterButton" destination="FrB-OV-bjF" id="zVB-YL-WDN"/>
+                        <outlet property="nameTextfield" destination="A9d-yx-2jC" id="AGd-Im-qwd"/>
+                        <outlet property="passwordRepeatTextfield" destination="Jnx-eq-0KW" id="eQr-zl-KNY"/>
+                        <outlet property="passwordTextfield" destination="Tah-BX-Ctr" id="Qvf-II-ahV"/>
+                        <outlet property="registrationButton" destination="oit-wJ-IaB" id="UyP-8C-38L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6Y-Ht-8Wg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
