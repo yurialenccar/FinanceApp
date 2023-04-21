@@ -277,7 +277,6 @@
 				A14DAE5D29D4E52000714208 /* Main */,
 				A1C9EFED29E60D620029B69F /* LoginScreen */,
 				A1C9EFE829E60CD60029B69F /* RegisterScreen */,
-				A14DAE5E29D4E53600714208 /* TabBarController */,
 				A16B56A429C1079000E53727 /* HomeScreen */,
 				A14DAE6129D4E92300714208 /* TransactionsScreen */,
 				A16B56A529C1079900E53727 /* AddTransactionScreen */,
@@ -346,8 +345,9 @@
 		A1C9EFE829E60CD60029B69F /* RegisterScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A1C9EFE929E60CF50029B69F /* RegisterScreen.storyboard */,
 				A1C9EFEB29E60D080029B69F /* RegisterScreen.swift */,
+				A1C9EFE929E60CF50029B69F /* RegisterScreen.storyboard */,
+				A14DAE5E29D4E53600714208 /* TabBarController */,
 			);
 			path = RegisterScreen;
 			sourceTree = "<group>";
