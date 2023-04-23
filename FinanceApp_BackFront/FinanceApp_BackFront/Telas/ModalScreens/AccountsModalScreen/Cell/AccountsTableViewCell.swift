@@ -11,6 +11,7 @@ class AccountsTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var bankLabel: UILabel!
+    @IBOutlet weak var bankBackground: UIView!
     @IBOutlet weak var descLabel: UILabel!
     
     
@@ -29,6 +30,8 @@ class AccountsTableViewCell: UITableViewCell {
     func setupCell(bankAccount:BankAccount){
         descLabel.text = bankAccount.desc
         bankLabel.text = bankAccount.bank.rawValue
+        bankLabel.textColor = bankColors[bankAccount.bank]?.labelBankColor
+        bankBackground.backgroundColor = bankColors[bankAccount.bank]?.backgroundColor
     }
 
     

@@ -10,6 +10,7 @@ import UIKit
 class RegisterExpenseScreen: UIViewController {
     
     private var indexCategorySelected:Int = 0
+    private var indexAccountSelected:Int = 0
 
     @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -17,6 +18,10 @@ class RegisterExpenseScreen: UIViewController {
     @IBOutlet weak var categoryBackgroung: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var obsTextField: UITextField!
+    @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet weak var bankLabel: UILabel!
+    @IBOutlet weak var accountBackground: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +30,7 @@ class RegisterExpenseScreen: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         updateCategoryField(indexCategorySelected)
+        updateAccountField(indexAccountSelected)
     }
     
     
@@ -43,7 +49,7 @@ class RegisterExpenseScreen: UIViewController {
     @IBAction func tappedAccountButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "AccountsModalScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "AccountsModalScreen") as? AccountsModalScreen
-        
+        vc?.delegate = self
         if let presentationController = vc?.presentationController as? UISheetPresentationController{
             presentationController.detents = [.medium()]
         }
@@ -86,16 +92,25 @@ class RegisterExpenseScreen: UIViewController {
         categoryBackgroung.backgroundColor = expenseCategories[indexCategory].color
     }
     
-
+    func updateAccountField(_ indexCategory:Int){
+        accountLabel.text = bankAccountsList[indexCategory].desc
+        bankLabel.text = bankAccountsList[indexCategory].bank.rawValue
+        bankLabel.textColor = bankColors[bankAccountsList[indexCategory].bank]?.labelBankColor
+        accountBackground.backgroundColor = bankColors[bankAccountsList[indexCategory].bank]?.backgroundColor
+    }
     
 
 }
 
-extension RegisterExpenseScreen:CategoriesModalScreenDelegate{
+//Extensão que busca a escolha do usuário das telas modais de seleção.
+extension RegisterExpenseScreen:CategoriesModalScreenDelegate, AccountsModalScreenDelegate {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory
         updateCategoryField(indexCategorySelected)
     }
     
-    
+    func didSelectAccount(_ indexAcccount: Int) {
+        indexAccountSelected = indexAcccount
+        updateAccountField(indexAccountSelected)
+    }
 }

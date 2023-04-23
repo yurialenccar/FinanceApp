@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol AccountsModalScreenDelegate: AnyObject {
+    func didSelectAccount(_ indexAcccount: Int)
+}
+
 class AccountsModalScreen: UIViewController {
+    
+    weak var delegate: AccountsModalScreenDelegate?
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -43,7 +49,7 @@ extension AccountsModalScreen : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate?.didSelectCategory(indexPath.row)
+        delegate?.didSelectAccount(indexPath.row)
         dismiss(animated: true, completion:  nil)
         
         

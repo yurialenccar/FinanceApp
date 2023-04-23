@@ -76,8 +76,6 @@ extension CategoriesModalScreen:UITableViewDataSource, UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.didSelectCategory(indexPath.row)
         dismiss(animated: true, completion:  nil)
-        
-        
     }
     
 }

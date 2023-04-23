@@ -258,7 +258,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="K50-il-asO"/>
                     <connections>
+                        <outlet property="accountBackground" destination="mAw-Ot-27J" id="eGA-C0-yhD"/>
+                        <outlet property="accountLabel" destination="Xu4-iJ-bxJ" id="daY-N6-IDu"/>
                         <outlet property="amountTextField" destination="wtD-Cz-gyI" id="HfZ-zt-vPv"/>
+                        <outlet property="bankLabel" destination="NRI-jG-UnX" id="gEB-77-BlO"/>
                         <outlet property="categoryBackgroung" destination="CrZ-1M-XYV" id="1fT-eY-g2a"/>
                         <outlet property="categoryImage" destination="NnT-kZ-YHg" id="n6l-ia-rsH"/>
                         <outlet property="categoryLabel" destination="mRy-fq-3IW" id="Lpb-1U-ARO"/>

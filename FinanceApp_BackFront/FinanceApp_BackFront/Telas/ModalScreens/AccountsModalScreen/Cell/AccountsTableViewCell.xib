@@ -35,6 +35,11 @@
                             <constraint firstItem="R5m-cj-wJ7" firstAttribute="top" secondItem="spq-V4-k5f" secondAttribute="top" id="ucT-Ou-gHT"/>
                             <constraint firstAttribute="bottom" secondItem="R5m-cj-wJ7" secondAttribute="bottom" id="urt-ml-NTG"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYs-rP-uNJ">
                         <rect key="frame" x="65" y="20" width="42" height="21"/>
@@ -54,6 +59,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bankBackground" destination="spq-V4-k5f" id="IsG-98-YCs"/>
                 <outlet property="bankLabel" destination="R5m-cj-wJ7" id="3KZ-2p-LNZ"/>
                 <outlet property="descLabel" destination="eYs-rP-uNJ" id="rcA-uC-D4c"/>
             </connections>

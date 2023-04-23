@@ -35,6 +35,7 @@
 		A16688F929F0B32900568217 /* TransactionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16688F729F0B32900568217 /* TransactionsCollectionViewCell.xib */; };
 		A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16688FB29F17E5200568217 /* TransactionsViewModel.swift */; };
 		A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166B96129DF4BD600F33A98 /* ListedCategories.swift */; };
+		A189A39929F58A4700C22A6D /* BankColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189A39829F58A4700C22A6D /* BankColors.swift */; };
 		A1C9EFE329E60A7D0029B69F /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFE229E60A7D0029B69F /* SplashScreen.storyboard */; };
 		A1C9EFE529E60A880029B69F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFE429E60A880029B69F /* SplashScreen.swift */; };
 		A1C9EFE729E60BB60029B69F /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFE629E60BB60029B69F /* MainScreen.swift */; };
@@ -109,6 +110,7 @@
 		A16688F729F0B32900568217 /* TransactionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A16688FB29F17E5200568217 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		A166B96129DF4BD600F33A98 /* ListedCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedCategories.swift; sourceTree = "<group>"; };
+		A189A39829F58A4700C22A6D /* BankColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankColors.swift; sourceTree = "<group>"; };
 		A1C9EFE229E60A7D0029B69F /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		A1C9EFE429E60A880029B69F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		A1C9EFE629E60BB60029B69F /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				A16688EA29F08CF600568217 /* BalanceValues.swift */,
 				A11BDA7129F4C04A006CF6B2 /* BankAccount.swift */,
 				A11BDA7529F4C24B006CF6B2 /* CreditCard.swift */,
+				A189A39829F58A4700C22A6D /* BankColors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				A14DAE6329D4E94200714208 /* TransactionsScreen.swift in Sources */,
 				A1E107BD29E4F432005A3F4F /* CreditCardsScreen.swift in Sources */,
 				A1D2F84929E99A3100DCA6E4 /* CategoriesModalScreen.swift in Sources */,
+				A189A39929F58A4700C22A6D /* BankColors.swift in Sources */,
 				E3E9089129BFAF1B00B34864 /* CategoriesGraphScreen.swift in Sources */,
 				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
 				A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */,
