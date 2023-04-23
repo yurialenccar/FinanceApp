@@ -18,10 +18,7 @@ struct Transactions{
     var obs:String
 }
 
-enum TransactionType {
-    case income
-    case expense
-}
+
 
 var transactions: [Transactions] = [
     Transactions(desc: "Hamburgueria", amount: 59.00, categoryIndex: 0, date: "29/03/2023",type: .expense, account: "Conta Itau", obs: ""),

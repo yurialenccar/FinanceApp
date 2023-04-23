@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		77C95F712D80F1F287355889 /* Pods_FinanceApp_BackFront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851463C049845516B8F4A4A8 /* Pods_FinanceApp_BackFront.framework */; };
+		A11BDA7229F4C04A006CF6B2 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7129F4C04A006CF6B2 /* BankAccount.swift */; };
+		A11BDA7429F4C173006CF6B2 /* Banks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7329F4C173006CF6B2 /* Banks.swift */; };
+		A11BDA7629F4C24B006CF6B2 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7529F4C24B006CF6B2 /* CreditCard.swift */; };
+		A11BDA7829F4C478006CF6B2 /* CardBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7729F4C478006CF6B2 /* CardBrand.swift */; };
+		A11BDA7B29F4C4A3006CF6B2 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7A29F4C4A3006CF6B2 /* TransactionType.swift */; };
 		A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140933C29E6EC3D0037662B /* CategoriesSum.swift */; };
 		A140934229E73ACA0037662B /* RegisterIncomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A140934129E73ACA0037662B /* RegisterIncomeScreen.storyboard */; };
 		A140934429E73AD20037662B /* RegisterIncomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140934329E73AD20037662B /* RegisterIncomeScreen.swift */; };
@@ -73,6 +78,11 @@
 		0C974D3A11D911F04F2A9C80 /* Pods-FinanceApp_BackFront.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp_BackFront.release.xcconfig"; path = "Target Support Files/Pods-FinanceApp_BackFront/Pods-FinanceApp_BackFront.release.xcconfig"; sourceTree = "<group>"; };
 		692476B1F1F3BEC20C43432B /* Pods-FinanceApp_BackFront.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinanceApp_BackFront.debug.xcconfig"; path = "Target Support Files/Pods-FinanceApp_BackFront/Pods-FinanceApp_BackFront.debug.xcconfig"; sourceTree = "<group>"; };
 		851463C049845516B8F4A4A8 /* Pods_FinanceApp_BackFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinanceApp_BackFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A11BDA7129F4C04A006CF6B2 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
+		A11BDA7329F4C173006CF6B2 /* Banks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banks.swift; sourceTree = "<group>"; };
+		A11BDA7529F4C24B006CF6B2 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		A11BDA7729F4C478006CF6B2 /* CardBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBrand.swift; sourceTree = "<group>"; };
+		A11BDA7A29F4C4A3006CF6B2 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		A140933C29E6EC3D0037662B /* CategoriesSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSum.swift; sourceTree = "<group>"; };
 		A140934129E73ACA0037662B /* RegisterIncomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterIncomeScreen.storyboard; sourceTree = "<group>"; };
 		A140934329E73AD20037662B /* RegisterIncomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterIncomeScreen.swift; sourceTree = "<group>"; };
@@ -159,6 +169,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A11BDA7929F4C47F006CF6B2 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A11BDA7329F4C173006CF6B2 /* Banks.swift */,
+				A11BDA7A29F4C4A3006CF6B2 /* TransactionType.swift */,
+				A11BDA7729F4C478006CF6B2 /* CardBrand.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		A140933E29E73A3E0037662B /* RegisterIncomeScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,10 +246,13 @@
 		A16636ED29DE1B0400162872 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A11BDA7929F4C47F006CF6B2 /* Enums */,
 				A16636EE29DE33C500162872 /* Transactions.swift */,
 				A166B96129DF4BD600F33A98 /* ListedCategories.swift */,
 				A140933C29E6EC3D0037662B /* CategoriesSum.swift */,
 				A16688EA29F08CF600568217 /* BalanceValues.swift */,
+				A11BDA7129F4C04A006CF6B2 /* BankAccount.swift */,
+				A11BDA7529F4C24B006CF6B2 /* CreditCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -643,21 +666,25 @@
 				E35D084E29BDAD100098F0B5 /* ViewController.swift in Sources */,
 				E35D087129BDB2030098F0B5 /* MoreOptionsScreen.swift in Sources */,
 				A140935129E772720037662B /* RegisterExpenseScreen.swift in Sources */,
+				A11BDA7629F4C24B006CF6B2 /* CreditCard.swift in Sources */,
 				E35D086129BDB0310098F0B5 /* HomeScreen.swift in Sources */,
 				A1C9F01E29E64E340029B69F /* TabBarController.swift in Sources */,
 				A16688EB29F08CF600568217 /* BalanceValues.swift in Sources */,
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
 				A1E107C929E4F78F005A3F4F /* CurrencyScreen.swift in Sources */,
+				A11BDA7B29F4C4A3006CF6B2 /* TransactionType.swift in Sources */,
 				E3C0915929C21CC900BE4441 /* GoalsScreen.swift in Sources */,
 				E35D086929BDB1C60098F0B5 /* AddTransactionScreen.swift in Sources */,
 				A1E107C229E4F646005A3F4F /* ProfileScreen.swift in Sources */,
 				A16688E929F06E8600568217 /* HomeViewModel.swift in Sources */,
 				A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */,
 				A140934F29E7625A0037662B /* AddTrasactionsViewModel.swift in Sources */,
+				A11BDA7229F4C04A006CF6B2 /* BankAccount.swift in Sources */,
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
 				A1D2F84D29E9E5B100DCA6E4 /* CategoriesModalCell.swift in Sources */,
 				A140934429E73AD20037662B /* RegisterIncomeScreen.swift in Sources */,
 				A1C9EFEF29E60D7D0029B69F /* LoginScreen.swift in Sources */,
+				A11BDA7829F4C478006CF6B2 /* CardBrand.swift in Sources */,
 				A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */,
 				A14DAE6329D4E94200714208 /* TransactionsScreen.swift in Sources */,
 				A1E107BD29E4F432005A3F4F /* CreditCardsScreen.swift in Sources */,
@@ -667,6 +694,7 @@
 				A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */,
 				A1C9EFE529E60A880029B69F /* SplashScreen.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
+				A11BDA7429F4C173006CF6B2 /* Banks.swift in Sources */,
 				A1C9EFE729E60BB60029B69F /* MainScreen.swift in Sources */,
 				A1E107B729E4EDB9005A3F4F /* AccountsScreen.swift in Sources */,
 			);
