@@ -108,6 +108,11 @@
                 <constraint firstAttribute="trailing" secondItem="If5-eU-kqS" secondAttribute="trailing" constant="20" id="cXM-IE-1MA"/>
             </constraints>
             <size key="customSize" width="347" height="168"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="categoryImage" destination="72O-Ql-hSC" id="rUi-Os-NoO"/>
                 <outlet property="categoryLabel" destination="Yyl-jh-gxu" id="DC5-hr-b7h"/>

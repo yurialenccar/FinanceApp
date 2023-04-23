@@ -49,6 +49,7 @@ extension TransactionsScreen: UICollectionViewDataSource, UICollectionViewDelega
         return viewModel.getCellSize()
     }
     
+//    funcão do método Delegate
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        transactionsCollectionView.deselectItem(at: indexPath, animated: true)
 //        print("you tapped collection cell \(indexPath.row)")
