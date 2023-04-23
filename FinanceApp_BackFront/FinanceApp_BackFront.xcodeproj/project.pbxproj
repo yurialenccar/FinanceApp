@@ -13,6 +13,10 @@
 		A11BDA7629F4C24B006CF6B2 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7529F4C24B006CF6B2 /* CreditCard.swift */; };
 		A11BDA7829F4C478006CF6B2 /* CardBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7729F4C478006CF6B2 /* CardBrand.swift */; };
 		A11BDA7B29F4C4A3006CF6B2 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7A29F4C4A3006CF6B2 /* TransactionType.swift */; };
+		A11BDA7D29F4CC55006CF6B2 /* AccountsModalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11BDA7C29F4CC55006CF6B2 /* AccountsModalScreen.storyboard */; };
+		A11BDA8029F4CC7E006CF6B2 /* AccountsModalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7F29F4CC7E006CF6B2 /* AccountsModalScreen.swift */; };
+		A11BDA8629F4CFB6006CF6B2 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA8429F4CFB6006CF6B2 /* AccountsTableViewCell.swift */; };
+		A11BDA8729F4CFB6006CF6B2 /* AccountsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11BDA8529F4CFB6006CF6B2 /* AccountsTableViewCell.xib */; };
 		A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140933C29E6EC3D0037662B /* CategoriesSum.swift */; };
 		A140934229E73ACA0037662B /* RegisterIncomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A140934129E73ACA0037662B /* RegisterIncomeScreen.storyboard */; };
 		A140934429E73AD20037662B /* RegisterIncomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140934329E73AD20037662B /* RegisterIncomeScreen.swift */; };
@@ -83,6 +87,10 @@
 		A11BDA7529F4C24B006CF6B2 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		A11BDA7729F4C478006CF6B2 /* CardBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBrand.swift; sourceTree = "<group>"; };
 		A11BDA7A29F4C4A3006CF6B2 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		A11BDA7C29F4CC55006CF6B2 /* AccountsModalScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountsModalScreen.storyboard; sourceTree = "<group>"; };
+		A11BDA7F29F4CC7E006CF6B2 /* AccountsModalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsModalScreen.swift; sourceTree = "<group>"; };
+		A11BDA8429F4CFB6006CF6B2 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
+		A11BDA8529F4CFB6006CF6B2 /* AccountsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsTableViewCell.xib; sourceTree = "<group>"; };
 		A140933C29E6EC3D0037662B /* CategoriesSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSum.swift; sourceTree = "<group>"; };
 		A140934129E73ACA0037662B /* RegisterIncomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterIncomeScreen.storyboard; sourceTree = "<group>"; };
 		A140934329E73AD20037662B /* RegisterIncomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterIncomeScreen.swift; sourceTree = "<group>"; };
@@ -177,6 +185,25 @@
 				A11BDA7729F4C478006CF6B2 /* CardBrand.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		A11BDA7E29F4CC5B006CF6B2 /* AccountsModalScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A11BDA8129F4CE5E006CF6B2 /* Cell */,
+				A11BDA7C29F4CC55006CF6B2 /* AccountsModalScreen.storyboard */,
+				A11BDA7F29F4CC7E006CF6B2 /* AccountsModalScreen.swift */,
+			);
+			path = AccountsModalScreen;
+			sourceTree = "<group>";
+		};
+		A11BDA8129F4CE5E006CF6B2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A11BDA8529F4CFB6006CF6B2 /* AccountsTableViewCell.xib */,
+				A11BDA8429F4CFB6006CF6B2 /* AccountsTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A140933E29E73A3E0037662B /* RegisterIncomeScreen */ = {
@@ -405,6 +432,7 @@
 		A1D2F84429E999D500DCA6E4 /* ModalScreens */ = {
 			isa = PBXGroup;
 			children = (
+				A11BDA7E29F4CC5B006CF6B2 /* AccountsModalScreen */,
 				A1D2F84529E99A0200DCA6E4 /* CategoriesModalScreen */,
 			);
 			path = ModalScreens;
@@ -603,10 +631,12 @@
 				A16688F929F0B32900568217 /* TransactionsCollectionViewCell.xib in Resources */,
 				E35D086329BDB03D0098F0B5 /* HomeScreen.storyboard in Resources */,
 				A1D2F84729E99A2600DCA6E4 /* CategoriesModalScreen.storyboard in Resources */,
+				A11BDA7D29F4CC55006CF6B2 /* AccountsModalScreen.storyboard in Resources */,
 				A1C9EFF329E60E200029B69F /* ErrorScreen.storyboard in Resources */,
 				E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */,
 				E35D086B29BDB1D00098F0B5 /* AddTransactionScreen.storyboard in Resources */,
 				A1E107C029E4F63D005A3F4F /* ProfileScreen.storyboard in Resources */,
+				A11BDA8729F4CFB6006CF6B2 /* AccountsTableViewCell.xib in Resources */,
 				E35D085129BDAD100098F0B5 /* MainScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,9 +703,11 @@
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
 				A1E107C929E4F78F005A3F4F /* CurrencyScreen.swift in Sources */,
 				A11BDA7B29F4C4A3006CF6B2 /* TransactionType.swift in Sources */,
+				A11BDA8029F4CC7E006CF6B2 /* AccountsModalScreen.swift in Sources */,
 				E3C0915929C21CC900BE4441 /* GoalsScreen.swift in Sources */,
 				E35D086929BDB1C60098F0B5 /* AddTransactionScreen.swift in Sources */,
 				A1E107C229E4F646005A3F4F /* ProfileScreen.swift in Sources */,
+				A11BDA8629F4CFB6006CF6B2 /* AccountsTableViewCell.swift in Sources */,
 				A16688E929F06E8600568217 /* HomeViewModel.swift in Sources */,
 				A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */,
 				A140934F29E7625A0037662B /* AddTrasactionsViewModel.swift in Sources */,

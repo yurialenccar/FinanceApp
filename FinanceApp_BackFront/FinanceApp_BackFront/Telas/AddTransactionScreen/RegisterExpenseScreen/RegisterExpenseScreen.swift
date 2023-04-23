@@ -30,7 +30,6 @@ class RegisterExpenseScreen: UIViewController {
     
     @IBAction func tappedCategoryButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "CategoriesModalScreen", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "CategoriesModalScreen") as? CategoriesModalScreen
         let vc = storyboard.instantiateViewController(identifier: "CategoriesModalScreen") {coder -> CategoriesModalScreen? in
             return CategoriesModalScreen(coder: coder, transactionType: .expense)
         }
@@ -38,9 +37,17 @@ class RegisterExpenseScreen: UIViewController {
         if let presentationController = vc.presentationController as? UISheetPresentationController{
             presentationController.detents = [.medium()]
         }
-        
         self.present(vc, animated: true)
+    }
+    
+    @IBAction func tappedAccountButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "AccountsModalScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AccountsModalScreen") as? AccountsModalScreen
         
+        if let presentationController = vc?.presentationController as? UISheetPresentationController{
+            presentationController.detents = [.medium()]
+        }
+        self.present(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
