@@ -7,18 +7,27 @@
 
 import Foundation
 
-class CategoriesModalViewModel {
+class CategoriesModalViewModel{
     
-    //var filteredCategories: [ListedCategories]
+    var filteredCategories: [ListedCategories]
+    
+    init(transactionType:TransactionType) {
+        if transactionType == .expense {
+            self.filteredCategories = expenseCategories
+        } else{
+            self.filteredCategories = incomeCategories
+        }
+        
+    }
+    
+    
     
     public func getCategoriesCount() -> Int {
-        //return filteredCategories.count
-        return 0
+        return filteredCategories.count
     }
     
     public func getItemCategory(_ index:Int) -> ListedCategories {
-        //return filteredCategories[index]
-        return ListedCategories(name: "", imageName: "", color: .blue)
+        return filteredCategories[index]
     }
     
     public func getHeightSize() -> CGFloat {

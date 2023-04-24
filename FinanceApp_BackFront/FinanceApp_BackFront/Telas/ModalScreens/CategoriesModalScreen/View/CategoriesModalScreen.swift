@@ -14,19 +14,14 @@ protocol CategoriesModalScreenDelegate: AnyObject {
 
 class CategoriesModalScreen: UIViewController {
     
-    var viewModel:CategoriesModalViewModel = CategoriesModalViewModel()
+    var viewModel:CategoriesModalViewModel
     weak var delegate: CategoriesModalScreenDelegate?
     
     let transactionType:TransactionType
-    var filteredCategories:[ListedCategories]
     
     init?(coder:NSCoder, transactionType:TransactionType){
         self.transactionType = transactionType
-        if transactionType == .expense {
-            filteredCategories = expenseCategories
-        } else {
-            filteredCategories = incomeCategories
-        }
+        viewModel = CategoriesModalViewModel(transactionType: transactionType)
         super.init(coder: coder)
         
     }
@@ -60,17 +55,17 @@ class CategoriesModalScreen: UIViewController {
 
 extension CategoriesModalScreen:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredCategories.count
+        return viewModel.getCategoriesCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesModalCell", for: indexPath) as! CategoriesModalCell
-        cell.setupCell(listedCategories: filteredCategories[indexPath.row])
+        cell.setupCell(listedCategories: viewModel.getItemCategory(indexPath.row))
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return viewModel.getHeightSize()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
