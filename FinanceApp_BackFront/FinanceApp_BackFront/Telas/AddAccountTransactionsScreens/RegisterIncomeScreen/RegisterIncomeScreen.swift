@@ -28,7 +28,7 @@ class RegisterIncomeScreen: UIViewController {
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
 
         var missingInformations = false
-        var newTransaction = Transactions(desc: "Vazio", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: .income, account: "", obs: "")
+        var newTransaction = Transactions(desc: "Vazio", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: .income, accountIndex:0, obs: "")
         
         if (stringIsEmpty(text: descTextField.text ?? "")){
             descTextField.layer.borderColor = UIColor.red.cgColor

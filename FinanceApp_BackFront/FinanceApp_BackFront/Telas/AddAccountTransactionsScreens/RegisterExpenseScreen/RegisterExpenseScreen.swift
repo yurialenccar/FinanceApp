@@ -9,6 +9,8 @@ import UIKit
 
 class RegisterExpenseScreen: UIViewController {
     
+    var viewModel:AddAccountTransactionsViewModel=AddAccountTransactionsViewModel(type: .expense)
+    
     private var indexCategorySelected:Int = 0
     private var indexAccountSelected:Int = 0
 
@@ -57,46 +59,41 @@ class RegisterExpenseScreen: UIViewController {
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
-        print("botao pressionado")
-        var missingInformations = false
-        var newTransaction = Transactions(desc: "Vazio", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: .expense, account: "", obs: "")
         
-        if (stringIsEmpty(text: descTextField.text ?? "")){
-            descTextField.layer.borderColor = UIColor.red.cgColor
-            descTextField.layer.borderWidth = 1
-            missingInformations = true
-            
-        } else{
-            newTransaction.desc=descTextField.text ?? ""
-        }
-        
-        if (stringIsEmpty(text: amountTextField.text ?? "")){
+        if stringIsEmpty(text: amountTextField.text ?? ""){
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
-            missingInformations = true
-        } else{
-            newTransaction.amount = Double(amountTextField.text ?? "0.0")!
-        }
-        
-        newTransaction.categoryIndex = indexCategorySelected
-        
-        if missingInformations == false {
-            transactions.append(newTransaction)
+            showAlert(title: "Opa, esqueceu de informar valor gasto!")
+        } else {
+            viewModel.setTransactionsValues(
+                desc: descTextField.text ?? "",
+                amount: amountTextField.text!,
+                category: indexCategorySelected,
+                account: indexAccountSelected,
+                Obs: obsTextField.text ?? ""
+            )
             dismiss(animated: true, completion: nil)
         }
     }
     
     func updateCategoryField(_ indexCategory:Int){
-        categoryLabel.text = expenseCategories[indexCategory].name
-        categoryImage.image = UIImage(imageLiteralResourceName: expenseCategories[indexCategory].imageName)
-        categoryBackgroung.backgroundColor = expenseCategories[indexCategory].color
+        categoryLabel.text = viewModel.getCategoryLabel(indexCategory)
+        categoryImage.image = viewModel.getCategoryImageName(indexCategory)
+        categoryBackgroung.backgroundColor = viewModel.getCategoryBackgroungColor(indexCategory)
     }
     
-    func updateAccountField(_ indexCategory:Int){
-        accountLabel.text = bankAccountsList[indexCategory].desc
-        bankLabel.text = bankAccountsList[indexCategory].bank.rawValue
-        bankLabel.textColor = bankColors[bankAccountsList[indexCategory].bank]?.labelBankColor
-        accountBackground.backgroundColor = bankColors[bankAccountsList[indexCategory].bank]?.backgroundColor
+    func updateAccountField(_ indexAccount:Int){
+        accountLabel.text = viewModel.getAccountLabel(indexAccount)
+        bankLabel.text = viewModel.getBankLabelText(indexAccount)
+        bankLabel.textColor = viewModel.getBankLabelColor(indexAccount)
+        accountBackground.backgroundColor = viewModel.getBankBackColor(indexAccount)
+    }
+    
+    func showAlert (title: String) {
+        let alertController = UIAlertController (title: title, message: nil, preferredStyle: .alert)
+        let okButton = UIAlertAction (title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okButton)
+        self.present(alertController, animated: true, completion: nil)
     }
     
 

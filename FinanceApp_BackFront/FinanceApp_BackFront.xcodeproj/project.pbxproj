@@ -183,6 +183,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A103B51529F6B55000A0D9C9 /* AddAccountTransactionsScreens */ = {
+			isa = PBXGroup;
+			children = (
+				A140934D29E761560037662B /* ViewModel */,
+				A140933E29E73A3E0037662B /* RegisterIncomeScreen */,
+				A140933F29E73A6F0037662B /* RegisterExpenseScreen */,
+			);
+			path = AddAccountTransactionsScreens;
+			sourceTree = "<group>";
+		};
 		A11BDA7929F4C47F006CF6B2 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +357,8 @@
 				A16B56A429C1079000E53727 /* HomeScreen */,
 				A14DAE6129D4E92300714208 /* TransactionsScreen */,
 				A16B56A529C1079900E53727 /* AddTransactionScreen */,
+				A103B51529F6B55000A0D9C9 /* AddAccountTransactionsScreens */,
+				A140934029E73A800037662B /* RegisterCardExpScreen */,
 				E3C0915729C21C9100BE4441 /* GoalsScreen */,
 				A16B56A629C107A400E53727 /* MoreOptionsScreen */,
 				A1E107B129E4E977005A3F4F /* AccountsScreen */,
@@ -372,10 +384,6 @@
 		A16B56A529C1079900E53727 /* AddTransactionScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A140934D29E761560037662B /* ViewModel */,
-				A140933E29E73A3E0037662B /* RegisterIncomeScreen */,
-				A140933F29E73A6F0037662B /* RegisterExpenseScreen */,
-				A140934029E73A800037662B /* RegisterCardExpScreen */,
 				E35D086A29BDB1D00098F0B5 /* AddTransactionScreen.storyboard */,
 				E35D086829BDB1C60098F0B5 /* AddTransactionScreen.swift */,
 			);
