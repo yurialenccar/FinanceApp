@@ -20,8 +20,14 @@
                                 <rect key="frame" x="-31" y="-23" width="490" height="936"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="5PB-Qe-pd5">
+                                <rect key="frame" x="52.666666666666657" y="227" width="288" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="YV2-4M-yj9"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyB-gQ-Glj">
-                                <rect key="frame" x="0.0" y="472" width="393" height="380"/>
+                                <rect key="frame" x="0.0" y="438" width="393" height="414"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oit-wJ-IaB">
                                         <rect key="frame" x="20" y="280" width="353" height="50"/>
@@ -36,17 +42,6 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="tappedCreateButton:" destination="9sb-Nc-RX3" eventType="touchUpInside" id="2Qg-Ls-zJK"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrB-OV-bjF">
-                                        <rect key="frame" x="20" y="335" width="353" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="zOY-P0-RZc"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Eu já possuo uma conta"/>
-                                        <connections>
-                                            <action selector="tappedLoginButton:" destination="9sb-Nc-RX3" eventType="touchUpInside" id="8VP-kH-wxn"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sFJ-fx-uEM">
@@ -142,19 +137,30 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHO-Gd-9Zq">
+                                        <rect key="frame" x="20" y="338" width="353" height="34.333333333333314"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34.329999999999998" id="Osv-AU-cS3"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Já possuo uma conta"/>
+                                        <connections>
+                                            <action selector="tappedLoginButton:" destination="9sb-Nc-RX3" eventType="touchUpInside" id="0NA-rg-mAX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="FrB-OV-bjF" secondAttribute="trailing" constant="20" id="Aj3-jB-feC"/>
+                                    <constraint firstAttribute="trailing" secondItem="VHO-Gd-9Zq" secondAttribute="trailing" constant="20" id="2cg-1Y-XcW"/>
                                     <constraint firstItem="oit-wJ-IaB" firstAttribute="top" secondItem="sFJ-fx-uEM" secondAttribute="bottom" constant="15" id="DLT-pg-7ea"/>
+                                    <constraint firstAttribute="height" constant="414" id="GGO-wl-Rze"/>
                                     <constraint firstItem="sFJ-fx-uEM" firstAttribute="top" secondItem="nyB-gQ-Glj" secondAttribute="top" constant="20" id="HkO-AA-9Ln"/>
                                     <constraint firstItem="sFJ-fx-uEM" firstAttribute="leading" secondItem="nyB-gQ-Glj" secondAttribute="leading" constant="20" id="Inw-kP-BnH"/>
-                                    <constraint firstAttribute="height" constant="380" id="ObR-Nj-9mv"/>
+                                    <constraint firstItem="VHO-Gd-9Zq" firstAttribute="leading" secondItem="nyB-gQ-Glj" secondAttribute="leading" constant="20" id="LzB-mz-TdH"/>
                                     <constraint firstAttribute="trailing" secondItem="sFJ-fx-uEM" secondAttribute="trailing" constant="20" id="Rhz-fH-Ngv"/>
-                                    <constraint firstItem="FrB-OV-bjF" firstAttribute="top" secondItem="oit-wJ-IaB" secondAttribute="bottom" constant="5" id="d00-dK-Qz2"/>
                                     <constraint firstAttribute="trailing" secondItem="oit-wJ-IaB" secondAttribute="trailing" constant="20" id="hfK-Pz-AzE"/>
+                                    <constraint firstItem="VHO-Gd-9Zq" firstAttribute="top" secondItem="oit-wJ-IaB" secondAttribute="bottom" constant="8" symbolic="YES" id="pJd-3P-ZMi"/>
                                     <constraint firstItem="oit-wJ-IaB" firstAttribute="leading" secondItem="nyB-gQ-Glj" secondAttribute="leading" constant="20" id="t8S-7z-QTY"/>
-                                    <constraint firstItem="FrB-OV-bjF" firstAttribute="leading" secondItem="nyB-gQ-Glj" secondAttribute="leading" constant="20" id="vyS-Ug-e6Y"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -162,19 +168,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="5PB-Qe-pd5">
-                                <rect key="frame" x="52.666666666666657" y="227" width="288" height="185"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="185" id="YV2-4M-yj9"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oqo-Pc-SVP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nyB-gQ-Glj" firstAttribute="leading" secondItem="Oqo-Pc-SVP" secondAttribute="leading" id="G8h-1Q-XkK"/>
                             <constraint firstItem="nyB-gQ-Glj" firstAttribute="bottom" secondItem="b75-wj-e0y" secondAttribute="bottom" id="jtu-t5-ZTO"/>
-                            <constraint firstItem="nyB-gQ-Glj" firstAttribute="top" secondItem="5PB-Qe-pd5" secondAttribute="bottom" constant="60" id="rku-z9-88W"/>
+                            <constraint firstItem="nyB-gQ-Glj" firstAttribute="top" secondItem="5PB-Qe-pd5" secondAttribute="bottom" constant="26" id="oE3-3g-Xj4"/>
                             <constraint firstItem="nyB-gQ-Glj" firstAttribute="trailing" secondItem="Oqo-Pc-SVP" secondAttribute="trailing" id="rmy-Jb-ypU"/>
                             <constraint firstItem="5PB-Qe-pd5" firstAttribute="centerX" secondItem="b75-wj-e0y" secondAttribute="centerX" id="y39-Xy-tHk"/>
                         </constraints>
@@ -184,7 +184,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextfield" destination="fOg-yK-UBf" id="SXt-OY-Wtl"/>
-                        <outlet property="enterButton" destination="FrB-OV-bjF" id="zVB-YL-WDN"/>
+                        <outlet property="enterButton" destination="VHO-Gd-9Zq" id="4Pq-05-OHA"/>
                         <outlet property="nameTextfield" destination="A9d-yx-2jC" id="AGd-Im-qwd"/>
                         <outlet property="passwordRepeatTextfield" destination="Jnx-eq-0KW" id="eQr-zl-KNY"/>
                         <outlet property="passwordTextfield" destination="Tah-BX-Ctr" id="Qvf-II-ahV"/>
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6Y-Ht-8Wg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-723" y="-35"/>
+            <point key="canvasLocation" x="-724.4274809160305" y="-35.211267605633807"/>
         </scene>
     </scenes>
     <resources>

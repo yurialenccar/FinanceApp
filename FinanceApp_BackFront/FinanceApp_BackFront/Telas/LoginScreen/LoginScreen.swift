@@ -71,14 +71,14 @@ class LoginScreen: UIViewController {
             var statusOk = true
             if emailTextField.text == "" {
                 statusOk = false
-                emailTextField.layer.borderWidth = 2
+                emailTextField.layer.borderWidth = 1
                 emailTextField.layer.borderColor = UIColor.red.cgColor
 
             }
         
             if passwordTextField.text == "" {
                 statusOk =  false
-                passwordTextField.layer.borderWidth = 2
+                passwordTextField.layer.borderWidth = 1
                 passwordTextField.layer.borderColor = UIColor.red.cgColor
             }
 
@@ -98,23 +98,17 @@ class LoginScreen: UIViewController {
         func textFieldDidBeginEditing(_ textField: UITextField) {
             print(#function)
             textField.layer.borderColor = UIColor.blue.cgColor
-            textField.layer.borderWidth = 2
+            textField.layer.borderWidth = 1
         }
         
         func textFieldDidChangeSelection(_ textField: UITextField) {
-//            if textField.text?.isEmpty ?? true {
-//                textField.layer.borderWidth = 2
-//                textField.layer.borderColor = UIColor.red.cgColor
-//            } else {
-//                textField.layer.borderWidth = 0
-//            }
+
         }
         func textFieldDidEndEditing(_ textField: UITextField) {
             print(#function)
-//            textField.layer.borderWidth = 0
-//            validadeTextField()
+           
             if textField.text?.isEmpty ?? true {
-                textField.layer.borderWidth = 2
+                textField.layer.borderWidth = 1
                 textField.layer.borderColor = UIColor.red.cgColor
             } else {
                 textField.layer.borderWidth = 0
