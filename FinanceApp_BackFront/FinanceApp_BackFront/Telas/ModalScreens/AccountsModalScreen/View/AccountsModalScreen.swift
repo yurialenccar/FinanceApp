@@ -13,8 +13,10 @@ protocol AccountsModalScreenDelegate: AnyObject {
 
 class AccountsModalScreen: UIViewController {
     
+    var viewModel:AccountsModalViewModel = AccountsModalViewModel()
     weak var delegate: AccountsModalScreenDelegate?
-
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -27,32 +29,27 @@ class AccountsModalScreen: UIViewController {
         tableView.dataSource = self
         tableView.register(AccountsTableViewCell.nib(), forCellReuseIdentifier: AccountsTableViewCell.identifier)
     }
-
-    
-
 }
 
 extension AccountsModalScreen : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bankAccountsList.count
+        return viewModel.getAccountsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountsTableViewCell.identifier, for: indexPath) as? AccountsTableViewCell
-        cell?.setupCell(bankAccount: bankAccountsList[indexPath.row])
+        cell?.setupCell(bankAccount: viewModel.getItemAccount(indexPath.row))
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return viewModel.getHeightSize()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.didSelectAccount(indexPath.row)
         dismiss(animated: true, completion:  nil)
-        
-        
     }
     
 }

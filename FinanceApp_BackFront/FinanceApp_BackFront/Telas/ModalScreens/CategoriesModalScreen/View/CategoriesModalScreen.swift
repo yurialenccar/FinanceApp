@@ -14,6 +14,7 @@ protocol CategoriesModalScreenDelegate: AnyObject {
 
 class CategoriesModalScreen: UIViewController {
     
+    var viewModel:CategoriesModalViewModel = CategoriesModalViewModel()
     weak var delegate: CategoriesModalScreenDelegate?
     
     let transactionType:TransactionType
@@ -22,9 +23,9 @@ class CategoriesModalScreen: UIViewController {
     init?(coder:NSCoder, transactionType:TransactionType){
         self.transactionType = transactionType
         if transactionType == .expense {
-            self.filteredCategories = expenseCategories
+            filteredCategories = expenseCategories
         } else {
-            self.filteredCategories = incomeCategories
+            filteredCategories = incomeCategories
         }
         super.init(coder: coder)
         
