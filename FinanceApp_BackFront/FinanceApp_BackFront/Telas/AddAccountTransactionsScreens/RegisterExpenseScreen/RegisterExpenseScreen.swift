@@ -17,6 +17,7 @@ class RegisterExpenseScreen: UIViewController {
     @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var categoryBackgroung: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var obsTextField: UITextField!
@@ -27,12 +28,18 @@ class RegisterExpenseScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupDataPicker()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        let today = Date()
+        dateField.text = viewModel.datePickerChange(date: today)
+        
         updateCategoryField(indexCategorySelected)
         updateAccountField(indexAccountSelected)
+        
     }
     
     
@@ -89,7 +96,21 @@ class RegisterExpenseScreen: UIViewController {
         accountBackground.backgroundColor = viewModel.getBankBackColor(indexAccount)
     }
     
-    func showAlert (title: String) {
+    private func setupDataPicker(){
+        let datePicker = UIDatePicker ()
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(dateChange (datePicker:)), for: UIControl.Event.valueChanged)
+        datePicker.frame.size = CGSize(width: 0, height: 300)
+        datePicker.preferredDatePickerStyle = .inline
+        dateField.inputView = datePicker
+    }
+    
+    @objc func dateChange (datePicker: UIDatePicker) {
+        dateField.text = viewModel.datePickerChange(date: datePicker.date)
+        dateField.resignFirstResponder()
+    }
+    
+    private func showAlert (title: String) {
         let alertController = UIAlertController (title: title, message: nil, preferredStyle: .alert)
         let okButton = UIAlertAction (title: "Ok", style: .default, handler: nil)
         alertController.addAction(okButton)

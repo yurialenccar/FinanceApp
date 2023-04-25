@@ -74,15 +74,15 @@
                         <rect key="frame" x="74" y="47" width="267" height="18"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyl-jh-gxu">
-                                <rect key="frame" x="0.0" y="0.0" width="182" height="18"/>
+                                <rect key="frame" x="0.0" y="0.0" width="177" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" name="GreyInformations"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/2023" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSd-gM-JJo">
-                                <rect key="frame" x="187" y="0.0" width="80" height="18"/>
+                                <rect key="frame" x="182" y="0.0" width="85" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="GaO-ig-2ty"/>
+                                    <constraint firstAttribute="width" constant="85" id="GaO-ig-2ty"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" name="GreyInformations"/>
