@@ -16,20 +16,23 @@ class AddAccountTransactionsViewModel{
     
     var transactionType:TransactionType
     var newTransaction:Transactions
+    //var dataSelecionada:String
     
     init(type: TransactionType) {
         transactionType=type
         newTransaction = Transactions(desc: "Vazio", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: type, accountIndex: 0, obs: "")
+        //self.dataSelecionada = today
     }
     
     
+    var dataSelecionada = Date()
     
     public func setTransactionsValues(desc: String, amount:String, category:Int, account:Int, Obs:String){
         
         newTransaction.amount = Double(amount)!
         newTransaction.categoryIndex = category
         newTransaction.accountIndex = account
-        //newTransaction.date = date
+        newTransaction.date = formatDate(date: dataSelecionada)
         newTransaction.type = transactionType
         newTransaction.obs = Obs
         
@@ -49,7 +52,7 @@ class AddAccountTransactionsViewModel{
         transactions.append(newTransaction)
     }
     
-    func getCategoryLabel(_ indexCategory:Int) -> String {
+    public func getCategoryLabel(_ indexCategory:Int) -> String {
         switch transactionType{
         case .expense:
             return expenseCategories[indexCategory].name
@@ -58,7 +61,7 @@ class AddAccountTransactionsViewModel{
         }
     }
     
-    func getCategoryImageName(_ indexCategory:Int) -> UIImage{
+    public func getCategoryImageName(_ indexCategory:Int) -> UIImage{
         switch transactionType{
         case .expense:
             return UIImage(imageLiteralResourceName: expenseCategories[indexCategory].imageName)
@@ -67,7 +70,7 @@ class AddAccountTransactionsViewModel{
         }
     }
     
-    func getCategoryBackgroungColor(_ indexCategory:Int) -> UIColor{
+    public func getCategoryBackgroungColor(_ indexCategory:Int) -> UIColor{
         switch transactionType{
         case .expense:
             return expenseCategories[indexCategory].color
@@ -76,23 +79,49 @@ class AddAccountTransactionsViewModel{
         }
     }
     
-    func getAccountLabel(_ indexAccount:Int) -> String{
+    public func getAccountLabel(_ indexAccount:Int) -> String{
         return bankAccountsList[indexAccount].desc
     }
     
-    func getBankLabelText(_ indexAccount:Int) -> String{
+    public func getBankLabelText(_ indexAccount:Int) -> String{
         return bankAccountsList[indexAccount].bank.rawValue
     }
     
-    func getBankLabelColor(_ indexAccount:Int) -> UIColor{
+    public func getBankLabelColor(_ indexAccount:Int) -> UIColor{
         return bankColors[bankAccountsList[indexAccount].bank]!.labelBankColor
     }
     
-    func getBankBackColor(_ indexAccount:Int) -> UIColor{
+    public func getBankBackColor(_ indexAccount:Int) -> UIColor{
         return bankColors[bankAccountsList[indexAccount].bank]!.backgroundColor
     }
     
+    private func formatDate(date: Date) -> String {
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        
+        return formatter.string(from: date)
+    }
     
+    public func datePickerChange(date: Date) -> String {
+        let calendar = Calendar.current
+        let today = Date()
+        let yesterday = calendar.date(byAdding: .day, value: -1, to: today)!
+        let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
+        
+        dataSelecionada = date
+        
+        switch formatDate(date: dataSelecionada){
+        case formatDate(date: today):
+            return "Hoje"
+        case formatDate(date: yesterday):
+            return "Ontem"
+        case formatDate(date: tomorrow):
+            return "Amanhã"
+        default:
+            return formatDate(date: date)
+        }
+    }
     
     
     
