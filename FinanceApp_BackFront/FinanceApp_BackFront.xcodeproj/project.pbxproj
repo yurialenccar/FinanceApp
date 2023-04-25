@@ -36,6 +36,12 @@
 		A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16688FB29F17E5200568217 /* TransactionsViewModel.swift */; };
 		A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166B96129DF4BD600F33A98 /* ListedCategories.swift */; };
 		A189A39929F58A4700C22A6D /* BankColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189A39829F58A4700C22A6D /* BankColors.swift */; };
+		A1A92BB429F8122A00E14EE8 /* CreditCardModalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A92BB329F8122A00E14EE8 /* CreditCardModalScreen.storyboard */; };
+		A1A92BB729F8124400E14EE8 /* CreditCardModalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BB629F8124400E14EE8 /* CreditCardModalScreen.swift */; };
+		A1A92BBF29F812B600E14EE8 /* CreditCardModalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BBD29F812B600E14EE8 /* CreditCardModalCell.swift */; };
+		A1A92BC029F812B600E14EE8 /* CreditCardModalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A92BBE29F812B600E14EE8 /* CreditCardModalCell.xib */; };
+		A1A92BC429F81C1D00E14EE8 /* RegisterCardExpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BC329F81C1D00E14EE8 /* RegisterCardExpViewModel.swift */; };
+		A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BC529F81D6200E14EE8 /* CreditCardExpenses.swift */; };
 		A1C9EFE329E60A7D0029B69F /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFE229E60A7D0029B69F /* SplashScreen.storyboard */; };
 		A1C9EFE529E60A880029B69F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFE429E60A880029B69F /* SplashScreen.swift */; };
 		A1C9EFE729E60BB60029B69F /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFE629E60BB60029B69F /* MainScreen.swift */; };
@@ -113,6 +119,12 @@
 		A16688FB29F17E5200568217 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		A166B96129DF4BD600F33A98 /* ListedCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedCategories.swift; sourceTree = "<group>"; };
 		A189A39829F58A4700C22A6D /* BankColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankColors.swift; sourceTree = "<group>"; };
+		A1A92BB329F8122A00E14EE8 /* CreditCardModalScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreditCardModalScreen.storyboard; sourceTree = "<group>"; };
+		A1A92BB629F8124400E14EE8 /* CreditCardModalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardModalScreen.swift; sourceTree = "<group>"; };
+		A1A92BBD29F812B600E14EE8 /* CreditCardModalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardModalCell.swift; sourceTree = "<group>"; };
+		A1A92BBE29F812B600E14EE8 /* CreditCardModalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardModalCell.xib; sourceTree = "<group>"; };
+		A1A92BC329F81C1D00E14EE8 /* RegisterCardExpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCardExpViewModel.swift; sourceTree = "<group>"; };
+		A1A92BC529F81D6200E14EE8 /* CreditCardExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardExpenses.swift; sourceTree = "<group>"; };
 		A1C9EFE229E60A7D0029B69F /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		A1C9EFE429E60A880029B69F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		A1C9EFE629E60BB60029B69F /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -243,8 +255,8 @@
 		A140934029E73A800037662B /* RegisterCardExpScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A140934929E73BCC0037662B /* RegisterCardExpScreen.storyboard */,
-				A140934B29E73BD30037662B /* RegisterCardExpScreen.swift */,
+				A1A92BC229F81BFC00E14EE8 /* ViewModel */,
+				A1A92BC129F81BF500E14EE8 /* View */,
 			);
 			path = RegisterCardExpScreen;
 			sourceTree = "<group>";
@@ -292,6 +304,7 @@
 			children = (
 				A11BDA7929F4C47F006CF6B2 /* Enums */,
 				A16636EE29DE33C500162872 /* Transactions.swift */,
+				A1A92BC529F81D6200E14EE8 /* CreditCardExpenses.swift */,
 				A166B96129DF4BD600F33A98 /* ListedCategories.swift */,
 				A140933C29E6EC3D0037662B /* CategoriesSum.swift */,
 				A16688EA29F08CF600568217 /* BalanceValues.swift */,
@@ -410,6 +423,58 @@
 			path = CategoriesGraphScreen;
 			sourceTree = "<group>";
 		};
+		A1A92BB229F8120500E14EE8 /* CreditCardModalScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A1A92BC729F8221700E14EE8 /* ViewModel */,
+				A1A92BB829F8127300E14EE8 /* Cell */,
+				A1A92BB529F8123000E14EE8 /* View */,
+			);
+			path = CreditCardModalScreen;
+			sourceTree = "<group>";
+		};
+		A1A92BB529F8123000E14EE8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A1A92BB329F8122A00E14EE8 /* CreditCardModalScreen.storyboard */,
+				A1A92BB629F8124400E14EE8 /* CreditCardModalScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A1A92BB829F8127300E14EE8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A1A92BBE29F812B600E14EE8 /* CreditCardModalCell.xib */,
+				A1A92BBD29F812B600E14EE8 /* CreditCardModalCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A1A92BC129F81BF500E14EE8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A140934929E73BCC0037662B /* RegisterCardExpScreen.storyboard */,
+				A140934B29E73BD30037662B /* RegisterCardExpScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A1A92BC229F81BFC00E14EE8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A1A92BC329F81C1D00E14EE8 /* RegisterCardExpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A1A92BC729F8221700E14EE8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A1C9EFDC29E607A40029B69F /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,8 +513,9 @@
 		A1D2F84429E999D500DCA6E4 /* ModalScreens */ = {
 			isa = PBXGroup;
 			children = (
-				A11BDA7E29F4CC5B006CF6B2 /* AccountsModalScreen */,
+				A1A92BB229F8120500E14EE8 /* CreditCardModalScreen */,
 				A1D2F84529E99A0200DCA6E4 /* CategoriesModalScreen */,
+				A11BDA7E29F4CC5B006CF6B2 /* AccountsModalScreen */,
 			);
 			path = ModalScreens;
 			sourceTree = "<group>";
@@ -457,9 +523,9 @@
 		A1D2F84529E99A0200DCA6E4 /* CategoriesModalScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A1D2F84A29E9E57F00DCA6E4 /* Cell */,
 				A1F4210629F62363005C346B /* ViewModel */,
 				A1F4210529F6235F005C346B /* View */,
-				A1D2F84A29E9E57F00DCA6E4 /* Cell */,
 			);
 			path = CategoriesModalScreen;
 			sourceTree = "<group>";
@@ -672,9 +738,11 @@
 				A140934A29E73BCC0037662B /* RegisterCardExpScreen.storyboard in Resources */,
 				A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */,
 				A1E107B329E4E9A6005A3F4F /* AccountsScreen.storyboard in Resources */,
+				A1A92BC029F812B600E14EE8 /* CreditCardModalCell.xib in Resources */,
 				A1D2F84E29E9E5B100DCA6E4 /* CategoriesModalCell.xib in Resources */,
 				E35D087329BDB20C0098F0B5 /* MoreOptionsScreen.storyboard in Resources */,
 				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
+				A1A92BB429F8122A00E14EE8 /* CreditCardModalScreen.storyboard in Resources */,
 				A1C9EFEA29E60CF50029B69F /* RegisterScreen.storyboard in Resources */,
 				A1C9EFE329E60A7D0029B69F /* SplashScreen.storyboard in Resources */,
 				E3E9089329BFAF2A00B34864 /* CategoriesGraphScreen.storyboard in Resources */,
@@ -759,8 +827,10 @@
 				E3C0915929C21CC900BE4441 /* GoalsScreen.swift in Sources */,
 				E35D086929BDB1C60098F0B5 /* AddTransactionScreen.swift in Sources */,
 				A1E107C229E4F646005A3F4F /* ProfileScreen.swift in Sources */,
+				A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */,
 				A11BDA8629F4CFB6006CF6B2 /* AccountsTableViewCell.swift in Sources */,
 				A16688E929F06E8600568217 /* HomeViewModel.swift in Sources */,
+				A1A92BB729F8124400E14EE8 /* CreditCardModalScreen.swift in Sources */,
 				A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */,
 				A140934F29E7625A0037662B /* AddTrasactionsViewModel.swift in Sources */,
 				A11BDA7229F4C04A006CF6B2 /* BankAccount.swift in Sources */,
@@ -773,11 +843,13 @@
 				A14DAE6329D4E94200714208 /* TransactionsScreen.swift in Sources */,
 				A1E107BD29E4F432005A3F4F /* CreditCardsScreen.swift in Sources */,
 				A1D2F84929E99A3100DCA6E4 /* CategoriesModalScreen.swift in Sources */,
+				A1A92BBF29F812B600E14EE8 /* CreditCardModalCell.swift in Sources */,
 				A189A39929F58A4700C22A6D /* BankColors.swift in Sources */,
 				E3E9089129BFAF1B00B34864 /* CategoriesGraphScreen.swift in Sources */,
 				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
 				A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */,
 				A1C9EFE529E60A880029B69F /* SplashScreen.swift in Sources */,
+				A1A92BC429F81C1D00E14EE8 /* RegisterCardExpViewModel.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
 				A11BDA7429F4C173006CF6B2 /* Banks.swift in Sources */,
 				A1C9EFE729E60BB60029B69F /* MainScreen.swift in Sources */,

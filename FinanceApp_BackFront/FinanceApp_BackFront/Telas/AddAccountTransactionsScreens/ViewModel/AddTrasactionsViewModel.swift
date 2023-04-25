@@ -8,10 +8,6 @@
 import Foundation
 import UIKit
 
-func stringIsEmpty(text:String) -> Bool {
-    return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-}
-
 class AddAccountTransactionsViewModel{
     
     var transactionType:TransactionType
@@ -123,7 +119,9 @@ class AddAccountTransactionsViewModel{
         }
     }
     
-    
+    public func stringIsEmpty(text:String) -> Bool {
+        return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
     
     
     

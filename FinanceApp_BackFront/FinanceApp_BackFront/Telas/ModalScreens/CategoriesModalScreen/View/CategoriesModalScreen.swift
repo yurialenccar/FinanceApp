@@ -47,10 +47,6 @@ class CategoriesModalScreen: UIViewController {
         tableView.dataSource = self
         tableView.register(CategoriesModalCell.nib(), forCellReuseIdentifier: CategoriesModalCell.identifier)
     }
-
-    
-
-
 }
 
 extension CategoriesModalScreen:UITableViewDataSource, UITableViewDelegate{
