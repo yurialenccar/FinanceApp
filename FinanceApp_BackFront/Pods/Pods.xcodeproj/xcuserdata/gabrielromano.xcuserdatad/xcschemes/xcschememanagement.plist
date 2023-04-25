@@ -6,18 +6,42 @@
 	<dict>
 		<key>Charts.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-FinanceApp_BackFront.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 		<key>SwiftAlgorithms.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2C511EE63C6E7D5843B971D1E441119E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51A0ABE14FCDFC9467BE3011067EA790</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF03B0B2B8B052092CB5F90CC5FB3757</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

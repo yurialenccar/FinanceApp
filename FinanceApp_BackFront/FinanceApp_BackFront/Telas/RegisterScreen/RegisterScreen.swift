@@ -41,15 +41,19 @@ class RegisterScreen: UIViewController {
         passwordTextfield.delegate = self
         passwordRepeatTextfield.delegate = self
         
-
-
-   
     }
    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        nameTextfield.text = ""
+        emailTextfield.text = ""
+        passwordTextfield.text = ""
+        passwordRepeatTextfield.text = ""
     }
     
     @IBAction func tappedCreateButton(_ sender: UIButton) {
@@ -195,7 +199,7 @@ extension RegisterScreen : UITextFieldDelegate {
     }
 
     
-    }
+}
     
     
 

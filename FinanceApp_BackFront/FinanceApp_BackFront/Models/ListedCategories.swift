@@ -18,8 +18,6 @@ var expenseCategories:[ListedCategories] = [
     ListedCategories(name: "Alimentação", imageName: "star", color: UIColor.yellow),
     ListedCategories(name: "Casa", imageName: "home", color: UIColor.blue),
     ListedCategories(name: "Esportes", imageName: "football", color: UIColor.purple)
-    
-    
 ]
 
 var incomeCategories:[ListedCategories] = [

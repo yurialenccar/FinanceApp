@@ -94,8 +94,6 @@ class CategoriesGraphScreen: UIViewController {
     }
     
     private func updateChartData(for mes: String) {
-//        let values: [Double] = [2500, 500, 500, 500]
-//        let labels = ["Casa", "Carro", "Alimentação", "Educação"]
         let sum:[CategoriesSum]=sumExpensesByCategory() 
         let values: [Double] = sum.map{$0.amount}
         let labels: [String] = sum.map{$0.category}

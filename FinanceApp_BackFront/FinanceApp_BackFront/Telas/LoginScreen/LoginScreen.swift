@@ -23,9 +23,6 @@ class LoginScreen: UIViewController {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
-        
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

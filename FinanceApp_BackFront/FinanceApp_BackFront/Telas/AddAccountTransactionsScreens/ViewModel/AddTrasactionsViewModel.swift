@@ -12,14 +12,12 @@ class AddAccountTransactionsViewModel{
     
     var transactionType:TransactionType
     var newTransaction:Transactions
-    //var dataSelecionada:String
     
     init(type: TransactionType) {
         transactionType=type
         newTransaction = Transactions(desc: "Vazio", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: type, accountIndex: 0, obs: "")
-        //self.dataSelecionada = today
+        
     }
-    
     
     var dataSelecionada = Date()
     
