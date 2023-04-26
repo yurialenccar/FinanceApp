@@ -7,10 +7,15 @@
 
 import UIKit
 
-class createGoalButtonCell: UICollectionViewCell {
+protocol CreateGoalButtonCellDelegate: AnyObject {
+    func didTappedNewGoalButton()
+}
 
+
+class createGoalButtonCell: UICollectionViewCell {
     
-    
+    weak var delegate: CreateGoalButtonCellDelegate?
+
     static let identifier:String = String(describing: createGoalButtonCell.self)
     
     static func nib() -> UINib {
@@ -23,6 +28,7 @@ class createGoalButtonCell: UICollectionViewCell {
     }
 
     @IBAction func tappedNewGoalButton(_ sender: UIButton) {
-        print("nova meta")
+        print("button nova meta")
+        delegate?.didTappedNewGoalButton()
     }
 }

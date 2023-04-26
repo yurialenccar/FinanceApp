@@ -33,7 +33,9 @@ class GoalsScreen: UIViewController {
 
 }
 
-extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateGoalButtonCellDelegate {
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return goalList.count + 1
     }
@@ -47,6 +49,7 @@ extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             return cell ?? UICollectionViewCell()
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: createGoalButtonCell.identifier, for: indexPath) as? createGoalButtonCell
+            cell?.delegate = self
             return cell ?? UICollectionViewCell()
         }
         
@@ -58,6 +61,15 @@ extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return CGSize(width: view.frame.width - 30, height: 124)
     }
     
-    
-    
+    func didTappedNewGoalButton() {
+        print("function didTappedNewGoalButton")
+//        let vc: NewGoalScreen? = UIStoryboard(name: "NewGoalScreen", bundle: nil).instantiateViewController(withIdentifier: "NewGoalScreen") as? NewGoalScreen
+//        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+        let storyboard = UIStoryboard(name: "NewGoalScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "NewGoalScreen") as? NewGoalScreen
+        if let presentationController = vc?.presentationController as? UISheetPresentationController{
+            presentationController.detents = [.medium()]
+        }
+        self.present(vc ?? UIViewController(), animated: true)
+    }
 }
