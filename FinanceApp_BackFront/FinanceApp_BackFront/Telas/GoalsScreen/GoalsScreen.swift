@@ -26,6 +26,7 @@ class GoalsScreen: UIViewController {
             layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 0, right: 15)
         }
         collectionView.register(GoalsCollectionViewCell.nib(), forCellWithReuseIdentifier: GoalsCollectionViewCell.identifier)
+        collectionView.register(createGoalButtonCell.nib(), forCellWithReuseIdentifier: createGoalButtonCell.identifier)
         
     }
 
@@ -34,15 +35,23 @@ class GoalsScreen: UIViewController {
 
 extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return goalList.count
+        return goalList.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalsCollectionViewCell.identifier, for: indexPath) as? GoalsCollectionViewCell
-        cell?.layer.cornerRadius = 10
-        cell?.layer.masksToBounds = true
-        cell?.setupCell(goal: goalList[indexPath.row])
-        return cell ?? UICollectionViewCell()
+        if  indexPath.row < goalList.count{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalsCollectionViewCell.identifier, for: indexPath) as? GoalsCollectionViewCell
+            cell?.layer.cornerRadius = 10
+            cell?.layer.masksToBounds = true
+            cell?.setupCell(goal: goalList[indexPath.row])
+            return cell ?? UICollectionViewCell()
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: createGoalButtonCell.identifier, for: indexPath) as? createGoalButtonCell
+            return cell ?? UICollectionViewCell()
+        }
+        
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

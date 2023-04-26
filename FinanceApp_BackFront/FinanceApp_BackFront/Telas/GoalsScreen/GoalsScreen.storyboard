@@ -226,7 +226,7 @@ meta.</string>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qP-fc-w6S">
                                                 <rect key="frame" x="8" y="0.0" width="214.5" height="50"/>
-                                                <color key="backgroundColor" red="0.2107897762" green="0.67743262240000002" blue="0.51913780939999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.21176470588235294" green="0.67843137254901964" blue="0.51764705882352935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="214.5" id="ego-5g-WOO"/>
                                                     <constraint firstAttribute="height" constant="50" id="owO-tK-hE7"/>
