@@ -21,6 +21,48 @@ struct Goal {
     public func stringIsEmpty(text:String) -> Bool {
         return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
+    
+    var DaysToTargetDate: String {
+        
+        let days = daysToDate()
+        
+        if days > 1 {
+            return "Data estimada: \(String(describing: targetDate)). Faltam R$ \(goalValue - savedAmount)0 em \(days) dias para bater a meta."
+        } else {
+            return "Data estimada: \(String(describing: targetDate)). Faltam R$ \(goalValue - savedAmount)0 em \(days) dia para bater a meta."
+        }
+    }
+    
+    var recommendation:String{
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        
+        let days = daysToDate()
+        let months:Double = Double(days)/30
+        let value = formatter.string(for: (goalValue - savedAmount)/months.rounded(.up))
+        
+        if months>1.2 {
+            return "Recomendamos que guarde R$ \(value ?? "0,00") por mês para que o objetivo seja alcançado no prazo."
+        } else{
+            return "Recomendamos que guarde o total de R$ \(goalValue - savedAmount)0 ainda nesse mês para que o objetivo seja alcançado no prazo."
+        }
+    }
+    
+    private func daysToDate() -> Int {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        let targetDate = formatter.date(from: targetDate)
+
+        let today = Date()
+        let calendar = Calendar.current
+
+        let components = calendar.dateComponents([.day], from: today, to: targetDate!)
+        let days = components.day!
+        
+        return days
+    }
 }
 
 var goalsList: [Goal] = [

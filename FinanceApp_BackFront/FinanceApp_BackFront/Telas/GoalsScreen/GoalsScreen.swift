@@ -62,8 +62,6 @@ extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func didTappedNewGoalButton() {
         print("function didTappedNewGoalButton")
-//        let vc: NewGoalScreen? = UIStoryboard(name: "NewGoalScreen", bundle: nil).instantiateViewController(withIdentifier: "NewGoalScreen") as? NewGoalScreen
-//        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
         let storyboard = UIStoryboard(name: "NewGoalScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "NewGoalScreen") as? NewGoalScreen
         vc?.delegate = self
@@ -75,5 +73,14 @@ extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func didCreatedGoal() {
         collectionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+        let storyboard = UIStoryboard(name: "GoalInfoScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "GoalInfoScreen") {coder -> GoalInfoScreen? in
+            return GoalInfoScreen(coder: coder, goal: goalsList[indexPath.row])
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
