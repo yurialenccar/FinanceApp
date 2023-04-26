@@ -20,6 +20,7 @@ class TransactionsScreen: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupCollectionView()
+        transactionsCollectionView.reloadData()
     }
     
     private func setupCollectionView(){

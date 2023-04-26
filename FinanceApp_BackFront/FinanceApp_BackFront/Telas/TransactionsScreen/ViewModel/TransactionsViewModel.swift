@@ -9,11 +9,6 @@ import Foundation
 
 struct TransactionsViewModel {
     
-    
-    public mutating func setNewTransaction(_ newTransaction:Transactions) {
-        transactions.append(newTransaction)
-    }
-    
     public func getTransactionsCount() -> Int {
         return transactions.count
     }
