@@ -18,6 +18,7 @@
 		A11BDA8629F4CFB6006CF6B2 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA8429F4CFB6006CF6B2 /* AccountsTableViewCell.swift */; };
 		A11BDA8729F4CFB6006CF6B2 /* AccountsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11BDA8529F4CFB6006CF6B2 /* AccountsTableViewCell.xib */; };
 		A13E249629F98AB200E9EF7A /* NewGoalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13E249529F98AB200E9EF7A /* NewGoalScreen.storyboard */; };
+		A13E249929F98BDB00E9EF7A /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E249829F98BDB00E9EF7A /* NewGoalViewModel.swift */; };
 		A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140933C29E6EC3D0037662B /* CategoriesSum.swift */; };
 		A140934229E73ACA0037662B /* RegisterIncomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A140934129E73ACA0037662B /* RegisterIncomeScreen.storyboard */; };
 		A140934429E73AD20037662B /* RegisterIncomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140934329E73AD20037662B /* RegisterIncomeScreen.swift */; };
@@ -107,6 +108,7 @@
 		A11BDA8429F4CFB6006CF6B2 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
 		A11BDA8529F4CFB6006CF6B2 /* AccountsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsTableViewCell.xib; sourceTree = "<group>"; };
 		A13E249529F98AB200E9EF7A /* NewGoalScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewGoalScreen.storyboard; sourceTree = "<group>"; };
+		A13E249829F98BDB00E9EF7A /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
 		A140933C29E6EC3D0037662B /* CategoriesSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSum.swift; sourceTree = "<group>"; };
 		A140934129E73ACA0037662B /* RegisterIncomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterIncomeScreen.storyboard; sourceTree = "<group>"; };
 		A140934329E73AD20037662B /* RegisterIncomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterIncomeScreen.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		A13E249729F98ABE00E9EF7A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A13E249829F98BDB00E9EF7A /* NewGoalViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -895,6 +898,7 @@
 				E3C0915929C21CC900BE4441 /* GoalsScreen.swift in Sources */,
 				E35D086929BDB1C60098F0B5 /* AddTransactionScreen.swift in Sources */,
 				A1E107C229E4F646005A3F4F /* ProfileScreen.swift in Sources */,
+				A13E249929F98BDB00E9EF7A /* NewGoalViewModel.swift in Sources */,
 				A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */,
 				A11BDA8629F4CFB6006CF6B2 /* AccountsTableViewCell.swift in Sources */,
 				A16688E929F06E8600568217 /* HomeViewModel.swift in Sources */,

@@ -33,19 +33,18 @@ class GoalsScreen: UIViewController {
 
 }
 
-extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateGoalButtonCellDelegate {
-    
+extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateGoalButtonCellDelegate, CreatedNewGoalDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return goalList.count + 1
+        return goalsList.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if  indexPath.row < goalList.count{
+        if  indexPath.row < goalsList.count{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalsCollectionViewCell.identifier, for: indexPath) as? GoalsCollectionViewCell
             cell?.layer.cornerRadius = 10
             cell?.layer.masksToBounds = true
-            cell?.setupCell(goal: goalList[indexPath.row])
+            cell?.setupCell(goal: goalsList[indexPath.row])
             return cell ?? UICollectionViewCell()
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: createGoalButtonCell.identifier, for: indexPath) as? createGoalButtonCell
@@ -67,9 +66,14 @@ extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 //        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
         let storyboard = UIStoryboard(name: "NewGoalScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "NewGoalScreen") as? NewGoalScreen
+        vc?.delegate = self
         if let presentationController = vc?.presentationController as? UISheetPresentationController{
             presentationController.detents = [.medium()]
         }
         self.present(vc ?? UIViewController(), animated: true)
+    }
+    
+    func didCreatedGoal() {
+        collectionView.reloadData()
     }
 }
