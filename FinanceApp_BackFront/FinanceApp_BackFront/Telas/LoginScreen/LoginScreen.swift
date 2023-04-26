@@ -25,6 +25,10 @@ class LoginScreen: UIViewController {
         passwordTextField.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         emailTextField.text = ""
         passwordTextField.text = "" 
