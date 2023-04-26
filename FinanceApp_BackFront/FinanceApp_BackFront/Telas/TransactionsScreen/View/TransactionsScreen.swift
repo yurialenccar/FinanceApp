@@ -25,7 +25,12 @@ class TransactionsScreen: UIViewController {
     private func setupCollectionView(){
         transactionsCollectionView.delegate = self
         transactionsCollectionView.dataSource = self
-        transactionsCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
+        //transactionsCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
+        if let layout = transactionsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .vertical
+            layout.estimatedItemSize = .zero
+            layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 0, right: 15)
+        }
         transactionsCollectionView.register(TransactionsCollectionViewCell.nib(), forCellWithReuseIdentifier: TransactionsCollectionViewCell.identifier)
     }
 
@@ -40,13 +45,14 @@ extension TransactionsScreen: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionsCollectionViewCell.identifier, for: indexPath) as! TransactionsCollectionViewCell
-        
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
         cell.setup(with: viewModel.getItemTransactions(indexPath.row))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return viewModel.getCellSize()
+        return viewModel.getCellSize(viewWidth: Int(view.frame.width))
     }
     
 //    funcão do método Delegate

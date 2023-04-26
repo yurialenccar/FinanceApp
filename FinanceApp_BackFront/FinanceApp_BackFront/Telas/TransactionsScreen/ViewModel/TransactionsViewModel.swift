@@ -22,8 +22,8 @@ struct TransactionsViewModel {
         return transactions[index]
     }
     
-    public func getCellSize() -> CGSize {
-        return CGSize (width: 361, height: 85)
+    public func getCellSize(viewWidth:Int) -> CGSize {
+        return CGSize (width: viewWidth - 30, height: 85)
     }
 }
 
