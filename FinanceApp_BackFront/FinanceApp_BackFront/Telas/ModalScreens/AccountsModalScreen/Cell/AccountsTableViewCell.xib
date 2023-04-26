@@ -18,10 +18,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spq-V4-k5f">
-                        <rect key="frame" x="15" y="10" width="40" height="40"/>
+                        <rect key="frame" x="15" y="10" width="44" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banco" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5m-cj-wJ7">
-                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="Att-bl-BB1"/>
+                            <constraint firstAttribute="width" constant="44" id="Att-bl-BB1"/>
                             <constraint firstAttribute="trailing" secondItem="R5m-cj-wJ7" secondAttribute="trailing" id="MbG-vv-v0f"/>
                             <constraint firstItem="R5m-cj-wJ7" firstAttribute="leading" secondItem="spq-V4-k5f" secondAttribute="leading" id="of8-nG-eML"/>
                             <constraint firstItem="R5m-cj-wJ7" firstAttribute="top" secondItem="spq-V4-k5f" secondAttribute="top" id="ucT-Ou-gHT"/>
@@ -42,7 +42,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYs-rP-uNJ">
-                        <rect key="frame" x="65" y="20" width="42" height="21"/>
+                        <rect key="frame" x="69" y="20" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

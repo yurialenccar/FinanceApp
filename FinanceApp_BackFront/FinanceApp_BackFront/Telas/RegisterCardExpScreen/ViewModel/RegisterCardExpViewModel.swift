@@ -48,17 +48,24 @@ class RegisterCardExpViewModel{
         return creditCardsList[indexAccount].desc
     }
     
-    public func getBankLabelText(_ indexAccount:Int) -> String{
-        return creditCardsList[indexAccount].bank.rawValue
+    public func getBankLabelText(_ indexCard:Int) -> String{
+        return bankProperties[creditCardsList[indexCard].bank]?.text ?? "banco"
     }
     
-    public func getBankLabelColor(_ indexAccount:Int) -> UIColor{
-        return bankColors[creditCardsList[indexAccount].bank]!.labelBankColor
+    public func getBankLabelTextFont(_ indexCard:Int) -> UIFont{
+        let textSize:Int  = bankProperties[creditCardsList[indexCard].bank]?.textSize ?? 17
+        return UIFont.systemFont(ofSize: CGFloat(textSize), weight: .bold)
     }
     
-    public func getBankBackColor(_ indexAccount:Int) -> UIColor{
-        return bankColors[creditCardsList[indexAccount].bank]!.backgroundColor
+    public func getBankLabelColor(_ indexCard:Int) -> UIColor{
+        return bankProperties[creditCardsList[indexCard].bank]!.labelBankColor
     }
+    
+    public func getBankBackColor(_ indexCard:Int) -> UIColor{
+        return bankProperties[creditCardsList[indexCard].bank]!.backgroundColor
+    }
+    
+    
     
     private func formatDate(date: Date) -> String {
 

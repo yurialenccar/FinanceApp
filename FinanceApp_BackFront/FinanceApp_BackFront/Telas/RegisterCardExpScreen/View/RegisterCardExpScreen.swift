@@ -91,6 +91,7 @@ class RegisterCardExpScreen: UIViewController{
     func updateCardField(_ indexCard:Int){
         cardLabel.text = viewModel.getCardLabel(indexCard)
         bankLabel.text = viewModel.getBankLabelText(indexCard)
+        bankLabel.font = viewModel.getBankLabelTextFont(indexCard)
         bankLabel.textColor = viewModel.getBankLabelColor(indexCard)
         bankBackground.backgroundColor = viewModel.getBankBackColor(indexCard)
     }

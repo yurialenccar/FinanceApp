@@ -90,6 +90,7 @@ class RegisterIncomeScreen: UIViewController {
     func updateAccountField(_ indexAccount:Int){
         accountLabel.text = viewModel.getAccountLabel(indexAccount)
         bankLabel.text = viewModel.getBankLabelText(indexAccount)
+        bankLabel.font = viewModel.getBankLabelTextFont(indexAccount)
         bankLabel.textColor = viewModel.getBankLabelColor(indexAccount)
         accountBackground.backgroundColor = viewModel.getBankBackColor(indexAccount)
     }

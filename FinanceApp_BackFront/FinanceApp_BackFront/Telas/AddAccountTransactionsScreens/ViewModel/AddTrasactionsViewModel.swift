@@ -90,15 +90,20 @@ class AddAccountTransactionsViewModel{
     }
     
     public func getBankLabelText(_ indexAccount:Int) -> String{
-        return bankAccountsList[indexAccount].bank.rawValue
+        return bankProperties[bankAccountsList[indexAccount].bank]!.text
+    }
+    
+    public func getBankLabelTextFont(_ indexAccount:Int) -> UIFont{
+        let textSize:Int  = bankProperties[bankAccountsList[indexAccount].bank]?.textSize ?? 17
+        return UIFont.systemFont(ofSize: CGFloat(textSize), weight: .bold)
     }
     
     public func getBankLabelColor(_ indexAccount:Int) -> UIColor{
-        return bankColors[bankAccountsList[indexAccount].bank]!.labelBankColor
+        return bankProperties[bankAccountsList[indexAccount].bank]!.labelBankColor
     }
     
     public func getBankBackColor(_ indexAccount:Int) -> UIColor{
-        return bankColors[bankAccountsList[indexAccount].bank]!.backgroundColor
+        return bankProperties[bankAccountsList[indexAccount].bank]!.backgroundColor
     }
     
     private func formatDate(date: Date) -> String {
