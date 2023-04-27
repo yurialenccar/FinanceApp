@@ -28,11 +28,9 @@ class AccountsTableViewCell: UITableViewCell {
     }
     
     func setupCell(bankAccount:BankAccount){
-        let textSize:Int  = bankProperties[bankAccount.bank]?.textSize ?? 17
-        
         descLabel.text = bankAccount.desc
         bankLabel.text = bankProperties[bankAccount.bank]?.text
-        bankLabel.font = UIFont.systemFont(ofSize: CGFloat(textSize), weight: .bold)
+        bankLabel.font = UIFont.systemFont(ofSize: bankProperties[bankAccount.bank]?.textSize ?? 17, weight: .bold)
         bankLabel.textColor = bankProperties[bankAccount.bank]?.labelBankColor
         bankBackground.backgroundColor = bankProperties[bankAccount.bank]?.backgroundColor
     }

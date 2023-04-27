@@ -32,7 +32,7 @@ class MoreOptionsScreen: UIViewController {
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     @IBAction func tappedAccountsButton(_ sender: UIButton) {
-        let vc: AccountsScreen? = UIStoryboard(name: "AccountsScreen", bundle: nil).instantiateViewController(withIdentifier: "AccountsScreen") as? AccountsScreen
+        let vc: BankAccountsScreen? = UIStoryboard(name: "BankAccountsScreen", bundle: nil).instantiateViewController(withIdentifier: "BankAccountsScreen") as? BankAccountsScreen
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     

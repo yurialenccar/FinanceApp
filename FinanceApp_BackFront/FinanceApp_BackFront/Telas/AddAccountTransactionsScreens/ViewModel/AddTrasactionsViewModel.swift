@@ -94,8 +94,7 @@ class AddAccountTransactionsViewModel{
     }
     
     public func getBankLabelTextFont(_ indexAccount:Int) -> UIFont{
-        let textSize:Int  = bankProperties[bankAccountsList[indexAccount].bank]?.textSize ?? 17
-        return UIFont.systemFont(ofSize: CGFloat(textSize), weight: .bold)
+        return UIFont.systemFont(ofSize: bankProperties[bankAccountsList[indexAccount].bank]?.textSize ?? 17, weight: .bold)
     }
     
     public func getBankLabelColor(_ indexAccount:Int) -> UIColor{

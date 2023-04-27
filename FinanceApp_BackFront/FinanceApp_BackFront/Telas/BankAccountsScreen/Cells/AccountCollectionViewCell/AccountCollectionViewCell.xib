@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AccountCollectionViewCell" customModule="FinanceApp_BackFront" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron-left" translatesAutoresizingMaskIntoConstraints="NO" id="rBZ-aC-ht3">
+                        <rect key="frame" x="295" y="20" width="20" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="qaE-iI-k2F"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJQ-Ba-Z2U">
+                        <rect key="frame" x="10" y="10" width="44" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banco" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIb-c5-ErL">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TIb-c5-ErL" secondAttribute="trailing" id="ARb-D0-0T8"/>
+                            <constraint firstAttribute="width" constant="44" id="LIa-Ba-XVV"/>
+                            <constraint firstItem="TIb-c5-ErL" firstAttribute="top" secondItem="uJQ-Ba-Z2U" secondAttribute="top" id="PYR-G3-Xdm"/>
+                            <constraint firstAttribute="height" constant="40" id="pMo-e7-7Fc"/>
+                            <constraint firstItem="TIb-c5-ErL" firstAttribute="leading" secondItem="uJQ-Ba-Z2U" secondAttribute="leading" id="swg-SQ-8GE"/>
+                            <constraint firstAttribute="bottom" secondItem="TIb-c5-ErL" secondAttribute="bottom" id="zSr-jT-gF3"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ump-KR-i8I">
+                        <rect key="frame" x="64" y="19" width="221" height="19.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Clu-Em-Smt">
+                        <rect key="frame" x="65" y="47" width="220" height="18"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor em Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUh-el-SX1">
+                                <rect key="frame" x="0.0" y="0.0" width="105" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" name="GreyInformations"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="R$ 1000,00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4a-Zn-4YW">
+                                <rect key="frame" x="110" y="0.0" width="110" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="GreenGeneralIncomes"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Ump-KR-i8I" firstAttribute="leading" secondItem="uJQ-Ba-Z2U" secondAttribute="trailing" constant="10" id="0CX-Ow-emq"/>
+                <constraint firstAttribute="bottom" secondItem="Clu-Em-Smt" secondAttribute="bottom" constant="15" id="1F6-Ou-gAx"/>
+                <constraint firstItem="uJQ-Ba-Z2U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="A6b-4T-YHK"/>
+                <constraint firstAttribute="trailing" secondItem="rBZ-aC-ht3" secondAttribute="trailing" constant="5" id="SX8-J9-m3B"/>
+                <constraint firstItem="Clu-Em-Smt" firstAttribute="leading" secondItem="uJQ-Ba-Z2U" secondAttribute="trailing" constant="11" id="Y49-Il-28B"/>
+                <constraint firstItem="Ump-KR-i8I" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="19" id="cY3-6a-Ymm"/>
+                <constraint firstItem="rBZ-aC-ht3" firstAttribute="leading" secondItem="Clu-Em-Smt" secondAttribute="trailing" constant="10" id="hgj-Xz-XeS"/>
+                <constraint firstItem="rBZ-aC-ht3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="lel-vR-3jQ"/>
+                <constraint firstItem="uJQ-Ba-Z2U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="qZf-DW-kgD"/>
+                <constraint firstAttribute="bottom" secondItem="rBZ-aC-ht3" secondAttribute="bottom" constant="20" id="ye6-bx-ubO"/>
+                <constraint firstItem="rBZ-aC-ht3" firstAttribute="leading" secondItem="Ump-KR-i8I" secondAttribute="trailing" constant="10" id="ztt-31-Mn7"/>
+            </constraints>
+            <connections>
+                <outlet property="balanceLabel" destination="x4a-Zn-4YW" id="gUF-Yf-apM"/>
+                <outlet property="bankBackground" destination="uJQ-Ba-Z2U" id="Ps9-Ep-aV0"/>
+                <outlet property="bankLabel" destination="TIb-c5-ErL" id="CcL-HC-RXK"/>
+                <outlet property="nameLabel" destination="Ump-KR-i8I" id="eAJ-ar-TTR"/>
+            </connections>
+            <point key="canvasLocation" x="77.862595419847324" y="-12.67605633802817"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="chevron-left" width="20" height="20"/>
+        <namedColor name="GreenGeneralIncomes">
+            <color red="0.070588235294117646" green="0.64313725490196083" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GreyInformations">
+            <color red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

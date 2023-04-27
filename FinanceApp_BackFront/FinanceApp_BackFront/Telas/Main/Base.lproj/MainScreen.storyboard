@@ -44,9 +44,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Id7-fk-JX8">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNO-hM-6k4">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNO-hM-6k4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Login">
                                                                     <backgroundConfiguration key="background" cornerRadius="5">
@@ -69,7 +68,11 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="eNO-hM-6k4" secondAttribute="trailing" id="OJG-we-fpE"/>
+                                                            <constraint firstItem="eNO-hM-6k4" firstAttribute="leading" secondItem="Id7-fk-JX8" secondAttribute="leading" id="emK-ry-KCf"/>
+                                                            <constraint firstItem="eNO-hM-6k4" firstAttribute="top" secondItem="Id7-fk-JX8" secondAttribute="top" id="fRy-NH-d2B"/>
                                                             <constraint firstAttribute="height" constant="34" id="fiD-6Q-kgE"/>
+                                                            <constraint firstAttribute="bottom" secondItem="eNO-hM-6k4" secondAttribute="bottom" id="gMw-cZ-jO6"/>
                                                             <constraint firstAttribute="width" constant="353" id="lv2-nu-t0U"/>
                                                             <constraint firstItem="NSl-Rb-2oP" firstAttribute="top" secondItem="Id7-fk-JX8" secondAttribute="top" constant="3" id="nqQ-IJ-gBN"/>
                                                             <constraint firstItem="NSl-Rb-2oP" firstAttribute="leading" secondItem="Id7-fk-JX8" secondAttribute="leading" constant="30" id="uPi-SK-Zqf"/>
@@ -83,9 +86,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTG-on-Rk2">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd5-nJ-8r5">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd5-nJ-8r5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Cadastrar">
                                                                     <backgroundConfiguration key="background" cornerRadius="5">
@@ -98,17 +100,21 @@
                                                                     <action selector="tappedRegisterButton:" destination="LE7-KH-2Tb" eventType="touchUpInside" id="q01-jB-K5v"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo_preto" translatesAutoresizingMaskIntoConstraints="NO" id="XUm-Vi-44h">
-                                                                <rect key="frame" x="30" y="0.0" width="29" height="34"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_preto" translatesAutoresizingMaskIntoConstraints="NO" id="XUm-Vi-44h">
+                                                                <rect key="frame" x="27.000000000000007" y="0.0" width="30" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="34" id="HAg-Eg-UCx"/>
-                                                                    <constraint firstAttribute="width" constant="37" id="soD-iJ-S1x"/>
+                                                                    <constraint firstAttribute="width" constant="30" id="soD-iJ-S1x"/>
                                                                 </constraints>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="XUm-Vi-44h" firstAttribute="leading" secondItem="bTG-on-Rk2" secondAttribute="leading" constant="30" id="aum-fh-uSs"/>
+                                                            <constraint firstItem="Dd5-nJ-8r5" firstAttribute="leading" secondItem="bTG-on-Rk2" secondAttribute="leading" id="B6e-ze-A5j"/>
+                                                            <constraint firstItem="Dd5-nJ-8r5" firstAttribute="top" secondItem="bTG-on-Rk2" secondAttribute="top" id="DHd-9M-gbV"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Dd5-nJ-8r5" secondAttribute="bottom" id="Sv7-Gq-8qC"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Dd5-nJ-8r5" secondAttribute="trailing" id="aem-Kw-SUH"/>
+                                                            <constraint firstItem="XUm-Vi-44h" firstAttribute="leading" secondItem="bTG-on-Rk2" secondAttribute="leading" constant="27" id="aum-fh-uSs"/>
                                                             <constraint firstAttribute="width" constant="353" id="chd-mr-vlk"/>
                                                             <constraint firstItem="XUm-Vi-44h" firstAttribute="top" secondItem="bTG-on-Rk2" secondAttribute="top" id="d2p-d6-dQg"/>
                                                             <constraint firstAttribute="height" constant="34" id="u2U-kp-e03"/>
@@ -126,9 +132,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFJ-H7-wFw">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujl-7X-oBw">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujl-7X-oBw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Entrar com Gmail">
                                                                     <backgroundConfiguration key="background" cornerRadius="5">
@@ -147,8 +152,12 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="Ujl-7X-oBw" secondAttribute="trailing" id="0Yt-Eq-rsY"/>
                                                             <constraint firstItem="UnP-3A-TFD" firstAttribute="leading" secondItem="vFJ-H7-wFw" secondAttribute="leading" constant="30" id="RGa-O2-PdN"/>
+                                                            <constraint firstItem="Ujl-7X-oBw" firstAttribute="top" secondItem="vFJ-H7-wFw" secondAttribute="top" id="S82-tp-lR8"/>
                                                             <constraint firstAttribute="width" constant="353" id="TOn-DH-0S7"/>
+                                                            <constraint firstItem="Ujl-7X-oBw" firstAttribute="leading" secondItem="vFJ-H7-wFw" secondAttribute="leading" id="TUh-M1-38y"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Ujl-7X-oBw" secondAttribute="bottom" id="VFv-fR-tXQ"/>
                                                             <constraint firstItem="UnP-3A-TFD" firstAttribute="top" secondItem="vFJ-H7-wFw" secondAttribute="top" constant="-9" id="ZUC-Ic-K5A"/>
                                                             <constraint firstAttribute="height" constant="34" id="irQ-2b-Bpe"/>
                                                         </constraints>
@@ -161,9 +170,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D34-gV-1wX">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXa-6t-9ws">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXa-6t-9ws">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Entrar com Apple">
                                                                     <backgroundConfiguration key="background" cornerRadius="5">
@@ -182,9 +190,13 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
+                                                            <constraint firstItem="KXa-6t-9ws" firstAttribute="leading" secondItem="D34-gV-1wX" secondAttribute="leading" id="E4d-6t-seC"/>
                                                             <constraint firstItem="NYk-Rq-xww" firstAttribute="leading" secondItem="D34-gV-1wX" secondAttribute="leading" constant="28" id="HPz-bh-y6P"/>
                                                             <constraint firstAttribute="height" constant="34" id="LcD-Cn-0NQ"/>
                                                             <constraint firstAttribute="width" constant="353" id="TVc-bu-Tsn"/>
+                                                            <constraint firstAttribute="trailing" secondItem="KXa-6t-9ws" secondAttribute="trailing" id="cGl-BY-q8c"/>
+                                                            <constraint firstItem="KXa-6t-9ws" firstAttribute="top" secondItem="D34-gV-1wX" secondAttribute="top" id="dU9-VH-EkE"/>
+                                                            <constraint firstAttribute="bottom" secondItem="KXa-6t-9ws" secondAttribute="bottom" id="ut2-cF-yWZ"/>
                                                             <constraint firstItem="NYk-Rq-xww" firstAttribute="top" secondItem="D34-gV-1wX" secondAttribute="top" id="xJR-Ow-Z2G"/>
                                                         </constraints>
                                                     </view>

@@ -14,7 +14,7 @@ struct BankAccount {
 }
 
 var bankAccountsList : [BankAccount] = [
-    BankAccount(desc: "Conta Corrente Itau", bank: .bancoDoBrasil, amount: 1000),
-    BankAccount(desc: "Conta Corrente Nunbank", bank: .bradesco, amount: -10),
-    BankAccount(desc: "Conta Corrente Inter", bank: .caixa, amount: 1500),
+    BankAccount(desc: "Conta Banco do Brasil", bank: .bancoDoBrasil, amount: 1000),
+    BankAccount(desc: "Conta Bradesco", bank: .bradesco, amount: -10),
+    BankAccount(desc: "Conta Caixa", bank: .caixa, amount: 1500),
 ]

@@ -28,7 +28,6 @@ class createGoalButtonCell: UICollectionViewCell {
     }
 
     @IBAction func tappedNewGoalButton(_ sender: UIButton) {
-        print("button nova meta")
         delegate?.didTappedNewGoalButton()
     }
 }

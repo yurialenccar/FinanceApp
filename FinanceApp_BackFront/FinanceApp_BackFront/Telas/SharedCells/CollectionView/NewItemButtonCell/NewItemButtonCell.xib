@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NewItemButtonCell" customModule="FinanceApp_BackFront" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="330" height="60"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pP6-C8-JwD">
+                        <rect key="frame" x="94.000000000000014" y="13.333333333333332" width="142.33333333333337" height="33.333333333333343"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Criar Novo Item">
+                            <backgroundConfiguration key="background">
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.67843137249999996" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </backgroundConfiguration>
+                            <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="tappedNewItemButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="yjq-RV-b8o"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="pP6-C8-JwD" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="TYA-YC-7fa"/>
+                <constraint firstItem="pP6-C8-JwD" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ioq-42-9PP"/>
+            </constraints>
+            <connections>
+                <outlet property="createItemButton" destination="pP6-C8-JwD" id="3pX-xp-ebY"/>
+            </connections>
+            <point key="canvasLocation" x="62.595419847328245" y="-11.267605633802818"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -53,8 +53,8 @@ class RegisterCardExpViewModel{
     }
     
     public func getBankLabelTextFont(_ indexCard:Int) -> UIFont{
-        let textSize:Int  = bankProperties[creditCardsList[indexCard].bank]?.textSize ?? 17
-        return UIFont.systemFont(ofSize: CGFloat(textSize), weight: .bold)
+        
+        return UIFont.systemFont(ofSize: bankProperties[creditCardsList[indexCard].bank]?.textSize ?? 16, weight: .bold)
     }
     
     public func getBankLabelColor(_ indexCard:Int) -> UIColor{
