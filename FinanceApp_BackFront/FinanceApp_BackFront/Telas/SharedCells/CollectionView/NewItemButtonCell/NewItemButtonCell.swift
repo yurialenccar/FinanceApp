@@ -29,7 +29,7 @@ class NewItemButtonCell: UICollectionViewCell {
     }
 
     @IBAction func tappedNewItemButton(_ sender: UIButton) {
-        //        //delegate?.didTappedNewItemButton()
+        delegate?.didTappedNewItemButton()
     }
     
     

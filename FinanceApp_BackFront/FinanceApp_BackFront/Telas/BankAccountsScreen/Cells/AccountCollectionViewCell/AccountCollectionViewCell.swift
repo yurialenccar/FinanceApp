@@ -14,7 +14,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var bankBackground: UIView!
-    
+    @IBOutlet weak var editImage: UIImageView!
     
     static let identifier:String = String(describing: AccountCollectionViewCell.self)
     
@@ -24,7 +24,6 @@ class AccountCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func setupCell(account:BankAccount){

@@ -208,6 +208,11 @@
                                     <constraint firstAttribute="trailing" secondItem="CJf-Y8-Vlh" secondAttribute="trailing" constant="10" id="bQ7-dl-251"/>
                                     <constraint firstItem="CJf-Y8-Vlh" firstAttribute="leading" secondItem="tWd-Z6-74N" secondAttribute="leading" constant="10" id="dU3-1r-JfG"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1r-MY-0RP">
                                 <rect key="frame" x="0.0" y="818" width="393" height="40"/>

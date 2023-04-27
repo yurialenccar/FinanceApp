@@ -77,10 +77,13 @@ extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
-        let storyboard = UIStoryboard(name: "GoalInfoScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "GoalInfoScreen") {coder -> GoalInfoScreen? in
-            return GoalInfoScreen(coder: coder, goal: goalsList[indexPath.row])
+        if indexPath.row < goalsList.count{
+            let storyboard = UIStoryboard(name: "GoalInfoScreen", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "GoalInfoScreen") {coder -> GoalInfoScreen? in
+                return GoalInfoScreen(coder: coder, goal: goalsList[indexPath.row])
+            }
+            navigationController?.pushViewController(vc, animated: true)
         }
-        navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
