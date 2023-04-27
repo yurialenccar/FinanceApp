@@ -11,8 +11,6 @@ class AddTransactionScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Create a gradient layer
     
     }
 

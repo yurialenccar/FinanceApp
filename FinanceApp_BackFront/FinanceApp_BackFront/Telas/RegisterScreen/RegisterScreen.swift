@@ -34,8 +34,6 @@ class RegisterScreen: UIViewController {
         passwordRepeatTextfield.keyboardType = .default
         passwordRepeatTextfield.isSecureTextEntry = true
         
-        
-        
         nameTextfield.delegate = self
         emailTextfield.delegate = self
         passwordTextfield.delegate = self
@@ -77,9 +75,6 @@ class RegisterScreen: UIViewController {
              return
          }
          
- 
-
-        
         if validadeTextFiel() == true {
             
             let storyboard:UIStoryboard = UIStoryboard(name: "TabBarController", bundle: nil)
@@ -108,7 +103,6 @@ class RegisterScreen: UIViewController {
             statusOk = false
             nameTextfield.layer.borderWidth = 1
             nameTextfield.layer.borderColor = UIColor.red.cgColor
-            
         }
     
         if emailTextfield.text == "" {
@@ -149,7 +143,6 @@ class RegisterScreen: UIViewController {
     }
     
 
-    
     @IBAction func tappedLoginButton(_ sender: UIButton) {
     
         let vc: LoginScreen? = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateViewController(withIdentifier: "LoginScreen") as? LoginScreen
@@ -182,7 +175,7 @@ extension RegisterScreen : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print(#function)
-        textField.resignFirstResponder() //serve para abaixar o teclado
+        textField.resignFirstResponder()
         return true
         
     }
@@ -191,8 +184,8 @@ extension RegisterScreen : UITextFieldDelegate {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailPredicate.evaluate(with: email)
-        
-        }
+    }
+    
     func ValidarPassword(password: String) -> Bool {
       
         return password.count >= 8

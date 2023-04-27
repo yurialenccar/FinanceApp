@@ -51,9 +51,6 @@ extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             cell?.delegate = self
             return cell ?? UICollectionViewCell()
         }
-        
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

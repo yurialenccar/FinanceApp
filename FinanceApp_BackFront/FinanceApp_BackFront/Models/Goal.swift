@@ -14,9 +14,6 @@ struct Goal {
     var goalValue: Double
     var targetDate: String
     
-//    public func isMissingInformation (newGoal:Goal){
-//
-//    }
     
     public func stringIsEmpty(text:String) -> Bool {
         return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty

@@ -20,7 +20,7 @@ class CategoriesGraphScreen: UIViewController {
         configureChartDescription()
         configureChartConstraints()
         updateChartData(for: "Janeiro")
-        //sumExpensesByCategory()
+        
     }
     
     // MARK: - Private Methods

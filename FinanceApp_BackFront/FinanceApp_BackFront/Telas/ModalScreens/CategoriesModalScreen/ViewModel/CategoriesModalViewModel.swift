@@ -20,8 +20,6 @@ class CategoriesModalViewModel{
         
     }
     
-    
-    
     public func getCategoriesCount() -> Int {
         return filteredCategories.count
     }

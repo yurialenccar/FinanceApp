@@ -597,7 +597,6 @@
 		A1A92BB229F8120500E14EE8 /* CreditCardModalScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A1A92BC729F8221700E14EE8 /* ViewModel */,
 				A1A92BB829F8127300E14EE8 /* Cell */,
 				A1A92BB529F8123000E14EE8 /* View */,
 			);
@@ -635,13 +634,6 @@
 			isa = PBXGroup;
 			children = (
 				A1A92BC329F81C1D00E14EE8 /* RegisterCardExpViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A1A92BC729F8221700E14EE8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

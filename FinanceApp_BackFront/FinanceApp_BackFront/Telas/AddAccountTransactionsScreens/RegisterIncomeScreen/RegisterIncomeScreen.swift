@@ -119,7 +119,7 @@ class RegisterIncomeScreen: UIViewController {
 
 }
 
-//Extensão que busca a escolha do usuário das telas modais de seleção.
+
 extension RegisterIncomeScreen:CategoriesModalScreenDelegate, AccountsModalScreenDelegate {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory

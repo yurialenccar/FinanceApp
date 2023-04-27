@@ -22,10 +22,11 @@ func sumExpensesByCategory()->[CategoriesSum]{
 
         let category:String = expenseCategories[transaction.categoryIndex].name
         
-        if (list[category] != nil){ //Se existir um item com a categoria atual no dicionario entao soma-se
+        if (list[category] != nil){ //Sum up the value if there already is an item with this category in dictionary
+            
             list[category]! += transaction.amount
         }
-        else { //caso contrario, apenas cria-se um item
+        else { //otherwise, we create a new item
             list[category] = transaction.amount
         }
         totalAmount += transaction.amount

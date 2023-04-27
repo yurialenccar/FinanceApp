@@ -29,8 +29,6 @@ class BankAccountsScreen: UIViewController {
         collectionView.register(NewItemButtonCell.nib(), forCellWithReuseIdentifier: NewItemButtonCell.identifier)
         
     }
-
-
 }
 
 extension BankAccountsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateItemButtonCellDelegate {
@@ -54,9 +52,6 @@ extension BankAccountsScreen: UICollectionViewDelegate, UICollectionViewDataSour
             cell?.delegate = self
             return cell ?? UICollectionViewCell()
         }
-        
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -67,14 +62,12 @@ extension BankAccountsScreen: UICollectionViewDelegate, UICollectionViewDataSour
         print("function didTappedNewItemButton")
         let storyboard = UIStoryboard(name: "ConfigBankAccountsScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ConfigBankAccountsScreen") as? ConfigBankAccountsScreen
-        //vc?.delegate = self
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     func didCreatedBankAccount() {
         collectionView.reloadData()
     }
-    
-    //teste
+
 
 }

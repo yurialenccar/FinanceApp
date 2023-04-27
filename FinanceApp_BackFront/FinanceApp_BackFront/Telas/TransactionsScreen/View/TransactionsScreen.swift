@@ -26,7 +26,7 @@ class TransactionsScreen: UIViewController {
     private func setupCollectionView(){
         transactionsCollectionView.delegate = self
         transactionsCollectionView.dataSource = self
-        //transactionsCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
+
         if let layout = transactionsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
             layout.estimatedItemSize = .zero
@@ -56,10 +56,5 @@ extension TransactionsScreen: UICollectionViewDataSource, UICollectionViewDelega
         return viewModel.getCellSize(viewWidth: Int(view.frame.width))
     }
     
-//    funcão do método Delegate
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        transactionsCollectionView.deselectItem(at: indexPath, animated: true)
-//        print("you tapped collection cell \(indexPath.row)")
-//    }
 }
 

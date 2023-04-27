@@ -120,7 +120,7 @@ class RegisterExpenseScreen: UIViewController {
 
 }
 
-//Extensão que busca a escolha do usuário das telas modais de seleção.
+
 extension RegisterExpenseScreen:CategoriesModalScreenDelegate, AccountsModalScreenDelegate {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory

@@ -30,7 +30,7 @@ class HomeScreen: UIViewController {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationController?.isNavigationBarHidden = true
         updateLabels()
-        //sumExpensesByCategory()
+        
     }
 
     @IBAction func tappedShowGraphScreen(_ sender: UIButton) {

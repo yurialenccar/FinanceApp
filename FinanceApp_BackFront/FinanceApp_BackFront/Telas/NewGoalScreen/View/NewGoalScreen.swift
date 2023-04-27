@@ -31,7 +31,7 @@ class NewGoalScreen: UIViewController {
         super.viewDidLoad()
         
         
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func tappedChangeImageButton(_ sender: UIButton) {

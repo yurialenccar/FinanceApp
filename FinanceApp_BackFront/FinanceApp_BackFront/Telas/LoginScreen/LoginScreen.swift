@@ -118,7 +118,7 @@ class LoginScreen: UIViewController {
         
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             print(#function)
-            textField.resignFirstResponder() //serve para abaixar o teclado
+            textField.resignFirstResponder()
             return true
             
         }

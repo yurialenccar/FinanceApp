@@ -38,7 +38,7 @@ extension CreditCardModalScreen: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CreditCardModalCell.identifier, for: indexPath) as? CreditCardModalCell
-        cell?.setupCell(creditCard: creditCardsList[indexPath.row])//viewModel.getItemAccount(indexPath.row))
+        cell?.setupCell(creditCard: creditCardsList[indexPath.row])
         return cell ?? UITableViewCell()
     }
     
