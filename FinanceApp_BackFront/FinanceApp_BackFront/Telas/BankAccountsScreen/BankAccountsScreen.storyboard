@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Metas e Planejamentos-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="BankAccountsScreen" title="MetasVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" userLabel="Metas e Planejamentos" customClass="BankAccountsScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jh5-iI-sM9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopBackGround" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayV-cM-DVc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Bhb-6g-tFC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contas Bancárias" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYg-n9-Xyv">
+                                <rect key="frame" x="20" y="30" width="335" height="24"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1aS-Gg-zND">
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a4D-ka-9zE">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CFk-B7-OPX"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ayV-cM-DVc" firstAttribute="top" secondItem="CFk-B7-OPX" secondAttribute="top" id="07Z-Ih-bgP"/>
+                            <constraint firstItem="ayV-cM-DVc" firstAttribute="leading" secondItem="CFk-B7-OPX" secondAttribute="leading" id="2nl-a2-cIb"/>
+                            <constraint firstItem="1aS-Gg-zND" firstAttribute="top" secondItem="ayV-cM-DVc" secondAttribute="bottom" id="ADh-gj-AKM"/>
+                            <constraint firstItem="OYg-n9-Xyv" firstAttribute="top" secondItem="CFk-B7-OPX" secondAttribute="top" constant="30" id="PDO-wq-I1w"/>
+                            <constraint firstItem="CFk-B7-OPX" firstAttribute="trailing" secondItem="OYg-n9-Xyv" secondAttribute="trailing" constant="20" id="T0b-Dh-Wtt"/>
+                            <constraint firstItem="OYg-n9-Xyv" firstAttribute="leading" secondItem="CFk-B7-OPX" secondAttribute="leading" constant="20" id="X5h-7c-xcP"/>
+                            <constraint firstItem="CFk-B7-OPX" firstAttribute="bottom" secondItem="1aS-Gg-zND" secondAttribute="bottom" id="Y8S-3O-Whx"/>
+                            <constraint firstItem="CFk-B7-OPX" firstAttribute="trailing" secondItem="ayV-cM-DVc" secondAttribute="trailing" id="cRv-Z0-lXi"/>
+                            <constraint firstItem="CFk-B7-OPX" firstAttribute="trailing" secondItem="1aS-Gg-zND" secondAttribute="trailing" id="liB-e1-WO2"/>
+                            <constraint firstItem="1aS-Gg-zND" firstAttribute="leading" secondItem="CFk-B7-OPX" secondAttribute="leading" id="mIb-y7-KC5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0nm-gv-Zcq"/>
+                    <connections>
+                        <outlet property="collectionView" destination="1aS-Gg-zND" id="zoF-qA-V0x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129.76744186046511" y="-36.051502145922747"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="TopBackGround" width="375" height="129"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.94117647058823528" green="0.94901960784313721" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
