@@ -73,11 +73,6 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmR-zA-jZ4">
-                                <rect key="frame" x="11" y="87" width="84.333333333333329" height="34.333333333333343"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title="Voltar"/>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="p8W-Vd-cww">
                                 <rect key="frame" x="20" y="307.33333333333326" width="335" height="414.66666666666674"/>
                                 <subviews>
@@ -218,8 +213,6 @@
                             <constraint firstItem="lsp-Xr-RvI" firstAttribute="leading" secondItem="ARv-Yc-q3J" secondAttribute="leading" constant="20" id="iXm-iq-tM6"/>
                             <constraint firstItem="ARv-Yc-q3J" firstAttribute="trailing" secondItem="lsp-Xr-RvI" secondAttribute="trailing" constant="20" id="juG-2j-zNt"/>
                             <constraint firstItem="ARv-Yc-q3J" firstAttribute="trailing" secondItem="0ec-4o-VYw" secondAttribute="trailing" constant="20" id="lZR-eB-pk1"/>
-                            <constraint firstItem="mmR-zA-jZ4" firstAttribute="top" secondItem="ARv-Yc-q3J" secondAttribute="top" constant="28" id="nxD-F3-PRk"/>
-                            <constraint firstItem="mmR-zA-jZ4" firstAttribute="leading" secondItem="ARv-Yc-q3J" secondAttribute="leading" constant="11" id="o76-Ws-6Qt"/>
                             <constraint firstItem="ARv-Yc-q3J" firstAttribute="trailing" secondItem="8No-uB-xTh" secondAttribute="trailing" constant="20" id="slK-f3-TfI"/>
                             <constraint firstItem="ARv-Yc-q3J" firstAttribute="trailing" secondItem="p8W-Vd-cww" secondAttribute="trailing" constant="20" id="xxa-Pa-0PX"/>
                         </constraints>
@@ -234,7 +227,6 @@
     <resources>
         <image name="Mask.png" width="65" height="65"/>
         <image name="camera" catalog="system" width="128" height="93"/>
-        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
