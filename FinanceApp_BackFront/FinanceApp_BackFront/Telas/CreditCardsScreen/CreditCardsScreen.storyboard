@@ -17,7 +17,6 @@
         <!--Credit Cards Screen-->
         <scene sceneID="Oyx-WP-XnD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gqv-Z5-YEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CreditCardsScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BqL-ln-1SO" customClass="CreditCardsScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n3u-a1-hbK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -184,20 +183,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWb-Yp-4Cf">
-                                <rect key="frame" x="90" y="748" width="213" height="40"/>
-                                <color key="backgroundColor" red="0.2107897762" green="0.67743262240000002" blue="0.51913780939999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ru9-nO-3kl"/>
-                                </constraints>
-                                <size key="titleShadowOffset" width="5" height="0.0"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Criar Novo" cornerStyle="capsule" buttonSize="medium">
-                                    <backgroundConfiguration key="background"/>
-                                    <fontDescription key="titleFontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
-                                    <color key="baseForegroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q0B-lp-k3U"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -208,11 +193,8 @@
                             <constraint firstItem="Q0B-lp-k3U" firstAttribute="trailing" secondItem="Hdc-cg-N1R" secondAttribute="trailing" constant="20" id="Gwr-8L-ve6"/>
                             <constraint firstItem="Wbe-lz-SQU" firstAttribute="leading" secondItem="n3u-a1-hbK" secondAttribute="leading" constant="20" id="OV8-QF-Ogp"/>
                             <constraint firstAttribute="trailing" secondItem="Wbe-lz-SQU" secondAttribute="trailing" constant="20" id="Oos-yt-4cQ"/>
-                            <constraint firstItem="uWb-Yp-4Cf" firstAttribute="leading" secondItem="Q0B-lp-k3U" secondAttribute="leading" constant="90" id="i8d-Q1-ntb"/>
                             <constraint firstItem="6C6-YG-zmh" firstAttribute="leading" secondItem="Q0B-lp-k3U" secondAttribute="leading" id="ifX-tK-SPG"/>
                             <constraint firstItem="Wbe-lz-SQU" firstAttribute="top" secondItem="Q0B-lp-k3U" secondAttribute="top" constant="30" id="jOF-fp-rkv"/>
-                            <constraint firstItem="Q0B-lp-k3U" firstAttribute="trailing" secondItem="uWb-Yp-4Cf" secondAttribute="trailing" constant="90" id="jyh-4s-MyJ"/>
-                            <constraint firstItem="Q0B-lp-k3U" firstAttribute="bottom" secondItem="uWb-Yp-4Cf" secondAttribute="bottom" constant="30" id="k8h-bg-GPL"/>
                             <constraint firstItem="Q0B-lp-k3U" firstAttribute="trailing" secondItem="Q7R-Nx-47V" secondAttribute="trailing" constant="20" id="qdC-Dc-XN7"/>
                             <constraint firstItem="Q7R-Nx-47V" firstAttribute="leading" secondItem="Q0B-lp-k3U" secondAttribute="leading" constant="20" id="rmk-xN-c9P"/>
                             <constraint firstItem="6C6-YG-zmh" firstAttribute="trailing" secondItem="Q0B-lp-k3U" secondAttribute="trailing" id="yzz-ac-aYT"/>
@@ -221,6 +203,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MUS-9F-i89"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqv-Z5-YEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-59" y="33"/>
         </scene>

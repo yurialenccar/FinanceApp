@@ -16,3 +16,13 @@ enum Banks: String {
     case caixa
     case bancoDoBrasil
 }
+
+let bankList:[String]=[
+    "Banco Itau",
+    "Banco Bradesco",
+    "Nubank",
+    "Banco Inter",
+    "Banco Santander",
+    "Banco Caixa",
+    "Banco do Brasil",
+]

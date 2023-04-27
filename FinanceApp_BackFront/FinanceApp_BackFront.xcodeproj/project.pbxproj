@@ -14,6 +14,9 @@
 		A101917629FABE5700776A67 /* NewItemButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A101917229FAB7A500776A67 /* NewItemButtonCell.xib */; };
 		A101917A29FAC4F000776A67 /* ConfigBankAccountsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A101917929FAC4F000776A67 /* ConfigBankAccountsScreen.storyboard */; };
 		A101917C29FAC4F900776A67 /* ConfigBankAccountsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101917B29FAC4F900776A67 /* ConfigBankAccountsScreen.swift */; };
+		A10191A629FAFF3D00776A67 /* BanksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10191A429FAFF3D00776A67 /* BanksCell.swift */; };
+		A10191A729FAFF3D00776A67 /* BanksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A10191A529FAFF3D00776A67 /* BanksCell.xib */; };
+		A10191A929FB06BA00776A67 /* ConfigBankAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10191A829FB06BA00776A67 /* ConfigBankAccountViewModel.swift */; };
 		A11BDA7229F4C04A006CF6B2 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7129F4C04A006CF6B2 /* BankAccount.swift */; };
 		A11BDA7429F4C173006CF6B2 /* Banks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7329F4C173006CF6B2 /* Banks.swift */; };
 		A11BDA7629F4C24B006CF6B2 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7529F4C24B006CF6B2 /* CreditCard.swift */; };
@@ -112,6 +115,9 @@
 		A101917229FAB7A500776A67 /* NewItemButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewItemButtonCell.xib; sourceTree = "<group>"; };
 		A101917929FAC4F000776A67 /* ConfigBankAccountsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfigBankAccountsScreen.storyboard; sourceTree = "<group>"; };
 		A101917B29FAC4F900776A67 /* ConfigBankAccountsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigBankAccountsScreen.swift; sourceTree = "<group>"; };
+		A10191A429FAFF3D00776A67 /* BanksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksCell.swift; sourceTree = "<group>"; };
+		A10191A529FAFF3D00776A67 /* BanksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BanksCell.xib; sourceTree = "<group>"; };
+		A10191A829FB06BA00776A67 /* ConfigBankAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigBankAccountViewModel.swift; sourceTree = "<group>"; };
 		A11BDA7129F4C04A006CF6B2 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 		A11BDA7329F4C173006CF6B2 /* Banks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banks.swift; sourceTree = "<group>"; };
 		A11BDA7529F4C24B006CF6B2 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
@@ -270,6 +276,8 @@
 		A101917729FAC4BA00776A67 /* ConfigBankAccountsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A10191AA29FB06BD00776A67 /* ViewModel */,
+				A10191A329FAFF2700776A67 /* Cell */,
 				A101917829FAC4D200776A67 /* View */,
 			);
 			path = ConfigBankAccountsScreen;
@@ -282,6 +290,23 @@
 				A101917B29FAC4F900776A67 /* ConfigBankAccountsScreen.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A10191A329FAFF2700776A67 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A10191A429FAFF3D00776A67 /* BanksCell.swift */,
+				A10191A529FAFF3D00776A67 /* BanksCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A10191AA29FB06BD00776A67 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A10191A829FB06BA00776A67 /* ConfigBankAccountViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A103B51529F6B55000A0D9C9 /* AddAccountTransactionsScreens */ = {
@@ -398,8 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				A16688F529F0B2F700568217 /* Cell */,
-				A1E703E029F2DD0700CB4021 /* View */,
 				A16688FA29F17E1B00568217 /* ViewModel */,
+				A1E703E029F2DD0700CB4021 /* View */,
 			);
 			path = TransactionsScreen;
 			sourceTree = "<group>";
@@ -896,6 +921,7 @@
 				A19F850A29F963C40044F7DE /* GoalsCollectionViewCell.xib in Resources */,
 				A140934229E73ACA0037662B /* RegisterIncomeScreen.storyboard in Resources */,
 				A140934A29E73BCC0037662B /* RegisterCardExpScreen.storyboard in Resources */,
+				A10191A729FAFF3D00776A67 /* BanksCell.xib in Resources */,
 				A101916D29FAB3FA00776A67 /* AccountCollectionViewCell.xib in Resources */,
 				A101917629FABE5700776A67 /* NewItemButtonCell.xib in Resources */,
 				A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */,
@@ -976,6 +1002,7 @@
 				A1C9EFEC29E60D080029B69F /* RegisterScreen.swift in Sources */,
 				A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */,
 				A140934C29E73BD30037662B /* RegisterCardExpScreen.swift in Sources */,
+				A10191A929FB06BA00776A67 /* ConfigBankAccountViewModel.swift in Sources */,
 				E35D087129BDB2030098F0B5 /* MoreOptionsScreen.swift in Sources */,
 				A140935129E772720037662B /* RegisterExpenseScreen.swift in Sources */,
 				A11BDA7629F4C24B006CF6B2 /* CreditCard.swift in Sources */,
@@ -1018,6 +1045,7 @@
 				A1A92BBF29F812B600E14EE8 /* CreditCardModalCell.swift in Sources */,
 				A189A39929F58A4700C22A6D /* BankProperties.swift in Sources */,
 				E3E9089129BFAF1B00B34864 /* CategoriesGraphScreen.swift in Sources */,
+				A10191A629FAFF3D00776A67 /* BanksCell.swift in Sources */,
 				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
 				A101916C29FAB3FA00776A67 /* AccountCollectionViewCell.swift in Sources */,
 				A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */,
