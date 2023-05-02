@@ -49,12 +49,12 @@ class RegisterCardExpViewModel{
     }
     
     public func getBankLabelText(_ indexCard:Int) -> String{
-        return bankProperties[creditCardsList[indexCard].bank]?.text ?? "banco"
+        return bankProperties[creditCardsList[indexCard].bank]?.logoTextLabel ?? "banco"
     }
     
     public func getBankLabelTextFont(_ indexCard:Int) -> UIFont{
         
-        return UIFont.systemFont(ofSize: bankProperties[creditCardsList[indexCard].bank]?.textSize ?? 16, weight: .bold)
+        return UIFont.systemFont(ofSize: bankProperties[creditCardsList[indexCard].bank]?.logoTextSize ?? 16, weight: .bold)
     }
     
     public func getBankLabelColor(_ indexCard:Int) -> UIColor{

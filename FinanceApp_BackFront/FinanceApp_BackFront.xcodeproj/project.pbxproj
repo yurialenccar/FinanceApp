@@ -71,6 +71,8 @@
 		A1C9EFF129E60D840029B69F /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFF029E60D840029B69F /* LoginScreen.storyboard */; };
 		A1C9EFF329E60E200029B69F /* ErrorScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFF229E60E200029B69F /* ErrorScreen.storyboard */; };
 		A1C9F01E29E64E340029B69F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9F01D29E64E340029B69F /* TabBarController.swift */; };
+		A1CE092B2A001B790028028B /* StringIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CE092A2A001B790028028B /* StringIsEmpty.swift */; };
+		A1CE092D2A0026800028028B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CE092C2A0026800028028B /* Alert.swift */; };
 		A1D2F84729E99A2600DCA6E4 /* CategoriesModalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D2F84629E99A2600DCA6E4 /* CategoriesModalScreen.storyboard */; };
 		A1D2F84929E99A3100DCA6E4 /* CategoriesModalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2F84829E99A3100DCA6E4 /* CategoriesModalScreen.swift */; };
 		A1D2F84D29E9E5B100DCA6E4 /* CategoriesModalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2F84B29E9E5B100DCA6E4 /* CategoriesModalCell.swift */; };
@@ -172,6 +174,8 @@
 		A1C9EFF029E60D840029B69F /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		A1C9EFF229E60E200029B69F /* ErrorScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ErrorScreen.storyboard; sourceTree = "<group>"; };
 		A1C9F01D29E64E340029B69F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A1CE092A2A001B790028028B /* StringIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringIsEmpty.swift; sourceTree = "<group>"; };
+		A1CE092C2A0026800028028B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		A1D2F84629E99A2600DCA6E4 /* CategoriesModalScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoriesModalScreen.storyboard; sourceTree = "<group>"; };
 		A1D2F84829E99A3100DCA6E4 /* CategoriesModalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModalScreen.swift; sourceTree = "<group>"; };
 		A1D2F84B29E9E5B100DCA6E4 /* CategoriesModalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModalCell.swift; sourceTree = "<group>"; };
@@ -276,8 +280,8 @@
 		A101917729FAC4BA00776A67 /* ConfigBankAccountsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A10191AA29FB06BD00776A67 /* ViewModel */,
 				A10191A329FAFF2700776A67 /* Cell */,
+				A10191AA29FB06BD00776A67 /* ViewModel */,
 				A101917829FAC4D200776A67 /* View */,
 			);
 			path = ConfigBankAccountsScreen;
@@ -673,6 +677,15 @@
 			path = ErrorScreen;
 			sourceTree = "<group>";
 		};
+		A1CE09292A001B410028028B /* GlobalFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				A1CE092A2A001B790028028B /* StringIsEmpty.swift */,
+				A1CE092C2A0026800028028B /* Alert.swift */,
+			);
+			path = GlobalFunctions;
+			sourceTree = "<group>";
+		};
 		A1D2F84429E999D500DCA6E4 /* ModalScreens */ = {
 			isa = PBXGroup;
 			children = (
@@ -824,6 +837,7 @@
 			children = (
 				E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */,
 				E35D085A29BDAD110098F0B5 /* Info.plist */,
+				A1CE09292A001B410028028B /* GlobalFunctions */,
 				A16B56A229C1076500E53727 /* Telas */,
 				A16636ED29DE1B0400162872 /* Models */,
 				A16688E529F06D4C00568217 /* Resources */,
@@ -1005,6 +1019,7 @@
 				A12329F229FB0F2C0053AC38 /* BankAccountsScreen.swift in Sources */,
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
 				A1E107C929E4F78F005A3F4F /* CurrencyScreen.swift in Sources */,
+				A1CE092B2A001B790028028B /* StringIsEmpty.swift in Sources */,
 				A11BDA7B29F4C4A3006CF6B2 /* TransactionType.swift in Sources */,
 				A11BDA8029F4CC7E006CF6B2 /* AccountsModalScreen.swift in Sources */,
 				E3C0915929C21CC900BE4441 /* GoalsScreen.swift in Sources */,
@@ -1041,6 +1056,7 @@
 				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
 				A101916C29FAB3FA00776A67 /* AccountCollectionViewCell.swift in Sources */,
 				A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */,
+				A1CE092D2A0026800028028B /* Alert.swift in Sources */,
 				A1C9EFE529E60A880029B69F /* SplashScreen.swift in Sources */,
 				A1A92BC429F81C1D00E14EE8 /* RegisterCardExpViewModel.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,

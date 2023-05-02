@@ -64,7 +64,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyv-a2-iK3">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyv-a2-iK3">
                                                         <rect key="frame" x="93" y="0.0" width="280" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="280" id="15E-4z-U1U"/>
@@ -371,6 +371,23 @@
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be4-rF-P4U">
+                                <rect key="frame" x="121.66666666666669" y="753.66666666666663" width="150" height="34.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Suc-8D-X0c"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Salvar">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.21176470589999999" green="0.67843137249999996" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedSaveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2RR-v5-Kvj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -382,15 +399,17 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aSn-kN-nYl" secondAttribute="trailing" constant="30" id="KxT-Xl-2ge"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EA0-8L-TaT" secondAttribute="trailing" id="UsZ-sj-V4e"/>
                             <constraint firstItem="wca-Ir-bXv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XLq-lj-3Ts"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Be4-rF-P4U" secondAttribute="bottom" constant="30" id="ZSl-4B-oYk"/>
                             <constraint firstItem="aSn-kN-nYl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="dcq-ZG-gah"/>
+                            <constraint firstItem="Be4-rF-P4U" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lW1-9d-skV"/>
                             <constraint firstItem="wca-Ir-bXv" firstAttribute="top" secondItem="EA0-8L-TaT" secondAttribute="bottom" constant="5" id="sxH-fT-Ijj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="balanceTextField" destination="p0e-rH-1Kv" id="B8p-qv-EBD"/>
                         <outlet property="bankBackground" destination="HGj-Aq-deJ" id="fUo-HX-b1M"/>
                         <outlet property="bankDescLabel" destination="ztL-w0-HTu" id="Y6O-kU-yAy"/>
                         <outlet property="bankLabel" destination="g82-9M-eAr" id="3og-vb-CdX"/>
-                        <outlet property="initialAmountTextField" destination="p0e-rH-1Kv" id="fmg-4W-DcP"/>
                         <outlet property="nameTextField" destination="fyv-a2-iK3" id="Heh-jZ-c4n"/>
                         <outlet property="obsLabel" destination="ZDT-qr-Vvb" id="Uw1-Ig-8cG"/>
                         <outlet property="overdrawTextField" destination="uzr-Zb-BVk" id="d4E-mF-Saa"/>

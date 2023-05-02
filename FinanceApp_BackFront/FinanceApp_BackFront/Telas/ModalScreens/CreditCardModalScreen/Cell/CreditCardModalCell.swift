@@ -27,8 +27,8 @@ class CreditCardModalCell: UITableViewCell {
 
     func setupCell(creditCard:CreditCard){
         descLabel.text = creditCard.desc
-        bankLabel.text = bankProperties[creditCard.bank]?.text
-        bankLabel.font = UIFont.systemFont(ofSize: CGFloat(bankProperties[creditCard.bank]?.textSize ?? 17), weight: .bold)
+        bankLabel.text = bankProperties[creditCard.bank]?.logoTextLabel
+        bankLabel.font = UIFont.systemFont(ofSize: CGFloat(bankProperties[creditCard.bank]?.logoTextSize ?? 17), weight: .bold)
         bankLabel.textColor = bankProperties[creditCard.bank]?.labelBankColor
         bankBackground.backgroundColor = bankProperties[creditCard.bank]?.backgroundColor
         

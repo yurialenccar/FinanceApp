@@ -65,7 +65,7 @@ class RegisterIncomeScreen: UIViewController {
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
 
-        if viewModel.stringIsEmpty(text: amountTextField.text ?? ""){
+        if stringIsEmpty(text: amountTextField.text ?? ""){
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
             showAlert(title: "Opa, esqueceu de informar valor gasto!")

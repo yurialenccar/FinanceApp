@@ -17,6 +17,10 @@ class BankAccountsScreen: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
+    
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self

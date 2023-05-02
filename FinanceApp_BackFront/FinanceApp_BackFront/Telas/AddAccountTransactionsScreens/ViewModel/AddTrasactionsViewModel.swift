@@ -90,11 +90,11 @@ class AddAccountTransactionsViewModel{
     }
     
     public func getBankLabelText(_ indexAccount:Int) -> String{
-        return bankProperties[bankAccountsList[indexAccount].bank]!.text
+        return bankProperties[bankAccountsList[indexAccount].bank]!.logoTextLabel
     }
     
     public func getBankLabelTextFont(_ indexAccount:Int) -> UIFont{
-        return UIFont.systemFont(ofSize: bankProperties[bankAccountsList[indexAccount].bank]?.textSize ?? 17, weight: .bold)
+        return UIFont.systemFont(ofSize: bankProperties[bankAccountsList[indexAccount].bank]?.logoTextSize ?? 17, weight: .bold)
     }
     
     public func getBankLabelColor(_ indexAccount:Int) -> UIColor{
@@ -133,9 +133,7 @@ class AddAccountTransactionsViewModel{
         }
     }
     
-    public func stringIsEmpty(text:String) -> Bool {
-        return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-    }
+    
     
     
     

@@ -29,9 +29,9 @@ class AccountCollectionViewCell: UICollectionViewCell {
     func setupCell(account:BankAccount){
         nameLabel.text = account.desc
         //balanceLabel.text =
-        bankLabel.text = bankProperties[account.bank]?.text
+        bankLabel.text = bankProperties[account.bank]?.logoTextLabel
         bankLabel.textColor = bankProperties[account.bank]?.labelBankColor
-        bankLabel.font = UIFont.systemFont(ofSize: bankProperties[account.bank]?.textSize ?? 16, weight: .bold)
+        bankLabel.font = UIFont.systemFont(ofSize: bankProperties[account.bank]?.logoTextSize ?? 16, weight: .bold)
         bankBackground.backgroundColor = bankProperties[account.bank]?.backgroundColor
         bankBackground.layer.cornerRadius = 10
         bankBackground.layer.masksToBounds = true

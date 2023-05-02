@@ -49,22 +49,22 @@ class NewGoalScreen: UIViewController {
     func isMissingInformation() -> Bool {
         var missing = false
         
-        if viewModel.newGoal.stringIsEmpty(text: descLabel.text ?? "") {
+        if stringIsEmpty(text: descLabel.text ?? "") {
             descLabel.layer.borderColor = UIColor.red.cgColor
             missing = true
         }
         
-        if viewModel.newGoal.stringIsEmpty(text: initialAmountLabel.text ?? "") {
+        if stringIsEmpty(text: initialAmountLabel.text ?? "") {
             initialAmountLabel.layer.borderColor = UIColor.red.cgColor
             missing = true
         }
         
-        if viewModel.newGoal.stringIsEmpty(text: targetValueLabel.text ?? "") {
+        if stringIsEmpty(text: targetValueLabel.text ?? "") {
             targetValueLabel.layer.borderColor = UIColor.red.cgColor
             missing = true
         }
         
-        if viewModel.newGoal.stringIsEmpty(text: tagetDateLabel.text ?? "") {
+        if stringIsEmpty(text: tagetDateLabel.text ?? "") {
             tagetDateLabel.layer.borderColor = UIColor.red.cgColor
             missing = true
         }

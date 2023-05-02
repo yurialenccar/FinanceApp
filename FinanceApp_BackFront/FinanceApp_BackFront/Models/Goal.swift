@@ -15,9 +15,6 @@ struct Goal {
     var targetDate: String
     
     
-    public func stringIsEmpty(text:String) -> Bool {
-        return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-    }
     
     var DaysToTargetDate: String {
         
