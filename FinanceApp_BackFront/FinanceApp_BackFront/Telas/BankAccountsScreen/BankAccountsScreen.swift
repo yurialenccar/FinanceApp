@@ -62,11 +62,23 @@ extension BankAccountsScreen: UICollectionViewDelegate, UICollectionViewDataSour
         return CGSize(width: view.frame.width - 30, height: 80)
     }
     
-    func didTappedNewItemButton() {
-        print("function didTappedNewItemButton")
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+        
         let storyboard = UIStoryboard(name: "ConfigBankAccountsScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ConfigBankAccountsScreen") as? ConfigBankAccountsScreen
-        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+        let vc = storyboard.instantiateViewController(identifier: "ConfigBankAccountsScreen") {coder -> ConfigBankAccountsScreen? in
+            return ConfigBankAccountsScreen(coder: coder, indexAccount: indexPath.row, configType: .editExisting)
+        }
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    func didTappedNewItemButton() {
+        let storyboard = UIStoryboard(name: "ConfigBankAccountsScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ConfigBankAccountsScreen") {coder -> ConfigBankAccountsScreen? in
+            return ConfigBankAccountsScreen(coder: coder, indexAccount: 0, configType: .createNew)
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func didCreatedBankAccount() {

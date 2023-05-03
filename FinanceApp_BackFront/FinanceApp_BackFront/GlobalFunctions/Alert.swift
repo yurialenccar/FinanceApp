@@ -23,12 +23,14 @@ class Alert{
         
     }
     
-    public func showConfirmAlert(title:String, message: String, completion:(() -> Void)? = nil) {
+    public func showAlertWithCancelOption(title:String, message: String, completion:(() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Ok", style: .cancel) { action in
+        let confirmAction = UIAlertAction(title: "Ok", style: .default) { action in
             completion?()
         }
         alertController.addAction(confirmAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
         self.viewController?.present(alertController, animated: true)
     }
 }
