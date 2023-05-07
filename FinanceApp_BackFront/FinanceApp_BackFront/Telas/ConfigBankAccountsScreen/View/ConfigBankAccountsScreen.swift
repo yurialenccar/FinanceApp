@@ -21,13 +21,11 @@ class ConfigBankAccountsScreen: UIViewController {
     
     var viewModel:ConfigBankAccountViewModel
     var alert=Alert()
-    var selectedBank:Banks = .itau
-    var account:BankAccount
     var configType:ConfigType
+    var selectedBank:Banks = .bancoDoBrasil
     
     init?(coder:NSCoder, indexAccount:Int, configType:ConfigType){
         self.configType = configType
-        self.account = bankAccountsList[indexAccount]
         self.viewModel = ConfigBankAccountViewModel(configType: configType,indexAccount: indexAccount)
         super.init(coder: coder)
     }
@@ -45,12 +43,12 @@ class ConfigBankAccountsScreen: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableview.isHidden=true
-        updateBankField(selectedBank)
-        setupScreen()
+        updateBankField(viewModel.self.popBankAccountBank)
+        populateFields()
     }
     
     @IBAction func tappedChangeBankButton(_ sender: UIButton) {
-        changeTableviewMode()
+        toggleTableViewVisibility()
     }
     
     @IBAction func tappedSaveButton(_ sender: UIButton) {
@@ -64,7 +62,7 @@ class ConfigBankAccountsScreen: UIViewController {
     }
     
     func saveValues(){
-        self.viewModel.setBankAccount(desc: self.nameTextField.text ?? "", bank: self.selectedBank, balance: Double(self.balanceTextField.text ?? "0.0") ?? 0.0, overdraft: Double(self.overdrawTextField.text ?? "0.0") ?? 0.0, stardardBank: self.standardAccountSwitch.isOn, Obs: self.obsLabel.text ?? "")
+        self.viewModel.saveBankAccount(desc: self.nameTextField.text ?? "", balance: Double(self.balanceTextField.text ?? "0.0") ?? 0.0, overdraft: Double(self.overdrawTextField.text ?? "0.0") ?? 0.0, bank: selectedBank, stardardBank: self.standardAccountSwitch.isOn, Obs: self.obsLabel.text ?? "")
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -74,18 +72,18 @@ class ConfigBankAccountsScreen: UIViewController {
         tableview.register(BanksCell.nib(), forCellReuseIdentifier: BanksCell.identifier)
     }
     
-    func setupScreen(){
+    func populateFields(){
         if configType == .editExisting{
-            nameTextField.text = account.desc
-            balanceTextField.text = String(account.balance)
-            overdrawTextField.text = String(account.overdraft)
-            standardAccountSwitch.isOn = account.stardardBank
-            obsLabel.text = account.obs
-            updateBankField(account.bank)
+            nameTextField.text = viewModel.popBankAccountDesc
+            balanceTextField.text = viewModel.popBankAccountBalance
+            overdrawTextField.text = viewModel.popBankAccountOverdraft
+            standardAccountSwitch.isOn = viewModel.popBankAccountStardardBank
+            obsLabel.text = viewModel.popBankAccountObs
+            updateBankField(viewModel.popBankAccountBank)
         }
     }
     
-    func changeTableviewMode(){
+    func toggleTableViewVisibility(){
         if tableview.isHidden == false {
             tableview.isHidden = true
         } else {

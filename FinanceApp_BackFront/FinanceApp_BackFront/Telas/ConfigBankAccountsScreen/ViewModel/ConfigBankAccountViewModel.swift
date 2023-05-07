@@ -12,26 +12,51 @@ class ConfigBankAccountViewModel{
     
     var configType:ConfigType
     var indexAccount:Int
+    private var bankAccount:BankAccount
+    
+    //Populate Screen fields variables
+    public var popBankAccountDesc:String
+    public var popBankAccountBalance:String
+    public var popBankAccountOverdraft:String
+    public var popBankAccountStardardBank:Bool
+    public var popBankAccountObs:String
+    public var popBankAccountBank:Banks
     
     init(configType: ConfigType, indexAccount:Int) {
         self.configType = configType
+        
+        if configType == .createNew{
+            self.bankAccount = bankAccountEmpty
+        } else {
+            self.bankAccount = bankAccountsList[indexAccount]
+        }
         self.indexAccount = indexAccount
+        
+        self.popBankAccountDesc = bankAccount.desc
+        self.popBankAccountBalance = String(bankAccount.balance)
+        self.popBankAccountOverdraft = String(bankAccount.overdraft)
+        self.popBankAccountStardardBank = bankAccount.stardardAccount
+        self.popBankAccountObs = bankAccount.obs
+        self.popBankAccountBank = bankAccount.bank
     }
     
-    private var bankAccount:BankAccount = BankAccount(desc: "", bank: .itau, balance: 0.0, overdraft: 0.0, stardardBank: false, obs: "")
-    
-    public func setBankAccount(desc: String, bank: Banks, balance:Double, overdraft:Double, stardardBank:Bool, Obs:String){
-        
-        bankAccount.bank = bank
-        bankAccount.balance = balance
-        bankAccount.overdraft = overdraft
-        bankAccount.stardardBank = stardardBank
-        bankAccount.obs = Obs
+    public func saveBankAccount(desc: String, balance:Double, overdraft:Double, bank:Banks, stardardBank:Bool, Obs:String){
         
         if stringIsEmpty(text: desc){
             bankAccount.desc = "Conta \(bankProperties[bank]?.textNameBank ?? "Corrente")"
         } else {
             bankAccount.desc = desc
+        }
+        bankAccount.balance = balance
+        bankAccount.overdraft = overdraft
+        bankAccount.bank = bank
+        bankAccount.stardardAccount = stardardBank
+        bankAccount.obs = Obs
+        
+        if stardardBank == true {
+            for i in 0..<bankAccountsList.count{
+                bankAccountsList[i].stardardAccount = false
+            }
         }
         
         if configType == .createNew{
