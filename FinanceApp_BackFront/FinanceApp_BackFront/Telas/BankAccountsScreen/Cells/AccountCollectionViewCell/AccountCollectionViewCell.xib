@@ -46,7 +46,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ump-KR-i8I">
-                        <rect key="frame" x="64" y="19" width="221" height="19.333333333333329"/>
+                        <rect key="frame" x="64" y="19" width="196" height="19.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -68,6 +68,13 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="eMO-Kr-tGY">
+                        <rect key="frame" x="265" y="25" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="IPW-Sm-4d2"/>
+                            <constraint firstAttribute="height" constant="30" id="TAl-8B-lTH"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -76,14 +83,16 @@
                 <constraint firstItem="Ump-KR-i8I" firstAttribute="leading" secondItem="uJQ-Ba-Z2U" secondAttribute="trailing" constant="10" id="0CX-Ow-emq"/>
                 <constraint firstAttribute="bottom" secondItem="Clu-Em-Smt" secondAttribute="bottom" constant="15" id="1F6-Ou-gAx"/>
                 <constraint firstItem="uJQ-Ba-Z2U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="A6b-4T-YHK"/>
+                <constraint firstItem="eMO-Kr-tGY" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="KZV-Un-PL4"/>
                 <constraint firstAttribute="trailing" secondItem="rBZ-aC-ht3" secondAttribute="trailing" constant="5" id="SX8-J9-m3B"/>
                 <constraint firstItem="Clu-Em-Smt" firstAttribute="leading" secondItem="uJQ-Ba-Z2U" secondAttribute="trailing" constant="11" id="Y49-Il-28B"/>
                 <constraint firstItem="Ump-KR-i8I" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="19" id="cY3-6a-Ymm"/>
+                <constraint firstItem="rBZ-aC-ht3" firstAttribute="leading" secondItem="eMO-Kr-tGY" secondAttribute="trailing" id="f9v-ij-cot"/>
                 <constraint firstItem="rBZ-aC-ht3" firstAttribute="leading" secondItem="Clu-Em-Smt" secondAttribute="trailing" constant="10" id="hgj-Xz-XeS"/>
                 <constraint firstItem="rBZ-aC-ht3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="lel-vR-3jQ"/>
                 <constraint firstItem="uJQ-Ba-Z2U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="qZf-DW-kgD"/>
+                <constraint firstItem="eMO-Kr-tGY" firstAttribute="leading" secondItem="Ump-KR-i8I" secondAttribute="trailing" constant="5" id="tmG-rx-sVO"/>
                 <constraint firstAttribute="bottom" secondItem="rBZ-aC-ht3" secondAttribute="bottom" constant="20" id="ye6-bx-ubO"/>
-                <constraint firstItem="rBZ-aC-ht3" firstAttribute="leading" secondItem="Ump-KR-i8I" secondAttribute="trailing" constant="10" id="ztt-31-Mn7"/>
             </constraints>
             <connections>
                 <outlet property="balanceLabel" destination="x4a-Zn-4YW" id="gUF-Yf-apM"/>
@@ -91,12 +100,14 @@
                 <outlet property="bankLabel" destination="TIb-c5-ErL" id="CcL-HC-RXK"/>
                 <outlet property="editImage" destination="rBZ-aC-ht3" id="iKe-TI-lhI"/>
                 <outlet property="nameLabel" destination="Ump-KR-i8I" id="eAJ-ar-TTR"/>
+                <outlet property="standardAccountImage" destination="eMO-Kr-tGY" id="9GO-hM-9ML"/>
             </connections>
             <point key="canvasLocation" x="77.862595419847324" y="-12.67605633802817"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="chevron-left" width="20" height="20"/>
+        <image name="star" width="1024" height="1024"/>
         <namedColor name="GreenGeneralIncomes">
             <color red="0.070588235294117646" green="0.64313725490196083" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

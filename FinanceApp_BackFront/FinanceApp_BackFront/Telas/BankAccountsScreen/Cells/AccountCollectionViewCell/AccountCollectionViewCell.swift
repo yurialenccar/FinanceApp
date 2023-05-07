@@ -15,6 +15,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var bankBackground: UIView!
     @IBOutlet weak var editImage: UIImageView!
+    @IBOutlet weak var standardAccountImage: UIImageView!
     
     static let identifier:String = String(describing: AccountCollectionViewCell.self)
     
@@ -35,6 +36,12 @@ class AccountCollectionViewCell: UICollectionViewCell {
         bankBackground.backgroundColor = bankProperties[account.bank]?.backgroundColor
         bankBackground.layer.cornerRadius = 10
         bankBackground.layer.masksToBounds = true
+        if account.stardardAccount == false {
+            standardAccountImage.isHidden = true
+        } else{
+            standardAccountImage.isHidden = false
+            standardAccountImage.image = UIImage(systemName: "star")?.withRenderingMode(.alwaysTemplate)
+            standardAccountImage.tintColor = UIColor(named: "GreyInformations")
+        }
     }
-    
 }

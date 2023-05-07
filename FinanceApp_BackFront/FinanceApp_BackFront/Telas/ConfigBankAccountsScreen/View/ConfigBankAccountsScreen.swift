@@ -79,7 +79,8 @@ class ConfigBankAccountsScreen: UIViewController {
             overdrawTextField.text = viewModel.popBankAccountOverdraft
             standardAccountSwitch.isOn = viewModel.popBankAccountStardardBank
             obsLabel.text = viewModel.popBankAccountObs
-            updateBankField(viewModel.popBankAccountBank)
+            selectedBank = viewModel.popBankAccountBank
+            updateBankField(selectedBank)
         }
     }
     
