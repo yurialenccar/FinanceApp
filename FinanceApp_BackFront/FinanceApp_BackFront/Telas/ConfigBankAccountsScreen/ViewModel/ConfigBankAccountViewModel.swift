@@ -10,8 +10,8 @@ import UIKit
 
 class ConfigBankAccountViewModel{
     
-    var configType:ConfigType
-    var indexAccount:Int
+    public var configType:ConfigType
+    private var indexAccount:Int
     private var bankAccount:BankAccount
     
     //Populate Screen fields variables
@@ -47,7 +47,6 @@ class ConfigBankAccountViewModel{
         } else {
             bankAccount.desc = desc
         }
-        //bankAccount.balance = balance
         bankAccount.overdraft = overdraft
         bankAccount.bank = bank
         bankAccount.stardardAccount = stardardBank
@@ -61,8 +60,14 @@ class ConfigBankAccountViewModel{
         
         if configType == .createNew{
             bankAccount.id = createNewAccountId()
+            if balance != 0{
+                bankAccount.adjustBalance(newBalance: Double(balance))
+            }
             bankAccountsList.append(bankAccount)
         } else {
+            if balance != 0{
+                bankAccountsList[indexAccount].adjustBalance(newBalance: Double(balance))
+            }
             bankAccountsList[indexAccount] = bankAccount
         }
         

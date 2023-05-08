@@ -29,11 +29,13 @@ class AccountCollectionViewCell: UICollectionViewCell {
 
     func setupCell(account:BankAccount){
         nameLabel.text = account.desc
-        balanceLabel.text = "R$ \(account.getBalance())"
-        if account.getBalance() >= 0 {
+        balanceLabel.text = formatMoney(value: account.getBalance())
+        if account.getBalance() > 0 {
             balanceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
-        } else{
+        } else if account.getBalance() < 0{
             balanceLabel.textColor = UIColor(named: "RedGeneralExpenses")
+        } else{
+            balanceLabel.textColor = UIColor(named: "GreyInformations")
         }
         
         bankLabel.text = bankProperties[account.bank]?.logoTextLabel

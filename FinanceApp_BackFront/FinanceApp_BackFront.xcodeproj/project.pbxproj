@@ -43,6 +43,7 @@
 		A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5B29D4E51400714208 /* TabBarController.storyboard */; };
 		A14DAE6029D4E91900714208 /* TransactionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */; };
 		A14DAE6329D4E94200714208 /* TransactionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE6229D4E94200714208 /* TransactionsScreen.swift */; };
+		A15162202A09444700C5AD42 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A151621F2A09444700C5AD42 /* Formatters.swift */; };
 		A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */; };
 		A16636EF29DE33C500162872 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EE29DE33C500162872 /* Transactions.swift */; };
 		A16688E929F06E8600568217 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16688E829F06E8600568217 /* HomeViewModel.swift */; };
@@ -147,6 +148,7 @@
 		A14DAE5B29D4E51400714208 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionsScreen.storyboard; sourceTree = "<group>"; };
 		A14DAE6229D4E94200714208 /* TransactionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsScreen.swift; sourceTree = "<group>"; };
+		A151621F2A09444700C5AD42 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A16636EE29DE33C500162872 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		A16688E829F06E8600568217 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 			children = (
 				A1CE092A2A001B790028028B /* StringIsEmpty.swift */,
 				A1CE092C2A0026800028028B /* Alert.swift */,
+				A151621F2A09444700C5AD42 /* Formatters.swift */,
 			);
 			path = GlobalFunctions;
 			sourceTree = "<group>";
@@ -1025,6 +1028,7 @@
 				A1E107C929E4F78F005A3F4F /* CurrencyScreen.swift in Sources */,
 				A1CE092B2A001B790028028B /* StringIsEmpty.swift in Sources */,
 				A11BDA7B29F4C4A3006CF6B2 /* TransactionType.swift in Sources */,
+				A15162202A09444700C5AD42 /* Formatters.swift in Sources */,
 				A11BDA8029F4CC7E006CF6B2 /* AccountsModalScreen.swift in Sources */,
 				E3C0915929C21CC900BE4441 /* GoalsScreen.swift in Sources */,
 				E35D086929BDB1C60098F0B5 /* AddTransactionScreen.swift in Sources */,

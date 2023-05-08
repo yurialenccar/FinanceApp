@@ -406,6 +406,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="balanceLabel" destination="bXy-l2-OKZ" id="bXS-aL-N4Y"/>
                         <outlet property="balanceTextField" destination="p0e-rH-1Kv" id="B8p-qv-EBD"/>
                         <outlet property="bankBackground" destination="HGj-Aq-deJ" id="fUo-HX-b1M"/>
                         <outlet property="bankDescLabel" destination="ztL-w0-HTu" id="Y6O-kU-yAy"/>
@@ -415,6 +416,7 @@
                         <outlet property="overdrawTextField" destination="uzr-Zb-BVk" id="d4E-mF-Saa"/>
                         <outlet property="standardAccountSwitch" destination="U1j-cd-9U3" id="enO-YC-l0F"/>
                         <outlet property="tableview" destination="oTs-o5-4ax" id="Wf0-TD-Gxo"/>
+                        <outlet property="titleScreenLabel" destination="aSn-kN-nYl" id="x2y-Qm-gnU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

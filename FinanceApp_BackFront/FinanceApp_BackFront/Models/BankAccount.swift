@@ -21,9 +21,22 @@ struct BankAccount {
     
     
     
-    func getBalance() -> Double {
+    public func getBalance() -> Double {
         let filteredTransactions = transactions.filter{ $0.accountId == id}
         return filteredTransactions.reduce(0, {$0 + $1.amount})
+    }
+    
+    public func adjustBalance(newBalance:Double){
+        let valueNewTransaction:Double = newBalance - getBalance()
+        var transactionType:TransactionType
+        
+        if valueNewTransaction >= 0{
+            transactionType = .income
+        } else{
+            transactionType = .expense
+        }
+        
+        transactions.append(Transactions(desc: "Ajuste de saldo na Conta", amount: valueNewTransaction, categoryIndex: 0, date: formatDate(date: Date()), type: transactionType, accountId: id, obs: ""))
     }
 }
 

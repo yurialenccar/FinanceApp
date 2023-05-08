@@ -19,6 +19,7 @@ class TransactionsScreen: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.reordenateTransactions()
         setupCollectionView()
         transactionsCollectionView.reloadData()
     }

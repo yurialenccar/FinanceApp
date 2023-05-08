@@ -18,14 +18,14 @@ class ConfigBankAccountsScreen: UIViewController {
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var standardAccountSwitch: UISwitch!
     @IBOutlet weak var obsLabel: UITextField!
+    @IBOutlet weak var titleScreenLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
     
     var viewModel:ConfigBankAccountViewModel
     var alert=Alert()
-    var configType:ConfigType
     var selectedBank:Banks = .bancoDoBrasil
     
     init?(coder:NSCoder, indexAccount:Int, configType:ConfigType){
-        self.configType = configType
         self.viewModel = ConfigBankAccountViewModel(configType: configType,indexAccount: indexAccount)
         super.init(coder: coder)
     }
@@ -44,6 +44,7 @@ class ConfigBankAccountsScreen: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tableview.isHidden=true
         updateBankField(viewModel.self.popBankAccountBank)
+        setupScreenLabels()
         populateFields()
     }
     
@@ -66,14 +67,26 @@ class ConfigBankAccountsScreen: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func setupTableView(){
+    private func setupTableView(){
         tableview.delegate = self
         tableview.dataSource = self
         tableview.register(BanksCell.nib(), forCellReuseIdentifier: BanksCell.identifier)
     }
     
-    func populateFields(){
-        if configType == .editExisting{
+    private  func setupScreenLabels(){
+        switch viewModel.configType {
+        case .createNew:
+            titleScreenLabel.text = "Nova Conta Bancária"
+            balanceLabel.text = "Saldo Inicial na conta"
+        case .editExisting:
+            titleScreenLabel.text = "Editar Conta Bancária"
+            balanceLabel.text = "Ajustar saldo na conta"
+        }
+        
+    }
+    
+    private func populateFields(){
+        if viewModel.configType == .editExisting{
             nameTextField.text = viewModel.popBankAccountDesc
             balanceTextField.text = viewModel.popBankAccountBalance
             overdrawTextField.text = viewModel.popBankAccountOverdraft
@@ -84,7 +97,7 @@ class ConfigBankAccountsScreen: UIViewController {
         }
     }
     
-    func toggleTableViewVisibility(){
+    private func toggleTableViewVisibility(){
         if tableview.isHidden == false {
             tableview.isHidden = true
         } else {
@@ -92,7 +105,7 @@ class ConfigBankAccountsScreen: UIViewController {
         }
     }
     
-    func updateBankField(_ bank:Banks){
+    private func updateBankField(_ bank:Banks){
         bankDescLabel.text = viewModel.getBankName(bank)
         bankLabel.text = viewModel.getBankLabelText(bank)
         bankLabel.font = viewModel.getBankLabelTextFont(bank)

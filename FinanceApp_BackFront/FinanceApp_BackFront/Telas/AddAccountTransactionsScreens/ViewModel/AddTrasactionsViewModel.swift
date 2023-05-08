@@ -50,18 +50,7 @@ class AddAccountTransactionsViewModel{
         }
         
         transactions.append(newTransaction)
-        reordenateTransactions()
-    }
-    
-    private func reordenateTransactions(){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-
-        transactions = transactions.sorted(by: { transaction1, transaction2 in
-            let data1 = dateFormatter.date(from: transaction1.date)!
-            let data2 = dateFormatter.date(from: transaction2.date)!
-            return data1 > data2
-        })
+        //reordenateTransactions()
     }
     
     var standardAccountIndex: Int {
@@ -129,13 +118,6 @@ class AddAccountTransactionsViewModel{
         return bankProperties[bankAccountsList[indexAccount].bank]!.backgroundColor
     }
     
-    private func formatDate(date: Date) -> String {
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        
-        return formatter.string(from: date)
-    }
     
     public func datePickerChange(date: Date) -> String {
         let calendar = Calendar.current
