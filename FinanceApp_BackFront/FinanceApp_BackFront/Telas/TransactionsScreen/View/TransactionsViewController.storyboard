@@ -16,7 +16,7 @@
         <!--TransactionsScreen-->
         <scene sceneID="Nf1-fZ-uEJ">
             <objects>
-                <viewController storyboardIdentifier="TransactionsScreen" title="TransactionsScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VAX-P1-LoX" customClass="TransactionsScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransactionsViewController" title="TransactionsScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VAX-P1-LoX" customClass="TransactionsViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZeL-Ov-oQu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -41,8 +41,8 @@
 		A140934F29E7625A0037662B /* AddTrasactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140934E29E7625A0037662B /* AddTrasactionsViewModel.swift */; };
 		A140935129E772720037662B /* RegisterExpenseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140935029E772720037662B /* RegisterExpenseScreen.swift */; };
 		A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5B29D4E51400714208 /* TabBarController.storyboard */; };
-		A14DAE6029D4E91900714208 /* TransactionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */; };
-		A14DAE6329D4E94200714208 /* TransactionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE6229D4E94200714208 /* TransactionsScreen.swift */; };
+		A14DAE6029D4E91900714208 /* TransactionsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5F29D4E91900714208 /* TransactionsViewController.storyboard */; };
+		A14DAE6329D4E94200714208 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE6229D4E94200714208 /* TransactionsViewController.swift */; };
 		A15162202A09444700C5AD42 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A151621F2A09444700C5AD42 /* Formatters.swift */; };
 		A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */; };
 		A16636EF29DE33C500162872 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EE29DE33C500162872 /* Transactions.swift */; };
@@ -94,16 +94,16 @@
 		E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */; };
 		E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35D085529BDAD110098F0B5 /* Assets.xcassets */; };
 		E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */; };
-		E35D086129BDB0310098F0B5 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086029BDB0310098F0B5 /* HomeScreen.swift */; };
-		E35D086329BDB03D0098F0B5 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086229BDB03D0098F0B5 /* HomeScreen.storyboard */; };
-		E35D086929BDB1C60098F0B5 /* AddTransactionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086829BDB1C60098F0B5 /* AddTransactionScreen.swift */; };
-		E35D086B29BDB1D00098F0B5 /* AddTransactionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086A29BDB1D00098F0B5 /* AddTransactionScreen.storyboard */; };
-		E35D087129BDB2030098F0B5 /* MoreOptionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D087029BDB2030098F0B5 /* MoreOptionsScreen.swift */; };
-		E35D087329BDB20C0098F0B5 /* MoreOptionsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087229BDB20C0098F0B5 /* MoreOptionsScreen.storyboard */; };
+		E35D086129BDB0310098F0B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086029BDB0310098F0B5 /* HomeViewController.swift */; };
+		E35D086329BDB03D0098F0B5 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086229BDB03D0098F0B5 /* HomeViewController.storyboard */; };
+		E35D086929BDB1C60098F0B5 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D086829BDB1C60098F0B5 /* AddViewController.swift */; };
+		E35D086B29BDB1D00098F0B5 /* AddViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D086A29BDB1D00098F0B5 /* AddViewController.storyboard */; };
+		E35D087129BDB2030098F0B5 /* MoreOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D087029BDB2030098F0B5 /* MoreOptionsViewController.swift */; };
+		E35D087329BDB20C0098F0B5 /* MoreOptionsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D087229BDB20C0098F0B5 /* MoreOptionsViewController.storyboard */; };
 		E366E3B729E0D8A200F89209 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E366E3B629E0D8A200F89209 /* Charts.framework */; };
 		E366E3B929E0D8A700F89209 /* Algorithms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E366E3B829E0D8A700F89209 /* Algorithms.framework */; };
-		E3C0915929C21CC900BE4441 /* GoalsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0915829C21CC900BE4441 /* GoalsScreen.swift */; };
-		E3C0915B29C21CD400BE4441 /* GoalsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C0915A29C21CD400BE4441 /* GoalsScreen.storyboard */; };
+		E3C0915929C21CC900BE4441 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0915829C21CC900BE4441 /* GoalsViewController.swift */; };
+		E3C0915B29C21CD400BE4441 /* GoalsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C0915A29C21CD400BE4441 /* GoalsViewController.storyboard */; };
 		E3E9089129BFAF1B00B34864 /* CategoriesGraphScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9089029BFAF1B00B34864 /* CategoriesGraphScreen.swift */; };
 		E3E9089329BFAF2A00B34864 /* CategoriesGraphScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089229BFAF2A00B34864 /* CategoriesGraphScreen.storyboard */; };
 		E3E9089629BFF95D00B34864 /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = E3E9089529BFF95D00B34864 /* Poppins */; };
@@ -146,8 +146,8 @@
 		A140934E29E7625A0037662B /* AddTrasactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrasactionsViewModel.swift; sourceTree = "<group>"; };
 		A140935029E772720037662B /* RegisterExpenseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterExpenseScreen.swift; sourceTree = "<group>"; };
 		A14DAE5B29D4E51400714208 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
-		A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionsScreen.storyboard; sourceTree = "<group>"; };
-		A14DAE6229D4E94200714208 /* TransactionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsScreen.swift; sourceTree = "<group>"; };
+		A14DAE5F29D4E91900714208 /* TransactionsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionsViewController.storyboard; sourceTree = "<group>"; };
+		A14DAE6229D4E94200714208 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		A151621F2A09444700C5AD42 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A16636EE29DE33C500162872 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
@@ -201,16 +201,16 @@
 		E35D085529BDAD110098F0B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E35D085829BDAD110098F0B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E35D085A29BDAD110098F0B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E35D086029BDB0310098F0B5 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		E35D086229BDB03D0098F0B5 /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
-		E35D086829BDB1C60098F0B5 /* AddTransactionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionScreen.swift; sourceTree = "<group>"; };
-		E35D086A29BDB1D00098F0B5 /* AddTransactionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTransactionScreen.storyboard; sourceTree = "<group>"; };
-		E35D087029BDB2030098F0B5 /* MoreOptionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsScreen.swift; sourceTree = "<group>"; };
-		E35D087229BDB20C0098F0B5 /* MoreOptionsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreOptionsScreen.storyboard; sourceTree = "<group>"; };
+		E35D086029BDB0310098F0B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E35D086229BDB03D0098F0B5 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		E35D086829BDB1C60098F0B5 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		E35D086A29BDB1D00098F0B5 /* AddViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddViewController.storyboard; sourceTree = "<group>"; };
+		E35D087029BDB2030098F0B5 /* MoreOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsViewController.swift; sourceTree = "<group>"; };
+		E35D087229BDB20C0098F0B5 /* MoreOptionsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreOptionsViewController.storyboard; sourceTree = "<group>"; };
 		E366E3B629E0D8A200F89209 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E366E3B829E0D8A700F89209 /* Algorithms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Algorithms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3C0915829C21CC900BE4441 /* GoalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScreen.swift; sourceTree = "<group>"; };
-		E3C0915A29C21CD400BE4441 /* GoalsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalsScreen.storyboard; sourceTree = "<group>"; };
+		E3C0915829C21CC900BE4441 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		E3C0915A29C21CD400BE4441 /* GoalsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalsViewController.storyboard; sourceTree = "<group>"; };
 		E3E9089029BFAF1B00B34864 /* CategoriesGraphScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGraphScreen.swift; sourceTree = "<group>"; };
 		E3E9089229BFAF2A00B34864 /* CategoriesGraphScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoriesGraphScreen.storyboard; sourceTree = "<group>"; };
 		E3E9089529BFF95D00B34864 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
@@ -470,8 +470,8 @@
 		A16688E629F06E5800568217 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E35D086229BDB03D0098F0B5 /* HomeScreen.storyboard */,
-				E35D086029BDB0310098F0B5 /* HomeScreen.swift */,
+				E35D086229BDB03D0098F0B5 /* HomeViewController.storyboard */,
+				E35D086029BDB0310098F0B5 /* HomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -543,8 +543,8 @@
 		A16B56A529C1079900E53727 /* AddTransactionScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E35D086A29BDB1D00098F0B5 /* AddTransactionScreen.storyboard */,
-				E35D086829BDB1C60098F0B5 /* AddTransactionScreen.swift */,
+				E35D086A29BDB1D00098F0B5 /* AddViewController.storyboard */,
+				E35D086829BDB1C60098F0B5 /* AddViewController.swift */,
 			);
 			path = AddTransactionScreen;
 			sourceTree = "<group>";
@@ -552,8 +552,8 @@
 		A16B56A629C107A400E53727 /* MoreOptionsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E35D087029BDB2030098F0B5 /* MoreOptionsScreen.swift */,
-				E35D087229BDB20C0098F0B5 /* MoreOptionsScreen.storyboard */,
+				E35D087029BDB2030098F0B5 /* MoreOptionsViewController.swift */,
+				E35D087229BDB20C0098F0B5 /* MoreOptionsViewController.storyboard */,
 			);
 			path = MoreOptionsScreen;
 			sourceTree = "<group>";
@@ -770,8 +770,8 @@
 		A1E703E029F2DD0700CB4021 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A14DAE5F29D4E91900714208 /* TransactionsScreen.storyboard */,
-				A14DAE6229D4E94200714208 /* TransactionsScreen.swift */,
+				A14DAE5F29D4E91900714208 /* TransactionsViewController.storyboard */,
+				A14DAE6229D4E94200714208 /* TransactionsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -855,8 +855,8 @@
 			isa = PBXGroup;
 			children = (
 				A19F850B29F96E2A0044F7DE /* Cells */,
-				E3C0915A29C21CD400BE4441 /* GoalsScreen.storyboard */,
-				E3C0915829C21CC900BE4441 /* GoalsScreen.swift */,
+				E3C0915A29C21CD400BE4441 /* GoalsViewController.storyboard */,
+				E3C0915829C21CC900BE4441 /* GoalsViewController.swift */,
 			);
 			path = GoalsScreen;
 			sourceTree = "<group>";
@@ -925,10 +925,10 @@
 				A1E107BB29E4F426005A3F4F /* CreditCardsScreen.storyboard in Resources */,
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
 				A1E107C729E4F784005A3F4F /* CurrencyScreen.storyboard in Resources */,
-				E3C0915B29C21CD400BE4441 /* GoalsScreen.storyboard in Resources */,
+				E3C0915B29C21CD400BE4441 /* GoalsViewController.storyboard in Resources */,
 				A1C9EFF129E60D840029B69F /* LoginViewController.storyboard in Resources */,
 				A140934629E73B750037662B /* RegisterExpenseScreen.storyboard in Resources */,
-				A14DAE6029D4E91900714208 /* TransactionsScreen.storyboard in Resources */,
+				A14DAE6029D4E91900714208 /* TransactionsViewController.storyboard in Resources */,
 				A101917A29FAC4F000776A67 /* ConfigBankAccountsScreen.storyboard in Resources */,
 				A19F850A29F963C40044F7DE /* GoalsCollectionViewCell.xib in Resources */,
 				A140934229E73ACA0037662B /* RegisterIncomeScreen.storyboard in Resources */,
@@ -940,7 +940,7 @@
 				A1A92BC029F812B600E14EE8 /* CreditCardModalCell.xib in Resources */,
 				A1D2F84E29E9E5B100DCA6E4 /* CategoriesModalCell.xib in Resources */,
 				A12329F129FB0F2C0053AC38 /* BankAccountsScreen.storyboard in Resources */,
-				E35D087329BDB20C0098F0B5 /* MoreOptionsScreen.storyboard in Resources */,
+				E35D087329BDB20C0098F0B5 /* MoreOptionsViewController.storyboard in Resources */,
 				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
 				A1A92BB429F8122A00E14EE8 /* CreditCardModalScreen.storyboard in Resources */,
 				A1C9EFEA29E60CF50029B69F /* RegisterViewController.storyboard in Resources */,
@@ -949,12 +949,12 @@
 				A13E249C29F9957C00E9EF7A /* GoalInfoScreen.storyboard in Resources */,
 				A16688F929F0B32900568217 /* TransactionsCollectionViewCell.xib in Resources */,
 				A13E249629F98AB200E9EF7A /* NewGoalScreen.storyboard in Resources */,
-				E35D086329BDB03D0098F0B5 /* HomeScreen.storyboard in Resources */,
+				E35D086329BDB03D0098F0B5 /* HomeViewController.storyboard in Resources */,
 				A1D2F84729E99A2600DCA6E4 /* CategoriesModalScreen.storyboard in Resources */,
 				A11BDA7D29F4CC55006CF6B2 /* AccountsModalScreen.storyboard in Resources */,
 				A1C9EFF329E60E200029B69F /* ErrorScreen.storyboard in Resources */,
 				E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */,
-				E35D086B29BDB1D00098F0B5 /* AddTransactionScreen.storyboard in Resources */,
+				E35D086B29BDB1D00098F0B5 /* AddViewController.storyboard in Resources */,
 				A1E107C029E4F63D005A3F4F /* ProfileScreen.storyboard in Resources */,
 				A11BDA8729F4CFB6006CF6B2 /* AccountsTableViewCell.xib in Resources */,
 				E35D085129BDAD100098F0B5 /* MainViewController.storyboard in Resources */,
@@ -1015,12 +1015,12 @@
 				A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */,
 				A140934C29E73BD30037662B /* RegisterCardExpScreen.swift in Sources */,
 				A10191A929FB06BA00776A67 /* ConfigBankAccountViewModel.swift in Sources */,
-				E35D087129BDB2030098F0B5 /* MoreOptionsScreen.swift in Sources */,
+				E35D087129BDB2030098F0B5 /* MoreOptionsViewController.swift in Sources */,
 				A140935129E772720037662B /* RegisterExpenseScreen.swift in Sources */,
 				A11BDA7629F4C24B006CF6B2 /* CreditCard.swift in Sources */,
 				A18299C72A01AC7F00E72936 /* ConfigType.swift in Sources */,
 				A1F4210829F62379005C346B /* CategoriesModalViewModel.swift in Sources */,
-				E35D086129BDB0310098F0B5 /* HomeScreen.swift in Sources */,
+				E35D086129BDB0310098F0B5 /* HomeViewController.swift in Sources */,
 				A1C9F01E29E64E340029B69F /* TabBarController.swift in Sources */,
 				A16688EB29F08CF600568217 /* BalanceValues.swift in Sources */,
 				A12329F229FB0F2C0053AC38 /* BankAccountsScreen.swift in Sources */,
@@ -1030,8 +1030,8 @@
 				A11BDA7B29F4C4A3006CF6B2 /* TransactionType.swift in Sources */,
 				A15162202A09444700C5AD42 /* Formatters.swift in Sources */,
 				A11BDA8029F4CC7E006CF6B2 /* AccountsModalScreen.swift in Sources */,
-				E3C0915929C21CC900BE4441 /* GoalsScreen.swift in Sources */,
-				E35D086929BDB1C60098F0B5 /* AddTransactionScreen.swift in Sources */,
+				E3C0915929C21CC900BE4441 /* GoalsViewController.swift in Sources */,
+				E35D086929BDB1C60098F0B5 /* AddViewController.swift in Sources */,
 				A1E107C229E4F646005A3F4F /* ProfileScreen.swift in Sources */,
 				A13E249929F98BDB00E9EF7A /* NewGoalViewModel.swift in Sources */,
 				A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */,
@@ -1054,7 +1054,7 @@
 				A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */,
 				A19F850929F963C40044F7DE /* GoalsCollectionViewCell.swift in Sources */,
 				A101917329FAB7A500776A67 /* NewItemButtonCell.swift in Sources */,
-				A14DAE6329D4E94200714208 /* TransactionsScreen.swift in Sources */,
+				A14DAE6329D4E94200714208 /* TransactionsViewController.swift in Sources */,
 				A1E107BD29E4F432005A3F4F /* CreditCardsScreen.swift in Sources */,
 				A1D2F84929E99A3100DCA6E4 /* CategoriesModalScreen.swift in Sources */,
 				A1A92BBF29F812B600E14EE8 /* CreditCardModalCell.swift in Sources */,

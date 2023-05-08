@@ -7,9 +7,11 @@
 
 import UIKit
 
-class GoalsScreen: UIViewController {
+class GoalsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    static let identifier:String = String(describing: GoalsViewController.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +35,7 @@ class GoalsScreen: UIViewController {
 
 }
 
-extension GoalsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateGoalButtonCellDelegate, CreatedNewGoalDelegate {
+extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateGoalButtonCellDelegate, CreatedNewGoalDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return goalsList.count + 1

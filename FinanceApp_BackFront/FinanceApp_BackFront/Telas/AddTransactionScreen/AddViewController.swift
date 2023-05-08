@@ -7,7 +7,9 @@
 
 import UIKit
 
-class AddTransactionScreen: UIViewController {
+class AddViewController: UIViewController {
+    
+    static let identifier:String = String(describing: AddViewController.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()

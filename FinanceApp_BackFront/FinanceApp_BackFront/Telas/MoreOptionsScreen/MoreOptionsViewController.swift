@@ -7,12 +7,12 @@
 
 import UIKit
 
-class MoreOptionsScreen: UIViewController {
+class MoreOptionsViewController: UIViewController {
+    
+    static let identifier:String = String(describing: MoreOptionsViewController.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

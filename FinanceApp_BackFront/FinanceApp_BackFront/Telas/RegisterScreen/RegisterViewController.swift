@@ -71,8 +71,8 @@ class RegisterViewController: UIViewController {
          
         if validadeTextFiel() == true {
             
-            let storyboard:UIStoryboard = UIStoryboard(name: "TabBarController", bundle: nil)
-            if let tbc = storyboard.instantiateViewController(withIdentifier:"TabBarController") as? UITabBarController{
+            let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
+            if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
                 navigationController?.pushViewController(tbc, animated: true)
             }
         } else {

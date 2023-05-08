@@ -7,10 +7,11 @@
 
 import UIKit
 
-class TransactionsScreen: UIViewController {
+class TransactionsViewController: UIViewController {
 
     @IBOutlet weak var transactionsCollectionView: UICollectionView!
     
+    static let identifier:String = String(describing: TransactionsViewController.self)
     private var viewModel : TransactionsViewModel = TransactionsViewModel()
     
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class TransactionsScreen: UIViewController {
 
 }
 
-extension TransactionsScreen: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+extension TransactionsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("number of itens in section")

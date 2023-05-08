@@ -9,18 +9,17 @@
 import UIKit
 import Charts
 
-class HomeScreen: UIViewController {
+class HomeViewController: UIViewController {
     
-    var informationsHidden = false
-
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var expensesLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var backgroundBalanceView: UIView!
     @IBOutlet weak var hideInformationsButton: UIButton!
     
+    static let identifier:String = String(describing: HomeViewController.self)
     var  viewModel : HomeViewModel = HomeViewModel()
-    
+    var informationsHidden = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +55,6 @@ class HomeScreen: UIViewController {
     }
     
     public func updateLabels() {
-        
-        
         let balance = viewModel.updateBalance()
 
         incomeLabel.text = String(format: "%.2f", balance.incomesTotal)
@@ -72,10 +69,6 @@ class HomeScreen: UIViewController {
                 backgroundBalanceView.backgroundColor = UIColor(named: "GreyInformations")
             }
     }
-        
-    
-    
-    
 }
 
 
