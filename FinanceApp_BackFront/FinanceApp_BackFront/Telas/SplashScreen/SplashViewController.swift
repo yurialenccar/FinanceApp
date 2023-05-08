@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashScreen: UIViewController {
+class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class SplashScreen: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
 
-            let vc: MainScreen? = UIStoryboard(name: "MainScreen", bundle: nil).instantiateViewController(withIdentifier: "MainScreen") as? MainScreen
+            let vc: MainViewController? = UIStoryboard(name: "MainViewController", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as? MainViewController
             self.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
             
             

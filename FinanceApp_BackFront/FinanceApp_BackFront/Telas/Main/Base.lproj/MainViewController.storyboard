@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Screen-->
+        <!--Main View Controller-->
         <scene sceneID="2O2-2B-bkb">
             <objects>
-                <viewController storyboardIdentifier="MainScreen" wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LE7-KH-2Tb" customClass="MainScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LE7-KH-2Tb" customClass="MainViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNU-Fq-hGm">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="-560.93023255813955" y="1277.8969957081547"/>
         </scene>
-        <!--Navigation Main Screen-->
+        <!--Navigation Main View Controller-->
         <scene sceneID="W5v-e6-0ah">
             <objects>
-                <navigationController storyboardIdentifier="NavigationMainScreen" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bCp-6A-2cj" customClass="NavigationMainScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationMainViewController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bCp-6A-2cj" customClass="NavigationMainViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="zNv-qQ-zRU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qhw-O8-9QB">

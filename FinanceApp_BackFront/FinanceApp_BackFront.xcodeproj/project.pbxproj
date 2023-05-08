@@ -64,9 +64,9 @@
 		A1A92BC029F812B600E14EE8 /* CreditCardModalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A92BBE29F812B600E14EE8 /* CreditCardModalCell.xib */; };
 		A1A92BC429F81C1D00E14EE8 /* RegisterCardExpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BC329F81C1D00E14EE8 /* RegisterCardExpViewModel.swift */; };
 		A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BC529F81D6200E14EE8 /* CreditCardExpenses.swift */; };
-		A1C9EFE329E60A7D0029B69F /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFE229E60A7D0029B69F /* SplashScreen.storyboard */; };
-		A1C9EFE529E60A880029B69F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFE429E60A880029B69F /* SplashScreen.swift */; };
-		A1C9EFE729E60BB60029B69F /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFE629E60BB60029B69F /* MainScreen.swift */; };
+		A1C9EFE329E60A7D0029B69F /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFE229E60A7D0029B69F /* SplashViewController.storyboard */; };
+		A1C9EFE529E60A880029B69F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFE429E60A880029B69F /* SplashViewController.swift */; };
+		A1C9EFE729E60BB60029B69F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFE629E60BB60029B69F /* MainViewController.swift */; };
 		A1C9EFEA29E60CF50029B69F /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFE929E60CF50029B69F /* RegisterScreen.storyboard */; };
 		A1C9EFEC29E60D080029B69F /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFEB29E60D080029B69F /* RegisterScreen.swift */; };
 		A1C9EFEF29E60D7D0029B69F /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFEE29E60D7D0029B69F /* LoginScreen.swift */; };
@@ -90,7 +90,7 @@
 		A1F4210829F62379005C346B /* CategoriesModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4210729F62379005C346B /* CategoriesModalViewModel.swift */; };
 		E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084929BDAD100098F0B5 /* AppDelegate.swift */; };
 		E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */; };
-		E35D085129BDAD100098F0B5 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D084F29BDAD100098F0B5 /* MainScreen.storyboard */; };
+		E35D085129BDAD100098F0B5 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D084F29BDAD100098F0B5 /* MainViewController.storyboard */; };
 		E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */; };
 		E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35D085529BDAD110098F0B5 /* Assets.xcassets */; };
 		E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */; };
@@ -169,9 +169,9 @@
 		A1A92BBE29F812B600E14EE8 /* CreditCardModalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardModalCell.xib; sourceTree = "<group>"; };
 		A1A92BC329F81C1D00E14EE8 /* RegisterCardExpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCardExpViewModel.swift; sourceTree = "<group>"; };
 		A1A92BC529F81D6200E14EE8 /* CreditCardExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardExpenses.swift; sourceTree = "<group>"; };
-		A1C9EFE229E60A7D0029B69F /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
-		A1C9EFE429E60A880029B69F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		A1C9EFE629E60BB60029B69F /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		A1C9EFE229E60A7D0029B69F /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
+		A1C9EFE429E60A880029B69F /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A1C9EFE629E60BB60029B69F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A1C9EFE929E60CF50029B69F /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
 		A1C9EFEB29E60D080029B69F /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		A1C9EFEE29E60D7D0029B69F /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp_BackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35D084929BDAD100098F0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E35D085029BDAD100098F0B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainScreen.storyboard; sourceTree = "<group>"; };
+		E35D085029BDAD100098F0B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainViewController.storyboard; sourceTree = "<group>"; };
 		E35D085329BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceApp_BackFront.xcdatamodel; sourceTree = "<group>"; };
 		E35D085529BDAD110098F0B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E35D085829BDAD110098F0B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -412,8 +412,8 @@
 		A14DAE5D29D4E52000714208 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E35D084F29BDAD100098F0B5 /* MainScreen.storyboard */,
-				A1C9EFE629E60BB60029B69F /* MainScreen.swift */,
+				E35D084F29BDAD100098F0B5 /* MainViewController.storyboard */,
+				A1C9EFE629E60BB60029B69F /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -650,8 +650,8 @@
 		A1C9EFDC29E607A40029B69F /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A1C9EFE229E60A7D0029B69F /* SplashScreen.storyboard */,
-				A1C9EFE429E60A880029B69F /* SplashScreen.swift */,
+				A1C9EFE229E60A7D0029B69F /* SplashViewController.storyboard */,
+				A1C9EFE429E60A880029B69F /* SplashViewController.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -944,7 +944,7 @@
 				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
 				A1A92BB429F8122A00E14EE8 /* CreditCardModalScreen.storyboard in Resources */,
 				A1C9EFEA29E60CF50029B69F /* RegisterScreen.storyboard in Resources */,
-				A1C9EFE329E60A7D0029B69F /* SplashScreen.storyboard in Resources */,
+				A1C9EFE329E60A7D0029B69F /* SplashViewController.storyboard in Resources */,
 				E3E9089329BFAF2A00B34864 /* CategoriesGraphScreen.storyboard in Resources */,
 				A13E249C29F9957C00E9EF7A /* GoalInfoScreen.storyboard in Resources */,
 				A16688F929F0B32900568217 /* TransactionsCollectionViewCell.xib in Resources */,
@@ -957,7 +957,7 @@
 				E35D086B29BDB1D00098F0B5 /* AddTransactionScreen.storyboard in Resources */,
 				A1E107C029E4F63D005A3F4F /* ProfileScreen.storyboard in Resources */,
 				A11BDA8729F4CFB6006CF6B2 /* AccountsTableViewCell.xib in Resources */,
-				E35D085129BDAD100098F0B5 /* MainScreen.storyboard in Resources */,
+				E35D085129BDAD100098F0B5 /* MainViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,23 +1065,23 @@
 				A101916C29FAB3FA00776A67 /* AccountCollectionViewCell.swift in Sources */,
 				A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */,
 				A1CE092D2A0026800028028B /* Alert.swift in Sources */,
-				A1C9EFE529E60A880029B69F /* SplashScreen.swift in Sources */,
+				A1C9EFE529E60A880029B69F /* SplashViewController.swift in Sources */,
 				A1A92BC429F81C1D00E14EE8 /* RegisterCardExpViewModel.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
 				A11BDA7429F4C173006CF6B2 /* Banks.swift in Sources */,
-				A1C9EFE729E60BB60029B69F /* MainScreen.swift in Sources */,
+				A1C9EFE729E60BB60029B69F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E35D084F29BDAD100098F0B5 /* MainScreen.storyboard */ = {
+		E35D084F29BDAD100098F0B5 /* MainViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E35D085029BDAD100098F0B5 /* Base */,
 			);
-			name = MainScreen.storyboard;
+			name = MainViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		E35D085729BDAD110098F0B5 /* LaunchScreen.storyboard */ = {
@@ -1221,7 +1221,7 @@
 				INFOPLIST_FILE = FinanceApp_BackFront/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SplashScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1250,7 +1250,7 @@
 				INFOPLIST_FILE = FinanceApp_BackFront/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SplashScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
