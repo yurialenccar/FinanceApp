@@ -1,5 +1,5 @@
 //
-//  RegisterExpenseScreen.swift
+//  RegisterIncomeScreen.swift
 //  FinanceApp_BackFront
 //
 //  Created by Gabriel Luz Romano on 12/04/23.
@@ -7,33 +7,32 @@
 
 import UIKit
 
-class RegisterExpenseScreen: UIViewController {
+class RegisterIncomeViewController: UIViewController {
     
-    var viewModel:AddAccountTransactionsViewModel=AddAccountTransactionsViewModel(type: .expense)
-    
-    private var indexCategorySelected:Int = 0
-    private var idAccountSelected:String = ""
-
     @IBOutlet weak var descTextField: UITextField!
-    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var categoryBackgroung: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
-    @IBOutlet weak var obsTextField: UITextField!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var accountBackground: UIView!
+    @IBOutlet weak var obsTextField: UITextField!
+    
+    static let identifier:String = String(describing: RegisterIncomeViewController.self)
+    var viewModel:AddAccountTransactionsViewModel=AddAccountTransactionsViewModel(type: .income)
+    
+    private var indexCategorySelected:Int = 0
+    private var idAccountSelected:String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDataPicker()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         let today = Date()
         dateField.text = viewModel.datePickerChange(date: today)
         
@@ -42,12 +41,10 @@ class RegisterExpenseScreen: UIViewController {
         idAccountSelected = viewModel.standardAccountId
         
     }
-    
-    
     @IBAction func tappedCategoryButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "CategoriesModalScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "CategoriesModalScreen") {coder -> CategoriesModalScreen? in
-            return CategoriesModalScreen(coder: coder, transactionType: .expense)
+            return CategoriesModalScreen(coder: coder, transactionType: .income)
         }
         vc.delegate = self
         if let presentationController = vc.presentationController as? UISheetPresentationController{
@@ -67,7 +64,7 @@ class RegisterExpenseScreen: UIViewController {
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
-        
+
         if stringIsEmpty(text: amountTextField.text ?? ""){
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
@@ -93,6 +90,7 @@ class RegisterExpenseScreen: UIViewController {
     func updateAccountField(_ indexAccount:Int){
         accountLabel.text = viewModel.getAccountLabel(indexAccount)
         bankLabel.text = viewModel.getBankLabelText(indexAccount)
+        bankLabel.font = viewModel.getBankLabelTextFont(indexAccount)
         bankLabel.textColor = viewModel.getBankLabelColor(indexAccount)
         accountBackground.backgroundColor = viewModel.getBankBackColor(indexAccount)
     }
@@ -122,7 +120,7 @@ class RegisterExpenseScreen: UIViewController {
 }
 
 
-extension RegisterExpenseScreen:CategoriesModalScreenDelegate, AccountsModalScreenDelegate {
+extension RegisterIncomeViewController:CategoriesModalScreenDelegate, AccountsModalScreenDelegate {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory
         updateCategoryField(indexCategorySelected)

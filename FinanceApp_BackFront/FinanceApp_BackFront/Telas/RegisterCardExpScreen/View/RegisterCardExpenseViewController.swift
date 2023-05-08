@@ -1,5 +1,5 @@
 //
-//  RegisterIncomeScreen.swift
+//  RegisterCardExpScreen.swift
 //  FinanceApp_BackFront
 //
 //  Created by Gabriel Luz Romano on 12/04/23.
@@ -7,44 +7,45 @@
 
 import UIKit
 
-class RegisterIncomeScreen: UIViewController {
+class RegisterCardExpenseViewController: UIViewController{
     
-    var viewModel:AddAccountTransactionsViewModel=AddAccountTransactionsViewModel(type: .income)
-    
-    private var indexCategorySelected:Int = 0
-    private var idAccountSelected:String = ""
-
     @IBOutlet weak var descTextField: UITextField!
-    @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var categoryBackgroung: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
-    @IBOutlet weak var accountLabel: UILabel!
-    @IBOutlet weak var bankLabel: UILabel!
-    @IBOutlet weak var accountBackground: UIView!
     @IBOutlet weak var obsTextField: UITextField!
+    @IBOutlet weak var cardLabel: UILabel!
+    @IBOutlet weak var bankLabel: UILabel!
+    @IBOutlet weak var bankBackground: UIView!
     
+    static let identifier:String = String(describing: RegisterCardExpenseViewController.self)
+    var viewModel:RegisterCardExpViewModel = RegisterCardExpViewModel()
     
-    
+    private var indexCategorySelected:Int = 0
+    private var indexCardSelected:Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDataPicker()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         let today = Date()
         dateField.text = viewModel.datePickerChange(date: today)
         
         updateCategoryField(indexCategorySelected)
-        updateAccountField(viewModel.standardAccountIndex)
-        idAccountSelected = viewModel.standardAccountId
+        updateCardField(indexCardSelected)
         
     }
+    
     @IBAction func tappedCategoryButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "CategoriesModalScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "CategoriesModalScreen") {coder -> CategoriesModalScreen? in
-            return CategoriesModalScreen(coder: coder, transactionType: .income)
+            return CategoriesModalScreen(coder: coder, transactionType: .expense)
         }
         vc.delegate = self
         if let presentationController = vc.presentationController as? UISheetPresentationController{
@@ -53,9 +54,9 @@ class RegisterIncomeScreen: UIViewController {
         self.present(vc, animated: true)
     }
     
-    @IBAction func tappedAccountButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "AccountsModalScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "AccountsModalScreen") as? AccountsModalScreen
+    @IBAction func tappedCardButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "CreditCardModalScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CreditCardModalScreen") as? CreditCardModalScreen
         vc?.delegate = self
         if let presentationController = vc?.presentationController as? UISheetPresentationController{
             presentationController.detents = [.medium()]
@@ -64,17 +65,16 @@ class RegisterIncomeScreen: UIViewController {
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
-
-        if stringIsEmpty(text: amountTextField.text ?? ""){
+        if viewModel.stringIsEmpty(text: amountTextField.text ?? ""){
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
             showAlert(title: "Opa, esqueceu de informar valor gasto!")
         } else {
-            viewModel.setTransactionsValues(
+            viewModel.setExpenseValues(
                 desc: descTextField.text ?? "",
                 amount: amountTextField.text!,
                 category: indexCategorySelected,
-                accountId: idAccountSelected,
+                card: indexCardSelected,
                 Obs: obsTextField.text ?? ""
             )
             dismiss(animated: true, completion: nil)
@@ -87,12 +87,12 @@ class RegisterIncomeScreen: UIViewController {
         categoryBackgroung.backgroundColor = viewModel.getCategoryBackgroungColor(indexCategory)
     }
     
-    func updateAccountField(_ indexAccount:Int){
-        accountLabel.text = viewModel.getAccountLabel(indexAccount)
-        bankLabel.text = viewModel.getBankLabelText(indexAccount)
-        bankLabel.font = viewModel.getBankLabelTextFont(indexAccount)
-        bankLabel.textColor = viewModel.getBankLabelColor(indexAccount)
-        accountBackground.backgroundColor = viewModel.getBankBackColor(indexAccount)
+    func updateCardField(_ indexCard:Int){
+        cardLabel.text = viewModel.getCardLabel(indexCard)
+        bankLabel.text = viewModel.getBankLabelText(indexCard)
+        bankLabel.font = viewModel.getBankLabelTextFont(indexCard)
+        bankLabel.textColor = viewModel.getBankLabelColor(indexCard)
+        bankBackground.backgroundColor = viewModel.getBankBackColor(indexCard)
     }
     
     private func setupDataPicker(){
@@ -119,15 +119,16 @@ class RegisterIncomeScreen: UIViewController {
 
 }
 
-
-extension RegisterIncomeScreen:CategoriesModalScreenDelegate, AccountsModalScreenDelegate {
+//Extensão que busca a escolha do usuário das telas modais de seleção.
+extension RegisterCardExpenseViewController:CategoriesModalScreenDelegate, CardModalScreenDelegate {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory
         updateCategoryField(indexCategorySelected)
     }
     
-    func didSelectAccount(_ indexAccount: Int) {
-        updateAccountField(indexAccount)
-        idAccountSelected = bankAccountsList[indexAccount].id
+    func didSelectCard(_ indexCard: Int) {
+        indexCardSelected = indexCard
+        updateCardField(indexCardSelected)
     }
 }
+

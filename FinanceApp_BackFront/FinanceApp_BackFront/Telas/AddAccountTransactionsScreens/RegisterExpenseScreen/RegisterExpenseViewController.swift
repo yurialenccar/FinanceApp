@@ -1,5 +1,5 @@
 //
-//  RegisterCardExpScreen.swift
+//  RegisterExpenseScreen.swift
 //  FinanceApp_BackFront
 //
 //  Created by Gabriel Luz Romano on 12/04/23.
@@ -7,14 +7,7 @@
 
 import UIKit
 
-class RegisterCardExpScreen: UIViewController{
-    
-    
-
-    var viewModel:RegisterCardExpViewModel = RegisterCardExpViewModel()
-    
-    private var indexCategorySelected:Int = 0
-    private var indexCardSelected:Int = 0
+class RegisterExpenseViewController: UIViewController {
     
     @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -23,10 +16,16 @@ class RegisterCardExpScreen: UIViewController{
     @IBOutlet weak var categoryBackgroung: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var obsTextField: UITextField!
-    @IBOutlet weak var cardLabel: UILabel!
+    @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
-    @IBOutlet weak var bankBackground: UIView!
-
+    @IBOutlet weak var accountBackground: UIView!
+    
+    static let identifier:String = String(describing: RegisterExpenseViewController.self)
+    var viewModel:AddAccountTransactionsViewModel=AddAccountTransactionsViewModel(type: .expense)
+    
+    private var indexCategorySelected:Int = 0
+    private var idAccountSelected:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDataPicker()
@@ -39,9 +38,11 @@ class RegisterCardExpScreen: UIViewController{
         dateField.text = viewModel.datePickerChange(date: today)
         
         updateCategoryField(indexCategorySelected)
-        updateCardField(indexCardSelected)
+        updateAccountField(viewModel.standardAccountIndex)
+        idAccountSelected = viewModel.standardAccountId
         
     }
+    
     
     @IBAction func tappedCategoryButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "CategoriesModalScreen", bundle: nil)
@@ -55,9 +56,9 @@ class RegisterCardExpScreen: UIViewController{
         self.present(vc, animated: true)
     }
     
-    @IBAction func tappedCardButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "CreditCardModalScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CreditCardModalScreen") as? CreditCardModalScreen
+    @IBAction func tappedAccountButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "AccountsModalScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AccountsModalScreen") as? AccountsModalScreen
         vc?.delegate = self
         if let presentationController = vc?.presentationController as? UISheetPresentationController{
             presentationController.detents = [.medium()]
@@ -66,16 +67,17 @@ class RegisterCardExpScreen: UIViewController{
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
-        if viewModel.stringIsEmpty(text: amountTextField.text ?? ""){
+        
+        if stringIsEmpty(text: amountTextField.text ?? ""){
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
             showAlert(title: "Opa, esqueceu de informar valor gasto!")
         } else {
-            viewModel.setExpenseValues(
+            viewModel.setTransactionsValues(
                 desc: descTextField.text ?? "",
                 amount: amountTextField.text!,
                 category: indexCategorySelected,
-                card: indexCardSelected,
+                accountId: idAccountSelected,
                 Obs: obsTextField.text ?? ""
             )
             dismiss(animated: true, completion: nil)
@@ -88,12 +90,11 @@ class RegisterCardExpScreen: UIViewController{
         categoryBackgroung.backgroundColor = viewModel.getCategoryBackgroungColor(indexCategory)
     }
     
-    func updateCardField(_ indexCard:Int){
-        cardLabel.text = viewModel.getCardLabel(indexCard)
-        bankLabel.text = viewModel.getBankLabelText(indexCard)
-        bankLabel.font = viewModel.getBankLabelTextFont(indexCard)
-        bankLabel.textColor = viewModel.getBankLabelColor(indexCard)
-        bankBackground.backgroundColor = viewModel.getBankBackColor(indexCard)
+    func updateAccountField(_ indexAccount:Int){
+        accountLabel.text = viewModel.getAccountLabel(indexAccount)
+        bankLabel.text = viewModel.getBankLabelText(indexAccount)
+        bankLabel.textColor = viewModel.getBankLabelColor(indexAccount)
+        accountBackground.backgroundColor = viewModel.getBankBackColor(indexAccount)
     }
     
     private func setupDataPicker(){
@@ -120,16 +121,15 @@ class RegisterCardExpScreen: UIViewController{
 
 }
 
-//Extensão que busca a escolha do usuário das telas modais de seleção.
-extension RegisterCardExpScreen:CategoriesModalScreenDelegate, CardModalScreenDelegate {
+
+extension RegisterExpenseViewController:CategoriesModalScreenDelegate, AccountsModalScreenDelegate {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory
         updateCategoryField(indexCategorySelected)
     }
     
-    func didSelectCard(_ indexCard: Int) {
-        indexCardSelected = indexCard
-        updateCardField(indexCardSelected)
+    func didSelectAccount(_ indexAccount: Int) {
+        updateAccountField(indexAccount)
+        idAccountSelected = bankAccountsList[indexAccount].id
     }
 }
-

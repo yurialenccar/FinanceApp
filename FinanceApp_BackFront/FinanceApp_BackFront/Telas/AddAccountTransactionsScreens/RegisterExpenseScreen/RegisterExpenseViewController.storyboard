@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Register Expense Screen-->
+        <!--Register Expense View Controller-->
         <scene sceneID="LuG-7W-XNd">
             <objects>
-                <viewController storyboardIdentifier="RegisterExpenseScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z6L-qh-QfY" customClass="RegisterExpenseScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterExpenseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z6L-qh-QfY" customClass="RegisterExpenseViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H0x-In-k4S">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

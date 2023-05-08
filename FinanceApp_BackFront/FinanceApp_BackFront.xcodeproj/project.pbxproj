@@ -28,18 +28,18 @@
 		A11BDA8729F4CFB6006CF6B2 /* AccountsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11BDA8529F4CFB6006CF6B2 /* AccountsTableViewCell.xib */; };
 		A12329F129FB0F2C0053AC38 /* BankAccountsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12329EF29FB0F2C0053AC38 /* BankAccountsScreen.storyboard */; };
 		A12329F229FB0F2C0053AC38 /* BankAccountsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12329F029FB0F2C0053AC38 /* BankAccountsScreen.swift */; };
-		A13E249629F98AB200E9EF7A /* NewGoalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13E249529F98AB200E9EF7A /* NewGoalScreen.storyboard */; };
-		A13E249929F98BDB00E9EF7A /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E249829F98BDB00E9EF7A /* NewGoalViewModel.swift */; };
-		A13E249C29F9957C00E9EF7A /* GoalInfoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13E249B29F9957C00E9EF7A /* GoalInfoScreen.storyboard */; };
-		A13E249E29F9958900E9EF7A /* GoalInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E249D29F9958900E9EF7A /* GoalInfoScreen.swift */; };
+		A13E249629F98AB200E9EF7A /* GoalEditorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13E249529F98AB200E9EF7A /* GoalEditorViewController.storyboard */; };
+		A13E249929F98BDB00E9EF7A /* GoalEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E249829F98BDB00E9EF7A /* GoalEditorViewModel.swift */; };
+		A13E249C29F9957C00E9EF7A /* GoalInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13E249B29F9957C00E9EF7A /* GoalInfoViewController.storyboard */; };
+		A13E249E29F9958900E9EF7A /* GoalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E249D29F9958900E9EF7A /* GoalInfoViewController.swift */; };
 		A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140933C29E6EC3D0037662B /* CategoriesSum.swift */; };
-		A140934229E73ACA0037662B /* RegisterIncomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A140934129E73ACA0037662B /* RegisterIncomeScreen.storyboard */; };
-		A140934429E73AD20037662B /* RegisterIncomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140934329E73AD20037662B /* RegisterIncomeScreen.swift */; };
-		A140934629E73B750037662B /* RegisterExpenseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A140934529E73B750037662B /* RegisterExpenseScreen.storyboard */; };
-		A140934A29E73BCC0037662B /* RegisterCardExpScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A140934929E73BCC0037662B /* RegisterCardExpScreen.storyboard */; };
-		A140934C29E73BD30037662B /* RegisterCardExpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140934B29E73BD30037662B /* RegisterCardExpScreen.swift */; };
+		A140934229E73ACA0037662B /* RegisterIncomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A140934129E73ACA0037662B /* RegisterIncomeViewController.storyboard */; };
+		A140934429E73AD20037662B /* RegisterIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140934329E73AD20037662B /* RegisterIncomeViewController.swift */; };
+		A140934629E73B750037662B /* RegisterExpenseViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A140934529E73B750037662B /* RegisterExpenseViewController.storyboard */; };
+		A140934A29E73BCC0037662B /* RegisterCardExpenseViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A140934929E73BCC0037662B /* RegisterCardExpenseViewController.storyboard */; };
+		A140934C29E73BD30037662B /* RegisterCardExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140934B29E73BD30037662B /* RegisterCardExpenseViewController.swift */; };
 		A140934F29E7625A0037662B /* AddTrasactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140934E29E7625A0037662B /* AddTrasactionsViewModel.swift */; };
-		A140935129E772720037662B /* RegisterExpenseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140935029E772720037662B /* RegisterExpenseScreen.swift */; };
+		A140935129E772720037662B /* RegisterExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140935029E772720037662B /* RegisterExpenseViewController.swift */; };
 		A14DAE5C29D4E51400714208 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5B29D4E51400714208 /* TabBarController.storyboard */; };
 		A14DAE6029D4E91900714208 /* TransactionsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14DAE5F29D4E91900714208 /* TransactionsViewController.storyboard */; };
 		A14DAE6329D4E94200714208 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14DAE6229D4E94200714208 /* TransactionsViewController.swift */; };
@@ -57,7 +57,7 @@
 		A19F850A29F963C40044F7DE /* GoalsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */; };
 		A19F850F29F96E6D0044F7DE /* createGoalButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */; };
 		A19F851029F96E6D0044F7DE /* createGoalButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19F850E29F96E6D0044F7DE /* createGoalButtonCell.xib */; };
-		A19F851529F973D20044F7DE /* NewGoalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F851429F973D20044F7DE /* NewGoalScreen.swift */; };
+		A19F851529F973D20044F7DE /* GoalEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F851429F973D20044F7DE /* GoalEditorViewController.swift */; };
 		A1A92BB429F8122A00E14EE8 /* CreditCardModalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A92BB329F8122A00E14EE8 /* CreditCardModalScreen.storyboard */; };
 		A1A92BB729F8124400E14EE8 /* CreditCardModalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BB629F8124400E14EE8 /* CreditCardModalScreen.swift */; };
 		A1A92BBF29F812B600E14EE8 /* CreditCardModalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BBD29F812B600E14EE8 /* CreditCardModalCell.swift */; };
@@ -133,18 +133,18 @@
 		A11BDA8529F4CFB6006CF6B2 /* AccountsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsTableViewCell.xib; sourceTree = "<group>"; };
 		A12329EF29FB0F2C0053AC38 /* BankAccountsScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BankAccountsScreen.storyboard; sourceTree = "<group>"; };
 		A12329F029FB0F2C0053AC38 /* BankAccountsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccountsScreen.swift; sourceTree = "<group>"; };
-		A13E249529F98AB200E9EF7A /* NewGoalScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewGoalScreen.storyboard; sourceTree = "<group>"; };
-		A13E249829F98BDB00E9EF7A /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
-		A13E249B29F9957C00E9EF7A /* GoalInfoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalInfoScreen.storyboard; sourceTree = "<group>"; };
-		A13E249D29F9958900E9EF7A /* GoalInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalInfoScreen.swift; sourceTree = "<group>"; };
+		A13E249529F98AB200E9EF7A /* GoalEditorViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoalEditorViewController.storyboard; sourceTree = "<group>"; };
+		A13E249829F98BDB00E9EF7A /* GoalEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditorViewModel.swift; sourceTree = "<group>"; };
+		A13E249B29F9957C00E9EF7A /* GoalInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalInfoViewController.storyboard; sourceTree = "<group>"; };
+		A13E249D29F9958900E9EF7A /* GoalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalInfoViewController.swift; sourceTree = "<group>"; };
 		A140933C29E6EC3D0037662B /* CategoriesSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSum.swift; sourceTree = "<group>"; };
-		A140934129E73ACA0037662B /* RegisterIncomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterIncomeScreen.storyboard; sourceTree = "<group>"; };
-		A140934329E73AD20037662B /* RegisterIncomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterIncomeScreen.swift; sourceTree = "<group>"; };
-		A140934529E73B750037662B /* RegisterExpenseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterExpenseScreen.storyboard; sourceTree = "<group>"; };
-		A140934929E73BCC0037662B /* RegisterCardExpScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterCardExpScreen.storyboard; sourceTree = "<group>"; };
-		A140934B29E73BD30037662B /* RegisterCardExpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCardExpScreen.swift; sourceTree = "<group>"; };
+		A140934129E73ACA0037662B /* RegisterIncomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterIncomeViewController.storyboard; sourceTree = "<group>"; };
+		A140934329E73AD20037662B /* RegisterIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterIncomeViewController.swift; sourceTree = "<group>"; };
+		A140934529E73B750037662B /* RegisterExpenseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterExpenseViewController.storyboard; sourceTree = "<group>"; };
+		A140934929E73BCC0037662B /* RegisterCardExpenseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterCardExpenseViewController.storyboard; sourceTree = "<group>"; };
+		A140934B29E73BD30037662B /* RegisterCardExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCardExpenseViewController.swift; sourceTree = "<group>"; };
 		A140934E29E7625A0037662B /* AddTrasactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrasactionsViewModel.swift; sourceTree = "<group>"; };
-		A140935029E772720037662B /* RegisterExpenseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterExpenseScreen.swift; sourceTree = "<group>"; };
+		A140935029E772720037662B /* RegisterExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterExpenseViewController.swift; sourceTree = "<group>"; };
 		A14DAE5B29D4E51400714208 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		A14DAE5F29D4E91900714208 /* TransactionsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionsViewController.storyboard; sourceTree = "<group>"; };
 		A14DAE6229D4E94200714208 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 		A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createGoalButtonCell.swift; sourceTree = "<group>"; };
 		A19F850E29F96E6D0044F7DE /* createGoalButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = createGoalButtonCell.xib; sourceTree = "<group>"; };
-		A19F851429F973D20044F7DE /* NewGoalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalScreen.swift; sourceTree = "<group>"; };
+		A19F851429F973D20044F7DE /* GoalEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditorViewController.swift; sourceTree = "<group>"; };
 		A1A92BB329F8122A00E14EE8 /* CreditCardModalScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreditCardModalScreen.storyboard; sourceTree = "<group>"; };
 		A1A92BB629F8124400E14EE8 /* CreditCardModalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardModalScreen.swift; sourceTree = "<group>"; };
 		A1A92BBD29F812B600E14EE8 /* CreditCardModalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardModalCell.swift; sourceTree = "<group>"; };
@@ -360,7 +360,7 @@
 		A13E249729F98ABE00E9EF7A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A13E249829F98BDB00E9EF7A /* NewGoalViewModel.swift */,
+				A13E249829F98BDB00E9EF7A /* GoalEditorViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -368,8 +368,8 @@
 		A13E249A29F9955900E9EF7A /* GoalInfoScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A13E249B29F9957C00E9EF7A /* GoalInfoScreen.storyboard */,
-				A13E249D29F9958900E9EF7A /* GoalInfoScreen.swift */,
+				A13E249B29F9957C00E9EF7A /* GoalInfoViewController.storyboard */,
+				A13E249D29F9958900E9EF7A /* GoalInfoViewController.swift */,
 			);
 			path = GoalInfoScreen;
 			sourceTree = "<group>";
@@ -377,8 +377,8 @@
 		A140933E29E73A3E0037662B /* RegisterIncomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A140934129E73ACA0037662B /* RegisterIncomeScreen.storyboard */,
-				A140934329E73AD20037662B /* RegisterIncomeScreen.swift */,
+				A140934129E73ACA0037662B /* RegisterIncomeViewController.storyboard */,
+				A140934329E73AD20037662B /* RegisterIncomeViewController.swift */,
 			);
 			path = RegisterIncomeScreen;
 			sourceTree = "<group>";
@@ -386,8 +386,8 @@
 		A140933F29E73A6F0037662B /* RegisterExpenseScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A140934529E73B750037662B /* RegisterExpenseScreen.storyboard */,
-				A140935029E772720037662B /* RegisterExpenseScreen.swift */,
+				A140934529E73B750037662B /* RegisterExpenseViewController.storyboard */,
+				A140935029E772720037662B /* RegisterExpenseViewController.swift */,
 			);
 			path = RegisterExpenseScreen;
 			sourceTree = "<group>";
@@ -597,8 +597,8 @@
 		A19F851629F98A8B0044F7DE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A13E249529F98AB200E9EF7A /* NewGoalScreen.storyboard */,
-				A19F851429F973D20044F7DE /* NewGoalScreen.swift */,
+				A13E249529F98AB200E9EF7A /* GoalEditorViewController.storyboard */,
+				A19F851429F973D20044F7DE /* GoalEditorViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -633,8 +633,8 @@
 		A1A92BC129F81BF500E14EE8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A140934929E73BCC0037662B /* RegisterCardExpScreen.storyboard */,
-				A140934B29E73BD30037662B /* RegisterCardExpScreen.swift */,
+				A140934929E73BCC0037662B /* RegisterCardExpenseViewController.storyboard */,
+				A140934B29E73BD30037662B /* RegisterCardExpenseViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -927,12 +927,12 @@
 				A1E107C729E4F784005A3F4F /* CurrencyScreen.storyboard in Resources */,
 				E3C0915B29C21CD400BE4441 /* GoalsViewController.storyboard in Resources */,
 				A1C9EFF129E60D840029B69F /* LoginViewController.storyboard in Resources */,
-				A140934629E73B750037662B /* RegisterExpenseScreen.storyboard in Resources */,
+				A140934629E73B750037662B /* RegisterExpenseViewController.storyboard in Resources */,
 				A14DAE6029D4E91900714208 /* TransactionsViewController.storyboard in Resources */,
 				A101917A29FAC4F000776A67 /* ConfigBankAccountsScreen.storyboard in Resources */,
 				A19F850A29F963C40044F7DE /* GoalsCollectionViewCell.xib in Resources */,
-				A140934229E73ACA0037662B /* RegisterIncomeScreen.storyboard in Resources */,
-				A140934A29E73BCC0037662B /* RegisterCardExpScreen.storyboard in Resources */,
+				A140934229E73ACA0037662B /* RegisterIncomeViewController.storyboard in Resources */,
+				A140934A29E73BCC0037662B /* RegisterCardExpenseViewController.storyboard in Resources */,
 				A10191A729FAFF3D00776A67 /* BanksCell.xib in Resources */,
 				A101916D29FAB3FA00776A67 /* AccountCollectionViewCell.xib in Resources */,
 				A101917629FABE5700776A67 /* NewItemButtonCell.xib in Resources */,
@@ -946,9 +946,9 @@
 				A1C9EFEA29E60CF50029B69F /* RegisterViewController.storyboard in Resources */,
 				A1C9EFE329E60A7D0029B69F /* SplashViewController.storyboard in Resources */,
 				E3E9089329BFAF2A00B34864 /* CategoriesGraphScreen.storyboard in Resources */,
-				A13E249C29F9957C00E9EF7A /* GoalInfoScreen.storyboard in Resources */,
+				A13E249C29F9957C00E9EF7A /* GoalInfoViewController.storyboard in Resources */,
 				A16688F929F0B32900568217 /* TransactionsCollectionViewCell.xib in Resources */,
-				A13E249629F98AB200E9EF7A /* NewGoalScreen.storyboard in Resources */,
+				A13E249629F98AB200E9EF7A /* GoalEditorViewController.storyboard in Resources */,
 				E35D086329BDB03D0098F0B5 /* HomeViewController.storyboard in Resources */,
 				A1D2F84729E99A2600DCA6E4 /* CategoriesModalScreen.storyboard in Resources */,
 				A11BDA7D29F4CC55006CF6B2 /* AccountsModalScreen.storyboard in Resources */,
@@ -1013,10 +1013,10 @@
 				A1F4210329F6215B005C346B /* AccountsModalViewModel.swift in Sources */,
 				A1C9EFEC29E60D080029B69F /* RegisterViewController.swift in Sources */,
 				A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */,
-				A140934C29E73BD30037662B /* RegisterCardExpScreen.swift in Sources */,
+				A140934C29E73BD30037662B /* RegisterCardExpenseViewController.swift in Sources */,
 				A10191A929FB06BA00776A67 /* ConfigBankAccountViewModel.swift in Sources */,
 				E35D087129BDB2030098F0B5 /* MoreOptionsViewController.swift in Sources */,
-				A140935129E772720037662B /* RegisterExpenseScreen.swift in Sources */,
+				A140935129E772720037662B /* RegisterExpenseViewController.swift in Sources */,
 				A11BDA7629F4C24B006CF6B2 /* CreditCard.swift in Sources */,
 				A18299C72A01AC7F00E72936 /* ConfigType.swift in Sources */,
 				A1F4210829F62379005C346B /* CategoriesModalViewModel.swift in Sources */,
@@ -1033,22 +1033,22 @@
 				E3C0915929C21CC900BE4441 /* GoalsViewController.swift in Sources */,
 				E35D086929BDB1C60098F0B5 /* AddViewController.swift in Sources */,
 				A1E107C229E4F646005A3F4F /* ProfileScreen.swift in Sources */,
-				A13E249929F98BDB00E9EF7A /* NewGoalViewModel.swift in Sources */,
+				A13E249929F98BDB00E9EF7A /* GoalEditorViewModel.swift in Sources */,
 				A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */,
 				A11BDA8629F4CFB6006CF6B2 /* AccountsTableViewCell.swift in Sources */,
 				A16688E929F06E8600568217 /* HomeViewModel.swift in Sources */,
 				A1A92BB729F8124400E14EE8 /* CreditCardModalScreen.swift in Sources */,
 				A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */,
 				A140934F29E7625A0037662B /* AddTrasactionsViewModel.swift in Sources */,
-				A19F851529F973D20044F7DE /* NewGoalScreen.swift in Sources */,
+				A19F851529F973D20044F7DE /* GoalEditorViewController.swift in Sources */,
 				A19F850F29F96E6D0044F7DE /* createGoalButtonCell.swift in Sources */,
 				A11BDA7229F4C04A006CF6B2 /* BankAccount.swift in Sources */,
 				A1E47F7B29F8A70000039F08 /* Goal.swift in Sources */,
-				A13E249E29F9958900E9EF7A /* GoalInfoScreen.swift in Sources */,
+				A13E249E29F9958900E9EF7A /* GoalInfoViewController.swift in Sources */,
 				E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */,
 				A1D2F84D29E9E5B100DCA6E4 /* CategoriesModalCell.swift in Sources */,
 				A101917C29FAC4F900776A67 /* ConfigBankAccountsScreen.swift in Sources */,
-				A140934429E73AD20037662B /* RegisterIncomeScreen.swift in Sources */,
+				A140934429E73AD20037662B /* RegisterIncomeViewController.swift in Sources */,
 				A1C9EFEF29E60D7D0029B69F /* LoginViewController.swift in Sources */,
 				A11BDA7829F4C478006CF6B2 /* CardBrand.swift in Sources */,
 				A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */,

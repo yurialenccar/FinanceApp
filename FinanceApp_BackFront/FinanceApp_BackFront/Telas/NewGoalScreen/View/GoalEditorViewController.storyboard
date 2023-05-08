@@ -11,7 +11,7 @@
         <!--Metas e Planejamentos-->
         <scene sceneID="PAd-DU-gS8">
             <objects>
-                <viewController storyboardIdentifier="NewGoalScreen" title="NewGoalScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fw1-ZH-TPZ" userLabel="Metas e Planejamentos" customClass="NewGoalScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalEditorViewController" title="NewGoalScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fw1-ZH-TPZ" userLabel="Metas e Planejamentos" customClass="GoalEditorViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h7P-9W-r0z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

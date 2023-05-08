@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GoalInfoScreen: UIViewController {
+class GoalInfoViewController: UIViewController {
     
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var goalImage: UIImageView!
@@ -18,6 +18,8 @@ class GoalInfoScreen: UIViewController {
     @IBOutlet weak var daysToDateLabel: UILabel!
     @IBOutlet weak var recommendationLabel: UILabel!
     
+    static let identifier:String = String(describing: GoalInfoViewController.self)
+
     var goal:Goal
     
     init?(coder:NSCoder, goal:Goal){

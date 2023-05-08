@@ -7,31 +7,24 @@
 
 import UIKit
 
-protocol CreatedNewGoalDelegate{
-    func didCreatedGoal()
+protocol GoalSavedDelegate{
+    func didSavedGoal()
 }
 
-class NewGoalScreen: UIViewController {
+class GoalEditorViewController: UIViewController {
     
-    var delegate:CreatedNewGoalDelegate?
-    var viewModel:NewGoalViewModel=NewGoalViewModel()
-
     @IBOutlet weak var descLabel: UITextField!
-    
     @IBOutlet weak var initialAmountLabel: UITextField!
-    
     @IBOutlet weak var targetValueLabel: UITextField!
-    
     @IBOutlet weak var tagetDateLabel: UITextField!
-    
     @IBOutlet weak var goalImage: UIImageView!
     
+    var delegate:GoalSavedDelegate?
+    static let identifier:String = String(describing: GoalEditorViewController.self)
+    var viewModel:GoalEditorViewModel=GoalEditorViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
     }
     
     @IBAction func tappedChangeImageButton(_ sender: UIButton) {
@@ -41,7 +34,7 @@ class NewGoalScreen: UIViewController {
     @IBAction func tappedCreateGoalButton(_ sender: UIButton) {
         if isMissingInformation() == false {
             viewModel.createNewGoal(desc: descLabel.text!, imageName: "Casa", savedAmount: Double(initialAmountLabel.text!)!, goalValue: Double(targetValueLabel.text!)!, targetDate: tagetDateLabel.text!)
-            delegate?.didCreatedGoal()
+            delegate?.didSavedGoal()
             dismiss(animated: true)
         }
     }

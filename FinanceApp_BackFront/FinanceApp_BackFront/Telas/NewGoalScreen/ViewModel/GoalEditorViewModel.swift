@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NewGoalViewModel{
+class GoalEditorViewModel{
     
     var newGoal:Goal=Goal(desc: "", imageName: "", savedAmount: 0.0, goalValue: 0.0, targetDate: "")
     

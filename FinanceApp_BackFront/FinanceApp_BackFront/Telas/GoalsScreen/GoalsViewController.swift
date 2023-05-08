@@ -35,7 +35,7 @@ class GoalsViewController: UIViewController {
 
 }
 
-extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateGoalButtonCellDelegate, CreatedNewGoalDelegate {
+extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateGoalButtonCellDelegate, GoalSavedDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return goalsList.count + 1
@@ -60,9 +60,8 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func didTappedNewGoalButton() {
-        print("function didTappedNewGoalButton")
-        let storyboard = UIStoryboard(name: "NewGoalScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "NewGoalScreen") as? NewGoalScreen
+        let storyboard = UIStoryboard(name: GoalEditorViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: GoalEditorViewController.identifier) as? GoalEditorViewController
         vc?.delegate = self
         if let presentationController = vc?.presentationController as? UISheetPresentationController{
             presentationController.detents = [.medium()]
@@ -70,16 +69,16 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         self.present(vc ?? UIViewController(), animated: true)
     }
     
-    func didCreatedGoal() {
+    func didSavedGoal() {
         collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         if indexPath.row < goalsList.count{
-            let storyboard = UIStoryboard(name: "GoalInfoScreen", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "GoalInfoScreen") {coder -> GoalInfoScreen? in
-                return GoalInfoScreen(coder: coder, goal: goalsList[indexPath.row])
+            let storyboard = UIStoryboard(name: GoalInfoViewController.identifier, bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: GoalInfoViewController.identifier) {coder -> GoalInfoViewController? in
+                return GoalInfoViewController(coder: coder, goal: goalsList[indexPath.row])
             }
             navigationController?.pushViewController(vc, animated: true)
         }

@@ -19,10 +19,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Goal Info Screen-->
+        <!--Goal Info View Controller-->
         <scene sceneID="iGm-fC-mn9">
             <objects>
-                <viewController storyboardIdentifier="GoalInfoScreen" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KaN-YF-6K3" customClass="GoalInfoScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalInfoViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KaN-YF-6K3" customClass="GoalInfoViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YNu-Mz-DXE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

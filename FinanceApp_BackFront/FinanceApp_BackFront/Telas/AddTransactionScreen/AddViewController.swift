@@ -17,17 +17,17 @@ class AddViewController: UIViewController {
     }
 
     @IBAction func tappedIncomeButton(_ sender: UIButton) {
-        let vc: RegisterIncomeScreen? = UIStoryboard(name: "RegisterIncomeScreen", bundle: nil).instantiateViewController(withIdentifier: "RegisterIncomeScreen") as? RegisterIncomeScreen
+        let vc: RegisterIncomeViewController? = UIStoryboard(name: RegisterIncomeViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: RegisterIncomeViewController.identifier) as? RegisterIncomeViewController
         present(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func tappedExpenseButton(_ sender: UIButton) {
-        let vc: RegisterExpenseScreen? = UIStoryboard(name: "RegisterExpenseScreen", bundle: nil).instantiateViewController(withIdentifier: "RegisterExpenseScreen") as? RegisterExpenseScreen
+        let vc: RegisterExpenseViewController? = UIStoryboard(name: RegisterExpenseViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: RegisterExpenseViewController.identifier) as? RegisterExpenseViewController
         present(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func tappedCardExpButton(_ sender: UIButton) {
-        let vc: RegisterCardExpScreen? = UIStoryboard(name: "RegisterCardExpScreen", bundle: nil).instantiateViewController(withIdentifier: "RegisterCardExpScreen") as? RegisterCardExpScreen
+        let vc: RegisterCardExpenseViewController? = UIStoryboard(name: RegisterCardExpenseViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: RegisterCardExpenseViewController.identifier) as? RegisterCardExpenseViewController
         present(vc ?? UIViewController(), animated: true)
     }
 
