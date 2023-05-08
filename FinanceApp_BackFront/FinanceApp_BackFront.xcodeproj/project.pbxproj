@@ -491,7 +491,7 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		A16B56A229C1076500E53727 /* Telas */ = {
+		A16B56A229C1076500E53727 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				A17DC6742A09874800D12C3C /* LoginScreens */,
@@ -500,7 +500,7 @@
 				A17DC6852A098A7600D12C3C /* ErrorScreens */,
 				A101916E29FAB72F00776A67 /* SharedCells */,
 			);
-			path = Telas;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		A16B56A429C1079000E53727 /* HomeViewController */ = {
@@ -907,7 +907,7 @@
 				E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */,
 				E35D085A29BDAD110098F0B5 /* Info.plist */,
 				A1CE09292A001B410028028B /* GlobalFunctions */,
-				A16B56A229C1076500E53727 /* Telas */,
+				A16B56A229C1076500E53727 /* Screens */,
 				A16636ED29DE1B0400162872 /* Models */,
 				A16688E529F06D4C00568217 /* Resources */,
 			);
