@@ -12,7 +12,7 @@ class RegisterExpenseScreen: UIViewController {
     var viewModel:AddAccountTransactionsViewModel=AddAccountTransactionsViewModel(type: .expense)
     
     private var indexCategorySelected:Int = 0
-    private var indexAccountSelected:Int = 0
+    private var idAccountSelected:String = ""
 
     @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -38,7 +38,8 @@ class RegisterExpenseScreen: UIViewController {
         dateField.text = viewModel.datePickerChange(date: today)
         
         updateCategoryField(indexCategorySelected)
-        updateAccountField(indexAccountSelected)
+        updateAccountField(viewModel.standardAccountIndex)
+        idAccountSelected = viewModel.standardAccountId
         
     }
     
@@ -76,7 +77,7 @@ class RegisterExpenseScreen: UIViewController {
                 desc: descTextField.text ?? "",
                 amount: amountTextField.text!,
                 category: indexCategorySelected,
-                account: indexAccountSelected,
+                accountId: idAccountSelected,
                 Obs: obsTextField.text ?? ""
             )
             dismiss(animated: true, completion: nil)
@@ -127,8 +128,8 @@ extension RegisterExpenseScreen:CategoriesModalScreenDelegate, AccountsModalScre
         updateCategoryField(indexCategorySelected)
     }
     
-    func didSelectAccount(_ indexAcccount: Int) {
-        indexAccountSelected = indexAcccount
-        updateAccountField(indexAccountSelected)
+    func didSelectAccount(_ indexAccount: Int) {
+        updateAccountField(indexAccount)
+        idAccountSelected = bankAccountsList[indexAccount].id
     }
 }

@@ -17,7 +17,7 @@ struct HomeViewModel {
             if transaction.type == .income {
                 balance.incomesTotal += transaction.amount
             } else if transaction.type == .expense {
-                balance.expensesTotal += transaction.amount
+                balance.expensesTotal -= transaction.amount
             }
         }
         

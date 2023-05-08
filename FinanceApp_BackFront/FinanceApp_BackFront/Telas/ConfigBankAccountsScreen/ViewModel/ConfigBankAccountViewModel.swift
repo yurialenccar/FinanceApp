@@ -26,14 +26,14 @@ class ConfigBankAccountViewModel{
         self.configType = configType
         
         if configType == .createNew{
-            self.bankAccount = bankAccountEmpty
+            self.bankAccount = BankAccount(id: "", desc: "", bank: .bancoDoBrasil, overdraft: 0.0, stardardAccount: false, obs:"")
         } else {
             self.bankAccount = bankAccountsList[indexAccount]
         }
         self.indexAccount = indexAccount
         
         self.popBankAccountDesc = bankAccount.desc
-        self.popBankAccountBalance = String(bankAccount.balance)
+        self.popBankAccountBalance = String(bankAccount.getBalance())
         self.popBankAccountOverdraft = String(bankAccount.overdraft)
         self.popBankAccountStardardBank = bankAccount.stardardAccount
         self.popBankAccountObs = bankAccount.obs
@@ -47,7 +47,7 @@ class ConfigBankAccountViewModel{
         } else {
             bankAccount.desc = desc
         }
-        bankAccount.balance = balance
+        //bankAccount.balance = balance
         bankAccount.overdraft = overdraft
         bankAccount.bank = bank
         bankAccount.stardardAccount = stardardBank
@@ -60,11 +60,30 @@ class ConfigBankAccountViewModel{
         }
         
         if configType == .createNew{
+            bankAccount.id = createNewAccountId()
             bankAccountsList.append(bankAccount)
         } else {
             bankAccountsList[indexAccount] = bankAccount
         }
         
+    }
+    
+    private func createNewAccountId() -> String{
+        var num = bankAccountsList.count
+        var idExists = false
+        
+        repeat {
+            idExists = false
+            for account in bankAccountsList {
+                if account.id == "conta\(String(format: "%02d", num))" {
+                    num += 1
+                    idExists = true
+                    break
+                }
+            }
+        } while(idExists ==  true)
+        
+        return "conta\(num)"
     }
     
     public func getBankListCount() -> Int {

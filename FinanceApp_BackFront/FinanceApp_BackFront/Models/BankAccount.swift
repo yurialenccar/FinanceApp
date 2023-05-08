@@ -8,18 +8,27 @@
 import Foundation
 
 struct BankAccount {
+    var id: String
     var desc : String
     var bank : Banks
-    var balance : Double
     var overdraft: Double
     var stardardAccount: Bool
     var obs: String
+    
+//    init() {
+//        id = createNewAccountId()
+//    }
+    
+    
+    
+    func getBalance() -> Double {
+        let filteredTransactions = transactions.filter{ $0.accountId == id}
+        return filteredTransactions.reduce(0, {$0 + $1.amount})
+    }
 }
 
 var bankAccountsList : [BankAccount] = [
-    BankAccount(desc: "Conta Banco do Brasil", bank: .bancoDoBrasil, balance: 1000, overdraft: 100.0, stardardAccount: true, obs:""),
-    BankAccount(desc: "Conta Bradesco", bank: .bradesco, balance: -10, overdraft: 100.0, stardardAccount: false, obs:""),
-    BankAccount(desc: "Conta Caixa", bank: .caixa, balance: 1500, overdraft: 100.0, stardardAccount: false, obs:"")
+    BankAccount(id: "conta00", desc: "Conta Banco do Brasil", bank: .bancoDoBrasil, overdraft: 100.0, stardardAccount: true, obs:""),
+    BankAccount(id: "conta01", desc: "Conta Bradesco", bank: .bradesco, overdraft: 100.0, stardardAccount: false, obs:""),
+    BankAccount(id: "conta02", desc: "Conta Caixa", bank: .caixa, overdraft: 100.0, stardardAccount: false, obs:"")
 ]
-
-var bankAccountEmpty : BankAccount = BankAccount(desc: "", bank: .bancoDoBrasil, balance: 0.0, overdraft: 0.0, stardardAccount: false, obs:"")

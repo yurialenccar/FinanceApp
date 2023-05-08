@@ -15,17 +15,23 @@ class AddAccountTransactionsViewModel{
     
     init(type: TransactionType) {
         transactionType=type
-        newTransaction = Transactions(desc: "Vazio", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: type, accountIndex: 0, obs: "")
+        newTransaction = Transactions(desc: "Vazio", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: type, accountId: "", obs: "")
         
     }
     
     var dataSelecionada = Date()
     
-    public func setTransactionsValues(desc: String, amount:String, category:Int, account:Int, Obs:String){
+    public func setTransactionsValues(desc: String, amount:String, category:Int, accountId:String, Obs:String){
         
-        newTransaction.amount = Double(amount)!
+        switch transactionType {
+        case .income:
+            newTransaction.amount = Double(amount)!
+        case .expense:
+            newTransaction.amount = -Double(amount)!
+        }
+
         newTransaction.categoryIndex = category
-        newTransaction.accountIndex = account
+        newTransaction.accountId = accountId
         newTransaction.date = formatDate(date: dataSelecionada)
         newTransaction.type = transactionType
         newTransaction.obs = Obs
@@ -56,6 +62,24 @@ class AddAccountTransactionsViewModel{
             let data2 = dateFormatter.date(from: transaction2.date)!
             return data1 > data2
         })
+    }
+    
+    var standardAccountIndex: Int {
+        for (index, account) in bankAccountsList.enumerated(){
+            if account.stardardAccount == true{
+                return index
+            }
+        }
+        return 0
+    }
+    
+    var standardAccountId: String {
+        for account in bankAccountsList{
+            if account.stardardAccount == true{
+                return account.id
+            }
+        }
+        return bankAccountsList[0].id
     }
     
     public func getCategoryLabel(_ indexCategory:Int) -> String {

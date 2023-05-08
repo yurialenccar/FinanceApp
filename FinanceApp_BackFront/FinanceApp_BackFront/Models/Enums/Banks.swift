@@ -26,3 +26,4 @@ let bankList:[Banks]=[
     .caixa,
     .bancoDoBrasil
 ]
+
