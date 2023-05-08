@@ -7,16 +7,15 @@
 
 import UIKit
 
-class ProfileScreen: UIViewController {
+class ProfileViewController: UIViewController {
+    
+    static let identifier:String = String(describing: ProfileViewController.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
- 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         self.tabBarController?.navigationController?.isNavigationBarHidden=true
     }
   

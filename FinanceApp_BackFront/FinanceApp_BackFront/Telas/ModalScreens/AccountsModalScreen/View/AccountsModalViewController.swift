@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol AccountsModalScreenDelegate: AnyObject {
+protocol AccountsModalDelegate: AnyObject {
     func didSelectAccount(_ indexAcccount: Int)
 }
 
-class AccountsModalScreen: UIViewController {
-    
-    var viewModel:AccountsModalViewModel = AccountsModalViewModel()
-    weak var delegate: AccountsModalScreenDelegate?
-    
+class AccountsModalViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    static let identifier:String = String(describing: AccountsModalViewController.self)
+    var viewModel:AccountsModalViewModel = AccountsModalViewModel()
+    weak var delegate: AccountsModalDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class AccountsModalScreen: UIViewController {
     }
 }
 
-extension AccountsModalScreen : UITableViewDataSource, UITableViewDelegate {
+extension AccountsModalViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getAccountsCount()
     }

@@ -43,9 +43,9 @@ class RegisterCardExpenseViewController: UIViewController{
     }
     
     @IBAction func tappedCategoryButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "CategoriesModalScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "CategoriesModalScreen") {coder -> CategoriesModalScreen? in
-            return CategoriesModalScreen(coder: coder, transactionType: .expense)
+        let storyboard = UIStoryboard(name: CategoriesModalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: CategoriesModalViewController.identifier) {coder -> CategoriesModalViewController? in
+            return CategoriesModalViewController(coder: coder, transactionType: .expense)
         }
         vc.delegate = self
         if let presentationController = vc.presentationController as? UISheetPresentationController{
@@ -55,8 +55,8 @@ class RegisterCardExpenseViewController: UIViewController{
     }
     
     @IBAction func tappedCardButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "CreditCardModalScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CreditCardModalScreen") as? CreditCardModalScreen
+        let storyboard = UIStoryboard(name: CreditCardModalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: CreditCardModalViewController.identifier) as? CreditCardModalViewController
         vc?.delegate = self
         if let presentationController = vc?.presentationController as? UISheetPresentationController{
             presentationController.detents = [.medium()]
@@ -120,7 +120,7 @@ class RegisterCardExpenseViewController: UIViewController{
 }
 
 //Extensão que busca a escolha do usuário das telas modais de seleção.
-extension RegisterCardExpenseViewController:CategoriesModalScreenDelegate, CardModalScreenDelegate {
+extension RegisterCardExpenseViewController:CategoriesModalDelegate, CardModalDelegate {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory
         updateCategoryField(indexCategorySelected)

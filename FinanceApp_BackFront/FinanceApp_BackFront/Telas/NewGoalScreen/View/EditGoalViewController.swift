@@ -11,7 +11,7 @@ protocol GoalSavedDelegate{
     func didSavedGoal()
 }
 
-class GoalEditorViewController: UIViewController {
+class EditGoalViewController: UIViewController {
     
     @IBOutlet weak var descLabel: UITextField!
     @IBOutlet weak var initialAmountLabel: UITextField!
@@ -20,8 +20,8 @@ class GoalEditorViewController: UIViewController {
     @IBOutlet weak var goalImage: UIImageView!
     
     var delegate:GoalSavedDelegate?
-    static let identifier:String = String(describing: GoalEditorViewController.self)
-    var viewModel:GoalEditorViewModel=GoalEditorViewModel()
+    static let identifier:String = String(describing: EditGoalViewController.self)
+    var viewModel:EditGoalViewModel=EditGoalViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

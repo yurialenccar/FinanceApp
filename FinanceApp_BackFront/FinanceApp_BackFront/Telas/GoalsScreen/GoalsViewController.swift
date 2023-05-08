@@ -60,8 +60,8 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func didTappedNewGoalButton() {
-        let storyboard = UIStoryboard(name: GoalEditorViewController.identifier, bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: GoalEditorViewController.identifier) as? GoalEditorViewController
+        let storyboard = UIStoryboard(name: EditGoalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: EditGoalViewController.identifier) as? EditGoalViewController
         vc?.delegate = self
         if let presentationController = vc?.presentationController as? UISheetPresentationController{
             presentationController.detents = [.medium()]

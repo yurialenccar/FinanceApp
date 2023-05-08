@@ -7,8 +7,10 @@
 
 import UIKit
 
-class CreditCardsScreen: UIViewController {
-
+class CreditCardsViewController: UIViewController {
+    
+    static let identifier:String = String(describing: CreditCardsViewController.self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

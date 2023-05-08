@@ -7,7 +7,9 @@
 
 import UIKit
 
-class CurrencyScreen: UIViewController {
+class CurrencyViewController: UIViewController {
+    
+    static let identifier:String = String(describing: CurrencyViewController.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Credit Cards Screen-->
+        <!--Credit Cards View Controller-->
         <scene sceneID="Oyx-WP-XnD">
             <objects>
-                <viewController storyboardIdentifier="CreditCardsScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BqL-ln-1SO" customClass="CreditCardsScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreditCardsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BqL-ln-1SO" customClass="CreditCardsViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n3u-a1-hbK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

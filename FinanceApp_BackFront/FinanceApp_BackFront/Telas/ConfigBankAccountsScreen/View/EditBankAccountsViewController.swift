@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConfigBankAccountsScreen: UIViewController {
+class EditBankAccountsViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var balanceTextField: UITextField!
@@ -21,12 +21,13 @@ class ConfigBankAccountsScreen: UIViewController {
     @IBOutlet weak var titleScreenLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
-    var viewModel:ConfigBankAccountViewModel
+    static let identifier:String = String(describing: EditBankAccountsViewController.self)
+    var viewModel:EditBankAccountsViewModel
     var alert=Alert()
     var selectedBank:Banks = .bancoDoBrasil
     
     init?(coder:NSCoder, indexAccount:Int, configType:ConfigType){
-        self.viewModel = ConfigBankAccountViewModel(configType: configType,indexAccount: indexAccount)
+        self.viewModel = EditBankAccountsViewModel(configType: configType,indexAccount: indexAccount)
         super.init(coder: coder)
     }
     
@@ -114,7 +115,7 @@ class ConfigBankAccountsScreen: UIViewController {
     }
 }
 
-extension ConfigBankAccountsScreen: UITableViewDelegate, UITableViewDataSource{
+extension EditBankAccountsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getBankListCount()
     }

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile Screen-->
+        <!--Profile View Controller-->
         <scene sceneID="YEf-QX-yIz">
             <objects>
-                <viewController storyboardIdentifier="ProfileScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N75-l5-P6O" customClass="ProfileScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N75-l5-P6O" customClass="ProfileViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nN5-Y6-BYy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

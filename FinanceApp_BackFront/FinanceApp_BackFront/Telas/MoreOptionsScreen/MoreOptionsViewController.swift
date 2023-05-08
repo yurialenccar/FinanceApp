@@ -20,24 +20,24 @@ class MoreOptionsViewController: UIViewController {
     }
     
     @IBAction func tappedCategoriesButton(_ sender: UIButton) {
-        let vc: CategoriesGraphScreen? = UIStoryboard(name: "CategoriesGraphScreen", bundle: nil).instantiateViewController(withIdentifier: "CategoriesGraphScreen") as? CategoriesGraphScreen
+        let vc: CategoriesGraphViewController? = UIStoryboard(name: CategoriesGraphViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: CategoriesGraphViewController.identifier) as? CategoriesGraphViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     @IBAction func tappedCurrencyButton(_ sender: UIButton) {
-        let vc: CurrencyScreen? = UIStoryboard(name: "CurrencyScreen", bundle: nil).instantiateViewController(withIdentifier: "CurrencyScreen") as? CurrencyScreen
+        let vc: CurrencyViewController? = UIStoryboard(name: CurrencyViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: CurrencyViewController.identifier) as? CurrencyViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     @IBAction func tappedProfileButton(_ sender: UIButton) {
-        let vc: ProfileScreen? = UIStoryboard(name: "ProfileScreen", bundle: nil).instantiateViewController(withIdentifier: "ProfileScreen") as? ProfileScreen
+        let vc: ProfileViewController? = UIStoryboard(name: ProfileViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: ProfileViewController.identifier) as? ProfileViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     @IBAction func tappedAccountsButton(_ sender: UIButton) {
-        let vc: BankAccountsScreen? = UIStoryboard(name: "BankAccountsScreen", bundle: nil).instantiateViewController(withIdentifier: "BankAccountsScreen") as? BankAccountsScreen
+        let vc: BankAccountsViewController? = UIStoryboard(name: BankAccountsViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: BankAccountsViewController.identifier) as? BankAccountsViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func tappedCreditCardsButton(_ sender: UIButton) {
-        let vc: CreditCardsScreen? = UIStoryboard(name: "CreditCardsScreen", bundle: nil).instantiateViewController(withIdentifier: "CreditCardsScreen") as? CreditCardsScreen
+        let vc: CreditCardsViewController? = UIStoryboard(name: CreditCardsViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: CreditCardsViewController.identifier) as? CreditCardsViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     

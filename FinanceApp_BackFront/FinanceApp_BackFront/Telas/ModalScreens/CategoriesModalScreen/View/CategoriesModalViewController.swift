@@ -7,15 +7,18 @@
 
 import UIKit
 
-protocol CategoriesModalScreenDelegate: AnyObject {
+protocol CategoriesModalDelegate: AnyObject {
     func didSelectCategory(_ indexCategory: Int)
 }
 
 
-class CategoriesModalScreen: UIViewController {
+class CategoriesModalViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    static let identifier:String = String(describing: CategoriesModalViewController.self)
     var viewModel:CategoriesModalViewModel
-    weak var delegate: CategoriesModalScreenDelegate?
+    weak var delegate: CategoriesModalDelegate?
     
     let transactionType:TransactionType
     
@@ -29,8 +32,6 @@ class CategoriesModalScreen: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class CategoriesModalScreen: UIViewController {
     }
 }
 
-extension CategoriesModalScreen:UITableViewDataSource, UITableViewDelegate{
+extension CategoriesModalViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getCategoriesCount()
     }

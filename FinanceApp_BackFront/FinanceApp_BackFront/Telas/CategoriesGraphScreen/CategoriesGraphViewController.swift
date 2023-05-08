@@ -1,10 +1,11 @@
 import UIKit
 import Charts
 
-class CategoriesGraphScreen: UIViewController {
+class CategoriesGraphViewController: UIViewController {
     
     // MARK: - Properties
     
+    static let identifier:String = String(describing: CategoriesGraphViewController.self)
     private var pieChartView: PieChartView!
     private var chartTitle: UILabel!
     private var chartSubtitle: UILabel!

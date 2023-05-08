@@ -16,7 +16,7 @@
         <!--Metas e Planejamentos-->
         <scene sceneID="HVe-BO-Pxh">
             <objects>
-                <viewController storyboardIdentifier="CurrencyScreen" title="CurrencyScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5wI-bx-i1n" userLabel="Metas e Planejamentos" customClass="CurrencyScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrencyViewController" title="CurrencyScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5wI-bx-i1n" userLabel="Metas e Planejamentos" customClass="CurrencyViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VKa-py-eSb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Error Screen-->
+        <!--Error View Controller-->
         <scene sceneID="pV8-8l-eZF">
             <objects>
-                <viewController storyboardIdentifier="ErrorScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oUF-sh-twq" customClass="ErrorScreen" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ErrorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oUF-sh-twq" customClass="ErrorViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ATu-GO-z8g">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

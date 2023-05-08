@@ -7,15 +7,16 @@
 
 import UIKit
 
-protocol CardModalScreenDelegate: AnyObject {
+protocol CardModalDelegate: AnyObject {
     func didSelectCard(_ indexCategory: Int)
 }
 
-class CreditCardModalScreen: UIViewController {
+class CreditCardModalViewController: UIViewController {
 
-    
     @IBOutlet weak var tableView: UITableView!
-    weak var delegate: CardModalScreenDelegate?
+    
+    weak var delegate: CardModalDelegate?
+    static let identifier:String = String(describing: CreditCardModalViewController.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class CreditCardModalScreen: UIViewController {
     
 }
 
-extension CreditCardModalScreen: UITableViewDataSource, UITableViewDelegate{
+extension CreditCardModalViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return creditCardsList.count
     }

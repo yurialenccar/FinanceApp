@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ConfigBankAccountViewModel{
+class EditBankAccountsViewModel{
     
     public var configType:ConfigType
     private var indexAccount:Int

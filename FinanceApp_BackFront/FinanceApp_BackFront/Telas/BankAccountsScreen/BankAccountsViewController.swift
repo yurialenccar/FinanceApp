@@ -7,9 +7,11 @@
 
 import UIKit
 
-class BankAccountsScreen: UIViewController {
+class BankAccountsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    static let identifier:String = String(describing: BankAccountsViewController.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,7 @@ class BankAccountsScreen: UIViewController {
     }
 }
 
-extension BankAccountsScreen: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateItemButtonCellDelegate {
+extension BankAccountsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateItemButtonCellDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bankAccountsList.count + 1
@@ -65,18 +67,18 @@ extension BankAccountsScreen: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         
-        let storyboard = UIStoryboard(name: "ConfigBankAccountsScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "ConfigBankAccountsScreen") {coder -> ConfigBankAccountsScreen? in
-            return ConfigBankAccountsScreen(coder: coder, indexAccount: indexPath.row, configType: .editExisting)
+        let storyboard = UIStoryboard(name: EditBankAccountsViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: EditBankAccountsViewController.identifier) {coder -> EditBankAccountsViewController? in
+            return EditBankAccountsViewController(coder: coder, indexAccount: indexPath.row, configType: .editExisting)
         }
         navigationController?.pushViewController(vc, animated: true)
         
     }
     
     func didTappedNewItemButton() {
-        let storyboard = UIStoryboard(name: "ConfigBankAccountsScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "ConfigBankAccountsScreen") {coder -> ConfigBankAccountsScreen? in
-            return ConfigBankAccountsScreen(coder: coder, indexAccount: 0, configType: .createNew)
+        let storyboard = UIStoryboard(name: EditBankAccountsViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: EditBankAccountsViewController.identifier) {coder -> EditBankAccountsViewController? in
+            return EditBankAccountsViewController(coder: coder, indexAccount: 0, configType: .createNew)
         }
         navigationController?.pushViewController(vc, animated: true)
     }

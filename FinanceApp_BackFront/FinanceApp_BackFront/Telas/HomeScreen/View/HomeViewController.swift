@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func tappedShowGraphScreen(_ sender: UIButton) {
-        let vc: CategoriesGraphScreen? = UIStoryboard(name: "CategoriesGraphScreen", bundle: nil).instantiateViewController(withIdentifier: "CategoriesGraphScreen") as? CategoriesGraphScreen
+        let vc: CategoriesGraphViewController? = UIStoryboard(name: CategoriesGraphViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: CategoriesGraphViewController.identifier) as? CategoriesGraphViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
 

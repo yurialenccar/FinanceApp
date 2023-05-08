@@ -45,9 +45,9 @@ class RegisterExpenseViewController: UIViewController {
     
     
     @IBAction func tappedCategoryButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "CategoriesModalScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "CategoriesModalScreen") {coder -> CategoriesModalScreen? in
-            return CategoriesModalScreen(coder: coder, transactionType: .expense)
+        let storyboard = UIStoryboard(name: CategoriesModalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: CategoriesModalViewController.identifier) {coder -> CategoriesModalViewController? in
+            return CategoriesModalViewController(coder: coder, transactionType: .expense)
         }
         vc.delegate = self
         if let presentationController = vc.presentationController as? UISheetPresentationController{
@@ -57,8 +57,8 @@ class RegisterExpenseViewController: UIViewController {
     }
     
     @IBAction func tappedAccountButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "AccountsModalScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "AccountsModalScreen") as? AccountsModalScreen
+        let storyboard = UIStoryboard(name: AccountsModalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: AccountsModalViewController.identifier) as? AccountsModalViewController
         vc?.delegate = self
         if let presentationController = vc?.presentationController as? UISheetPresentationController{
             presentationController.detents = [.medium()]
@@ -122,7 +122,7 @@ class RegisterExpenseViewController: UIViewController {
 }
 
 
-extension RegisterExpenseViewController:CategoriesModalScreenDelegate, AccountsModalScreenDelegate {
+extension RegisterExpenseViewController:CategoriesModalDelegate, AccountsModalDelegate {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory
         updateCategoryField(indexCategorySelected)
