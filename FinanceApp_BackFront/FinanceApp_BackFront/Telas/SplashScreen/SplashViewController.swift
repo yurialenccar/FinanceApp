@@ -18,7 +18,7 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
 
-            let vc: MainViewController? = UIStoryboard(name: "MainViewController", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as? MainViewController
+            let vc: MainViewController? = UIStoryboard(name: MainViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController
             self.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
             
             

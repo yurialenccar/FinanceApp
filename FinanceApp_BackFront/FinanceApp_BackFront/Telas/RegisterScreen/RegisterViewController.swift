@@ -7,22 +7,16 @@
 
 import UIKit
 
-class RegisterScreen: UIViewController {
-    
-    
+class RegisterViewController: UIViewController {
     
     @IBOutlet weak var nameTextfield: UITextField!
-    
     @IBOutlet weak var emailTextfield: UITextField!
-    
     @IBOutlet weak var passwordTextfield: UITextField!
-    
     @IBOutlet weak var passwordRepeatTextfield: UITextField!
-    
     @IBOutlet weak var registrationButton: UIButton!
-    
     @IBOutlet weak var enterButton: UIButton!
     
+    static let identifier:String = String(describing: RegisterViewController.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,14 +139,14 @@ class RegisterScreen: UIViewController {
 
     @IBAction func tappedLoginButton(_ sender: UIButton) {
     
-        let vc: LoginScreen? = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateViewController(withIdentifier: "LoginScreen") as? LoginScreen
+        let vc: LoginViewController? = UIStoryboard(name: LoginViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
 
 }
 
-extension RegisterScreen : UITextFieldDelegate {
+extension RegisterViewController : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print(#function)
         textField.layer.borderColor = UIColor.blue.cgColor

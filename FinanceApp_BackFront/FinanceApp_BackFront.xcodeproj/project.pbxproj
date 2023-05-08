@@ -67,10 +67,10 @@
 		A1C9EFE329E60A7D0029B69F /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFE229E60A7D0029B69F /* SplashViewController.storyboard */; };
 		A1C9EFE529E60A880029B69F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFE429E60A880029B69F /* SplashViewController.swift */; };
 		A1C9EFE729E60BB60029B69F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFE629E60BB60029B69F /* MainViewController.swift */; };
-		A1C9EFEA29E60CF50029B69F /* RegisterScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFE929E60CF50029B69F /* RegisterScreen.storyboard */; };
-		A1C9EFEC29E60D080029B69F /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFEB29E60D080029B69F /* RegisterScreen.swift */; };
-		A1C9EFEF29E60D7D0029B69F /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFEE29E60D7D0029B69F /* LoginScreen.swift */; };
-		A1C9EFF129E60D840029B69F /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFF029E60D840029B69F /* LoginScreen.storyboard */; };
+		A1C9EFEA29E60CF50029B69F /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFE929E60CF50029B69F /* RegisterViewController.storyboard */; };
+		A1C9EFEC29E60D080029B69F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFEB29E60D080029B69F /* RegisterViewController.swift */; };
+		A1C9EFEF29E60D7D0029B69F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9EFEE29E60D7D0029B69F /* LoginViewController.swift */; };
+		A1C9EFF129E60D840029B69F /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFF029E60D840029B69F /* LoginViewController.storyboard */; };
 		A1C9EFF329E60E200029B69F /* ErrorScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFF229E60E200029B69F /* ErrorScreen.storyboard */; };
 		A1C9F01E29E64E340029B69F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9F01D29E64E340029B69F /* TabBarController.swift */; };
 		A1CE092B2A001B790028028B /* StringIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CE092A2A001B790028028B /* StringIsEmpty.swift */; };
@@ -172,10 +172,10 @@
 		A1C9EFE229E60A7D0029B69F /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
 		A1C9EFE429E60A880029B69F /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		A1C9EFE629E60BB60029B69F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		A1C9EFE929E60CF50029B69F /* RegisterScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterScreen.storyboard; sourceTree = "<group>"; };
-		A1C9EFEB29E60D080029B69F /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
-		A1C9EFEE29E60D7D0029B69F /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
-		A1C9EFF029E60D840029B69F /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
+		A1C9EFE929E60CF50029B69F /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
+		A1C9EFEB29E60D080029B69F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A1C9EFEE29E60D7D0029B69F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A1C9EFF029E60D840029B69F /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		A1C9EFF229E60E200029B69F /* ErrorScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ErrorScreen.storyboard; sourceTree = "<group>"; };
 		A1C9F01D29E64E340029B69F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A1CE092A2A001B790028028B /* StringIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringIsEmpty.swift; sourceTree = "<group>"; };
@@ -659,8 +659,8 @@
 		A1C9EFE829E60CD60029B69F /* RegisterScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A1C9EFE929E60CF50029B69F /* RegisterScreen.storyboard */,
-				A1C9EFEB29E60D080029B69F /* RegisterScreen.swift */,
+				A1C9EFE929E60CF50029B69F /* RegisterViewController.storyboard */,
+				A1C9EFEB29E60D080029B69F /* RegisterViewController.swift */,
 			);
 			path = RegisterScreen;
 			sourceTree = "<group>";
@@ -668,8 +668,8 @@
 		A1C9EFED29E60D620029B69F /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A1C9EFF029E60D840029B69F /* LoginScreen.storyboard */,
-				A1C9EFEE29E60D7D0029B69F /* LoginScreen.swift */,
+				A1C9EFF029E60D840029B69F /* LoginViewController.storyboard */,
+				A1C9EFEE29E60D7D0029B69F /* LoginViewController.swift */,
 			);
 			path = LoginScreen;
 			sourceTree = "<group>";
@@ -926,7 +926,7 @@
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
 				A1E107C729E4F784005A3F4F /* CurrencyScreen.storyboard in Resources */,
 				E3C0915B29C21CD400BE4441 /* GoalsScreen.storyboard in Resources */,
-				A1C9EFF129E60D840029B69F /* LoginScreen.storyboard in Resources */,
+				A1C9EFF129E60D840029B69F /* LoginViewController.storyboard in Resources */,
 				A140934629E73B750037662B /* RegisterExpenseScreen.storyboard in Resources */,
 				A14DAE6029D4E91900714208 /* TransactionsScreen.storyboard in Resources */,
 				A101917A29FAC4F000776A67 /* ConfigBankAccountsScreen.storyboard in Resources */,
@@ -943,7 +943,7 @@
 				E35D087329BDB20C0098F0B5 /* MoreOptionsScreen.storyboard in Resources */,
 				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
 				A1A92BB429F8122A00E14EE8 /* CreditCardModalScreen.storyboard in Resources */,
-				A1C9EFEA29E60CF50029B69F /* RegisterScreen.storyboard in Resources */,
+				A1C9EFEA29E60CF50029B69F /* RegisterViewController.storyboard in Resources */,
 				A1C9EFE329E60A7D0029B69F /* SplashViewController.storyboard in Resources */,
 				E3E9089329BFAF2A00B34864 /* CategoriesGraphScreen.storyboard in Resources */,
 				A13E249C29F9957C00E9EF7A /* GoalInfoScreen.storyboard in Resources */,
@@ -1011,7 +1011,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1F4210329F6215B005C346B /* AccountsModalViewModel.swift in Sources */,
-				A1C9EFEC29E60D080029B69F /* RegisterScreen.swift in Sources */,
+				A1C9EFEC29E60D080029B69F /* RegisterViewController.swift in Sources */,
 				A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */,
 				A140934C29E73BD30037662B /* RegisterCardExpScreen.swift in Sources */,
 				A10191A929FB06BA00776A67 /* ConfigBankAccountViewModel.swift in Sources */,
@@ -1049,7 +1049,7 @@
 				A1D2F84D29E9E5B100DCA6E4 /* CategoriesModalCell.swift in Sources */,
 				A101917C29FAC4F900776A67 /* ConfigBankAccountsScreen.swift in Sources */,
 				A140934429E73AD20037662B /* RegisterIncomeScreen.swift in Sources */,
-				A1C9EFEF29E60D7D0029B69F /* LoginScreen.swift in Sources */,
+				A1C9EFEF29E60D7D0029B69F /* LoginViewController.swift in Sources */,
 				A11BDA7829F4C478006CF6B2 /* CardBrand.swift in Sources */,
 				A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */,
 				A19F850929F963C40044F7DE /* GoalsCollectionViewCell.swift in Sources */,

@@ -8,6 +8,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    static let identifier:String = String(describing: MainViewController.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +22,12 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func tappedLoginButton(_ sender: UIButton) {
-        let vc: LoginScreen? = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateViewController(withIdentifier: "LoginScreen") as? LoginScreen
+        let vc: LoginViewController? = UIStoryboard(name: LoginViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController
         self.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
-        let vc: RegisterScreen? = UIStoryboard(name: "RegisterScreen", bundle: nil).instantiateViewController(withIdentifier: "RegisterScreen") as? RegisterScreen
+        let vc: RegisterViewController? = UIStoryboard(name: RegisterViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: RegisterViewController.identifier) as? RegisterViewController
         self.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
 

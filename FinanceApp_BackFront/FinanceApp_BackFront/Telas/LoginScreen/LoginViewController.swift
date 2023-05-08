@@ -7,12 +7,14 @@
 
 import UIKit
 
-class LoginScreen: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
+    
+    static let identifier:String = String(describing: LoginViewController.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,7 @@ class LoginScreen: UIViewController {
     
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
-        let vc: RegisterScreen? = UIStoryboard(name: "RegisterScreen", bundle: nil).instantiateViewController(withIdentifier: "RegisterScreen") as? RegisterScreen
+        let vc: RegisterViewController? = UIStoryboard(name: RegisterViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: RegisterViewController.identifier) as? RegisterViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
@@ -93,7 +95,7 @@ class LoginScreen: UIViewController {
     
     
 }
-    extension LoginScreen : UITextFieldDelegate {
+    extension LoginViewController : UITextFieldDelegate {
         
         
         func textFieldDidBeginEditing(_ textField: UITextField) {
