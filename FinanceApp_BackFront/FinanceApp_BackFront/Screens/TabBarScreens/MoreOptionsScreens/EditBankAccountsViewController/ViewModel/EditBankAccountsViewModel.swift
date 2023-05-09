@@ -75,18 +75,12 @@ class EditBankAccountsViewModel{
     
     private func createNewAccountId() -> String{
         var num = bankAccountsList.count
-        var idExists = false
         
-        repeat {
-            idExists = false
-            for account in bankAccountsList {
-                if account.id == "account\(String(format: "%02d", num))" {
-                    num += 1
-                    idExists = true
-                    break
-                }
-            }
-        } while(idExists ==  true)
+        var existingIds = Set(bankAccountsList.map{$0.id})
+        
+        while existingIds.contains("account\(num)") {
+            num += 1
+        }
         
         return "account\(num)"
     }

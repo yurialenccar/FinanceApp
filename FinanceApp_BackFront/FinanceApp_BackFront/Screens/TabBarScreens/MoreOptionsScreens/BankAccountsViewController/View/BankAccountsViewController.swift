@@ -24,6 +24,11 @@ class BankAccountsViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.popViewController(animated: false)
+    }
+
+    
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self

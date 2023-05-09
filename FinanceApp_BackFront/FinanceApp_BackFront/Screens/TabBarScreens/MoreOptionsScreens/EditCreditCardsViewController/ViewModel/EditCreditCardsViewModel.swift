@@ -72,23 +72,18 @@ class EditCreditCardsViewModel{
         
     }
     
-    private func createNewCreditCardId() -> String{
+    private func createNewCreditCardId() -> String {
         var num = creditCardsList.count
-        var idExists = false
         
-        repeat {
-            idExists = false
-            for account in creditCardsList {
-                if account.id == "card\(String(format: "%02d", num))" {
-                    num += 1
-                    idExists = true
-                    break
-                }
-            }
-        } while(idExists ==  true)
+        let existingIds = Set(creditCardsList.map { $0.id })
+        
+        while existingIds.contains("card\(num)") {
+            num += 1
+        }
         
         return "card\(num)"
     }
+
     
     public func getBankListCount() -> Int {
         return bankList.count

@@ -171,10 +171,7 @@ extension EditCreditCardsViewController: UITableViewDelegate, UITableViewDataSou
         selectedBank = bankList[indexPath.row]
         updateBankField(selectedBank)
         tableview.isHidden=true
-        
     }
-    
-    
 }
 
 extension EditCreditCardsViewController: UIPickerViewDelegate, UIPickerViewDataSource{
@@ -196,7 +193,6 @@ extension EditCreditCardsViewController: UIPickerViewDelegate, UIPickerViewDataS
         } else if dayPickerOption == .dueDate{
             dueDateNumberLabel.text = "\(row)"
         }
-        
         dayPickerView.isHidden = true
     }
     
