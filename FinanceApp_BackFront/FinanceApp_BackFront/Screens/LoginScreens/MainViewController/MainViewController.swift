@@ -21,6 +21,10 @@ class MainViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     @IBAction func tappedLoginButton(_ sender: UIButton) {
         let vc: LoginViewController? = UIStoryboard(name: LoginViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController
         self.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)

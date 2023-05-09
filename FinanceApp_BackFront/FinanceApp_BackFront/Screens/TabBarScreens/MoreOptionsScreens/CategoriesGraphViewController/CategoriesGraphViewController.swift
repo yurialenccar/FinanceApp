@@ -24,6 +24,10 @@ class CategoriesGraphViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     // MARK: - Private Methods
     
     private func configurePieChartView() {

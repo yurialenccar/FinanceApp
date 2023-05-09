@@ -38,7 +38,7 @@ class RegisterViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -73,7 +73,7 @@ class RegisterViewController: UIViewController {
             
             let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
             if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
-                navigationController?.pushViewController(tbc, animated: true)
+                present(tbc, animated: true)
             }
         } else {
             showAlert(title: "Algum dos campos não foram preenchido!")

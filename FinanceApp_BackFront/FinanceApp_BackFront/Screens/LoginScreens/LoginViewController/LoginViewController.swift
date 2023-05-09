@@ -27,9 +27,9 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.isNavigationBarHidden = false
+//    }
     
     override func viewDidDisappear(_ animated: Bool) {
         emailTextField.text = ""
@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
         if validadeTextField() == true {
             let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
             if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
-                navigationController?.pushViewController(tbc, animated: true)
+                present(tbc, animated: false)
             }
             
         } else {

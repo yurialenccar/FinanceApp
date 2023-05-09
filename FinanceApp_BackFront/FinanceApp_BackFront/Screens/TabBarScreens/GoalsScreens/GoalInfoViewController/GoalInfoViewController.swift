@@ -40,10 +40,7 @@ class GoalInfoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
-    }
+
     
     func setupScreen(goal:Goal){
         descLabel.text = goal.desc

@@ -16,18 +16,15 @@ class BankAccountsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
 
+        setupCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
+        navigationController?.isNavigationBarHidden = false
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        navigationController?.popViewController(animated: false)
-    }
-
     
     func setupCollectionView() {
         collectionView.delegate = self

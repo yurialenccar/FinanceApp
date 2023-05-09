@@ -27,6 +27,10 @@ class EditGoalViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     @IBAction func tappedChangeImageButton(_ sender: UIButton) {
         //função de escolha de imagens será criada assim que o conjunto de imagens for definido
     }

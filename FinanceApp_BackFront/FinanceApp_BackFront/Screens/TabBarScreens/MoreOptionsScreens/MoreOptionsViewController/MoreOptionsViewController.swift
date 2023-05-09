@@ -13,10 +13,12 @@ class MoreOptionsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        tabBarController?.navigationController?.isNavigationBarHidden = true
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func tappedCategoriesButton(_ sender: UIButton) {
@@ -42,7 +44,8 @@ class MoreOptionsViewController: UIViewController {
     }
     
     @IBAction func tappedLogoutButton(_ sender: UIButton) {
-        tabBarController?.navigationController?.popViewController(animated: true)
+        //tabBarController?.navigationController?.popViewController(animated: true)
+        dismiss(animated: false)
     }
     
     
