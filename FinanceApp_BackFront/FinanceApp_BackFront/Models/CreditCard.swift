@@ -10,11 +10,13 @@ import Foundation
 struct CreditCard{
     var id: String
     var desc : String
+    var limit: Double
     var bank : Banks
-    var brand : CardBrand
+    //var brand : CardBrand
     var closingDay : Int
     var dueDate : Int
     var standardCard: Bool
+    var obs:String
     
     public func getInvoiceTotal() -> Double {
         let filteredTransactions = creditCardExpenses.filter{ $0.cardId == id}
@@ -37,7 +39,7 @@ struct CreditCard{
 }
 
 var creditCardsList : [CreditCard] = [
-    CreditCard(id: "card00", desc: "Cartão Ultravioleta Nubank", bank: .nubank, brand: .masterCard, closingDay: 25, dueDate: 30, standardCard: false),
-    CreditCard(id: "card01", desc: "Cartão Click Itau", bank: .itau, brand: .visa, closingDay: 20, dueDate: 25, standardCard: false),
-    CreditCard(id: "card02", desc: "Cartão Inter", bank: .inter, brand: .americanExpress, closingDay: 22, dueDate: 27, standardCard: false)
+    CreditCard(id: "card00", desc: "Cartão Ultravioleta Nubank", limit: 2000.0, bank: .nubank, closingDay: 25, dueDate: 30, standardCard: false, obs: ""),
+    CreditCard(id: "card01", desc: "Cartão Click Itau", limit: 2000.0, bank: .itau, closingDay: 20, dueDate: 25, standardCard: false, obs: ""),
+    CreditCard(id: "card02", desc: "Cartão Inter", limit: 2000.0, bank: .inter, closingDay: 22, dueDate: 27, standardCard: false, obs: "")
 ]

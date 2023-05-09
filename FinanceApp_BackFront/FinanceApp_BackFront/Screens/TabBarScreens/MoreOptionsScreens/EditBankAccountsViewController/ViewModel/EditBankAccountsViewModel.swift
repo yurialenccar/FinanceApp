@@ -18,7 +18,7 @@ class EditBankAccountsViewModel{
     public var popBankAccountDesc:String
     public var popBankAccountBalance:String
     public var popBankAccountOverdraft:String
-    public var popBankAccountStardardBank:Bool
+    public var popBankAccountStardardAccount:Bool
     public var popBankAccountObs:String
     public var popBankAccountBank:Banks
     
@@ -26,7 +26,7 @@ class EditBankAccountsViewModel{
         self.configType = configType
         
         if configType == .createNew{
-            self.bankAccount = BankAccount(id: "", desc: "", bank: .bancoDoBrasil, overdraft: 0.0, stardardAccount: false, obs:"")
+            self.bankAccount = BankAccount(id: "", desc: "", bank: .bancoDoBrasil, overdraft: 0.0, standardAccount: false, obs:"")
         } else {
             self.bankAccount = bankAccountsList[indexAccount]
         }
@@ -35,7 +35,7 @@ class EditBankAccountsViewModel{
         self.popBankAccountDesc = bankAccount.desc
         self.popBankAccountBalance = String(bankAccount.getBalance())
         self.popBankAccountOverdraft = String(bankAccount.overdraft)
-        self.popBankAccountStardardBank = bankAccount.stardardAccount
+        self.popBankAccountStardardAccount = bankAccount.standardAccount
         self.popBankAccountObs = bankAccount.obs
         self.popBankAccountBank = bankAccount.bank
     }
@@ -49,12 +49,12 @@ class EditBankAccountsViewModel{
         }
         bankAccount.overdraft = overdraft
         bankAccount.bank = bank
-        bankAccount.stardardAccount = stardardBank
+        bankAccount.standardAccount = stardardBank
         bankAccount.obs = Obs
         
         if stardardBank == true {
             for i in 0..<bankAccountsList.count{
-                bankAccountsList[i].stardardAccount = false
+                bankAccountsList[i].standardAccount = false
             }
         }
         
@@ -80,7 +80,7 @@ class EditBankAccountsViewModel{
         repeat {
             idExists = false
             for account in bankAccountsList {
-                if account.id == "conta\(String(format: "%02d", num))" {
+                if account.id == "account\(String(format: "%02d", num))" {
                     num += 1
                     idExists = true
                     break
@@ -88,7 +88,7 @@ class EditBankAccountsViewModel{
             }
         } while(idExists ==  true)
         
-        return "conta\(num)"
+        return "account\(num)"
     }
     
     public func getBankListCount() -> Int {

@@ -53,6 +53,8 @@
 		A17C89E32A09C9A200B5DB2F /* EditCreditCardsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A17C89E22A09C9A200B5DB2F /* EditCreditCardsViewController.storyboard */; };
 		A17C89E52A09C9BA00B5DB2F /* EditCreditCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C89E42A09C9BA00B5DB2F /* EditCreditCardsViewController.swift */; };
 		A17C89E72A09C9C800B5DB2F /* EditCreditCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C89E62A09C9C800B5DB2F /* EditCreditCardsViewModel.swift */; };
+		A17C89E92A09E8F900B5DB2F /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C89E82A09E8F900B5DB2F /* OptionalExtension.swift */; };
+		A17C89EB2A09F5DE00B5DB2F /* CreditCardDayPickerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C89EA2A09F5DE00B5DB2F /* CreditCardDayPickerOptions.swift */; };
 		A17DC6832A0989B900D12C3C /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A17DC6812A0989B900D12C3C /* TabBarController.storyboard */; };
 		A17DC6842A0989B900D12C3C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DC6822A0989B900D12C3C /* TabBarController.swift */; };
 		A17DC6892A099BDD00D12C3C /* BankAccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DC6882A099BDD00D12C3C /* BankAccountsViewModel.swift */; };
@@ -165,6 +167,8 @@
 		A17C89E22A09C9A200B5DB2F /* EditCreditCardsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditCreditCardsViewController.storyboard; sourceTree = "<group>"; };
 		A17C89E42A09C9BA00B5DB2F /* EditCreditCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCreditCardsViewController.swift; sourceTree = "<group>"; };
 		A17C89E62A09C9C800B5DB2F /* EditCreditCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCreditCardsViewModel.swift; sourceTree = "<group>"; };
+		A17C89E82A09E8F900B5DB2F /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
+		A17C89EA2A09F5DE00B5DB2F /* CreditCardDayPickerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDayPickerOptions.swift; sourceTree = "<group>"; };
 		A17DC6812A0989B900D12C3C /* TabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		A17DC6822A0989B900D12C3C /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A17DC6882A099BDD00D12C3C /* BankAccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsViewModel.swift; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 				A11BDA7A29F4C4A3006CF6B2 /* TransactionType.swift */,
 				A11BDA7729F4C478006CF6B2 /* CardBrand.swift */,
 				A18299C62A01AC7F00E72936 /* ConfigType.swift */,
+				A17C89EA2A09F5DE00B5DB2F /* CreditCardDayPickerOptions.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -843,6 +848,7 @@
 				A1CE092A2A001B790028028B /* StringIsEmpty.swift */,
 				A1CE092C2A0026800028028B /* Alert.swift */,
 				A151621F2A09444700C5AD42 /* Formatters.swift */,
+				A17C89E82A09E8F900B5DB2F /* OptionalExtension.swift */,
 			);
 			path = GlobalFunctions;
 			sourceTree = "<group>";
@@ -1184,6 +1190,7 @@
 				A12329F229FB0F2C0053AC38 /* BankAccountsViewController.swift in Sources */,
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
 				A1E107C929E4F78F005A3F4F /* CurrencyViewController.swift in Sources */,
+				A17C89EB2A09F5DE00B5DB2F /* CreditCardDayPickerOptions.swift in Sources */,
 				A1CE092B2A001B790028028B /* StringIsEmpty.swift in Sources */,
 				A11BDA7B29F4C4A3006CF6B2 /* TransactionType.swift in Sources */,
 				A15162202A09444700C5AD42 /* Formatters.swift in Sources */,
@@ -1219,6 +1226,7 @@
 				A19F850929F963C40044F7DE /* GoalsCollectionViewCell.swift in Sources */,
 				A101917329FAB7A500776A67 /* NewItemButtonCell.swift in Sources */,
 				A14DAE6329D4E94200714208 /* TransactionsViewController.swift in Sources */,
+				A17C89E92A09E8F900B5DB2F /* OptionalExtension.swift in Sources */,
 				A1E107BD29E4F432005A3F4F /* CreditCardsViewController.swift in Sources */,
 				A1D2F84929E99A3100DCA6E4 /* CategoriesModalViewController.swift in Sources */,
 				A1A92BBF29F812B600E14EE8 /* CreditCardModalCell.swift in Sources */,

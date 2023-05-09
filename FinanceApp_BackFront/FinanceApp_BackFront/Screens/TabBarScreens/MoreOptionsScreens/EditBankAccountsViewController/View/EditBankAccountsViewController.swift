@@ -91,7 +91,7 @@ class EditBankAccountsViewController: UIViewController {
             nameTextField.text = viewModel.popBankAccountDesc
             balanceTextField.text = viewModel.popBankAccountBalance
             overdrawTextField.text = viewModel.popBankAccountOverdraft
-            standardAccountSwitch.isOn = viewModel.popBankAccountStardardBank
+            standardAccountSwitch.isOn = viewModel.popBankAccountStardardAccount
             obsLabel.text = viewModel.popBankAccountObs
             selectedBank = viewModel.popBankAccountBank
             updateBankField(selectedBank)
@@ -141,13 +141,3 @@ extension EditBankAccountsViewController: UITableViewDelegate, UITableViewDataSo
     
 }
 
-extension Optional where Wrapped == String {
-    var orEmpty:String{
-        switch self{
-        case .some(let value):
-            return value
-        case .none:
-            return ""
-        }
-    }
-}

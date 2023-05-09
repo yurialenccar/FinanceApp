@@ -55,7 +55,7 @@ class AddAccountTransactionsViewModel{
     
     var standardAccountIndex: Int {
         for (index, account) in bankAccountsList.enumerated(){
-            if account.stardardAccount == true{
+            if account.standardAccount == true{
                 return index
             }
         }
@@ -64,7 +64,7 @@ class AddAccountTransactionsViewModel{
     
     var standardAccountId: String {
         for account in bankAccountsList{
-            if account.stardardAccount == true{
+            if account.standardAccount == true{
                 return account.id
             }
         }

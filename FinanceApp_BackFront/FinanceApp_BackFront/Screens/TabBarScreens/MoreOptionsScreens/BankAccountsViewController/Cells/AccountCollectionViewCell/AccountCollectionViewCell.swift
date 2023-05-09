@@ -45,7 +45,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
         bankBackground.backgroundColor = bankProperties[account.bank]?.backgroundColor
         bankBackground.layer.cornerRadius = 10
         bankBackground.layer.masksToBounds = true
-        if account.stardardAccount == false {
+        if account.standardAccount == false {
             standardAccountImage.isHidden = true
         } else{
             standardAccountImage.isHidden = false

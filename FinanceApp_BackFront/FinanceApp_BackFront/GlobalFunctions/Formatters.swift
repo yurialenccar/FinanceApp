@@ -15,11 +15,18 @@ public func formatDate(date: Date) -> String {
     return formatter.string(from: date)
 }
 
+public func formatDay(day:Int) -> String {
+
+    let formatter = NumberFormatter()
+    formatter.minimumIntegerDigits = 2
+    return formatter.string(from: NSNumber(value: day)) ?? ""
+}
+
 public func formatMoney(value: Double) -> String {
 
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
     formatter.locale = Locale(identifier: "pt_BR")
     
-    return formatter.string(from: value as NSNumber) ?? "0.0"
+    return formatter.string(from: NSNumber(value: value)) ?? "0.0"
 }

@@ -67,18 +67,18 @@ extension CreditCardsViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         
-        let storyboard = UIStoryboard(name: EditBankAccountsViewController.identifier, bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: EditBankAccountsViewController.identifier) {coder -> EditBankAccountsViewController? in
-            return EditBankAccountsViewController(coder: coder, indexAccount: indexPath.row, configType: .editExisting)
+        let storyboard = UIStoryboard(name: EditCreditCardsViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: EditCreditCardsViewController.identifier) {coder -> EditCreditCardsViewController? in
+            return EditCreditCardsViewController(coder: coder, indexCard: indexPath.row, configType: .editExisting)
         }
         navigationController?.pushViewController(vc, animated: true)
         
     }
     
     func didTappedNewItemButton() {
-        let storyboard = UIStoryboard(name: EditBankAccountsViewController.identifier, bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: EditBankAccountsViewController.identifier) {coder -> EditBankAccountsViewController? in
-            return EditBankAccountsViewController(coder: coder, indexAccount: 0, configType: .createNew)
+        let storyboard = UIStoryboard(name: EditCreditCardsViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: EditCreditCardsViewController.identifier) {coder -> EditCreditCardsViewController? in
+            return EditCreditCardsViewController(coder: coder, indexCard: 0, configType: .createNew)
         }
         navigationController?.pushViewController(vc, animated: true)
     }

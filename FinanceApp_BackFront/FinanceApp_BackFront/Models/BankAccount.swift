@@ -12,7 +12,7 @@ struct BankAccount {
     var desc : String
     var bank : Banks
     var overdraft: Double
-    var stardardAccount: Bool
+    var standardAccount: Bool
     var obs: String
 
     public func getBalance() -> Double {
@@ -35,7 +35,7 @@ struct BankAccount {
 }
 
 var bankAccountsList : [BankAccount] = [
-    BankAccount(id: "conta00", desc: "Conta Banco do Brasil", bank: .bancoDoBrasil, overdraft: 100.0, stardardAccount: true, obs:""),
-    BankAccount(id: "conta01", desc: "Conta Bradesco", bank: .bradesco, overdraft: 100.0, stardardAccount: false, obs:""),
-    BankAccount(id: "conta02", desc: "Conta Caixa", bank: .caixa, overdraft: 100.0, stardardAccount: false, obs:"")
+    BankAccount(id: "account00", desc: "Conta Banco do Brasil", bank: .bancoDoBrasil, overdraft: 100.0, standardAccount: true, obs:""),
+    BankAccount(id: "account01", desc: "Conta Bradesco", bank: .bradesco, overdraft: 100.0, standardAccount: false, obs:""),
+    BankAccount(id: "account02", desc: "Conta Caixa", bank: .caixa, overdraft: 100.0, standardAccount: false, obs:"")
 ]
