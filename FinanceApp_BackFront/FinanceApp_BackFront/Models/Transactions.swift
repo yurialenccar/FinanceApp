@@ -8,7 +8,6 @@
 import Foundation
 
 struct Transactions{
-    
     var desc:String
     var amount:Double
     var categoryIndex:Int

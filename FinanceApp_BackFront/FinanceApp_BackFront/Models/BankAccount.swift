@@ -14,13 +14,7 @@ struct BankAccount {
     var overdraft: Double
     var stardardAccount: Bool
     var obs: String
-    
-//    init() {
-//        id = createNewAccountId()
-//    }
-    
-    
-    
+
     public func getBalance() -> Double {
         let filteredTransactions = transactions.filter{ $0.accountId == id}
         return filteredTransactions.reduce(0, {$0 + $1.amount})

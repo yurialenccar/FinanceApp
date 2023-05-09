@@ -74,7 +74,7 @@ class RegisterCardExpenseViewController: UIViewController{
                 desc: descTextField.text ?? "",
                 amount: amountTextField.text!,
                 category: indexCategorySelected,
-                card: indexCardSelected,
+                card: "",
                 Obs: obsTextField.text ?? ""
             )
             dismiss(animated: true, completion: nil)

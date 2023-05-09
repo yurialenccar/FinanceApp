@@ -28,7 +28,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJQ-Ba-Z2U">
                         <rect key="frame" x="10" y="20" width="44" height="40"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banco" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIb-c5-ErL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIb-c5-ErL">
                                 <rect key="frame" x="0.0" y="0.0" width="44" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,14 +45,14 @@
                             <constraint firstAttribute="bottom" secondItem="TIb-c5-ErL" secondAttribute="bottom" id="zSr-jT-gF3"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ump-KR-i8I">
-                        <rect key="frame" x="64" y="19" width="196" height="19.333333333333329"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ump-KR-i8I">
+                        <rect key="frame" x="64" y="17" width="196" height="19.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Clu-Em-Smt">
-                        <rect key="frame" x="65" y="47" width="220" height="18"/>
+                        <rect key="frame" x="65" y="45" width="220" height="18"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor em Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUh-el-SX1">
                                 <rect key="frame" x="0.0" y="0.0" width="105" height="18"/>
@@ -81,12 +81,12 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Ump-KR-i8I" firstAttribute="leading" secondItem="uJQ-Ba-Z2U" secondAttribute="trailing" constant="10" id="0CX-Ow-emq"/>
-                <constraint firstAttribute="bottom" secondItem="Clu-Em-Smt" secondAttribute="bottom" constant="15" id="1F6-Ou-gAx"/>
+                <constraint firstAttribute="bottom" secondItem="Clu-Em-Smt" secondAttribute="bottom" constant="17" id="1F6-Ou-gAx"/>
                 <constraint firstItem="uJQ-Ba-Z2U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="A6b-4T-YHK"/>
                 <constraint firstItem="eMO-Kr-tGY" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="KZV-Un-PL4"/>
                 <constraint firstAttribute="trailing" secondItem="rBZ-aC-ht3" secondAttribute="trailing" constant="5" id="SX8-J9-m3B"/>
                 <constraint firstItem="Clu-Em-Smt" firstAttribute="leading" secondItem="uJQ-Ba-Z2U" secondAttribute="trailing" constant="11" id="Y49-Il-28B"/>
-                <constraint firstItem="Ump-KR-i8I" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="19" id="cY3-6a-Ymm"/>
+                <constraint firstItem="Ump-KR-i8I" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="17" id="cY3-6a-Ymm"/>
                 <constraint firstItem="rBZ-aC-ht3" firstAttribute="leading" secondItem="eMO-Kr-tGY" secondAttribute="trailing" id="f9v-ij-cot"/>
                 <constraint firstItem="rBZ-aC-ht3" firstAttribute="leading" secondItem="Clu-Em-Smt" secondAttribute="trailing" constant="10" id="hgj-Xz-XeS"/>
                 <constraint firstItem="rBZ-aC-ht3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="lel-vR-3jQ"/>
@@ -96,6 +96,7 @@
             </constraints>
             <connections>
                 <outlet property="balanceLabel" destination="x4a-Zn-4YW" id="gUF-Yf-apM"/>
+                <outlet property="balanceValueTextLabel" destination="KUh-el-SX1" id="JoT-4a-JIP"/>
                 <outlet property="bankBackground" destination="uJQ-Ba-Z2U" id="Ps9-Ep-aV0"/>
                 <outlet property="bankLabel" destination="TIb-c5-ErL" id="CcL-HC-RXK"/>
                 <outlet property="editImage" destination="rBZ-aC-ht3" id="iKe-TI-lhI"/>

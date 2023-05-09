@@ -11,6 +11,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
 
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var balanceValueTextLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var bankBackground: UIView!

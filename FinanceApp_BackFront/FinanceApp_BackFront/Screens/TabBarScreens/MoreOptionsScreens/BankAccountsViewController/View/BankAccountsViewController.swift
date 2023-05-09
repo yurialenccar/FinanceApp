@@ -12,6 +12,7 @@ class BankAccountsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     static let identifier:String = String(describing: BankAccountsViewController.self)
+    var viewModel: BankAccountsViewModel = BankAccountsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class BankAccountsViewController: UIViewController {
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
             layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 0, right: 15)
+            layout.sectionInset = viewModel.getCollectionEdgeInsets()
         }
         collectionView.register(AccountCollectionViewCell.nib(), forCellWithReuseIdentifier: AccountCollectionViewCell.identifier)
         collectionView.register(NewItemButtonCell.nib(), forCellWithReuseIdentifier: NewItemButtonCell.identifier)
@@ -40,28 +41,28 @@ class BankAccountsViewController: UIViewController {
 extension BankAccountsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateItemButtonCellDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bankAccountsList.count + 1
+        return viewModel.getAccountsCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if  indexPath.row < bankAccountsList.count{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as? AccountCollectionViewCell
-            cell?.layer.cornerRadius = 10
+            cell?.layer.cornerRadius = viewModel.getCellCornerRadius()
             cell?.layer.masksToBounds = true
-            cell?.setupCell(account: bankAccountsList[indexPath.row])
+            cell?.setupCell(account: viewModel.getAccount(indexPath.row))
             return cell ?? UICollectionViewCell()
         }
 
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewItemButtonCell.identifier, for: indexPath) as? NewItemButtonCell
-            cell?.setupCell(buttonText: "Criar Nova Conta")
+            cell?.setupCell(buttonText: viewModel.getNewAccountButtonText())
             cell?.delegate = self
             return cell ?? UICollectionViewCell()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 30, height: 80)
+        return viewModel.getCellSize(viewWidth: view.frame.width)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

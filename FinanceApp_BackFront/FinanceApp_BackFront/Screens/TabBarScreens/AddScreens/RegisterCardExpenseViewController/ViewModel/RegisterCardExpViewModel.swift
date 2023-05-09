@@ -11,15 +11,15 @@ import UIKit
 class RegisterCardExpViewModel{
     
     
-    var newExpense = CreditCardExpenses(desc: "Vazio", amount: 1.0, categoryIndex: 0, date: "01/01/2023", cardIndex: 0, obs: "")
+    var newExpense = CreditCardExpenses(desc: "", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: .expense, cardId: "", obs: "")
     
     var dataSelecionada = Date()
     
-    public func setExpenseValues(desc: String, amount:String, category:Int, card:Int, Obs:String){
+    public func setExpenseValues(desc: String, amount:String, category:Int, card:String, Obs:String){
         
         newExpense.amount = Double(amount)!
         newExpense.categoryIndex = category
-        newExpense.cardIndex = card
+        newExpense.cardId = card
         newExpense.date = formatDate(date: dataSelecionada)
         newExpense.obs = Obs
         

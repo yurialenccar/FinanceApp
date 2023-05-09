@@ -64,7 +64,7 @@ class EditBankAccountsViewController: UIViewController {
     }
     
     func saveValues(){
-        self.viewModel.saveBankAccount(desc: self.nameTextField.text ?? "", balance: Double(self.balanceTextField.text ?? "0.0") ?? 0.0, overdraft: Double(self.overdrawTextField.text ?? "0.0") ?? 0.0, bank: selectedBank, stardardBank: self.standardAccountSwitch.isOn, Obs: self.obsLabel.text ?? "")
+        self.viewModel.saveBankAccount(desc: self.nameTextField.text.orEmpty, balance: Double(self.balanceTextField.text.orEmpty) ?? 0.0, overdraft: Double(self.overdrawTextField.text.orEmpty) ?? 0.0, bank: selectedBank, stardardBank: self.standardAccountSwitch.isOn, Obs: self.obsLabel.text.orEmpty)
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -136,5 +136,18 @@ extension EditBankAccountsViewController: UITableViewDelegate, UITableViewDataSo
         updateBankField(selectedBank)
         tableview.isHidden=true
         
+    }
+    
+    
+}
+
+extension Optional where Wrapped == String {
+    var orEmpty:String{
+        switch self{
+        case .some(let value):
+            return value
+        case .none:
+            return ""
+        }
     }
 }
