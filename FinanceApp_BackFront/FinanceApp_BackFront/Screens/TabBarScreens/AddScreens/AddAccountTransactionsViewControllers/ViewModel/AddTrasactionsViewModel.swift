@@ -65,10 +65,10 @@ class AddAccountTransactionsViewModel{
     var standardAccountId: String {
         for account in bankAccountsList{
             if account.standardAccount == true{
-                return account.id
+                return account.getId()
             }
         }
-        return bankAccountsList[0].id
+        return bankAccountsList[0].getId()
     }
     
     public func getCategoryLabel(_ indexCategory:Int) -> String {

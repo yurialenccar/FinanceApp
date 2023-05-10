@@ -10,6 +10,12 @@ import UIKit
 
 class CreditCardsViewModel {
     
+    public func confirmAllCardsIDs(){
+        for i in 0..<creditCardsList.count {
+            creditCardsList[i].setId("card\(formatTwoDigitNumber(num: i))")
+        }
+    }
+    
     public func getCardsCount() -> Int {
         return creditCardsList.count + 1
     }

@@ -12,62 +12,44 @@ class EditCreditCardsViewModel{
     
     public var configType:ConfigType
     private var indexCard:Int
-    private var creditCard:CreditCard
-    
-    //Populate Screen fields variables
-    public var popCreditCardDesc:String
-    public var popCreditCardLimit:String
-    public var popCreditCardBank:Banks
-    public var popCreditCardClosingDay:String
-    public var popCreditCardDueDate:String
-    public var popCreditCardStardardCard:Bool
-    public var popCreditCardObs:String
-    
     
     init(configType: ConfigType, indexCard:Int) {
         self.configType = configType
-        
-        if configType == .createNew{
-            self.creditCard = CreditCard(id: "", desc: "", limit: 1000.0, bank: .bancoDoBrasil, closingDay: 05, dueDate: 10, standardCard: false, obs: "")
-        } else {
-            self.creditCard = creditCardsList[indexCard]
-        }
         self.indexCard = indexCard
-        
-        self.popCreditCardDesc = creditCard.desc
-        self.popCreditCardLimit = String(creditCard.limit)
-        self.popCreditCardClosingDay = formatDay(day: creditCard.closingDay)
-        self.popCreditCardDueDate = formatDay(day: creditCard.dueDate)
-        self.popCreditCardStardardCard = creditCard.standardCard
-        self.popCreditCardObs = creditCard.obs
-        self.popCreditCardBank = creditCard.bank
     }
     
-    public func saveCreditCard(desc: String, limit:Double, bank:Banks, closingDay:Int, dueDate:Int, standardCard:Bool, Obs:String){
-        
-        if stringIsEmpty(text: desc){
-            creditCard.desc = "Cartão \(bankProperties[bank]?.textNameBank ?? "de Crédito")"
+    public func populateFieldsInfos() -> CreditCard {
+        if configType == .createNew{
+            return CreditCard(desc: "", limit: 0.0, bank: .bancoDoBrasil, closingDay: 05, dueDate: 10, standardCard: false, obs: "")
         } else {
-            creditCard.desc = desc
+            return creditCardsList[indexCard]
         }
-        creditCard.limit = limit
-        creditCard.bank = bank
-        creditCard.closingDay = closingDay
-        creditCard.dueDate = dueDate
-        creditCard.standardCard = standardCard
-        creditCard.obs = Obs
+    }
+    
+    public func saveCreditCard(newCard: CreditCard){
+        var creditCard: CreditCard = newCard
         
-        if standardCard == true {
+        if stringIsEmpty(text: newCard.desc){
+            creditCard.desc = "Cartão \(bankProperties[newCard.bank]?.textNameBank ?? "de Crédito")"
+        }
+        
+        if newCard.standardCard == true {
             for i in 0..<creditCardsList.count{
                 creditCardsList[i].standardCard = false
             }
         }
         
         if configType == .createNew{
-            creditCard.id = createNewCreditCardId()
+            creditCard.setId(createNewCreditCardId())
             creditCardsList.append(creditCard)
         } else {
-            creditCardsList[indexCard] = creditCard
+            creditCardsList[indexCard].desc = creditCard.desc
+            creditCardsList[indexCard].limit = creditCard.limit
+            creditCardsList[indexCard].bank = creditCard.bank
+            creditCardsList[indexCard].closingDay = creditCard.closingDay
+            creditCardsList[indexCard].dueDate = creditCard.dueDate
+            creditCardsList[indexCard].standardCard = creditCard.standardCard
+            creditCardsList[indexCard].obs = creditCard.obs
         }
         
     }
@@ -75,14 +57,16 @@ class EditCreditCardsViewModel{
     private func createNewCreditCardId() -> String {
         var num = creditCardsList.count
         
-        let existingIds = Set(creditCardsList.map { $0.id })
+        let existingIds = Set(creditCardsList.map { $0.getId() })
         
-        while existingIds.contains("card\(num)") {
+        while existingIds.contains("card\(formatTwoDigitNumber(num: num))") {
             num += 1
         }
         
-        return "card\(num)"
+        return "card\(formatTwoDigitNumber(num: num))"
     }
+    
+    
 
     
     public func getBankListCount() -> Int {

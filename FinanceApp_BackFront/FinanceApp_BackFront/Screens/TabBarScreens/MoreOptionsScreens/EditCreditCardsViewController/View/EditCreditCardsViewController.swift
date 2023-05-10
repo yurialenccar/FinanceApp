@@ -33,6 +33,7 @@ class EditCreditCardsViewController: UIViewController {
     var alert=Alert()
     var selectedBank:Banks = .bancoDoBrasil
     var dayPickerOption: CreditCardDayPickerOptions = .nonSelected
+    //var creditCard:CreditCard
     
     init?(coder:NSCoder, indexCard:Int, configType:ConfigType){
         self.viewModel = EditCreditCardsViewModel(configType: configType, indexCard: indexCard)
@@ -53,7 +54,6 @@ class EditCreditCardsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableview.isHidden=true
-        updateBankField(viewModel.self.popCreditCardBank)
         setupScreenLabels()
         populateFields()
     }
@@ -84,14 +84,14 @@ class EditCreditCardsViewController: UIViewController {
     }
     
     func saveValues(){
-        self.viewModel.saveCreditCard(
+        viewModel.saveCreditCard(newCard: CreditCard(
             desc: nameTextField.text.orEmpty,
             limit: Double(limitTextField.text.orEmpty) ?? 0.0,
             bank: selectedBank,
             closingDay: Int(closingDayNumberLabel.text.orEmpty) ?? 0,
             dueDate: Int(dueDateNumberLabel.text.orEmpty) ?? 0,
             standardCard: standardCardSwitch.isOn,
-            Obs: obsTextField.text.orEmpty
+            obs: obsTextField.text.orEmpty)
         )
         self.navigationController?.popViewController(animated: true)
     }
@@ -112,17 +112,17 @@ class EditCreditCardsViewController: UIViewController {
         
     }
     
-    private func populateFields(){
-        if viewModel.configType == .editExisting{
-            nameTextField.text = viewModel.popCreditCardDesc
-            limitTextField.text = viewModel.popCreditCardLimit
-            closingDayNumberLabel.text = viewModel.popCreditCardClosingDay
-            dueDateNumberLabel.text = viewModel.popCreditCardDueDate
-            standardCardSwitch.isOn = viewModel.popCreditCardStardardCard
-            obsTextField.text = viewModel.popCreditCardObs
-            selectedBank = viewModel.popCreditCardBank
-            updateBankField(selectedBank)
-        }
+    private func populateFields() {
+        let card = viewModel.populateFieldsInfos()
+        
+        nameTextField.text = card.desc
+        limitTextField.text = String(card.limit)
+        closingDayNumberLabel.text = String(card.closingDay)
+        dueDateNumberLabel.text = String(card.dueDate)
+        standardCardSwitch.isOn = card.standardCard
+        obsTextField.text = card.obs
+        selectedBank = card.bank
+        updateBankField(selectedBank)
     }
     
     private func toggleTableViewVisibility(){

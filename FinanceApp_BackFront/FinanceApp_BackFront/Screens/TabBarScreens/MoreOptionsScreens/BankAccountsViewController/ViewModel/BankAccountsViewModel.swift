@@ -10,6 +10,12 @@ import UIKit
 
 class BankAccountsViewModel {
     
+    public func confirmAllAccountsIDs(){
+        for i in 0..<bankAccountsList.count {
+            bankAccountsList[i].setId("account\(formatTwoDigitNumber(num: i))")
+        }
+    }
+    
     public func getAccountsCount() -> Int {
         return bankAccountsList.count + 1
     }

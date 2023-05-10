@@ -15,11 +15,11 @@ public func formatDate(date: Date) -> String {
     return formatter.string(from: date)
 }
 
-public func formatDay(day:Int) -> String {
+public func formatTwoDigitNumber(num:Int) -> String {
 
     let formatter = NumberFormatter()
     formatter.minimumIntegerDigits = 2
-    return formatter.string(from: NSNumber(value: day)) ?? ""
+    return formatter.string(from: NSNumber(value: num)) ?? ""
 }
 
 public func formatMoney(value: Double) -> String {
@@ -30,3 +30,5 @@ public func formatMoney(value: Double) -> String {
     
     return formatter.string(from: NSNumber(value: value)) ?? "0.0"
 }
+
+//Transformar em extensions de Double -> String

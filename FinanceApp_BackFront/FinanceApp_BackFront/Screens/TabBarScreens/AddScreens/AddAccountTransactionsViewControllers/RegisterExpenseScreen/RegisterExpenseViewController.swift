@@ -130,6 +130,6 @@ extension RegisterExpenseViewController:CategoriesModalDelegate, AccountsModalDe
     
     func didSelectAccount(_ indexAccount: Int) {
         updateAccountField(indexAccount)
-        idAccountSelected = bankAccountsList[indexAccount].id
+        idAccountSelected = bankAccountsList[indexAccount].getId()
     }
 }

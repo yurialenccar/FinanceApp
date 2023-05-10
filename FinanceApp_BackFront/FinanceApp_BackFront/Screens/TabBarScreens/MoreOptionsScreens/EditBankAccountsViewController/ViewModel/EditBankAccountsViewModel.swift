@@ -12,77 +12,65 @@ class EditBankAccountsViewModel{
     
     public var configType:ConfigType
     private var indexAccount:Int
-    private var bankAccount:BankAccount
-    
-    //Populate Screen fields variables
-    public var popBankAccountDesc:String
-    public var popBankAccountBalance:String
-    public var popBankAccountOverdraft:String
-    public var popBankAccountStardardAccount:Bool
-    public var popBankAccountObs:String
-    public var popBankAccountBank:Banks
     
     init(configType: ConfigType, indexAccount:Int) {
         self.configType = configType
-        
-        if configType == .createNew{
-            self.bankAccount = BankAccount(id: "", desc: "", bank: .bancoDoBrasil, overdraft: 0.0, standardAccount: false, obs:"")
-        } else {
-            self.bankAccount = bankAccountsList[indexAccount]
-        }
         self.indexAccount = indexAccount
-        
-        self.popBankAccountDesc = bankAccount.desc
-        self.popBankAccountBalance = String(bankAccount.getBalance())
-        self.popBankAccountOverdraft = String(bankAccount.overdraft)
-        self.popBankAccountStardardAccount = bankAccount.standardAccount
-        self.popBankAccountObs = bankAccount.obs
-        self.popBankAccountBank = bankAccount.bank
     }
     
-    public func saveBankAccount(desc: String, balance:Double, overdraft:Double, bank:Banks, stardardBank:Bool, Obs:String){
-        
-        if stringIsEmpty(text: desc){
-            bankAccount.desc = "Conta \(bankProperties[bank]?.textNameBank ?? "Corrente")"
+    public func populateFieldsInfos() -> BankAccount{
+        if self.configType == .createNew{
+            return BankAccount(desc: "", bank: .bancoDoBrasil, overdraft: 0.0, standardAccount: false, obs: "")
         } else {
-            bankAccount.desc = desc
+            return bankAccountsList[indexAccount]
         }
-        bankAccount.overdraft = overdraft
-        bankAccount.bank = bank
-        bankAccount.standardAccount = stardardBank
-        bankAccount.obs = Obs
+    }
+    
+    public func saveBankAccount(newBalance: String, newAccount: BankAccount) {
+        var bankAccount: BankAccount = newAccount
         
-        if stardardBank == true {
+        if stringIsEmpty(text: newAccount.desc){
+            bankAccount.desc = "Conta \(bankProperties[newAccount.bank]?.textNameBank ?? "Corrente")"
+        }
+        
+        if bankAccount.standardAccount == true {
             for i in 0..<bankAccountsList.count{
                 bankAccountsList[i].standardAccount = false
             }
         }
         
+        let newBalanceValue: Double = Double(newBalance) ?? 0.0
+        
         if configType == .createNew{
-            bankAccount.id = createNewAccountId()
-            if balance != 0{
-                bankAccount.adjustBalance(newBalance: Double(balance))
+            bankAccount.setId(createNewBankAccountId())
+            if newBalanceValue != 0{
+                bankAccount.adjustBalance(newBalance: newBalanceValue)
             }
             bankAccountsList.append(bankAccount)
         } else {
-            if balance != 0{
-                bankAccountsList[indexAccount].adjustBalance(newBalance: Double(balance))
+            
+            if newBalanceValue != bankAccount.balance {
+                bankAccountsList[indexAccount].adjustBalance(newBalance: newBalanceValue)
             }
-            bankAccountsList[indexAccount] = bankAccount
+            bankAccountsList[indexAccount].desc = bankAccount.desc
+            bankAccountsList[indexAccount].bank = bankAccount.bank
+            bankAccountsList[indexAccount].overdraft = bankAccount.overdraft
+            bankAccountsList[indexAccount].standardAccount = bankAccount.standardAccount
+            bankAccountsList[indexAccount].obs = bankAccount.obs
         }
         
     }
     
-    private func createNewAccountId() -> String{
+    private func createNewBankAccountId() -> String {
         var num = bankAccountsList.count
         
-        var existingIds = Set(bankAccountsList.map{$0.id})
+        let existingIds = Set(bankAccountsList.map { $0.getId() })
         
-        while existingIds.contains("account\(num)") {
+        while existingIds.contains("card\(formatTwoDigitNumber(num: num))") {
             num += 1
         }
         
-        return "account\(num)"
+        return "account\(formatTwoDigitNumber(num: num))"
     }
     
     public func getBankListCount() -> Int {

@@ -44,7 +44,6 @@ class EditBankAccountsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableview.isHidden=true
-        updateBankField(viewModel.self.popBankAccountBank)
         setupScreenLabels()
         populateFields()
     }
@@ -64,7 +63,13 @@ class EditBankAccountsViewController: UIViewController {
     }
     
     func saveValues(){
-        self.viewModel.saveBankAccount(desc: self.nameTextField.text.orEmpty, balance: Double(self.balanceTextField.text.orEmpty) ?? 0.0, overdraft: Double(self.overdrawTextField.text.orEmpty) ?? 0.0, bank: selectedBank, stardardBank: self.standardAccountSwitch.isOn, Obs: self.obsLabel.text.orEmpty)
+        self.viewModel.saveBankAccount(newBalance:balanceTextField.text.orEmpty, newAccount: BankAccount(
+            desc: self.nameTextField.text.orEmpty,
+            bank: selectedBank,
+            overdraft: Double(self.overdrawTextField.text.orEmpty) ?? 0.0,
+            standardAccount: self.standardAccountSwitch.isOn,
+            obs: self.obsLabel.text.orEmpty
+            ))
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -86,16 +91,23 @@ class EditBankAccountsViewController: UIViewController {
         
     }
     
-    private func populateFields(){
-        if viewModel.configType == .editExisting{
-            nameTextField.text = viewModel.popBankAccountDesc
-            balanceTextField.text = viewModel.popBankAccountBalance
-            overdrawTextField.text = viewModel.popBankAccountOverdraft
-            standardAccountSwitch.isOn = viewModel.popBankAccountStardardAccount
-            obsLabel.text = viewModel.popBankAccountObs
-            selectedBank = viewModel.popBankAccountBank
-            updateBankField(selectedBank)
+    private func populateFields() {
+        let account = viewModel.populateFieldsInfos()
+        
+        nameTextField.text = account.desc
+        overdrawTextField.text = String(account.overdraft)
+        standardAccountSwitch.isOn = account.standardAccount
+        obsLabel.text = account.obs
+        selectedBank = account.bank
+        updateBankField(selectedBank)
+        
+        switch viewModel.configType {
+        case .createNew:
+            balanceTextField.text = "0.0"
+        case .editExisting:
+            balanceTextField.text = String(account.balance)
         }
+        
     }
     
     private func toggleTableViewVisibility(){
