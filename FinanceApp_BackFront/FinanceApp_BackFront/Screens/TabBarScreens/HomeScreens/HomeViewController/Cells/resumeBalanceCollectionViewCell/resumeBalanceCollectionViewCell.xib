@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="resumeBalanceCollectionViewCell" customModule="FinanceApp_BackFront" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultima entrada: 28 de dezembro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xck-S6-o9c">
+                        <rect key="frame" x="15" y="118" width="220" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" name="GreyInformations"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entradas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMC-C5-NVn">
+                        <rect key="frame" x="15" y="15" width="150" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="7eU-yU-ltD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IncomesArrow" translatesAutoresizingMaskIntoConstraints="NO" id="R3v-MJ-Ny4">
+                        <rect key="frame" x="195" y="14.666666666666668" width="40" height="40.666666666666686"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="9eW-wT-8bV"/>
+                            <constraint firstAttribute="height" constant="40" id="DGI-8h-fvL"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXq-Pp-F2n">
+                        <rect key="frame" x="15" y="81" width="220" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XXq-Pp-F2n" secondAttribute="trailing" constant="15" id="68v-ZD-sCd"/>
+                <constraint firstItem="NMC-C5-NVn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="cnA-rw-aWa"/>
+                <constraint firstItem="R3v-MJ-Ny4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="dWe-CC-Qi8"/>
+                <constraint firstAttribute="trailing" secondItem="R3v-MJ-Ny4" secondAttribute="trailing" constant="15" id="gXM-43-QNj"/>
+                <constraint firstItem="NMC-C5-NVn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="i2M-ZX-4hK"/>
+                <constraint firstItem="Xck-S6-o9c" firstAttribute="top" secondItem="XXq-Pp-F2n" secondAttribute="bottom" constant="10" id="j6J-xz-dey"/>
+                <constraint firstItem="XXq-Pp-F2n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="jPM-w4-OfK"/>
+                <constraint firstAttribute="bottom" secondItem="Xck-S6-o9c" secondAttribute="bottom" constant="15" id="krf-ir-Gup"/>
+                <constraint firstAttribute="trailing" secondItem="Xck-S6-o9c" secondAttribute="trailing" constant="15" id="wug-Jv-NRy"/>
+                <constraint firstItem="Xck-S6-o9c" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="xjX-2h-hzw"/>
+            </constraints>
+            <connections>
+                <outlet property="dateLabel" destination="Xck-S6-o9c" id="VId-dN-0BQ"/>
+                <outlet property="titleLabel" destination="NMC-C5-NVn" id="RXG-tV-oua"/>
+                <outlet property="typeImage" destination="R3v-MJ-Ny4" id="YJd-NZ-DCZ"/>
+                <outlet property="valueLabel" destination="XXq-Pp-F2n" id="lGf-xM-Yqu"/>
+            </connections>
+            <point key="canvasLocation" x="36.641221374045799" y="-12.67605633802817"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="IncomesArrow" width="44" height="46"/>
+        <namedColor name="GreyInformations">
+            <color red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
