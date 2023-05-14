@@ -9,6 +9,12 @@ import Foundation
 
 struct HomeViewModel {
     
+    public func confirmAllAccountsIDs(){
+        for i in 0..<bankAccountsList.count {
+            bankAccountsList[i].setId("account\(formatTwoDigitNumber(num: i))")
+        }
+    }
+    
     public func updateBalance() -> BalanceValues {
         
         var balance : BalanceValues = BalanceValues(total: 0.0, incomesTotal: 0.0, expensesTotal: 0.0)

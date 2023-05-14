@@ -13,7 +13,8 @@ class HomeViewController: UIViewController {
     
     
     @IBOutlet weak var hideInformationsButton: UIButton!
-    @IBOutlet weak var balancesCollectionView: UICollectionView!
+    @IBOutlet weak var horizontalCollectionView: UICollectionView!
+    @IBOutlet weak var verticalCollectionView: UICollectionView!
     
     static let identifier:String = String(describing: HomeViewController.self)
     var  viewModel : HomeViewModel = HomeViewModel()
@@ -22,7 +23,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-        setupBalancesCollectionView()
+        viewModel.confirmAllAccountsIDs()
+        setupHorizontalCollectionView()
+        setupVerticalCollectionView()
 
     }
 
@@ -30,7 +33,9 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
 //        updateLabels()
-        
+        horizontalCollectionView.reloadData()
+        setupVerticalCollectionView()
+        verticalCollectionView.reloadData()
     }
 
     @IBAction func tappedShowGraphScreen(_ sender: UIButton) {
@@ -42,17 +47,31 @@ class HomeViewController: UIViewController {
         hideNumers()
     }
     
-    func setupBalancesCollectionView(){
-        balancesCollectionView.delegate = self
-        balancesCollectionView.dataSource = self
-        if let layout = balancesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+    func setupHorizontalCollectionView(){
+        horizontalCollectionView.delegate = self
+        horizontalCollectionView.dataSource = self
+        if let layout = horizontalCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
             layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 17, right: 10)
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom:0, right: 15)
         }
-        balancesCollectionView.backgroundColor = .none
-        balancesCollectionView.showsHorizontalScrollIndicator = false
-        balancesCollectionView.register(resumeBalanceCollectionViewCell.nib(), forCellWithReuseIdentifier: resumeBalanceCollectionViewCell.identifier)
+        horizontalCollectionView.backgroundColor = .none
+        horizontalCollectionView.showsHorizontalScrollIndicator = false
+        horizontalCollectionView.register(resumeBalanceCollectionViewCell.nib(), forCellWithReuseIdentifier: resumeBalanceCollectionViewCell.identifier)
+    }
+    
+    func setupVerticalCollectionView(){
+        verticalCollectionView.delegate = self
+        verticalCollectionView.dataSource = self
+        if let layout = verticalCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .vertical
+            layout.estimatedItemSize = .zero
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom:0, right: 10)
+        }
+        verticalCollectionView.backgroundColor = UIColor(named: "BackgroundColor")
+        //verticalCollectionView.showsHorizontalScrollIndicator = false
+        verticalCollectionView.register(TitleCollectionViewCell.nib(), forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
+        verticalCollectionView.register(AccountsBallanceCollectionViewCell.nib(), forCellWithReuseIdentifier: AccountsBallanceCollectionViewCell.identifier)
     }
     
     
@@ -89,20 +108,52 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if collectionView == horizontalCollectionView {
+            return 3
+        } else {
+            return 2
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: resumeBalanceCollectionViewCell.identifier, for: indexPath) as? resumeBalanceCollectionViewCell
-        cell?.layer.cornerRadius = 10
-        cell?.layer.masksToBounds = true
-        cell?.setupCell(balance: viewModel.updateBalance(), cellNumber: indexPath.row)
-        return cell ?? UICollectionViewCell()
+        if collectionView == horizontalCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: resumeBalanceCollectionViewCell.identifier, for: indexPath) as? resumeBalanceCollectionViewCell
+            cell?.layer.cornerRadius = 10
+            cell?.layer.masksToBounds = true
+            cell?.setupCell(balance: viewModel.updateBalance(), cellNumber: indexPath.row)
+            return cell ?? UICollectionViewCell()
+        } else{
+            switch indexPath.row {
+            case 0:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell
+                cell?.setupCell(title: "Contas Bancárias")
+                return cell ?? UICollectionViewCell()
+            case 1:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountsBallanceCollectionViewCell.identifier, for: indexPath) as? AccountsBallanceCollectionViewCell
+                cell?.setupCell(accountsList: bankAccountsList)
+                cell?.layer.cornerRadius = 10
+                cell?.layer.masksToBounds = true
+                return cell ?? UICollectionViewCell()
+            default:
+                return UICollectionViewCell()
+            }
+            
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 250, height: 150)
+        if collectionView == horizontalCollectionView{
+            return CGSize(width: 250, height: 150)
+        } else {
+            switch indexPath.row {
+            case 0:
+                return CGSize(width: view.frame.width - 30, height: 50)
+            case 1:
+                return CGSize(width: Int(view.frame.width) - 30, height: (60 + bankAccountsList.count * 60))
+            default:
+                return CGSize(width: view.frame.width - 30, height: 50)
+            }
+        }
     }
-    
-    
 }

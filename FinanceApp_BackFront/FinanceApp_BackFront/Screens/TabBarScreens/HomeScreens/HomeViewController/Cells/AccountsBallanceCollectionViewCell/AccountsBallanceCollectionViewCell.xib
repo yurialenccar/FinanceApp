@@ -65,6 +65,7 @@
             </constraints>
             <connections>
                 <outlet property="accountsTableView" destination="c9G-fe-cHo" id="weO-FZ-slx"/>
+                <outlet property="tableViewHeightConstraint" destination="ibp-Vf-59N" id="hnc-ok-qjY"/>
                 <outlet property="totalBalanceTextLabel" destination="QKf-My-zUj" id="XDK-vs-JcY"/>
                 <outlet property="totalBalanceValueLabel" destination="lTS-o3-usp" id="Pov-eY-M1a"/>
             </connections>

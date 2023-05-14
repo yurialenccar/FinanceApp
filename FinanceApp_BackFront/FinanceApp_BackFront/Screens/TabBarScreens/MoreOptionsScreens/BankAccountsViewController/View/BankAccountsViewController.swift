@@ -18,7 +18,6 @@ class BankAccountsViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         setupCollectionView()
-        viewModel.confirmAllAccountsIDs()
     }
     
     override func viewWillAppear(_ animated: Bool) {
