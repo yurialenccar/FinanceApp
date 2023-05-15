@@ -25,40 +25,23 @@ class resumeBalanceCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setupCell(balance:BalanceValues, cellNumber:Int){
-        switch cellNumber{
-        case 0:
-            titleLabel.text = "Entrada"
-            typeImage.image = UIImage(imageLiteralResourceName: "IncomesArrow")
-            valueLabel.text = String(formatMoney(value: balance.incomesTotal))
-            backgroundColor = .white
-            dateLabel.text = "Ultima entrada: 28 de dezembro"
-        case 1:
-            titleLabel.text = "Saídas"
-            typeImage.image = UIImage(imageLiteralResourceName: "ExpensesArrow")
-            valueLabel.text = String(formatMoney(value: balance.expensesTotal))
-            backgroundColor = .white
-            dateLabel.text = "Ultima saída: 28 de dezembro"
-        case 2:
-            titleLabel.text = "Total"
-            typeImage.image = UIImage(systemName: "dollarsign.circle")
+    func setupCell(balance:BalanceCards){
+        titleLabel.text = balance.desc
+        if balance.desc == "Total" {
+            typeImage.image = UIImage(systemName: balance.symbolImageName)
+            //typeImage.image?.renderingMode = .alwaysTemplate
             typeImage.tintColor = .white
-            valueLabel.text = String(formatMoney(value: balance.total))
-            if balance.total > 0 {
-                backgroundColor = UIColor(named: "PositiveBalance")
-            } else if balance.total < 0 {
-                backgroundColor = UIColor(named: "RedGeneralExpenses")
-            } else {
-                backgroundColor = UIColor(named: "GreyInformations")
-            }
-            
-            dateLabel.text = " "
-        default:
-            titleLabel.text = "Erro"
+        } else {
+            typeImage.image = UIImage(imageLiteralResourceName: balance.symbolImageName)
         }
         
-        
-        
+        if balance.hideInformations == true {
+            valueLabel.text = "•••••"
+        } else {
+            valueLabel.text = String(formatMoney(value: balance.balance))
+        }
+        backgroundColor = UIColor(named: balance.backgroundColorName)
+        dateLabel.text = balance.lastTransaction
     }
 
 }

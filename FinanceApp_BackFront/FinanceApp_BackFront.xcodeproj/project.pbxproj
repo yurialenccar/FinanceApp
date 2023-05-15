@@ -44,7 +44,7 @@
 		A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */; };
 		A16636EF29DE33C500162872 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EE29DE33C500162872 /* Transactions.swift */; };
 		A16688E929F06E8600568217 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16688E829F06E8600568217 /* HomeViewModel.swift */; };
-		A16688EB29F08CF600568217 /* BalanceValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16688EA29F08CF600568217 /* BalanceValues.swift */; };
+		A16688EB29F08CF600568217 /* BalanceCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16688EA29F08CF600568217 /* BalanceCards.swift */; };
 		A16688F929F0B32900568217 /* TransactionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16688F729F0B32900568217 /* TransactionsCollectionViewCell.xib */; };
 		A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16688FB29F17E5200568217 /* TransactionsViewModel.swift */; };
 		A166B96229DF4BD600F33A98 /* ListedCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A166B96129DF4BD600F33A98 /* ListedCategories.swift */; };
@@ -170,7 +170,7 @@
 		A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A16636EE29DE33C500162872 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
 		A16688E829F06E8600568217 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		A16688EA29F08CF600568217 /* BalanceValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceValues.swift; sourceTree = "<group>"; };
+		A16688EA29F08CF600568217 /* BalanceCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCards.swift; sourceTree = "<group>"; };
 		A16688F729F0B32900568217 /* TransactionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A16688FB29F17E5200568217 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		A166B96129DF4BD600F33A98 /* ListedCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedCategories.swift; sourceTree = "<group>"; };
@@ -470,7 +470,7 @@
 				A1A92BC529F81D6200E14EE8 /* CreditCardExpenses.swift */,
 				A166B96129DF4BD600F33A98 /* ListedCategories.swift */,
 				A140933C29E6EC3D0037662B /* CategoriesSum.swift */,
-				A16688EA29F08CF600568217 /* BalanceValues.swift */,
+				A16688EA29F08CF600568217 /* BalanceCards.swift */,
 				A11BDA7129F4C04A006CF6B2 /* BankAccount.swift */,
 				A11BDA7529F4C24B006CF6B2 /* CreditCard.swift */,
 				A189A39829F58A4700C22A6D /* BankProperties.swift */,
@@ -1287,7 +1287,7 @@
 				A1F4210829F62379005C346B /* CategoriesModalViewModel.swift in Sources */,
 				E35D086129BDB0310098F0B5 /* HomeViewController.swift in Sources */,
 				A18991A82A11DC9800D47427 /* CardsBallanceCollectionViewCell.swift in Sources */,
-				A16688EB29F08CF600568217 /* BalanceValues.swift in Sources */,
+				A16688EB29F08CF600568217 /* BalanceCards.swift in Sources */,
 				A12329F229FB0F2C0053AC38 /* BankAccountsViewController.swift in Sources */,
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
 				A1E107C929E4F78F005A3F4F /* CurrencyViewController.swift in Sources */,

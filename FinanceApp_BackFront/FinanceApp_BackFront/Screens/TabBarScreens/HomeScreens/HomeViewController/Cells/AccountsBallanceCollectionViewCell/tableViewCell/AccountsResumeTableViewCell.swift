@@ -25,15 +25,21 @@ class AccountsResumeTableViewCell: UITableViewCell {
         
     }
     
-    func setupCell(bankAccount:BankAccount){
+    func setupCell(bankAccount:BankAccount, hideInformations: Bool){
         descAccountLabel.text = bankAccount.desc
-        balanceLabel.text = formatMoney(value: bankAccount.balance)
-        if bankAccount.balance > 0 {
-            balanceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
-        } else if bankAccount.balance < 0 {
-            balanceLabel.textColor = UIColor(named: "RedGeneralExpenses")
-        } else {
+        
+        if hideInformations {
+            balanceLabel.text =  "---"
             balanceLabel.textColor = .black
+        } else {
+            balanceLabel.text = formatMoney(value: bankAccount.balance)
+            if bankAccount.balance > 0 {
+                balanceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
+            } else if bankAccount.balance < 0 {
+                balanceLabel.textColor = UIColor(named: "RedGeneralExpenses")
+            } else {
+                balanceLabel.textColor = .black
+            }
         }
         bankLabel.text = bankProperties[bankAccount.bank]?.logoTextLabel
         bankLabel.textColor = bankProperties[bankAccount.bank]?.labelBankColor

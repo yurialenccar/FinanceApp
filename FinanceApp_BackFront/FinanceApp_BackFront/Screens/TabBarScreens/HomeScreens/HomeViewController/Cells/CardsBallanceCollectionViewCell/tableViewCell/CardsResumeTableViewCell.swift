@@ -25,15 +25,21 @@ class CardsResumeTableViewCell: UITableViewCell {
         
     }
     
-    func setupCell(creditCard:CreditCard){
+    func setupCell(creditCard:CreditCard, hideInformations: Bool){
         descCardLabel.text = creditCard.desc
-        invoiceLabel.text = formatMoney(value: creditCard.invoiceTotal)
-        if creditCard.invoiceTotal > 0 {
-            invoiceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
-        } else if creditCard.invoiceTotal < 0 {
-            invoiceLabel.textColor = UIColor(named: "RedGeneralExpenses")
-        } else {
+        
+        if hideInformations{
+            invoiceLabel.text = "---"
             invoiceLabel.textColor = .black
+        } else {
+            invoiceLabel.text = formatMoney(value: creditCard.invoiceTotal)
+            if creditCard.invoiceTotal > 0 {
+                invoiceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
+            } else if creditCard.invoiceTotal < 0 {
+                invoiceLabel.textColor = UIColor(named: "RedGeneralExpenses")
+            } else {
+                invoiceLabel.textColor = .black
+            }
         }
         bankLabel.text = bankProperties[creditCard.bank]?.logoTextLabel
         bankLabel.textColor = bankProperties[creditCard.bank]?.labelBankColor

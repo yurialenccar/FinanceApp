@@ -34,6 +34,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
 //        updateLabels()
+        viewModel.updateBalanceValues()
         horizontalCollectionView.reloadData()
         setupVerticalCollectionView()
         verticalCollectionView.reloadData()
@@ -45,7 +46,13 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func tappedHideNumbersButton(_ sender: UIButton) {
-        hideNumers()
+        if viewModel.hideInformations() == true {
+            hideInformationsButton.setImage(UIImage(imageLiteralResourceName: "closed eye"), for: .normal)
+        } else {
+            hideInformationsButton.setImage(UIImage(imageLiteralResourceName: "eye"), for: .normal)
+        }
+        horizontalCollectionView.reloadData()
+        verticalCollectionView.reloadData()
     }
     
     func setupHorizontalCollectionView(){
@@ -76,37 +83,6 @@ class HomeViewController: UIViewController {
         verticalCollectionView.register(CardsBallanceCollectionViewCell.nib(), forCellWithReuseIdentifier: CardsBallanceCollectionViewCell.identifier)
         verticalCollectionView.register(TransactionsCollectionViewCell.nib(), forCellWithReuseIdentifier: TransactionsCollectionViewCell.identifier)
     }
-    
-    
-    
-    func hideNumers(){
-        if informationsHidden == false {
-            informationsHidden = true
-//            incomeLabel.text = "•••••"
-//            expensesLabel.text  = "•••••"
-            hideInformationsButton.setImage(UIImage(imageLiteralResourceName: "closed eye"), for: .normal)
-        } else {
-            informationsHidden = false
-//            updateLabels()
-            hideInformationsButton.setImage(UIImage(imageLiteralResourceName: "eye"), for: .normal)
-        }
-    }
-    
-//    public func updateLabels() {
-//        let balance = viewModel.updateBalance()
-//
-//        incomeLabel.text = String(format: "%.2f", balance.incomesTotal)
-//        expensesLabel.text = String(format: "%.2f", balance.expensesTotal)
-//        balanceLabel.text = String(format: "%.2f", balance.total)
-//
-//        if balance.total > 0 {
-//            backgroundBalanceView.backgroundColor = UIColor(named: "PositiveBalance")
-//        } else if balance.total < 0 {
-//                backgroundBalanceView.backgroundColor = UIColor(named: "NegativeBalance")
-//            } else {
-//                backgroundBalanceView.backgroundColor = UIColor(named: "GreyInformations")
-//            }
-//    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -140,22 +116,34 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == horizontalCollectionView {
+            var balanceCardType: BalanceCardsType
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: resumeBalanceCollectionViewCell.identifier, for: indexPath) as? resumeBalanceCollectionViewCell
             cell?.layer.cornerRadius = 10
             cell?.layer.masksToBounds = true
-            cell?.setupCell(balance: viewModel.updateBalance(), cellNumber: indexPath.row)
+            switch indexPath.row {
+            case 0:
+                balanceCardType = .incomes
+            case 1:
+                balanceCardType = .expenses
+            default:
+                balanceCardType = .total
+            }
+            
+            if let values = balanceCardValues[balanceCardType] {
+                cell?.setupCell(balance: values)
+            }
             return cell ?? UICollectionViewCell()
         } else {
             switch indexPath.section {
             case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountsBallanceCollectionViewCell.identifier, for: indexPath) as? AccountsBallanceCollectionViewCell
-                cell?.setupCell(accountsList: bankAccountsList)
+                cell?.setupCell(accountsList: bankAccountsList, hideInformations: viewModel.informationsAreHidden)
                 cell?.layer.cornerRadius = 10
                 cell?.layer.masksToBounds = true
                 return cell ?? UICollectionViewCell()
             case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardsBallanceCollectionViewCell.identifier, for: indexPath) as? CardsBallanceCollectionViewCell
-                cell?.setupCell(cardsList: creditCardsList)
+                cell?.setupCell(cardsList: creditCardsList, hideInformations: viewModel.informationsAreHidden)
                 cell?.layer.cornerRadius = 10
                 cell?.layer.masksToBounds = true
                 return cell ?? UICollectionViewCell()

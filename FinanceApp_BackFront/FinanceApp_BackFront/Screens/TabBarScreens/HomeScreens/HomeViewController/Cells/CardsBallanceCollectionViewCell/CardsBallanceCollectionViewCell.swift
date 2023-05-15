@@ -20,6 +20,7 @@ class CardsBallanceCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
+    var hideInformations: Bool = false
     var creditCardList: [CreditCard] = []
     
     override func awakeFromNib() {
@@ -35,20 +36,27 @@ class CardsBallanceCollectionViewCell: UICollectionViewCell {
         cardsTableView.register(CardsResumeTableViewCell.nib(), forCellReuseIdentifier: CardsResumeTableViewCell.identifier)
     }
     
-    func setupCell(cardsList: [CreditCard]) {
-        let total:Double = cardsList.reduce(0) { $0 + $1.invoiceTotal}
+    func setupCell(cardsList: [CreditCard], hideInformations: Bool) {
         
-        totalInvoiceValueLabel.text = formatMoney(value: total)
-        if total > 0 {
-            totalInvoiceValueLabel.textColor = UIColor(named: "GreenGeneralIncomes")
-        } else if total < 0 {
-            totalInvoiceValueLabel.textColor = UIColor(named: "RedGeneralExpenses")
-        } else {
+        if hideInformations {
+            totalInvoiceValueLabel.text = "---"
             totalInvoiceValueLabel.textColor = .black
+        } else {
+            let total:Double = cardsList.reduce(0) { $0 + $1.invoiceTotal}
+            totalInvoiceValueLabel.text = formatMoney(value: total)
+            if total > 0 {
+                totalInvoiceValueLabel.textColor = UIColor(named: "GreenGeneralIncomes")
+            } else if total < 0 {
+                totalInvoiceValueLabel.textColor = UIColor(named: "RedGeneralExpenses")
+            } else {
+                totalInvoiceValueLabel.textColor = .black
+            }
         }
+            
         cardsTableView.reloadData()
         
-        creditCardList = cardsList
+        self.creditCardList = cardsList
+        self.hideInformations = hideInformations
     }
 }
 
@@ -59,7 +67,7 @@ extension CardsBallanceCollectionViewCell: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CardsResumeTableViewCell.identifier, for: indexPath) as? CardsResumeTableViewCell
-        cell?.setupCell(creditCard: creditCardList[indexPath.row])
+        cell?.setupCell(creditCard: creditCardList[indexPath.row], hideInformations: hideInformations)
         return cell ?? UITableViewCell()
     }
     

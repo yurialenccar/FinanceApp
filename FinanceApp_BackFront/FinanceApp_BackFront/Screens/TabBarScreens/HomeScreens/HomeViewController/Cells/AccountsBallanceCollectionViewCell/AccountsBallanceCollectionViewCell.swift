@@ -8,6 +8,8 @@
 import UIKit
 
 class AccountsBallanceCollectionViewCell: UICollectionViewCell {
+    
+    var hideInformations: Bool = false
 
     @IBOutlet weak var accountsTableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
@@ -35,20 +37,27 @@ class AccountsBallanceCollectionViewCell: UICollectionViewCell {
         accountsTableView.register(AccountsResumeTableViewCell.nib(), forCellReuseIdentifier: AccountsResumeTableViewCell.identifier)
     }
     
-    func setupCell(accountsList: [BankAccount]) {
-        let total:Double = accountsList.reduce(0) { $0 + $1.balance}
+    func setupCell(accountsList: [BankAccount], hideInformations: Bool) {
         
-        totalBalanceValueLabel.text = formatMoney(value: total)
-        if total > 0 {
-            totalBalanceValueLabel.textColor = UIColor(named: "GreenGeneralIncomes")
-        } else if total < 0 {
-            totalBalanceValueLabel.textColor = UIColor(named: "RedGeneralExpenses")
-        } else {
+        if hideInformations {
+            totalBalanceValueLabel.text =  "---"
             totalBalanceValueLabel.textColor = .black
+        } else {
+            let total:Double = accountsList.reduce(0) { $0 + $1.balance}
+            totalBalanceValueLabel.text = formatMoney(value: total)
+            if total > 0 {
+                totalBalanceValueLabel.textColor = UIColor(named: "GreenGeneralIncomes")
+            } else if total < 0 {
+                totalBalanceValueLabel.textColor = UIColor(named: "RedGeneralExpenses")
+            } else {
+                totalBalanceValueLabel.textColor = .black
+            }
         }
+        
         accountsTableView.reloadData()
         
-        bankAccountList = accountsList
+        self.bankAccountList = accountsList
+        self.hideInformations = hideInformations
     }
 }
 
@@ -59,7 +68,7 @@ extension AccountsBallanceCollectionViewCell: UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountsResumeTableViewCell.identifier, for: indexPath) as? AccountsResumeTableViewCell
-        cell?.setupCell(bankAccount: bankAccountList[indexPath.row])
+        cell?.setupCell(bankAccount: bankAccountList[indexPath.row], hideInformations: hideInformations)
         return cell ?? UITableViewCell()
     }
     
