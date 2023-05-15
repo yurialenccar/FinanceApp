@@ -36,7 +36,7 @@ class AccountsBallanceCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCell(accountsList: [BankAccount]) {
-        var total:Double = accountsList.reduce(0) { $0 + $1.balance}
+        let total:Double = accountsList.reduce(0) { $0 + $1.balance}
         
         totalBalanceValueLabel.text = formatMoney(value: total)
         if total > 0 {

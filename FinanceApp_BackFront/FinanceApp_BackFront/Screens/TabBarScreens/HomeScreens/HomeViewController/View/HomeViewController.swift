@@ -70,8 +70,9 @@ class HomeViewController: UIViewController {
         }
         verticalCollectionView.backgroundColor = UIColor(named: "BackgroundColor")
         //verticalCollectionView.showsHorizontalScrollIndicator = false
-        verticalCollectionView.register(TitleCollectionViewCell.nib(), forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
+        //verticalCollectionView.register(TitleCollectionViewCell.nib(), forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
         verticalCollectionView.register(AccountsBallanceCollectionViewCell.nib(), forCellWithReuseIdentifier: AccountsBallanceCollectionViewCell.identifier)
+        verticalCollectionView.register(TitleHeaderCollectionReusableView.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderCollectionReusableView.identifier)
     }
     
     
@@ -107,11 +108,20 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if collectionView == horizontalCollectionView {
+            return 1
+        } else {
+            return 2
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == horizontalCollectionView {
             return 3
         } else {
-            return 2
+            return 1
         }
     }
     
@@ -122,21 +132,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell?.layer.masksToBounds = true
             cell?.setupCell(balance: viewModel.updateBalance(), cellNumber: indexPath.row)
             return cell ?? UICollectionViewCell()
-        } else{
-            switch indexPath.row {
-            case 0:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell
-                cell?.setupCell(title: "Contas Bancárias")
-                return cell ?? UICollectionViewCell()
-            case 1:
+        } else {
+//            switch indexPath.row {
+//            case 0:
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell
+//                cell?.setupCell(title: "Contas Bancárias")
+//                return cell ?? UICollectionViewCell()
+//            case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountsBallanceCollectionViewCell.identifier, for: indexPath) as? AccountsBallanceCollectionViewCell
                 cell?.setupCell(accountsList: bankAccountsList)
                 cell?.layer.cornerRadius = 10
                 cell?.layer.masksToBounds = true
                 return cell ?? UICollectionViewCell()
-            default:
-                return UICollectionViewCell()
-            }
+//            default:
+//                return UICollectionViewCell()
+//            }
             
         }
         
@@ -146,14 +156,31 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == horizontalCollectionView{
             return CGSize(width: 250, height: 150)
         } else {
-            switch indexPath.row {
+            switch indexPath.section {
             case 0:
-                return CGSize(width: view.frame.width - 30, height: 50)
-            case 1:
                 return CGSize(width: Int(view.frame.width) - 30, height: (60 + bankAccountsList.count * 60))
             default:
                 return CGSize(width: view.frame.width - 30, height: 50)
             }
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+            if collectionView == verticalCollectionView {
+                if kind == UICollectionView.elementKindSectionHeader {
+                    let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleHeaderCollectionReusableView.identifier, for: indexPath) as? TitleHeaderCollectionReusableView
+                    headerView?.setupCell(title: "Contas Bancarias")
+                    return headerView ?? UICollectionReusableView()
+                }
+            }
+            return UICollectionReusableView()
+        }
+
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+            if collectionView == verticalCollectionView {
+                return CGSize(width: collectionView.frame.width, height: 50) // Altura do cabeçalho da seção
+            }
+            return CGSize()
+        }
+    
 }

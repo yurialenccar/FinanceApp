@@ -1,18 +1,17 @@
 //
-//  TitleCollectionViewCell.swift
+//  TitleHeaderCollectionReusableView.swift
 //  FinanceApp_BackFront
 //
-//  Created by Gabriel Luz Romano on 10/05/23.
+//  Created by Gabriel Luz Romano on 14/05/23.
 //
 
 import UIKit
 
-class TitleCollectionViewCell: UICollectionViewCell {
+class TitleHeaderCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    
-    static let identifier:String = String(describing: TitleCollectionViewCell.self)
+    static let identifier:String = String(describing: TitleHeaderCollectionReusableView.self)
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
@@ -22,8 +21,9 @@ class TitleCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
-
+    
     func setupCell(title: String) {
         titleLabel.text = title
     }
+    
 }
