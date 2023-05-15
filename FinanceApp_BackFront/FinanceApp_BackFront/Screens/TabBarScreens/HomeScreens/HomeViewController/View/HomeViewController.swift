@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         viewModel.confirmAllAccountsIDs()
+        viewModel.confirmAllCardsIDs()
         setupHorizontalCollectionView()
         setupVerticalCollectionView()
 
@@ -66,13 +67,14 @@ class HomeViewController: UIViewController {
         if let layout = verticalCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
             layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom:0, right: 10)
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
         }
         verticalCollectionView.backgroundColor = UIColor(named: "BackgroundColor")
-        //verticalCollectionView.showsHorizontalScrollIndicator = false
-        //verticalCollectionView.register(TitleCollectionViewCell.nib(), forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
-        verticalCollectionView.register(AccountsBallanceCollectionViewCell.nib(), forCellWithReuseIdentifier: AccountsBallanceCollectionViewCell.identifier)
+        verticalCollectionView.showsVerticalScrollIndicator = false
         verticalCollectionView.register(TitleHeaderCollectionReusableView.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderCollectionReusableView.identifier)
+        verticalCollectionView.register(AccountsBallanceCollectionViewCell.nib(), forCellWithReuseIdentifier: AccountsBallanceCollectionViewCell.identifier)
+        verticalCollectionView.register(CardsBallanceCollectionViewCell.nib(), forCellWithReuseIdentifier: CardsBallanceCollectionViewCell.identifier)
+        verticalCollectionView.register(TransactionsCollectionViewCell.nib(), forCellWithReuseIdentifier: TransactionsCollectionViewCell.identifier)
     }
     
     
@@ -110,18 +112,29 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if collectionView == horizontalCollectionView {
+        switch collectionView {
+        case horizontalCollectionView:
             return 1
-        } else {
-            return 2
+        case verticalCollectionView:
+            return 3
+        default:
+            return 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == horizontalCollectionView {
+        switch collectionView {
+        case horizontalCollectionView:
             return 3
-        } else {
-            return 1
+        case verticalCollectionView:
+            if section <= 1 {
+                return 1
+            } else {
+                let maxVisibleTransactions = 4
+                return min(transactions.count, maxVisibleTransactions)
+            }
+        default:
+            return 0
         }
     }
     
@@ -133,23 +146,29 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell?.setupCell(balance: viewModel.updateBalance(), cellNumber: indexPath.row)
             return cell ?? UICollectionViewCell()
         } else {
-//            switch indexPath.row {
-//            case 0:
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell
-//                cell?.setupCell(title: "Contas Bancárias")
-//                return cell ?? UICollectionViewCell()
-//            case 1:
+            switch indexPath.section {
+            case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountsBallanceCollectionViewCell.identifier, for: indexPath) as? AccountsBallanceCollectionViewCell
                 cell?.setupCell(accountsList: bankAccountsList)
                 cell?.layer.cornerRadius = 10
                 cell?.layer.masksToBounds = true
                 return cell ?? UICollectionViewCell()
-//            default:
-//                return UICollectionViewCell()
-//            }
-            
+            case 1:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardsBallanceCollectionViewCell.identifier, for: indexPath) as? CardsBallanceCollectionViewCell
+                cell?.setupCell(cardsList: creditCardsList)
+                cell?.layer.cornerRadius = 10
+                cell?.layer.masksToBounds = true
+                return cell ?? UICollectionViewCell()
+            case 2:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionsCollectionViewCell.identifier, for: indexPath) as! TransactionsCollectionViewCell
+                cell.layer.cornerRadius = 10
+                cell.layer.masksToBounds = true
+                cell.setup(with: transactions[indexPath.row])
+                return cell
+            default:
+                return UICollectionViewCell()
+            }
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -159,6 +178,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             switch indexPath.section {
             case 0:
                 return CGSize(width: Int(view.frame.width) - 30, height: (60 + bankAccountsList.count * 60))
+            case 1:
+                return CGSize(width: Int(view.frame.width) - 30, height: (60 + creditCardsList.count * 60))
+            case 2:
+                return CGSize(width: Int(view.frame.width) - 30, height: 85)
             default:
                 return CGSize(width: view.frame.width - 30, height: 50)
             }
@@ -166,10 +189,22 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var title:String
+            
             if collectionView == verticalCollectionView {
                 if kind == UICollectionView.elementKindSectionHeader {
                     let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleHeaderCollectionReusableView.identifier, for: indexPath) as? TitleHeaderCollectionReusableView
-                    headerView?.setupCell(title: "Contas Bancarias")
+                    switch indexPath.section {
+                    case 0:
+                        title = "Contas Bancarias"
+                    case 1:
+                        title = "Cartões de Crédito"
+                    case 2:
+                        title = "Ultimas Transações"
+                    default:
+                        title = ""
+                    }
+                    headerView?.setupCell(title: title)
                     return headerView ?? UICollectionReusableView()
                 }
             }

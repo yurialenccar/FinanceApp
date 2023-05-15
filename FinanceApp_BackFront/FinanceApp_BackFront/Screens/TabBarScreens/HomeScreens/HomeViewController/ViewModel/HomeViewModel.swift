@@ -15,6 +15,12 @@ struct HomeViewModel {
         }
     }
     
+    public func confirmAllCardsIDs(){
+        for i in 0..<creditCardsList.count {
+            creditCardsList[i].setId("card\(formatTwoDigitNumber(num: i))")
+        }
+    }
+    
     public func updateBalance() -> BalanceValues {
         
         var balance : BalanceValues = BalanceValues(total: 0.0, incomesTotal: 0.0, expensesTotal: 0.0)

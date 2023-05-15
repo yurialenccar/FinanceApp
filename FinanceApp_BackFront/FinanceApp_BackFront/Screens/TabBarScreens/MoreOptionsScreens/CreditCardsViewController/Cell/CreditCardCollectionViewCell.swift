@@ -11,7 +11,7 @@ class CreditCardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var invoiceTextLabel: UILabel!
-    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var invoiceLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var bankBackground: UIView!
     @IBOutlet weak var editImage: UIImageView!
@@ -30,11 +30,11 @@ class CreditCardCollectionViewCell: UICollectionViewCell {
     
     func setupCell(card:CreditCard){
         nameLabel.text = card.desc
-        balanceLabel.text = formatMoney(value: card.invoiceTotal)
+        invoiceLabel.text = formatMoney(value: card.invoiceTotal)
         if card.invoiceTotal < 0 {
-            balanceLabel.textColor = UIColor(named: "RedGeneralExpenses")
+            invoiceLabel.textColor = UIColor(named: "RedGeneralExpenses")
         } else{
-            balanceLabel.textColor = UIColor(named: "GreyInformations")
+            invoiceLabel.textColor = UIColor(named: "GreyInformations")
         }
         
         bankLabel.text = bankProperties[card.bank]?.logoTextLabel

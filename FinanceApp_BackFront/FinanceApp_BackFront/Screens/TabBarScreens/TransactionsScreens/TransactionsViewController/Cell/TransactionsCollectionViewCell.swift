@@ -30,7 +30,7 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
     
     func setup(with transactions:Transactions){
         descLabel.text = transactions.desc
-        valueLabel.text = "R$ \(String(format: "%.2f", transactions.amount))"
+        valueLabel.text = formatMoney(value: transactions.amount)
         dateLabel.text = transactions.date
         
         switch transactions.type {

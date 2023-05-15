@@ -64,6 +64,10 @@
 		A18299C72A01AC7F00E72936 /* ConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18299C62A01AC7F00E72936 /* ConfigType.swift */; };
 		A189919F2A117D0900D47427 /* TitleHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189919D2A117D0900D47427 /* TitleHeaderCollectionReusableView.swift */; };
 		A18991A02A117D0900D47427 /* TitleHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A189919E2A117D0900D47427 /* TitleHeaderCollectionReusableView.xib */; };
+		A18991A72A11DC9800D47427 /* CardsBallanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18991A22A11DC9800D47427 /* CardsBallanceCollectionViewCell.xib */; };
+		A18991A82A11DC9800D47427 /* CardsBallanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18991A32A11DC9800D47427 /* CardsBallanceCollectionViewCell.swift */; };
+		A18991A92A11DC9800D47427 /* CardsResumeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18991A52A11DC9800D47427 /* CardsResumeTableViewCell.swift */; };
+		A18991AA2A11DC9800D47427 /* CardsResumeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18991A62A11DC9800D47427 /* CardsResumeTableViewCell.xib */; };
 		A189A39929F58A4700C22A6D /* BankProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189A39829F58A4700C22A6D /* BankProperties.swift */; };
 		A19F850929F963C40044F7DE /* GoalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F850729F963C40044F7DE /* GoalsCollectionViewCell.swift */; };
 		A19F850A29F963C40044F7DE /* GoalsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */; };
@@ -186,6 +190,10 @@
 		A18299C62A01AC7F00E72936 /* ConfigType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigType.swift; sourceTree = "<group>"; };
 		A189919D2A117D0900D47427 /* TitleHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		A189919E2A117D0900D47427 /* TitleHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		A18991A22A11DC9800D47427 /* CardsBallanceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsBallanceCollectionViewCell.xib; sourceTree = "<group>"; };
+		A18991A32A11DC9800D47427 /* CardsBallanceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsBallanceCollectionViewCell.swift; sourceTree = "<group>"; };
+		A18991A52A11DC9800D47427 /* CardsResumeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsResumeTableViewCell.swift; sourceTree = "<group>"; };
+		A18991A62A11DC9800D47427 /* CardsResumeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsResumeTableViewCell.xib; sourceTree = "<group>"; };
 		A189A39829F58A4700C22A6D /* BankProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankProperties.swift; sourceTree = "<group>"; };
 		A19F850729F963C40044F7DE /* GoalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -753,6 +761,25 @@
 			path = TitleHeaderCollectionReusableView;
 			sourceTree = "<group>";
 		};
+		A18991A12A11DC9800D47427 /* CardsBallanceCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A18991A42A11DC9800D47427 /* tableViewCell */,
+				A18991A22A11DC9800D47427 /* CardsBallanceCollectionViewCell.xib */,
+				A18991A32A11DC9800D47427 /* CardsBallanceCollectionViewCell.swift */,
+			);
+			path = CardsBallanceCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		A18991A42A11DC9800D47427 /* tableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A18991A52A11DC9800D47427 /* CardsResumeTableViewCell.swift */,
+				A18991A62A11DC9800D47427 /* CardsResumeTableViewCell.xib */,
+			);
+			path = tableViewCell;
+			sourceTree = "<group>";
+		};
 		A19F850B29F96E2A0044F7DE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -839,6 +866,7 @@
 				A189919C2A117CB000D47427 /* TitleHeaderCollectionReusableView */,
 				A1C9D23B2A0C4BD8008CAFAD /* resumeBalanceCollectionViewCell */,
 				A1C9D2362A0C3FF8008CAFAD /* AccountsBallanceCollectionViewCell */,
+				A18991A12A11DC9800D47427 /* CardsBallanceCollectionViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1162,6 +1190,7 @@
 				A140934A29E73BCC0037662B /* RegisterCardExpenseViewController.storyboard in Resources */,
 				A17DC6832A0989B900D12C3C /* TabBarController.storyboard in Resources */,
 				A101916D29FAB3FA00776A67 /* AccountCollectionViewCell.xib in Resources */,
+				A18991AA2A11DC9800D47427 /* CardsResumeTableViewCell.xib in Resources */,
 				A101917629FABE5700776A67 /* NewItemButtonCell.xib in Resources */,
 				A1C9D23A2A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.xib in Resources */,
 				A1A92BC029F812B600E14EE8 /* CreditCardModalCell.xib in Resources */,
@@ -1173,6 +1202,7 @@
 				A1A92BB429F8122A00E14EE8 /* CreditCardModalViewController.storyboard in Resources */,
 				A17DC6922A09AE0000D12C3C /* CreditCardCollectionViewCell.xib in Resources */,
 				A1C9EFEA29E60CF50029B69F /* RegisterViewController.storyboard in Resources */,
+				A18991A72A11DC9800D47427 /* CardsBallanceCollectionViewCell.xib in Resources */,
 				A1C9EFE329E60A7D0029B69F /* SplashViewController.storyboard in Resources */,
 				E3E9089329BFAF2A00B34864 /* CategoriesGraphViewController.storyboard in Resources */,
 				A1C9D23F2A0C4C4C008CAFAD /* resumeBalanceCollectionViewCell.xib in Resources */,
@@ -1256,6 +1286,7 @@
 				A18299C72A01AC7F00E72936 /* ConfigType.swift in Sources */,
 				A1F4210829F62379005C346B /* CategoriesModalViewModel.swift in Sources */,
 				E35D086129BDB0310098F0B5 /* HomeViewController.swift in Sources */,
+				A18991A82A11DC9800D47427 /* CardsBallanceCollectionViewCell.swift in Sources */,
 				A16688EB29F08CF600568217 /* BalanceValues.swift in Sources */,
 				A12329F229FB0F2C0053AC38 /* BankAccountsViewController.swift in Sources */,
 				E35D085429BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld in Sources */,
@@ -1273,6 +1304,7 @@
 				A1E107C229E4F646005A3F4F /* ProfileViewController.swift in Sources */,
 				A17C89DE2A09C76700B5DB2F /* BanksCell.swift in Sources */,
 				A13E249929F98BDB00E9EF7A /* EditGoalViewModel.swift in Sources */,
+				A18991A92A11DC9800D47427 /* CardsResumeTableViewCell.swift in Sources */,
 				A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */,
 				A1C9D2392A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.swift in Sources */,
 				A11BDA8629F4CFB6006CF6B2 /* AccountsTableViewCell.swift in Sources */,
