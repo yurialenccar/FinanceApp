@@ -20,12 +20,12 @@ class CategoriesGraphViewController: UIViewController {
         configureChartLegend()
         configureChartDescription()
         configureChartConstraints()
-        updateChartData(for: "Janeiro")
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
+        updateChartData(for: "Janeiro")
     }
     
     // MARK: - Private Methods

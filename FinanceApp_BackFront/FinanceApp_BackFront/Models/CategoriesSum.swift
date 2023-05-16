@@ -13,14 +13,14 @@ struct CategoriesSum {
     var percent:Double
 }
 
-func sumExpensesByCategory()->[CategoriesSum]{
+func sumExpensesByCategory() -> [CategoriesSum] {
     
-    var list=[String:Double]()
-    var totalAmount:Double=0.0
+    var list = [String:Double] ()
+    var totalAmount:Double = 0.0
     
     for transaction in transactions where transaction.type == .expense{
 
-        let category:String = expenseCategories[transaction.categoryIndex].name
+        let category: String = expenseCategories[transaction.categoryIndex].name
         
         if (list[category] != nil){ //Sum up the value if there already is an item with this category in dictionary
             
@@ -33,9 +33,9 @@ func sumExpensesByCategory()->[CategoriesSum]{
         
     }
     
-    var result:[CategoriesSum]=[]
+    var result: [CategoriesSum] = []
     for category in list {
-        result.append(CategoriesSum(category: category.key, amount: category.value, percent: (100*category.value)/totalAmount))
+        result.append(CategoriesSum(category: category.key, amount: abs(category.value), percent: (100*category.value)/totalAmount))
     }
     
     return result

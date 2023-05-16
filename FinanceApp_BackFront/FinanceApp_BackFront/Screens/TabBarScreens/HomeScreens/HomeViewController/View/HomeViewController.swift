@@ -81,6 +81,7 @@ class HomeViewController: UIViewController {
         verticalCollectionView.register(TitleHeaderCollectionReusableView.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderCollectionReusableView.identifier)
         verticalCollectionView.register(AccountsBallanceCollectionViewCell.nib(), forCellWithReuseIdentifier: AccountsBallanceCollectionViewCell.identifier)
         verticalCollectionView.register(CardsBallanceCollectionViewCell.nib(), forCellWithReuseIdentifier: CardsBallanceCollectionViewCell.identifier)
+        verticalCollectionView.register(CategoriesGraphCollectionViewCell.nib(), forCellWithReuseIdentifier: CategoriesGraphCollectionViewCell.identifier)
         verticalCollectionView.register(TransactionsCollectionViewCell.nib(), forCellWithReuseIdentifier: TransactionsCollectionViewCell.identifier)
     }
 }
@@ -92,7 +93,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case horizontalCollectionView:
             return 1
         case verticalCollectionView:
-            return 3
+            return 4
         default:
             return 0
         }
@@ -103,7 +104,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case horizontalCollectionView:
             return 3
         case verticalCollectionView:
-            if section <= 1 {
+            if section <= 2 {
                 return 1
             } else {
                 let maxVisibleTransactions = 4
@@ -148,6 +149,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 cell?.layer.masksToBounds = true
                 return cell ?? UICollectionViewCell()
             case 2:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesGraphCollectionViewCell.identifier, for: indexPath) as? CategoriesGraphCollectionViewCell
+                //cell?.setupCell(cardsList: creditCardsList, hideInformations: viewModel.informationsAreHidden)
+                cell?.layer.cornerRadius = 10
+                cell?.layer.masksToBounds = true
+                return cell ?? UICollectionViewCell()
+            case 3:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionsCollectionViewCell.identifier, for: indexPath) as! TransactionsCollectionViewCell
                 cell.layer.cornerRadius = 10
                 cell.layer.masksToBounds = true
@@ -169,6 +176,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             case 1:
                 return CGSize(width: Int(view.frame.width) - 30, height: (60 + creditCardsList.count * 60))
             case 2:
+                return CGSize(width: Int(view.frame.width) - 30, height: 200)
+            case 3:
                 return CGSize(width: Int(view.frame.width) - 30, height: 85)
             default:
                 return CGSize(width: view.frame.width - 30, height: 50)
@@ -188,6 +197,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     case 1:
                         title = "Cartões de Crédito"
                     case 2:
+                        title = "Gastos por Categoria"
+                    case 3:
                         title = "Ultimas Transações"
                     default:
                         title = ""
@@ -205,5 +216,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             return CGSize()
         }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+        
+        if indexPath.section == 2 {
+            let vc: CategoriesGraphViewController? = UIStoryboard(name: CategoriesGraphViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: CategoriesGraphViewController.identifier) as? CategoriesGraphViewController
+            navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+        }
+    }
     
 }
