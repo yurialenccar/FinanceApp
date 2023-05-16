@@ -40,7 +40,7 @@ struct BankAccount {
             transactionType = .expense
         }
         
-        transactions.append(Transactions(desc: "Ajuste de saldo na Conta", amount: valueNewTransaction, categoryIndex: 0, date: formatDate(date: Date()), type: transactionType, accountId: id, obs: ""))
+        transactions.append(Transactions(desc: "Ajuste de saldo na Conta", amount: valueNewTransaction, categoryIndex: 0, date: Date().toString(format: "dd/MM/yyyy"), type: transactionType, accountId: id, obs: ""))
     }
     
     public func getId() -> String {

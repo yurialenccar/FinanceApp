@@ -33,7 +33,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFl-IL-L4h">
                                         <rect key="frame" x="20" y="170" width="353" height="50"/>
-                                        <color key="backgroundColor" red="0.1275966167" green="0.32940429449999997" blue="0.35931748149999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.12941176470588234" green="0.32941176470588235" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="F76-s6-5Mv"/>
                                         </constraints>

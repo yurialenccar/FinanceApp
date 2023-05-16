@@ -66,11 +66,11 @@ class EditBankAccountsViewModel{
         
         let existingIds = Set(bankAccountsList.map { $0.getId() })
         
-        while existingIds.contains("card\(formatTwoDigitNumber(num: num))") {
+        while existingIds.contains("card\(num.toStringTwoDigits())") {
             num += 1
         }
         
-        return "account\(formatTwoDigitNumber(num: num))"
+        return "account\(num.toStringTwoDigits())"
     }
     
     public func getBankListCount() -> Int {

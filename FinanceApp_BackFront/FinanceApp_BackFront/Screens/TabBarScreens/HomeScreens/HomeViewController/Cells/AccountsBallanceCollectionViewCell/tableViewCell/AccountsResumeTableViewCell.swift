@@ -32,7 +32,7 @@ class AccountsResumeTableViewCell: UITableViewCell {
             balanceLabel.text =  "---"
             balanceLabel.textColor = .black
         } else {
-            balanceLabel.text = formatMoney(value: bankAccount.balance)
+            balanceLabel.text = bankAccount.balance.toStringMoney()
             if bankAccount.balance > 0 {
                 balanceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
             } else if bankAccount.balance < 0 {

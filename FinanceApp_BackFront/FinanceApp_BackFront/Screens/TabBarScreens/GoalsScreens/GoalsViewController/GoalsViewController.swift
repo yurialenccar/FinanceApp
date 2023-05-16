@@ -35,19 +35,12 @@ class GoalsViewController: UIViewController {
         }
         collectionView.register(GoalsCollectionViewCell.nib(), forCellWithReuseIdentifier: GoalsCollectionViewCell.identifier)
         collectionView.register(createGoalButtonCell.nib(), forCellWithReuseIdentifier: createGoalButtonCell.identifier)
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader")
-
-        
     }
 
 
 }
 
 extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateGoalButtonCellDelegate, GoalSavedDelegate {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return goalsList.count + 1
@@ -69,32 +62,6 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width - 30, height: 124)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath)
-            let titleLabel = UILabel(frame: headerView.bounds)
-            titleLabel.textAlignment = .left
-            titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
-            titleLabel.textColor = UIColor.black
-            
-            
-            if indexPath.section == 0 {
-                titleLabel.text = "Seção 1" // Título da primeira seção
-            } else if indexPath.section == 1 {
-                titleLabel.text = "Seção 2" // Título da segunda seção
-            }
-            
-            headerView.addSubview(titleLabel)
-            return headerView
-        }
-        
-        return UICollectionReusableView()
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 30) // Altura do cabeçalho da seção
     }
     
     func didTappedNewGoalButton() {

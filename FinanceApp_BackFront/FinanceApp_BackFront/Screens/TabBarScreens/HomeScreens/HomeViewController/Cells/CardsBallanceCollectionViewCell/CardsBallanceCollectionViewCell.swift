@@ -43,7 +43,7 @@ class CardsBallanceCollectionViewCell: UICollectionViewCell {
             totalInvoiceValueLabel.textColor = .black
         } else {
             let total:Double = cardsList.reduce(0) { $0 + $1.invoiceTotal}
-            totalInvoiceValueLabel.text = formatMoney(value: total)
+            totalInvoiceValueLabel.text = total.toStringMoney()
             if total > 0 {
                 totalInvoiceValueLabel.textColor = UIColor(named: "GreenGeneralIncomes")
             } else if total < 0 {

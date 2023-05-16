@@ -30,7 +30,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
 
     func setupCell(account:BankAccount){
         nameLabel.text = account.desc
-        balanceLabel.text = formatMoney(value: account.balance)
+        balanceLabel.text = account.balance.toStringMoney()
         if account.balance > 0 {
             balanceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
         } else if account.balance < 0{

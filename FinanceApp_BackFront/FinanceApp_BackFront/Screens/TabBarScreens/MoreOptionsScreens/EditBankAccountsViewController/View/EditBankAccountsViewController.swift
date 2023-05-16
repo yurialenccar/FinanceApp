@@ -23,7 +23,6 @@ class EditBankAccountsViewController: UIViewController {
     
     static let identifier:String = String(describing: EditBankAccountsViewController.self)
     var viewModel:EditBankAccountsViewModel
-    var alert=Alert()
     var selectedBank:Banks = .bancoDoBrasil
     
     init?(coder:NSCoder, indexAccount:Int, configType:ConfigType){
@@ -38,7 +37,6 @@ class EditBankAccountsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        alert.viewController = self
         setupTableView()
     }
     
@@ -54,7 +52,7 @@ class EditBankAccountsViewController: UIViewController {
     
     @IBAction func tappedSaveButton(_ sender: UIButton) {
         if stringIsEmpty(text: nameTextField.text ?? ""){
-            alert.showAlertWithCancelOption(title: "Atenção", message: "O campo de descrição está vazio, deseja continuar assim mesmo?",completion: {
+            showAlertWithCancelOption(title: "Atenção", message: "O campo de descrição está vazio, deseja continuar assim mesmo?",completion: {
                 self.saveValues()
             })
         } else{

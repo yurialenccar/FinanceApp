@@ -20,19 +20,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        nameTextfield.keyboardType = .default
-        emailTextfield.keyboardType = .emailAddress
-        passwordTextfield.keyboardType = .default
-        passwordTextfield.isSecureTextEntry = true
-        passwordRepeatTextfield.keyboardType = .default
-        passwordRepeatTextfield.isSecureTextEntry = true
-        
-        nameTextfield.delegate = self
-        emailTextfield.delegate = self
-        passwordTextfield.delegate = self
-        passwordRepeatTextfield.delegate = self
-        
+        setupTextFields()
     }
    
     
@@ -49,116 +37,140 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func tappedCreateButton(_ sender: UIButton) {
-        
+        view.endEditing(true)
+    
         let email = emailTextfield.text ?? ""
         let senha = passwordTextfield.text ?? ""
         
-        if !validarEmail(email: email) {
-             let alert = UIAlertController(title: "Email inválido", message: "Por favor, digite um email válido", preferredStyle: .alert)
-             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-             alert.addAction(okAction)
-             present(alert, animated: true, completion: nil)
-             return
-         }
+        if !checkTextFields() {
+            showSimpleAlert(title: "Atenção", message: "Um ou mais campos não foram preenchidos!")
+            return
+        }
+        
+        if !checkEmail(email: email) {
+            showSimpleAlert(title: "Email inválido", message: "Por favor, digite um email válido")
+            return
+        }
          
-         if !ValidarPassword(password: senha) {
-             let alert = UIAlertController(title: "Senha inválida", message: "A senha deve ter pelo menos 8 caracteres", preferredStyle: .alert)
-             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-             alert.addAction(okAction)
-             present(alert, animated: true, completion: nil)
-             return
-         }
-         
-        if validadeTextFiel() == true {
-            
-            let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
-            if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
-                present(tbc, animated: true)
-            }
-        } else {
-            showAlert(title: "Algum dos campos não foram preenchido!")
+        if !checkPassword(password: senha) {
+             showSimpleAlert(title: "Senha inválida", message: "A senha deve ter pelo menos 8 caracteres")
+            return
         }
         
-    }
-    
-    func showAlert(title:String){
-        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertController.addAction(okButton)
-        self.present(alertController, animated: true, completion: nil)
-        
-    }
-    
-    
-    
-    func validadeTextFiel() -> Bool {
-        var statusOk = true
-        if nameTextfield.text == "" {
-            statusOk = false
-            nameTextfield.layer.borderWidth = 1
-            nameTextfield.layer.borderColor = UIColor.red.cgColor
-        }
-    
-        if emailTextfield.text == "" {
-            statusOk =  false
-            emailTextfield.layer.borderWidth = 1
-            emailTextfield.layer.borderColor = UIColor.red.cgColor
-        }
-
-        if passwordTextfield.text == "" {
-            statusOk =  false
-            passwordTextfield.layer.borderWidth = 1
-            passwordTextfield.layer.borderColor = UIColor.red.cgColor
+        if !checkEqualPasswords() {
+            showSimpleAlert(title: "Senhas não compatíveis", message: "A senha e sua cofirmação não coincidem")
+            return
         }
         
-        if passwordRepeatTextfield.text == "" {
-            statusOk =  false
-            passwordRepeatTextfield.layer.borderWidth = 1
-            passwordRepeatTextfield.layer.borderColor = UIColor.red.cgColor
+        let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
+        if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
+            present(tbc, animated: true)
         }
-        if passwordTextfield.text != passwordRepeatTextfield.text {
-            statusOk = false
-            passwordTextfield.layer.borderWidth = 1
-            passwordTextfield.layer.borderColor = UIColor.red.cgColor
-            passwordRepeatTextfield.layer.borderWidth = 1
-            passwordRepeatTextfield.layer.borderColor = UIColor.red.cgColor
-            
-            let alertController = UIAlertController(title: "Senhas não compatíveis", message: "A senha e a cofirmação da senha devem ser iguias", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alertController.addAction(okButton)
-            self.present(alertController, animated: true, completion: nil)
-            }
-       
-        if statusOk == true {
-            return true
-        } else {
-            return false
-        }
+        
+        
     }
-    
 
     @IBAction func tappedLoginButton(_ sender: UIButton) {
-    
         let vc: LoginViewController? = UIStoryboard(name: LoginViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
+    private func setupTextFields() {
+        nameTextfield.delegate = self
+        nameTextfield.keyboardType = .default
+        nameTextfield.layer.cornerRadius = 5
+        
+        emailTextfield.delegate = self
+        emailTextfield.keyboardType = .emailAddress
+        emailTextfield.layer.cornerRadius = 5
+        
+        passwordTextfield.delegate = self
+        passwordTextfield.keyboardType = .default
+        passwordTextfield.layer.cornerRadius = 5
+        passwordTextfield.isSecureTextEntry = true
+        
+        passwordRepeatTextfield.delegate = self
+        passwordRepeatTextfield.keyboardType = .default
+        passwordRepeatTextfield.layer.cornerRadius = 5
+        passwordRepeatTextfield.isSecureTextEntry = true
+    }
+    
+    private func checkEmail(email : String) -> Bool{
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        if !emailPredicate.evaluate(with: email) {
+            setErrorInTextField(textField: emailTextfield)
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    private func checkPassword(password: String) -> Bool {
+        if password.count < 8 {
+            setErrorInTextField(textField: passwordTextfield)
+            setErrorInTextField(textField: passwordRepeatTextfield)
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    private func checkTextFields() -> Bool {
+        var okStatus: Bool = true
+        
+        if !checkTextFieldEmpty(nameTextfield) {
+            okStatus = false
+        }
+        
+        if !checkTextFieldEmpty(emailTextfield) {
+            okStatus = false
+        }
+        
+        if !checkTextFieldEmpty(passwordTextfield) {
+            okStatus = false
+        }
+        
+        if !checkTextFieldEmpty(passwordRepeatTextfield) {
+            okStatus = false
+        }
+        
+        return okStatus
+    }
 
+    private func checkTextFieldEmpty(_ textField: UITextField) -> Bool {
+        if textField.text == "" {
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.red.cgColor
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    private func checkEqualPasswords() -> Bool {
+        if passwordTextfield.text != passwordRepeatTextfield.text {
+            setErrorInTextField(textField: passwordTextfield)
+            setErrorInTextField(textField: passwordRepeatTextfield)
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    private func setErrorInTextField(textField:UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.red.cgColor
+    }
 }
 
 extension RegisterViewController : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print(#function)
         textField.layer.borderColor = UIColor.blue.cgColor
         textField.layer.borderWidth = 1
     }
     
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-
-    }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(#function)
-       
         if textField.text?.isEmpty ?? true {
             textField.layer.borderWidth = 1
             textField.layer.borderColor = UIColor.red.cgColor
@@ -168,22 +180,11 @@ extension RegisterViewController : UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(#function)
         textField.resignFirstResponder()
         return true
         
     }
     
-    func validarEmail(email : String) -> Bool{
-        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        return emailPredicate.evaluate(with: email)
-    }
-    
-    func ValidarPassword(password: String) -> Bool {
-      
-        return password.count >= 8
-    }
 
     
 }

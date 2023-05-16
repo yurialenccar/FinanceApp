@@ -59,11 +59,11 @@ class EditCreditCardsViewModel{
         
         let existingIds = Set(creditCardsList.map { $0.getId() })
         
-        while existingIds.contains("card\(formatTwoDigitNumber(num: num))") {
+        while existingIds.contains("card\(num.toStringTwoDigits())") {
             num += 1
         }
         
-        return "card\(formatTwoDigitNumber(num: num))"
+        return "card\(num.toStringTwoDigits())"
     }
     
     

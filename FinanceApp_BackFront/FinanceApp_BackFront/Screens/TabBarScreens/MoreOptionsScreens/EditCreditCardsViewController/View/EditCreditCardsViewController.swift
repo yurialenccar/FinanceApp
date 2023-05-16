@@ -30,7 +30,6 @@ class EditCreditCardsViewController: UIViewController {
     
     static let identifier:String = String(describing: EditCreditCardsViewController.self)
     var viewModel: EditCreditCardsViewModel
-    var alert=Alert()
     var selectedBank:Banks = .bancoDoBrasil
     var dayPickerOption: CreditCardDayPickerOptions = .nonSelected
     //var creditCard:CreditCard
@@ -47,7 +46,6 @@ class EditCreditCardsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        alert.viewController = self
         setupTableView()
         setupPickerView()
     }
@@ -75,7 +73,7 @@ class EditCreditCardsViewController: UIViewController {
     
     @IBAction func tappedSaveButton(_ sender: UIButton) {
         if stringIsEmpty(text: nameTextField.text ?? ""){
-            alert.showAlertWithCancelOption(title: "Atenção", message: "O campo de descrição está vazio, deseja continuar assim mesmo?",completion: {
+            showAlertWithCancelOption(title: "Atenção", message: "O campo de descrição está vazio, deseja continuar assim mesmo?",completion: {
                 self.saveValues()
             })
         } else{

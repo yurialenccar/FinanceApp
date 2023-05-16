@@ -38,7 +38,7 @@ class resumeBalanceCollectionViewCell: UICollectionViewCell {
         if balance.hideInformations == true {
             valueLabel.text = "•••••"
         } else {
-            valueLabel.text = String(formatMoney(value: balance.balance))
+            valueLabel.text = balance.balance.toStringMoney()
         }
         backgroundColor = UIColor(named: balance.backgroundColorName)
         dateLabel.text = balance.lastTransaction

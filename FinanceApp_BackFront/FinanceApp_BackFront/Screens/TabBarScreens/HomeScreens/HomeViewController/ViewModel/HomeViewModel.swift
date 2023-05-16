@@ -13,13 +13,13 @@ struct HomeViewModel {
     
     public func confirmAllAccountsIDs(){
         for i in 0..<bankAccountsList.count {
-            bankAccountsList[i].setId("account\(formatTwoDigitNumber(num: i))")
+            bankAccountsList[i].setId("account\(i.toStringTwoDigits())")
         }
     }
     
     public func confirmAllCardsIDs(){
         for i in 0..<creditCardsList.count {
-            creditCardsList[i].setId("card\(formatTwoDigitNumber(num: i))")
+            creditCardsList[i].setId("card\(i.toStringTwoDigits())")
         }
     }
     

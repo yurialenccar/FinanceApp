@@ -32,7 +32,7 @@ class CardsResumeTableViewCell: UITableViewCell {
             invoiceLabel.text = "---"
             invoiceLabel.textColor = .black
         } else {
-            invoiceLabel.text = formatMoney(value: creditCard.invoiceTotal)
+            invoiceLabel.text = creditCard.invoiceTotal.toStringMoney()
             if creditCard.invoiceTotal > 0 {
                 invoiceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
             } else if creditCard.invoiceTotal < 0 {

@@ -8,18 +8,18 @@
 import Foundation
 import UIKit
 
-class Alert{
-    var viewController:UIViewController?
-    
-    init(viewController:UIViewController? = nil){
-        self.viewController = viewController
-    }
+extension UIViewController {
+//    var viewController:UIViewController?
+//
+//    init(viewController:UIViewController? = nil){
+//        self.viewController = viewController
+//    }
     
     public func showSimpleAlert(title:String, message: String){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(okButton)
-        self.viewController?.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
         
     }
     
@@ -31,7 +31,7 @@ class Alert{
         alertController.addAction(confirmAction)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
-        self.viewController?.present(alertController, animated: true)
+        self.present(alertController, animated: true)
     }
 }
 

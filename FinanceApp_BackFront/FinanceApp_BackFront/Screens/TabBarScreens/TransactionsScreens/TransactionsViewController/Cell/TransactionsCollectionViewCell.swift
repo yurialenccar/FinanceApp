@@ -30,20 +30,22 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
     
     func setup(with transactions:Transactions){
         descLabel.text = transactions.desc
-        valueLabel.text = formatMoney(value: transactions.amount)
+        valueLabel.text = transactions.amount.toStringMoney()
         dateLabel.text = transactions.date
         
         switch transactions.type {
         case .expense:
             categoryLabel.text = expenseCategories[transactions.categoryIndex].name
-            categoryImage.image = UIImage(imageLiteralResourceName: expenseCategories[transactions.categoryIndex].imageName)
+            categoryImage.image = UIImage(imageLiteralResourceName: expenseCategories[transactions.categoryIndex].imageName).withRenderingMode(.alwaysTemplate)
             categoryPanelView.backgroundColor = expenseCategories[transactions.categoryIndex].color
             valueLabel.textColor = UIColor(named: "RedGeneralExpenses")
         case .income:
             categoryLabel.text = incomeCategories[transactions.categoryIndex].name
-            categoryImage.image = UIImage(imageLiteralResourceName: incomeCategories[transactions.categoryIndex].imageName)
+            categoryImage.image = UIImage(imageLiteralResourceName: incomeCategories[transactions.categoryIndex].imageName).withRenderingMode(.alwaysTemplate)
             categoryPanelView.backgroundColor = incomeCategories[transactions.categoryIndex].color
             valueLabel.textColor = UIColor(named: "GreenGeneralIncomes")
         }
+        
+        categoryImage.tintColor = .white
     }
 }

@@ -112,11 +112,11 @@
             </objects>
             <point key="canvasLocation" x="2626" y="524"/>
         </scene>
-        <!--Add-->
+        <!--Adicionar-->
         <scene sceneID="Va3-vD-vgD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Q1Y-40-e1M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" id="Rpe-cT-T6z">
+                    <tabBarItem key="tabBarItem" title="Adicionar" id="Rpe-cT-T6z">
                         <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                     </tabBarItem>

@@ -12,7 +12,7 @@ class CreditCardsViewModel {
     
     public func confirmAllCardsIDs(){
         for i in 0..<creditCardsList.count {
-            creditCardsList[i].setId("card\(formatTwoDigitNumber(num: i))")
+            creditCardsList[i].setId("card\(i.toStringTwoDigits())")
         }
     }
     

@@ -32,7 +32,7 @@ class AddAccountTransactionsViewModel{
 
         newTransaction.categoryIndex = category
         newTransaction.accountId = accountId
-        newTransaction.date = formatDate(date: dataSelecionada)
+        newTransaction.date = dataSelecionada.toString(format: "dd/MM/yyyy")
         newTransaction.type = transactionType
         newTransaction.obs = Obs
         
@@ -127,15 +127,15 @@ class AddAccountTransactionsViewModel{
         
         dataSelecionada = date
         
-        switch formatDate(date: dataSelecionada){
-        case formatDate(date: today):
+        switch dataSelecionada.toString(format: "dd/MM/yyyy") {
+        case today.toString(format: "dd/MM/yyyy"):
             return "Hoje"
-        case formatDate(date: yesterday):
+        case yesterday.toString(format: "dd/MM/yyyy"):
             return "Ontem"
-        case formatDate(date: tomorrow):
+        case tomorrow.toString(format: "dd/MM/yyyy"):
             return "Amanhã"
         default:
-            return formatDate(date: date)
+            return date.toString(format: "dd/MM/yyyy")
         }
     }
     
