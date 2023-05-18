@@ -11,7 +11,9 @@ import Charts
 
 class HomeViewController: UIViewController {
     
-    
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var helloTextLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var hideInformationsButton: UIButton!
     @IBOutlet weak var horizontalCollectionView: UICollectionView!
     @IBOutlet weak var verticalCollectionView: UICollectionView!
@@ -25,9 +27,10 @@ class HomeViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         viewModel.confirmAllAccountsIDs()
         viewModel.confirmAllCardsIDs()
+        setupUIComponents()
         setupHorizontalCollectionView()
         setupVerticalCollectionView()
-
+        setupObserver()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +55,11 @@ class HomeViewController: UIViewController {
         }
         horizontalCollectionView.reloadData()
         verticalCollectionView.reloadData()
+    }
+    
+    func setupUIComponents(){
+        profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
+        profileImage.clipsToBounds = true
     }
     
     func setupHorizontalCollectionView() {
@@ -82,6 +90,14 @@ class HomeViewController: UIViewController {
         verticalCollectionView.register(CardsBallanceCollectionViewCell.nib(), forCellWithReuseIdentifier: CardsBallanceCollectionViewCell.identifier)
         verticalCollectionView.register(CategoriesGraphCollectionViewCell.nib(), forCellWithReuseIdentifier: CategoriesGraphCollectionViewCell.identifier)
         verticalCollectionView.register(TransactionsCollectionViewCell.nib(), forCellWithReuseIdentifier: TransactionsCollectionViewCell.identifier)
+    }
+    
+    func setupObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProfileImage), name: Notification.Name(rawValue: "profileImageUpdated"), object: nil)
+    }
+    
+    @objc func updateProfileImage(notification:NSNotification) {
+        profileImage.image = notification.object as? UIImage
     }
 }
 

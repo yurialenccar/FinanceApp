@@ -111,8 +111,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="helloTextLabel" destination="Hwk-nB-YRV" id="hWz-Az-D3c"/>
                         <outlet property="hideInformationsButton" destination="bsr-kD-aZE" id="Unz-cj-ALb"/>
                         <outlet property="horizontalCollectionView" destination="uc8-Sy-Jiv" id="Dgm-Fe-Be5"/>
+                        <outlet property="nameLabel" destination="ZgU-BM-Q9s" id="mgo-Nu-KGS"/>
+                        <outlet property="profileImage" destination="bSx-uW-gGX" id="S1W-jO-069"/>
                         <outlet property="verticalCollectionView" destination="Swt-5t-jaO" id="z4i-xs-LMT"/>
                     </connections>
                 </viewController>

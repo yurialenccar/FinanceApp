@@ -32,6 +32,9 @@ class ProfileViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func tappedSaveButton(_ sender: UIButton) {
+    }
+    
     func setupUIComponents(){
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.clipsToBounds = true
@@ -50,6 +53,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             profileImage.image = image
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "profileImageUpdated"), object: image)
         }
     }
     
