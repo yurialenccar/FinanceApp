@@ -33,7 +33,6 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-//        updateLabels()
         viewModel.updateBalanceValues()
         horizontalCollectionView.reloadData()
         setupVerticalCollectionView()
@@ -55,7 +54,7 @@ class HomeViewController: UIViewController {
         verticalCollectionView.reloadData()
     }
     
-    func setupHorizontalCollectionView(){
+    func setupHorizontalCollectionView() {
         horizontalCollectionView.delegate = self
         horizontalCollectionView.dataSource = self
         if let layout = horizontalCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
