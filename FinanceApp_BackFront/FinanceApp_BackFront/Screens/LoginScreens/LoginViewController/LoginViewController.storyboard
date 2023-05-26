@@ -23,7 +23,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfL-By-VFU">
                                 <rect key="frame" x="0.0" y="552" width="393" height="300"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mp1-gB-p0w">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="santos123" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mp1-gB-p0w">
                                         <rect key="frame" x="60" y="100" width="313" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bar-CO-uar"/>
@@ -76,7 +76,7 @@
                                             <constraint firstAttribute="width" constant="46" id="dnR-Z0-ezE"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="User" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ltD-0e-x2P">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="biel.romano11@gmail.com" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ltD-0e-x2P">
                                         <rect key="frame" x="60" y="30" width="313" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="RRl-Mz-3Ci"/>

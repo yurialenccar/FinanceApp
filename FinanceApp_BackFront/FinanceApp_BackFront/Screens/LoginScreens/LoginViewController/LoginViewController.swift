@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
+    var viewModel: LoginViewModel = LoginViewModel()
+    
     static let identifier:String = String(describing: LoginViewController.self)
     
     override func viewDidLoad() {
@@ -35,14 +37,22 @@ class LoginViewController: UIViewController {
     @IBAction func tappedEnterButton(_ sender: UIButton) {
         view.endEditing(true)
         
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
         if validadeTextField() == true {
-            let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
-            if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
-                present(tbc, animated: false)
+            viewModel.loginUser(email: email, password: password) { resultLogin in
+                if resultLogin == "Sucesso Login" {
+                    let storyboard: UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
+                    if let tbc = storyboard.instantiateViewController(withIdentifier: TabBarController.identifier) as? UITabBarController {
+                        self.present(tbc, animated: false)
+                    }
+                } else {
+                    self.showSimpleAlert(title: "Atenção", message: resultLogin)
+                }
             }
-            
         } else {
-            showSimpleAlert(title: "Atenção", message: "Um ou mais campos não foram preenchidos!")
+            self.showSimpleAlert(title: "Atenção", message: "Um ou mais campos não foram preenchidos!")
         }
     }
     
@@ -72,11 +82,7 @@ class LoginViewController: UIViewController {
                 passwordTextField.layer.borderColor = UIColor.red.cgColor
             }
 
-            if statusOk == true {
-                return true
-            } else {
-                return false
-            }
+           return statusOk
     }
 }
 

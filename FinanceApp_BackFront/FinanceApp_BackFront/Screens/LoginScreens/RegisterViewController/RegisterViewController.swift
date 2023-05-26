@@ -16,6 +16,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registrationButton: UIButton!
     @IBOutlet weak var enterButton: UIButton!
     
+    var viewModel: RegisterViewModel = RegisterViewModel()
+    
     static let identifier:String = String(describing: RegisterViewController.self)
     
     override func viewDidLoad() {
@@ -40,20 +42,23 @@ class RegisterViewController: UIViewController {
         view.endEditing(true)
     
         let email = emailTextfield.text ?? ""
-        let senha = passwordTextfield.text ?? ""
+        let password = passwordTextfield.text ?? ""
         
         if !checkTextFields() {
             showSimpleAlert(title: "Atenção", message: "Um ou mais campos não foram preenchidos!")
             return
         }
         
-        if !checkEmail(email: email) {
+        if !viewModel.checkEmail(email: email) {
+            setErrorInTextField(textField: emailTextfield)
             showSimpleAlert(title: "Email inválido", message: "Por favor, digite um email válido")
             return
         }
          
-        if !checkPassword(password: senha) {
-             showSimpleAlert(title: "Senha inválida", message: "A senha deve ter pelo menos 8 caracteres")
+        if !viewModel.checkPassword(password: password) {
+            setErrorInTextField(textField: passwordTextfield)
+            setErrorInTextField(textField: passwordRepeatTextfield)
+            showSimpleAlert(title: "Senha inválida", message: "A senha deve ter pelo menos 8 caracteres")
             return
         }
         
@@ -62,12 +67,19 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
-        if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
-            present(tbc, animated: true)
+        viewModel.createUser(email: email, password: password) { resultRegister in
+            if resultRegister == "Sucesso Cadastro!" {
+                self.showSimpleAlert(title: "Cadastro realizado com Sucesso!", message: "") {
+                    let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
+                    if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
+                        self.present(tbc, animated: true)
+                    }
+                }
+            } else {
+                #warning("Código passando direto antes da mensagem de erro!")
+                self.showSimpleAlert(title: "Atenção", message: resultRegister)
+            }
         }
-        
-        
     }
 
     @IBAction func tappedLoginButton(_ sender: UIButton) {
@@ -93,27 +105,6 @@ class RegisterViewController: UIViewController {
         passwordRepeatTextfield.keyboardType = .default
         passwordRepeatTextfield.layer.cornerRadius = 5
         passwordRepeatTextfield.isSecureTextEntry = true
-    }
-    
-    private func checkEmail(email : String) -> Bool{
-        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        if !emailPredicate.evaluate(with: email) {
-            setErrorInTextField(textField: emailTextfield)
-            return false
-        } else {
-            return true
-        }
-    }
-    
-    private func checkPassword(password: String) -> Bool {
-        if password.count < 8 {
-            setErrorInTextField(textField: passwordTextfield)
-            setErrorInTextField(textField: passwordRepeatTextfield)
-            return false
-        } else {
-            return true
-        }
     }
     
     private func checkTextFields() -> Bool {

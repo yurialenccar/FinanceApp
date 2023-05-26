@@ -71,6 +71,9 @@
 		A189A39929F58A4700C22A6D /* BankProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189A39829F58A4700C22A6D /* BankProperties.swift */; };
 		A18ED5912A20EF7200F564BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18ED5902A20EF7200F564BD /* GoogleService-Info.plist */; };
 		A18ED5942A20F01D00F564BD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A18ED5932A20F01D00F564BD /* FirebaseAuth */; };
+		A18ED5972A20F30300F564BD /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ED5962A20F30300F564BD /* RegisterViewModel.swift */; };
+		A18ED59A2A20F33100F564BD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ED5992A20F33100F564BD /* LoginViewModel.swift */; };
+		A18ED59E2A21469D00F564BD /* MoreOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ED59D2A21469D00F564BD /* MoreOptionsViewModel.swift */; };
 		A19F850929F963C40044F7DE /* GoalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F850729F963C40044F7DE /* GoalsCollectionViewCell.swift */; };
 		A19F850A29F963C40044F7DE /* GoalsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */; };
 		A19F850F29F96E6D0044F7DE /* createGoalButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */; };
@@ -200,6 +203,9 @@
 		A18991A62A11DC9800D47427 /* CardsResumeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsResumeTableViewCell.xib; sourceTree = "<group>"; };
 		A189A39829F58A4700C22A6D /* BankProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankProperties.swift; sourceTree = "<group>"; };
 		A18ED5902A20EF7200F564BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A18ED5962A20F30300F564BD /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		A18ED5992A20F33100F564BD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A18ED59D2A21469D00F564BD /* MoreOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsViewModel.swift; sourceTree = "<group>"; };
 		A19F850729F963C40044F7DE /* GoalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createGoalButtonCell.swift; sourceTree = "<group>"; };
@@ -567,6 +573,7 @@
 		A16B56A629C107A400E53727 /* MoreOptionsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A18ED59B2A21467B00F564BD /* ViewModel */,
 				E35D087029BDB2030098F0B5 /* MoreOptionsViewController.swift */,
 				E35D087229BDB20C0098F0B5 /* MoreOptionsViewController.storyboard */,
 			);
@@ -788,6 +795,38 @@
 			path = tableViewCell;
 			sourceTree = "<group>";
 		};
+		A18ED5952A20F2E700F564BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A18ED5962A20F30300F564BD /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A18ED5982A20F31B00F564BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A18ED5992A20F33100F564BD /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A18ED59B2A21467B00F564BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A18ED59C2A21468C00F564BD /* MoreOptionsViewModel */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A18ED59C2A21468C00F564BD /* MoreOptionsViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A18ED59D2A21469D00F564BD /* MoreOptionsViewModel.swift */,
+			);
+			path = MoreOptionsViewModel;
+			sourceTree = "<group>";
+		};
 		A19F850B29F96E2A0044F7DE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -920,6 +959,7 @@
 		A1C9EFE829E60CD60029B69F /* RegisterViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A18ED5952A20F2E700F564BD /* ViewModel */,
 				A1C9EFE929E60CF50029B69F /* RegisterViewController.storyboard */,
 				A1C9EFEB29E60D080029B69F /* RegisterViewController.swift */,
 			);
@@ -929,6 +969,7 @@
 		A1C9EFED29E60D620029B69F /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A18ED5982A20F31B00F564BD /* ViewModel */,
 				A1C9EFF029E60D840029B69F /* LoginViewController.storyboard */,
 				A1C9EFEE29E60D7D0029B69F /* LoginViewController.swift */,
 			);
@@ -1300,6 +1341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1F4210329F6215B005C346B /* AccountsModalViewModel.swift in Sources */,
+				A18ED5972A20F30300F564BD /* RegisterViewModel.swift in Sources */,
 				A17DC6912A09AE0000D12C3C /* CreditCardCollectionViewCell.swift in Sources */,
 				A1C9D23E2A0C4C4C008CAFAD /* resumeBalanceCollectionViewCell.swift in Sources */,
 				A1C9EFEC29E60D080029B69F /* RegisterViewController.swift in Sources */,
@@ -1334,6 +1376,7 @@
 				A18991A92A11DC9800D47427 /* CardsResumeTableViewCell.swift in Sources */,
 				A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */,
 				A1C9D2392A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.swift in Sources */,
+				A18ED59A2A20F33100F564BD /* LoginViewModel.swift in Sources */,
 				A11BDA8629F4CFB6006CF6B2 /* AccountsTableViewCell.swift in Sources */,
 				A16688E929F06E8600568217 /* HomeViewModel.swift in Sources */,
 				A1B8F3492A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.swift in Sources */,
@@ -1343,6 +1386,7 @@
 				A19F851529F973D20044F7DE /* EditGoalViewController.swift in Sources */,
 				A19F850F29F96E6D0044F7DE /* createGoalButtonCell.swift in Sources */,
 				A17C89E52A09C9BA00B5DB2F /* EditCreditCardsViewController.swift in Sources */,
+				A18ED59E2A21469D00F564BD /* MoreOptionsViewModel.swift in Sources */,
 				A11BDA7229F4C04A006CF6B2 /* BankAccount.swift in Sources */,
 				A1E47F7B29F8A70000039F08 /* Goal.swift in Sources */,
 				A17DC6842A0989B900D12C3C /* TabBarController.swift in Sources */,

@@ -9,6 +9,8 @@ import UIKit
 
 class MoreOptionsViewController: UIViewController {
     
+    var viewModel: MoreOptionsViewModel = MoreOptionsViewModel()
+    
     static let identifier:String = String(describing: MoreOptionsViewController.self)
 
     override func viewDidLoad() {
@@ -44,7 +46,9 @@ class MoreOptionsViewController: UIViewController {
     }
     
     @IBAction func tappedLogoutButton(_ sender: UIButton) {
-        //tabBarController?.navigationController?.popViewController(animated: true)
+        if !viewModel.tryLogoutUser(){
+            showSimpleAlert(title: "Atenção", message: "Erro para deslogar usuário!")
+        }
         dismiss(animated: false)
     }
     
