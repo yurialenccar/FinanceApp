@@ -69,6 +69,8 @@
 		A18991A92A11DC9800D47427 /* CardsResumeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18991A52A11DC9800D47427 /* CardsResumeTableViewCell.swift */; };
 		A18991AA2A11DC9800D47427 /* CardsResumeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18991A62A11DC9800D47427 /* CardsResumeTableViewCell.xib */; };
 		A189A39929F58A4700C22A6D /* BankProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189A39829F58A4700C22A6D /* BankProperties.swift */; };
+		A18ED5912A20EF7200F564BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18ED5902A20EF7200F564BD /* GoogleService-Info.plist */; };
+		A18ED5942A20F01D00F564BD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A18ED5932A20F01D00F564BD /* FirebaseAuth */; };
 		A19F850929F963C40044F7DE /* GoalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F850729F963C40044F7DE /* GoalsCollectionViewCell.swift */; };
 		A19F850A29F963C40044F7DE /* GoalsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */; };
 		A19F850F29F96E6D0044F7DE /* createGoalButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */; };
@@ -197,6 +199,7 @@
 		A18991A52A11DC9800D47427 /* CardsResumeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsResumeTableViewCell.swift; sourceTree = "<group>"; };
 		A18991A62A11DC9800D47427 /* CardsResumeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsResumeTableViewCell.xib; sourceTree = "<group>"; };
 		A189A39829F58A4700C22A6D /* BankProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankProperties.swift; sourceTree = "<group>"; };
+		A18ED5902A20EF7200F564BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A19F850729F963C40044F7DE /* GoalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createGoalButtonCell.swift; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 				E366E3B929E0D8A700F89209 /* Algorithms.framework in Frameworks */,
 				E366E3B729E0D8A200F89209 /* Charts.framework in Frameworks */,
 				77C95F712D80F1F287355889 /* Pods_FinanceApp_BackFront.framework in Frameworks */,
+				A18ED5942A20F01D00F564BD /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1111,6 +1115,7 @@
 			children = (
 				E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */,
 				E35D085A29BDAD110098F0B5 /* Info.plist */,
+				A18ED5902A20EF7200F564BD /* GoogleService-Info.plist */,
 				A16688E529F06D4C00568217 /* Resources */,
 				A1CE09292A001B410028028B /* GlobalFunctions */,
 				A16B56A229C1076500E53727 /* Screens */,
@@ -1147,6 +1152,9 @@
 			dependencies = (
 			);
 			name = FinanceApp_BackFront;
+			packageProductDependencies = (
+				A18ED5932A20F01D00F564BD /* FirebaseAuth */,
+			);
 			productName = FinanceApp_BackFront;
 			productReference = E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */;
 			productType = "com.apple.product-type.application";
@@ -1175,6 +1183,9 @@
 				Base,
 			);
 			mainGroup = E35D083D29BDAD100098F0B5;
+			packageReferences = (
+				A18ED5922A20F01D00F564BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = E35D084729BDAD100098F0B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1190,6 +1201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19F851029F96E6D0044F7DE /* createGoalButtonCell.xib in Resources */,
+				A18ED5912A20EF7200F564BD /* GoogleService-Info.plist in Resources */,
 				A1E107BB29E4F426005A3F4F /* CreditCardsViewController.storyboard in Resources */,
 				A17C89E32A09C9A200B5DB2F /* EditCreditCardsViewController.storyboard in Resources */,
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
@@ -1586,6 +1598,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A18ED5922A20F01D00F564BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A18ED5932A20F01D00F564BD /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A18ED5922A20F01D00F564BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */ = {
