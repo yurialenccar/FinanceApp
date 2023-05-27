@@ -9,7 +9,11 @@ import Foundation
 
 struct HomeViewModel {
     
-    public var informationsAreHidden: Bool = false
+    private var incomesTotal: Double = 0.0
+    private var expensesTotal: Double = 0.0
+    private var balanceTotal: Double = 0.0
+    private var lastIncomeDate: String = ""
+    private var lastExpenseDate: String = ""
     
     public func confirmAllAccountsIDs(){
         for i in 0..<bankAccountsList.count {
@@ -23,63 +27,39 @@ struct HomeViewModel {
         }
     }
     
-    public func updateBalanceValues() {
+    public mutating func updateBalanceValues() {
+        incomesTotal = 0.0
+        expensesTotal = 0.0
+        balanceTotal = 0.0
+        lastIncomeDate = ""
+        lastExpenseDate = ""
         
-        var incomes:Double = 0.0
-        var expenses:Double = 0.0
-        var total:Double = 0.0
-    
         for transaction in transactions {
             if transaction.type == .income {
-                incomes += transaction.amount
+                incomesTotal += transaction.amount
+                if lastIncomeDate.isEmpty {
+                    lastIncomeDate = transaction.date
+                }
             } else if transaction.type == .expense {
-                expenses -= transaction.amount
+                expensesTotal -= transaction.amount
+                if lastExpenseDate.isEmpty {
+                    lastExpenseDate = transaction.date
+                }
             }
         }
+
+        balanceTotal = incomesTotal - expensesTotal
         
-        total = incomes - expenses
-        
-        if total > 0 {
-            balanceCardValues[.total]?.backgroundColorName = "PositiveBalance"
-        } else if total < 0 {
-            balanceCardValues[.total]?.backgroundColorName = "RedGeneralExpenses"
-        } else {
-            balanceCardValues[.total]?.backgroundColorName = "GreyInformations"
-        }
-        
-        balanceCardValues[.incomes]?.balance = incomes
-        balanceCardValues[.expenses]?.balance = expenses
-        balanceCardValues[.total]?.balance = total
-        
-        for transaction in transactions {
-            if transaction.type == .income{
-                balanceCardValues[.incomes]?.lastTransaction = "Ultima entrada: \(transaction.date)"
-                break
-            }
-        }
-        
-        for transaction in transactions {
-            if transaction.type == .expense{
-                balanceCardValues[.expenses]?.lastTransaction = "Ultima saída: \(transaction.date)"
-                break
-            }
-        }
     }
     
-    public mutating func hideInformations() -> Bool {
-        switch informationsAreHidden {
-        case false:
-            balanceCardValues[.incomes]?.hideInformations = true
-            balanceCardValues[.expenses]?.hideInformations = true
-            balanceCardValues[.total]?.hideInformations = true
-        case true:
-            balanceCardValues[.incomes]?.hideInformations = false
-            balanceCardValues[.expenses]?.hideInformations = false
-            balanceCardValues[.total]?.hideInformations = false
+    public func getCardInformation(cardNumber: Int) -> BalanceCard {
+        switch cardNumber {
+        case 0:
+            return BalanceCard(type: .incomes, balance: self.incomesTotal, lastTransaction: self.lastIncomeDate)
+        case 1:
+            return BalanceCard(type: .expenses, balance: self.expensesTotal, lastTransaction: self.lastExpenseDate)
+        default:
+            return BalanceCard(type: .balance, balance: self.balanceTotal, lastTransaction: "")
         }
-        
-        informationsAreHidden.toggle()
-        
-        return informationsAreHidden
     }
 }

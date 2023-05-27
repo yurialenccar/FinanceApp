@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     
     static let identifier:String = String(describing: HomeViewController.self)
     var  viewModel : HomeViewModel = HomeViewModel()
-    var informationsHidden = false
+    var hideInformations = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +48,8 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func tappedHideNumbersButton(_ sender: UIButton) {
-        if viewModel.hideInformations() == true {
-            hideInformationsButton.setImage(.closedEye, for: .normal)
-        } else {
-            hideInformationsButton.setImage(.eye, for: .normal)
-        }
-        horizontalCollectionView.reloadData()
-        verticalCollectionView.reloadData()
+        hideInformations.toggle()
+        updateInformationsVisibility(informationsHidden: hideInformations)
     }
     
     private func setupStrings() {
@@ -97,6 +92,16 @@ class HomeViewController: UIViewController {
         verticalCollectionView.register(TransactionsCollectionViewCell.nib(), forCellWithReuseIdentifier: TransactionsCollectionViewCell.identifier)
     }
     
+    private func updateInformationsVisibility(informationsHidden: Bool) {
+        if informationsHidden == true {
+            hideInformationsButton.setImage(.closedEye, for: .normal)
+        } else {
+            hideInformationsButton.setImage(.eye, for: .normal)
+        }
+        horizontalCollectionView.reloadData()
+        verticalCollectionView.reloadData()
+    }
+    
     private func setupObserver(){
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfileImage), name: Notification.Name(rawValue: homeStrings.profileImageUpdatedNotification), object: nil)
     }
@@ -137,40 +142,27 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == horizontalCollectionView {
-            var balanceCardType: BalanceCardsType
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: resumeBalanceCollectionViewCell.identifier, for: indexPath) as? resumeBalanceCollectionViewCell
             cell?.layer.cornerRadius = 10
             cell?.layer.masksToBounds = true
-            switch indexPath.row {
-            case 0:
-                balanceCardType = .incomes
-            case 1:
-                balanceCardType = .expenses
-            default:
-                balanceCardType = .total
-            }
-            
-            if let values = balanceCardValues[balanceCardType] {
-                cell?.setupCell(balance: values)
-            }
+            cell?.setupCell(card: viewModel.getCardInformation(cardNumber: indexPath.row), hideInformations: self.hideInformations)
             return cell ?? UICollectionViewCell()
         } else {
             switch indexPath.section {
             case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountsBallanceCollectionViewCell.identifier, for: indexPath) as? AccountsBallanceCollectionViewCell
-                cell?.setupCell(accountsList: bankAccountsList, hideInformations: viewModel.informationsAreHidden)
+                cell?.setupCell(accountsList: bankAccountsList, hideInformations: self.hideInformations)
                 cell?.layer.cornerRadius = 10
                 cell?.layer.masksToBounds = true
                 return cell ?? UICollectionViewCell()
             case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardsBallanceCollectionViewCell.identifier, for: indexPath) as? CardsBallanceCollectionViewCell
-                cell?.setupCell(cardsList: creditCardsList, hideInformations: viewModel.informationsAreHidden)
+                cell?.setupCell(cardsList: creditCardsList, hideInformations: self.hideInformations)
                 cell?.layer.cornerRadius = 10
                 cell?.layer.masksToBounds = true
                 return cell ?? UICollectionViewCell()
             case 2:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesGraphCollectionViewCell.identifier, for: indexPath) as? CategoriesGraphCollectionViewCell
-                //cell?.setupCell(cardsList: creditCardsList, hideInformations: viewModel.informationsAreHidden)
                 cell?.layer.cornerRadius = 10
                 cell?.layer.masksToBounds = true
                 return cell ?? UICollectionViewCell()

@@ -25,23 +25,45 @@ class resumeBalanceCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setupCell(balance:BalanceCards){
-        titleLabel.text = balance.desc
-        if balance.desc == "Total" {
-            typeImage.image = UIImage(systemName: balance.symbolImageName)
-            //typeImage.image?.renderingMode = .alwaysTemplate
+    func setupCell(card: BalanceCard, hideInformations: Bool) {
+        switch card.type {
+        case .incomes:
+            titleLabel.text = homeStrings.incomesText
+            typeImage.image = .incomesArrow
+            dateLabel.text = homeStrings.lastIncomeText + card.lastTransaction
+            backgroundColor = .white
+        case .expenses:
+            titleLabel.text = homeStrings.expensesText
+            typeImage.image = .expensesArrow
+            dateLabel.text = homeStrings.lastExpenseText + card.lastTransaction
+            backgroundColor = .white
+        case .balance:
+            titleLabel.text = homeStrings.balanceText
+            typeImage.image = .balanceSymbol
             typeImage.tintColor = .white
-        } else {
-            typeImage.image = UIImage(imageLiteralResourceName: balance.symbolImageName)
+            dateLabel.text = globalStrings.emptyString
+            
+            if card.balance > 0 {
+                backgroundColor = .PositiveBalance
+            } else if card.balance < 0 {
+                backgroundColor = .RedGeneralExpenses
+            } else {
+                backgroundColor = .backgroundColor
+            }
         }
+
+        //typeImage.image?.renderingMode = .alwaysTemplate
+       
         
-        if balance.hideInformations == true {
+        if hideInformations == true {
             valueLabel.text = globalStrings.circleHiddenInformation
         } else {
-            valueLabel.text = balance.balance.toStringMoney()
+            valueLabel.text = card.balance.toStringMoney()
         }
-        backgroundColor = UIColor(named: balance.backgroundColorName)
-        dateLabel.text = balance.lastTransaction
+        
+        
+        
+        
     }
 
 }

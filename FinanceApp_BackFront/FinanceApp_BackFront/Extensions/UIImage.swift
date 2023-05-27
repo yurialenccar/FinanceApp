@@ -11,4 +11,7 @@ import UIKit
 extension UIImage {
     static let eye = UIImage(named: "eye")
     static let closedEye = UIImage(named: "closed eye")
+    static let incomesArrow = UIImage(named: "IncomesArrow")
+    static let expensesArrow = UIImage(named: "ExpensesArrow")
+    static let balanceSymbol = UIImage(systemName: "dollarsign.circle")
 }
