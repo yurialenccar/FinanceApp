@@ -9,8 +9,6 @@ import UIKit
 
 class AccountsBallanceCollectionViewCell: UICollectionViewCell {
     
-    var hideInformations: Bool = false
-
     @IBOutlet weak var accountsTableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var totalBalanceTextLabel: UILabel!
@@ -23,6 +21,7 @@ class AccountsBallanceCollectionViewCell: UICollectionViewCell {
     }
     
     var bankAccountList: [BankAccount] = []
+    var hideInformations: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,15 +39,15 @@ class AccountsBallanceCollectionViewCell: UICollectionViewCell {
     func setupCell(accountsList: [BankAccount], hideInformations: Bool) {
         
         if hideInformations {
-            totalBalanceValueLabel.text =  "---"
+            totalBalanceValueLabel.text =  globalStrings.dashHiddenInformation
             totalBalanceValueLabel.textColor = .black
         } else {
             let total:Double = accountsList.reduce(0) { $0 + $1.balance}
             totalBalanceValueLabel.text = total.toStringMoney()
             if total > 0 {
-                totalBalanceValueLabel.textColor = UIColor(named: "GreenGeneralIncomes")
+                totalBalanceValueLabel.textColor = .GreenGeneralIncomes
             } else if total < 0 {
-                totalBalanceValueLabel.textColor = UIColor(named: "RedGeneralExpenses")
+                totalBalanceValueLabel.textColor = .RedGeneralExpenses
             } else {
                 totalBalanceValueLabel.textColor = .black
             }

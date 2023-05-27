@@ -29,14 +29,14 @@ class AccountsResumeTableViewCell: UITableViewCell {
         descAccountLabel.text = bankAccount.desc
         
         if hideInformations {
-            balanceLabel.text =  "---"
+            balanceLabel.text =  globalStrings.dashHiddenInformation
             balanceLabel.textColor = .black
         } else {
             balanceLabel.text = bankAccount.balance.toStringMoney()
             if bankAccount.balance > 0 {
-                balanceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
+                balanceLabel.textColor = .GreenGeneralIncomes
             } else if bankAccount.balance < 0 {
-                balanceLabel.textColor = UIColor(named: "RedGeneralExpenses")
+                balanceLabel.textColor = .RedGeneralExpenses
             } else {
                 balanceLabel.textColor = .black
             }

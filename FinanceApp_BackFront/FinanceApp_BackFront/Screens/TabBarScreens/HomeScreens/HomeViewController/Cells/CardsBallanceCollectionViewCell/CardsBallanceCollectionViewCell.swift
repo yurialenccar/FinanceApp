@@ -39,15 +39,15 @@ class CardsBallanceCollectionViewCell: UICollectionViewCell {
     func setupCell(cardsList: [CreditCard], hideInformations: Bool) {
         
         if hideInformations {
-            totalInvoiceValueLabel.text = "---"
+            totalInvoiceValueLabel.text = globalStrings.dashHiddenInformation
             totalInvoiceValueLabel.textColor = .black
         } else {
             let total:Double = cardsList.reduce(0) { $0 + $1.invoiceTotal}
             totalInvoiceValueLabel.text = total.toStringMoney()
             if total > 0 {
-                totalInvoiceValueLabel.textColor = UIColor(named: "GreenGeneralIncomes")
+                totalInvoiceValueLabel.textColor = .GreenGeneralIncomes
             } else if total < 0 {
-                totalInvoiceValueLabel.textColor = UIColor(named: "RedGeneralExpenses")
+                totalInvoiceValueLabel.textColor = .RedGeneralExpenses
             } else {
                 totalInvoiceValueLabel.textColor = .black
             }

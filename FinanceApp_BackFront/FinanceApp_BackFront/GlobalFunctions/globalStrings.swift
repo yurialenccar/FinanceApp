@@ -9,4 +9,7 @@ import Foundation
 
 enum globalStrings {
     static let backButtonTitle = "Voltss"
+    static let emptyString = ""
+    static let circleHiddenInformation = "•••••"
+    static let dashHiddenInformation = "---"
 }

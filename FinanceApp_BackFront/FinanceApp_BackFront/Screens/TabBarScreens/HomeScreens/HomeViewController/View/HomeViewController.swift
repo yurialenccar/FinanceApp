@@ -24,9 +24,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         viewModel.confirmAllAccountsIDs()
         viewModel.confirmAllCardsIDs()
+        setupStrings()
         setupUIComponents()
         setupHorizontalCollectionView()
         setupVerticalCollectionView()
@@ -49,20 +49,25 @@ class HomeViewController: UIViewController {
 
     @IBAction func tappedHideNumbersButton(_ sender: UIButton) {
         if viewModel.hideInformations() == true {
-            hideInformationsButton.setImage(UIImage(imageLiteralResourceName: "closed eye"), for: .normal)
+            hideInformationsButton.setImage(.closedEye, for: .normal)
         } else {
-            hideInformationsButton.setImage(UIImage(imageLiteralResourceName: "eye"), for: .normal)
+            hideInformationsButton.setImage(.eye, for: .normal)
         }
         horizontalCollectionView.reloadData()
         verticalCollectionView.reloadData()
     }
     
-    func setupUIComponents(){
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        helloTextLabel.text = homeStrings.helloText
+    }
+    
+    private func setupUIComponents(){
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.clipsToBounds = true
     }
     
-    func setupHorizontalCollectionView() {
+    private func setupHorizontalCollectionView() {
         horizontalCollectionView.delegate = self
         horizontalCollectionView.dataSource = self
         if let layout = horizontalCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -75,7 +80,7 @@ class HomeViewController: UIViewController {
         horizontalCollectionView.register(resumeBalanceCollectionViewCell.nib(), forCellWithReuseIdentifier: resumeBalanceCollectionViewCell.identifier)
     }
     
-    func setupVerticalCollectionView(){
+    private func setupVerticalCollectionView(){
         verticalCollectionView.delegate = self
         verticalCollectionView.dataSource = self
         if let layout = verticalCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -83,7 +88,7 @@ class HomeViewController: UIViewController {
             layout.estimatedItemSize = .zero
             layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
         }
-        verticalCollectionView.backgroundColor = UIColor(named: "BackgroundColor")
+        verticalCollectionView.backgroundColor = .backgroundColor
         verticalCollectionView.showsVerticalScrollIndicator = false
         verticalCollectionView.register(TitleHeaderCollectionReusableView.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderCollectionReusableView.identifier)
         verticalCollectionView.register(AccountsBallanceCollectionViewCell.nib(), forCellWithReuseIdentifier: AccountsBallanceCollectionViewCell.identifier)
@@ -92,8 +97,8 @@ class HomeViewController: UIViewController {
         verticalCollectionView.register(TransactionsCollectionViewCell.nib(), forCellWithReuseIdentifier: TransactionsCollectionViewCell.identifier)
     }
     
-    func setupObserver(){
-        NotificationCenter.default.addObserver(self, selector: #selector(updateProfileImage), name: Notification.Name(rawValue: "profileImageUpdated"), object: nil)
+    private func setupObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProfileImage), name: Notification.Name(rawValue: homeStrings.profileImageUpdatedNotification), object: nil)
     }
     
     @objc func updateProfileImage(notification:NSNotification) {
@@ -208,15 +213,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleHeaderCollectionReusableView.identifier, for: indexPath) as? TitleHeaderCollectionReusableView
                     switch indexPath.section {
                     case 0:
-                        title = "Contas Bancarias"
+                        title = homeStrings.bankAccountsText
                     case 1:
-                        title = "Cartões de Crédito"
+                        title = homeStrings.creditCardsText
                     case 2:
-                        title = "Gastos por Categoria"
+                        title = homeStrings.expensesPerCategoryText
                     case 3:
-                        title = "Ultimas Transações"
+                        title = homeStrings.lastTransactionsText
                     default:
-                        title = ""
+                        title = globalStrings.emptyString
                     }
                     headerView?.setupCell(title: title)
                     return headerView ?? UICollectionReusableView()

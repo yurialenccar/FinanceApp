@@ -79,6 +79,10 @@
 		A18ED5A32A21505C00F564BD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18ED5A22A21505C00F564BD /* MainViewModel.swift */; };
 		A19742A52A2247FB00455DB0 /* mainStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19742A42A2247FB00455DB0 /* mainStrings.swift */; };
 		A19742A72A224ADA00455DB0 /* globalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19742A62A224ADA00455DB0 /* globalStrings.swift */; };
+		A19742D52A225F6E00455DB0 /* tabBarStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19742D42A225F6E00455DB0 /* tabBarStrings.swift */; };
+		A19742D82A22637200455DB0 /* homeStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19742D72A22637200455DB0 /* homeStrings.swift */; };
+		A19742DB2A227E9B00455DB0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19742DA2A227E9B00455DB0 /* UIColor.swift */; };
+		A19742DD2A2282DC00455DB0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19742DC2A2282DC00455DB0 /* UIImage.swift */; };
 		A19F850929F963C40044F7DE /* GoalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F850729F963C40044F7DE /* GoalsCollectionViewCell.swift */; };
 		A19F850A29F963C40044F7DE /* GoalsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */; };
 		A19F850F29F96E6D0044F7DE /* createGoalButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */; };
@@ -216,6 +220,10 @@
 		A18ED5A22A21505C00F564BD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A19742A42A2247FB00455DB0 /* mainStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainStrings.swift; sourceTree = "<group>"; };
 		A19742A62A224ADA00455DB0 /* globalStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalStrings.swift; sourceTree = "<group>"; };
+		A19742D42A225F6E00455DB0 /* tabBarStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarStrings.swift; sourceTree = "<group>"; };
+		A19742D72A22637200455DB0 /* homeStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeStrings.swift; sourceTree = "<group>"; };
+		A19742DA2A227E9B00455DB0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A19742DC2A2282DC00455DB0 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		A19F850729F963C40044F7DE /* GoalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createGoalButtonCell.swift; sourceTree = "<group>"; };
@@ -667,6 +675,7 @@
 		A17DC6762A0987C300D12C3C /* HomeScreens */ = {
 			isa = PBXGroup;
 			children = (
+				A19742D62A22636100455DB0 /* Strings */,
 				A16B56A429C1079000E53727 /* HomeViewController */,
 			);
 			path = HomeScreens;
@@ -708,6 +717,7 @@
 		A17DC67A2A09881300D12C3C /* TabBarScreens */ = {
 			isa = PBXGroup;
 			children = (
+				A19742D32A225F5F00455DB0 /* Strings */,
 				A17DC6802A0989B900D12C3C /* TabBarController */,
 				A17DC6762A0987C300D12C3C /* HomeScreens */,
 				A17DC6772A0987CF00D12C3C /* TransactionsScreens */,
@@ -798,8 +808,8 @@
 		A189919C2A117CB000D47427 /* TitleHeaderCollectionReusableView */ = {
 			isa = PBXGroup;
 			children = (
-				A189919D2A117D0900D47427 /* TitleHeaderCollectionReusableView.swift */,
 				A189919E2A117D0900D47427 /* TitleHeaderCollectionReusableView.xib */,
+				A189919D2A117D0900D47427 /* TitleHeaderCollectionReusableView.swift */,
 			);
 			path = TitleHeaderCollectionReusableView;
 			sourceTree = "<group>";
@@ -817,8 +827,8 @@
 		A18991A42A11DC9800D47427 /* tableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				A18991A52A11DC9800D47427 /* CardsResumeTableViewCell.swift */,
 				A18991A62A11DC9800D47427 /* CardsResumeTableViewCell.xib */,
+				A18991A52A11DC9800D47427 /* CardsResumeTableViewCell.swift */,
 			);
 			path = tableViewCell;
 			sourceTree = "<group>";
@@ -869,6 +879,31 @@
 				A19742A42A2247FB00455DB0 /* mainStrings.swift */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		A19742D32A225F5F00455DB0 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				A19742D42A225F6E00455DB0 /* tabBarStrings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		A19742D62A22636100455DB0 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				A19742D72A22637200455DB0 /* homeStrings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		A19742D92A227E6000455DB0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A19742DA2A227E9B00455DB0 /* UIColor.swift */,
+				A19742DC2A2282DC00455DB0 /* UIImage.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A19F850B29F96E2A0044F7DE /* Cells */ = {
@@ -954,8 +989,8 @@
 		A1B8F3422A13C62C00F7CCB5 /* CategoriesGraphCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				A1B8F3472A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.swift */,
 				A1B8F3482A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.xib */,
+				A1B8F3472A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.swift */,
 			);
 			path = CategoriesGraphCollectionViewCell;
 			sourceTree = "<group>";
@@ -976,8 +1011,8 @@
 			isa = PBXGroup;
 			children = (
 				A1FA88522A0D901800818F52 /* tableViewCell */,
-				A1C9D2372A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.swift */,
 				A1C9D2382A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.xib */,
+				A1C9D2372A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.swift */,
 			);
 			path = AccountsBallanceCollectionViewCell;
 			sourceTree = "<group>";
@@ -985,8 +1020,8 @@
 		A1C9D23B2A0C4BD8008CAFAD /* resumeBalanceCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				A1C9D23C2A0C4C4C008CAFAD /* resumeBalanceCollectionViewCell.swift */,
 				A1C9D23D2A0C4C4C008CAFAD /* resumeBalanceCollectionViewCell.xib */,
+				A1C9D23C2A0C4C4C008CAFAD /* resumeBalanceCollectionViewCell.swift */,
 			);
 			path = resumeBalanceCollectionViewCell;
 			sourceTree = "<group>";
@@ -1164,8 +1199,8 @@
 		A1FA88522A0D901800818F52 /* tableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				A1FA88532A0D904C00818F52 /* AccountsResumeTableViewCell.swift */,
 				A1FA88542A0D904C00818F52 /* AccountsResumeTableViewCell.xib */,
+				A1FA88532A0D904C00818F52 /* AccountsResumeTableViewCell.swift */,
 			);
 			path = tableViewCell;
 			sourceTree = "<group>";
@@ -1201,6 +1236,7 @@
 		E35D084829BDAD100098F0B5 /* FinanceApp_BackFront */ = {
 			isa = PBXGroup;
 			children = (
+				A19742D92A227E6000455DB0 /* Extensions */,
 				E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */,
 				E35D085A29BDAD110098F0B5 /* Info.plist */,
 				A18ED5902A20EF7200F564BD /* GoogleService-Info.plist */,
@@ -1395,9 +1431,11 @@
 				A18ED5A32A21505C00F564BD /* MainViewModel.swift in Sources */,
 				A140933D29E6EC3D0037662B /* CategoriesSum.swift in Sources */,
 				A19742A72A224ADA00455DB0 /* globalStrings.swift in Sources */,
+				A19742DD2A2282DC00455DB0 /* UIImage.swift in Sources */,
 				A140934C29E73BD30037662B /* RegisterCardExpenseViewController.swift in Sources */,
 				A10191A929FB06BA00776A67 /* EditBankAccountsViewModel.swift in Sources */,
 				A1FA88552A0D904C00818F52 /* AccountsResumeTableViewCell.swift in Sources */,
+				A19742D82A22637200455DB0 /* homeStrings.swift in Sources */,
 				E35D087129BDB2030098F0B5 /* MoreOptionsViewController.swift in Sources */,
 				A140935129E772720037662B /* RegisterExpenseViewController.swift in Sources */,
 				A11BDA7629F4C24B006CF6B2 /* CreditCard.swift in Sources */,
@@ -1424,6 +1462,7 @@
 				A17C89DE2A09C76700B5DB2F /* BanksCell.swift in Sources */,
 				A13E249929F98BDB00E9EF7A /* EditGoalViewModel.swift in Sources */,
 				A18991A92A11DC9800D47427 /* CardsResumeTableViewCell.swift in Sources */,
+				A19742DB2A227E9B00455DB0 /* UIColor.swift in Sources */,
 				A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */,
 				A1C9D2392A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.swift in Sources */,
 				A18ED59A2A20F33100F564BD /* LoginViewModel.swift in Sources */,
@@ -1465,6 +1504,7 @@
 				A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */,
 				A1CE092D2A0026800028028B /* Alert.swift in Sources */,
 				A1C9EFE529E60A880029B69F /* SplashViewController.swift in Sources */,
+				A19742D52A225F6E00455DB0 /* tabBarStrings.swift in Sources */,
 				A1A92BC429F81C1D00E14EE8 /* RegisterCardExpViewModel.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
 				A11BDA7429F4C173006CF6B2 /* Banks.swift in Sources */,

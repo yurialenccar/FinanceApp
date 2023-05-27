@@ -179,9 +179,7 @@
                             <constraint firstItem="5PB-Qe-pd5" firstAttribute="centerX" secondItem="b75-wj-e0y" secondAttribute="centerX" id="y39-Xy-tHk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zH9-rs-Bm4">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="xEQ-zu-xV4"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="zH9-rs-Bm4"/>
                     <connections>
                         <outlet property="emailTextfield" destination="fOg-yK-UBf" id="SXt-OY-Wtl"/>
                         <outlet property="loginScreenButton" destination="VHO-Gd-9Zq" id="4Pq-05-OHA"/>

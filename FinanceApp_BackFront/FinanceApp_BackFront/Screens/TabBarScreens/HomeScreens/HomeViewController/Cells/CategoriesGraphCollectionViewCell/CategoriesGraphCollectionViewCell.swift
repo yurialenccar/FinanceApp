@@ -23,7 +23,7 @@ class CategoriesGraphCollectionViewCell: UICollectionViewCell {
         configurePieChartView()
         configureChartConstraints()
         configureChartLegend()
-        updateChartData(for: "Janeiro")
+        updateChartData()
     }
     
     private func configurePieChartView() {
@@ -54,11 +54,10 @@ class CategoriesGraphCollectionViewCell: UICollectionViewCell {
         pieChartView.legend.orientation = .vertical
         pieChartView.legend.horizontalAlignment = .right
         pieChartView.legend.verticalAlignment = .center
-        //pieChartView.usePercentValuesEnabled = true // Habilita a exibição dos valores percentuais
 
     }
 
-    private func updateChartData(for mes: String) {
+    private func updateChartData() {
         let sum: [CategoriesSum] = sumExpensesByCategory()
         let values: [Double] = sum.map{$0.amount}
         let labels: [String] = sum.map{$0.category}
@@ -71,7 +70,6 @@ class CategoriesGraphCollectionViewCell: UICollectionViewCell {
         
         pieChartView.data = data
         
-        //chartSubtitle.text = "\(mes)"
         
         
         let total = values.reduce(0, +)

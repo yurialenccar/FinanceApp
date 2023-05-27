@@ -29,14 +29,14 @@ class CardsResumeTableViewCell: UITableViewCell {
         descCardLabel.text = creditCard.desc
         
         if hideInformations{
-            invoiceLabel.text = "---"
+            invoiceLabel.text = globalStrings.dashHiddenInformation
             invoiceLabel.textColor = .black
         } else {
             invoiceLabel.text = creditCard.invoiceTotal.toStringMoney()
             if creditCard.invoiceTotal > 0 {
-                invoiceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
+                invoiceLabel.textColor = .GreenGeneralIncomes
             } else if creditCard.invoiceTotal < 0 {
-                invoiceLabel.textColor = UIColor(named: "RedGeneralExpenses")
+                invoiceLabel.textColor = .RedGeneralExpenses
             } else {
                 invoiceLabel.textColor = .black
             }

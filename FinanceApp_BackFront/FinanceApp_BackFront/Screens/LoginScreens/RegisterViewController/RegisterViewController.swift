@@ -25,12 +25,6 @@ class RegisterViewController: UIViewController {
         setupStrings()
         setupTextFields()
     }
-   
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
-    }
     
     override func viewDidDisappear(_ animated: Bool) {
         nameTextfield.text = ""

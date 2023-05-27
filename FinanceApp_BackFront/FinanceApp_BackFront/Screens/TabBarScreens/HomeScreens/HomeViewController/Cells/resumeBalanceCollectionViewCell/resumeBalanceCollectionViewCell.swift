@@ -36,7 +36,7 @@ class resumeBalanceCollectionViewCell: UICollectionViewCell {
         }
         
         if balance.hideInformations == true {
-            valueLabel.text = "•••••"
+            valueLabel.text = globalStrings.circleHiddenInformation
         } else {
             valueLabel.text = balance.balance.toStringMoney()
         }
