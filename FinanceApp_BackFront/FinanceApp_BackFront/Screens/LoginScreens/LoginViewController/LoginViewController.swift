@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var forgetPasswordButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
     var viewModel: LoginViewModel = LoginViewModel()
@@ -20,6 +21,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStrings()
         setupTextFields()
         
     }
@@ -42,18 +44,25 @@ class LoginViewController: UIViewController {
         
         if validadeTextField() == true {
             viewModel.loginUser(email: email, password: password) { resultLogin in
-                if resultLogin == "Sucesso Login" {
+                if resultLogin == loginStrings.loginSuccessMessage {
                     let storyboard: UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
                     if let tbc = storyboard.instantiateViewController(withIdentifier: TabBarController.identifier) as? UITabBarController {
                         self.present(tbc, animated: false)
                     }
                 } else {
-                    self.showSimpleAlert(title: "Atenção", message: resultLogin)
+                    self.showSimpleAlert(title: loginStrings.atention, message: resultLogin)
                 }
             }
         } else {
-            self.showSimpleAlert(title: "Atenção", message: "Um ou mais campos não foram preenchidos!")
+            self.showSimpleAlert(title: loginStrings.atention, message: loginStrings.emptyFieldsErrorMessage)
         }
+    }
+    
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        enterButton.setTitle(loginStrings.enterButtonTitle, for: .normal)
+        forgetPasswordButton.setTitle(loginStrings.forgotPasswordButtonTitle, for: .normal)
+        registerButton.setTitle(loginStrings.registerButtonTitle, for: .normal)
     }
     
     private func setupTextFields(){

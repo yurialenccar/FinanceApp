@@ -130,12 +130,11 @@
                             <constraint firstItem="aiz-vh-3O3" firstAttribute="centerX" secondItem="6vo-IP-g72" secondAttribute="centerX" id="cTp-fQ-QOf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Mlo-DK-SjI">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="yb7-fn-Fag"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Mlo-DK-SjI"/>
                     <connections>
                         <outlet property="emailTextField" destination="ltD-0e-x2P" id="ZQZ-D1-gcP"/>
                         <outlet property="enterButton" destination="iFl-IL-L4h" id="C6X-JT-t65"/>
+                        <outlet property="forgetPasswordButton" destination="Sgg-eJ-xDg" id="adV-aA-hsJ"/>
                         <outlet property="passwordTextField" destination="mp1-gB-p0w" id="7JL-Ft-Hua"/>
                         <outlet property="registerButton" destination="Hb5-Hm-mTz" id="4kV-9o-EQt"/>
                     </connections>

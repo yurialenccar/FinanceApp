@@ -12,9 +12,9 @@ class LoginViewModel {
     public func loginUser(email: String, password: String, completion: @escaping (String) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if error == nil {
-                completion("Sucesso Login")
+                completion(loginStrings.loginSuccessMessage)
             } else {
-                completion("Falha em realizar login, segue o erro \(error?.localizedDescription ?? "")")
+                completion(loginStrings.failToLoginErrorMessage + (error?.localizedDescription ?? ""))
             }
         }
     }

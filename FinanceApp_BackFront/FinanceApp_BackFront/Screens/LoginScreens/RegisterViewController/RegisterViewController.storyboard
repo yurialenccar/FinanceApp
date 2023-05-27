@@ -184,11 +184,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextfield" destination="fOg-yK-UBf" id="SXt-OY-Wtl"/>
-                        <outlet property="enterButton" destination="VHO-Gd-9Zq" id="4Pq-05-OHA"/>
+                        <outlet property="loginScreenButton" destination="VHO-Gd-9Zq" id="4Pq-05-OHA"/>
                         <outlet property="nameTextfield" destination="A9d-yx-2jC" id="AGd-Im-qwd"/>
                         <outlet property="passwordRepeatTextfield" destination="Jnx-eq-0KW" id="eQr-zl-KNY"/>
                         <outlet property="passwordTextfield" destination="Tah-BX-Ctr" id="Qvf-II-ahV"/>
-                        <outlet property="registrationButton" destination="oit-wJ-IaB" id="UyP-8C-38L"/>
+                        <outlet property="registerButton" destination="oit-wJ-IaB" id="UyP-8C-38L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6Y-Ht-8Wg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

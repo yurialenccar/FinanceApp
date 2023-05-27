@@ -13,8 +13,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var passwordRepeatTextfield: UITextField!
-    @IBOutlet weak var registrationButton: UIButton!
-    @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var loginScreenButton: UIButton!
     
     var viewModel: RegisterViewModel = RegisterViewModel()
     
@@ -22,6 +22,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStrings()
         setupTextFields()
     }
    
@@ -85,6 +86,16 @@ class RegisterViewController: UIViewController {
     @IBAction func tappedLoginButton(_ sender: UIButton) {
         let vc: LoginViewController? = UIStoryboard(name: LoginViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+    }
+    
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        nameTextfield.placeholder = registerStrings.namePlaceholderText
+        emailTextfield.placeholder = registerStrings.emailPlaceholderText
+        passwordTextfield.placeholder = registerStrings.passwordPlaceholderText
+        passwordRepeatTextfield.placeholder = registerStrings.passwordRepeatPlaceholderText
+        registerButton.setTitle(registerStrings.registerButtonTitle, for: .normal)
+        loginScreenButton.setTitle(registerStrings.loginScreenButtonTitle, for: .normal)
     }
     
     private func setupTextFields() {
