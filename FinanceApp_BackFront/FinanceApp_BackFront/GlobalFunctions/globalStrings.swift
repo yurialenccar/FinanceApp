@@ -12,4 +12,6 @@ enum globalStrings {
     static let emptyString = ""
     static let circleHiddenInformation = "•••••"
     static let dashHiddenInformation = "---"
+    static let attention = "Atenção"
+    static let dateFormat = "dd/MM/yyyy"
 }

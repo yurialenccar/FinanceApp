@@ -16,35 +16,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLz-WO-SFm">
-                                <rect key="frame" x="132" y="577" width="235" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtn-YN-ylj">
+                                <rect key="frame" x="319" y="386" width="36" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="235" id="5CK-FO-x1d"/>
-                                    <constraint firstAttribute="height" constant="50" id="LNy-kZ-NSv"/>
+                                    <constraint firstAttribute="width" constant="36" id="4cA-EA-oHe"/>
+                                    <constraint firstAttribute="height" constant="36" id="jAK-m8-x0J"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=" Despesa no Cartão" cornerStyle="dynamic" titleAlignment="leading">
+                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                    <backgroundConfiguration key="background" cornerRadius="18">
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedCloseButton:" destination="nqp-rZ-Wn6" eventType="touchUpInside" id="OGz-GV-8ao"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbp-A8-xWc">
+                                <rect key="frame" x="132" y="437" width="235" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4sB-Pf-e0D"/>
+                                    <constraint firstAttribute="width" constant="235" id="TDz-YP-8cz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" Receita na Conta" cornerStyle="dynamic" titleAlignment="leading">
                                     <backgroundConfiguration key="background" cornerRadius="25">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tappedCardExpButton:" destination="nqp-rZ-Wn6" eventType="touchUpInside" id="QPZ-ID-sCI"/>
+                                    <action selector="tappedIncomeButton:" destination="nqp-rZ-Wn6" eventType="touchUpInside" id="rgx-6h-SkV"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rX-bG-AvS">
-                                <rect key="frame" x="319" y="584" width="36" height="36"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-ea-S4W">
+                                <rect key="frame" x="319" y="445" width="36" height="36"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WhiteArrowDown" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-Dv-rP1">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WhiteArrowUp" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aqa-fY-dcS">
                                         <rect key="frame" x="8" y="8" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90980392160000001" green="0.2470588235" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="HJa-fX-9mG"/>
-                                    <constraint firstAttribute="height" constant="36" id="sHc-M8-3XL"/>
+                                    <constraint firstAttribute="height" constant="36" id="3QV-y4-2mN"/>
+                                    <constraint firstAttribute="width" constant="36" id="gHT-9W-0jO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -88,35 +105,35 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbp-A8-xWc">
-                                <rect key="frame" x="132" y="437" width="235" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLz-WO-SFm">
+                                <rect key="frame" x="132" y="577" width="235" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4sB-Pf-e0D"/>
-                                    <constraint firstAttribute="width" constant="235" id="TDz-YP-8cz"/>
+                                    <constraint firstAttribute="width" constant="235" id="5CK-FO-x1d"/>
+                                    <constraint firstAttribute="height" constant="50" id="LNy-kZ-NSv"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=" Receita na Conta" cornerStyle="dynamic" titleAlignment="leading">
+                                <buttonConfiguration key="configuration" style="plain" title=" Despesa no Cartão" cornerStyle="dynamic" titleAlignment="leading">
                                     <backgroundConfiguration key="background" cornerRadius="25">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tappedIncomeButton:" destination="nqp-rZ-Wn6" eventType="touchUpInside" id="rgx-6h-SkV"/>
+                                    <action selector="tappedCardExpButton:" destination="nqp-rZ-Wn6" eventType="touchUpInside" id="QPZ-ID-sCI"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-ea-S4W">
-                                <rect key="frame" x="319" y="445" width="36" height="36"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rX-bG-AvS">
+                                <rect key="frame" x="319" y="584" width="36" height="36"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WhiteArrowUp" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aqa-fY-dcS">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WhiteArrowDown" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-Dv-rP1">
                                         <rect key="frame" x="8" y="8" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.1450980392" green="0.43529411759999997" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.90980392160000001" green="0.2470588235" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="3QV-y4-2mN"/>
-                                    <constraint firstAttribute="width" constant="36" id="gHT-9W-0jO"/>
+                                    <constraint firstAttribute="width" constant="36" id="HJa-fX-9mG"/>
+                                    <constraint firstAttribute="height" constant="36" id="sHc-M8-3XL"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -149,20 +166,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtn-YN-ylj">
-                                <rect key="frame" x="319" y="386" width="36" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="4cA-EA-oHe"/>
-                                    <constraint firstAttribute="height" constant="36" id="jAK-m8-x0J"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="X">
-                                    <backgroundConfiguration key="background" cornerRadius="18">
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uiu-uU-ewi"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -186,6 +189,12 @@
                             <constraint firstItem="8qX-hc-rfd" firstAttribute="top" secondItem="Lbp-A8-xWc" secondAttribute="bottom" constant="20" id="zks-5j-nlZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accountExpenseButton" destination="8qX-hc-rfd" id="lzx-Fl-DwV"/>
+                        <outlet property="accountIncomeButton" destination="Lbp-A8-xWc" id="yeP-wv-fOd"/>
+                        <outlet property="cardExpenseButton" destination="uLz-WO-SFm" id="dn1-bQ-jOb"/>
+                        <outlet property="closeButton" destination="gtn-YN-ylj" id="ra0-eg-oHy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4F-uO-TO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

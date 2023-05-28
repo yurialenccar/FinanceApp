@@ -9,6 +9,7 @@ import UIKit
 
 class TransactionsViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var transactionsCollectionView: UICollectionView!
     
     static let identifier:String = String(describing: TransactionsViewController.self)
@@ -16,7 +17,7 @@ class TransactionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        setupStrings()
 
     }
     
@@ -25,6 +26,11 @@ class TransactionsViewController: UIViewController {
         viewModel.reordenateTransactions()
         setupCollectionView()
         transactionsCollectionView.reloadData()
+    }
+    
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        titleLabel.text = transactionsStrings.title
     }
     
     private func setupCollectionView(){
@@ -44,7 +50,6 @@ class TransactionsViewController: UIViewController {
 extension TransactionsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("number of itens in section")
         return viewModel.getTransactionsCount()
     }
     

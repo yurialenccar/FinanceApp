@@ -32,7 +32,7 @@ class AddAccountTransactionsViewModel{
 
         newTransaction.categoryIndex = category
         newTransaction.accountId = accountId
-        newTransaction.date = dataSelecionada.toString(format: "dd/MM/yyyy")
+        newTransaction.date = dataSelecionada.toString(format: globalStrings.dateFormat)
         newTransaction.type = transactionType
         newTransaction.obs = Obs
         
@@ -103,7 +103,7 @@ class AddAccountTransactionsViewModel{
     }
     
     public func getBankLabelText(_ indexAccount:Int) -> String{
-        return bankProperties[bankAccountsList[indexAccount].bank]!.logoTextLabel
+        return bankProperties[bankAccountsList[indexAccount].bank]?.logoTextLabel ?? addStrings.bankText
     }
     
     public func getBankLabelTextFont(_ indexAccount:Int) -> UIFont{
@@ -111,11 +111,11 @@ class AddAccountTransactionsViewModel{
     }
     
     public func getBankLabelColor(_ indexAccount:Int) -> UIColor{
-        return bankProperties[bankAccountsList[indexAccount].bank]!.labelBankColor
+        return bankProperties[bankAccountsList[indexAccount].bank]?.labelBankColor ?? .black
     }
     
     public func getBankBackColor(_ indexAccount:Int) -> UIColor{
-        return bankProperties[bankAccountsList[indexAccount].bank]!.backgroundColor
+        return bankProperties[bankAccountsList[indexAccount].bank]?.backgroundColor ?? .gray
     }
     
     
@@ -127,21 +127,15 @@ class AddAccountTransactionsViewModel{
         
         dataSelecionada = date
         
-        switch dataSelecionada.toString(format: "dd/MM/yyyy") {
-        case today.toString(format: "dd/MM/yyyy"):
-            return "Hoje"
-        case yesterday.toString(format: "dd/MM/yyyy"):
-            return "Ontem"
-        case tomorrow.toString(format: "dd/MM/yyyy"):
-            return "Amanhã"
+        switch dataSelecionada.toString(format: globalStrings.dateFormat) {
+        case today.toString(format: globalStrings.dateFormat):
+            return addStrings.todayText
+        case yesterday.toString(format: globalStrings.dateFormat):
+            return addStrings.yesterdayText
+        case tomorrow.toString(format: globalStrings.dateFormat):
+            return addStrings.tomorrowText
         default:
-            return date.toString(format: "dd/MM/yyyy")
+            return date.toString(format: globalStrings.dateFormat)
         }
     }
-    
-    
-    
-    
-    
-    
 }

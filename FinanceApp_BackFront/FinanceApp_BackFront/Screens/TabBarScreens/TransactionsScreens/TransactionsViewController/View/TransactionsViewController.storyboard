@@ -62,6 +62,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WEc-bv-5Q3"/>
                     <connections>
+                        <outlet property="titleLabel" destination="xUZ-uS-HtM" id="u24-Sa-eka"/>
                         <outlet property="transactionsCollectionView" destination="ubS-ol-4ID" id="drk-jF-hFe"/>
                     </connections>
                 </viewController>

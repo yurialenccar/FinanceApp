@@ -268,6 +268,7 @@
                         <outlet property="dateField" destination="ex2-yf-iiS" id="t6U-Cw-NT0"/>
                         <outlet property="descTextField" destination="dPi-8n-3yV" id="iHb-ic-4o7"/>
                         <outlet property="obsTextField" destination="oBp-3G-vPb" id="C7F-D3-j3b"/>
+                        <outlet property="registerExpenseButton" destination="PCB-7E-snd" id="3Oc-Jr-WEf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKw-Fm-C7x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

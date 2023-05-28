@@ -19,16 +19,18 @@ class RegisterIncomeViewController: UIViewController {
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var accountBackground: UIView!
     @IBOutlet weak var obsTextField: UITextField!
+    @IBOutlet weak var registerIncomeButton: UIButton!
     
     static let identifier:String = String(describing: RegisterIncomeViewController.self)
     var viewModel:AddAccountTransactionsViewModel=AddAccountTransactionsViewModel(type: .income)
     
     private var indexCategorySelected:Int = 0
-    private var idAccountSelected:String = ""
+    private var idAccountSelected:String = globalStrings.emptyString
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStrings()
         setupDataPicker()
     }
     
@@ -63,12 +65,12 @@ class RegisterIncomeViewController: UIViewController {
         self.present(vc ?? UIViewController(), animated: true)
     }
     
-    @IBAction func tappedRegisterButton(_ sender: UIButton) {
+    @IBAction func tappedRegisterIncomeButton(_ sender: UIButton) {
 
         if stringIsEmpty(text: amountTextField.text ?? ""){
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
-            showAlert(title: "Opa, esqueceu de informar valor gasto!")
+            showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotIncomeAmountValue)
         } else {
             viewModel.setTransactionsValues(
                 desc: descTextField.text ?? "",
@@ -81,13 +83,21 @@ class RegisterIncomeViewController: UIViewController {
         }
     }
     
-    func updateCategoryField(_ indexCategory:Int){
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        descTextField.placeholder = addStrings.descriptionText
+        amountTextField.placeholder = addStrings.valueText
+        obsTextField.placeholder = addStrings.observationsText
+        registerIncomeButton.setTitle(addStrings.registerTransactionButtonTitle, for: .normal)
+    }
+    
+    private func updateCategoryField(_ indexCategory:Int){
         categoryLabel.text = viewModel.getCategoryLabel(indexCategory)
         categoryImage.image = viewModel.getCategoryImageName(indexCategory)
         categoryBackgroung.backgroundColor = viewModel.getCategoryBackgroungColor(indexCategory)
     }
     
-    func updateAccountField(_ indexAccount:Int){
+    private func updateAccountField(_ indexAccount:Int){
         accountLabel.text = viewModel.getAccountLabel(indexAccount)
         bankLabel.text = viewModel.getBankLabelText(indexAccount)
         bankLabel.font = viewModel.getBankLabelTextFont(indexAccount)
@@ -108,15 +118,6 @@ class RegisterIncomeViewController: UIViewController {
         dateField.text = viewModel.datePickerChange(date: datePicker.date)
         dateField.resignFirstResponder()
     }
-    
-    private func showAlert (title: String) {
-        let alertController = UIAlertController (title: title, message: nil, preferredStyle: .alert)
-        let okButton = UIAlertAction (title: "Ok", style: .default, handler: nil)
-        alertController.addAction(okButton)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-
 }
 
 

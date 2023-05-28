@@ -49,7 +49,7 @@ class RegisterCardExpViewModel{
     }
     
     public func getBankLabelText(_ indexCard:Int) -> String{
-        return bankProperties[creditCardsList[indexCard].bank]?.logoTextLabel ?? "banco"
+        return bankProperties[creditCardsList[indexCard].bank]?.logoTextLabel ?? addStrings.bankText
     }
     
     public func getBankLabelTextFont(_ indexCard:Int) -> UIFont{
@@ -58,11 +58,11 @@ class RegisterCardExpViewModel{
     }
     
     public func getBankLabelColor(_ indexCard:Int) -> UIColor{
-        return bankProperties[creditCardsList[indexCard].bank]!.labelBankColor
+        return bankProperties[creditCardsList[indexCard].bank]?.labelBankColor ?? .black
     }
     
     public func getBankBackColor(_ indexCard:Int) -> UIColor{
-        return bankProperties[creditCardsList[indexCard].bank]!.backgroundColor
+        return bankProperties[creditCardsList[indexCard].bank]?.backgroundColor ?? .gray
     }
     
     
@@ -70,7 +70,7 @@ class RegisterCardExpViewModel{
     private func formatDate(date: Date) -> String {
 
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = globalStrings.dateFormat
         
         return formatter.string(from: date)
     }
@@ -85,11 +85,11 @@ class RegisterCardExpViewModel{
         
         switch formatDate(date: dataSelecionada){
         case formatDate(date: today):
-            return "Hoje"
+            return addStrings.todayText
         case formatDate(date: yesterday):
-            return "Ontem"
+            return addStrings.yesterdayText
         case formatDate(date: tomorrow):
-            return "Amanhã"
+            return addStrings.tomorrowText
         default:
             return formatDate(date: date)
         }

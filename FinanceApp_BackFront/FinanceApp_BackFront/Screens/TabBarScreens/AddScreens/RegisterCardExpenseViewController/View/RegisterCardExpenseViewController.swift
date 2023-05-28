@@ -19,6 +19,7 @@ class RegisterCardExpenseViewController: UIViewController{
     @IBOutlet weak var cardLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var bankBackground: UIView!
+    @IBOutlet weak var registerExpenseButton: UIButton!
     
     static let identifier:String = String(describing: RegisterCardExpenseViewController.self)
     var viewModel:RegisterCardExpViewModel = RegisterCardExpViewModel()
@@ -28,6 +29,7 @@ class RegisterCardExpenseViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStrings()
         setupDataPicker()
         
     }
@@ -64,30 +66,38 @@ class RegisterCardExpenseViewController: UIViewController{
         self.present(vc ?? UIViewController(), animated: true)
     }
     
-    @IBAction func tappedRegisterButton(_ sender: UIButton) {
+    @IBAction func tappedRegisterExpenseButton(_ sender: UIButton) {
         if viewModel.stringIsEmpty(text: amountTextField.text ?? ""){
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
-            showAlert(title: "Opa, esqueceu de informar valor gasto!")
+            showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotExpenseAmountValue)
         } else {
             viewModel.setExpenseValues(
                 desc: descTextField.text ?? "",
                 amount: amountTextField.text!,
                 category: indexCategorySelected,
-                card: "",
+                card: globalStrings.emptyString,
                 Obs: obsTextField.text ?? ""
             )
             dismiss(animated: true, completion: nil)
         }
     }
     
-    func updateCategoryField(_ indexCategory:Int){
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        descTextField.placeholder = addStrings.descriptionText
+        amountTextField.placeholder = addStrings.valueText
+        obsTextField.placeholder = addStrings.observationsText
+        registerExpenseButton.setTitle(addStrings.registerTransactionButtonTitle, for: .normal)
+    }
+    
+    private func updateCategoryField(_ indexCategory:Int){
         categoryLabel.text = viewModel.getCategoryLabel(indexCategory)
         categoryImage.image = viewModel.getCategoryImageName(indexCategory)
         categoryBackgroung.backgroundColor = viewModel.getCategoryBackgroungColor(indexCategory)
     }
     
-    func updateCardField(_ indexCard:Int){
+    private func updateCardField(_ indexCard:Int){
         cardLabel.text = viewModel.getCardLabel(indexCard)
         bankLabel.text = viewModel.getBankLabelText(indexCard)
         bankLabel.font = viewModel.getBankLabelTextFont(indexCard)
@@ -108,15 +118,6 @@ class RegisterCardExpenseViewController: UIViewController{
         dateField.text = viewModel.datePickerChange(date: datePicker.date)
         dateField.resignFirstResponder()
     }
-    
-    private func showAlert (title: String) {
-        let alertController = UIAlertController (title: title, message: nil, preferredStyle: .alert)
-        let okButton = UIAlertAction (title: "Ok", style: .default, handler: nil)
-        alertController.addAction(okButton)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-
 }
 
 //Extensão que busca a escolha do usuário das telas modais de seleção.

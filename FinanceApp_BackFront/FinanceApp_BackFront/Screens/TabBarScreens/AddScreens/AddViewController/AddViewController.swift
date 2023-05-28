@@ -9,13 +9,23 @@ import UIKit
 
 class AddViewController: UIViewController {
     
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var accountIncomeButton: UIButton!
+    @IBOutlet weak var accountExpenseButton: UIButton!
+    @IBOutlet weak var cardExpenseButton: UIButton!
+    
     static let identifier:String = String(describing: AddViewController.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        setupStrings()
     }
 
+    @IBAction func tappedCloseButton(_ sender: UIButton) {
+        let vc: HomeViewController? = UIStoryboard(name: HomeViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: HomeViewController.identifier) as? HomeViewController
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+    }
+    
     @IBAction func tappedIncomeButton(_ sender: UIButton) {
         let vc: RegisterIncomeViewController? = UIStoryboard(name: RegisterIncomeViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: RegisterIncomeViewController.identifier) as? RegisterIncomeViewController
         present(vc ?? UIViewController(), animated: true)
@@ -29,6 +39,14 @@ class AddViewController: UIViewController {
     @IBAction func tappedCardExpButton(_ sender: UIButton) {
         let vc: RegisterCardExpenseViewController? = UIStoryboard(name: RegisterCardExpenseViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: RegisterCardExpenseViewController.identifier) as? RegisterCardExpenseViewController
         present(vc ?? UIViewController(), animated: true)
+    }
+    
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        accountIncomeButton.setTitle(addStrings.accountIncomeButtonTitle, for: .normal)
+        accountExpenseButton.setTitle(addStrings.accountExpenseButtonTitle, for: .normal)
+        cardExpenseButton.setTitle(addStrings.cardExpenseButtonTitle, for: .normal)
+        
     }
 
     

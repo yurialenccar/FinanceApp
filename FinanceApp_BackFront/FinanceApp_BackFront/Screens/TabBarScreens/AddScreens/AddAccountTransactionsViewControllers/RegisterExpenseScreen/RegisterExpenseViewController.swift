@@ -19,28 +19,27 @@ class RegisterExpenseViewController: UIViewController {
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var accountBackground: UIView!
+    @IBOutlet weak var registerExpenseButton: UIButton!
     
     static let identifier:String = String(describing: RegisterExpenseViewController.self)
     var viewModel:AddAccountTransactionsViewModel=AddAccountTransactionsViewModel(type: .expense)
     
     private var indexCategorySelected:Int = 0
-    private var idAccountSelected:String = ""
+    private var idAccountSelected:String = globalStrings.emptyString
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStrings()
         setupDataPicker()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         let today = Date()
         dateField.text = viewModel.datePickerChange(date: today)
         
         updateCategoryField(indexCategorySelected)
         updateAccountField(viewModel.standardAccountIndex)
         idAccountSelected = viewModel.standardAccountId
-        
     }
     
     
@@ -66,12 +65,12 @@ class RegisterExpenseViewController: UIViewController {
         self.present(vc ?? UIViewController(), animated: true)
     }
     
-    @IBAction func tappedRegisterButton(_ sender: UIButton) {
+    @IBAction func tappedRegisterExpenseButton(_ sender: UIButton) {
         
         if stringIsEmpty(text: amountTextField.text ?? ""){
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
-            showAlert(title: "Opa, esqueceu de informar valor gasto!")
+            showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotExpenseAmountValue)
         } else {
             viewModel.setTransactionsValues(
                 desc: descTextField.text ?? "",
@@ -82,6 +81,14 @@ class RegisterExpenseViewController: UIViewController {
             )
             dismiss(animated: true, completion: nil)
         }
+    }
+    
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        descTextField.placeholder = addStrings.descriptionText
+        amountTextField.placeholder = addStrings.valueText
+        obsTextField.placeholder = addStrings.observationsText
+        registerExpenseButton.setTitle(addStrings.registerTransactionButtonTitle, for: .normal)
     }
     
     func updateCategoryField(_ indexCategory:Int){
@@ -110,15 +117,6 @@ class RegisterExpenseViewController: UIViewController {
         dateField.text = viewModel.datePickerChange(date: datePicker.date)
         dateField.resignFirstResponder()
     }
-    
-    private func showAlert (title: String) {
-        let alertController = UIAlertController (title: title, message: nil, preferredStyle: .alert)
-        let okButton = UIAlertAction (title: "Ok", style: .default, handler: nil)
-        alertController.addAction(okButton)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-
 }
 
 
