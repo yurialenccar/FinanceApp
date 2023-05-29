@@ -10,12 +10,6 @@ import UIKit
 
 class CreditCardsViewModel {
     
-    public func confirmAllCardsIDs(){
-        for i in 0..<creditCardsList.count {
-            creditCardsList[i].setId("card\(i.toStringTwoDigits())")
-        }
-    }
-    
     public func getCardsCount() -> Int {
         return creditCardsList.count + 1
     }
@@ -37,6 +31,6 @@ class CreditCardsViewModel {
     }
     
     public func getNewCardButtonText() -> String {
-        return "Criar Novo Cartão"
+        return moreOptionsStrings.newCreditCardButtonTitle
     }
 }

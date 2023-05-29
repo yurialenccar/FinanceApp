@@ -27,6 +27,7 @@ class EditCreditCardsViewController: UIViewController {
     @IBOutlet weak var obsTextLabel: UILabel!
     @IBOutlet weak var obsTextField: UITextField!
     @IBOutlet weak var dayPickerView: UIPickerView!
+    @IBOutlet weak var saveButton: UIButton!
     
     static let identifier:String = String(describing: EditCreditCardsViewController.self)
     var viewModel: EditCreditCardsViewModel
@@ -52,7 +53,7 @@ class EditCreditCardsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableview.isHidden=true
-        setupScreenLabels()
+        setupStrings()
         populateFields()
     }
     
@@ -73,7 +74,7 @@ class EditCreditCardsViewController: UIViewController {
     
     @IBAction func tappedSaveButton(_ sender: UIButton) {
         if stringIsEmpty(text: nameTextField.text ?? ""){
-            showAlertWithCancelOption(title: "Atenção", message: "O campo de descrição está vazio, deseja continuar assim mesmo?",completion: {
+            showAlertWithCancelOption(title: globalStrings.attention, message: moreOptionsStrings.descEmptyMessage,completion: {
                 self.saveValues()
             })
         } else{
@@ -81,7 +82,7 @@ class EditCreditCardsViewController: UIViewController {
         }
     }
     
-    func saveValues(){
+    private func saveValues(){
         viewModel.saveCreditCard(newCard: CreditCard(
             desc: nameTextField.text.orEmpty,
             limit: Double(limitTextField.text.orEmpty) ?? 0.0,
@@ -100,14 +101,20 @@ class EditCreditCardsViewController: UIViewController {
         tableview.register(BanksCell.nib(), forCellReuseIdentifier: BanksCell.identifier)
     }
     
-    private  func setupScreenLabels(){
+    private  func setupStrings(){
         switch viewModel.configType {
         case .createNew:
-            titleScreenLabel.text = "Novo Cartão de Crédito"
+            titleScreenLabel.text = moreOptionsStrings.newCreditCardText
         case .editExisting:
-            titleScreenLabel.text = "Editar Cartão de Crédito"
+            titleScreenLabel.text = moreOptionsStrings.editCreditCardText
         }
-        
+        nameLabel.text = moreOptionsStrings.cardNameText
+        limitLabel.text = moreOptionsStrings.cardLimitText
+        closingDayTextLabel.text = moreOptionsStrings.cardClosingDayText
+        dueDateTextLabel.text = moreOptionsStrings.cardDueDateText
+        standardCardTextLabel.text = moreOptionsStrings.standardAccountText
+        obsTextLabel.text = moreOptionsStrings.obsText
+        saveButton.setTitle(moreOptionsStrings.saveButtonTitle, for: .normal)
     }
     
     private func populateFields() {

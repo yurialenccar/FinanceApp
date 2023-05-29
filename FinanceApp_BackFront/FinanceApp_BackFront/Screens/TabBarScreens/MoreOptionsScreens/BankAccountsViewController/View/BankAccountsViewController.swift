@@ -9,6 +9,7 @@ import UIKit
 
 class BankAccountsViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     static let identifier:String = String(describing: BankAccountsViewController.self)
@@ -16,7 +17,7 @@ class BankAccountsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        setupStrings()
         setupCollectionView()
     }
     
@@ -25,7 +26,12 @@ class BankAccountsViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
     
-    func setupCollectionView() {
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        titleLabel.text = moreOptionsStrings.accountsText
+    }
+    
+    private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {

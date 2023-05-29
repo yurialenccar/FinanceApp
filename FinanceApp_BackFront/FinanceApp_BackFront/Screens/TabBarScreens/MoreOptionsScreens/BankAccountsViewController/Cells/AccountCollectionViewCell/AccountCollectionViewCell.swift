@@ -9,7 +9,6 @@ import UIKit
 
 class AccountCollectionViewCell: UICollectionViewCell {
 
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balanceValueTextLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
@@ -26,17 +25,22 @@ class AccountCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupStrings()
+    }
+    
+    private func setupStrings() {
+        balanceValueTextLabel.text = moreOptionsStrings.accountAmountText
     }
 
-    func setupCell(account:BankAccount){
+    public func setupCell(account:BankAccount){
         nameLabel.text = account.desc
         balanceLabel.text = account.balance.toStringMoney()
         if account.balance > 0 {
-            balanceLabel.textColor = UIColor(named: "GreenGeneralIncomes")
+            balanceLabel.textColor = .GreenGeneralIncomes
         } else if account.balance < 0{
-            balanceLabel.textColor = UIColor(named: "RedGeneralExpenses")
+            balanceLabel.textColor = .RedGeneralExpenses
         } else{
-            balanceLabel.textColor = UIColor(named: "GreyInformations")
+            balanceLabel.textColor = .GreyInformations
         }
         
         bankLabel.text = bankProperties[account.bank]?.logoTextLabel
@@ -49,8 +53,8 @@ class AccountCollectionViewCell: UICollectionViewCell {
             standardAccountImage.isHidden = true
         } else{
             standardAccountImage.isHidden = false
-            standardAccountImage.image = UIImage(systemName: "star")?.withRenderingMode(.alwaysTemplate)
-            standardAccountImage.tintColor = UIColor(named: "GreyInformations")
+            standardAccountImage.image = .standardStar
+            standardAccountImage.tintColor = .GreyInformations
         }
     }
 }

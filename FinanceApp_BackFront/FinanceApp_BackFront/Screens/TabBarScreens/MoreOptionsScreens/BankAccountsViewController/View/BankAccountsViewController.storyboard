@@ -63,6 +63,7 @@
                     <navigationItem key="navigationItem" id="0nm-gv-Zcq"/>
                     <connections>
                         <outlet property="collectionView" destination="1aS-Gg-zND" id="zoF-qA-V0x"/>
+                        <outlet property="titleLabel" destination="OYg-n9-Xyv" id="CS7-E7-zrc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

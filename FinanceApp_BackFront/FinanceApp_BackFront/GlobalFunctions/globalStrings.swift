@@ -13,5 +13,7 @@ enum globalStrings {
     static let circleHiddenInformation = "•••••"
     static let dashHiddenInformation = "---"
     static let attention = "Atenção"
+    static let error = "Erro"
     static let dateFormat = "dd/MM/yyyy"
+    static let initError = "init(coder:) has not been implemented"
 }

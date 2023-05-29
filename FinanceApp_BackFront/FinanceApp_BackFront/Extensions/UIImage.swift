@@ -14,4 +14,6 @@ extension UIImage {
     static let incomesArrow = UIImage(named: "IncomesArrow")
     static let expensesArrow = UIImage(named: "ExpensesArrow")
     static let balanceSymbol = UIImage(systemName: "dollarsign.circle")
+    static let casa = UIImage(named: "casa")
+    static let standardStar = UIImage(systemName: "star")?.withRenderingMode(.alwaysTemplate)
 }

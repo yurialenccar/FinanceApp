@@ -509,6 +509,7 @@
                         <outlet property="nameTextField" destination="Z5Z-Dw-nxh" id="mEC-Ic-4LK"/>
                         <outlet property="obsTextField" destination="bAb-GB-mSN" id="xdp-RN-YcF"/>
                         <outlet property="obsTextLabel" destination="MVc-pW-z7x" id="EZ8-Uu-BXt"/>
+                        <outlet property="saveButton" destination="in9-td-q07" id="xLg-fb-Lgq"/>
                         <outlet property="standardCardSwitch" destination="zP8-Fh-Hg6" id="Uy1-Ea-MSW"/>
                         <outlet property="standardCardTextLabel" destination="BJ0-YH-ufp" id="k2E-xC-Jpp"/>
                         <outlet property="tableview" destination="MsJ-VQ-P8R" id="o79-RZ-488"/>

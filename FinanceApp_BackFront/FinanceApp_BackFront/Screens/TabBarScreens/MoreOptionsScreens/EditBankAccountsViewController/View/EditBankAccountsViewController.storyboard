@@ -406,14 +406,19 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="balanceLabel" destination="bXy-l2-OKZ" id="bXS-aL-N4Y"/>
+                        <outlet property="balanceLabel" destination="bXy-l2-OKZ" id="9wY-oF-1bl"/>
                         <outlet property="balanceTextField" destination="p0e-rH-1Kv" id="B8p-qv-EBD"/>
                         <outlet property="bankBackground" destination="HGj-Aq-deJ" id="fUo-HX-b1M"/>
                         <outlet property="bankDescLabel" destination="ztL-w0-HTu" id="Y6O-kU-yAy"/>
                         <outlet property="bankLabel" destination="g82-9M-eAr" id="3og-vb-CdX"/>
+                        <outlet property="nameLabel" destination="gRu-Hr-8gy" id="QaL-Ds-jKI"/>
                         <outlet property="nameTextField" destination="fyv-a2-iK3" id="Heh-jZ-c4n"/>
-                        <outlet property="obsLabel" destination="ZDT-qr-Vvb" id="Uw1-Ig-8cG"/>
+                        <outlet property="obsLabel" destination="Q9M-Gh-jOr" id="KGj-4K-Yj3"/>
+                        <outlet property="obsTextField" destination="ZDT-qr-Vvb" id="Uw1-Ig-8cG"/>
+                        <outlet property="overdrawLabel" destination="Uc2-3W-sSS" id="jzM-ZU-KXS"/>
                         <outlet property="overdrawTextField" destination="uzr-Zb-BVk" id="d4E-mF-Saa"/>
+                        <outlet property="saveButton" destination="Be4-rF-P4U" id="mPK-d6-SMi"/>
+                        <outlet property="standardAccountLabel" destination="0Ma-hI-QA4" id="zwj-Ol-hX8"/>
                         <outlet property="standardAccountSwitch" destination="U1j-cd-9U3" id="enO-YC-l0F"/>
                         <outlet property="tableview" destination="oTs-o5-4ax" id="Wf0-TD-Gxo"/>
                         <outlet property="titleScreenLabel" destination="aSn-kN-nYl" id="x2y-Qm-gnU"/>

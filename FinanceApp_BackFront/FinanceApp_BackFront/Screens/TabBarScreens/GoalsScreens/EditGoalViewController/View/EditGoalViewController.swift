@@ -43,7 +43,7 @@ class EditGoalViewController: UIViewController {
     
     @IBAction func tappedCreateGoalButton(_ sender: UIButton) {
         if isMissingInformation() == false {
-            viewModel.createNewGoal(desc: descTextField.text!, imageName: "Casa", savedAmount: Double(initialAmountTextField.text!)!, goalValue: Double(targetValueTextField.text!)!, targetDate: tagetDateTextField.text!)
+            viewModel.createNewGoal(desc: descTextField.text!, imageName: goalStrings.casaText, savedAmount: Double(initialAmountTextField.text!)!, goalValue: Double(targetValueTextField.text!)!, targetDate: tagetDateTextField.text!)
             delegate?.didSavedGoal()
             dismiss(animated: true)
         }

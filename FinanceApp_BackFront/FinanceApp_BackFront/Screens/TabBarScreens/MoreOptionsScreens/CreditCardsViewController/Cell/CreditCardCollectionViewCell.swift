@@ -25,16 +25,20 @@ class CreditCardCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupStrings()
+    }
+    
+    private func setupStrings() {
+        invoiceTextLabel.text = moreOptionsStrings.cardInvoiceText
     }
     
     func setupCell(card:CreditCard){
         nameLabel.text = card.desc
         invoiceLabel.text = card.invoiceTotal.toStringMoney()
         if card.invoiceTotal < 0 {
-            invoiceLabel.textColor = UIColor(named: "RedGeneralExpenses")
+            invoiceLabel.textColor = .RedGeneralExpenses
         } else{
-            invoiceLabel.textColor = UIColor(named: "GreyInformations")
+            invoiceLabel.textColor = .GreyInformations
         }
         
         bankLabel.text = bankProperties[card.bank]?.logoTextLabel
@@ -47,8 +51,8 @@ class CreditCardCollectionViewCell: UICollectionViewCell {
             standardCardImage.isHidden = true
         } else{
             standardCardImage.isHidden = false
-            standardCardImage.image = UIImage(systemName: "star")?.withRenderingMode(.alwaysTemplate)
-            standardCardImage.tintColor = UIColor(named: "GreyInformations")
+            standardCardImage.image = .standardStar
+            standardCardImage.tintColor = .GreyInformations
         }
     }
 }

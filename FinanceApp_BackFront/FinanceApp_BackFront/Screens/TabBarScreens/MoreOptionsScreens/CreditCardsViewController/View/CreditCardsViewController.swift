@@ -9,6 +9,7 @@ import UIKit
 
 class CreditCardsViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     static let identifier:String = String(describing: CreditCardsViewController.self)
@@ -16,14 +17,18 @@ class CreditCardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        setupStrings()
         setupCollectionView()
-        viewModel.confirmAllCardsIDs()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
         navigationController?.isNavigationBarHidden = false
+    }
+    
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        titleLabel.text = moreOptionsStrings.creditCardsText
     }
 
     func setupCollectionView() {

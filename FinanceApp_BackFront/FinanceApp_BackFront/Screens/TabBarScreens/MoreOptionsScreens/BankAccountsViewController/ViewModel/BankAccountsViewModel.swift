@@ -31,6 +31,6 @@ class BankAccountsViewModel {
     }
     
     public func getNewAccountButtonText() -> String {
-        return "Criar Nova Conta"
+        return moreOptionsStrings.newBankAccountButtonTitle
     }
 }

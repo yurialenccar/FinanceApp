@@ -56,5 +56,5 @@ enum goalStrings {
     static let targetDateText = "Data Alvo"
     static let imageText = "Imagem"
     static let createGoalButtonTitle = "Criar"
-    
+    static let casaText = "Casa"
 }
