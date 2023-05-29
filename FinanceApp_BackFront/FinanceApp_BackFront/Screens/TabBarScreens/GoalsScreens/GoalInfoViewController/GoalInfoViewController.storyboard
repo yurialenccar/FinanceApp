@@ -128,8 +128,10 @@
                         <outlet property="daysToDateLabel" destination="OXs-xQ-VNv" id="J7I-VC-DyY"/>
                         <outlet property="descLabel" destination="8aK-O5-O1y" id="pTH-Uv-eT3"/>
                         <outlet property="goalImage" destination="UpN-7F-KoX" id="rTA-gf-qTE"/>
+                        <outlet property="goalLabel" destination="N0G-kU-6wd" id="Qqt-Xe-pOf"/>
                         <outlet property="goalProgressBar" destination="EbZ-oS-BPL" id="ibg-pS-CmH"/>
                         <outlet property="recommendationLabel" destination="kqY-gW-rGA" id="fcx-qr-rqc"/>
+                        <outlet property="saveAmountButton" destination="P4t-0s-FQq" id="uAi-O3-IBj"/>
                         <outlet property="savedAmountLabel" destination="EPu-Qf-5eB" id="enk-BE-sC8"/>
                         <outlet property="targetValueLabel" destination="6ig-2Q-A4O" id="PBp-2U-ek6"/>
                     </connections>

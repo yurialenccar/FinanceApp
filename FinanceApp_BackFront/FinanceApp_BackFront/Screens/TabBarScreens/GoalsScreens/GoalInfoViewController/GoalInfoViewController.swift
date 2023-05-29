@@ -9,6 +9,7 @@ import UIKit
 
 class GoalInfoViewController: UIViewController {
     
+    @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var goalImage: UIImageView!
     @IBOutlet weak var goalProgressBar: UIProgressView!
@@ -17,6 +18,7 @@ class GoalInfoViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var daysToDateLabel: UILabel!
     @IBOutlet weak var recommendationLabel: UILabel!
+    @IBOutlet weak var saveAmountButton: UIButton!
     
     static let identifier:String = String(describing: GoalInfoViewController.self)
 
@@ -34,6 +36,7 @@ class GoalInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStrings()
         setupScreen(goal: goal)
     }
     
@@ -41,15 +44,19 @@ class GoalInfoViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
 
+    private func setupStrings() {
+        goalLabel.text = goalStrings.goalText
+        saveAmountButton.setTitle(goalStrings.saveAmountButtonTitle, for: .normal)
+    }
     
-    func setupScreen(goal:Goal){
+    private func setupScreen(goal:Goal){
         descLabel.text = goal.desc
         goalImage.image = UIImage(imageLiteralResourceName: goal.imageName)
         goalProgressBar.progress = Float(goal.savedAmount/goal.goalValue)
-        savedAmountLabel.text = "R$ \(goal.savedAmount)0"
-        targetValueLabel.text = "R$ \(goal.goalValue)0"
-        dateLabel.text = "Data alvo para alcançar a meta: \(goal.targetDate)"
-        daysToDateLabel.text = goal.DaysToTargetDate
-        recommendationLabel.text = goal.recommendation
+        savedAmountLabel.text = goal.savedAmount.toStringMoney()
+        targetValueLabel.text = goal.goalValue.toStringMoney()
+        dateLabel.text = goalStrings.targetDateToGoalText + goal.targetDate
+        daysToDateLabel.text = goalStrings.DaysToTargetDate(goal: goal)
+        recommendationLabel.text = goalStrings.recommendingText(goal: goal)
     }
 }

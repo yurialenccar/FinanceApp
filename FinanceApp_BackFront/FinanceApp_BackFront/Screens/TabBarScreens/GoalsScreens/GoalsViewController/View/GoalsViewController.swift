@@ -9,14 +9,16 @@ import UIKit
 
 class GoalsViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var viewModel: GoalsViewModel = GoalsViewModel()
     
     static let identifier:String = String(describing: GoalsViewController.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-
+        setupStrings()
         setupCollectionView()
 
     }
@@ -25,7 +27,12 @@ class GoalsViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    func setupCollectionView() {
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        titleLabel.text = goalStrings.goalsTitleText
+    }
+    
+    private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -43,7 +50,7 @@ class GoalsViewController: UIViewController {
 extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateGoalButtonCellDelegate, GoalSavedDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return goalsList.count + 1
+        return viewModel.getGoalsCount() + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,7 +58,7 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalsCollectionViewCell.identifier, for: indexPath) as? GoalsCollectionViewCell
             cell?.layer.cornerRadius = 10
             cell?.layer.masksToBounds = true
-            cell?.setupCell(goal: goalsList[indexPath.row])
+            cell?.setupCell(goal: viewModel.getItemGoal(indexPath.row))
             return cell ?? UICollectionViewCell()
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: createGoalButtonCell.identifier, for: indexPath) as? createGoalButtonCell
@@ -61,7 +68,7 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 30, height: 124)
+        return viewModel.getCellSize(viewWidth: view.frame.width)
     }
     
     func didTappedNewGoalButton() {

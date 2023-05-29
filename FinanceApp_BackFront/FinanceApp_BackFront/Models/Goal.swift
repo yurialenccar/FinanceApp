@@ -16,35 +16,35 @@ struct Goal {
     
     
     
-    var DaysToTargetDate: String {
-        
-        let days = daysToDate()
-        
-        if days > 1 {
-            return "Data estimada: \(String(describing: targetDate)). Faltam R$ \(goalValue - savedAmount)0 em \(days) dias para bater a meta."
-        } else {
-            return "Data estimada: \(String(describing: targetDate)). Faltam R$ \(goalValue - savedAmount)0 em \(days) dia para bater a meta."
-        }
-    }
+//    var DaysToTargetDate: String {
+//
+//        let days = daysToDate()
+//
+//        if days > 1 {
+//            return "Data estimada: \(String(describing: targetDate)). Faltam R$ \(goalValue - savedAmount)0 em \(days) dias para bater a meta."
+//        } else {
+//            return "Data estimada: \(String(describing: targetDate)). Faltam R$ \(goalValue - savedAmount)0 em \(days) dia para bater a meta."
+//        }
+//    }
     
-    var recommendation:String{
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-        
-        let days = daysToDate()
-        let months:Double = Double(days)/30
-        let value = formatter.string(for: (goalValue - savedAmount)/months.rounded(.up))
-        
-        if months>1.2 {
-            return "Recomendamos que guarde R$ \(value ?? "0,00") por mês para que o objetivo seja alcançado no prazo."
-        } else{
-            return "Recomendamos que guarde o total de R$ \(goalValue - savedAmount)0 ainda nesse mês para que o objetivo seja alcançado no prazo."
-        }
-    }
+//    var recommendation:String{
+//        let formatter = NumberFormatter()
+//        formatter.numberStyle = .decimal
+//        formatter.minimumFractionDigits = 2
+//        formatter.maximumFractionDigits = 2
+//
+//        let days = daysToDate
+//        let months:Double = Double(days)/30
+//        let value = formatter.string(for: (goalValue - savedAmount)/months.rounded(.up))
+//
+//        if months>1.2 {
+//            return "Recomendamos que guarde R$ \(value ?? "0,00") por mês para que o objetivo seja alcançado no prazo."
+//        } else{
+//            return "Recomendamos que guarde o total de R$ \(goalValue - savedAmount)0 ainda nesse mês para que o objetivo seja alcançado no prazo."
+//        }
+//    }
     
-    private func daysToDate() -> Int {
+    public var daysToDate: Int {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         let targetDate = formatter.date(from: targetDate)
@@ -56,6 +56,10 @@ struct Goal {
         let days = components.day!
         
         return days
+    }
+    
+    public var remainingAmount: Double {
+        return goalValue - savedAmount
     }
 }
 

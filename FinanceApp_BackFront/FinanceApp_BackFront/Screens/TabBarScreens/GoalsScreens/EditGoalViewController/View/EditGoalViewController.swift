@@ -13,11 +13,17 @@ protocol GoalSavedDelegate{
 
 class EditGoalViewController: UIViewController {
     
-    @IBOutlet weak var descLabel: UITextField!
-    @IBOutlet weak var initialAmountLabel: UITextField!
-    @IBOutlet weak var targetValueLabel: UITextField!
-    @IBOutlet weak var tagetDateLabel: UITextField!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var descTextField: UITextField!
+    @IBOutlet weak var initialAmountLabel: UILabel!
+    @IBOutlet weak var initialAmountTextField: UITextField!
+    @IBOutlet weak var targetValueLabel: UILabel!
+    @IBOutlet weak var targetValueTextField: UITextField!
+    @IBOutlet weak var targetDateLabel: UILabel!
+    @IBOutlet weak var tagetDateTextField: UITextField!
+    @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var goalImage: UIImageView!
+    @IBOutlet weak var createGoalButton: UIButton!
     
     var delegate:GoalSavedDelegate?
     static let identifier:String = String(describing: EditGoalViewController.self)
@@ -37,32 +43,41 @@ class EditGoalViewController: UIViewController {
     
     @IBAction func tappedCreateGoalButton(_ sender: UIButton) {
         if isMissingInformation() == false {
-            viewModel.createNewGoal(desc: descLabel.text!, imageName: "Casa", savedAmount: Double(initialAmountLabel.text!)!, goalValue: Double(targetValueLabel.text!)!, targetDate: tagetDateLabel.text!)
+            viewModel.createNewGoal(desc: descTextField.text!, imageName: "Casa", savedAmount: Double(initialAmountTextField.text!)!, goalValue: Double(targetValueTextField.text!)!, targetDate: tagetDateTextField.text!)
             delegate?.didSavedGoal()
             dismiss(animated: true)
         }
     }
     
+    private func setupStrings() {
+        descLabel.text = goalStrings.descriptionText
+        initialAmountLabel.text = goalStrings.initialAmountText
+        targetValueLabel.text = goalStrings.targetValueText
+        targetDateLabel.text = goalStrings.targetDateText
+        imageLabel.text = goalStrings.imageText
+        createGoalButton.setTitle(goalStrings.createGoalButtonTitle, for: .normal)
+    }
+    
     func isMissingInformation() -> Bool {
         var missing = false
         
-        if stringIsEmpty(text: descLabel.text ?? "") {
-            descLabel.layer.borderColor = UIColor.red.cgColor
+        if stringIsEmpty(text: descTextField.text ?? "") {
+            descTextField.layer.borderColor = UIColor.red.cgColor
             missing = true
         }
         
-        if stringIsEmpty(text: initialAmountLabel.text ?? "") {
-            initialAmountLabel.layer.borderColor = UIColor.red.cgColor
+        if stringIsEmpty(text: initialAmountTextField.text ?? "") {
+            initialAmountTextField.layer.borderColor = UIColor.red.cgColor
             missing = true
         }
         
-        if stringIsEmpty(text: targetValueLabel.text ?? "") {
-            targetValueLabel.layer.borderColor = UIColor.red.cgColor
+        if stringIsEmpty(text: targetValueTextField.text ?? "") {
+            targetValueTextField.layer.borderColor = UIColor.red.cgColor
             missing = true
         }
         
-        if stringIsEmpty(text: tagetDateLabel.text ?? "") {
-            tagetDateLabel.layer.borderColor = UIColor.red.cgColor
+        if stringIsEmpty(text: tagetDateTextField.text ?? "") {
+            tagetDateTextField.layer.borderColor = UIColor.red.cgColor
             missing = true
         }
         

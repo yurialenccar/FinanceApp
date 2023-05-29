@@ -234,11 +234,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="GXy-u6-O2O"/>
                     <connections>
-                        <outlet property="descLabel" destination="esy-Ds-AxW" id="o5r-MZ-e69"/>
+                        <outlet property="createGoalButton" destination="rUB-C0-1nK" id="m2I-aJ-5PT"/>
+                        <outlet property="descLabel" destination="RBS-ps-FC3" id="ywF-2q-bFn"/>
+                        <outlet property="descTextField" destination="esy-Ds-AxW" id="o5r-MZ-e69"/>
                         <outlet property="goalImage" destination="sAN-Lm-059" id="TbE-FC-6xa"/>
-                        <outlet property="initialAmountLabel" destination="VA8-ah-dlc" id="7NG-U9-jJ2"/>
-                        <outlet property="tagetDateLabel" destination="2H7-LO-qjD" id="qT1-ir-oN9"/>
-                        <outlet property="targetValueLabel" destination="0bH-oF-a9N" id="hQQ-7s-PeG"/>
+                        <outlet property="imageLabel" destination="5bV-Ua-42M" id="0WS-os-ykq"/>
+                        <outlet property="initialAmountLabel" destination="a0t-m2-fZo" id="a8O-Jv-cbI"/>
+                        <outlet property="initialAmountTextField" destination="VA8-ah-dlc" id="7NG-U9-jJ2"/>
+                        <outlet property="tagetDateTextField" destination="2H7-LO-qjD" id="qT1-ir-oN9"/>
+                        <outlet property="targetDateLabel" destination="i6L-22-yuD" id="bx2-Dc-6qd"/>
+                        <outlet property="targetValueLabel" destination="iwo-jp-dV6" id="D2o-Qr-7aW"/>
+                        <outlet property="targetValueTextField" destination="0bH-oF-a9N" id="hQQ-7s-PeG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hG5-0F-cm1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

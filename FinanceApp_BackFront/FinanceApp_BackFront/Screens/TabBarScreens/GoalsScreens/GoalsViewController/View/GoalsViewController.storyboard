@@ -60,11 +60,10 @@
                             <constraint firstItem="1aS-Gg-zND" firstAttribute="leading" secondItem="CFk-B7-OPX" secondAttribute="leading" id="mIb-y7-KC5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0nm-gv-Zcq">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="q9I-4a-ccn"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="0nm-gv-Zcq"/>
                     <connections>
                         <outlet property="collectionView" destination="1aS-Gg-zND" id="zoF-qA-V0x"/>
+                        <outlet property="titleLabel" destination="OYg-n9-Xyv" id="KAi-GP-2pQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
