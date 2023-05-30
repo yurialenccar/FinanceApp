@@ -72,13 +72,14 @@ class RegisterExpenseViewController: UIViewController {
             amountTextField.layer.borderWidth = 1
             showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotExpenseAmountValue)
         } else {
-            viewModel.setTransactionsValues(
+            let newTransaction = viewModel.setTransactionsValues(
                 desc: descTextField.text ?? "",
                 amount: amountTextField.text!,
                 category: indexCategorySelected,
                 accountId: idAccountSelected,
                 Obs: obsTextField.text ?? ""
             )
+            NotificationCenter.default.post(name: Notification.Name(notificationNames.newTransaction), object: newTransaction)
             dismiss(animated: true, completion: nil)
         }
     }

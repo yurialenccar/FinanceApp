@@ -18,12 +18,12 @@ class TransactionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
+//        setupObserver()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
-        viewModel.reordenateTransactions()
         setupCollectionView()
         transactionsCollectionView.reloadData()
     }
@@ -44,6 +44,17 @@ class TransactionsViewController: UIViewController {
         }
         transactionsCollectionView.register(TransactionsCollectionViewCell.nib(), forCellWithReuseIdentifier: TransactionsCollectionViewCell.identifier)
     }
+    
+//    private func setupObserver() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(getTransactions), name: Notification.Name(notificationNames.getTransactions), object: nil)
+//    }
+//
+//    @objc func getTransactions(notification:NSNotification){
+//        if let transactions = notification.object as? [Transactions] {
+//            viewModel.setTransactions(transactions: transactions)
+//        }
+//
+//    }
 
 }
 

@@ -17,6 +17,7 @@ class CategoriesGraphCollectionViewCell: UICollectionViewCell {
     }
     
     private var pieChartView: PieChartView!
+    private var categoriesSum: [CategoriesSum] = []
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,10 @@ class CategoriesGraphCollectionViewCell: UICollectionViewCell {
         configureChartConstraints()
         configureChartLegend()
         updateChartData()
+    }
+    
+    public func setupCell(expensesByCategory: [CategoriesSum]) {
+        self.categoriesSum = expensesByCategory
     }
     
     private func configurePieChartView() {
@@ -58,9 +63,9 @@ class CategoriesGraphCollectionViewCell: UICollectionViewCell {
     }
 
     private func updateChartData() {
-        let sum: [CategoriesSum] = sumExpensesByCategory()
-        let values: [Double] = sum.map{$0.amount}
-        let labels: [String] = sum.map{$0.category}
+        //let sum: [CategoriesSum] = sumExpensesByCategory()
+        let values: [Double] = categoriesSum.map{$0.amount}
+        let labels: [String] = categoriesSum.map{$0.category}
         
         let dataSet = PieChartDataSet(entries: values.enumerated().map { PieChartDataEntry(value: $1, label: labels[$0]) }, label: "")
         dataSet.colors = [.systemMint, .systemPink, .gray, .systemOrange] // Define as cores das fatias do gráfico

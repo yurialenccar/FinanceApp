@@ -41,16 +41,37 @@ class EditBankAccountsViewModel{
         
         let newBalanceValue: Double = Double(newBalance) ?? 0.0
         
+        
         if configType == .createNew{
             bankAccount.setId(createNewBankAccountId())
             if newBalanceValue != 0{
-                bankAccount.adjustBalance(newBalance: newBalanceValue)
+                let valueNewTransaction:Double = newBalanceValue - bankAccount.balance
+                var transactionType:TransactionType
+                
+                if valueNewTransaction >= 0{
+                    transactionType = .income
+                } else{
+                    transactionType = .expense
+                }
+                let newTransaction: Transactions = Transactions(desc: "Ajuste de saldo na Conta", amount: valueNewTransaction, categoryIndex: 0, date: Date().toString(format: "dd/MM/yyyy"), type: transactionType, accountId: bankAccount.getId(), obs: "")
+                
+                NotificationCenter.default.post(name: Notification.Name(notificationNames.newTransaction), object: newTransaction)
             }
             bankAccountsList.append(bankAccount)
         } else {
             
             if newBalanceValue != bankAccount.balance {
-                bankAccountsList[indexAccount].adjustBalance(newBalance: newBalanceValue)
+                let valueNewTransaction:Double = newBalanceValue - bankAccount.balance
+                var transactionType:TransactionType
+                
+                if valueNewTransaction >= 0{
+                    transactionType = .income
+                } else{
+                    transactionType = .expense
+                }
+                let newTransaction: Transactions = Transactions(desc: "Ajuste de saldo na Conta", amount: valueNewTransaction, categoryIndex: 0, date: Date().toString(format: "dd/MM/yyyy"), type: transactionType, accountId: bankAccountsList[indexAccount].getId(), obs: "")
+                
+                NotificationCenter.default.post(name: Notification.Name(notificationNames.newTransaction), object: newTransaction)
             }
             bankAccountsList[indexAccount].desc = bankAccount.desc
             bankAccountsList[indexAccount].bank = bankAccount.bank

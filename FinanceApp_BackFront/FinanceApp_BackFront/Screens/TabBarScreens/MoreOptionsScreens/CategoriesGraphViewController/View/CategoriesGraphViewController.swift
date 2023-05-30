@@ -21,6 +21,7 @@ class CategoriesGraphViewController: UIViewController {
         configureChartLegend()
         configureChartDescription()
         configureChartConstraints()
+        setupObserver()
         
     }
     
@@ -98,6 +99,19 @@ class CategoriesGraphViewController: UIViewController {
             pieChartView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
     }
+    
+    
+    private func setupObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(getTransactions), name: Notification.Name(notificationNames.getTransactions), object: nil)
+    }
+    
+    @objc func getTransactions(notification:NSNotification){
+        if let transactions = notification.object as? [Transactions] {
+            viewModel.getTransactions(transactions: transactions)
+        }
+        
+    }
+   
     
     private func updateChartData(for mes: String) {
         chartSubtitle.text = mes

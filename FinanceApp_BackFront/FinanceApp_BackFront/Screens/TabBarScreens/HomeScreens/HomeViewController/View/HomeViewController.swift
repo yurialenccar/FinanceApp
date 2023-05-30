@@ -31,12 +31,14 @@ class HomeViewController: UIViewController {
         setupHorizontalCollectionView()
         setupVerticalCollectionView()
         setupObserver()
+        viewModel.updateAccountsBalance()
+        //viewModel.updateOtherScreensTransactions()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        viewModel.updateBalanceValues()
+        viewModel.updateGeneralBalance()
         horizontalCollectionView.reloadData()
         setupVerticalCollectionView()
         verticalCollectionView.reloadData()
@@ -103,11 +105,19 @@ class HomeViewController: UIViewController {
     }
     
     private func setupObserver(){
-        NotificationCenter.default.addObserver(self, selector: #selector(updateProfileImage), name: Notification.Name(rawValue: homeStrings.profileImageUpdatedNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProfileImage), name: Notification.Name(rawValue: notificationNames.profileImageUpdated), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(newTransaction), name: Notification.Name(rawValue: notificationNames.newTransaction), object: nil)
     }
     
     @objc func updateProfileImage(notification:NSNotification) {
         profileImage.image = notification.object as? UIImage
+    }
+    
+    @objc func newTransaction(notification:NSNotification) {
+        if let newTransaction = notification.object as? Transactions {
+            viewModel.appendNewTransaction(newTransaction)
+        }
+        
     }
 }
 
@@ -133,7 +143,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 return 1
             } else {
                 let maxVisibleTransactions = 4
-                return min(transactions.count, maxVisibleTransactions)
+                return min(viewModel.getTransactionsCount(), maxVisibleTransactions)
             }
         default:
             return 0
@@ -170,7 +180,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionsCollectionViewCell.identifier, for: indexPath) as! TransactionsCollectionViewCell
                 cell.layer.cornerRadius = 10
                 cell.layer.masksToBounds = true
-                cell.setup(with: transactions[indexPath.row])
+                cell.setup(with: viewModel.getItemTransaction(indexPath.row))
                 return cell
             default:
                 return UICollectionViewCell()

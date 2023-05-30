@@ -8,17 +8,18 @@
 import Foundation
 
 struct BankAccount {
-    
-    private var id: String = ""
     var desc : String
     var bank : Banks
     var overdraft: Double
     var standardAccount: Bool
     var obs: String
+    private var id: String = ""
+    public var balance: Double = 0.0
     
-    var balance: Double {
+    public mutating func setBalance(transactions: [Transactions]) {
         let filteredTransactions = transactions.filter{ $0.accountId == id}
-        return filteredTransactions.reduce(0, {$0 + $1.amount})
+        balance = filteredTransactions.reduce(0, {$0 + $1.amount})
+        
     }
     
     init(desc: String, bank: Banks, overdraft: Double, standardAccount: Bool, obs: String) {
@@ -27,20 +28,6 @@ struct BankAccount {
         self.overdraft = overdraft
         self.standardAccount = standardAccount
         self.obs = obs
-    }
-    
-    
-    public func adjustBalance(newBalance:Double){
-        let valueNewTransaction:Double = newBalance - balance
-        var transactionType:TransactionType
-        
-        if valueNewTransaction >= 0{
-            transactionType = .income
-        } else{
-            transactionType = .expense
-        }
-        
-        transactions.append(Transactions(desc: "Ajuste de saldo na Conta", amount: valueNewTransaction, categoryIndex: 0, date: Date().toString(format: "dd/MM/yyyy"), type: transactionType, accountId: id, obs: ""))
     }
     
     public func getId() -> String {

@@ -239,7 +239,7 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tappedRegisterButton:" destination="oEw-3t-1G2" eventType="touchUpInside" id="KmV-Oa-vQl"/>
+                                    <action selector="tappedRegisterIncomeButton:" destination="oEw-3t-1G2" eventType="touchUpInside" id="o0E-gs-7E2"/>
                                 </connections>
                             </button>
                         </subviews>

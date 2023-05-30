@@ -10,6 +10,7 @@ import UIKit
 
 class AddAccountTransactionsViewModel{
     
+    var homeViewModel: HomeViewModel = HomeViewModel()
     var transactionType:TransactionType
     var newTransaction:Transactions
     
@@ -21,7 +22,7 @@ class AddAccountTransactionsViewModel{
     
     var dataSelecionada = Date()
     
-    public func setTransactionsValues(desc: String, amount:String, category:Int, accountId:String, Obs:String){
+    public func setTransactionsValues(desc: String, amount:String, category:Int, accountId:String, Obs:String) -> Transactions {
         
         switch transactionType {
         case .income:
@@ -49,8 +50,8 @@ class AddAccountTransactionsViewModel{
             newTransaction.desc = desc
         }
         
-        transactions.append(newTransaction)
-        //reordenateTransactions()
+        return newTransaction
+    
     }
     
     var standardAccountIndex: Int {

@@ -21,7 +21,4 @@ enum homeStrings {
     static let expensesPerCategoryText = "Gastos por Categoria"
     static let lastTransactionsText = "Ultimas Transações"
     
-    static let profileImageUpdatedNotification = "profileImageUpdated"
-    
-    
 }

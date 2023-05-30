@@ -98,8 +98,6 @@ class EditBankAccountsViewController: UIViewController {
         tableview.register(BanksCell.nib(), forCellReuseIdentifier: BanksCell.identifier)
     }
     
-    
-    
     private func populateFields() {
         let account = viewModel.populateFieldsInfos()
         
@@ -116,7 +114,6 @@ class EditBankAccountsViewController: UIViewController {
         case .editExisting:
             balanceTextField.text = String(account.balance)
         }
-        
     }
     
     private func toggleTableViewVisibility(){
