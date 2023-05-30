@@ -6,6 +6,7 @@ class CategoriesGraphViewController: UIViewController {
     // MARK: - Properties
     
     static let identifier:String = String(describing: CategoriesGraphViewController.self)
+    var viewModel: CategoriesGraphViewModel = CategoriesGraphViewModel()
     private var pieChartView: PieChartView!
     private var chartTitle: UILabel!
     private var chartSubtitle: UILabel!
@@ -25,7 +26,7 @@ class CategoriesGraphViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
-        updateChartData(for: "Janeiro")
+        updateChartData(for: moreOptionsStrings.mayText)
     }
     
     // MARK: - Private Methods
@@ -43,7 +44,7 @@ class CategoriesGraphViewController: UIViewController {
     
     private func configureChartTitle() {
         chartTitle = UILabel()
-        chartTitle.text = "Gastos por Categoria"
+        chartTitle.text = moreOptionsStrings.expensesPerCategoryText
         chartTitle.textAlignment = .center
         chartTitle.textColor = .white
         chartTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
@@ -83,7 +84,7 @@ class CategoriesGraphViewController: UIViewController {
     }
     
     private func configureChartDescription() {
-        pieChartView.chartDescription.text = ""
+        pieChartView.chartDescription.text = globalStrings.emptyString
     }
     
     private func configureChartConstraints() {
@@ -99,11 +100,8 @@ class CategoriesGraphViewController: UIViewController {
     }
     
     private func updateChartData(for mes: String) {
-        let sum:[CategoriesSum]=sumExpensesByCategory() 
-        let values: [Double] = sum.map{$0.amount}
-        let labels: [String] = sum.map{$0.category}
-        
-        let dataSet = PieChartDataSet(entries: values.enumerated().map { PieChartDataEntry(value: $1, label: labels[$0]) }, label: "")
+        chartSubtitle.text = mes
+        let dataSet = PieChartDataSet(entries: viewModel.getValuesByCategory().enumerated().map { PieChartDataEntry(value: $1, label: viewModel.getCategories()[$0]) }, label: globalStrings.emptyString)
         dataSet.colors = [.systemMint, .systemPink, .gray, .systemOrange] // Define as cores das fatias do gráfico
         let data = PieChartData(dataSet: dataSet)
         data.setValueTextColor(.white)
@@ -111,24 +109,14 @@ class CategoriesGraphViewController: UIViewController {
         
         pieChartView.data = data
         
-        chartSubtitle.text = "\(mes)"
-        
-        
-        let total = values.reduce(0, +)
-        let centerText = NSAttributedString(string: "\(total) R$", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold)])
+        let total = viewModel.getValuesByCategory().reduce(0, +)
+        let centerText = NSAttributedString(string: total.toStringMoney(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold)])
         pieChartView.centerAttributedText = centerText
-
         pieChartView.tintColor = .white
-
         pieChartView.centerAttributedText = centerText
-
         pieChartView.tintColor = .white
         
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .percent
-        formatter.maximumFractionDigits = 1
-        formatter.multiplier = 1.0
-        data.setValueFormatter(DefaultValueFormatter(formatter: formatter))
+        data.setValueFormatter(DefaultValueFormatter(formatter: viewModel.percentFormatter()))
 
     }
 }

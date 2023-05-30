@@ -105,6 +105,8 @@ extension LoginViewController : UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
 
     }
+    
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text?.isEmpty ?? true {
             textField.layer.borderWidth = 1

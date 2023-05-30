@@ -52,5 +52,16 @@ enum moreOptionsStrings {
     static let newCreditCardText = "Novo Cartão de Crédito"
     static let editCreditCardText = "Editar Cartão de Crédito"
     static let accountBalanceZeroed = "0.0"
+    
+    //CategoriesGraphViewController
+    static let mayText = "Maio"
+    
+    //CurrencyViewController
+    static let currencyConverterTitle = "Conversão de Moedas"
+    static let dolarText = "Dolar (EUA)"
+    static let dolarFullText = "USD - Dolar (Estados Unidos)"
+    static let realText = "Real (Brasil)"
+    static let realFullText = "BRL - Real (Brasil)"
+    static let realTimeQuoteText = "Cotação em tempo real"
 }
 
