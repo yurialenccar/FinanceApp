@@ -63,5 +63,16 @@ enum moreOptionsStrings {
     static let realText = "Real (Brasil)"
     static let realFullText = "BRL - Real (Brasil)"
     static let realTimeQuoteText = "Cotação em tempo real"
+    
+    //ProfileViewController
+    static let profileTitle = "Editar Perfil"
+    static let changeProfileImageButtonTitle = "Alterar Foto"
+    static let fullNameText = "Nome Completo"
+    static let emailText = "Email"
+    static let phoneNumberText = "Numero de Telefone"
+    static let passwordText = "Senha"
+    
+    static let notificationNameProfileImage = "profileImageUpdated"
+    
 }
 

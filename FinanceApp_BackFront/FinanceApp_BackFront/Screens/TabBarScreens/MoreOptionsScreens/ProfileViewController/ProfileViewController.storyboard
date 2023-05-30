@@ -167,10 +167,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="XZP-5B-k3A"/>
                     <connections>
+                        <outlet property="changeProfileImageButton" destination="LXA-17-On9" id="k2k-yc-Npn"/>
+                        <outlet property="emailLabel" destination="7pN-Z5-Ssf" id="cch-OK-rY9"/>
                         <outlet property="emailTextField" destination="QoT-SN-0eZ" id="3Yd-LQ-4K6"/>
+                        <outlet property="nameLabel" destination="yE9-9W-Q3P" id="dKe-xH-LIa"/>
                         <outlet property="nameTextField" destination="8OT-ci-VZF" id="ibF-Xq-SkF"/>
+                        <outlet property="passwordLabel" destination="F8i-hq-pE6" id="SaD-aU-Eow"/>
+                        <outlet property="passwordTextField" destination="niy-XD-oOb" id="MIk-eU-hnf"/>
+                        <outlet property="phoneLabel" destination="n85-A0-o8M" id="cKV-By-f2z"/>
                         <outlet property="phoneTextField" destination="QoT-SN-0eZ" id="HtA-NI-UWA"/>
                         <outlet property="profileImage" destination="ZdH-rz-3V0" id="V9s-LC-o8p"/>
+                        <outlet property="saveButton" destination="pMe-Yx-zVn" id="dL3-js-fjf"/>
+                        <outlet property="titleLabel" destination="lsp-Xr-RvI" id="M9c-pZ-x6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgS-L1-MYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

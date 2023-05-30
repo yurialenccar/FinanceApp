@@ -39,6 +39,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoriesLabel" destination="LUL-6Y-fEZ" id="2Od-Uv-7eQ"/>
                         <outlet property="tableView" destination="PWq-JY-G58" id="UmW-1Z-ZH9"/>
                     </connections>
                 </viewController>

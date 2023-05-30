@@ -47,7 +47,7 @@ class CategoriesGraphViewController: UIViewController {
         chartTitle.text = moreOptionsStrings.expensesPerCategoryText
         chartTitle.textAlignment = .center
         chartTitle.textColor = .white
-        chartTitle.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        chartTitle.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         chartTitle.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(chartTitle)
         
@@ -63,7 +63,7 @@ class CategoriesGraphViewController: UIViewController {
         chartSubtitle = UILabel()
         chartSubtitle.textAlignment = .center
         chartSubtitle.textColor = .white
-        chartSubtitle.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        chartSubtitle.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         chartSubtitle.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(chartSubtitle)
         

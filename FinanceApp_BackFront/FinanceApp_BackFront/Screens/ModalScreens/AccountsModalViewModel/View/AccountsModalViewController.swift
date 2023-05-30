@@ -13,6 +13,7 @@ protocol AccountsModalDelegate: AnyObject {
 
 class AccountsModalViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     static let identifier:String = String(describing: AccountsModalViewController.self)
@@ -21,7 +22,13 @@ class AccountsModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStrings()
         setupTableView()
+        
+    }
+    
+    private func setupStrings() {
+        titleLabel.text = accountsModalStrings.titleText
     }
     
     func setupTableView() {

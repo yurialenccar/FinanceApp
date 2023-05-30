@@ -14,6 +14,7 @@ protocol CategoriesModalDelegate: AnyObject {
 
 class CategoriesModalViewController: UIViewController {
     
+    @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     static let identifier:String = String(describing: CategoriesModalViewController.self)
@@ -30,20 +31,21 @@ class CategoriesModalViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(globalStrings.initError)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStrings()
         setupTableView()
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
+    private func setupStrings() {
+        categoriesLabel.text = categoriesModalStrings.titleText
     }
     
-    func setupTableView(){
+    private func setupTableView(){
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CategoriesModalCell.nib(), forCellReuseIdentifier: CategoriesModalCell.identifier)
@@ -56,7 +58,7 @@ extension CategoriesModalViewController:UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesModalCell", for: indexPath) as! CategoriesModalCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CategoriesModalCell.identifier, for: indexPath) as! CategoriesModalCell
         cell.setupCell(listedCategories: viewModel.getItemCategory(indexPath.row))
         return cell
     }

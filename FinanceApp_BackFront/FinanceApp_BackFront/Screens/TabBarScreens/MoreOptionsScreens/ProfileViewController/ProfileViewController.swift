@@ -9,16 +9,25 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var changeProfileImageButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     static let identifier:String = String(describing: ProfileViewController.self)
     let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStrings()
         setupUIComponents()
         setupImagePicker()
     }
@@ -35,12 +44,23 @@ class ProfileViewController: UIViewController {
     @IBAction func tappedSaveButton(_ sender: UIButton) {
     }
     
-    func setupUIComponents(){
+    private func setupStrings() {
+        navigationItem.backButtonTitle = globalStrings.backButtonTitle
+        titleLabel.text = moreOptionsStrings.profileTitle
+        nameLabel.text = moreOptionsStrings.fullNameText
+        emailLabel.text = moreOptionsStrings.emailText
+        phoneLabel.text = moreOptionsStrings.phoneNumberText
+        passwordLabel.text = moreOptionsStrings.passwordText
+        changeProfileImageButton.setTitle(moreOptionsStrings.changeProfileImageButtonTitle, for: .normal)
+        saveButton.setTitle(moreOptionsStrings.saveButtonTitle, for: .normal)
+    }
+    
+    private func setupUIComponents(){
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.clipsToBounds = true
     }
     
-    func setupImagePicker(){
+    private func setupImagePicker(){
         imagePicker.delegate = self
     }
 
@@ -54,7 +74,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             profileImage.image = image
             
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "profileImageUpdated"), object: image)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: moreOptionsStrings.notificationNameProfileImage), object: image)
         }
     }
     
