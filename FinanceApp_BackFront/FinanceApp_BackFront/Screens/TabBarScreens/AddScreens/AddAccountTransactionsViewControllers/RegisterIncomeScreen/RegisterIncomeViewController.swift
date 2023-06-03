@@ -67,17 +67,17 @@ class RegisterIncomeViewController: UIViewController {
     
     @IBAction func tappedRegisterIncomeButton(_ sender: UIButton) {
 
-        if stringIsEmpty(text: amountTextField.text ?? ""){
+        if amountTextField.text.orEmpty.isEmptyTest() {
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
             showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotIncomeAmountValue)
         } else {
             viewModel.setTransactionsValues(
-                desc: descTextField.text ?? "",
+                desc: descTextField.text.orEmpty,
                 amount: amountTextField.text!,
                 category: indexCategorySelected,
                 accountId: idAccountSelected,
-                Obs: obsTextField.text ?? ""
+                Obs: obsTextField.text.orEmpty
             )
             dismiss(animated: true, completion: nil)
         }

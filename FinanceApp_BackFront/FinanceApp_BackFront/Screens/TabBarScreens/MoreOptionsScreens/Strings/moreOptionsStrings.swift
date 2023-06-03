@@ -36,6 +36,9 @@ enum moreOptionsStrings {
     
     static let newBankAccountText = "Nova Conta"
     static let editBankAccountText = "Editar Conta"
+    static let accountIdText = "account"
+    static let accountText = "Conta"
+    static let currentText = "Corrente"
     
     
     //CreditCardsViewController
@@ -47,11 +50,16 @@ enum moreOptionsStrings {
     static let cardLimitText = "Limite do Cartão"
     static let cardClosingDayText = "Dia de Fechamento"
     static let cardDueDateText = "Dia de Vencimento"
+    static let standardCardText = "Cartão Padrão"
     
     static let descEmptyMessage = "O campo de descrição está vazio, deseja continuar assim mesmo?"
+    static let cardLimitEmptyMessage = "Faltou informar o limite do Cartão!"
     static let newCreditCardText = "Novo Cartão de Crédito"
     static let editCreditCardText = "Editar Cartão de Crédito"
     static let accountBalanceZeroed = "0.0"
+    static let cardIdText = "card"
+    static let cardText = "Cartão"
+    static let ofCreditText = "de Crédito"
     
     //CategoriesGraphViewController
     static let mayText = "Maio"
@@ -63,6 +71,8 @@ enum moreOptionsStrings {
     static let realText = "Real (Brasil)"
     static let realFullText = "BRL - Real (Brasil)"
     static let realTimeQuoteText = "Cotação em tempo real"
+    static let oneDollarEqual = "U$ 1,00 = "
+    static let momentDateFormat = "dd 'de' MMMM 'de' yyyy - hh:mm:ss aa"
     
     //ProfileViewController
     static let profileTitle = "Editar Perfil"

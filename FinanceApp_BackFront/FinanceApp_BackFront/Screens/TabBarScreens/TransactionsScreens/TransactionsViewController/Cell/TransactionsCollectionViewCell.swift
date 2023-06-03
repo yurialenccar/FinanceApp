@@ -21,7 +21,7 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var categoryPanelView: UIView!
     
-    static let identifier:String = "TransactionsCollectionViewCell"
+    static let identifier:String = String(describing: TransactionsCollectionViewCell.self)
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
@@ -38,12 +38,12 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
             categoryLabel.text = expenseCategories[transactions.categoryIndex].name
             categoryImage.image = UIImage(imageLiteralResourceName: expenseCategories[transactions.categoryIndex].imageName).withRenderingMode(.alwaysTemplate)
             categoryPanelView.backgroundColor = expenseCategories[transactions.categoryIndex].color
-            valueLabel.textColor = UIColor(named: "RedGeneralExpenses")
+            valueLabel.textColor = .RedGeneralExpenses
         case .income:
             categoryLabel.text = incomeCategories[transactions.categoryIndex].name
             categoryImage.image = UIImage(imageLiteralResourceName: incomeCategories[transactions.categoryIndex].imageName).withRenderingMode(.alwaysTemplate)
             categoryPanelView.backgroundColor = incomeCategories[transactions.categoryIndex].color
-            valueLabel.textColor = UIColor(named: "GreenGeneralIncomes")
+            valueLabel.textColor = .GreenGeneralIncomes
         }
         
         categoryImage.tintColor = .white

@@ -56,11 +56,11 @@ class EditBankAccountsViewController: UIViewController {
     }
     
     @IBAction func tappedSaveButton(_ sender: UIButton) {
-        if stringIsEmpty(text: nameTextField.text ?? ""){
+        if nameTextField.text.orEmpty.isEmptyTest() {
             showAlertWithCancelOption(title: globalStrings.attention, message: moreOptionsStrings.descEmptyMessage,completion: {
                 self.saveValues()
             })
-        } else{
+        } else {
             saveValues()
         }
     }

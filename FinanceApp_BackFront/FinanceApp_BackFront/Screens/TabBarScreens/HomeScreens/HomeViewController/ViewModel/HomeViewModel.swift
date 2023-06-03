@@ -12,18 +12,18 @@ struct HomeViewModel {
     private var incomesTotal: Double = 0.0
     private var expensesTotal: Double = 0.0
     private var balanceTotal: Double = 0.0
-    private var lastIncomeDate: String = ""
-    private var lastExpenseDate: String = ""
+    private var lastIncomeDate: String = globalStrings.emptyString
+    private var lastExpenseDate: String = globalStrings.emptyString
     
     public func confirmAllAccountsIDs(){
         for i in 0..<bankAccountsList.count {
-            bankAccountsList[i].setId("account\(i.toStringTwoDigits())")
+            bankAccountsList[i].setId(homeStrings.accountIdText + i.toStringTwoDigits())
         }
     }
     
     public func confirmAllCardsIDs(){
         for i in 0..<creditCardsList.count {
-            creditCardsList[i].setId("card\(i.toStringTwoDigits())")
+            creditCardsList[i].setId(homeStrings.cardIdText + i.toStringTwoDigits())
         }
     }
     
@@ -31,8 +31,8 @@ struct HomeViewModel {
         incomesTotal = 0.0
         expensesTotal = 0.0
         balanceTotal = 0.0
-        lastIncomeDate = ""
-        lastExpenseDate = ""
+        lastIncomeDate = globalStrings.emptyString
+        lastExpenseDate = globalStrings.emptyString
         
         for transaction in transactions {
             if transaction.type == .income {
@@ -59,7 +59,7 @@ struct HomeViewModel {
         case 1:
             return BalanceCard(type: .expenses, balance: self.expensesTotal, lastTransaction: self.lastExpenseDate)
         default:
-            return BalanceCard(type: .balance, balance: self.balanceTotal, lastTransaction: "")
+            return BalanceCard(type: .balance, balance: self.balanceTotal, lastTransaction: globalStrings.emptyString)
         }
     }
 }

@@ -20,7 +20,7 @@ class EditCreditCardsViewModel{
     
     public func populateFieldsInfos() -> CreditCard {
         if configType == .createNew{
-            return CreditCard(desc: "", limit: 0.0, bank: .bancoDoBrasil, closingDay: 05, dueDate: 10, standardCard: false, obs: "")
+            return CreditCard(desc: globalStrings.emptyString, limit: 0.0, bank: .bancoDoBrasil, closingDay: 05, dueDate: 10, standardCard: false, obs: globalStrings.emptyString)
         } else {
             return creditCardsList[indexCard]
         }
@@ -29,8 +29,8 @@ class EditCreditCardsViewModel{
     public func saveCreditCard(newCard: CreditCard){
         var creditCard: CreditCard = newCard
         
-        if stringIsEmpty(text: newCard.desc){
-            creditCard.desc = "Cartão \(bankProperties[newCard.bank]?.textNameBank ?? "de Crédito")"
+        if newCard.desc.isEmptyTest() {
+            creditCard.desc = "\(moreOptionsStrings.cardText) \(bankProperties[newCard.bank]?.textNameBank ?? moreOptionsStrings.ofCreditText)"
         }
         
         if newCard.standardCard == true {
@@ -59,11 +59,11 @@ class EditCreditCardsViewModel{
         
         let existingIds = Set(creditCardsList.map { $0.getId() })
         
-        while existingIds.contains("card\(num.toStringTwoDigits())") {
+        while existingIds.contains(moreOptionsStrings.cardIdText + num.toStringTwoDigits()) {
             num += 1
         }
         
-        return "card\(num.toStringTwoDigits())"
+        return moreOptionsStrings.cardIdText + num.toStringTwoDigits()
     }
     
     
@@ -74,7 +74,7 @@ class EditCreditCardsViewModel{
     }
     
     public func getBankName(_ bank:Banks) -> String {
-        return bankProperties[bank]?.textNameBank ?? ""
+        return bankProperties[bank]?.textNameBank ?? globalStrings.emptyString
     }
     
     public func getRowHeight() ->CGFloat{
@@ -82,7 +82,7 @@ class EditCreditCardsViewModel{
     }
     
     public func getBankLabelText(_ bank:Banks) -> String{
-        return bankProperties[bank]?.logoTextLabel ?? ""
+        return bankProperties[bank]?.logoTextLabel ?? globalStrings.emptyString
     }
     
     public func getBankLabelTextFont(_ bank:Banks) -> UIFont{

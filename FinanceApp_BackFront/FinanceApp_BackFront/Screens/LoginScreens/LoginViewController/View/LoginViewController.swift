@@ -22,8 +22,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
-        setupTextFields()
-        
+        setupElements()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -65,15 +64,22 @@ class LoginViewController: UIViewController {
         registerButton.setTitle(loginStrings.registerButtonTitle, for: .normal)
     }
     
-    private func setupTextFields(){
+    private func setupElements(){
         emailTextField.delegate = self
+        emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = UIColor.GreyInformations?.cgColor
         emailTextField.keyboardType = .emailAddress
         emailTextField.layer.cornerRadius = 5
         
         passwordTextField.delegate = self
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = UIColor.GreyInformations?.cgColor
         passwordTextField.keyboardType = .default
         passwordTextField.layer.cornerRadius = 5
         passwordTextField.isSecureTextEntry = true
+        
+        enterButton.layer.cornerRadius = 10
+        enterButton.layer.masksToBounds = true
     }
     
     private func validadeTextField() -> Bool {

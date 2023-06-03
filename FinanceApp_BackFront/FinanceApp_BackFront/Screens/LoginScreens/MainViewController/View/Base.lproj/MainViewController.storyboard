@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LE7-KH-2Tb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LE7-KH-2Tb">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,7 +59,6 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="eNO-hM-6k4" secondAttribute="trailing" id="OJG-we-fpE"/>
                                                     <constraint firstItem="eNO-hM-6k4" firstAttribute="leading" secondItem="Id7-fk-JX8" secondAttribute="leading" id="emK-ry-KCf"/>
@@ -95,7 +95,6 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="Dd5-nJ-8r5" firstAttribute="leading" secondItem="bTG-on-Rk2" secondAttribute="leading" id="B6e-ze-A5j"/>
                                                     <constraint firstItem="Dd5-nJ-8r5" firstAttribute="top" secondItem="bTG-on-Rk2" secondAttribute="top" id="DHd-9M-gbV"/>
@@ -128,7 +127,6 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="Ujl-7X-oBw" secondAttribute="trailing" id="0Yt-Eq-rsY"/>
                                                     <constraint firstItem="UnP-3A-TFD" firstAttribute="leading" secondItem="vFJ-H7-wFw" secondAttribute="leading" constant="30" id="RGa-O2-PdN"/>
@@ -161,7 +159,6 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="KXa-6t-9ws" firstAttribute="leading" secondItem="D34-gV-1wX" secondAttribute="leading" id="E4d-6t-seC"/>
                                                     <constraint firstItem="NYk-Rq-xww" firstAttribute="leading" secondItem="D34-gV-1wX" secondAttribute="leading" constant="28" id="HPz-bh-y6P"/>

@@ -62,7 +62,7 @@ class CategoriesGraphCollectionViewCell: UICollectionViewCell {
         let values: [Double] = sum.map{$0.amount}
         let labels: [String] = sum.map{$0.category}
         
-        let dataSet = PieChartDataSet(entries: values.enumerated().map { PieChartDataEntry(value: $1, label: labels[$0]) }, label: "")
+        let dataSet = PieChartDataSet(entries: values.enumerated().map { PieChartDataEntry(value: $1, label: labels[$0]) }, label: globalStrings.emptyString)
         dataSet.colors = [.systemMint, .systemPink, .gray, .systemOrange] // Define as cores das fatias do gráfico
         let data = PieChartData(dataSet: dataSet)
         data.setValueTextColor(.white)
@@ -73,7 +73,7 @@ class CategoriesGraphCollectionViewCell: UICollectionViewCell {
         
         
         let total = values.reduce(0, +)
-        let centerText = NSAttributedString(string: "\(total) R$", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold)])
+        let centerText = NSAttributedString(string: total.toStringMoney(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold)])
         pieChartView.centerAttributedText = centerText
 
         pieChartView.tintColor = .white

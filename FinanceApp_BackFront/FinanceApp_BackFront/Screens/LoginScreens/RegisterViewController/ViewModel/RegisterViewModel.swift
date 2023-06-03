@@ -13,7 +13,7 @@ class RegisterViewModel {
     public func createUser(email: String, password: String, completion: @escaping (String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if error == nil {
-                completion(registerStrings.registerSuccessMessage)
+                completion(registerStrings.registerSuccessText)
             } else {
                 completion(registerStrings.failToRegisterErrorMessage + (error?.localizedDescription ?? ""))
             }

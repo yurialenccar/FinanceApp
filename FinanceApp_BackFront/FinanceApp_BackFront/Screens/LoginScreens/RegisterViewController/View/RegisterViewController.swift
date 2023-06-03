@@ -40,31 +40,31 @@ class RegisterViewController: UIViewController {
         let password = passwordTextfield.text.orEmpty
         
         if !checkTextFields() {
-            showSimpleAlert(title: "Atenção", message: "Um ou mais campos não foram preenchidos!")
+            showSimpleAlert(title: globalStrings.attention, message: registerStrings.someEmptyTextFieldMessage)
             return
         }
-        
+
         if !viewModel.checkEmail(email: email) {
             setErrorInTextField(textField: emailTextfield)
-            showSimpleAlert(title: "Email inválido", message: "Por favor, digite um email válido")
+            showSimpleAlert(title: registerStrings.invalidEmailMessage, message: registerStrings.typeEmailAgainMessage)
             return
         }
          
         if !viewModel.checkPassword(password: password) {
             setErrorInTextField(textField: passwordTextfield)
             setErrorInTextField(textField: passwordRepeatTextfield)
-            showSimpleAlert(title: "Senha inválida", message: "A senha deve ter pelo menos 8 caracteres")
+            showSimpleAlert(title: registerStrings.invalidPasswordMessage, message: registerStrings.password8CharsMessage)
             return
         }
-        
+
         if !checkEqualPasswords() {
-            showSimpleAlert(title: "Senhas não compatíveis", message: "A senha e sua cofirmação não coincidem")
+            showSimpleAlert(title: registerStrings.incompatiblePasswordsMessage, message: registerStrings.differentPasswordsMessage)
             return
         }
         
         viewModel.createUser(email: email, password: password) { resultRegister in
-            if resultRegister == "Sucesso Cadastro!" {
-                self.showSimpleAlert(title: "Cadastro realizado com Sucesso!", message: "") {
+            if resultRegister == registerStrings.registerSuccessText {
+                self.showSimpleAlert(title: registerStrings.registerSuccessMessage, message: globalStrings.emptyString) {
                     let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
                     if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
                         self.present(tbc, animated: true)
@@ -72,7 +72,7 @@ class RegisterViewController: UIViewController {
                 }
             } else {
                 #warning("Código passando direto antes da mensagem de erro!")
-                self.showSimpleAlert(title: "Atenção", message: resultRegister)
+                self.showSimpleAlert(title: globalStrings.attention, message: resultRegister)
             }
         }
     }
@@ -135,7 +135,7 @@ class RegisterViewController: UIViewController {
     }
 
     private func checkTextFieldEmpty(_ textField: UITextField) -> Bool {
-        if textField.text == "" {
+        if textField.text.orEmpty.isEmptyTest() {
             textField.layer.borderWidth = 1
             textField.layer.borderColor = UIColor.red.cgColor
             return false

@@ -21,6 +21,5 @@ class EditGoalViewModel{
             targetDate: targetDate
         )
         return newGoal
-        //goalsList.append(newGoal)
     }
 }

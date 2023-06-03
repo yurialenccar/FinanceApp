@@ -15,13 +15,13 @@ class CurrencyViewModel {
     }
     
     public func getActualRealTimeQuote() -> String {
-        return "U$ 1,00 = \(currencyExchangeRate.toStringMoney())"
+        return moreOptionsStrings.oneDollarEqual + currencyExchangeRate.toStringMoney()
     }
     
     public func getActualDate() -> String {
         let date = Date()
         
-        return date.toString(format: "dd 'de' MMMM 'de' yyyy - hh:mm:ss aa")
+        return date.toString(format: moreOptionsStrings.momentDateFormat)
     }
     
 }

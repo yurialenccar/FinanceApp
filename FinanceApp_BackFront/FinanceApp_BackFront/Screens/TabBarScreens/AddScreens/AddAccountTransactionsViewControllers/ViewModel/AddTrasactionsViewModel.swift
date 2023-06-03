@@ -11,32 +11,37 @@ import UIKit
 class AddAccountTransactionsViewModel{
     
     var transactionType:TransactionType
-    var newTransaction:Transactions
+    
     
     init(type: TransactionType) {
         transactionType=type
-        newTransaction = Transactions(desc: "Vazio", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: type, accountId: "", obs: "")
-        
     }
     
     var dataSelecionada = Date()
     
-    public func setTransactionsValues(desc: String, amount:String, category:Int, accountId:String, Obs:String){
+    public func setTransactionsValues(desc: String, amount:String, category:Int, accountId:String, Obs:String) {
+        
+        var newTransaction: Transactions
+        let amountValue: Double
         
         switch transactionType {
         case .income:
-            newTransaction.amount = Double(amount)!
+            amountValue = Double(amount) ?? 0.0
         case .expense:
-            newTransaction.amount = -Double(amount)!
+            amountValue = -(Double(amount) ?? 0.0)
         }
-
-        newTransaction.categoryIndex = category
-        newTransaction.accountId = accountId
-        newTransaction.date = dataSelecionada.toString(format: globalStrings.dateFormat)
-        newTransaction.type = transactionType
-        newTransaction.obs = Obs
         
-        if stringIsEmpty(text: desc){
+        newTransaction = Transactions(
+            desc: desc,
+            amount: amountValue,
+            categoryIndex: category,
+            date: dataSelecionada.toString(format: globalStrings.dateFormat),
+            type: transactionType,
+            accountId: accountId,
+            obs: Obs
+        )
+        
+        if desc.isEmptyTest() {
             switch transactionType{
             case .expense:
                 newTransaction.desc = expenseCategories[newTransaction.categoryIndex].name
@@ -50,7 +55,6 @@ class AddAccountTransactionsViewModel{
         }
         
         transactions.append(newTransaction)
-        //reordenateTransactions()
     }
     
     var standardAccountIndex: Int {

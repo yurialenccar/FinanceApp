@@ -42,7 +42,7 @@ class EditCreditCardsViewController: UIViewController {
     
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(globalStrings.initError)
     }
 
     override func viewDidLoad() {
@@ -73,11 +73,13 @@ class EditCreditCardsViewController: UIViewController {
     
     
     @IBAction func tappedSaveButton(_ sender: UIButton) {
-        if stringIsEmpty(text: nameTextField.text ?? ""){
+        if limitTextField.text.orEmpty.toDouble() <= 0.0 {
+            showSimpleAlert(title: globalStrings.attention, message: moreOptionsStrings.cardLimitEmptyMessage)
+        } else if nameTextField.text.orEmpty.isEmptyTest() {
             showAlertWithCancelOption(title: globalStrings.attention, message: moreOptionsStrings.descEmptyMessage,completion: {
                 self.saveValues()
             })
-        } else{
+        } else {
             saveValues()
         }
     }
@@ -112,7 +114,7 @@ class EditCreditCardsViewController: UIViewController {
         limitLabel.text = moreOptionsStrings.cardLimitText
         closingDayTextLabel.text = moreOptionsStrings.cardClosingDayText
         dueDateTextLabel.text = moreOptionsStrings.cardDueDateText
-        standardCardTextLabel.text = moreOptionsStrings.standardAccountText
+        standardCardTextLabel.text = moreOptionsStrings.standardCardText
         obsTextLabel.text = moreOptionsStrings.obsText
         saveButton.setTitle(moreOptionsStrings.saveButtonTitle, for: .normal)
     }

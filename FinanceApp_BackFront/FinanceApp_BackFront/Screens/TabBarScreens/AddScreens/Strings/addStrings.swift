@@ -27,6 +27,7 @@ enum addStrings {
     static let todayText = "Hoje"
     static let tomorrowText = "Amanhã"
     static let bankText = "Banco"
+    static let standardDate = "01/01/2023"
     
     
 }

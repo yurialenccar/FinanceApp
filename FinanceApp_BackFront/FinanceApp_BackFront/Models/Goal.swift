@@ -16,7 +16,7 @@ struct Goal {
     
     public var daysToDate: Int {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = globalStrings.dateFormat
         let targetDate = formatter.date(from: targetDate)
 
         let today = Date()

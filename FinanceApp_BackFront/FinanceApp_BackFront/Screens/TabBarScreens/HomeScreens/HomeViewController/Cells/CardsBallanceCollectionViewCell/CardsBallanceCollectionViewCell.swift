@@ -54,7 +54,6 @@ class CardsBallanceCollectionViewCell: UICollectionViewCell {
         }
             
         cardsTableView.reloadData()
-        
         self.creditCardList = cardsList
         self.hideInformations = hideInformations
     }

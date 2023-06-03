@@ -11,7 +11,7 @@ struct TransactionsViewModel {
     
     public func reordenateTransactions(){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = globalStrings.dateFormat
 
         transactions = transactions.sorted(by: { transaction1, transaction2 in
             let data1 = dateFormatter.date(from: transaction1.date)!

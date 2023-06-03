@@ -19,4 +19,15 @@ enum registerStrings {
     static let failToRegisterErrorMessage = "Falha em realizar cadastro, segue o erro "
     static let emailRegexFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     static let emailPredicatedFormat = "SELF MATCHES %@"
+    static let someEmptyTextFieldMessage = "Um ou mais campos não foram preenchidos!"
+    static let typeEmailAgainMessage = "Por favor, digite um email válido"
+    static let password8CharsMessage = "A senha deve ter pelo menos 8 caracteres"
+    static let differentPasswordsMessage = "A senha e sua cofirmação não coincidem"
+    static let invalidEmailMessage = "Email inválido"
+    static let invalidPasswordMessage = "Senha inválida"
+    static let incompatiblePasswordsMessage = "Senhas não compatíveis"
+    static let registerSuccessText = "Sucesso Cadastro!"
+    
 }
+
+

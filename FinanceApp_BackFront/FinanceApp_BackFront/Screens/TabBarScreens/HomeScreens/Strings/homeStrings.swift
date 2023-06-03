@@ -22,6 +22,8 @@ enum homeStrings {
     static let lastTransactionsText = "Ultimas Transações"
     
     static let profileImageUpdatedNotification = "profileImageUpdated"
+    static let accountIdText = "account"
+    static let cardIdText = "card"
     
     
 }

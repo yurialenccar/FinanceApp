@@ -14,8 +14,8 @@ class CategoriesModalCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     
-    static let identifier: String = "CategoriesModalCell"
-
+    static let identifier:String = String(describing: CategoriesModalCell.self)
+    
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }

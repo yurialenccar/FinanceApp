@@ -67,17 +67,17 @@ class RegisterCardExpenseViewController: UIViewController{
     }
     
     @IBAction func tappedRegisterExpenseButton(_ sender: UIButton) {
-        if viewModel.stringIsEmpty(text: amountTextField.text ?? ""){
+        if amountTextField.text.orEmpty.isEmptyTest() {
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
             showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotExpenseAmountValue)
         } else {
             viewModel.setExpenseValues(
-                desc: descTextField.text ?? "",
+                desc: descTextField.text.orEmpty,
                 amount: amountTextField.text!,
                 category: indexCategorySelected,
                 card: globalStrings.emptyString,
-                Obs: obsTextField.text ?? ""
+                Obs: obsTextField.text.orEmpty
             )
             dismiss(animated: true, completion: nil)
         }
