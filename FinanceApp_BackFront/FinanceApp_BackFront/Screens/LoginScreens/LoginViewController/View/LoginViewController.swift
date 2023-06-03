@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var forgetPasswordButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var logoBottomConstraint: NSLayoutConstraint!
     
     var viewModel: LoginViewModel = LoginViewModel()
     
@@ -80,6 +82,9 @@ class LoginViewController: UIViewController {
         
         enterButton.layer.cornerRadius = 10
         enterButton.layer.masksToBounds = true
+        
+        let newConstraint = containerView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: 40)
+        newConstraint.isActive = true
     }
     
     private func validadeTextField() -> Bool {
@@ -106,6 +111,7 @@ extension LoginViewController : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.blue.cgColor
         textField.layer.borderWidth = 1
+        logoBottomConstraint.constant = 50
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
@@ -114,6 +120,7 @@ extension LoginViewController : UITextFieldDelegate {
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        logoBottomConstraint.constant = 100
         if textField.text?.isEmpty ?? true {
             textField.layer.borderWidth = 1
             textField.layer.borderColor = UIColor.red.cgColor

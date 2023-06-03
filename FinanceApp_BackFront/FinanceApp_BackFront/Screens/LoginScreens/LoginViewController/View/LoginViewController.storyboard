@@ -21,8 +21,8 @@
                                 <rect key="frame" x="-31" y="-23" width="490" height="937"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfL-By-VFU">
-                                <rect key="frame" x="0.0" y="552" width="393" height="300"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfL-By-VFU">
+                                <rect key="frame" x="0.0" y="542" width="393" height="310"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="santos123" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mp1-gB-p0w">
                                         <rect key="frame" x="60" y="100" width="313" height="50"/>
@@ -97,7 +97,7 @@
                                     <constraint firstItem="1kD-NB-0Xh" firstAttribute="top" secondItem="kfL-By-VFU" secondAttribute="top" constant="42" id="50X-DY-SBe"/>
                                     <constraint firstItem="mkt-eK-cyq" firstAttribute="top" secondItem="1kD-NB-0Xh" secondAttribute="bottom" constant="45" id="93k-pM-nxH"/>
                                     <constraint firstItem="iFl-IL-L4h" firstAttribute="top" secondItem="mp1-gB-p0w" secondAttribute="bottom" constant="20" id="Bai-XO-iBb"/>
-                                    <constraint firstAttribute="height" constant="300" id="CNu-89-bbi"/>
+                                    <constraint firstAttribute="height" constant="310" id="CNu-89-bbi"/>
                                     <constraint firstItem="Sgg-eJ-xDg" firstAttribute="top" secondItem="iFl-IL-L4h" secondAttribute="bottom" constant="20" id="DUN-la-0m2"/>
                                     <constraint firstItem="Hb5-Hm-mTz" firstAttribute="leading" secondItem="Sgg-eJ-xDg" secondAttribute="trailing" constant="10" id="FeG-go-AyJ"/>
                                     <constraint firstItem="Hb5-Hm-mTz" firstAttribute="top" secondItem="iFl-IL-L4h" secondAttribute="bottom" constant="20" id="Gji-Gf-E1L"/>
@@ -118,7 +118,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="aiz-vh-3O3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="aiz-vh-3O3">
                                 <rect key="frame" x="52.666666666666657" y="159" width="288" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="bUT-CD-wyE"/>
@@ -129,17 +129,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kfL-By-VFU" firstAttribute="leading" secondItem="8Sh-Xw-hz2" secondAttribute="leading" id="5RM-af-RvX"/>
-                            <constraint firstItem="kfL-By-VFU" firstAttribute="bottom" secondItem="6vo-IP-g72" secondAttribute="bottom" id="5T5-qv-Scv"/>
-                            <constraint firstItem="aiz-vh-3O3" firstAttribute="top" secondItem="8Sh-Xw-hz2" secondAttribute="top" constant="100" id="Jdz-zd-8qd"/>
+                            <constraint firstItem="kfL-By-VFU" firstAttribute="top" secondItem="aiz-vh-3O3" secondAttribute="bottom" constant="100" id="JVz-Kd-W37"/>
                             <constraint firstItem="kfL-By-VFU" firstAttribute="trailing" secondItem="8Sh-Xw-hz2" secondAttribute="trailing" id="KB9-1J-f34"/>
                             <constraint firstItem="aiz-vh-3O3" firstAttribute="centerX" secondItem="6vo-IP-g72" secondAttribute="centerX" id="cTp-fQ-QOf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mlo-DK-SjI"/>
                     <connections>
+                        <outlet property="containerView" destination="kfL-By-VFU" id="9J0-6A-kG6"/>
                         <outlet property="emailTextField" destination="ltD-0e-x2P" id="ZQZ-D1-gcP"/>
                         <outlet property="enterButton" destination="iFl-IL-L4h" id="C6X-JT-t65"/>
                         <outlet property="forgetPasswordButton" destination="Sgg-eJ-xDg" id="adV-aA-hsJ"/>
+                        <outlet property="logoBottomConstraint" destination="JVz-Kd-W37" id="sd5-rJ-VXt"/>
                         <outlet property="passwordTextField" destination="mp1-gB-p0w" id="7JL-Ft-Hua"/>
                         <outlet property="registerButton" destination="Hb5-Hm-mTz" id="4kV-9o-EQt"/>
                     </connections>

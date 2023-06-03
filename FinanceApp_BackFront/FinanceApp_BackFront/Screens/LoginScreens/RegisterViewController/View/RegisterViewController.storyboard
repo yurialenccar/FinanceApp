@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9sb-Nc-RX3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9sb-Nc-RX3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,13 +21,11 @@
                                 <rect key="frame" x="-31" y="-23" width="490" height="936"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="5PB-Qe-pd5">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo-finances" translatesAutoresizingMaskIntoConstraints="NO" id="5PB-Qe-pd5">
                                 <rect key="frame" x="52.666666666666657" y="227" width="288" height="185"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="185" id="YV2-4M-yj9"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyB-gQ-Glj">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nyB-gQ-Glj">
                                 <rect key="frame" x="0.0" y="438" width="393" height="414"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oit-wJ-IaB">
@@ -173,14 +172,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nyB-gQ-Glj" firstAttribute="leading" secondItem="Oqo-Pc-SVP" secondAttribute="leading" id="G8h-1Q-XkK"/>
-                            <constraint firstItem="nyB-gQ-Glj" firstAttribute="bottom" secondItem="b75-wj-e0y" secondAttribute="bottom" id="jtu-t5-ZTO"/>
-                            <constraint firstItem="nyB-gQ-Glj" firstAttribute="top" secondItem="5PB-Qe-pd5" secondAttribute="bottom" constant="26" id="oE3-3g-Xj4"/>
                             <constraint firstItem="nyB-gQ-Glj" firstAttribute="trailing" secondItem="Oqo-Pc-SVP" secondAttribute="trailing" id="rmy-Jb-ypU"/>
-                            <constraint firstItem="5PB-Qe-pd5" firstAttribute="centerX" secondItem="b75-wj-e0y" secondAttribute="centerX" id="y39-Xy-tHk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zH9-rs-Bm4"/>
                     <connections>
+                        <outlet property="containerView" destination="nyB-gQ-Glj" id="99N-SC-zTp"/>
                         <outlet property="emailTextfield" destination="fOg-yK-UBf" id="SXt-OY-Wtl"/>
                         <outlet property="loginScreenButton" destination="VHO-Gd-9Zq" id="4Pq-05-OHA"/>
                         <outlet property="nameTextfield" destination="A9d-yx-2jC" id="AGd-Im-qwd"/>

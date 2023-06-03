@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordRepeatTextfield: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginScreenButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
     
     var viewModel: RegisterViewModel = RegisterViewModel()
     
@@ -23,7 +24,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
-        setupTextFields()
+        setupElements()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -92,7 +93,7 @@ class RegisterViewController: UIViewController {
         loginScreenButton.setTitle(registerStrings.loginScreenButtonTitle, for: .normal)
     }
     
-    private func setupTextFields() {
+    private func setupElements() {
         nameTextfield.delegate = self
         nameTextfield.keyboardType = .default
         nameTextfield.layer.cornerRadius = 5
@@ -110,6 +111,9 @@ class RegisterViewController: UIViewController {
         passwordRepeatTextfield.keyboardType = .default
         passwordRepeatTextfield.layer.cornerRadius = 5
         passwordRepeatTextfield.isSecureTextEntry = true
+        
+        let newConstraint = containerView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: 40)
+        newConstraint.isActive = true
     }
     
     private func checkTextFields() -> Bool {
