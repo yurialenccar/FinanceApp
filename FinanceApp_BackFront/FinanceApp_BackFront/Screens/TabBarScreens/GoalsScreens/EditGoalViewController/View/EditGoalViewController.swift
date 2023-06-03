@@ -8,7 +8,7 @@
 import UIKit
 
 protocol GoalSavedDelegate{
-    func didSavedGoal()
+    func didSavedGoal(_ newGoal: Goal)
 }
 
 class EditGoalViewController: UIViewController {
@@ -43,8 +43,14 @@ class EditGoalViewController: UIViewController {
     
     @IBAction func tappedCreateGoalButton(_ sender: UIButton) {
         if isMissingInformation() == false {
-            viewModel.createNewGoal(desc: descTextField.text!, imageName: goalStrings.casaText, savedAmount: Double(initialAmountTextField.text!)!, goalValue: Double(targetValueTextField.text!)!, targetDate: tagetDateTextField.text!)
-            delegate?.didSavedGoal()
+            let newGoal = viewModel.createNewGoal(
+                desc: descTextField.text.orEmpty,
+                imageName: goalStrings.casaText,
+                savedAmount: Double(initialAmountTextField.text.orEmpty) ?? 0.0,
+                goalValue: Double(targetValueTextField.text.orEmpty) ?? 0.0,
+                targetDate: tagetDateTextField.text.orEmpty
+            )
+            delegate?.didSavedGoal(newGoal)
             dismiss(animated: true)
         }
     }
@@ -61,22 +67,22 @@ class EditGoalViewController: UIViewController {
     func isMissingInformation() -> Bool {
         var missing = false
         
-        if stringIsEmpty(text: descTextField.text ?? "") {
+        if descTextField.text.orEmpty.isEmpty {
             descTextField.layer.borderColor = UIColor.red.cgColor
             missing = true
         }
         
-        if stringIsEmpty(text: initialAmountTextField.text ?? "") {
+        if initialAmountTextField.text.orEmpty.isEmpty {
             initialAmountTextField.layer.borderColor = UIColor.red.cgColor
             missing = true
         }
         
-        if stringIsEmpty(text: targetValueTextField.text ?? "") {
+        if targetValueTextField.text.orEmpty.isEmpty {
             targetValueTextField.layer.borderColor = UIColor.red.cgColor
             missing = true
         }
         
-        if stringIsEmpty(text: tagetDateTextField.text ?? "") {
+        if tagetDateTextField.text.orEmpty.isEmpty {
             tagetDateTextField.layer.borderColor = UIColor.red.cgColor
             missing = true
         }

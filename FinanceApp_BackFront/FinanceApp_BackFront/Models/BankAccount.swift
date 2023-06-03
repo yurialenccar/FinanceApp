@@ -28,8 +28,7 @@ struct BankAccount {
         self.standardAccount = standardAccount
         self.obs = obs
     }
-    
-    
+
     public func adjustBalance(newBalance:Double){
         let valueNewTransaction:Double = newBalance - balance
         var transactionType:TransactionType

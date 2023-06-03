@@ -9,15 +9,18 @@ import Foundation
 
 class EditGoalViewModel{
     
-    var newGoal:Goal=Goal(desc: "", imageName: "", savedAmount: 0.0, goalValue: 0.0, targetDate: "")
     
-    func createNewGoal(desc:String,imageName:String, savedAmount:Double, goalValue:Double, targetDate:String){
-        newGoal.desc = desc
-        newGoal.imageName = imageName
-        newGoal.savedAmount = savedAmount
-        newGoal.goalValue = goalValue
-        newGoal.targetDate = targetDate
+    
+    func createNewGoal(desc:String,imageName:String, savedAmount:Double, goalValue:Double, targetDate:String) -> Goal {
         
-        goalsList.append(newGoal)
+        let newGoal: Goal = Goal(
+            desc: desc,
+            imageName: imageName,
+            savedAmount: savedAmount,
+            goalValue: goalValue,
+            targetDate: targetDate
+        )
+        return newGoal
+        //goalsList.append(newGoal)
     }
 }

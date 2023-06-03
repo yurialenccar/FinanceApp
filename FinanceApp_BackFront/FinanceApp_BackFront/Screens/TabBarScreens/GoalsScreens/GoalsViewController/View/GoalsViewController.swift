@@ -54,7 +54,7 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if  indexPath.row < goalsList.count{
+        if  indexPath.row < viewModel.getGoalsCount() {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalsCollectionViewCell.identifier, for: indexPath) as? GoalsCollectionViewCell
             cell?.layer.cornerRadius = 10
             cell?.layer.masksToBounds = true
@@ -81,16 +81,17 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         self.present(vc ?? UIViewController(), animated: true)
     }
     
-    func didSavedGoal() {
+    func didSavedGoal(_ newGoal: Goal) {
+        viewModel.createNewGoal(newGoal)
         collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
-        if indexPath.row < goalsList.count{
+        if indexPath.row < viewModel.getGoalsCount() {
             let storyboard = UIStoryboard(name: GoalInfoViewController.identifier, bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: GoalInfoViewController.identifier) {coder -> GoalInfoViewController? in
-                return GoalInfoViewController(coder: coder, goal: goalsList[indexPath.row])
+                return GoalInfoViewController(coder: coder, goal: self.viewModel.getItemGoal(indexPath.row))
             }
             navigationController?.pushViewController(vc, animated: true)
         }

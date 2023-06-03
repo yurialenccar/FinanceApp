@@ -8,6 +8,10 @@
 import Foundation
 
 extension String {
+    func isEmptyTest() -> Bool {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
     func toDouble() -> Double {
         let valorString = self
 

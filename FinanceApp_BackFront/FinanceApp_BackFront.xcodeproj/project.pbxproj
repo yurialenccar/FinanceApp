@@ -1391,9 +1391,9 @@
 		E3C0915729C21C9100BE4441 /* GoalsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A19F850B29F96E2A0044F7DE /* Cells */,
 				A14F998F2A2509AF00257B67 /* ViewModel */,
 				A14F998D2A25097A00257B67 /* View */,
-				A19F850B29F96E2A0044F7DE /* Cells */,
 			);
 			path = GoalsViewController;
 			sourceTree = "<group>";
