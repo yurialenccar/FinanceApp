@@ -27,8 +27,8 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        emailTextField.text = ""
-        passwordTextField.text = "" 
+        emailTextField.text = globalStrings.emptyString
+        passwordTextField.text = globalStrings.emptyString
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
@@ -39,8 +39,8 @@ class LoginViewController: UIViewController {
     @IBAction func tappedEnterButton(_ sender: UIButton) {
         view.endEditing(true)
         
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
+        let email = emailTextField.text.orEmpty
+        let password = passwordTextField.text.orEmpty
         
         if validadeTextField() == true {
             viewModel.loginUser(email: email, password: password) { resultLogin in
@@ -79,13 +79,13 @@ class LoginViewController: UIViewController {
     private func validadeTextField() -> Bool {
             var statusOk = true
         
-            if emailTextField.text == "" {
+        if emailTextField.text.orEmpty.isEmptyTest() {
                 statusOk = false
                 emailTextField.layer.borderWidth = 1
                 emailTextField.layer.borderColor = UIColor.red.cgColor
             }
         
-            if passwordTextField.text == "" {
+            if passwordTextField.text.orEmpty.isEmptyTest() {
                 statusOk =  false
                 passwordTextField.layer.borderWidth = 1
                 passwordTextField.layer.borderColor = UIColor.red.cgColor

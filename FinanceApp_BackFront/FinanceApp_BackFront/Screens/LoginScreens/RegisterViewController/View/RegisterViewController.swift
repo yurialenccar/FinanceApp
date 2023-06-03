@@ -27,17 +27,17 @@ class RegisterViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        nameTextfield.text = ""
-        emailTextfield.text = ""
-        passwordTextfield.text = ""
-        passwordRepeatTextfield.text = ""
+        nameTextfield.text = globalStrings.emptyString
+        emailTextfield.text = globalStrings.emptyString
+        passwordTextfield.text = globalStrings.emptyString
+        passwordRepeatTextfield.text = globalStrings.emptyString
     }
     
     @IBAction func tappedCreateButton(_ sender: UIButton) {
         view.endEditing(true)
     
-        let email = emailTextfield.text ?? ""
-        let password = passwordTextfield.text ?? ""
+        let email = emailTextfield.text.orEmpty
+        let password = passwordTextfield.text.orEmpty
         
         if !checkTextFields() {
             showSimpleAlert(title: "Atenção", message: "Um ou mais campos não foram preenchidos!")
