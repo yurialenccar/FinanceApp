@@ -134,6 +134,12 @@
 		A1E47F7B29F8A70000039F08 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E47F7A29F8A70000039F08 /* Goal.swift */; };
 		A1F4210329F6215B005C346B /* AccountsModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4210229F6215B005C346B /* AccountsModalViewModel.swift */; };
 		A1F4210829F62379005C346B /* CategoriesModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4210729F62379005C346B /* CategoriesModalViewModel.swift */; };
+		A1F43FB92A2BE074000A3567 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A1F43FB82A2BE074000A3567 /* Lottie */; };
+		A1F43FC02A2BE2F3000A3567 /* 145229-dot-loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBB2A2BE2F3000A3567 /* 145229-dot-loading-animation.json */; };
+		A1F43FC12A2BE2F3000A3567 /* 79808-green-money-falling.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBC2A2BE2F3000A3567 /* 79808-green-money-falling.json */; };
+		A1F43FC22A2BE2F3000A3567 /* 99977-money-pf.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBD2A2BE2F3000A3567 /* 99977-money-pf.json */; };
+		A1F43FC32A2BE2F3000A3567 /* 8943-money-greenbg.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBE2A2BE2F3000A3567 /* 8943-money-greenbg.json */; };
+		A1F43FC42A2BE2F3000A3567 /* 51720-making-money.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBF2A2BE2F3000A3567 /* 51720-making-money.json */; };
 		A1FA88552A0D904C00818F52 /* AccountsResumeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FA88532A0D904C00818F52 /* AccountsResumeTableViewCell.swift */; };
 		A1FA88562A0D904C00818F52 /* AccountsResumeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FA88542A0D904C00818F52 /* AccountsResumeTableViewCell.xib */; };
 		E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084929BDAD100098F0B5 /* AppDelegate.swift */; };
@@ -286,6 +292,11 @@
 		A1E47F7A29F8A70000039F08 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		A1F4210229F6215B005C346B /* AccountsModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsModalViewModel.swift; sourceTree = "<group>"; };
 		A1F4210729F62379005C346B /* CategoriesModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModalViewModel.swift; sourceTree = "<group>"; };
+		A1F43FBB2A2BE2F3000A3567 /* 145229-dot-loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "145229-dot-loading-animation.json"; path = "../../../../Downloads/145229-dot-loading-animation.json"; sourceTree = "<group>"; };
+		A1F43FBC2A2BE2F3000A3567 /* 79808-green-money-falling.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "79808-green-money-falling.json"; path = "../../../../Downloads/79808-green-money-falling.json"; sourceTree = "<group>"; };
+		A1F43FBD2A2BE2F3000A3567 /* 99977-money-pf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "99977-money-pf.json"; path = "../../../../Downloads/99977-money-pf.json"; sourceTree = "<group>"; };
+		A1F43FBE2A2BE2F3000A3567 /* 8943-money-greenbg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "8943-money-greenbg.json"; path = "../../../../Downloads/8943-money-greenbg.json"; sourceTree = "<group>"; };
+		A1F43FBF2A2BE2F3000A3567 /* 51720-making-money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "51720-making-money.json"; path = "../../../../Downloads/51720-making-money.json"; sourceTree = "<group>"; };
 		A1FA88532A0D904C00818F52 /* AccountsResumeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsResumeTableViewCell.swift; sourceTree = "<group>"; };
 		A1FA88542A0D904C00818F52 /* AccountsResumeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsResumeTableViewCell.xib; sourceTree = "<group>"; };
 		E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp_BackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +327,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1F43FB92A2BE074000A3567 /* Lottie in Frameworks */,
 				E366E3B929E0D8A700F89209 /* Algorithms.framework in Frameworks */,
 				E366E3B729E0D8A200F89209 /* Charts.framework in Frameworks */,
 				77C95F712D80F1F287355889 /* Pods_FinanceApp_BackFront.framework in Frameworks */,
@@ -1373,6 +1385,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A1F43FBA2A2BE2DC000A3567 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				A1F43FBE2A2BE2F3000A3567 /* 8943-money-greenbg.json */,
+				A1F43FBF2A2BE2F3000A3567 /* 51720-making-money.json */,
+				A1F43FBC2A2BE2F3000A3567 /* 79808-green-money-falling.json */,
+				A1F43FBD2A2BE2F3000A3567 /* 99977-money-pf.json */,
+				A1F43FBB2A2BE2F3000A3567 /* 145229-dot-loading-animation.json */,
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
 		A1FA88522A0D901800818F52 /* tableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1421,6 +1445,7 @@
 				A1CE09292A001B410028028B /* GlobalStrings */,
 				A16B56A229C1076500E53727 /* Screens */,
 				A16636ED29DE1B0400162872 /* Models */,
+				A1F43FBA2A2BE2DC000A3567 /* Lotties */,
 			);
 			path = FinanceApp_BackFront;
 			sourceTree = "<group>";
@@ -1455,6 +1480,7 @@
 			name = FinanceApp_BackFront;
 			packageProductDependencies = (
 				A18ED5932A20F01D00F564BD /* FirebaseAuth */,
+				A1F43FB82A2BE074000A3567 /* Lottie */,
 			);
 			productName = FinanceApp_BackFront;
 			productReference = E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */;
@@ -1486,6 +1512,7 @@
 			mainGroup = E35D083D29BDAD100098F0B5;
 			packageReferences = (
 				A18ED5922A20F01D00F564BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A1F43FB72A2BE074000A3567 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = E35D084729BDAD100098F0B5 /* Products */;
 			projectDirPath = "";
@@ -1505,8 +1532,10 @@
 				A18ED5912A20EF7200F564BD /* GoogleService-Info.plist in Resources */,
 				A1E107BB29E4F426005A3F4F /* CreditCardsViewController.storyboard in Resources */,
 				A17C89E32A09C9A200B5DB2F /* EditCreditCardsViewController.storyboard in Resources */,
+				A1F43FC32A2BE2F3000A3567 /* 8943-money-greenbg.json in Resources */,
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
 				A1E107C729E4F784005A3F4F /* CurrencyViewController.storyboard in Resources */,
+				A1F43FC12A2BE2F3000A3567 /* 79808-green-money-falling.json in Resources */,
 				E3C0915B29C21CD400BE4441 /* GoalsViewController.storyboard in Resources */,
 				A1C9EFF129E60D840029B69F /* LoginViewController.storyboard in Resources */,
 				A140934629E73B750037662B /* RegisterExpenseViewController.storyboard in Resources */,
@@ -1521,10 +1550,12 @@
 				A101917629FABE5700776A67 /* NewItemButtonCell.xib in Resources */,
 				A1C9D23A2A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.xib in Resources */,
 				A1A92BC029F812B600E14EE8 /* CreditCardModalCell.xib in Resources */,
+				A1F43FC02A2BE2F3000A3567 /* 145229-dot-loading-animation.json in Resources */,
 				A1FA88562A0D904C00818F52 /* AccountsResumeTableViewCell.xib in Resources */,
 				A1D2F84E29E9E5B100DCA6E4 /* CategoriesModalCell.xib in Resources */,
 				A12329F129FB0F2C0053AC38 /* BankAccountsViewController.storyboard in Resources */,
 				E35D087329BDB20C0098F0B5 /* MoreOptionsViewController.storyboard in Resources */,
+				A1F43FC42A2BE2F3000A3567 /* 51720-making-money.json in Resources */,
 				A1B8F34A2A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.xib in Resources */,
 				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
 				A1A92BB429F8122A00E14EE8 /* CreditCardModalViewController.storyboard in Resources */,
@@ -1547,6 +1578,7 @@
 				A1E107C029E4F63D005A3F4F /* ProfileViewController.storyboard in Resources */,
 				A11BDA8729F4CFB6006CF6B2 /* AccountsTableViewCell.xib in Resources */,
 				E35D085129BDAD100098F0B5 /* MainViewController.storyboard in Resources */,
+				A1F43FC22A2BE2F3000A3567 /* 99977-money-pf.json in Resources */,
 				A18991A02A117D0900D47427 /* TitleHeaderCollectionReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1932,6 +1964,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		A1F43FB72A2BE074000A3567 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1939,6 +1979,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A18ED5922A20F01D00F564BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		A1F43FB82A2BE074000A3567 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1F43FB72A2BE074000A3567 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 
