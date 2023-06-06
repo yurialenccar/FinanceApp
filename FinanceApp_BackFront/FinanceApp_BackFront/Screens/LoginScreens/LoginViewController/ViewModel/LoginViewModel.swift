@@ -14,8 +14,26 @@ class LoginViewModel {
             if error == nil {
                 completion(loginStrings.loginSuccessMessage)
             } else {
-                completion(loginStrings.failToLoginErrorMessage + (error?.localizedDescription ?? ""))
+                let errorMessage = self.getLocalizedErrorMessage(for: error)
+                completion(loginStrings.failToLoginErrorMessage + errorMessage)
             }
+        }
+    }
+    
+    private func getLocalizedErrorMessage(for error: Error?) -> String {
+        if let errorCode = (error as NSError?)?.code {
+            switch errorCode {
+            case AuthErrorCode.wrongPassword.rawValue:
+                return loginStrings.wrongPasswordError
+            case AuthErrorCode.userNotFound.rawValue:
+                return loginStrings.userNotFoundError
+            case AuthErrorCode.invalidEmail.rawValue:
+                return loginStrings.invalidEmail
+            default:
+                return loginStrings.followError + (error?.localizedDescription ?? "")
+            }
+        } else {
+            return loginStrings.followError + (error?.localizedDescription ?? "")
         }
     }
 }

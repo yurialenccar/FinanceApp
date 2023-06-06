@@ -72,7 +72,6 @@ class RegisterViewController: UIViewController {
                     }
                 }
             } else {
-                #warning("Código passando direto antes da mensagem de erro!")
                 self.showSimpleAlert(title: globalStrings.attention, message: resultRegister)
             }
         }

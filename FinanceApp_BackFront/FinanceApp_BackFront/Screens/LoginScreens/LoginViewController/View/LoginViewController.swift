@@ -72,6 +72,7 @@ class LoginViewController: UIViewController {
         emailTextField.layer.borderColor = UIColor.GreyInformations?.cgColor
         emailTextField.keyboardType = .emailAddress
         emailTextField.layer.cornerRadius = 5
+        emailTextField.autocorrectionType = .no
         
         passwordTextField.delegate = self
         passwordTextField.layer.borderWidth = 1
@@ -79,6 +80,7 @@ class LoginViewController: UIViewController {
         passwordTextField.keyboardType = .default
         passwordTextField.layer.cornerRadius = 5
         passwordTextField.isSecureTextEntry = true
+        emailTextField.autocorrectionType = .no
         
         enterButton.layer.cornerRadius = 10
         enterButton.layer.masksToBounds = true

@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; configuration.title = "Cadastrar"; ObjectID = "Dd5-nJ-8r5"; */
+"Dd5-nJ-8r5.configuration.title" = "Cadastrar";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Dd5-nJ-8r5"; */
+"Dd5-nJ-8r5.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Entrar com Apple"; ObjectID = "KXa-6t-9ws"; */
+"KXa-6t-9ws.configuration.title" = "Entrar com Apple";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KXa-6t-9ws"; */
+"KXa-6t-9ws.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Entrar com Gmail"; ObjectID = "Ujl-7X-oBw"; */
+"Ujl-7X-oBw.configuration.title" = "Entrar com Gmail";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ujl-7X-oBw"; */
+"Ujl-7X-oBw.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "eNO-hM-6k4"; */
+"eNO-hM-6k4.configuration.title" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "eNO-hM-6k4"; */
+"eNO-hM-6k4.normalTitle" = "Button";

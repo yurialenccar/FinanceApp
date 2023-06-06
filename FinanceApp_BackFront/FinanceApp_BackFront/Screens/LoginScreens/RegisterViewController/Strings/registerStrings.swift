@@ -16,7 +16,7 @@ enum registerStrings {
     static let loginScreenButtonTitle = "Já possuo uma conta"
     
     static let registerSuccessMessage = "Cadastro realizado com sucesso!"
-    static let failToRegisterErrorMessage = "Falha em realizar cadastro, segue o erro "
+    static let failToRegisterErrorMessage = "Falha em realizar cadastro, "
     static let emailRegexFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     static let emailPredicatedFormat = "SELF MATCHES %@"
     static let someEmptyTextFieldMessage = "Um ou mais campos não foram preenchidos!"
@@ -28,6 +28,8 @@ enum registerStrings {
     static let incompatiblePasswordsMessage = "Senhas não compatíveis"
     static let registerSuccessText = "Sucesso Cadastro!"
     
+    static let emailAlreadyInUse = "email já foi cadastrado no sistema!"
+    static let followError = "segue o erro "
 }
 
 

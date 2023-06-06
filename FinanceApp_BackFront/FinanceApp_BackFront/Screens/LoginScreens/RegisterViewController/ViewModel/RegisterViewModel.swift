@@ -15,8 +15,22 @@ class RegisterViewModel {
             if error == nil {
                 completion(registerStrings.registerSuccessText)
             } else {
-                completion(registerStrings.failToRegisterErrorMessage + (error?.localizedDescription ?? ""))
+                let errorMessage = self.getLocalizedErrorMessage(for: error)
+                completion(registerStrings.failToRegisterErrorMessage + errorMessage)
             }
+        }
+    }
+    
+    private func getLocalizedErrorMessage(for error: Error?) -> String {
+        if let errorCode = (error as NSError?)?.code {
+            switch errorCode {
+            case AuthErrorCode.emailAlreadyInUse.rawValue:
+                return registerStrings.emailAlreadyInUse
+            default:
+                return registerStrings.followError + (error?.localizedDescription ?? "")
+            }
+        } else {
+            return registerStrings.followError + (error?.localizedDescription ?? "")
         }
     }
     

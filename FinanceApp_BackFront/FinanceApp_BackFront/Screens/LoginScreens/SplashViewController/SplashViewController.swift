@@ -11,27 +11,22 @@ import Lottie
 class SplashViewController: UIViewController {
 
     @IBOutlet weak var logoImage: UIImageView!
-    var animationView: LottieAnimationView = .init(name: "51720-making-money")
+    var animationView: LottieAnimationView = .init(name: splashStrings.lottieAnimationName)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLottie()
         setupConstraints()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3){
-
             let vc: MainViewController? = UIStoryboard(name: MainViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController
             self.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
-
-
         }
     }
     
     private func setupLottie() {
-        //animationView = .init(name: "79808-green-money-falling")
         animationView.translatesAutoresizingMaskIntoConstraints = false
         animationView.frame = view.frame
         animationView.contentMode = .scaleAspectFit
@@ -39,7 +34,6 @@ class SplashViewController: UIViewController {
         animationView.animationSpeed = 1.0
         view.addSubview(animationView)
         animationView.play()
-        
     }
     
     func setupConstraints() {
@@ -50,7 +44,4 @@ class SplashViewController: UIViewController {
             animationView.heightAnchor.constraint(equalToConstant: 200),
         ])
     }
-    
-
-
 }
