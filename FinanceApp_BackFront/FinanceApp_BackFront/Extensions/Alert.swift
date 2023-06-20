@@ -9,11 +9,6 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-//    var viewController:UIViewController?
-//
-//    init(viewController:UIViewController? = nil){
-//        self.viewController = viewController
-//    }
     
     public func showSimpleAlert(title:String, message: String, completion:(() -> Void)? = nil){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
