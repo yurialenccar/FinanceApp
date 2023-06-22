@@ -63,67 +63,67 @@ class InsertNumbersModalViewController: UIViewController {
     }
     
     @IBAction func tappedZeroButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar("0")
+        let value: String = viewModel.insertNumber("0")
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedOneButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar("1")
+        let value: String = viewModel.insertNumber("1")
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedTwoButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar("2")
+        let value: String = viewModel.insertNumber("2")
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedThreeButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar("3")
+        let value: String = viewModel.insertNumber("3")
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedFourButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar("4")
+        let value: String = viewModel.insertNumber("4")
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedFiveButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar("5")
+        let value: String = viewModel.insertNumber("5")
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedSixButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar("6")
+        let value: String = viewModel.insertNumber("6")
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedSevenButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar("7")
+        let value: String = viewModel.insertNumber("7")
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedEightButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar("8")
+        let value: String = viewModel.insertNumber("8")
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedNineButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar("9")
+        let value: String = viewModel.insertNumber("9")
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedPointButton(_ sender: UIButton) {
-        let value: String = viewModel.insertChar(".")
+        let value: String = viewModel.insertPoint()
         updateDiplayNumbers(value: value)
         
     }

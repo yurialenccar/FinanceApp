@@ -36,7 +36,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="J6e-14-nYC">
-                                <rect key="frame" x="20" y="159" width="353" height="504"/>
+                                <rect key="frame" x="20" y="159" width="353" height="430"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descrição" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pHK-Yc-TK5">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
@@ -87,16 +87,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uod-iJ-8n5">
-                                        <rect key="frame" x="0.0" y="148" width="353" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="ZnS-7e-0eA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" textContentType="name"/>
-                                    </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlw-6B-FgP">
-                                        <rect key="frame" x="0.0" y="222" width="353" height="60"/>
+                                        <rect key="frame" x="0.0" y="148" width="353" height="60"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XrF-3q-x6x">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
@@ -125,7 +117,7 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKR-uM-rJR">
-                                        <rect key="frame" x="0.0" y="296" width="353" height="60"/>
+                                        <rect key="frame" x="0.0" y="222" width="353" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKF-3k-Slj">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
@@ -189,7 +181,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYL-18-30a">
-                                        <rect key="frame" x="0.0" y="370" width="353" height="60"/>
+                                        <rect key="frame" x="0.0" y="296" width="353" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coZ-h3-ezS">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
@@ -258,7 +250,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Observações" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ssM-dc-Vcb">
-                                        <rect key="frame" x="0.0" y="444" width="353" height="60"/>
+                                        <rect key="frame" x="0.0" y="370" width="353" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="BcC-mB-xtL"/>
                                         </constraints>
@@ -268,7 +260,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcW-Zk-ns9">
-                                <rect key="frame" x="146.66666666666666" y="683" width="100" height="40"/>
+                                <rect key="frame" x="146.66666666666666" y="609" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fOh-2v-gnp"/>
                                     <constraint firstAttribute="width" constant="100" id="vK2-Su-NFN"/>
@@ -301,11 +293,13 @@
                     <navigationItem key="navigationItem" id="Vfv-xZ-iU8"/>
                     <connections>
                         <outlet property="accountBackground" destination="85D-0Y-yZ6" id="7UH-nw-Hd7"/>
+                        <outlet property="accountContainerView" destination="jYL-18-30a" id="gm4-B8-lNU"/>
                         <outlet property="accountLabel" destination="Ipm-Mf-IZr" id="eo5-bx-ECP"/>
+                        <outlet property="amountContainerView" destination="Td2-bg-cuD" id="49U-qa-gcd"/>
                         <outlet property="amountLabel" destination="blg-oC-9C2" id="p2Q-mb-Zh0"/>
-                        <outlet property="amountTextField" destination="uod-iJ-8n5" id="dkg-xj-F20"/>
                         <outlet property="bankLabel" destination="kKl-75-bMh" id="K1S-gq-7Xu"/>
                         <outlet property="categoryBackgroung" destination="b3a-WI-z2A" id="YVQ-OV-RbC"/>
+                        <outlet property="categoryContainerView" destination="lKR-uM-rJR" id="yKw-wH-v7a"/>
                         <outlet property="categoryImage" destination="q95-YD-RFb" id="nZ2-S9-Oix"/>
                         <outlet property="categoryLabel" destination="l8G-Zg-M2J" id="wL4-cT-m3H"/>
                         <outlet property="dateField" destination="XrF-3q-x6x" id="pCz-Gt-ZAO"/>

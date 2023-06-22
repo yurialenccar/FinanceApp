@@ -46,14 +46,47 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" textContentType="name"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wtD-Cz-gyI">
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hez-jT-wrf">
                                         <rect key="frame" x="0.0" y="74" width="353" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMl-Tj-mn0">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tappedInsertAmountButton:" destination="z6L-qh-QfY" eventType="touchUpInside" id="1yk-h1-9Jd"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W8-Rs-krl">
+                                                <rect key="frame" x="5" y="19" width="343" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="NKG-Vc-Dua"/>
+                                            <constraint firstItem="uMl-Tj-mn0" firstAttribute="leading" secondItem="Hez-jT-wrf" secondAttribute="leading" id="1uW-5Z-8y7"/>
+                                            <constraint firstAttribute="bottom" secondItem="1W8-Rs-krl" secondAttribute="bottom" constant="19" id="JmT-Dz-WZ1"/>
+                                            <constraint firstItem="uMl-Tj-mn0" firstAttribute="top" secondItem="Hez-jT-wrf" secondAttribute="top" id="PVw-Qh-mHd"/>
+                                            <constraint firstAttribute="trailing" secondItem="uMl-Tj-mn0" secondAttribute="trailing" id="bnt-6a-LQw"/>
+                                            <constraint firstItem="1W8-Rs-krl" firstAttribute="leading" secondItem="Hez-jT-wrf" secondAttribute="leading" constant="5" id="mXr-ig-Goj"/>
+                                            <constraint firstItem="1W8-Rs-krl" firstAttribute="top" secondItem="Hez-jT-wrf" secondAttribute="top" constant="19" id="qNN-BB-klw"/>
+                                            <constraint firstAttribute="bottom" secondItem="uMl-Tj-mn0" secondAttribute="bottom" id="yM4-w7-quC"/>
+                                            <constraint firstAttribute="trailing" secondItem="1W8-Rs-krl" secondAttribute="trailing" constant="5" id="yl1-hh-8sL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" textContentType="name"/>
-                                    </textField>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.carnerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" systemColor="systemGray3Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7D-1K-E1z">
                                         <rect key="frame" x="0.0" y="148" width="353" height="60"/>
                                         <subviews>
@@ -260,10 +293,13 @@
                     <navigationItem key="navigationItem" id="K50-il-asO"/>
                     <connections>
                         <outlet property="accountBackground" destination="mAw-Ot-27J" id="eGA-C0-yhD"/>
+                        <outlet property="accountContainerView" destination="Fiz-g2-9Ov" id="aMr-ZI-ieQ"/>
                         <outlet property="accountLabel" destination="Xu4-iJ-bxJ" id="daY-N6-IDu"/>
-                        <outlet property="amountTextField" destination="wtD-Cz-gyI" id="HfZ-zt-vPv"/>
+                        <outlet property="amountContainerView" destination="Hez-jT-wrf" id="COg-r9-yeB"/>
+                        <outlet property="amountLabel" destination="1W8-Rs-krl" id="353-MO-3tb"/>
                         <outlet property="bankLabel" destination="NRI-jG-UnX" id="gEB-77-BlO"/>
                         <outlet property="categoryBackgroung" destination="CrZ-1M-XYV" id="1fT-eY-g2a"/>
+                        <outlet property="categoryContainerView" destination="HQC-X3-W9P" id="HVm-OP-9Rt"/>
                         <outlet property="categoryImage" destination="NnT-kZ-YHg" id="n6l-ia-rsH"/>
                         <outlet property="categoryLabel" destination="mRy-fq-3IW" id="Lpb-1U-ARO"/>
                         <outlet property="dateField" destination="1Sv-Jg-vAi" id="Fg3-sx-dOR"/>

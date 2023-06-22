@@ -10,38 +10,17 @@ import UIKit
 
 class AddAccountTransactionsViewModel{
     
-    var transactionType:TransactionType
-    
+    public var dataSelecionada = Date()
+    private var transactionType:TransactionType
     
     init(type: TransactionType) {
         transactionType=type
     }
     
-    var dataSelecionada = Date()
-    
-    public func setTransactionsValues(desc: String, amount:String, category:Int, accountId:String, Obs:String) {
+    public func setTransactionsValues(transaction: Transactions) {
+        var newTransaction: Transactions = transaction
         
-        var newTransaction: Transactions
-        let amountValue: Double
-        
-        switch transactionType {
-        case .income:
-            amountValue = Double(amount) ?? 0.0
-        case .expense:
-            amountValue = -(Double(amount) ?? 0.0)
-        }
-        
-        newTransaction = Transactions(
-            desc: desc,
-            amount: amountValue,
-            categoryIndex: category,
-            date: dataSelecionada.toString(format: globalStrings.dateFormat),
-            type: transactionType,
-            accountId: accountId,
-            obs: Obs
-        )
-        
-        if desc.isEmptyTest() {
+        if newTransaction.desc.isEmptyTest() {
             switch transactionType{
             case .expense:
                 newTransaction.desc = expenseCategories[newTransaction.categoryIndex].name
@@ -49,17 +28,13 @@ class AddAccountTransactionsViewModel{
             case .income:
                 newTransaction.desc = incomeCategories[newTransaction.categoryIndex].name
             }
-            
-        } else {
-            newTransaction.desc = desc
         }
-        
         transactions.append(newTransaction)
     }
     
     var standardAccountIndex: Int {
         for (index, account) in bankAccountsList.enumerated(){
-            if account.standardAccount == true{
+            if account.standardAccount == true {
                 return index
             }
         }

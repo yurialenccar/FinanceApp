@@ -106,7 +106,7 @@
 		A1A92BBF29F812B600E14EE8 /* CreditCardModalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BBD29F812B600E14EE8 /* CreditCardModalCell.swift */; };
 		A1A92BC029F812B600E14EE8 /* CreditCardModalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A92BBE29F812B600E14EE8 /* CreditCardModalCell.xib */; };
 		A1A92BC429F81C1D00E14EE8 /* RegisterCardExpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BC329F81C1D00E14EE8 /* RegisterCardExpViewModel.swift */; };
-		A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BC529F81D6200E14EE8 /* CreditCardExpenses.swift */; };
+		A1A92BC629F81D6200E14EE8 /* CreditCardExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BC529F81D6200E14EE8 /* CreditCardExpense.swift */; };
 		A1B8F3492A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8F3472A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.swift */; };
 		A1B8F34A2A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B8F3482A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.xib */; };
 		A1BBF50A2A2FD8C200DD18D5 /* SplashStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BBF5092A2FD8C200DD18D5 /* SplashStrings.swift */; };
@@ -269,7 +269,7 @@
 		A1A92BBD29F812B600E14EE8 /* CreditCardModalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardModalCell.swift; sourceTree = "<group>"; };
 		A1A92BBE29F812B600E14EE8 /* CreditCardModalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardModalCell.xib; sourceTree = "<group>"; };
 		A1A92BC329F81C1D00E14EE8 /* RegisterCardExpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCardExpViewModel.swift; sourceTree = "<group>"; };
-		A1A92BC529F81D6200E14EE8 /* CreditCardExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardExpenses.swift; sourceTree = "<group>"; };
+		A1A92BC529F81D6200E14EE8 /* CreditCardExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardExpense.swift; sourceTree = "<group>"; };
 		A1B8F3472A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGraphCollectionViewCell.swift; sourceTree = "<group>"; };
 		A1B8F3482A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesGraphCollectionViewCell.xib; sourceTree = "<group>"; };
 		A1BBF5062A2FD35900DD18D5 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -690,7 +690,7 @@
 			children = (
 				A11BDA7929F4C47F006CF6B2 /* Enums */,
 				A16636EE29DE33C500162872 /* Transactions.swift */,
-				A1A92BC529F81D6200E14EE8 /* CreditCardExpenses.swift */,
+				A1A92BC529F81D6200E14EE8 /* CreditCardExpense.swift */,
 				A166B96129DF4BD600F33A98 /* ListedCategories.swift */,
 				A140933C29E6EC3D0037662B /* CategoriesSum.swift */,
 				A16688EA29F08CF600568217 /* BalanceCard.swift */,
@@ -1738,7 +1738,7 @@
 				A18991A92A11DC9800D47427 /* CardsResumeTableViewCell.swift in Sources */,
 				A19742DB2A227E9B00455DB0 /* UIColor.swift in Sources */,
 				A14F99A02A25848E00257B67 /* CurrencyViewModel.swift in Sources */,
-				A1A92BC629F81D6200E14EE8 /* CreditCardExpenses.swift in Sources */,
+				A1A92BC629F81D6200E14EE8 /* CreditCardExpense.swift in Sources */,
 				A1C9D2392A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.swift in Sources */,
 				A14F99A32A25874100257B67 /* String.swift in Sources */,
 				A18ED59A2A20F33100F564BD /* LoginViewModel.swift in Sources */,

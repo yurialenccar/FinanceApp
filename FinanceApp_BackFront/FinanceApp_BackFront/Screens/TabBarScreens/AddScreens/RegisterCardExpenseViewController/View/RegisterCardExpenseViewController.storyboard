@@ -46,14 +46,47 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" textContentType="name"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="of8-xq-6nJ">
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9c-zU-6c7">
                                         <rect key="frame" x="0.0" y="74" width="353" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qg-BN-v2Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tappedInsertAmountButton:" destination="SFL-rd-fLV" eventType="touchUpInside" id="SOE-OY-dK9"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTJ-bf-f10">
+                                                <rect key="frame" x="5" y="19" width="343" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="wbF-XU-DD9"/>
+                                            <constraint firstAttribute="trailing" secondItem="zTJ-bf-f10" secondAttribute="trailing" constant="5" id="E59-d0-au3"/>
+                                            <constraint firstItem="zTJ-bf-f10" firstAttribute="leading" secondItem="f9c-zU-6c7" secondAttribute="leading" constant="5" id="Ete-Br-n8M"/>
+                                            <constraint firstItem="0Qg-BN-v2Q" firstAttribute="top" secondItem="f9c-zU-6c7" secondAttribute="top" id="NDS-Ty-SlU"/>
+                                            <constraint firstAttribute="bottom" secondItem="0Qg-BN-v2Q" secondAttribute="bottom" id="ag6-oO-ObQ"/>
+                                            <constraint firstItem="0Qg-BN-v2Q" firstAttribute="leading" secondItem="f9c-zU-6c7" secondAttribute="leading" id="m9w-pM-Hcm"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Qg-BN-v2Q" secondAttribute="trailing" id="ywv-Ey-Mnj"/>
+                                            <constraint firstItem="zTJ-bf-f10" firstAttribute="top" secondItem="f9c-zU-6c7" secondAttribute="top" constant="19" id="zIM-Yo-pcc"/>
+                                            <constraint firstAttribute="bottom" secondItem="zTJ-bf-f10" secondAttribute="bottom" constant="19" id="zVh-rh-McT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" textContentType="name"/>
-                                    </textField>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.carnerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" systemColor="systemGray3Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eX-GC-QL1">
                                         <rect key="frame" x="0.0" y="148" width="353" height="60"/>
                                         <subviews>
@@ -259,11 +292,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="gV2-yC-E3G"/>
                     <connections>
-                        <outlet property="amountTextField" destination="of8-xq-6nJ" id="Not-pe-eVN"/>
+                        <outlet property="amountContainerView" destination="f9c-zU-6c7" id="Jqz-oz-c23"/>
+                        <outlet property="amountLabel" destination="zTJ-bf-f10" id="1TN-tQ-4LN"/>
                         <outlet property="bankBackground" destination="Veg-Z7-I06" id="4wX-g6-Y8I"/>
                         <outlet property="bankLabel" destination="lF5-1u-qmE" id="ybh-Pa-IIR"/>
+                        <outlet property="cardContainerView" destination="q6n-mA-Xok" id="C2A-hH-HdS"/>
                         <outlet property="cardLabel" destination="qHi-9n-7qf" id="Zvk-9q-9sa"/>
                         <outlet property="categoryBackgroung" destination="EKD-T8-rlR" id="Fbm-Aa-GoC"/>
+                        <outlet property="categoryContainerView" destination="J7f-DA-nfI" id="kXW-Li-r5C"/>
                         <outlet property="categoryImage" destination="Q5x-ey-w3i" id="f0x-SH-ix9"/>
                         <outlet property="categoryLabel" destination="agz-pZ-uiT" id="nez-oY-c93"/>
                         <outlet property="dateField" destination="ex2-yf-iiS" id="t6U-Cw-NT0"/>

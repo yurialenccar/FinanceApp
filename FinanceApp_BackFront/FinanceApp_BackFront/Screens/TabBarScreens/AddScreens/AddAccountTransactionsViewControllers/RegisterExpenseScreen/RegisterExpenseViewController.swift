@@ -11,11 +11,14 @@ class RegisterExpenseViewController: UIViewController {
     
     @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var amountContainerView: UIView!
     @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var categoryContainerView: UIView!
     @IBOutlet weak var categoryBackgroung: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var obsTextField: UITextField!
+    @IBOutlet weak var accountContainerView: UIView!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var accountBackground: UIView!
@@ -26,22 +29,43 @@ class RegisterExpenseViewController: UIViewController {
     
     private var indexCategorySelected:Int = 0
     private var idAccountSelected:String = globalStrings.emptyString
+    private var amount: Double
+    
+    init?(coder: NSCoder, amount: Double) {
+        self.amount = amount
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError(globalStrings.initError)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
+        setupElements()
         setupDataPicker()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let today = Date()
         dateField.text = viewModel.datePickerChange(date: today)
-        
         updateCategoryField(indexCategorySelected)
         updateAccountField(viewModel.standardAccountIndex)
         idAccountSelected = viewModel.standardAccountId
+        updateAmountValue(amount)
     }
     
+    @IBAction func tappedInsertAmountButton(_ sender: UIButton) {
+        amountContainerView.layer.borderColor = UIColor.systemGray6.cgColor
+        let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
+            InsertNumbersModalViewController? in
+            return InsertNumbersModalViewController(coder: coder, amount: self.amount)
+        }
+        vc.delegate = self
+        self.present(vc, animated: true)
+    }
     
     @IBAction func tappedCategoryButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: CategoriesModalViewController.identifier, bundle: nil)
@@ -67,18 +91,22 @@ class RegisterExpenseViewController: UIViewController {
     
     @IBAction func tappedRegisterExpenseButton(_ sender: UIButton) {
         
-        if amountTextField.text.orEmpty.isEmptyTest() {
-            amountTextField.layer.borderColor = UIColor.red.cgColor
-            amountTextField.layer.borderWidth = 1
-            showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotExpenseAmountValue)
+        if amount == 0 {
+            amountContainerView.layer.borderColor = UIColor.red.cgColor
+            showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotIncomeAmountValue)
+        } else if amount < 0 {
+            amountContainerView.layer.borderColor = UIColor.red.cgColor
+            showSimpleAlert(title: globalStrings.attention, message: addStrings.amountMustBeHigherThenZero)
         } else {
-            viewModel.setTransactionsValues(
+            viewModel.setTransactionsValues(transaction: Transactions(
                 desc: descTextField.text.orEmpty,
-                amount: amountTextField.text!,
-                category: indexCategorySelected,
+                amount: amount,
+                categoryIndex: indexCategorySelected,
+                date: viewModel.dataSelecionada.toString(format: globalStrings.dateFormat),
+                type: .expense,
                 accountId: idAccountSelected,
-                Obs: obsTextField.text.orEmpty
-            )
+                obs: obsTextField.text.orEmpty
+            ))
             dismiss(animated: true, completion: nil)
         }
     }
@@ -86,18 +114,39 @@ class RegisterExpenseViewController: UIViewController {
     private func setupStrings() {
         navigationItem.backButtonTitle = globalStrings.backButtonTitle
         descTextField.placeholder = addStrings.descriptionText
-        amountTextField.placeholder = addStrings.valueText
         obsTextField.placeholder = addStrings.observationsText
         registerExpenseButton.setTitle(addStrings.registerTransactionButtonTitle, for: .normal)
     }
     
-    func updateCategoryField(_ indexCategory:Int){
+    private func setupElements() {
+        amountContainerView.layer.borderWidth = 1
+        amountContainerView.layer.borderColor = UIColor.systemGray6.cgColor
+        amountContainerView.layer.cornerRadius = 5
+        amountContainerView.layer.masksToBounds = true
+        
+        categoryContainerView.layer.borderWidth = 1
+        categoryContainerView.layer.borderColor = UIColor.systemGray6.cgColor
+        categoryContainerView.layer.cornerRadius = 5
+        categoryContainerView.layer.masksToBounds = true
+        
+        accountContainerView.layer.borderWidth = 1
+        accountContainerView.layer.borderColor = UIColor.systemGray6.cgColor
+        accountContainerView.layer.cornerRadius = 5
+        accountContainerView.layer.masksToBounds = true
+    }
+    
+    private func updateAmountValue(_ value: Double) {
+        amount = value
+        amountLabel.text = value.toStringMoney()
+    }
+    
+    private func updateCategoryField(_ indexCategory:Int){
         categoryLabel.text = viewModel.getCategoryLabel(indexCategory)
         categoryImage.image = viewModel.getCategoryImageName(indexCategory)
         categoryBackgroung.backgroundColor = viewModel.getCategoryBackgroungColor(indexCategory)
     }
     
-    func updateAccountField(_ indexAccount:Int){
+    private func updateAccountField(_ indexAccount:Int){
         accountLabel.text = viewModel.getAccountLabel(indexAccount)
         bankLabel.text = viewModel.getBankLabelText(indexAccount)
         bankLabel.textColor = viewModel.getBankLabelColor(indexAccount)
@@ -131,10 +180,9 @@ extension RegisterExpenseViewController:CategoriesModalDelegate, AccountsModalDe
         idAccountSelected = bankAccountsList[indexAccount].getId()
     }
 }
-//
-//extension RegisterExpenseViewController: InsertNumbersModalProtocol {
-//    func numberSelected(_ value: Double) {
-//        amount = value
-//        amountLabel.text = value.toStringMoney()
-//    }
-//}
+
+extension RegisterExpenseViewController: InsertNumbersModalProtocol {
+    func numberSelected(_ value: Double) {
+        updateAmountValue(value)
+    }
+}

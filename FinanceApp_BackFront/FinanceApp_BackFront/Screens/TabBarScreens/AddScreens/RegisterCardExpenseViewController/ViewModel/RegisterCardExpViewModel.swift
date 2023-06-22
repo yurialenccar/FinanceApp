@@ -10,26 +10,33 @@ import UIKit
 
 class RegisterCardExpViewModel{
     
+    public var dataSelecionada = Date()
     
-    var newExpense = CreditCardExpenses(desc: "", amount: 1.0, categoryIndex: 0, date: "01/01/2023", type: .expense, cardId: "", obs: "")
-    
-    var dataSelecionada = Date()
-    
-    public func setExpenseValues(desc: String, amount:String, category:Int, card:String, Obs:String){
+    public func setExpenseValues(expense: CreditCardExpense) {
+        var newExpense: CreditCardExpense = expense
         
-        newExpense.amount = Double(amount)!
-        newExpense.categoryIndex = category
-        newExpense.cardId = card
-        newExpense.date = formatDate(date: dataSelecionada)
-        newExpense.obs = Obs
-        
-        if stringIsEmpty(text: desc){
+        if newExpense.desc.isEmptyTest() {
             newExpense.desc = expenseCategories[newExpense.categoryIndex].name
-        } else {
-            newExpense.desc = desc
         }
-        
         creditCardExpenses.append(newExpense)
+    }
+    
+    var standardCardIndex: Int {
+        for (index, card) in creditCardsList.enumerated(){
+            if card.standardCard == true {
+                return index
+            }
+        }
+        return 0
+    }
+    
+    var standardCardId: String {
+        for card in creditCardsList{
+            if card.standardCard == true{
+                return card.getId()
+            }
+        }
+        return bankAccountsList[0].getId()
     }
     
     public func getCategoryLabel(_ indexCategory:Int) -> String {
@@ -95,7 +102,11 @@ class RegisterCardExpViewModel{
         }
     }
     
-    public func stringIsEmpty(text:String) -> Bool {
-        return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    public func setValueToString(_ value: Double) -> String {
+        var amount: String = String(value)
+        if amount.hasSuffix(".0") {
+            amount = String(amount.dropLast(2))
+        }
+        return amount
     }
 }

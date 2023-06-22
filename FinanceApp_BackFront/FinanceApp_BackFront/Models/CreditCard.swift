@@ -43,7 +43,7 @@ struct CreditCard {
             transactionType = .expense
         }
         
-        creditCardExpenses.append(CreditCardExpenses(desc: "Ajuste valor de Fatura", amount: valueNewTransaction, categoryIndex: 0, date: Date().toString(format: "dd/MM/yyyy"), type: transactionType, cardId: id, obs: ""))
+        creditCardExpenses.append(CreditCardExpense(desc: "Ajuste valor de Fatura", amount: valueNewTransaction, categoryIndex: 0, date: Date().toString(format: "dd/MM/yyyy"), type: transactionType, cardId: id, obs: ""))
     }
     
     public func getId() -> String {

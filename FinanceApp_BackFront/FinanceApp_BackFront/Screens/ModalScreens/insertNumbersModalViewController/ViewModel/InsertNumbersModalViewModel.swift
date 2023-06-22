@@ -15,12 +15,18 @@ class InsertNumbersModalViewModel {
         self.expression = setValueToExpression(amount)
     }
     
-    public func insertChar(_ char: String) -> String {
+    public func insertNumber(_ char: String) -> String {
         
         if expression == "0" {
             expression = char
         } else {
             expression += char
+        }
+        return expression
+    }
+    public func insertPoint() -> String {
+        if !expression.contains(".") {
+            expression += "."
         }
         return expression
     }
@@ -52,25 +58,27 @@ class InsertNumbersModalViewModel {
             for (index, character) in expression.enumerated() {
                 if operators.contains(character) && index > 0 {
                     let numberBeforeOperator = Double(expression.prefix(index)) ?? 0
-                    let numberAfterOperator = Double(expression.suffix(from: expression.index(after: expression.index(expression.startIndex, offsetBy: index)))) ?? 0
-                    
-                    switch character {
-                    case "+":
-                        result = numberBeforeOperator + numberAfterOperator
-                    case "-":
-                        result = numberBeforeOperator - numberAfterOperator
-                    case "x":
-                        result = numberBeforeOperator * numberAfterOperator
-                    case "÷":
-                        if numberAfterOperator != 0 {
-                            result = numberBeforeOperator / numberAfterOperator
-                        } else {
-                            result = numberBeforeOperator
+                    if let numberAfterOperator = Double(expression.suffix(from: expression.index(after: expression.index(expression.startIndex, offsetBy: index)))) {
+                        switch character {
+                        case "+":
+                            result = numberBeforeOperator + numberAfterOperator
+                        case "-":
+                            result = numberBeforeOperator - numberAfterOperator
+                        case "x":
+                            result = numberBeforeOperator * numberAfterOperator
+                        case "÷":
+                            if numberAfterOperator != 0 {
+                                result = numberBeforeOperator / numberAfterOperator
+                            } else {
+                                result = numberBeforeOperator
+                            }
+                        default:
+                            return 0
                         }
-                    default:
-                        return 0
+                        expression = setValueToExpression(result)
+                    } else {
+                        result = numberBeforeOperator
                     }
-                    expression = setValueToExpression(result)
                 }
             }
             return result

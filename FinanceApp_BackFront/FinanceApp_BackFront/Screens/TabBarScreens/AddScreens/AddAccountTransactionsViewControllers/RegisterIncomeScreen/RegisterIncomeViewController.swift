@@ -11,11 +11,13 @@ class RegisterIncomeViewController: UIViewController {
     
     @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var amountContainerView: UIView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var categoryContainerView: UIView!
     @IBOutlet weak var categoryBackgroung: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
+    @IBOutlet weak var accountContainerView: UIView!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var accountBackground: UIView!
@@ -41,6 +43,7 @@ class RegisterIncomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
+        setupElements()
         setupDataPicker()
     }
     
@@ -54,6 +57,7 @@ class RegisterIncomeViewController: UIViewController {
     }
     
     @IBAction func tappedInsertAmountButton(_ sender: UIButton) {
+        amountContainerView.layer.borderColor = UIColor.systemGray6.cgColor
         let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
             InsertNumbersModalViewController? in
@@ -86,23 +90,22 @@ class RegisterIncomeViewController: UIViewController {
     }
     
     @IBAction func tappedRegisterIncomeButton(_ sender: UIButton) {
-
-        if amountTextField.text.orEmpty.isEmptyTest() {
-            amountTextField.layer.borderColor = UIColor.red.cgColor
-            amountTextField.layer.borderWidth = 1
+        if amount == 0 {
+            amountContainerView.layer.borderColor = UIColor.red.cgColor
             showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotIncomeAmountValue)
         } else if amount < 0 {
-            amountTextField.layer.borderColor = UIColor.red.cgColor
-            amountTextField.layer.borderWidth = 1
-            showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotIncomeAmountValue)
+            amountContainerView.layer.borderColor = UIColor.red.cgColor
+            showSimpleAlert(title: globalStrings.attention, message: addStrings.amountMustBeHigherThenZero)
         } else {
-            viewModel.setTransactionsValues(
+            viewModel.setTransactionsValues(transaction: Transactions(
                 desc: descTextField.text.orEmpty,
-                amount: amountTextField.text!,
-                category: indexCategorySelected,
+                amount: amount,
+                categoryIndex: indexCategorySelected,
+                date: viewModel.dataSelecionada.toString(format: globalStrings.dateFormat),
+                type: .income,
                 accountId: idAccountSelected,
-                Obs: obsTextField.text.orEmpty
-            )
+                obs: obsTextField.text.orEmpty
+            ))
             dismiss(animated: true, completion: nil)
         }
     }
@@ -110,9 +113,25 @@ class RegisterIncomeViewController: UIViewController {
     private func setupStrings() {
         navigationItem.backButtonTitle = globalStrings.backButtonTitle
         descTextField.placeholder = addStrings.descriptionText
-        amountTextField.placeholder = addStrings.valueText
         obsTextField.placeholder = addStrings.observationsText
         registerIncomeButton.setTitle(addStrings.registerTransactionButtonTitle, for: .normal)
+    }
+    
+    private func setupElements() {
+        amountContainerView.layer.borderWidth = 1
+        amountContainerView.layer.borderColor = UIColor.systemGray6.cgColor
+        amountContainerView.layer.cornerRadius = 5
+        amountContainerView.layer.masksToBounds = true
+        
+        categoryContainerView.layer.borderWidth = 1
+        categoryContainerView.layer.borderColor = UIColor.systemGray6.cgColor
+        categoryContainerView.layer.cornerRadius = 5
+        categoryContainerView.layer.masksToBounds = true
+        
+        accountContainerView.layer.borderWidth = 1
+        accountContainerView.layer.borderColor = UIColor.systemGray6.cgColor
+        accountContainerView.layer.cornerRadius = 5
+        accountContainerView.layer.masksToBounds = true
     }
     
     private func updateAmountValue(_ value: Double) {
@@ -150,7 +169,7 @@ class RegisterIncomeViewController: UIViewController {
 }
 
 
-extension RegisterIncomeViewController:CategoriesModalDelegate, AccountsModalDelegate {
+extension RegisterIncomeViewController:CategoriesModalDelegate, AccountsModalDelegate, InsertNumbersModalProtocol {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory
         updateCategoryField(indexCategorySelected)
@@ -160,9 +179,7 @@ extension RegisterIncomeViewController:CategoriesModalDelegate, AccountsModalDel
         updateAccountField(indexAccount)
         idAccountSelected = bankAccountsList[indexAccount].getId()
     }
-}
-
-extension RegisterIncomeViewController: InsertNumbersModalProtocol {
+    
     func numberSelected(_ value: Double) {
         updateAmountValue(value)
     }

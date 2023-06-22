@@ -36,13 +36,21 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func tappedExpenseButton(_ sender: UIButton) {
-        let vc: RegisterExpenseViewController? = UIStoryboard(name: RegisterExpenseViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: RegisterExpenseViewController.identifier) as? RegisterExpenseViewController
-        present(vc ?? UIViewController(), animated: true)
+        let storyboard = UIStoryboard(name: RegisterExpenseViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: RegisterExpenseViewController.identifier) {coder ->
+            RegisterExpenseViewController? in
+            return RegisterExpenseViewController(coder: coder, amount: 0)
+        }
+        present(vc, animated: true)
     }
     
     @IBAction func tappedCardExpButton(_ sender: UIButton) {
-        let vc: RegisterCardExpenseViewController? = UIStoryboard(name: RegisterCardExpenseViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: RegisterCardExpenseViewController.identifier) as? RegisterCardExpenseViewController
-        present(vc ?? UIViewController(), animated: true)
+        let storyboard = UIStoryboard(name: RegisterCardExpenseViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: RegisterCardExpenseViewController.identifier) {coder ->
+            RegisterCardExpenseViewController? in
+            return RegisterCardExpenseViewController(coder: coder, amount: 0)
+        }
+        present(vc, animated: true)
     }
     
     private func setupStrings() {
