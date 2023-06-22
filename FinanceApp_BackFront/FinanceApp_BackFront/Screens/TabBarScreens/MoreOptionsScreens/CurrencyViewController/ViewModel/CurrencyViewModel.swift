@@ -24,4 +24,12 @@ class CurrencyViewModel {
         return date.toString(format: moreOptionsStrings.momentDateFormat)
     }
     
+    public func sourcetoMoney(value: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_US")
+
+        return formatter.string(from: NSNumber(value: value)) ?? "0.0"
+    }
+    
 }

@@ -26,7 +26,7 @@ class EditBankAccountsViewModel{
         }
     }
     
-    public func saveBankAccount(newBalance: String, newAccount: BankAccount) {
+    public func saveBankAccount(newBalance: Double, newAccount: BankAccount) {
         var bankAccount: BankAccount = newAccount
         
         if newAccount.desc.isEmptyTest() {
@@ -39,18 +39,16 @@ class EditBankAccountsViewModel{
             }
         }
         
-        let newBalanceValue: Double = Double(newBalance) ?? 0.0
-        
         if configType == .createNew{
             bankAccount.setId(createNewBankAccountId())
-            if newBalanceValue != 0{
-                bankAccount.adjustBalance(newBalance: newBalanceValue)
+            if newBalance != 0{
+                bankAccount.adjustBalance(newBalance: newBalance)
             }
             bankAccountsList.append(bankAccount)
         } else {
             
-            if newBalanceValue != bankAccount.balance {
-                bankAccountsList[indexAccount].adjustBalance(newBalance: newBalanceValue)
+            if newBalance != bankAccount.balance {
+                bankAccountsList[indexAccount].adjustBalance(newBalance: newBalance)
             }
             bankAccountsList[indexAccount].desc = bankAccount.desc
             bankAccountsList[indexAccount].bank = bankAccount.bank

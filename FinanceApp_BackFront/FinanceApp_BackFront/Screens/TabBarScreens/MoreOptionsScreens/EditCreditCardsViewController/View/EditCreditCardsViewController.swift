@@ -33,7 +33,7 @@ class EditCreditCardsViewController: UIViewController {
     var viewModel: EditCreditCardsViewModel
     var selectedBank:Banks = .bancoDoBrasil
     var dayPickerOption: CreditCardDayPickerOptions = .nonSelected
-    //var creditCard:CreditCard
+    var limitValue: Double = 0.0
     
     init?(coder:NSCoder, indexCard:Int, configType:ConfigType){
         self.viewModel = EditCreditCardsViewModel(configType: configType, indexCard: indexCard)
@@ -56,6 +56,16 @@ class EditCreditCardsViewController: UIViewController {
         setupStrings()
         populateFields()
     }
+    @IBAction func tappedInsertCardLimit(_ sender: UIButton) {
+        limitTextField.layer.borderColor = UIColor.systemGray6.cgColor
+        let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
+            InsertNumbersModalViewController? in
+            return InsertNumbersModalViewController(coder: coder, value: self.limitValue, id: 0)
+        }
+        vc.delegate = self
+        self.present(vc, animated: true)
+    }
     
     @IBAction func tappedChangeBankButton(_ sender: UIButton) {
         toggleTableViewVisibility()
@@ -73,7 +83,7 @@ class EditCreditCardsViewController: UIViewController {
     
     
     @IBAction func tappedSaveButton(_ sender: UIButton) {
-        if limitTextField.text.orEmpty.toDouble() <= 0.0 {
+        if limitValue <= 0.0 {
             showSimpleAlert(title: globalStrings.attention, message: moreOptionsStrings.cardLimitEmptyMessage)
         } else if nameTextField.text.orEmpty.isEmptyTest() {
             showAlertWithCancelOption(title: globalStrings.attention, message: moreOptionsStrings.descEmptyMessage,completion: {
@@ -87,7 +97,7 @@ class EditCreditCardsViewController: UIViewController {
     private func saveValues(){
         viewModel.saveCreditCard(newCard: CreditCard(
             desc: nameTextField.text.orEmpty,
-            limit: Double(limitTextField.text.orEmpty) ?? 0.0,
+            limit: limitValue,
             bank: selectedBank,
             closingDay: Int(closingDayNumberLabel.text.orEmpty) ?? 0,
             dueDate: Int(dueDateNumberLabel.text.orEmpty) ?? 0,
@@ -121,9 +131,10 @@ class EditCreditCardsViewController: UIViewController {
     
     private func populateFields() {
         let card = viewModel.populateFieldsInfos()
+        limitValue = card.limit
         
         nameTextField.text = card.desc
-        limitTextField.text = String(card.limit)
+        limitTextField.text = limitValue.toStringMoney()
         closingDayNumberLabel.text = String(card.closingDay)
         dueDateNumberLabel.text = String(card.dueDate)
         standardCardSwitch.isOn = card.standardCard
@@ -154,6 +165,11 @@ class EditCreditCardsViewController: UIViewController {
         
         view.addSubview(dayPickerView)
         dayPickerView.isHidden = true
+    }
+    
+    private func updateLimitValue(_ value: Double) {
+        limitValue = value
+        limitTextField.text = value.toStringMoney()
     }
     
 }
@@ -203,4 +219,10 @@ extension EditCreditCardsViewController: UIPickerViewDelegate, UIPickerViewDataS
         dayPickerView.isHidden = true
     }
     
+}
+
+extension EditCreditCardsViewController: InsertNumbersModalProtocol {
+    func numberSelected(_ value: Double, id: Int) {
+        updateLimitValue(value)
+    }
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -124,17 +125,29 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T46-Ro-mx5">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="69"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tappedInsertBalanceValueButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Mv5-mA-HI4"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Color"/>
                                         <constraints>
                                             <constraint firstItem="EFB-od-Fd3" firstAttribute="leading" secondItem="MUt-HI-iwO" secondAttribute="leading" constant="10" id="DB6-im-sSE"/>
+                                            <constraint firstItem="T46-Ro-mx5" firstAttribute="leading" secondItem="MUt-HI-iwO" secondAttribute="leading" id="DQO-cV-YzT"/>
+                                            <constraint firstItem="T46-Ro-mx5" firstAttribute="top" secondItem="MUt-HI-iwO" secondAttribute="top" id="LyX-Vx-hsc"/>
                                             <constraint firstAttribute="height" constant="70" id="Ms9-YQ-erg"/>
+                                            <constraint firstAttribute="trailing" secondItem="T46-Ro-mx5" secondAttribute="trailing" id="S3e-S8-BU4"/>
                                             <constraint firstAttribute="bottom" secondItem="Pfc-jX-wkt" secondAttribute="bottom" id="UT3-z8-2eo"/>
                                             <constraint firstAttribute="trailing" secondItem="Pfc-jX-wkt" secondAttribute="trailing" constant="5" id="k9N-VY-e38"/>
                                             <constraint firstItem="EFB-od-Fd3" firstAttribute="top" secondItem="MUt-HI-iwO" secondAttribute="top" constant="18" id="lgi-lU-8iq"/>
                                             <constraint firstItem="Pfc-jX-wkt" firstAttribute="top" secondItem="EFB-od-Fd3" secondAttribute="bottom" constant="17" id="mYI-14-6OZ"/>
                                             <constraint firstItem="Pfc-jX-wkt" firstAttribute="leading" secondItem="MUt-HI-iwO" secondAttribute="leading" constant="5" id="v0i-Mo-8La"/>
                                             <constraint firstAttribute="trailing" secondItem="EFB-od-Fd3" secondAttribute="trailing" constant="10" id="yIL-Hw-xUb"/>
+                                            <constraint firstItem="Pfc-jX-wkt" firstAttribute="top" secondItem="T46-Ro-mx5" secondAttribute="bottom" id="z5h-9p-CRt"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gw-Dk-5y0">
@@ -174,17 +187,29 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJN-a9-iUx">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="69"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tappedInsertOverdrawValueButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bQq-mZ-wFh"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Color"/>
                                         <constraints>
+                                            <constraint firstItem="QJN-a9-iUx" firstAttribute="top" secondItem="9gw-Dk-5y0" secondAttribute="top" id="0tz-Vg-cLx"/>
                                             <constraint firstItem="wns-Eb-IVd" firstAttribute="leading" secondItem="9gw-Dk-5y0" secondAttribute="leading" constant="5" id="BK6-Q5-x6x"/>
                                             <constraint firstAttribute="height" constant="70" id="DmZ-nb-lSe"/>
                                             <constraint firstAttribute="trailing" secondItem="wns-Eb-IVd" secondAttribute="trailing" constant="5" id="Keb-cX-B30"/>
                                             <constraint firstItem="tcx-cV-wCu" firstAttribute="top" secondItem="9gw-Dk-5y0" secondAttribute="top" constant="18" id="XA5-39-r7e"/>
                                             <constraint firstItem="wns-Eb-IVd" firstAttribute="top" secondItem="tcx-cV-wCu" secondAttribute="bottom" constant="17" id="Yfm-K5-KoZ"/>
                                             <constraint firstAttribute="bottom" secondItem="wns-Eb-IVd" secondAttribute="bottom" id="bs2-jC-7hp"/>
+                                            <constraint firstAttribute="trailing" secondItem="QJN-a9-iUx" secondAttribute="trailing" id="gKr-r4-04A"/>
                                             <constraint firstAttribute="trailing" secondItem="tcx-cV-wCu" secondAttribute="trailing" constant="10" id="gYv-EF-V1F"/>
                                             <constraint firstItem="tcx-cV-wCu" firstAttribute="leading" secondItem="9gw-Dk-5y0" secondAttribute="leading" constant="10" id="iSI-sD-9Wr"/>
+                                            <constraint firstItem="QJN-a9-iUx" firstAttribute="leading" secondItem="9gw-Dk-5y0" secondAttribute="leading" id="lte-V9-ctJ"/>
+                                            <constraint firstItem="wns-Eb-IVd" firstAttribute="top" secondItem="QJN-a9-iUx" secondAttribute="bottom" id="tR1-fJ-sAA"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7q-ve-LQW">
@@ -415,8 +440,8 @@
                         <outlet property="nameTextField" destination="fyv-a2-iK3" id="Heh-jZ-c4n"/>
                         <outlet property="obsLabel" destination="Q9M-Gh-jOr" id="KGj-4K-Yj3"/>
                         <outlet property="obsTextField" destination="ZDT-qr-Vvb" id="Uw1-Ig-8cG"/>
-                        <outlet property="overdrawLabel" destination="Uc2-3W-sSS" id="jzM-ZU-KXS"/>
-                        <outlet property="overdrawTextField" destination="uzr-Zb-BVk" id="d4E-mF-Saa"/>
+                        <outlet property="overdraftLabel" destination="Uc2-3W-sSS" id="jzM-ZU-KXS"/>
+                        <outlet property="overdraftTextField" destination="uzr-Zb-BVk" id="d4E-mF-Saa"/>
                         <outlet property="saveButton" destination="Be4-rF-P4U" id="mPK-d6-SMi"/>
                         <outlet property="standardAccountLabel" destination="0Ma-hI-QA4" id="zwj-Ol-hX8"/>
                         <outlet property="standardAccountSwitch" destination="U1j-cd-9U3" id="enO-YC-l0F"/>

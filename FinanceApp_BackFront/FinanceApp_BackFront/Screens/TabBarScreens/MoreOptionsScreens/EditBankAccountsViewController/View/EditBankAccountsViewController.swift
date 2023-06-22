@@ -13,8 +13,8 @@ class EditBankAccountsViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var balanceTextField: UITextField!
-    @IBOutlet weak var overdrawLabel: UILabel!
-    @IBOutlet weak var overdrawTextField: UITextField!
+    @IBOutlet weak var overdraftLabel: UILabel!
+    @IBOutlet weak var overdraftTextField: UITextField!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var bankDescLabel: UILabel!
     @IBOutlet weak var bankBackground: UIView!
@@ -27,8 +27,10 @@ class EditBankAccountsViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     static let identifier:String = String(describing: EditBankAccountsViewController.self)
-    var viewModel:EditBankAccountsViewModel
-    var selectedBank:Banks = .bancoDoBrasil
+    var viewModel: EditBankAccountsViewModel
+    var selectedBank: Banks = .bancoDoBrasil
+    var balanceValue: Double = 0.0
+    var overdraftValue: Double = 0.0
     
     init?(coder:NSCoder, indexAccount:Int, configType:ConfigType){
         self.viewModel = EditBankAccountsViewModel(configType: configType,indexAccount: indexAccount)
@@ -49,6 +51,27 @@ class EditBankAccountsViewController: UIViewController {
         tableview.isHidden=true
         setupStrings()
         populateFields()
+    }
+    
+    @IBAction func tappedInsertBalanceValueButton(_ sender: UIButton) {
+        balanceTextField.layer.borderColor = UIColor.systemGray6.cgColor
+        let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
+            InsertNumbersModalViewController? in
+            return InsertNumbersModalViewController(coder: coder, value: self.balanceValue, id: 0)
+        }
+        vc.delegate = self
+        self.present(vc, animated: true)
+    }
+    @IBAction func tappedInsertOverdrawValueButton(_ sender: UIButton) {
+        overdraftTextField.layer.borderColor = UIColor.systemGray6.cgColor
+        let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
+            InsertNumbersModalViewController? in
+            return InsertNumbersModalViewController(coder: coder, value: self.overdraftValue, id: 1)
+        }
+        vc.delegate = self
+        self.present(vc, animated: true)
     }
     
     @IBAction func tappedChangeBankButton(_ sender: UIButton) {
@@ -75,17 +98,27 @@ class EditBankAccountsViewController: UIViewController {
             balanceLabel.text = moreOptionsStrings.accountBalanceUpdateText
         }
         nameLabel.text = moreOptionsStrings.accountNameText
-        overdrawLabel.text = moreOptionsStrings.overdrawText
+        overdraftLabel.text = moreOptionsStrings.overdrawText
         standardAccountLabel.text = moreOptionsStrings.standardAccountText
         obsLabel.text = moreOptionsStrings.obsText
         saveButton.setTitle(moreOptionsStrings.saveButtonTitle, for: .normal)
     }
     
+    private func updateBalanceValue(_ value: Double) {
+        balanceValue = value
+        balanceTextField.text = value.toStringMoney()
+    }
+    
+    private func updateOverdrawValue(_ value: Double) {
+        overdraftValue = value
+        overdraftTextField.text = value.toStringMoney()
+    }
+    
     private func saveValues(){
-        self.viewModel.saveBankAccount(newBalance:balanceTextField.text.orEmpty, newAccount: BankAccount(
+        self.viewModel.saveBankAccount(newBalance: balanceValue, newAccount: BankAccount(
             desc: self.nameTextField.text.orEmpty,
             bank: selectedBank,
-            overdraft: Double(self.overdrawTextField.text.orEmpty) ?? 0.0,
+            overdraft: overdraftValue,
             standardAccount: self.standardAccountSwitch.isOn,
             obs: self.obsTextField.text.orEmpty
             ))
@@ -102,9 +135,11 @@ class EditBankAccountsViewController: UIViewController {
     
     private func populateFields() {
         let account = viewModel.populateFieldsInfos()
+        balanceValue = account.balance
+        overdraftValue = account.overdraft
         
         nameTextField.text = account.desc
-        overdrawTextField.text = String(account.overdraft)
+        overdraftTextField.text = overdraftValue.toStringMoney()
         standardAccountSwitch.isOn = account.standardAccount
         obsTextField.text = account.obs
         selectedBank = account.bank
@@ -114,7 +149,7 @@ class EditBankAccountsViewController: UIViewController {
         case .createNew:
             balanceTextField.text = moreOptionsStrings.accountBalanceZeroed
         case .editExisting:
-            balanceTextField.text = String(account.balance)
+            balanceTextField.text = balanceValue.toStringMoney()
         }
         
     }
@@ -156,9 +191,16 @@ extension EditBankAccountsViewController: UITableViewDelegate, UITableViewDataSo
         selectedBank = bankList[indexPath.row]
         updateBankField(selectedBank)
         tableview.isHidden=true
-        
     }
-    
-    
+}
+
+extension EditBankAccountsViewController: InsertNumbersModalProtocol {
+    func numberSelected(_ value: Double, id: Int) {
+        if id == 0 {
+            updateBalanceValue(value)
+        } else if id == 1 {
+            updateOverdrawValue(value)
+        }
+    }
 }
 
