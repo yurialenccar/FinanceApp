@@ -8,7 +8,7 @@
 import UIKit
 
 protocol InsertNumbersModalProtocol: AnyObject {
-    func numberSelected(_ value: Double)
+    func numberSelected(_ value: Double, id: Int)
 }
 
 class InsertNumbersModalViewController: UIViewController {
@@ -40,10 +40,12 @@ class InsertNumbersModalViewController: UIViewController {
     var viewModel: InsertNumbersModalViewModel
     weak var delegate: InsertNumbersModalProtocol?
     var amount: Double
+    var id: Int
     
-    init?(coder: NSCoder, amount: Double) {
-        self.amount = amount
-        self.viewModel = InsertNumbersModalViewModel(amount: amount)
+    init?(coder: NSCoder, value: Double, id: Int) {
+        self.amount = value
+        self.id = id
+        self.viewModel = InsertNumbersModalViewModel(amount: value)
         super.init(coder: coder)
     }
     
@@ -63,61 +65,61 @@ class InsertNumbersModalViewController: UIViewController {
     }
     
     @IBAction func tappedZeroButton(_ sender: UIButton) {
-        let value: String = viewModel.insertNumber("0")
+        let value: String = viewModel.insertNumber(insertNumberStrings.number0)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedOneButton(_ sender: UIButton) {
-        let value: String = viewModel.insertNumber("1")
+        let value: String = viewModel.insertNumber(insertNumberStrings.number1)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedTwoButton(_ sender: UIButton) {
-        let value: String = viewModel.insertNumber("2")
+        let value: String = viewModel.insertNumber(insertNumberStrings.number2)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedThreeButton(_ sender: UIButton) {
-        let value: String = viewModel.insertNumber("3")
+        let value: String = viewModel.insertNumber(insertNumberStrings.number3)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedFourButton(_ sender: UIButton) {
-        let value: String = viewModel.insertNumber("4")
+        let value: String = viewModel.insertNumber(insertNumberStrings.number4)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedFiveButton(_ sender: UIButton) {
-        let value: String = viewModel.insertNumber("5")
+        let value: String = viewModel.insertNumber(insertNumberStrings.number5)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedSixButton(_ sender: UIButton) {
-        let value: String = viewModel.insertNumber("6")
+        let value: String = viewModel.insertNumber(insertNumberStrings.number6)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedSevenButton(_ sender: UIButton) {
-        let value: String = viewModel.insertNumber("7")
+        let value: String = viewModel.insertNumber(insertNumberStrings.number7)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedEightButton(_ sender: UIButton) {
-        let value: String = viewModel.insertNumber("8")
+        let value: String = viewModel.insertNumber(insertNumberStrings.number8)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedNineButton(_ sender: UIButton) {
-        let value: String = viewModel.insertNumber("9")
+        let value: String = viewModel.insertNumber(insertNumberStrings.number9)
         updateDiplayNumbers(value: value)
         
     }
@@ -129,25 +131,25 @@ class InsertNumbersModalViewController: UIViewController {
     }
     
     @IBAction func tappedAddButton(_ sender: UIButton) {
-        let value: String = viewModel.insertOperator("+")
+        let value: String = viewModel.insertOperator(insertNumberStrings.operationAdd)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedSubButton(_ sender: UIButton) {
-        let value: String = viewModel.insertOperator("-")
+        let value: String = viewModel.insertOperator(insertNumberStrings.operationSub)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedMultButton(_ sender: UIButton) {
-        let value: String = viewModel.insertOperator("x")
+        let value: String = viewModel.insertOperator(insertNumberStrings.operationMult)
         updateDiplayNumbers(value: value)
         
     }
     
     @IBAction func tappedDivButton(_ sender: UIButton) {
-        let value: String = viewModel.insertOperator("÷")
+        let value: String = viewModel.insertOperator(insertNumberStrings.operationDiv)
         updateDiplayNumbers(value: value)
         
     }
@@ -162,7 +164,7 @@ class InsertNumbersModalViewController: UIViewController {
     }
     
     @IBAction func tappedDoneButton(_ sender: UIButton) {
-        let expression = numbersDisplayLabel.text ?? "0"
+        let expression = numbersDisplayLabel.text ?? insertNumberStrings.number0
         var value: Double
         if viewModel.checkOperations(expression) {
             value = viewModel.calculateExpression()
@@ -170,7 +172,7 @@ class InsertNumbersModalViewController: UIViewController {
             let numbers = expression.suffix(from: expression.index(expression.startIndex, offsetBy: 3))
             value = Double(numbers) ?? 0.0
         }
-        delegate?.numberSelected(value)
+        delegate?.numberSelected(value, id: id)
         dismiss(animated: true)
     }
     
@@ -185,6 +187,6 @@ class InsertNumbersModalViewController: UIViewController {
     }
     
     private func updateDiplayNumbers(value: String) {
-        numbersDisplayLabel.text = "R$ \(value)"
+        numbersDisplayLabel.text = insertNumberStrings.currencyText + value
     }
 }

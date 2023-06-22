@@ -9,7 +9,7 @@ import Foundation
 
 class InsertNumbersModalViewModel {
 
-    var expression: String = "0"
+    var expression: String = insertNumberStrings.number0
     
     init(amount: Double) {
         self.expression = setValueToExpression(amount)
@@ -17,7 +17,7 @@ class InsertNumbersModalViewModel {
     
     public func insertNumber(_ char: String) -> String {
         
-        if expression == "0" {
+        if expression == insertNumberStrings.number0 {
             expression = char
         } else {
             expression += char
@@ -25,34 +25,39 @@ class InsertNumbersModalViewModel {
         return expression
     }
     public func insertPoint() -> String {
-        if !expression.contains(".") {
-            expression += "."
+        if !expression.contains(insertNumberStrings.point) {
+            expression += insertNumberStrings.point
         }
         return expression
     }
     
-    public func insertOperator(_ oper: String) -> String {
+    public func insertOperator(_ oper: Character) -> String {
         if expression.count > 2 {
             let string = expression.dropLast(1)
-            if let _ = string.range(of: "[+-x÷]", options: .regularExpression) {
+            if let _ = string.range(of: insertNumberStrings.operators, options: .regularExpression) {
                 expression = String(calculateExpression())
-                expression += oper
+                expression += String(oper)
                 return expression
             }
         }
         
-        if let lastChar = expression.last, "+-x÷".contains(lastChar) {
+        if let lastChar = expression.last, insertNumberStrings.operators.contains(lastChar) {
             expression.removeLast()
         }
 
-        expression += oper
+        expression += String(oper)
         return expression
     }
     
     public func calculateExpression() -> Double {
        
         if checkOperations(expression) {
-            let operators: Set<Character> = ["+", "-", "x", "÷"]
+            let operators: Set<Character> = [
+                insertNumberStrings.operationAdd,
+                insertNumberStrings.operationSub,
+                insertNumberStrings.operationMult,
+                insertNumberStrings.operationDiv
+            ]
             var result: Double = 0.0
             
             for (index, character) in expression.enumerated() {
@@ -60,13 +65,13 @@ class InsertNumbersModalViewModel {
                     let numberBeforeOperator = Double(expression.prefix(index)) ?? 0
                     if let numberAfterOperator = Double(expression.suffix(from: expression.index(after: expression.index(expression.startIndex, offsetBy: index)))) {
                         switch character {
-                        case "+":
+                        case insertNumberStrings.operationAdd:
                             result = numberBeforeOperator + numberAfterOperator
-                        case "-":
+                        case insertNumberStrings.operationSub:
                             result = numberBeforeOperator - numberAfterOperator
-                        case "x":
+                        case insertNumberStrings.operationMult:
                             result = numberBeforeOperator * numberAfterOperator
-                        case "÷":
+                        case insertNumberStrings.operationDiv:
                             if numberAfterOperator != 0 {
                                 result = numberBeforeOperator / numberAfterOperator
                             } else {
@@ -93,13 +98,13 @@ class InsertNumbersModalViewModel {
         }
         
         if expression.isEmpty {
-            expression = "0"
+            expression = insertNumberStrings.number0
         }
         return expression
     }
     
     public func checkOperations(_ text: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: "[+\\-x÷]", options: [])
+        let regex = try! NSRegularExpression(pattern: insertNumberStrings.regexPattern, options: [])
         let range = NSRange(text.startIndex ..< text.endIndex, in: text)
         let isMatch = regex.firstMatch(in: text, options: [], range: range) != nil
         return isMatch
@@ -107,7 +112,7 @@ class InsertNumbersModalViewModel {
     
     public func setValueToExpression(_ value: Double) -> String {
         var amount: String = String(value)
-        if amount.hasSuffix(".0") {
+        if amount.hasSuffix(insertNumberStrings.decimal0) {
             amount = String(amount.dropLast(2))
         }
         return amount

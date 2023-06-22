@@ -25,7 +25,6 @@ class NewItemButtonCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     @IBAction func tappedNewItemButton(_ sender: UIButton) {

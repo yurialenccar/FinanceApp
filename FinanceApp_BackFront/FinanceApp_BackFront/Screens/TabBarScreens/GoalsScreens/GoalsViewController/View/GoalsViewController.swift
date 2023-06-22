@@ -41,14 +41,13 @@ class GoalsViewController: UIViewController {
             layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 0, right: 15)
         }
         collectionView.register(GoalsCollectionViewCell.nib(), forCellWithReuseIdentifier: GoalsCollectionViewCell.identifier)
-        collectionView.register(createGoalButtonCell.nib(), forCellWithReuseIdentifier: createGoalButtonCell.identifier)
+        collectionView.register(NewItemButtonCell.nib(), forCellWithReuseIdentifier: NewItemButtonCell.identifier)
     }
 
 
 }
 
-extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateGoalButtonCellDelegate, GoalSavedDelegate {
-    
+extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateItemButtonCellDelegate, GoalSavedDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getGoalsCount() + 1
     }
@@ -61,8 +60,9 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             cell?.setupCell(goal: viewModel.getItemGoal(indexPath.row))
             return cell ?? UICollectionViewCell()
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: createGoalButtonCell.identifier, for: indexPath) as? createGoalButtonCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewItemButtonCell.identifier, for: indexPath) as? NewItemButtonCell
             cell?.delegate = self
+            cell?.setupCell(buttonText: goalStrings.newGoalButtonTitle)
             return cell ?? UICollectionViewCell()
         }
     }
@@ -71,13 +71,10 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return viewModel.getCellSize(viewWidth: view.frame.width)
     }
     
-    func didTappedNewGoalButton() {
+    func didTappedNewItemButton() {
         let storyboard = UIStoryboard(name: EditGoalViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: EditGoalViewController.identifier) as? EditGoalViewController
         vc?.delegate = self
-        if let presentationController = vc?.presentationController as? UISheetPresentationController{
-            presentationController.detents = [.medium()]
-        }
         self.present(vc ?? UIViewController(), animated: true)
     }
     

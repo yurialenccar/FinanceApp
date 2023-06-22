@@ -61,7 +61,7 @@ class RegisterExpenseViewController: UIViewController {
         let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
             InsertNumbersModalViewController? in
-            return InsertNumbersModalViewController(coder: coder, amount: self.amount)
+            return InsertNumbersModalViewController(coder: coder, value: self.amount, id: 0)
         }
         vc.delegate = self
         self.present(vc, animated: true)
@@ -169,7 +169,7 @@ class RegisterExpenseViewController: UIViewController {
 }
 
 
-extension RegisterExpenseViewController:CategoriesModalDelegate, AccountsModalDelegate {
+extension RegisterExpenseViewController:CategoriesModalDelegate, AccountsModalDelegate, InsertNumbersModalProtocol {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory
         updateCategoryField(indexCategorySelected)
@@ -179,10 +179,8 @@ extension RegisterExpenseViewController:CategoriesModalDelegate, AccountsModalDe
         updateAccountField(indexAccount)
         idAccountSelected = bankAccountsList[indexAccount].getId()
     }
-}
-
-extension RegisterExpenseViewController: InsertNumbersModalProtocol {
-    func numberSelected(_ value: Double) {
+    
+    func numberSelected(_ value: Double, id: Int) {
         updateAmountValue(value)
     }
 }

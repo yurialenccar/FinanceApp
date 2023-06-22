@@ -10,7 +10,7 @@ import Foundation
 enum goalStrings {
     //GoalsViewController
     static let goalsTitleText = "Metas e Planejamentos"
-    static let newGoalButtonTitle = "Criar Nova Meta"
+    static let newGoalButtonTitle = "Criar nova meta"
     
     //GoalInfoViewController
     static let goalText = "Meta"
@@ -57,4 +57,6 @@ enum goalStrings {
     static let imageText = "Imagem"
     static let createGoalButtonTitle = "Criar"
     static let casaText = "Casa"
+    static let missingInformationsMessage = "Por favor, preencher todos os campos."
+    static let increaseTargetValueMessage = "O valor da meta precisa ser maior que o saldo inicial!"
 }

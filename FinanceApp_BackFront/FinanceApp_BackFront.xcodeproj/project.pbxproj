@@ -98,8 +98,6 @@
 		A19742DD2A2282DC00455DB0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19742DC2A2282DC00455DB0 /* UIImage.swift */; };
 		A19F850929F963C40044F7DE /* GoalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F850729F963C40044F7DE /* GoalsCollectionViewCell.swift */; };
 		A19F850A29F963C40044F7DE /* GoalsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */; };
-		A19F850F29F96E6D0044F7DE /* createGoalButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */; };
-		A19F851029F96E6D0044F7DE /* createGoalButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19F850E29F96E6D0044F7DE /* createGoalButtonCell.xib */; };
 		A19F851529F973D20044F7DE /* EditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F851429F973D20044F7DE /* EditGoalViewController.swift */; };
 		A1A92BB429F8122A00E14EE8 /* CreditCardModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1A92BB329F8122A00E14EE8 /* CreditCardModalViewController.storyboard */; };
 		A1A92BB729F8124400E14EE8 /* CreditCardModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A92BB629F8124400E14EE8 /* CreditCardModalViewController.swift */; };
@@ -261,8 +259,6 @@
 		A19742DC2A2282DC00455DB0 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		A19F850729F963C40044F7DE /* GoalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A19F850829F963C40044F7DE /* GoalsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsCollectionViewCell.xib; sourceTree = "<group>"; };
-		A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createGoalButtonCell.swift; sourceTree = "<group>"; };
-		A19F850E29F96E6D0044F7DE /* createGoalButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = createGoalButtonCell.xib; sourceTree = "<group>"; };
 		A19F851429F973D20044F7DE /* EditGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalViewController.swift; sourceTree = "<group>"; };
 		A1A92BB329F8122A00E14EE8 /* CreditCardModalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreditCardModalViewController.storyboard; sourceTree = "<group>"; };
 		A1A92BB629F8124400E14EE8 /* CreditCardModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardModalViewController.swift; sourceTree = "<group>"; };
@@ -470,14 +466,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		A125C1032A3A249E00A78390 /* insertNumbersModalViewController */ = {
+		A125C1032A3A249E00A78390 /* InsertNumbersModalViewController */ = {
 			isa = PBXGroup;
 			children = (
 				A1E87E632A3BA9B900077D49 /* Strings */,
 				A125C1082A3A51A100A78390 /* ViewModel */,
 				A125C1092A3A51A900A78390 /* View */,
 			);
-			path = insertNumbersModalViewController;
+			path = InsertNumbersModalViewController;
 			sourceTree = "<group>";
 		};
 		A125C1082A3A51A100A78390 /* ViewModel */ = {
@@ -1080,18 +1076,8 @@
 			isa = PBXGroup;
 			children = (
 				A1E47F7929F8A63700039F08 /* GoalsCell */,
-				A19F850C29F96E320044F7DE /* createGoalButtonCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		A19F850C29F96E320044F7DE /* createGoalButtonCell */ = {
-			isa = PBXGroup;
-			children = (
-				A19F850E29F96E6D0044F7DE /* createGoalButtonCell.xib */,
-				A19F850D29F96E6D0044F7DE /* createGoalButtonCell.swift */,
-			);
-			path = createGoalButtonCell;
 			sourceTree = "<group>";
 		};
 		A19F851129F973990044F7DE /* EditGoalViewController */ = {
@@ -1271,7 +1257,7 @@
 		A1D2F84429E999D500DCA6E4 /* ModalScreens */ = {
 			isa = PBXGroup;
 			children = (
-				A125C1032A3A249E00A78390 /* insertNumbersModalViewController */,
+				A125C1032A3A249E00A78390 /* InsertNumbersModalViewController */,
 				A1D2F84529E99A0200DCA6E4 /* CategoriesModalViewController */,
 				A11BDA7E29F4CC5B006CF6B2 /* AccountsModalViewModel */,
 				A1A92BB229F8120500E14EE8 /* CreditCardModalViewController */,
@@ -1586,7 +1572,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A19F851029F96E6D0044F7DE /* createGoalButtonCell.xib in Resources */,
 				A125C1052A3A24CA00A78390 /* InsertNumbersModalViewController.storyboard in Resources */,
 				A18ED5912A20EF7200F564BD /* GoogleService-Info.plist in Resources */,
 				A1E107BB29E4F426005A3F4F /* CreditCardsViewController.storyboard in Resources */,
@@ -1751,7 +1736,6 @@
 				A140934F29E7625A0037662B /* AddTrasactionsViewModel.swift in Sources */,
 				A19F851529F973D20044F7DE /* EditGoalViewController.swift in Sources */,
 				A152AA3F2A21A47800372C00 /* loginStrings.swift in Sources */,
-				A19F850F29F96E6D0044F7DE /* createGoalButtonCell.swift in Sources */,
 				A17C89E52A09C9BA00B5DB2F /* EditCreditCardsViewController.swift in Sources */,
 				A1C8BA712A22ECE000590758 /* addStrings.swift in Sources */,
 				A18ED59E2A21469D00F564BD /* MoreOptionsViewModel.swift in Sources */,

@@ -72,14 +72,12 @@ class RegisterCardExpViewModel{
         return bankProperties[creditCardsList[indexCard].bank]?.backgroundColor ?? .gray
     }
     
-    
-    
-    private func formatDate(date: Date) -> String {
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = globalStrings.dateFormat
-        
-        return formatter.string(from: date)
+    public func setValueToString(_ value: Double) -> String {
+        var amount: String = String(value)
+        if amount.hasSuffix(".0") {
+            amount = String(amount.dropLast(2))
+        }
+        return amount
     }
     
     public func datePickerChange(date: Date) -> String {
@@ -102,11 +100,12 @@ class RegisterCardExpViewModel{
         }
     }
     
-    public func setValueToString(_ value: Double) -> String {
-        var amount: String = String(value)
-        if amount.hasSuffix(".0") {
-            amount = String(amount.dropLast(2))
-        }
-        return amount
+    private func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = globalStrings.dateFormat
+        
+        return formatter.string(from: date)
     }
+    
+    
 }

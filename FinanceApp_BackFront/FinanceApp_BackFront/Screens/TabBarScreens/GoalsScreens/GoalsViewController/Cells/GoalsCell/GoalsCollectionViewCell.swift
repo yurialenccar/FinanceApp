@@ -31,8 +31,8 @@ class GoalsCollectionViewCell: UICollectionViewCell {
         descLabel.text = goal.desc
         goalImage.image = UIImage(imageLiteralResourceName: goal.imageName)
         dateLabel.text = goal.targetDate
-        savedAmountLabel.text = "R$ \(goal.savedAmount)"
-        goalValueLabel.text = "R$ \(goal.goalValue)"
+        savedAmountLabel.text = goal.savedAmount.toStringMoney()
+        goalValueLabel.text = "/ \(goal.goalValue.toStringMoney())"
         progressView.progress = Float(goal.savedAmount/goal.goalValue)
     }
 }

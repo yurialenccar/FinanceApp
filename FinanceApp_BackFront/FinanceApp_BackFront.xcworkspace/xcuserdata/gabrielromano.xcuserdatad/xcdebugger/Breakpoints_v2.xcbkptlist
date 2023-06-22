@@ -14,9 +14,9 @@
             filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "insertChar(_:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "insertNumber(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,8 +30,8 @@
             filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "insertOperator(_:)"
             landmarkType = "7">
             <Locations>
@@ -87,14 +87,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "625D3C3B-FADF-4D91-B773-1EF46AF54A9A"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "insertOperator(_:)"
             landmarkType = "7">
             <Locations>
@@ -149,54 +149,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B1130829-D711-41AF-A1F8-D86970587851"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "calculateExpression()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B1130829-D711-41AF-A1F8-D86970587851 - fe8cc7f40fc9249b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FinanceApp_BackFront.insertNumbersModalViewModel.calculateExpression() -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "FinanceApp_BackFront"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "2020">
-               </Location>
-               <Location
-                  uuid = "B1130829-D711-41AF-A1F8-D86970587851 - fe8cc7f40fc9249b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FinanceApp_BackFront.insertNumbersModalViewModel.calculateExpression() -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "FinanceApp_BackFront"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "1732">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3732BD6D-4771-4EB2-9264-E634F9724E89"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -204,8 +156,8 @@
             filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "insertOperator(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -213,113 +165,289 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EA33423B-4A2E-4219-A2B5-389CA8ED9649"
+            uuid = "383497E9-7ADC-4769-945A-D3445124F262"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
+            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/View/InsertNumbersModalViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "calculateExpression()"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "tappedDoneButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "038BA0D3-5C01-4DED-A89F-AACDC7FC22A6"
+            uuid = "4CAC3EA8-9512-4CA3-9370-83201E666A11"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
+            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/InsertNumbersModalViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "calculateExpression()"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "init(amount:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4F31541B-DAF7-4B1D-9A0B-60B6CF547DF9"
+            uuid = "D4BD07A5-B25C-4676-BCBD-F9E41F248AAD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
+            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/InsertNumbersModalViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "calculateExpression()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5017591A-04FD-4137-A972-0611C50CAE51"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "calculateExpression()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C46BD11A-0657-4A71-93B3-76EF02903FF4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "calculateExpression()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C46BD11A-0657-4A71-93B3-76EF02903FF4 - fe8cc7f40fc9252f"
+                  uuid = "D4BD07A5-B25C-4676-BCBD-F9E41F248AAD - 4741b718f997326e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FinanceApp_BackFront.insertNumbersModalViewModel.calculateExpression() -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  symbolName = "FinanceApp_BackFront.InsertNumbersModalViewModel.calculateExpression() -&gt; Swift.Double"
                   moduleName = "FinanceApp_BackFront"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
+                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/InsertNumbersModalViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "1020">
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "164">
                </Location>
                <Location
-                  uuid = "C46BD11A-0657-4A71-93B3-76EF02903FF4 - fe8cc7f40fc9252f"
+                  uuid = "D4BD07A5-B25C-4676-BCBD-F9E41F248AAD - 4741b718f997326e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FinanceApp_BackFront.insertNumbersModalViewModel.calculateExpression() -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  symbolName = "FinanceApp_BackFront.InsertNumbersModalViewModel.calculateExpression() -&gt; Swift.Double"
                   moduleName = "FinanceApp_BackFront"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/insertNumbersModalViewModel.swift"
+                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/InsertNumbersModalViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "1068">
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "104">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D6DAC34-ABFE-4133-AAB9-B188C79279EE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/View/InsertNumbersModalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "tappedDoneButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9D6DAC34-ABFE-4133-AAB9-B188C79279EE - f136189a1162b7a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FinanceApp_BackFront.InsertNumbersModalViewController.tappedDoneButton(__C.UIButton) -&gt; ()"
+                  moduleName = "FinanceApp_BackFront"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/View/InsertNumbersModalViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "9D6DAC34-ABFE-4133-AAB9-B188C79279EE - f136189a1162b7a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FinanceApp_BackFront.InsertNumbersModalViewController.tappedDoneButton(__C.UIButton) -&gt; ()"
+                  moduleName = "FinanceApp_BackFront"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/View/InsertNumbersModalViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90462B2E-6C4A-4E04-ABCD-7450A5252801"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/ViewModel/InsertNumbersModalViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "calculateExpression()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6FE0A384-A159-4824-92F9-59C12F543D3A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/View/InsertNumbersModalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "tappedDivButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "48E3F3C9-05BC-4203-BBA2-E03EA1A3753E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/ModalScreens/insertNumbersModalViewController/View/InsertNumbersModalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "tappedDivButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DCACDD25-8868-4656-935A-65FAB34BC857"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/GoalsScreens/EditGoalViewController/View/EditGoalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "tappedInsertInitialAmountButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F446C829-773E-4846-986B-5E893188FB56"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/GoalsScreens/EditGoalViewController/View/EditGoalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "tappedInsertTargetValueButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7798712C-77E7-456A-B5CF-FA622E59F894"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/GoalsScreens/EditGoalViewController/View/EditGoalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "tappedInsertInitialAmountButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "606F8397-1622-4A74-BBA1-A2AE3B106F2A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/GoalsScreens/EditGoalViewController/View/EditGoalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "isMissingInformation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6435444-2BBB-430C-B616-4562D32ADF66"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/GoalsScreens/EditGoalViewController/View/EditGoalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "isMissingInformation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8C46D8C-3CBE-444F-AFC4-303376830439"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/GoalsScreens/EditGoalViewController/View/EditGoalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "isMissingInformation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "518986DD-5E04-4D32-A45D-E5B92BF8CD05"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/GoalsScreens/EditGoalViewController/View/EditGoalViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "isMissingInformation()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

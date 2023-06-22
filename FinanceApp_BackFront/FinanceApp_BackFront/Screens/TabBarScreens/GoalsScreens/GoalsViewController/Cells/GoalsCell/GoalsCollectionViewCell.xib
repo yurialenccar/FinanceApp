@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -46,23 +48,17 @@
                             <constraint firstItem="HEj-Dd-AR5" firstAttribute="leading" secondItem="dYL-V2-WTG" secondAttribute="trailing" constant="10" id="JzC-MT-gro"/>
                         </constraints>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Mje-Hh-RQ2">
-                        <rect key="frame" x="20" y="64.666666666666671" width="300" height="20.333333333333329"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Mje-Hh-RQ2">
+                        <rect key="frame" x="10" y="64.666666666666671" width="315" height="20.333333333333329"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="R$ 2800,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wj-17-URQ">
-                                <rect key="frame" x="0.0" y="0.0" width="140" height="20.333333333333332"/>
+                                <rect key="frame" x="0.0" y="0.0" width="155.66666666666666" height="20.333333333333332"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="AccentColor"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlx-T7-EJi">
-                                <rect key="frame" x="144" y="0.0" width="7.6666666666666572" height="20.333333333333332"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="GreyInformations"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 3500,00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz7-iC-Csq">
-                                <rect key="frame" x="155.66666666666663" y="0.0" width="144.33333333333337" height="20.333333333333332"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ R$ 3500,00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz7-iC-Csq">
+                                <rect key="frame" x="159.66666666666663" y="0.0" width="155.33333333333337" height="20.333333333333332"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="GreyInformations"/>
                                 <nil key="highlightedColor"/>
@@ -88,8 +84,8 @@
                 <constraint firstAttribute="trailing" secondItem="Hfp-iJ-iQq" secondAttribute="trailing" constant="10" id="UQN-6K-IxK"/>
                 <constraint firstAttribute="bottom" secondItem="k8N-r6-Hjv" secondAttribute="bottom" constant="20" id="buV-pP-RwY"/>
                 <constraint firstItem="k8N-r6-Hjv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="60" id="cs1-bw-771"/>
-                <constraint firstItem="Mje-Hh-RQ2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="rv7-75-XII"/>
-                <constraint firstAttribute="trailing" secondItem="Mje-Hh-RQ2" secondAttribute="trailing" constant="20" id="zMh-Ib-fMi"/>
+                <constraint firstItem="Mje-Hh-RQ2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="rv7-75-XII"/>
+                <constraint firstAttribute="trailing" secondItem="Mje-Hh-RQ2" secondAttribute="trailing" constant="15" id="zMh-Ib-fMi"/>
             </constraints>
             <connections>
                 <outlet property="dateLabel" destination="v7Y-Sy-IDf" id="GBY-jv-dDC"/>
@@ -104,11 +100,11 @@
     </objects>
     <resources>
         <image name="Casa" width="35" height="35"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="GreyInformations">
             <color red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

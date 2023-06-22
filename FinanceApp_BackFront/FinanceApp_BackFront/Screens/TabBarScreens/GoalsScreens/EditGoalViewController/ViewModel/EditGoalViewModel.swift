@@ -9,17 +9,13 @@ import Foundation
 
 class EditGoalViewModel{
     
+    public var dataSelecionada = Date()
     
-    
-    func createNewGoal(desc:String,imageName:String, savedAmount:Double, goalValue:Double, targetDate:String) -> Goal {
+    public func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = globalStrings.dateFormat
         
-        let newGoal: Goal = Goal(
-            desc: desc,
-            imageName: imageName,
-            savedAmount: savedAmount,
-            goalValue: goalValue,
-            targetDate: targetDate
-        )
-        return newGoal
+        return formatter.string(from: date)
     }
+
 }

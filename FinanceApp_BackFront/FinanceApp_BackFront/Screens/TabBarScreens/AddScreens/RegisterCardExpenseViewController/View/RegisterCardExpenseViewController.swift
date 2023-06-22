@@ -48,21 +48,19 @@ class RegisterCardExpenseViewController: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         let today = Date()
         dateField.text = viewModel.datePickerChange(date: today)
         updateCategoryField(indexCategorySelected)
         updateCardField(viewModel.standardCardIndex)
         idCardSelected = viewModel.standardCardId
         updateAmountValue(amount)
-        
     }
     @IBAction func tappedInsertAmountButton(_ sender: UIButton) {
         amountContainerView.layer.borderColor = UIColor.systemGray6.cgColor
         let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
             InsertNumbersModalViewController? in
-            return InsertNumbersModalViewController(coder: coder, amount: self.amount)
+            return InsertNumbersModalViewController(coder: coder, value: self.amount, id: 0)
         }
         vc.delegate = self
         self.present(vc, animated: true)
@@ -181,7 +179,7 @@ extension RegisterCardExpenseViewController:CategoriesModalDelegate, CardModalDe
         idCardSelected = creditCardsList[indexCard].getId()
     }
     
-    func numberSelected(_ value: Double) {
+    func numberSelected(_ value: Double, id: Int) {
         updateAmountValue(value)
     }
 }
