@@ -11,6 +11,10 @@ class InsertNumbersModalViewModel {
 
     var expression: String = "0"
     
+    init(amount: Double) {
+        self.expression = setValueToExpression(amount)
+    }
+    
     public func insertChar(_ char: String) -> String {
         
         if expression == "0" {
@@ -25,7 +29,7 @@ class InsertNumbersModalViewModel {
         if expression.count > 2 {
             let string = expression.dropLast(1)
             if let _ = string.range(of: "[+-x÷]", options: .regularExpression) {
-                expression = calculateExpression() ?? "0"
+                expression = String(calculateExpression())
                 expression += oper
                 return expression
             }
@@ -39,37 +43,40 @@ class InsertNumbersModalViewModel {
         return expression
     }
     
-    func calculateExpression() -> String? {
-        let operators: Set<Character> = ["+", "-", "x", "÷"]
-        
-        for (index, character) in expression.enumerated() {
-            if operators.contains(character) && index > 0 {
-
-                let numberBeforeOperator = Double(expression.prefix(index)) ?? 0
-                let numberAfterOperator = Double(expression.suffix(from: expression.index(after: expression.index(expression.startIndex, offsetBy: index)))) ?? 0
-                var result: Double = 0.0
-                
-                switch character {
-                case "+":
-                    result = numberBeforeOperator + numberAfterOperator
-                case "-":
-                    result = numberBeforeOperator - numberAfterOperator
-                case "x":
-                    result = numberBeforeOperator * numberAfterOperator
-                case "÷":
-                    if numberAfterOperator != 0 {
-                        result = numberBeforeOperator / numberAfterOperator
+    public func calculateExpression() -> Double {
+       
+        if checkOperations(expression) {
+            let operators: Set<Character> = ["+", "-", "x", "÷"]
+            var result: Double = 0.0
+            
+            for (index, character) in expression.enumerated() {
+                if operators.contains(character) && index > 0 {
+                    let numberBeforeOperator = Double(expression.prefix(index)) ?? 0
+                    let numberAfterOperator = Double(expression.suffix(from: expression.index(after: expression.index(expression.startIndex, offsetBy: index)))) ?? 0
+                    
+                    switch character {
+                    case "+":
+                        result = numberBeforeOperator + numberAfterOperator
+                    case "-":
+                        result = numberBeforeOperator - numberAfterOperator
+                    case "x":
+                        result = numberBeforeOperator * numberAfterOperator
+                    case "÷":
+                        if numberAfterOperator != 0 {
+                            result = numberBeforeOperator / numberAfterOperator
+                        } else {
+                            result = numberBeforeOperator
+                        }
+                    default:
+                        return 0
                     }
-                default:
-                    return nil
+                    expression = setValueToExpression(result)
                 }
-                expression = String(result)
             }
+            return result
+        } else {
+            return Double(expression) ?? 0.0
         }
-        if expression.hasSuffix(".0") {
-            expression = String(expression.dropLast(2))
-        }
-        return expression
     }
     
     public func eraseChar() -> String {
@@ -77,9 +84,24 @@ class InsertNumbersModalViewModel {
             expression.removeLast()
         }
         
-        if expression.count == 0 {
+        if expression.isEmpty {
             expression = "0"
         }
         return expression
+    }
+    
+    public func checkOperations(_ text: String) -> Bool {
+        let regex = try! NSRegularExpression(pattern: "[+\\-x÷]", options: [])
+        let range = NSRange(text.startIndex ..< text.endIndex, in: text)
+        let isMatch = regex.firstMatch(in: text, options: [], range: range) != nil
+        return isMatch
+    }
+    
+    public func setValueToExpression(_ value: Double) -> String {
+        var amount: String = String(value)
+        if amount.hasSuffix(".0") {
+            amount = String(amount.dropLast(2))
+        }
+        return amount
     }
 }

@@ -131,3 +131,10 @@ extension RegisterExpenseViewController:CategoriesModalDelegate, AccountsModalDe
         idAccountSelected = bankAccountsList[indexAccount].getId()
     }
 }
+//
+//extension RegisterExpenseViewController: InsertNumbersModalProtocol {
+//    func numberSelected(_ value: Double) {
+//        amount = value
+//        amountLabel.text = value.toStringMoney()
+//    }
+//}

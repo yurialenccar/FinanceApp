@@ -10,6 +10,7 @@ import UIKit
 class RegisterIncomeViewController: UIViewController {
     
     @IBOutlet weak var descTextField: UITextField!
+    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var dateField: UITextField!
@@ -26,7 +27,16 @@ class RegisterIncomeViewController: UIViewController {
     
     private var indexCategorySelected:Int = 0
     private var idAccountSelected:String = globalStrings.emptyString
+    private var amount: Double
     
+    init?(coder: NSCoder, amount: Double) {
+        self.amount = amount
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError(globalStrings.initError)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +47,22 @@ class RegisterIncomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let today = Date()
         dateField.text = viewModel.datePickerChange(date: today)
-        
         updateCategoryField(indexCategorySelected)
         updateAccountField(viewModel.standardAccountIndex)
         idAccountSelected = viewModel.standardAccountId
-        
+        updateAmountValue(amount)
     }
+    
+    @IBAction func tappedInsertAmountButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
+            InsertNumbersModalViewController? in
+            return InsertNumbersModalViewController(coder: coder, amount: self.amount)
+        }
+        vc.delegate = self
+        self.present(vc, animated: true)
+    }
+    
     @IBAction func tappedCategoryButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: CategoriesModalViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: CategoriesModalViewController.identifier) {coder -> CategoriesModalViewController? in
@@ -71,6 +91,10 @@ class RegisterIncomeViewController: UIViewController {
             amountTextField.layer.borderColor = UIColor.red.cgColor
             amountTextField.layer.borderWidth = 1
             showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotIncomeAmountValue)
+        } else if amount < 0 {
+            amountTextField.layer.borderColor = UIColor.red.cgColor
+            amountTextField.layer.borderWidth = 1
+            showSimpleAlert(title: globalStrings.attention, message: addStrings.forgotIncomeAmountValue)
         } else {
             viewModel.setTransactionsValues(
                 desc: descTextField.text.orEmpty,
@@ -89,6 +113,11 @@ class RegisterIncomeViewController: UIViewController {
         amountTextField.placeholder = addStrings.valueText
         obsTextField.placeholder = addStrings.observationsText
         registerIncomeButton.setTitle(addStrings.registerTransactionButtonTitle, for: .normal)
+    }
+    
+    private func updateAmountValue(_ value: Double) {
+        amount = value
+        amountLabel.text = value.toStringMoney()
     }
     
     private func updateCategoryField(_ indexCategory:Int){
@@ -130,5 +159,11 @@ extension RegisterIncomeViewController:CategoriesModalDelegate, AccountsModalDel
     func didSelectAccount(_ indexAccount: Int) {
         updateAccountField(indexAccount)
         idAccountSelected = bankAccountsList[indexAccount].getId()
+    }
+}
+
+extension RegisterIncomeViewController: InsertNumbersModalProtocol {
+    func numberSelected(_ value: Double) {
+        updateAmountValue(value)
     }
 }

@@ -27,8 +27,12 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func tappedIncomeButton(_ sender: UIButton) {
-        let vc: RegisterIncomeViewController? = UIStoryboard(name: RegisterIncomeViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: RegisterIncomeViewController.identifier) as? RegisterIncomeViewController
-        present(vc ?? UIViewController(), animated: true)
+        let storyboard = UIStoryboard(name: RegisterIncomeViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: RegisterIncomeViewController.identifier) {coder ->
+            RegisterIncomeViewController? in
+            return RegisterIncomeViewController(coder: coder, amount: 0)
+        }
+        present(vc, animated: true)
     }
     
     @IBAction func tappedExpenseButton(_ sender: UIButton) {

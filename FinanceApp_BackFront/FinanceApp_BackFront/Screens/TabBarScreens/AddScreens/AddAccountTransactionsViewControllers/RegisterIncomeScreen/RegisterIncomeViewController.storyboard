@@ -54,7 +54,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
-                                                    <action selector="tappedCategoryButton:" destination="oEw-3t-1G2" eventType="touchUpInside" id="pP3-rA-gbd"/>
+                                                    <action selector="tappedInsertAmountButton:" destination="oEw-3t-1G2" eventType="touchUpInside" id="TrE-pi-Pdv"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blg-oC-9C2">
@@ -302,6 +302,7 @@
                     <connections>
                         <outlet property="accountBackground" destination="85D-0Y-yZ6" id="7UH-nw-Hd7"/>
                         <outlet property="accountLabel" destination="Ipm-Mf-IZr" id="eo5-bx-ECP"/>
+                        <outlet property="amountLabel" destination="blg-oC-9C2" id="p2Q-mb-Zh0"/>
                         <outlet property="amountTextField" destination="uod-iJ-8n5" id="dkg-xj-F20"/>
                         <outlet property="bankLabel" destination="kKl-75-bMh" id="K1S-gq-7Xu"/>
                         <outlet property="categoryBackgroung" destination="b3a-WI-z2A" id="YVQ-OV-RbC"/>

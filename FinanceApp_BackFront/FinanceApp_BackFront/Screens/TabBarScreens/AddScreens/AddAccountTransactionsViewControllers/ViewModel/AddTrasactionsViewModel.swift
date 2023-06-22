@@ -142,4 +142,12 @@ class AddAccountTransactionsViewModel{
             return date.toString(format: globalStrings.dateFormat)
         }
     }
+    
+    public func setValueToString(_ value: Double) -> String {
+        var amount: String = String(value)
+        if amount.hasSuffix(".0") {
+            amount = String(amount.dropLast(2))
+        }
+        return amount
+    }
 }

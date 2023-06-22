@@ -8,7 +8,7 @@
 import UIKit
 
 protocol InsertNumbersModalProtocol: AnyObject {
-    func numberSelected(value: String)
+    func numberSelected(_ value: Double)
 }
 
 class InsertNumbersModalViewController: UIViewController {
@@ -37,13 +37,24 @@ class InsertNumbersModalViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     
     static let identifier:String = String(describing: InsertNumbersModalViewController.self)
-    var viewModel: InsertNumbersModalViewModel = InsertNumbersModalViewModel()
+    var viewModel: InsertNumbersModalViewModel
     weak var delegate: InsertNumbersModalProtocol?
-
+    var amount: Double
+    
+    init?(coder: NSCoder, amount: Double) {
+        self.amount = amount
+        self.viewModel = InsertNumbersModalViewModel(amount: amount)
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError(globalStrings.initError)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
-
+        updateDiplayNumbers(value: viewModel.setValueToExpression(amount))
     }
     
     @IBAction func tappedEraseButton(_ sender: UIButton) {
@@ -142,9 +153,8 @@ class InsertNumbersModalViewController: UIViewController {
     }
     
     @IBAction func tappedEqualButton(_ sender: UIButton) {
-        let value: String = viewModel.calculateExpression() ?? "0"
-        updateDiplayNumbers(value: value)
-        
+        let value = viewModel.calculateExpression()
+        updateDiplayNumbers(value: String(value))
     }
     
     @IBAction func tappedCancelButton(_ sender: UIButton) {
@@ -152,11 +162,16 @@ class InsertNumbersModalViewController: UIViewController {
     }
     
     @IBAction func tappedDoneButton(_ sender: UIButton) {
-        var expression = numbersDisplayLabel.text ?? "0"
-        if expression.range(of: "[+-x÷]", options: .regularExpression) != nil {
-            let value = viewModel.calculateExpression() ?? "0"
-            delegate?.numberSelected(value: Double(value)?.toStringMoney() ?? "0")
+        let expression = numbersDisplayLabel.text ?? "0"
+        var value: Double
+        if viewModel.checkOperations(expression) {
+            value = viewModel.calculateExpression()
+        } else {
+            let numbers = expression.suffix(from: expression.index(expression.startIndex, offsetBy: 3))
+            value = Double(numbers) ?? 0.0
         }
+        delegate?.numberSelected(value)
+        dismiss(animated: true)
     }
     
     private func setupElements() {
