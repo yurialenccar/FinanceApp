@@ -45,7 +45,7 @@
                                             <constraint firstAttribute="height" constant="60" id="xQm-Jg-207"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" returnKeyType="done" textContentType="name"/>
                                     </textField>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hez-jT-wrf">
                                         <rect key="frame" x="0.0" y="74" width="353" height="60"/>
@@ -256,7 +256,7 @@
                                             <constraint firstAttribute="height" constant="60" id="iDf-p3-4Vz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" returnKeyType="done" textContentType="name"/>
                                     </textField>
                                 </subviews>
                             </stackView>

@@ -41,7 +41,6 @@ class CreditCardsViewController: UIViewController {
         }
         collectionView.register(CreditCardCollectionViewCell.nib(), forCellWithReuseIdentifier: CreditCardCollectionViewCell.identifier)
         collectionView.register(NewItemButtonCell.nib(), forCellWithReuseIdentifier: NewItemButtonCell.identifier)
-        
     }
 }
 
@@ -94,6 +93,4 @@ extension CreditCardsViewController: UICollectionViewDelegate, UICollectionViewD
     func didCreatedBankAccount() {
         collectionView.reloadData()
     }
-
-
 }

@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
-        setupUIComponents()
+        setupElements()
         setupImagePicker()
     }
 
@@ -55,9 +55,19 @@ class ProfileViewController: UIViewController {
         saveButton.setTitle(moreOptionsStrings.saveButtonTitle, for: .normal)
     }
     
-    private func setupUIComponents(){
+    private func setupElements(){
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.clipsToBounds = true
+        
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        phoneTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        nameTextField.returnKeyType = .done
+        emailTextField.returnKeyType = .done
+        phoneTextField.returnKeyType = .done
+        passwordTextField.returnKeyType = .done
     }
     
     private func setupImagePicker(){
@@ -80,5 +90,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ProfileViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

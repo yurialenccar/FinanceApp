@@ -44,6 +44,7 @@ class RegisterIncomeViewController: UIViewController {
         super.viewDidLoad()
         setupStrings()
         setupElements()
+        setupTextFields()
         setupDataPicker()
     }
     
@@ -134,6 +135,14 @@ class RegisterIncomeViewController: UIViewController {
         accountContainerView.layer.masksToBounds = true
     }
     
+    private func setupTextFields() {
+        descTextField.delegate = self
+        obsTextField.delegate = self
+        
+        descTextField.returnKeyType = .done
+        obsTextField.returnKeyType = .done
+    }
+    
     private func updateAmountValue(_ value: Double) {
         amount = value
         amountLabel.text = value.toStringMoney()
@@ -165,6 +174,13 @@ class RegisterIncomeViewController: UIViewController {
     @objc func dateChange (datePicker: UIDatePicker) {
         dateField.text = viewModel.datePickerChange(date: datePicker.date)
         dateField.resignFirstResponder()
+    }
+}
+
+extension RegisterIncomeViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

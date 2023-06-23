@@ -48,6 +48,7 @@ class EditCreditCardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupTextFields()
         setupPickerView()
     }
     
@@ -94,25 +95,6 @@ class EditCreditCardsViewController: UIViewController {
         }
     }
     
-    private func saveValues(){
-        viewModel.saveCreditCard(newCard: CreditCard(
-            desc: nameTextField.text.orEmpty,
-            limit: limitValue,
-            bank: selectedBank,
-            closingDay: Int(closingDayNumberLabel.text.orEmpty) ?? 0,
-            dueDate: Int(dueDateNumberLabel.text.orEmpty) ?? 0,
-            standardCard: standardCardSwitch.isOn,
-            obs: obsTextField.text.orEmpty)
-        )
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    private func setupTableView(){
-        tableview.delegate = self
-        tableview.dataSource = self
-        tableview.register(BanksCell.nib(), forCellReuseIdentifier: BanksCell.identifier)
-    }
-    
     private  func setupStrings(){
         switch viewModel.configType {
         case .createNew:
@@ -129,6 +111,20 @@ class EditCreditCardsViewController: UIViewController {
         saveButton.setTitle(moreOptionsStrings.saveButtonTitle, for: .normal)
     }
     
+    private func setupTextFields() {
+        nameTextField.delegate = self
+        obsTextField.delegate = self
+        
+        nameTextField.returnKeyType = .done
+        obsTextField.returnKeyType = .done
+    }
+    
+    private func setupTableView(){
+        tableview.delegate = self
+        tableview.dataSource = self
+        tableview.register(BanksCell.nib(), forCellReuseIdentifier: BanksCell.identifier)
+    }
+    
     private func populateFields() {
         let card = viewModel.populateFieldsInfos()
         limitValue = card.limit
@@ -141,6 +137,19 @@ class EditCreditCardsViewController: UIViewController {
         obsTextField.text = card.obs
         selectedBank = card.bank
         updateBankField(selectedBank)
+    }
+    
+    private func saveValues(){
+        viewModel.saveCreditCard(newCard: CreditCard(
+            desc: nameTextField.text.orEmpty,
+            limit: limitValue,
+            bank: selectedBank,
+            closingDay: Int(closingDayNumberLabel.text.orEmpty) ?? 0,
+            dueDate: Int(dueDateNumberLabel.text.orEmpty) ?? 0,
+            standardCard: standardCardSwitch.isOn,
+            obs: obsTextField.text.orEmpty)
+        )
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func toggleTableViewVisibility(){
@@ -224,5 +233,12 @@ extension EditCreditCardsViewController: UIPickerViewDelegate, UIPickerViewDataS
 extension EditCreditCardsViewController: InsertNumbersModalProtocol {
     func numberSelected(_ value: Double, id: Int) {
         updateLimitValue(value)
+    }
+}
+
+extension EditCreditCardsViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

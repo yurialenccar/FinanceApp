@@ -36,6 +36,7 @@ class EditGoalViewController: UIViewController {
         super.viewDidLoad()
         setupStrings()
         setupElements()
+        setupTextFields()
         setupDataPicker()
     }
     
@@ -114,6 +115,11 @@ class EditGoalViewController: UIViewController {
         imageContainerView.layer.cornerRadius = 5
         imageContainerView.layer.masksToBounds = true
     }
+
+    private func setupTextFields() {
+        descTextField.delegate = self
+        descTextField.returnKeyType = .done
+    }
     
     private func updateInitialAmountValue(_ value: Double) {
         initialAmountValue = value
@@ -156,6 +162,13 @@ class EditGoalViewController: UIViewController {
             missing = true
         }
         return missing
+    }
+}
+
+extension EditGoalViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

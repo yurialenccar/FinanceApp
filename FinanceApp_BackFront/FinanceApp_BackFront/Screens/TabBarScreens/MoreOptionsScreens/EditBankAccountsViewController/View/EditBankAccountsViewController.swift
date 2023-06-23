@@ -44,12 +44,13 @@ class EditBankAccountsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStrings()
         setupTableView()
+        setupTextFields()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableview.isHidden=true
-        setupStrings()
         populateFields()
     }
     
@@ -104,6 +105,20 @@ class EditBankAccountsViewController: UIViewController {
         saveButton.setTitle(moreOptionsStrings.saveButtonTitle, for: .normal)
     }
     
+    private func setupTableView(){
+        tableview.delegate = self
+        tableview.dataSource = self
+        tableview.register(BanksCell.nib(), forCellReuseIdentifier: BanksCell.identifier)
+    }
+    
+    private func setupTextFields() {
+        nameTextField.delegate = self
+        obsTextField.delegate = self
+        
+        nameTextField.returnKeyType = .done
+        obsTextField.returnKeyType = .done
+    }
+    
     private func updateBalanceValue(_ value: Double) {
         balanceValue = value
         balanceTextField.text = value.toStringMoney()
@@ -124,14 +139,6 @@ class EditBankAccountsViewController: UIViewController {
             ))
         self.navigationController?.popViewController(animated: true)
     }
-    
-    private func setupTableView(){
-        tableview.delegate = self
-        tableview.dataSource = self
-        tableview.register(BanksCell.nib(), forCellReuseIdentifier: BanksCell.identifier)
-    }
-    
-    
     
     private func populateFields() {
         let account = viewModel.populateFieldsInfos()
@@ -168,6 +175,13 @@ class EditBankAccountsViewController: UIViewController {
         bankLabel.font = viewModel.getBankLabelTextFont(bank)
         bankLabel.textColor = viewModel.getBankLabelColor(bank)
         bankBackground.backgroundColor = viewModel.getBankBackColor(bank)
+    }
+}
+
+extension EditBankAccountsViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

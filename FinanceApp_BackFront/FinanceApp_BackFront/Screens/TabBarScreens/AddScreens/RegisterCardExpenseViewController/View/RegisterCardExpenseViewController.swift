@@ -133,6 +133,14 @@ class RegisterCardExpenseViewController: UIViewController{
         cardContainerView.layer.masksToBounds = true
     }
     
+    private func setupTextFields() {
+        descTextField.delegate = self
+        obsTextField.delegate = self
+        
+        descTextField.returnKeyType = .done
+        obsTextField.returnKeyType = .done
+    }
+    
     private func updateAmountValue(_ value: Double) {
         amount = value
         amountLabel.text = value.toStringMoney()
@@ -167,7 +175,13 @@ class RegisterCardExpenseViewController: UIViewController{
     }
 }
 
-//Extensão que busca a escolha do usuário das telas modais de seleção.
+extension RegisterCardExpenseViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
 extension RegisterCardExpenseViewController:CategoriesModalDelegate, CardModalDelegate, InsertNumbersModalProtocol {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory

@@ -44,6 +44,7 @@ class RegisterExpenseViewController: UIViewController {
         super.viewDidLoad()
         setupStrings()
         setupElements()
+        setupTextFields()
         setupDataPicker()
     }
     
@@ -135,6 +136,14 @@ class RegisterExpenseViewController: UIViewController {
         accountContainerView.layer.masksToBounds = true
     }
     
+    private func setupTextFields() {
+        descTextField.delegate = self
+        obsTextField.delegate = self
+        
+        descTextField.returnKeyType = .done
+        obsTextField.returnKeyType = .done
+    }
+    
     private func updateAmountValue(_ value: Double) {
         amount = value
         amountLabel.text = value.toStringMoney()
@@ -168,8 +177,14 @@ class RegisterExpenseViewController: UIViewController {
     }
 }
 
+extension RegisterExpenseViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
 
-extension RegisterExpenseViewController:CategoriesModalDelegate, AccountsModalDelegate, InsertNumbersModalProtocol {
+extension RegisterExpenseViewController: CategoriesModalDelegate, AccountsModalDelegate, InsertNumbersModalProtocol {
     func didSelectCategory(_ indexCategory: Int) {
         indexCategorySelected = indexCategory
         updateCategoryField(indexCategorySelected)
