@@ -145,6 +145,11 @@
 		A1F43FC42A2BE2F3000A3567 /* 51720-making-money.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBF2A2BE2F3000A3567 /* 51720-making-money.json */; };
 		A1FA88552A0D904C00818F52 /* AccountsResumeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FA88532A0D904C00818F52 /* AccountsResumeTableViewCell.swift */; };
 		A1FA88562A0D904C00818F52 /* AccountsResumeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FA88542A0D904C00818F52 /* AccountsResumeTableViewCell.xib */; };
+		A1FDB7E42A45F112006B3459 /* ExchangeRate.json in Resources */ = {isa = PBXBuildFile; fileRef = A1FDB7E32A45F112006B3459 /* ExchangeRate.json */; };
+		A1FDB7E72A45F1D8006B3459 /* ExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FDB7E62A45F1D8006B3459 /* ExchangeRateService.swift */; };
+		A1FDB7E92A45F2D3006B3459 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FDB7E82A45F2D3006B3459 /* ExchangeRate.swift */; };
+		A1FDB7EB2A4622D9006B3459 /* CurrencyInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FDB7EA2A4622D9006B3459 /* CurrencyInfos.swift */; };
+		A1FDB7ED2A4636D4006B3459 /* CurrencyPickerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FDB7EC2A4636D3006B3459 /* CurrencyPickerOptions.swift */; };
 		E35D084A29BDAD100098F0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084929BDAD100098F0B5 /* AppDelegate.swift */; };
 		E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */; };
 		E35D085129BDAD100098F0B5 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35D084F29BDAD100098F0B5 /* MainViewController.storyboard */; };
@@ -307,6 +312,11 @@
 		A1F43FBF2A2BE2F3000A3567 /* 51720-making-money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "51720-making-money.json"; path = "../../../../Downloads/51720-making-money.json"; sourceTree = "<group>"; };
 		A1FA88532A0D904C00818F52 /* AccountsResumeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsResumeTableViewCell.swift; sourceTree = "<group>"; };
 		A1FA88542A0D904C00818F52 /* AccountsResumeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsResumeTableViewCell.xib; sourceTree = "<group>"; };
+		A1FDB7E32A45F112006B3459 /* ExchangeRate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ExchangeRate.json; sourceTree = "<group>"; };
+		A1FDB7E62A45F1D8006B3459 /* ExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateService.swift; sourceTree = "<group>"; };
+		A1FDB7E82A45F2D3006B3459 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
+		A1FDB7EA2A4622D9006B3459 /* CurrencyInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyInfos.swift; sourceTree = "<group>"; };
+		A1FDB7EC2A4636D3006B3459 /* CurrencyPickerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerOptions.swift; sourceTree = "<group>"; };
 		E35D084629BDAD100098F0B5 /* FinanceApp_BackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp_BackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35D084929BDAD100098F0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35D084B29BDAD100098F0B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -442,6 +452,7 @@
 				A11BDA7729F4C478006CF6B2 /* CardBrand.swift */,
 				A18299C62A01AC7F00E72936 /* ConfigType.swift */,
 				A17C89EA2A09F5DE00B5DB2F /* CreditCardDayPickerOptions.swift */,
+				A1FDB7EC2A4636D3006B3459 /* CurrencyPickerOptions.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -694,6 +705,8 @@
 				A11BDA7529F4C24B006CF6B2 /* CreditCard.swift */,
 				A189A39829F58A4700C22A6D /* BankProperties.swift */,
 				A1E47F7A29F8A70000039F08 /* Goal.swift */,
+				A1FDB7E82A45F2D3006B3459 /* ExchangeRate.swift */,
+				A1FDB7EA2A4622D9006B3459 /* CurrencyInfos.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1449,6 +1462,22 @@
 			path = tableViewCell;
 			sourceTree = "<group>";
 		};
+		A1FDB7E22A45F0F8006B3459 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				A1FDB7E32A45F112006B3459 /* ExchangeRate.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		A1FDB7E52A45F1BA006B3459 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1FDB7E62A45F1D8006B3459 /* ExchangeRateService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B150CEFEE079F7249876CA80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1483,12 +1512,14 @@
 				E35D085229BDAD100098F0B5 /* FinanceApp_BackFront.xcdatamodeld */,
 				E35D085A29BDAD110098F0B5 /* Info.plist */,
 				A18ED5902A20EF7200F564BD /* GoogleService-Info.plist */,
+				A1FDB7E52A45F1BA006B3459 /* Services */,
 				A16688E529F06D4C00568217 /* Resources */,
 				A19742D92A227E6000455DB0 /* Extensions */,
 				A1CE09292A001B410028028B /* GlobalStrings */,
 				A16B56A229C1076500E53727 /* Screens */,
 				A16636ED29DE1B0400162872 /* Models */,
 				A1F43FBA2A2BE2DC000A3567 /* Lotties */,
+				A1FDB7E22A45F0F8006B3459 /* Mock */,
 			);
 			path = FinanceApp_BackFront;
 			sourceTree = "<group>";
@@ -1619,6 +1650,7 @@
 				A1C9EFF329E60E200029B69F /* ErrorViewController.storyboard in Resources */,
 				E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */,
 				E35D086B29BDB1D00098F0B5 /* AddViewController.storyboard in Resources */,
+				A1FDB7E42A45F112006B3459 /* ExchangeRate.json in Resources */,
 				A1E107C029E4F63D005A3F4F /* ProfileViewController.storyboard in Resources */,
 				A11BDA8729F4CFB6006CF6B2 /* AccountsTableViewCell.xib in Resources */,
 				E35D085129BDAD100098F0B5 /* MainViewController.storyboard in Resources */,
@@ -1716,6 +1748,7 @@
 				E35D086929BDB1C60098F0B5 /* AddViewController.swift in Sources */,
 				A17DC6892A099BDD00D12C3C /* BankAccountsViewModel.swift in Sources */,
 				A17DC6942A09C54C00D12C3C /* CreditCardsViewModel.swift in Sources */,
+				A1FDB7E92A45F2D3006B3459 /* ExchangeRate.swift in Sources */,
 				A14F999B2A25621C00257B67 /* CategoriesGraphViewModel.swift in Sources */,
 				A1E107C229E4F646005A3F4F /* ProfileViewController.swift in Sources */,
 				A17C89DE2A09C76700B5DB2F /* BanksCell.swift in Sources */,
@@ -1749,6 +1782,7 @@
 				A101917C29FAC4F900776A67 /* EditBankAccountsViewController.swift in Sources */,
 				A140934429E73AD20037662B /* RegisterIncomeViewController.swift in Sources */,
 				A1C9EFEF29E60D7D0029B69F /* LoginViewController.swift in Sources */,
+				A1FDB7EB2A4622D9006B3459 /* CurrencyInfos.swift in Sources */,
 				A14F99AD2A259DF300257B67 /* creditCardModalStrings.swift in Sources */,
 				A17C89E72A09C9C800B5DB2F /* EditCreditCardsViewModel.swift in Sources */,
 				A11BDA7829F4C478006CF6B2 /* CardBrand.swift in Sources */,
@@ -1765,12 +1799,14 @@
 				A189A39929F58A4700C22A6D /* BankProperties.swift in Sources */,
 				E3E9089129BFAF1B00B34864 /* CategoriesGraphViewController.swift in Sources */,
 				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
+				A1FDB7ED2A4636D4006B3459 /* CurrencyPickerOptions.swift in Sources */,
 				A101916C29FAB3FA00776A67 /* AccountCollectionViewCell.swift in Sources */,
 				A14F99942A250A3800257B67 /* goalStrings.swift in Sources */,
 				A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */,
 				A1CE092D2A0026800028028B /* Alert.swift in Sources */,
 				A1C9EFE529E60A880029B69F /* SplashViewController.swift in Sources */,
 				A19742D52A225F6E00455DB0 /* tabBarStrings.swift in Sources */,
+				A1FDB7E72A45F1D8006B3459 /* ExchangeRateService.swift in Sources */,
 				A1BBF50A2A2FD8C200DD18D5 /* SplashStrings.swift in Sources */,
 				A1A92BC429F81C1D00E14EE8 /* RegisterCardExpViewModel.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,

@@ -70,7 +70,7 @@ enum moreOptionsStrings {
     static let dolarFullText = "USD - Dolar (Estados Unidos)"
     static let realText = "Real (Brasil)"
     static let realFullText = "BRL - Real (Brasil)"
-    static let realTimeQuoteText = "Cotação em tempo real"
+    static let LastQuoteText = "Cotação da Ultima Atualização"
     static let oneDollarEqual = "U$ 1,00 = "
     static let momentDateFormat = "dd 'de' MMMM 'de' yyyy - hh:mm:ss aa"
     

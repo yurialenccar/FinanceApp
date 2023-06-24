@@ -19,21 +19,48 @@ class CurrencyViewController: UIViewController {
     @IBOutlet weak var realTimeQuoteLabel: UILabel!
     @IBOutlet weak var valueQuoteLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var currencyPickerView: UIPickerView!
     
     static let identifier:String = String(describing: CurrencyViewController.self)
     var viewModel: CurrencyViewModel = CurrencyViewModel()
     var sourceValue: Double = 1.0
+    var pickerSelected: CurrencyPickerOptions = .nonSelected
+    var sourceCoin: CurrencyInfos = coinsList[0]
+    var targetCoin: CurrencyInfos = coinsList[4]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         setupStrings()
         setupElements()
+        setupPickerView()
+        viewModel.updateExchangeRate()
+        updateSourceValue(sourceValue)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
         updateQuoteValues()
     }
+    
+    @IBAction func tappedSourceCoinButton(_ sender: UIButton) {
+        currencyPickerView.isHidden = false
+        pickerSelected = .source
+    }
+    
+    @IBAction func tappedTargetCoinButton(_ sender: UIButton) {
+        currencyPickerView.isHidden = false
+        pickerSelected = .target
+    }
+    
+    @IBAction func tappedInvertCoins1(_ sender: UIButton) {
+        invertCoins()
+    }
+    
+    @IBAction func tappedInvertCoins2(_ sender: UIButton) {
+        invertCoins()
+    }
+    
     @IBAction func tappedInsertSourceValueButton(_ sender: UIButton) {
         sourceValueContainerView.layer.borderColor = UIColor.systemGray6.cgColor
         let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
@@ -51,7 +78,7 @@ class CurrencyViewController: UIViewController {
         convertedCurrencyButton.setTitle(moreOptionsStrings.realText, for: .normal)
         sourceCurrencyLabel.text = moreOptionsStrings.dolarFullText
         convertedCurrencyLabel.text = moreOptionsStrings.realFullText
-        realTimeQuoteLabel.text = moreOptionsStrings.realTimeQuoteText
+        realTimeQuoteLabel.text = moreOptionsStrings.LastQuoteText
     }
     
     private func setupElements() {
@@ -61,16 +88,44 @@ class CurrencyViewController: UIViewController {
         sourceValueContainerView.layer.masksToBounds = true
     }
     
+    private func setupPickerView(){
+        currencyPickerView.delegate = self
+        currencyPickerView.dataSource = self
+        
+        view.addSubview(currencyPickerView)
+        currencyPickerView.isHidden = true
+    }
+    
     private func updateSourceValue(_ value: Double) {
         sourceValue = value
-        sourceValueLabel.text = viewModel.sourcetoMoney(value: value)
+        sourceValueLabel.text = sourceCoin.symbol + " " + viewModel.formatNumberCurrency(value: value)
+    }
+    
+    private func updateSourceLabels() {
+        sourceCurrencyButton.setTitle(sourceCoin.name, for: .normal)
+        sourceCurrencyLabel.text = sourceCoin.code + " - " + sourceCoin.name + " (" + sourceCoin.location + ")"
+    }
+    
+    private func updateTargetLabels() {
+        convertedCurrencyButton.setTitle(targetCoin.name, for: .normal)
+        convertedCurrencyLabel.text = targetCoin.code + " - " + targetCoin.name + " (" + targetCoin.location + ")"
     }
     
     private func updateQuoteValues() {
-        convertedCurrencyValueLabel.text = viewModel.getConvertedValue(valor: sourceValue)
-        valueQuoteLabel.text = viewModel.getActualRealTimeQuote()
+        convertedCurrencyValueLabel.text = viewModel.getConvertedValue(sourceCoin: sourceCoin, targetCoin: targetCoin, value: sourceValue)
+        valueQuoteLabel.text = viewModel.getLastExchangeQuote(sourceSymbol: sourceCoin.symbol, targetSymbol: targetCoin.symbol)
         dateLabel.text = viewModel.getActualDate()
         
+    }
+    
+    private func invertCoins() {
+        let dataSourceCoin: CurrencyInfos = sourceCoin
+        sourceCoin = targetCoin
+        targetCoin = dataSourceCoin
+        updateSourceLabels()
+        updateTargetLabels()
+        updateQuoteValues()
+        updateSourceValue(sourceValue)
     }
 }
 
@@ -79,4 +134,43 @@ extension CurrencyViewController: InsertNumbersModalProtocol {
         updateSourceValue(value)
         updateQuoteValues()
     }
+}
+
+extension CurrencyViewController: CurrencyViewModelProtocol {
+    func success() {
+        print(viewModel.exchangeRate ?? "")
+    }
+    
+    func error(error: ErrorRequest) {
+        print(error)
+    }
+}
+
+extension CurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return coinsList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return coinsList[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerSelected == .source {
+            sourceCoin = viewModel.getCoinInfo(index: row)
+            updateSourceLabels()
+            updateSourceValue(sourceValue)
+        } else if pickerSelected == .target{
+            targetCoin = viewModel.getCoinInfo(index: row)
+            updateTargetLabels()
+        }
+        currencyPickerView.isHidden = true
+        pickerSelected = .nonSelected
+        updateQuoteValues()
+    }
+    
 }
