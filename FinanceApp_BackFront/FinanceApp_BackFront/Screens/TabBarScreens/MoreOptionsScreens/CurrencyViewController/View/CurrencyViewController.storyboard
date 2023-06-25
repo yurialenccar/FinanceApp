@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -154,7 +153,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="Xu7-4E-PoS" secondAttribute="trailing" id="2k7-c3-nmP"/>
                                                             <constraint firstItem="Xu7-4E-PoS" firstAttribute="leading" secondItem="dFo-Ir-pDK" secondAttribute="leading" id="62k-vZ-EQN"/>
@@ -234,7 +233,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" name="BackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="iwa-eV-V6n" firstAttribute="top" secondItem="4VT-Wt-9G1" secondAttribute="top" constant="8" id="4Zb-hY-SvL"/>
                                                     <constraint firstAttribute="height" constant="104" id="9lK-n3-ivA"/>
@@ -271,7 +270,7 @@
                             </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ewA-i8-uGn"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7SI-8D-jNj" firstAttribute="top" secondItem="ewA-i8-uGn" secondAttribute="top" id="4nM-tl-x76"/>
                             <constraint firstItem="ezw-1n-w13" firstAttribute="top" secondItem="ewA-i8-uGn" secondAttribute="top" constant="30" id="Cej-NT-kCM"/>
@@ -288,6 +287,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nah-7y-M6m"/>
                     <connections>
+                        <outlet property="contentStackView" destination="W5Z-u5-18X" id="mav-Pe-Xc2"/>
                         <outlet property="convertedCurrencyButton" destination="VJN-xt-Ais" id="3vT-KW-6Oc"/>
                         <outlet property="convertedCurrencyLabel" destination="aFK-rf-vIG" id="Kru-sy-mqF"/>
                         <outlet property="convertedCurrencyValueLabel" destination="Q0m-Ix-mhM" id="u7Q-7S-F1P"/>
@@ -313,8 +313,5 @@
         <namedColor name="BackgroundColor">
             <color red="0.94117647058823528" green="0.94901960784313721" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

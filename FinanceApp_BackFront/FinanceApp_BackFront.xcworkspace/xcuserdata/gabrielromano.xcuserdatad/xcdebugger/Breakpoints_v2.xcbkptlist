@@ -397,10 +397,42 @@
             filePath = "FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/View/CurrencyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "success()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DDB4A77A-57CA-42F1-8E0E-6685AB527C11 - 54d3adef4a5a70d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FinanceApp_BackFront.CurrencyViewController.success() -&gt; ()"
+                  moduleName = "FinanceApp_BackFront"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/View/CurrencyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "DDB4A77A-57CA-42F1-8E0E-6685AB527C11 - 54d3adef4a5a7037"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FinanceApp_BackFront.CurrencyViewController.success() -&gt; ()"
+                  moduleName = "FinanceApp_BackFront"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/View/CurrencyViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -413,8 +445,8 @@
             filePath = "FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/View/CurrencyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "updateQuoteValues()"
             landmarkType = "7">
          </BreakpointContent>
@@ -429,8 +461,8 @@
             filePath = "FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/View/CurrencyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -445,22 +477,6 @@
             filePath = "FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/ViewModel/CurrencyViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "updateExchangeRate()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2F07DC11-0817-47DA-8CBA-12B058350B3F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/ViewModel/CurrencyViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
             landmarkName = "updateExchangeRate()"
@@ -470,8 +486,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EDF3768F-1D4E-4B31-8FDC-E18823BA0E95"
-            shouldBeEnabled = "Yes"
+            uuid = "2F07DC11-0817-47DA-8CBA-12B058350B3F"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/ViewModel/CurrencyViewModel.swift"
@@ -481,6 +497,86 @@
             endingLineNumber = "33"
             landmarkName = "updateExchangeRate()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2F07DC11-0817-47DA-8CBA-12B058350B3F - 60c0818b9147f995"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;FinanceApp_BackFront.ExchangeRate, FinanceApp_BackFront.ErrorRequest&gt;) -&gt; () in FinanceApp_BackFront.CurrencyViewModel.updateExchangeRate() -&gt; ()"
+                  moduleName = "FinanceApp_BackFront"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/ViewModel/CurrencyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "384">
+               </Location>
+               <Location
+                  uuid = "2F07DC11-0817-47DA-8CBA-12B058350B3F - 60c0818b9147f909"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;FinanceApp_BackFront.ExchangeRate, FinanceApp_BackFront.ErrorRequest&gt;) -&gt; () in FinanceApp_BackFront.CurrencyViewModel.updateExchangeRate() -&gt; ()"
+                  moduleName = "FinanceApp_BackFront"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/ViewModel/CurrencyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "384">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDF3768F-1D4E-4B31-8FDC-E18823BA0E95"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/ViewModel/CurrencyViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "updateExchangeRate()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EDF3768F-1D4E-4B31-8FDC-E18823BA0E95 - 60c0818b9147f909"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;FinanceApp_BackFront.ExchangeRate, FinanceApp_BackFront.ErrorRequest&gt;) -&gt; () in FinanceApp_BackFront.CurrencyViewModel.updateExchangeRate() -&gt; ()"
+                  moduleName = "FinanceApp_BackFront"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/ViewModel/CurrencyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "916">
+               </Location>
+               <Location
+                  uuid = "EDF3768F-1D4E-4B31-8FDC-E18823BA0E95 - 60c0818b9147f88d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;FinanceApp_BackFront.ExchangeRate, FinanceApp_BackFront.ErrorRequest&gt;) -&gt; () in FinanceApp_BackFront.CurrencyViewModel.updateExchangeRate() -&gt; ()"
+                  moduleName = "FinanceApp_BackFront"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/ViewModel/CurrencyViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "916">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Lottie
 
 class CurrencyViewController: UIViewController {
     
+    @IBOutlet weak var contentStackView: UIStackView!
     @IBOutlet weak var sourceCurrencyButton: UIButton!
     @IBOutlet weak var convertedCurrencyButton: UIButton!
     @IBOutlet weak var sourceCurrencyLabel: UILabel!
@@ -23,24 +25,24 @@ class CurrencyViewController: UIViewController {
     
     static let identifier:String = String(describing: CurrencyViewController.self)
     var viewModel: CurrencyViewModel = CurrencyViewModel()
+    let animationView: LottieAnimationView = .init(name: globalStrings.loadingLottie)
+//    let animationView: LottieAnimationView = .init(name: splashStrings.lottieAnimationName)
     var sourceValue: Double = 1.0
     var pickerSelected: CurrencyPickerOptions = .nonSelected
     var sourceCoin: CurrencyInfos = coinsList[0]
     var targetCoin: CurrencyInfos = coinsList[4]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         setupStrings()
         setupElements()
         setupPickerView()
-        viewModel.updateExchangeRate()
-        updateSourceValue(sourceValue)
+        updateExchangeRate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
-        updateQuoteValues()
     }
     
     @IBAction func tappedSourceCoinButton(_ sender: UIButton) {
@@ -70,6 +72,36 @@ class CurrencyViewController: UIViewController {
         }
         vc.delegate = self
         self.present(vc, animated: true)
+    }
+    
+    private func updateExchangeRate() {
+        if viewModel.dailyRequestMade {
+            contentStackView.isHidden = false
+            updateSourceValue(sourceValue)
+        } else {
+            contentStackView.isHidden = true
+            setupLottie()
+            viewModel.updateExchangeRate()
+        }
+        
+    }
+    
+    
+    func setupLottie() {
+            animationView.translatesAutoresizingMaskIntoConstraints = false
+            animationView.frame = view.frame
+            animationView.contentMode = .scaleAspectFit
+            animationView.loopMode = .loop
+            animationView.animationSpeed = 1.0
+            view.addSubview(animationView)
+            animationView.play()
+            
+            NSLayoutConstraint.activate([
+                animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 60),
+                animationView.heightAnchor.constraint(equalToConstant: 100),
+                animationView.widthAnchor.constraint(equalToConstant: 100),
+            ])
     }
     
     private func setupStrings() {
@@ -138,11 +170,14 @@ extension CurrencyViewController: InsertNumbersModalProtocol {
 
 extension CurrencyViewController: CurrencyViewModelProtocol {
     func success() {
-        print(viewModel.exchangeRate ?? "")
+        contentStackView.isHidden = false
+        animationView.isHidden = true
+        updateSourceValue(sourceValue)
+        updateQuoteValues()
     }
     
     func error(error: ErrorRequest) {
-        print(error)
+        showSimpleAlert(title: globalStrings.error, message: error.localizedDescription)
     }
 }
 

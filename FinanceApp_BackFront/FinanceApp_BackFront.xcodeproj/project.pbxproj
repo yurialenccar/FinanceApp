@@ -110,6 +110,12 @@
 		A1BBF50A2A2FD8C200DD18D5 /* SplashStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BBF5092A2FD8C200DD18D5 /* SplashStrings.swift */; };
 		A1C8BA6D2A22E61F00590758 /* transactionsStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C8BA6C2A22E61F00590758 /* transactionsStrings.swift */; };
 		A1C8BA712A22ECE000590758 /* addStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C8BA702A22ECE000590758 /* addStrings.swift */; };
+		A1C908B52A48B84600A04F84 /* 51720-making-money.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C908AF2A48B84600A04F84 /* 51720-making-money.json */; };
+		A1C908B62A48B84600A04F84 /* 8943-money-greenbg.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C908B02A48B84600A04F84 /* 8943-money-greenbg.json */; };
+		A1C908B72A48B84600A04F84 /* 145229-dot-loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C908B12A48B84600A04F84 /* 145229-dot-loading-animation.json */; };
+		A1C908B82A48B84600A04F84 /* 145264-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C908B22A48B84600A04F84 /* 145264-loading.json */; };
+		A1C908B92A48B84600A04F84 /* 99977-money-pf.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C908B32A48B84600A04F84 /* 99977-money-pf.json */; };
+		A1C908BA2A48B84600A04F84 /* 79808-green-money-falling.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C908B42A48B84600A04F84 /* 79808-green-money-falling.json */; };
 		A1C9D2392A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9D2372A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.swift */; };
 		A1C9D23A2A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C9D2382A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.xib */; };
 		A1C9D23E2A0C4C4C008CAFAD /* resumeBalanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9D23C2A0C4C4C008CAFAD /* resumeBalanceCollectionViewCell.swift */; };
@@ -138,11 +144,6 @@
 		A1F4210329F6215B005C346B /* AccountsModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4210229F6215B005C346B /* AccountsModalViewModel.swift */; };
 		A1F4210829F62379005C346B /* CategoriesModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4210729F62379005C346B /* CategoriesModalViewModel.swift */; };
 		A1F43FB92A2BE074000A3567 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A1F43FB82A2BE074000A3567 /* Lottie */; };
-		A1F43FC02A2BE2F3000A3567 /* 145229-dot-loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBB2A2BE2F3000A3567 /* 145229-dot-loading-animation.json */; };
-		A1F43FC12A2BE2F3000A3567 /* 79808-green-money-falling.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBC2A2BE2F3000A3567 /* 79808-green-money-falling.json */; };
-		A1F43FC22A2BE2F3000A3567 /* 99977-money-pf.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBD2A2BE2F3000A3567 /* 99977-money-pf.json */; };
-		A1F43FC32A2BE2F3000A3567 /* 8943-money-greenbg.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBE2A2BE2F3000A3567 /* 8943-money-greenbg.json */; };
-		A1F43FC42A2BE2F3000A3567 /* 51720-making-money.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F43FBF2A2BE2F3000A3567 /* 51720-making-money.json */; };
 		A1FA88552A0D904C00818F52 /* AccountsResumeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FA88532A0D904C00818F52 /* AccountsResumeTableViewCell.swift */; };
 		A1FA88562A0D904C00818F52 /* AccountsResumeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FA88542A0D904C00818F52 /* AccountsResumeTableViewCell.xib */; };
 		A1FDB7E42A45F112006B3459 /* ExchangeRate.json in Resources */ = {isa = PBXBuildFile; fileRef = A1FDB7E32A45F112006B3459 /* ExchangeRate.json */; };
@@ -278,6 +279,12 @@
 		A1BBF5092A2FD8C200DD18D5 /* SplashStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashStrings.swift; sourceTree = "<group>"; };
 		A1C8BA6C2A22E61F00590758 /* transactionsStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transactionsStrings.swift; sourceTree = "<group>"; };
 		A1C8BA702A22ECE000590758 /* addStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addStrings.swift; sourceTree = "<group>"; };
+		A1C908AF2A48B84600A04F84 /* 51720-making-money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "51720-making-money.json"; sourceTree = "<group>"; };
+		A1C908B02A48B84600A04F84 /* 8943-money-greenbg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8943-money-greenbg.json"; sourceTree = "<group>"; };
+		A1C908B12A48B84600A04F84 /* 145229-dot-loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "145229-dot-loading-animation.json"; sourceTree = "<group>"; };
+		A1C908B22A48B84600A04F84 /* 145264-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "145264-loading.json"; sourceTree = "<group>"; };
+		A1C908B32A48B84600A04F84 /* 99977-money-pf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "99977-money-pf.json"; sourceTree = "<group>"; };
+		A1C908B42A48B84600A04F84 /* 79808-green-money-falling.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "79808-green-money-falling.json"; sourceTree = "<group>"; };
 		A1C9D2372A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsBallanceCollectionViewCell.swift; sourceTree = "<group>"; };
 		A1C9D2382A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsBallanceCollectionViewCell.xib; sourceTree = "<group>"; };
 		A1C9D23C2A0C4C4C008CAFAD /* resumeBalanceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resumeBalanceCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -305,11 +312,6 @@
 		A1E87E642A3BA9E600077D49 /* insertNumberStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insertNumberStrings.swift; sourceTree = "<group>"; };
 		A1F4210229F6215B005C346B /* AccountsModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsModalViewModel.swift; sourceTree = "<group>"; };
 		A1F4210729F62379005C346B /* CategoriesModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModalViewModel.swift; sourceTree = "<group>"; };
-		A1F43FBB2A2BE2F3000A3567 /* 145229-dot-loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "145229-dot-loading-animation.json"; path = "../../../../Downloads/145229-dot-loading-animation.json"; sourceTree = "<group>"; };
-		A1F43FBC2A2BE2F3000A3567 /* 79808-green-money-falling.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "79808-green-money-falling.json"; path = "../../../../Downloads/79808-green-money-falling.json"; sourceTree = "<group>"; };
-		A1F43FBD2A2BE2F3000A3567 /* 99977-money-pf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "99977-money-pf.json"; path = "../../../../Downloads/99977-money-pf.json"; sourceTree = "<group>"; };
-		A1F43FBE2A2BE2F3000A3567 /* 8943-money-greenbg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "8943-money-greenbg.json"; path = "../../../../Downloads/8943-money-greenbg.json"; sourceTree = "<group>"; };
-		A1F43FBF2A2BE2F3000A3567 /* 51720-making-money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "51720-making-money.json"; path = "../../../../Downloads/51720-making-money.json"; sourceTree = "<group>"; };
 		A1FA88532A0D904C00818F52 /* AccountsResumeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsResumeTableViewCell.swift; sourceTree = "<group>"; };
 		A1FA88542A0D904C00818F52 /* AccountsResumeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsResumeTableViewCell.xib; sourceTree = "<group>"; };
 		A1FDB7E32A45F112006B3459 /* ExchangeRate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ExchangeRate.json; sourceTree = "<group>"; };
@@ -1444,11 +1446,12 @@
 		A1F43FBA2A2BE2DC000A3567 /* Lotties */ = {
 			isa = PBXGroup;
 			children = (
-				A1F43FBE2A2BE2F3000A3567 /* 8943-money-greenbg.json */,
-				A1F43FBF2A2BE2F3000A3567 /* 51720-making-money.json */,
-				A1F43FBC2A2BE2F3000A3567 /* 79808-green-money-falling.json */,
-				A1F43FBD2A2BE2F3000A3567 /* 99977-money-pf.json */,
-				A1F43FBB2A2BE2F3000A3567 /* 145229-dot-loading-animation.json */,
+				A1C908B02A48B84600A04F84 /* 8943-money-greenbg.json */,
+				A1C908AF2A48B84600A04F84 /* 51720-making-money.json */,
+				A1C908B42A48B84600A04F84 /* 79808-green-money-falling.json */,
+				A1C908B32A48B84600A04F84 /* 99977-money-pf.json */,
+				A1C908B12A48B84600A04F84 /* 145229-dot-loading-animation.json */,
+				A1C908B22A48B84600A04F84 /* 145264-loading.json */,
 			);
 			path = Lotties;
 			sourceTree = "<group>";
@@ -1607,11 +1610,10 @@
 				A18ED5912A20EF7200F564BD /* GoogleService-Info.plist in Resources */,
 				A1E107BB29E4F426005A3F4F /* CreditCardsViewController.storyboard in Resources */,
 				A17C89E32A09C9A200B5DB2F /* EditCreditCardsViewController.storyboard in Resources */,
-				A1F43FC32A2BE2F3000A3567 /* 8943-money-greenbg.json in Resources */,
 				E35D085929BDAD110098F0B5 /* LaunchScreen.storyboard in Resources */,
 				A1E107C729E4F784005A3F4F /* CurrencyViewController.storyboard in Resources */,
-				A1F43FC12A2BE2F3000A3567 /* 79808-green-money-falling.json in Resources */,
 				E3C0915B29C21CD400BE4441 /* GoalsViewController.storyboard in Resources */,
+				A1C908BA2A48B84600A04F84 /* 79808-green-money-falling.json in Resources */,
 				A1C9EFF129E60D840029B69F /* LoginViewController.storyboard in Resources */,
 				A140934629E73B750037662B /* RegisterExpenseViewController.storyboard in Resources */,
 				A14DAE6029D4E91900714208 /* TransactionsViewController.storyboard in Resources */,
@@ -1623,14 +1625,14 @@
 				A101916D29FAB3FA00776A67 /* AccountCollectionViewCell.xib in Resources */,
 				A18991AA2A11DC9800D47427 /* CardsResumeTableViewCell.xib in Resources */,
 				A101917629FABE5700776A67 /* NewItemButtonCell.xib in Resources */,
+				A1C908B92A48B84600A04F84 /* 99977-money-pf.json in Resources */,
 				A1C9D23A2A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.xib in Resources */,
 				A1A92BC029F812B600E14EE8 /* CreditCardModalCell.xib in Resources */,
-				A1F43FC02A2BE2F3000A3567 /* 145229-dot-loading-animation.json in Resources */,
 				A1FA88562A0D904C00818F52 /* AccountsResumeTableViewCell.xib in Resources */,
+				A1C908B62A48B84600A04F84 /* 8943-money-greenbg.json in Resources */,
 				A1D2F84E29E9E5B100DCA6E4 /* CategoriesModalCell.xib in Resources */,
 				A12329F129FB0F2C0053AC38 /* BankAccountsViewController.storyboard in Resources */,
 				E35D087329BDB20C0098F0B5 /* MoreOptionsViewController.storyboard in Resources */,
-				A1F43FC42A2BE2F3000A3567 /* 51720-making-money.json in Resources */,
 				A1B8F34A2A13C9E500F7CCB5 /* CategoriesGraphCollectionViewCell.xib in Resources */,
 				E3E9089629BFF95D00B34864 /* Poppins in Resources */,
 				A1A92BB429F8122A00E14EE8 /* CreditCardModalViewController.storyboard in Resources */,
@@ -1638,6 +1640,7 @@
 				A1C9EFEA29E60CF50029B69F /* RegisterViewController.storyboard in Resources */,
 				A18991A72A11DC9800D47427 /* CardsBallanceCollectionViewCell.xib in Resources */,
 				A1C9EFE329E60A7D0029B69F /* SplashViewController.storyboard in Resources */,
+				A1C908B72A48B84600A04F84 /* 145229-dot-loading-animation.json in Resources */,
 				E3E9089329BFAF2A00B34864 /* CategoriesGraphViewController.storyboard in Resources */,
 				A1C9D23F2A0C4C4C008CAFAD /* resumeBalanceCollectionViewCell.xib in Resources */,
 				A13E249C29F9957C00E9EF7A /* GoalInfoViewController.storyboard in Resources */,
@@ -1649,12 +1652,13 @@
 				A11BDA7D29F4CC55006CF6B2 /* AccountsModalViewController.storyboard in Resources */,
 				A1C9EFF329E60E200029B69F /* ErrorViewController.storyboard in Resources */,
 				E35D085629BDAD110098F0B5 /* Assets.xcassets in Resources */,
+				A1C908B82A48B84600A04F84 /* 145264-loading.json in Resources */,
 				E35D086B29BDB1D00098F0B5 /* AddViewController.storyboard in Resources */,
+				A1C908B52A48B84600A04F84 /* 51720-making-money.json in Resources */,
 				A1FDB7E42A45F112006B3459 /* ExchangeRate.json in Resources */,
 				A1E107C029E4F63D005A3F4F /* ProfileViewController.storyboard in Resources */,
 				A11BDA8729F4CFB6006CF6B2 /* AccountsTableViewCell.xib in Resources */,
 				E35D085129BDAD100098F0B5 /* MainViewController.storyboard in Resources */,
-				A1F43FC22A2BE2F3000A3567 /* 99977-money-pf.json in Resources */,
 				A18991A02A117D0900D47427 /* TitleHeaderCollectionReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

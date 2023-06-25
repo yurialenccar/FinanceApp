@@ -15,15 +15,19 @@ protocol CurrencyViewModelProtocol: AnyObject {
 class CurrencyViewModel {
     
     private var service: ExchangeRateService = ExchangeRateService()
-    public var exchangeRate: ExchangeRate?
     weak var delegate: CurrencyViewModelProtocol?
+    public var exchangeRate: ExchangeRate?
     private var lastRequestDate: String?
     private var currencyExchangeRate: Double = 1
+    
+    var dailyRequestMade: Bool {
+        return lastRequestDate == Date().toString(format: globalStrings.dateFormat)
+    }
     
     public func updateExchangeRate() {
         let today: String = Date().toString(format: globalStrings.dateFormat)
         if lastRequestDate != today {
-            service.getExchangeRate { result in
+            service.getExchangeRateFromJson { result in
                 switch result {
                 case .success(let success):
                     self.exchangeRate = success
