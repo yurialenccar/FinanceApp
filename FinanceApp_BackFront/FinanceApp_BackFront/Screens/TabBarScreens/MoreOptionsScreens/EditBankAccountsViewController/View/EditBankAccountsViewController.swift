@@ -59,7 +59,7 @@ class EditBankAccountsViewController: UIViewController {
         let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
             InsertNumbersModalViewController? in
-            return InsertNumbersModalViewController(coder: coder, value: self.balanceValue, id: 0)
+            return InsertNumbersModalViewController(coder: coder, id: 0)
         }
         vc.delegate = self
         self.present(vc, animated: true)
@@ -69,7 +69,7 @@ class EditBankAccountsViewController: UIViewController {
         let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
             InsertNumbersModalViewController? in
-            return InsertNumbersModalViewController(coder: coder, value: self.overdraftValue, id: 1)
+            return InsertNumbersModalViewController(coder: coder, id: 1)
         }
         vc.delegate = self
         self.present(vc, animated: true)

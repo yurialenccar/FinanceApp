@@ -39,13 +39,12 @@ class InsertNumbersModalViewController: UIViewController {
     static let identifier:String = String(describing: InsertNumbersModalViewController.self)
     var viewModel: InsertNumbersModalViewModel
     weak var delegate: InsertNumbersModalProtocol?
-    var amount: Double
+    var amount: Double = 0
     var id: Int
     
-    init?(coder: NSCoder, value: Double, id: Int) {
-        self.amount = value
+    init?(coder: NSCoder, id: Int) {
         self.id = id
-        self.viewModel = InsertNumbersModalViewModel(amount: value)
+        self.viewModel = InsertNumbersModalViewModel()
         super.init(coder: coder)
     }
     

@@ -11,10 +11,6 @@ class InsertNumbersModalViewModel {
 
     var expression: String = insertNumberStrings.number0
     
-    init(amount: Double) {
-        self.expression = setValueToExpression(amount)
-    }
-    
     public func insertNumber(_ char: String) -> String {
         
         if expression == insertNumberStrings.number0 {

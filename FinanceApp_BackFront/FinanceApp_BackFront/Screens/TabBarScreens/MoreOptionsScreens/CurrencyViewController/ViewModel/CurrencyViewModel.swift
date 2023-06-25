@@ -23,11 +23,11 @@ class CurrencyViewModel {
     public func updateExchangeRate() {
         let today: String = Date().toString(format: globalStrings.dateFormat)
         if lastRequestDate != today {
-            service.getExchangeRateFromJson { result in
+            service.getExchangeRate { result in
                 switch result {
                 case .success(let success):
                     self.exchangeRate = success
-                    lastRequestDate = Date().toString(format: globalStrings.dateFormat)
+                    self.lastRequestDate = Date().toString(format: globalStrings.dateFormat)
                     self.delegate?.success()
                 case .failure(let failure):
                     self.delegate?.error(error: failure)
@@ -55,9 +55,12 @@ class CurrencyViewModel {
     }
     
     public func getActualDate() -> String {
-        let date = Date()
-        
-        return date.toString(format: moreOptionsStrings.momentDateFormat)
+        let unixTimestamp: TimeInterval = exchangeRate?.timeLastUpdateUnix ?? 0.0
+        let date = Date(timeIntervalSince1970: unixTimestamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = moreOptionsStrings.momentDateFormat
+        let dateString = dateFormatter.string(from: date)
+        return dateString
     }
     
     public func formatNumberCurrency(value: Double) -> String {

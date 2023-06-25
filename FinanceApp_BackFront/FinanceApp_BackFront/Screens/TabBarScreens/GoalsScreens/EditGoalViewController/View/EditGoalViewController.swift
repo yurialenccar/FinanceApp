@@ -42,7 +42,6 @@ class EditGoalViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
-        let today = Date()
     }
     
     @IBAction func tappedInsertInitialAmountButton(_ sender: UIButton) {
@@ -50,7 +49,7 @@ class EditGoalViewController: UIViewController {
         let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
             InsertNumbersModalViewController? in
-            return InsertNumbersModalViewController(coder: coder, value: self.initialAmountValue, id: 0)
+            return InsertNumbersModalViewController(coder: coder, id: 0)
         }
         vc.delegate = self
         self.present(vc, animated: true)
@@ -61,7 +60,7 @@ class EditGoalViewController: UIViewController {
         let storyboard = UIStoryboard(name: InsertNumbersModalViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: InsertNumbersModalViewController.identifier) {coder ->
             InsertNumbersModalViewController? in
-            return InsertNumbersModalViewController(coder: coder, value: self.targetValue, id: 1)
+            return InsertNumbersModalViewController(coder: coder, id: 1)
         }
         vc.delegate = self
         self.present(vc, animated: true)
