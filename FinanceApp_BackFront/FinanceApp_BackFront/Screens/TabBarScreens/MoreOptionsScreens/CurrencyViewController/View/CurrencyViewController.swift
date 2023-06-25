@@ -26,7 +26,6 @@ class CurrencyViewController: UIViewController {
     static let identifier:String = String(describing: CurrencyViewController.self)
     var viewModel: CurrencyViewModel = CurrencyViewModel()
     let animationView: LottieAnimationView = .init(name: globalStrings.loadingLottie)
-//    let animationView: LottieAnimationView = .init(name: splashStrings.lottieAnimationName)
     var sourceValue: Double = 1.0
     var pickerSelected: CurrencyPickerOptions = .nonSelected
     var sourceCoin: CurrencyInfos = coinsList[0]
@@ -83,7 +82,6 @@ class CurrencyViewController: UIViewController {
             setupLottie()
             viewModel.updateExchangeRate()
         }
-        
     }
     
     
@@ -130,17 +128,17 @@ class CurrencyViewController: UIViewController {
     
     private func updateSourceValue(_ value: Double) {
         sourceValue = value
-        sourceValueLabel.text = sourceCoin.symbol + " " + viewModel.formatNumberCurrency(value: value)
+        sourceValueLabel.text = sourceCoin.symbol + globalStrings.spaceChar + viewModel.formatNumberCurrency(value: value)
     }
     
     private func updateSourceLabels() {
         sourceCurrencyButton.setTitle(sourceCoin.name, for: .normal)
-        sourceCurrencyLabel.text = sourceCoin.code + " - " + sourceCoin.name + " (" + sourceCoin.location + ")"
+        sourceCurrencyLabel.text = sourceCoin.code + moreOptionsStrings.dash + sourceCoin.name + moreOptionsStrings.openParenthesis + sourceCoin.location + moreOptionsStrings.closeParenthesis
     }
     
     private func updateTargetLabels() {
         convertedCurrencyButton.setTitle(targetCoin.name, for: .normal)
-        convertedCurrencyLabel.text = targetCoin.code + " - " + targetCoin.name + " (" + targetCoin.location + ")"
+        convertedCurrencyLabel.text = targetCoin.code + moreOptionsStrings.dash + targetCoin.name + moreOptionsStrings.openParenthesis + targetCoin.location + moreOptionsStrings.closeParenthesis
     }
     
     private func updateQuoteValues() {

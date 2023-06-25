@@ -16,7 +16,6 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLottie()
-        setupConstraints()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,9 +33,7 @@ class SplashViewController: UIViewController {
         animationView.animationSpeed = 1.0
         view.addSubview(animationView)
         animationView.play()
-    }
-    
-    func setupConstraints() {
+        
         NSLayoutConstraint.activate([
             animationView.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: -100),
             animationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),

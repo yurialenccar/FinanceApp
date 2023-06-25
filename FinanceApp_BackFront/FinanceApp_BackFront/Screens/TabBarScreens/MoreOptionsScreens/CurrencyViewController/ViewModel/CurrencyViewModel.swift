@@ -41,13 +41,13 @@ class CurrencyViewModel {
     }
 
     public func getConvertedValue(sourceCoin: CurrencyInfos, targetCoin: CurrencyInfos, value: Double) -> String {
-        let baseValue = exchangeRate?.conversionRates[exchangeRate?.baseCode ?? "USD"] ?? 0
+        let baseValue = exchangeRate?.conversionRates[exchangeRate?.baseCode ?? moreOptionsStrings.baseCurrency] ?? 0
         let sourceRate = exchangeRate?.conversionRates[sourceCoin.code] ?? 0
         let targetRate = exchangeRate?.conversionRates[targetCoin.code] ?? 0
         self.currencyExchangeRate = ((baseValue / sourceRate) * targetRate)
         let result = value * self.currencyExchangeRate
         
-        return targetCoin.symbol + " " + formatNumberCurrency(value: result)
+        return targetCoin.symbol + globalStrings.spaceChar + formatNumberCurrency(value: result)
     }
     
     public func getCoinInfo(index: Int) -> CurrencyInfos {
@@ -55,16 +55,13 @@ class CurrencyViewModel {
     }
     
     public func getLastExchangeQuote(sourceSymbol: String, targetSymbol: String) -> String {
-        return sourceSymbol + " 1,00 = " + targetSymbol + " " + formatNumberCurrency(value: currencyExchangeRate)
+        return sourceSymbol + moreOptionsStrings.oneMoneyEqual + targetSymbol + globalStrings.spaceChar + formatNumberCurrency(value: currencyExchangeRate)
     }
     
     public func getActualDate() -> String {
         let unixTimestamp: TimeInterval = exchangeRate?.timeLastUpdateUnix ?? 0.0
         let date = Date(timeIntervalSince1970: unixTimestamp)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = moreOptionsStrings.momentDateFormat
-        let dateString = dateFormatter.string(from: date)
-        return dateString
+        return date.toString(format: moreOptionsStrings.momentDateFormat)
     }
     
     public func formatNumberCurrency(value: Double) -> String {
@@ -72,9 +69,9 @@ class CurrencyViewModel {
         formatter.numberStyle = .decimal
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
-        formatter.locale = Locale(identifier: "pt_BR")
+        formatter.locale = Locale(identifier: moreOptionsStrings.identifierCurrency)
 
-        return formatter.string(from: NSNumber(value: value)) ?? "0,00"
+        return formatter.string(from: NSNumber(value: value)) ?? moreOptionsStrings.noMoneyText
     }
     
 }

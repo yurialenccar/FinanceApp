@@ -390,54 +390,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DDB4A77A-57CA-42F1-8E0E-6685AB527C11"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/View/CurrencyViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "success()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DDB4A77A-57CA-42F1-8E0E-6685AB527C11 - 54d3adef4a5a70d6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FinanceApp_BackFront.CurrencyViewController.success() -&gt; ()"
-                  moduleName = "FinanceApp_BackFront"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/View/CurrencyViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "DDB4A77A-57CA-42F1-8E0E-6685AB527C11 - 54d3adef4a5a7037"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FinanceApp_BackFront.CurrencyViewController.success() -&gt; ()"
-                  moduleName = "FinanceApp_BackFront"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/View/CurrencyViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F5AE76BA-553A-4BB5-A2A5-8B8EBF96EEFC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -445,8 +397,8 @@
             filePath = "FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/View/CurrencyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "updateQuoteValues()"
             landmarkType = "7">
          </BreakpointContent>
@@ -461,10 +413,10 @@
             filePath = "FinanceApp_BackFront/Screens/TabBarScreens/MoreOptionsScreens/CurrencyViewController/View/CurrencyViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
-            landmarkType = "7">
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -71,8 +71,14 @@ enum moreOptionsStrings {
     static let realText = "Real (Brasil)"
     static let realFullText = "BRL - Real (Brasil)"
     static let LastQuoteText = "Cotação da Ultima Atualização"
-    static let oneDollarEqual = "U$ 1,00 = "
+    static let oneMoneyEqual = "1,00 = "
     static let momentDateFormat = "dd 'de' MMMM 'de' yyyy - HH:mm:ss"
+    static let identifierCurrency = "pt_BR"
+    static let noMoneyText = "0,00"
+    static let baseCurrency = "USD"
+    static let openParenthesis = " ("
+    static let closeParenthesis = ")"
+    static let dash = " - "
     
     //ProfileViewController
     static let profileTitle = "Editar Perfil"

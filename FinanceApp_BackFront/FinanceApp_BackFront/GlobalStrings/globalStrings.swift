@@ -17,4 +17,5 @@ enum globalStrings {
     static let dateFormat = "dd/MM/yyyy"
     static let initError = "init(coder:) has not been implemented"
     static let loadingLottie = "145264-loading"
+    static let spaceChar = " "
 }
