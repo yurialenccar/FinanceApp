@@ -71,9 +71,9 @@ class AddAccountTransactionsViewModel{
     public func getCategoryBackgroungColor(_ indexCategory:Int) -> UIColor{
         switch transactionType{
         case .expense:
-            return expenseCategories[indexCategory].color
+            return categoryColors[expenseCategories[indexCategory].colorIndex] ?? UIColor.cyan
         case .income:
-            return incomeCategories[indexCategory].color
+            return categoryColors[incomeCategories[indexCategory].colorIndex] ?? UIColor.cyan
         }
     }
     

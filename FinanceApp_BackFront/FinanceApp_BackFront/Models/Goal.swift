@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Goal {
+struct Goal: Codable {
     var desc: String
     var imageName: String
     var savedAmount: Double

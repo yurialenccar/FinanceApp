@@ -10,6 +10,8 @@ import UIKit
 
 class GoalsViewModel {
     
+    var service: FirestoreService = FirestoreService(documentName: "goalsList")
+    
     var goalsList: [Goal] = [
         Goal(desc: "Geladeira", imageName: "Casa", savedAmount: 2800, goalValue: 3500, targetDate: "15/05/2023"),
         Goal(desc: "Playstation 5", imageName: "Play5", savedAmount: 1500, goalValue: 4000, targetDate: "20/06/2023"),
@@ -30,5 +32,12 @@ class GoalsViewModel {
     
     public func createNewGoal(_ newGoal: Goal) {
         goalsList.append(newGoal)
+        service.addObjectInArray(newGoal)
     }
+    
+    public func teste() {
+        service.addObjectInArray(goalsList[0])
+        //service.deleteObjectInArray(documentName: "goalsList", index: 0)
+    }
+    
 }

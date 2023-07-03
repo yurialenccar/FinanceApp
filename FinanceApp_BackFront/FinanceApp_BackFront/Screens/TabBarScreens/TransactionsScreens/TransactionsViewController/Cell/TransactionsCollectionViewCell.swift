@@ -37,12 +37,12 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
         case .expense:
             categoryLabel.text = expenseCategories[transactions.categoryIndex].name
             categoryImage.image = UIImage(imageLiteralResourceName: expenseCategories[transactions.categoryIndex].imageName).withRenderingMode(.alwaysTemplate)
-            categoryPanelView.backgroundColor = expenseCategories[transactions.categoryIndex].color
+            categoryPanelView.backgroundColor = categoryColors[expenseCategories[transactions.categoryIndex].colorIndex] ?? UIColor.cyan
             valueLabel.textColor = .RedGeneralExpenses
         case .income:
             categoryLabel.text = incomeCategories[transactions.categoryIndex].name
             categoryImage.image = UIImage(imageLiteralResourceName: incomeCategories[transactions.categoryIndex].imageName).withRenderingMode(.alwaysTemplate)
-            categoryPanelView.backgroundColor = incomeCategories[transactions.categoryIndex].color
+            categoryPanelView.backgroundColor = categoryColors[incomeCategories[transactions.categoryIndex].colorIndex] ?? UIColor.cyan
             valueLabel.textColor = .GreenGeneralIncomes
         }
         

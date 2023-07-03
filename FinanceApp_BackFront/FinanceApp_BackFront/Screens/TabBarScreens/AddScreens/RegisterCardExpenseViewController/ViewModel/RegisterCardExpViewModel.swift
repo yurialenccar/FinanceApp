@@ -48,7 +48,7 @@ class RegisterCardExpViewModel{
     }
     
     public func getCategoryBackgroungColor(_ indexCategory:Int) -> UIColor{
-        return expenseCategories[indexCategory].color
+        return categoryColors[expenseCategories[indexCategory].colorIndex] ?? UIColor.cyan
     }
     
     public func getCardLabel(_ indexAccount:Int) -> String{

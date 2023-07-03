@@ -20,12 +20,16 @@ class GoalsViewController: UIViewController {
         super.viewDidLoad()
         setupStrings()
         setupCollectionView()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
+    
+    @IBAction func tappedButton(_ sender: UIButton) {
+        viewModel.teste()
+    }
+    
     
     private func setupStrings() {
         navigationItem.backButtonTitle = globalStrings.backButtonTitle
