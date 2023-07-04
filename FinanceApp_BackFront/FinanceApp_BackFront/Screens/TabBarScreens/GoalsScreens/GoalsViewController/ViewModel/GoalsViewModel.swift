@@ -7,16 +7,28 @@
 
 import Foundation
 import UIKit
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class GoalsViewModel {
     
     var service: FirestoreService = FirestoreService(documentName: "goalsList")
     
-    var goalsList: [Goal] = [
-        Goal(desc: "Geladeira", imageName: "Casa", savedAmount: 2800, goalValue: 3500, targetDate: "15/05/2023"),
-        Goal(desc: "Playstation 5", imageName: "Play5", savedAmount: 1500, goalValue: 4000, targetDate: "20/06/2023"),
-        Goal(desc: "Nintendo Wii", imageName: "Play5", savedAmount: 0, goalValue: 2000, targetDate: "20/12/2023"),
-    ]
+    var goalsList: [Goal] = []
+    
+    public func updateGoals(completion: @escaping () -> Void) {
+        service.getObjectData(forObjectType: Goal.self) { result in
+            switch result {
+            case .success(let object):
+                self.goalsList = object
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            completion()
+        }
+    }
+    
+    
     
     public func getGoalsCount() -> Int {
         return goalsList.count 
@@ -30,14 +42,12 @@ class GoalsViewModel {
         return CGSize (width: viewWidth - 30, height: 124)
     }
     
-    public func createNewGoal(_ newGoal: Goal) {
-        goalsList.append(newGoal)
-        service.addObjectInArray(newGoal)
+    public func createNewGoal(_ newGoal: Goal, completion: @escaping () -> Void) {
+        service.addObjectInArray(newGoal) { result in
+            if result != "Success" {
+                print(result)
+            }
+            completion()
+        }
     }
-    
-    public func teste() {
-        service.addObjectInArray(goalsList[0])
-        //service.deleteObjectInArray(documentName: "goalsList", index: 0)
-    }
-    
 }

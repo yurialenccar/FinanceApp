@@ -45,32 +45,18 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1z2-97-FWg">
-                                <rect key="frame" x="150" y="582" width="75" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Yju-re-XV1"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="tappedButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vvk-GX-Gax"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CFk-B7-OPX"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ayV-cM-DVc" firstAttribute="top" secondItem="CFk-B7-OPX" secondAttribute="top" id="07Z-Ih-bgP"/>
-                            <constraint firstItem="CFk-B7-OPX" firstAttribute="trailing" secondItem="1z2-97-FWg" secondAttribute="trailing" constant="150" id="1yC-j0-7z6"/>
                             <constraint firstItem="ayV-cM-DVc" firstAttribute="leading" secondItem="CFk-B7-OPX" secondAttribute="leading" id="2nl-a2-cIb"/>
                             <constraint firstItem="1aS-Gg-zND" firstAttribute="top" secondItem="ayV-cM-DVc" secondAttribute="bottom" id="ADh-gj-AKM"/>
-                            <constraint firstItem="1z2-97-FWg" firstAttribute="leading" secondItem="CFk-B7-OPX" secondAttribute="leading" constant="150" id="Ben-GK-N4C"/>
                             <constraint firstItem="OYg-n9-Xyv" firstAttribute="top" secondItem="CFk-B7-OPX" secondAttribute="top" constant="30" id="PDO-wq-I1w"/>
                             <constraint firstItem="CFk-B7-OPX" firstAttribute="trailing" secondItem="OYg-n9-Xyv" secondAttribute="trailing" constant="20" id="T0b-Dh-Wtt"/>
                             <constraint firstItem="OYg-n9-Xyv" firstAttribute="leading" secondItem="CFk-B7-OPX" secondAttribute="leading" constant="20" id="X5h-7c-xcP"/>
                             <constraint firstItem="CFk-B7-OPX" firstAttribute="bottom" secondItem="1aS-Gg-zND" secondAttribute="bottom" id="Y8S-3O-Whx"/>
                             <constraint firstItem="CFk-B7-OPX" firstAttribute="trailing" secondItem="ayV-cM-DVc" secondAttribute="trailing" id="cRv-Z0-lXi"/>
-                            <constraint firstItem="CFk-B7-OPX" firstAttribute="bottom" secondItem="1z2-97-FWg" secondAttribute="bottom" constant="50" id="eew-P3-FDy"/>
                             <constraint firstItem="CFk-B7-OPX" firstAttribute="trailing" secondItem="1aS-Gg-zND" secondAttribute="trailing" id="liB-e1-WO2"/>
                             <constraint firstItem="1aS-Gg-zND" firstAttribute="leading" secondItem="CFk-B7-OPX" secondAttribute="leading" id="mIb-y7-KC5"/>
                         </constraints>

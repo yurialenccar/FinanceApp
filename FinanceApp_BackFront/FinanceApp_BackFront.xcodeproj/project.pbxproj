@@ -128,6 +128,10 @@
 		A1C9EFF129E60D840029B69F /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFF029E60D840029B69F /* LoginViewController.storyboard */; };
 		A1C9EFF329E60E200029B69F /* ErrorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C9EFF229E60E200029B69F /* ErrorViewController.storyboard */; };
 		A1CE092D2A0026800028028B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CE092C2A0026800028028B /* Alert.swift */; };
+		A1D22DAE2A52FE240042D060 /* CategoryImagesModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D22DAD2A52FE240042D060 /* CategoryImagesModalViewController.storyboard */; };
+		A1D22DB02A52FE350042D060 /* CategoryImagesModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D22DAF2A52FE350042D060 /* CategoryImagesModalViewController.swift */; };
+		A1D22DB52A53016A0042D060 /* CategoryImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D22DB32A53016A0042D060 /* CategoryImagesCollectionViewCell.swift */; };
+		A1D22DB62A53016A0042D060 /* CategoryImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D22DB42A53016A0042D060 /* CategoryImagesCollectionViewCell.xib */; };
 		A1D2F84729E99A2600DCA6E4 /* CategoriesModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D2F84629E99A2600DCA6E4 /* CategoriesModalViewController.storyboard */; };
 		A1D2F84929E99A3100DCA6E4 /* CategoriesModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2F84829E99A3100DCA6E4 /* CategoriesModalViewController.swift */; };
 		A1D2F84D29E9E5B100DCA6E4 /* CategoriesModalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2F84B29E9E5B100DCA6E4 /* CategoriesModalCell.swift */; };
@@ -300,6 +304,10 @@
 		A1C9EFF029E60D840029B69F /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		A1C9EFF229E60E200029B69F /* ErrorViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ErrorViewController.storyboard; sourceTree = "<group>"; };
 		A1CE092C2A0026800028028B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		A1D22DAD2A52FE240042D060 /* CategoryImagesModalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryImagesModalViewController.storyboard; sourceTree = "<group>"; };
+		A1D22DAF2A52FE350042D060 /* CategoryImagesModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImagesModalViewController.swift; sourceTree = "<group>"; };
+		A1D22DB32A53016A0042D060 /* CategoryImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		A1D22DB42A53016A0042D060 /* CategoryImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryImagesCollectionViewCell.xib; sourceTree = "<group>"; };
 		A1D2F84629E99A2600DCA6E4 /* CategoriesModalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoriesModalViewController.storyboard; sourceTree = "<group>"; };
 		A1D2F84829E99A3100DCA6E4 /* CategoriesModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModalViewController.swift; sourceTree = "<group>"; };
 		A1D2F84B29E9E5B100DCA6E4 /* CategoriesModalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModalCell.swift; sourceTree = "<group>"; };
@@ -1275,9 +1283,37 @@
 			path = GlobalStrings;
 			sourceTree = "<group>";
 		};
+		A1D22DAC2A52FDD10042D060 /* CategoryImagesModalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1D22DB22A53013B0042D060 /* Cell */,
+				A1D22DB12A52FE3B0042D060 /* View */,
+			);
+			path = CategoryImagesModalViewController;
+			sourceTree = "<group>";
+		};
+		A1D22DB12A52FE3B0042D060 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A1D22DAD2A52FE240042D060 /* CategoryImagesModalViewController.storyboard */,
+				A1D22DAF2A52FE350042D060 /* CategoryImagesModalViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A1D22DB22A53013B0042D060 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A1D22DB42A53016A0042D060 /* CategoryImagesCollectionViewCell.xib */,
+				A1D22DB32A53016A0042D060 /* CategoryImagesCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		A1D2F84429E999D500DCA6E4 /* ModalScreens */ = {
 			isa = PBXGroup;
 			children = (
+				A1D22DAC2A52FDD10042D060 /* CategoryImagesModalViewController */,
 				A125C1032A3A249E00A78390 /* InsertNumbersModalViewController */,
 				A1D2F84529E99A0200DCA6E4 /* CategoriesModalViewController */,
 				A11BDA7E29F4CC5B006CF6B2 /* AccountsModalViewModel */,
@@ -1629,6 +1665,7 @@
 				A1F86CB52A4F493700D2534A /* GoogleService-Info.plist in Resources */,
 				A19F850A29F963C40044F7DE /* GoalsCollectionViewCell.xib in Resources */,
 				A140934229E73ACA0037662B /* RegisterIncomeViewController.storyboard in Resources */,
+				A1D22DAE2A52FE240042D060 /* CategoryImagesModalViewController.storyboard in Resources */,
 				A140934A29E73BCC0037662B /* RegisterCardExpenseViewController.storyboard in Resources */,
 				A17DC6832A0989B900D12C3C /* TabBarController.storyboard in Resources */,
 				A101916D29FAB3FA00776A67 /* AccountCollectionViewCell.xib in Resources */,
@@ -1638,6 +1675,7 @@
 				A1C9D23A2A0C4027008CAFAD /* AccountsBallanceCollectionViewCell.xib in Resources */,
 				A1A92BC029F812B600E14EE8 /* CreditCardModalCell.xib in Resources */,
 				A1FA88562A0D904C00818F52 /* AccountsResumeTableViewCell.xib in Resources */,
+				A1D22DB62A53016A0042D060 /* CategoryImagesCollectionViewCell.xib in Resources */,
 				A1C908B62A48B84600A04F84 /* 8943-money-greenbg.json in Resources */,
 				A1D2F84E29E9E5B100DCA6E4 /* CategoriesModalCell.xib in Resources */,
 				A12329F129FB0F2C0053AC38 /* BankAccountsViewController.storyboard in Resources */,
@@ -1743,6 +1781,7 @@
 				A18299C72A01AC7F00E72936 /* ConfigType.swift in Sources */,
 				A14F99972A2521AB00257B67 /* moreOptionsStrings.swift in Sources */,
 				A1F4210829F62379005C346B /* CategoriesModalViewModel.swift in Sources */,
+				A1D22DB02A52FE350042D060 /* CategoryImagesModalViewController.swift in Sources */,
 				A14F99A62A259D3200257B67 /* categoriesModalStrings.swift in Sources */,
 				A152AA422A21A69B00372C00 /* registerStrings.swift in Sources */,
 				E35D086129BDB0310098F0B5 /* HomeViewController.swift in Sources */,
@@ -1821,6 +1860,7 @@
 				A1C9EFE529E60A880029B69F /* SplashViewController.swift in Sources */,
 				A19742D52A225F6E00455DB0 /* tabBarStrings.swift in Sources */,
 				A1FDB7E72A45F1D8006B3459 /* ExchangeRateService.swift in Sources */,
+				A1D22DB52A53016A0042D060 /* CategoryImagesCollectionViewCell.swift in Sources */,
 				A1BBF50A2A2FD8C200DD18D5 /* SplashStrings.swift in Sources */,
 				A1A92BC429F81C1D00E14EE8 /* RegisterCardExpViewModel.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,

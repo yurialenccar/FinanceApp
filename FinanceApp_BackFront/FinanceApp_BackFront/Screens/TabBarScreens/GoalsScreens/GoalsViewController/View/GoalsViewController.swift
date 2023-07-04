@@ -19,17 +19,14 @@ class GoalsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
-        setupCollectionView()
+        viewModel.updateGoals() {
+            self.setupCollectionView()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
-    
-    @IBAction func tappedButton(_ sender: UIButton) {
-        viewModel.teste()
-    }
-    
     
     private func setupStrings() {
         navigationItem.backButtonTitle = globalStrings.backButtonTitle
@@ -51,7 +48,7 @@ class GoalsViewController: UIViewController {
 
 }
 
-extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateItemButtonCellDelegate, GoalSavedDelegate {
+extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getGoalsCount() + 1
     }
@@ -75,18 +72,6 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return viewModel.getCellSize(viewWidth: view.frame.width)
     }
     
-    func didTappedNewItemButton() {
-        let storyboard = UIStoryboard(name: EditGoalViewController.identifier, bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: EditGoalViewController.identifier) as? EditGoalViewController
-        vc?.delegate = self
-        self.present(vc ?? UIViewController(), animated: true)
-    }
-    
-    func didSavedGoal(_ newGoal: Goal) {
-        viewModel.createNewGoal(newGoal)
-        collectionView.reloadData()
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         if indexPath.row < viewModel.getGoalsCount() {
@@ -95,6 +80,24 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 return GoalInfoViewController(coder: coder, goal: self.viewModel.getItemGoal(indexPath.row))
             }
             navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
+}
+
+extension GoalsViewController: CreateItemButtonCellDelegate, GoalSavedDelegate {
+    func didTappedNewItemButton() {
+        let storyboard = UIStoryboard(name: EditGoalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: EditGoalViewController.identifier) as? EditGoalViewController
+        vc?.delegate = self
+        self.present(vc ?? UIViewController(), animated: true)
+    }
+    
+    func didSavedGoal(_ newGoal: Goal) {
+        viewModel.createNewGoal(newGoal) {
+            self.viewModel.updateGoals() {
+                self.collectionView.reloadData()
+            }
         }
         
     }

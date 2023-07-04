@@ -27,7 +27,8 @@ class CategoriesModalCell: UITableViewCell {
     
     func setupCell(listedCategories: ListedCategories) {
         categoryBackground.backgroundColor = categoryColors[listedCategories.colorIndex] ?? UIColor.cyan
-        categoryImage.image = UIImage(imageLiteralResourceName: listedCategories.imageName)
+        categoryImage.image = UIImage(imageLiteralResourceName: listedCategories.imageName).withRenderingMode(.alwaysTemplate)
+        categoryImage.tintColor = .black
         nameLabel.text = listedCategories.name
     }
     

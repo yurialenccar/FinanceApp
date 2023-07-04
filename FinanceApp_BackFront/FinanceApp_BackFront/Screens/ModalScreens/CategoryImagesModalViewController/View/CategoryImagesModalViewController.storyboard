@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Category Images Modal View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CategoryImagesModalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="CategoryImagesModalViewController" customModule="FinanceApp_BackFront" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPe-Cv-Ini">
+                                <rect key="frame" x="0.0" y="452" width="393" height="400"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecionar Imagem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwr-ck-NL8">
+                                        <rect key="frame" x="20" y="25" width="353" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fye-Kb-Yge">
+                                        <rect key="frame" x="40" y="315" width="120" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="iyp-RI-FAU"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Cancelar"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0g-No-n4w">
+                                        <rect key="frame" x="233" y="315" width="120" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="Qg4-Ng-o9P"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Selecionar"/>
+                                    </button>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IGo-Ug-gcL">
+                                        <rect key="frame" x="0.0" y="56" width="393" height="249"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SKi-xL-HHF">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="IGo-Ug-gcL" firstAttribute="top" secondItem="Lwr-ck-NL8" secondAttribute="bottom" constant="10" id="Huc-36-jy8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lwr-ck-NL8" secondAttribute="trailing" constant="20" id="LZD-Cq-yf1"/>
+                                    <constraint firstAttribute="trailing" secondItem="S0g-No-n4w" secondAttribute="trailing" constant="40" id="LqW-hl-rT6"/>
+                                    <constraint firstAttribute="height" constant="400" id="PEa-51-WKo"/>
+                                    <constraint firstAttribute="bottom" secondItem="fye-Kb-Yge" secondAttribute="bottom" constant="50" id="RI3-wJ-4t4"/>
+                                    <constraint firstItem="fye-Kb-Yge" firstAttribute="top" secondItem="IGo-Ug-gcL" secondAttribute="bottom" constant="10" id="YhO-r5-06k"/>
+                                    <constraint firstAttribute="bottom" secondItem="S0g-No-n4w" secondAttribute="bottom" constant="50" id="bq8-ik-Evt"/>
+                                    <constraint firstItem="Lwr-ck-NL8" firstAttribute="leading" secondItem="RPe-Cv-Ini" secondAttribute="leading" constant="20" id="bsr-nO-vW1"/>
+                                    <constraint firstItem="Lwr-ck-NL8" firstAttribute="top" secondItem="RPe-Cv-Ini" secondAttribute="top" constant="25" id="c2O-VB-WcU"/>
+                                    <constraint firstAttribute="trailing" secondItem="IGo-Ug-gcL" secondAttribute="trailing" id="eta-wH-LXh"/>
+                                    <constraint firstItem="IGo-Ug-gcL" firstAttribute="leading" secondItem="RPe-Cv-Ini" secondAttribute="leading" id="lVg-rG-6LT"/>
+                                    <constraint firstItem="fye-Kb-Yge" firstAttribute="leading" secondItem="RPe-Cv-Ini" secondAttribute="leading" constant="40" id="pQ6-hu-TaS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="RPe-Cv-Ini" secondAttribute="bottom" id="NSN-VO-n45"/>
+                            <constraint firstItem="RPe-Cv-Ini" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="PM6-We-dYW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RPe-Cv-Ini" secondAttribute="trailing" id="eD4-by-BJM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="fye-Kb-Yge" id="Zw1-Od-MFP"/>
+                        <outlet property="collectionView" destination="IGo-Ug-gcL" id="y8q-Tz-VbR"/>
+                        <outlet property="containerView" destination="RPe-Cv-Ini" id="0j2-Ls-pak"/>
+                        <outlet property="selectButton" destination="S0g-No-n4w" id="2WG-jY-yWd"/>
+                        <outlet property="titleLabel" destination="Lwr-ck-NL8" id="Gz9-zf-PeW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
