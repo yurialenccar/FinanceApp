@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BankAccount {
+struct BankAccount: Codable {
     
     private var id: String = ""
     var desc : String

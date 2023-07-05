@@ -541,8 +541,8 @@
             filePath = "FinanceApp_BackFront/Services/FirestoreService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "getObjectData(forObjectType:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -557,8 +557,8 @@
             filePath = "FinanceApp_BackFront/Services/FirestoreService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "getObjectData(forObjectType:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -573,8 +573,8 @@
             filePath = "FinanceApp_BackFront/Services/FirestoreService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "getObjectData(forObjectType:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -593,54 +593,6 @@
             endingLineNumber = "23"
             landmarkName = "updateGoals(completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1B656080-2AE3-439D-BC58-E6A6D105DC1C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FinanceApp_BackFront/Screens/TabBarScreens/GoalsScreens/GoalsViewController/View/GoalsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "didSavedGoal(_:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "1B656080-2AE3-439D-BC58-E6A6D105DC1C - 7e3f5bae09424e2d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FinanceApp_BackFront.GoalsViewController.didSavedGoal(FinanceApp_BackFront.Goal) -&gt; ()"
-                  moduleName = "FinanceApp_BackFront"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/TabBarScreens/GoalsScreens/GoalsViewController/View/GoalsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "116">
-               </Location>
-               <Location
-                  uuid = "1B656080-2AE3-439D-BC58-E6A6D105DC1C - d42396bac3db22aa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in FinanceApp_BackFront.GoalsViewController.didSavedGoal(FinanceApp_BackFront.Goal) -&gt; ()"
-                  moduleName = "FinanceApp_BackFront"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielromano/FinanceApp/FinanceApp_BackFront/FinanceApp_BackFront/Screens/TabBarScreens/GoalsScreens/GoalsViewController/View/GoalsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

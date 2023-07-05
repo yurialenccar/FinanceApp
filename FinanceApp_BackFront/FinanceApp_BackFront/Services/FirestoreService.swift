@@ -20,95 +20,26 @@ class FirestoreService {
         self.docRef = db.collection(user).document(documentName)
     }
     
-    
-    //    public func addGoalInArray(document: String, goal: Goal) {
-    //        let docRef = db.collection(self.user).document(document)
-    //
-    //        docRef.getDocument { (document, error) in
-    //            if let document = document, document.exists {
-    //                var goalsArray = document.data()?["goals"] as? [[String: Any]] ?? []
-    //                let goalData = try? Firestore.Encoder().encode(goal)
-    //
-    //                goalsArray.append(goalData ?? [:])
-    //
-    //                docRef.setData(["goals": goalsArray]) { error in
-    //                    if let error = error {
-    //                        print("Error writing document: \(error.localizedDescription)!")
-    //                    } else {
-    //                        print("Goal added to the array in Firestore")
-    //                    }
-    //                }
-    //            } else {
-    //                let goalData = try? Firestore.Encoder().encode(goal)
-    //                docRef.setData(["goals": [goalData ?? [:]]]) { error in
-    //                    if let error = error {
-    //                        print("Error writing document: \(error.localizedDescription)!")
-    //                    } else {
-    //                        print("Goal array created in Firestore")
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
-    
-    //    public func addObjectInArray(document: String, object: Any) {
-    //        let docRef = db.collection(self.user).document(document)
-    //        let goal: Goal = Goal(desc: "", imageName: "", savedAmount: 0, goalValue: 0, targetDate: "")
-    //        docRef.getDocument { (document, error) in
-    //            if let document = document, document.exists {
-    //                var goalsArray = document.data()?["goals"] as? [[String: Any]] ?? []
-    //                let goalData = try? Firestore.Encoder().encode(object)
-    //
-    //                goalsArray.append(goalData ?? [:])
-    //
-    //                docRef.setData(["goals": goalsArray]) { error in
-    //                    if let error = error {
-    //                        print("Error writing document: \(error.localizedDescription)!")
-    //                    } else {
-    //                        print("Goal added to the array in Firestore")
-    //                    }
-    //                }
-    //            } else {
-    //                let goalData = try? Firestore.Encoder().encode(object)
-    //                docRef.setData(["goals": [goalData ?? [:]]]) { error in
-    //                    if let error = error {
-    //                        print("Error writing document: \(error.localizedDescription)!")
-    //                    } else {
-    //                        print("Goal array created in Firestore")
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
-    
     public func addObjectInArray <T: Encodable> (_ object: T, completion: @escaping (String) -> Void) {
         docRef.getDocument { (document, error) in
+            
             if let document = document, document.exists {
-                var goalsArray = document.data()?[self.documentName] as? [[String: Any]] ?? []
+                var dataArray = document.data()?[self.documentName] as? [[String: Any]] ?? []
+                
                 do {
                     let objectData = try Firestore.Encoder().encode(object)
-                    goalsArray.append(objectData as [String: Any])
+                    dataArray.append(objectData as [String: Any])
                     
-                    self.docRef.setData([self.documentName: goalsArray]) { error in
-                        if let error = error {
-                            completion("Error writing document: \(error.localizedDescription)!")
-                        } else {
-                            completion("Success")
-                        }
-                    }
+                    self.setDataInDocument(data: [self.documentName: dataArray], completion: completion)
                 } catch {
                     completion("Error encoding object: \(error.localizedDescription)")
                 }
             } else {
                 do {
                     let objectData = try Firestore.Encoder().encode(object)
-                    self.docRef.setData([self.documentName: [objectData as [String: Any]]]) { error in
-                        if let error = error {
-                            completion("Error writing document: \(error.localizedDescription)!")
-                        } else {
-                            completion("Goal array created in Firestore")
-                        }
-                    }
+                    let data = [self.documentName: [objectData as [String: Any]]]
+                    
+                    self.setDataInDocument(data: data, completion: completion)
                 } catch {
                     completion("Error encoding object: \(error.localizedDescription)")
                 }
@@ -116,54 +47,43 @@ class FirestoreService {
         }
     }
     
-    public func deleteObjectInArray(index: Int) {
+    public func deleteObjectInArray(index: Int, completion: @escaping (String) -> Void) {
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                var goalsArray = document.data()?[self.documentName] as? [[String: Any]] ?? []
+                var dataArray = document.data()?[self.documentName] as? [[String: Any]] ?? []
                 
                 // Verificar se o índice fornecido está dentro dos limites do array
-                guard index >= 0 && index < goalsArray.count else {
-                    print("Invalid index provided")
+                guard index >= 0 && index < dataArray.count else {
+                    completion("Invalid index provided")
                     return
                 }
                 
-                goalsArray.remove(at: index)
+                dataArray.remove(at: index)
                 
-                self.docRef.setData([self.documentName: goalsArray]) { error in
-                    if let error = error {
-                        print("Error writing document: \(error.localizedDescription)!")
-                    } else {
-                        print("Object removed from the array in Firestore")
-                    }
-                }
+                self.setDataInDocument(data: [self.documentName: dataArray], completion: completion)
             } else {
-                print("Document does not exist")
+                completion("Document does not exist")
             }
         }
     }
     
-    public func readDocument() -> [[String: Any]] { //completion: @escaping (Any)
+    public func readDocument() -> [[String: Any]] {
         var dataReturn:[[String: Any]] = []
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                if let data = document.data(), let goalsData = data[self.documentName] as? [[String: Any]] {
-                    dataReturn = goalsData
+                if let dataArray = document.data(), let objectsReadData = dataArray[self.documentName] as? [[String: Any]] {
+                    dataReturn = objectsReadData
                 } else {
-                    print("Document does not contain goals field")
+                    //print("Document does not contain goals field")
                 }
             } else {
-                print("Document does not exist or there was an error: \(error?.localizedDescription ?? "")")
+                //print("Document does not exist or there was an error: \(error?.localizedDescription ?? "")")
             }
         }
         return dataReturn
     }
     
-    func getObjectData<T: Codable>(forObjectType objectType: T.Type, completion: @escaping (Result<[T], Error>) -> Void) {
-//        guard let currentUserID = Auth.auth().currentUser?.uid else {
-//            completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"])))
-//            return
-//        }
-        
+    public func getObjectData<T: Codable>(forObjectType objectType: T.Type, completion: @escaping (Result<[T], Error>) -> Void) {
         docRef.getDocument { document, error in
             
             if let error = error {
@@ -176,24 +96,33 @@ class FirestoreService {
                 return
             }
             
-            if let data = document.data(), let goalsData = data[self.documentName] as? [[String: Any]] {
+            if let data = document.data(), let objectsReadData = data[self.documentName] as? [[String: Any]] {
                 
-                var goals: [T] = []
+                var objectList: [T] = []
                 
-                for goalData in goalsData {
+                for rawObject in objectsReadData {
                     do {
-                        let goal = try Firestore.Decoder().decode(T.self, from: goalData)
-                        goals.append(goal)
+                        let object = try Firestore.Decoder().decode(T.self, from: rawObject)
+                        objectList.append(object)
                     } catch {
-                        print("Error decoding goal: \(error.localizedDescription)")
+                        //print("Error decoding goal: \(error.localizedDescription)")
                         completion(.failure(error))
                     }
                 }
-                completion(.success(goals))
+                completion(.success(objectList))
             } else {
-                print("Document does not contain goals field")
                 completion(.success([]))
             }
         }
     }
+    
+    private func setDataInDocument(data: [String: Any], completion: @escaping (String) -> Void) {
+            docRef.setData(data) { error in
+                if let error = error {
+                    completion("Error writing document: \(error.localizedDescription)!")
+                } else {
+                    completion("Success")
+                }
+            }
+        }
 }

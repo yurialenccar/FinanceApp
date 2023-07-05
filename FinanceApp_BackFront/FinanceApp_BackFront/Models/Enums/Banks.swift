@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Banks: String {
+enum Banks: String, Codable {
     case itau
     case bradesco
     case nubank

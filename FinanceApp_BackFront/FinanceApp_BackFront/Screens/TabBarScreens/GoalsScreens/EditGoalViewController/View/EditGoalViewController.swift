@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol GoalSavedDelegate{
+protocol GoalSavedDelegate: AnyObject {
     func didSavedGoal(_ newGoal: Goal)
 }
 
@@ -26,7 +26,7 @@ class EditGoalViewController: UIViewController {
     @IBOutlet weak var goalImage: UIImageView!
     @IBOutlet weak var createGoalButton: UIButton!
     
-    var delegate:GoalSavedDelegate?
+    weak var delegate:GoalSavedDelegate?
     static let identifier:String = String(describing: EditGoalViewController.self)
     var viewModel:EditGoalViewModel=EditGoalViewModel()
     var initialAmountValue: Double = 0.0

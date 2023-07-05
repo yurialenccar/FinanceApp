@@ -46,8 +46,21 @@ class GoalsViewModel {
         service.addObjectInArray(newGoal) { result in
             if result != "Success" {
                 print(result)
+                completion()
+                return
             }
-            completion()
+            self.updateGoals(completion: completion)
+        }
+    }
+    
+    public func deleteGoal(index: Int, completion: @escaping () -> Void) {
+        service.deleteObjectInArray(index: index) { result in
+            if result != "Success" {
+                print(result)
+                completion()
+                return
+            }
+            self.updateGoals(completion: completion)
         }
     }
 }

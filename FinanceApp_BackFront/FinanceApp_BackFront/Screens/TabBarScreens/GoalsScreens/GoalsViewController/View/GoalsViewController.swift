@@ -77,15 +77,15 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         if indexPath.row < viewModel.getGoalsCount() {
             let storyboard = UIStoryboard(name: GoalInfoViewController.identifier, bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: GoalInfoViewController.identifier) {coder -> GoalInfoViewController? in
-                return GoalInfoViewController(coder: coder, goal: self.viewModel.getItemGoal(indexPath.row))
+                return GoalInfoViewController(coder: coder, goal: self.viewModel.getItemGoal(indexPath.row), index: indexPath.row)
             }
+            vc.delegate = self
             navigationController?.pushViewController(vc, animated: true)
         }
-        
     }
 }
 
-extension GoalsViewController: CreateItemButtonCellDelegate, GoalSavedDelegate {
+extension GoalsViewController: CreateItemButtonCellDelegate, GoalSavedDelegate, GoalInfoViewControllerProtocol {
     func didTappedNewItemButton() {
         let storyboard = UIStoryboard(name: EditGoalViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: EditGoalViewController.identifier) as? EditGoalViewController
@@ -95,10 +95,13 @@ extension GoalsViewController: CreateItemButtonCellDelegate, GoalSavedDelegate {
     
     func didSavedGoal(_ newGoal: Goal) {
         viewModel.createNewGoal(newGoal) {
-            self.viewModel.updateGoals() {
-                self.collectionView.reloadData()
-            }
+            self.collectionView.reloadData()
         }
-        
+    }
+    
+    func didDeletedGoal(index: Int) {
+        viewModel.deleteGoal(index: index) {
+            self.collectionView.reloadData()
+        }
     }
 }

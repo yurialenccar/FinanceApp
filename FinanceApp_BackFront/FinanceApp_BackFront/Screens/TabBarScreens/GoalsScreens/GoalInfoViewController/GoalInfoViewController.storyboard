@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KaN-YF-6K3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KaN-YF-6K3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -113,10 +114,24 @@
                                     <constraint firstItem="fo1-Me-YZ9" firstAttribute="leading" secondItem="HSh-or-I2P" secondAttribute="leading" id="moX-Dh-AuR"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnt-JI-AKQ">
+                                <rect key="frame" x="333" y="79" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8uM-0I-fD0"/>
+                                    <constraint firstAttribute="width" constant="40" id="Lek-nF-N5X"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                                <connections>
+                                    <action selector="tappedDeleteButton:" destination="KaN-YF-6K3" eventType="touchUpInside" id="Uu8-9O-OtR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Avj-cX-bQw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dnt-JI-AKQ" firstAttribute="top" secondItem="Avj-cX-bQw" secondAttribute="top" constant="20" id="8IN-2V-Pig"/>
+                            <constraint firstItem="Avj-cX-bQw" firstAttribute="trailing" secondItem="dnt-JI-AKQ" secondAttribute="trailing" constant="20" id="GZG-D9-y3w"/>
                             <constraint firstItem="HSh-or-I2P" firstAttribute="top" secondItem="Avj-cX-bQw" secondAttribute="top" constant="20" id="KKH-4R-JkA"/>
                             <constraint firstAttribute="trailing" secondItem="HSh-or-I2P" secondAttribute="trailing" constant="20" id="Yw0-5Y-1lu"/>
                             <constraint firstItem="HSh-or-I2P" firstAttribute="leading" secondItem="Avj-cX-bQw" secondAttribute="leading" constant="20" id="dZ4-41-z6m"/>
@@ -126,6 +141,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="fo1-Me-YZ9" id="0RD-Z5-pe7"/>
                         <outlet property="daysToDateLabel" destination="OXs-xQ-VNv" id="J7I-VC-DyY"/>
+                        <outlet property="deleteButton" destination="dnt-JI-AKQ" id="UHq-WZ-k3L"/>
                         <outlet property="descLabel" destination="8aK-O5-O1y" id="pTH-Uv-eT3"/>
                         <outlet property="goalImage" destination="UpN-7F-KoX" id="rTA-gf-qTE"/>
                         <outlet property="goalLabel" destination="N0G-kU-6wd" id="Qqt-Xe-pOf"/>
@@ -143,6 +159,7 @@
     </scenes>
     <resources>
         <image name="Play5" width="50" height="34"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
