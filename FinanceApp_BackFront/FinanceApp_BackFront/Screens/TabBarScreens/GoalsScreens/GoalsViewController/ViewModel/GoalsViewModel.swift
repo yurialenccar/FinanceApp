@@ -36,7 +36,7 @@ class GoalsViewModel {
     }
     
     public func getCellSize(viewWidth:CGFloat) -> CGSize {
-        return CGSize (width: viewWidth - 30, height: 124)
+        return CGSize (width: viewWidth - 50, height: 124)
     }
     
     public func createNewGoal(_ newGoal: Goal, completion: @escaping () -> Void) {

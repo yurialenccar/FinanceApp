@@ -10,12 +10,22 @@ import UIKit
 
 class CreditCardsViewModel {
     
-    public func getCardsCount() -> Int {
-        if creditCardsList.count > 0 {
-            return creditCardsList.count + 1
-        } else {
-            return creditCardsList.count
+    private var service: FirestoreService = FirestoreService(documentName: "creditCardsList")
+    
+    public func updateCards(completion: @escaping () -> Void) {
+        service.getObjectData(forObjectType: CreditCard.self, documentReadName: "creditCardsList") { result in
+            switch result {
+            case .success(let objectArray):
+                creditCardsList = objectArray
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            completion()
         }
+    }
+    
+    public func getCardsCount() -> Int {
+            return creditCardsList.count
     }
     
     public func getCard(_ index:Int) -> CreditCard {
@@ -37,4 +47,71 @@ class CreditCardsViewModel {
     public func getNewCardButtonText() -> String {
         return moreOptionsStrings.newCreditCardButtonTitle
     }
+    
+    public func createNewCard(_ newCard: CreditCard, completion: @escaping () -> Void) {
+        var card = newCard
+        card.setId(createNewCreditCardId())
+        
+        if card.standardCard {
+            clearStandardCard()
+        }
+        
+        creditCardsList.append(card)
+        
+        service.setArrayObject(creditCardsList) { result in
+            if result != "Success" {
+                print(result)
+            }
+            completion()
+        }
+    }
+    
+    public func editCard(card: CreditCard, indexCard: Int, completion: @escaping () -> Void) {
+        if card.standardCard {
+            clearStandardCard()
+        }
+        creditCardsList[indexCard] = card
+        
+        service.setArrayObject(creditCardsList) { result in
+            if result != "Success" {
+                print(result)
+            }
+            completion()
+        }
+    }
+    
+    public func deleteCard(index: Int, completion: @escaping () -> Void) {
+        creditCardsList.remove(at: index)
+        
+        service.setArrayObject(creditCardsList) { result in
+            if result != "Success" {
+                print(result)
+            }
+            completion()
+        }
+    }
+    
+    private func createNewCreditCardId() -> String {
+        var num = creditCardsList.count
+        
+        let existingIds = Set(creditCardsList.map { $0.getId() })
+        
+        while existingIds.contains(moreOptionsStrings.cardIdText + num.toStringTwoDigits()) {
+            num += 1
+        }
+        
+        return moreOptionsStrings.accountIdText + num.toStringTwoDigits()
+    }
+    
+    private func clearStandardCard() {
+        for i in 0..<creditCardsList.count {
+            creditCardsList[i].standardCard = false
+        }
+    }
 }
+
+var creditCardsList : [CreditCard] = [
+    CreditCard(desc: "Cartão Ultravioleta Nubank", limit: 2000.0, bank: .nubank, closingDay: 25, dueDate: 30, standardCard: false, obs: ""),
+    CreditCard(desc: "Cartão Click Itau", limit: 2000.0, bank: .itau, closingDay: 20, dueDate: 25, standardCard: false, obs: ""),
+    CreditCard(desc: "Cartão Inter", limit: 2000.0, bank: .inter, closingDay: 22, dueDate: 27, standardCard: false, obs: "")
+]

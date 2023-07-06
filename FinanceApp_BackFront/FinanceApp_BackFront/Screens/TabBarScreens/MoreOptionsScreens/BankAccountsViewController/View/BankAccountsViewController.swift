@@ -14,17 +14,21 @@ class BankAccountsViewController: UIViewController {
     
     static let identifier:String = String(describing: BankAccountsViewController.self)
     var viewModel: BankAccountsViewModel = BankAccountsViewModel()
+    var dataLoaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
         viewModel.updateAccounts() {
             self.setupCollectionView()
+            self.dataLoaded = true
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //collectionView.reloadData()
+        if dataLoaded {
+            collectionView.reloadData()
+        }
         navigationController?.isNavigationBarHidden = false
     }
     

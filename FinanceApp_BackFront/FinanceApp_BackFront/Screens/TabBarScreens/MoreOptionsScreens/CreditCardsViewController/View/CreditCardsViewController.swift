@@ -14,15 +14,21 @@ class CreditCardsViewController: UIViewController {
     
     static let identifier:String = String(describing: CreditCardsViewController.self)
     var viewModel: CreditCardsViewModel = CreditCardsViewModel()
+    var dataLoaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
-        setupCollectionView()
+        viewModel.updateCards {
+            self.setupCollectionView()
+            self.dataLoaded = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        collectionView.reloadData()
+        if dataLoaded {
+            collectionView.reloadData()
+        }
         navigationController?.isNavigationBarHidden = false
     }
     
@@ -44,10 +50,10 @@ class CreditCardsViewController: UIViewController {
     }
 }
 
-extension CreditCardsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateItemButtonCellDelegate {
+extension CreditCardsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getCardsCount()
+        return viewModel.getCardsCount() + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -76,21 +82,36 @@ extension CreditCardsViewController: UICollectionViewDelegate, UICollectionViewD
         
         let storyboard = UIStoryboard(name: EditCreditCardsViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: EditCreditCardsViewController.identifier) {coder -> EditCreditCardsViewController? in
-            return EditCreditCardsViewController(coder: coder, indexCard: indexPath.row, configType: .editExisting)
+            return EditCreditCardsViewController(coder: coder, card: self.viewModel.getCard(indexPath.row), indexCard: indexPath.row, configType: .editExisting)
         }
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
         
     }
+}
+
+extension CreditCardsViewController: CreateItemButtonCellDelegate, EditCreditCardsViewControllerProtocol {
     
-    func didTappedNewItemButton() {
-        let storyboard = UIStoryboard(name: EditCreditCardsViewController.identifier, bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: EditCreditCardsViewController.identifier) {coder -> EditCreditCardsViewController? in
-            return EditCreditCardsViewController(coder: coder, indexCard: 0, configType: .createNew)
+    func didSaveCard(card: CreditCard, indexCard: Int, configType: ConfigType) {
+        switch configType {
+        case .createNew:
+            viewModel.createNewCard(card) {
+                self.collectionView.reloadData()
+            }
+        case .editExisting:
+            viewModel.editCard(card: card, indexCard: indexCard){
+                self.collectionView.reloadData()
+            }
         }
-        navigationController?.pushViewController(vc, animated: true)
     }
     
-    func didCreatedBankAccount() {
-        collectionView.reloadData()
+    func didTappedNewItemButton() {
+        let emptyCard = CreditCard(desc: globalStrings.emptyString, limit: 0.0, bank: .bancoDoBrasil, closingDay: 05, dueDate: 10, standardCard: false, obs: globalStrings.emptyString)
+        let storyboard = UIStoryboard(name: EditCreditCardsViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: EditCreditCardsViewController.identifier) {coder -> EditCreditCardsViewController? in
+            return EditCreditCardsViewController(coder: coder, card: emptyCard, indexCard: 0, configType: .createNew)
+        }
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

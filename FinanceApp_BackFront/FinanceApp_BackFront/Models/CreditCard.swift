@@ -59,8 +59,4 @@ struct CreditCard: Codable {
     }
 }
 
-var creditCardsList : [CreditCard] = [
-    CreditCard(desc: "Cartão Ultravioleta Nubank", limit: 2000.0, bank: .nubank, closingDay: 25, dueDate: 30, standardCard: false, obs: ""),
-    CreditCard(desc: "Cartão Click Itau", limit: 2000.0, bank: .itau, closingDay: 20, dueDate: 25, standardCard: false, obs: ""),
-    CreditCard(desc: "Cartão Inter", limit: 2000.0, bank: .inter, closingDay: 22, dueDate: 27, standardCard: false, obs: "")
-]
+

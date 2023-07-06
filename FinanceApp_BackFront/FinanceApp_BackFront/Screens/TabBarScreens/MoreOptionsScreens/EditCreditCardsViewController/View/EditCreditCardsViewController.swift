@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol EditCreditCardsViewControllerProtocol: AnyObject {
+    func didSaveCard(card: CreditCard, indexCard: Int, configType:ConfigType)
+}
+
 class EditCreditCardsViewController: UIViewController {
     
     @IBOutlet weak var titleScreenLabel: UILabel!
@@ -30,13 +34,18 @@ class EditCreditCardsViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     static let identifier:String = String(describing: EditCreditCardsViewController.self)
+    weak var delegate: EditCreditCardsViewControllerProtocol?
     var viewModel: EditCreditCardsViewModel
     var selectedBank:Banks = .bancoDoBrasil
     var dayPickerOption: CreditCardDayPickerOptions = .nonSelected
     var limitValue: Double = 0.0
+    var initialCard: CreditCard
+    var indexCard: Int
     
-    init?(coder:NSCoder, indexCard:Int, configType:ConfigType){
-        self.viewModel = EditCreditCardsViewModel(configType: configType, indexCard: indexCard)
+    init?(coder:NSCoder, card: CreditCard, indexCard:Int, configType:ConfigType){
+        self.viewModel = EditCreditCardsViewModel(card: card, configType: configType)
+        self.initialCard = card
+        self.indexCard = indexCard
         super.init(coder: coder)
     }
     
@@ -127,21 +136,20 @@ class EditCreditCardsViewController: UIViewController {
     }
     
     private func populateFields() {
-        let card = viewModel.populateFieldsInfos()
-        limitValue = card.limit
+        limitValue = initialCard.limit
         
-        nameTextField.text = card.desc
+        nameTextField.text = initialCard.desc
         limitTextField.text = limitValue.toStringMoney()
-        closingDayNumberLabel.text = String(card.closingDay)
-        dueDateNumberLabel.text = String(card.dueDate)
-        standardCardSwitch.isOn = card.standardCard
-        obsTextField.text = card.obs
-        selectedBank = card.bank
+        closingDayNumberLabel.text = String(initialCard.closingDay)
+        dueDateNumberLabel.text = String(initialCard.dueDate)
+        standardCardSwitch.isOn = initialCard.standardCard
+        obsTextField.text = initialCard.obs
+        selectedBank = initialCard.bank
         updateBankField(selectedBank)
     }
     
     private func saveValues(){
-        viewModel.saveCreditCard(newCard: CreditCard(
+        let card: CreditCard = self.viewModel.saveCreditCard(newCard: CreditCard(
             desc: nameTextField.text.orEmpty,
             limit: limitValue,
             bank: selectedBank,
@@ -150,6 +158,7 @@ class EditCreditCardsViewController: UIViewController {
             standardCard: standardCardSwitch.isOn,
             obs: obsTextField.text.orEmpty)
         )
+        delegate?.didSaveCard(card: card, indexCard: indexCard, configType: viewModel.configType)
         self.navigationController?.popViewController(animated: true)
     }
     

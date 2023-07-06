@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="45" id="wBM-S4-6yX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Geladeira" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEj-Dd-AR5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Geladeira" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEj-Dd-AR5">
                                 <rect key="frame" x="55" y="0.0" width="135" height="34.666666666666664"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -67,9 +67,6 @@
                     </stackView>
                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k8N-r6-Hjv">
                         <rect key="frame" x="60" y="100" width="220" height="4"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="220" id="1wX-9t-rhc"/>
-                        </constraints>
                     </progressView>
                 </subviews>
             </view>

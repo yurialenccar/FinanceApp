@@ -10,64 +10,22 @@ import UIKit
 
 class EditCreditCardsViewModel{
     
-    public var configType:ConfigType
-    private var indexCard:Int
+    public var configType: ConfigType
+    private var card: CreditCard
     
-    init(configType: ConfigType, indexCard:Int) {
+    init(card: CreditCard, configType: ConfigType) {
         self.configType = configType
-        self.indexCard = indexCard
+        self.card = card
     }
     
-    public func populateFieldsInfos() -> CreditCard {
-        if configType == .createNew{
-            return CreditCard(desc: globalStrings.emptyString, limit: 0.0, bank: .bancoDoBrasil, closingDay: 05, dueDate: 10, standardCard: false, obs: globalStrings.emptyString)
-        } else {
-            return creditCardsList[indexCard]
-        }
-    }
-    
-    public func saveCreditCard(newCard: CreditCard){
+    public func saveCreditCard(newCard: CreditCard) -> CreditCard {
         var creditCard: CreditCard = newCard
         
         if newCard.desc.isEmptyTest() {
             creditCard.desc = "\(moreOptionsStrings.cardText) \(bankProperties[newCard.bank]?.textNameBank ?? moreOptionsStrings.ofCreditText)"
         }
-        
-        if newCard.standardCard == true {
-            for i in 0..<creditCardsList.count{
-                creditCardsList[i].standardCard = false
-            }
-        }
-        
-        if configType == .createNew{
-            creditCard.setId(createNewCreditCardId())
-            creditCardsList.append(creditCard)
-        } else {
-            creditCardsList[indexCard].desc = creditCard.desc
-            creditCardsList[indexCard].limit = creditCard.limit
-            creditCardsList[indexCard].bank = creditCard.bank
-            creditCardsList[indexCard].closingDay = creditCard.closingDay
-            creditCardsList[indexCard].dueDate = creditCard.dueDate
-            creditCardsList[indexCard].standardCard = creditCard.standardCard
-            creditCardsList[indexCard].obs = creditCard.obs
-        }
-        
+        return creditCard
     }
-    
-    private func createNewCreditCardId() -> String {
-        var num = creditCardsList.count
-        
-        let existingIds = Set(creditCardsList.map { $0.getId() })
-        
-        while existingIds.contains(moreOptionsStrings.cardIdText + num.toStringTwoDigits()) {
-            num += 1
-        }
-        
-        return moreOptionsStrings.cardIdText + num.toStringTwoDigits()
-    }
-    
-    
-
     
     public func getBankListCount() -> Int {
         return bankList.count

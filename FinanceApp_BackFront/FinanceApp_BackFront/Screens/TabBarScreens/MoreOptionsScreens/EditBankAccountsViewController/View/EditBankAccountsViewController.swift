@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EditBankAccountsViewControllerProtocol: AnyObject {
-    func didSaveAccount(account: BankAccount, indexAccount:Int, configType:ConfigType, newBalance: Double)
+    func didSaveAccount(account: BankAccount, indexAccount: Int, configType: ConfigType, newBalance: Double)
 }
 
 class EditBankAccountsViewController: UIViewController {
