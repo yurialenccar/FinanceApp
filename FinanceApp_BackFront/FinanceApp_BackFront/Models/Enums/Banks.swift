@@ -15,6 +15,7 @@ enum Banks: String, Codable {
     case santander
     case caixa
     case bancoDoBrasil
+    case other
 }
 
 let bankList:[Banks]=[
@@ -24,6 +25,7 @@ let bankList:[Banks]=[
     .inter,
     .santander,
     .caixa,
-    .bancoDoBrasil
+    .bancoDoBrasil,
+    .other
 ]
 

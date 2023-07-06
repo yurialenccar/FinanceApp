@@ -169,6 +169,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 return cell ?? UICollectionViewCell()
             case 2:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesGraphCollectionViewCell.identifier, for: indexPath) as? CategoriesGraphCollectionViewCell
+                cell?.updateChartData()
                 cell?.layer.cornerRadius = 10
                 cell?.layer.masksToBounds = true
                 return cell ?? UICollectionViewCell()

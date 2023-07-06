@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 class FirestoreService {
     private let db = Firestore.firestore()
-    private var user: String = "user_GabrielRomano"
+    public var user: String = userLogged ?? "default"
     private var documentName: String
     private let docRef: DocumentReference
     
@@ -119,7 +119,8 @@ class FirestoreService {
     }
     
     private func setDataInDocument(data: [String: Any], completion: @escaping (String) -> Void) {
-            docRef.setData(data) { error in
+        let docRefSet = db.collection(user).document(documentName)
+        docRefSet.setData(data) { error in
                 if let error = error {
                     completion("Error writing document: \(error.localizedDescription)!")
                 } else {

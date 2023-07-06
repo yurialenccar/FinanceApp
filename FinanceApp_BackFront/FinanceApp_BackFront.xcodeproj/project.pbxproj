@@ -56,6 +56,7 @@
 		A15162202A09444700C5AD42 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A151621F2A09444700C5AD42 /* Formatters.swift */; };
 		A152AA3F2A21A47800372C00 /* loginStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152AA3E2A21A47800372C00 /* loginStrings.swift */; };
 		A152AA422A21A69B00372C00 /* registerStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152AA412A21A69B00372C00 /* registerStrings.swift */; };
+		A158390E2A5721DA001A0A03 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A158390D2A5721DA001A0A03 /* Utils.swift */; };
 		A160A1052A568C8700A0D7DC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160A1042A568C8700A0D7DC /* Profile.swift */; };
 		A16636EC29DE1A9400162872 /* TransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */; };
 		A16636EF29DE33C500162872 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16636EE29DE33C500162872 /* Transactions.swift */; };
@@ -232,6 +233,7 @@
 		A151621F2A09444700C5AD42 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		A152AA3E2A21A47800372C00 /* loginStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginStrings.swift; sourceTree = "<group>"; };
 		A152AA412A21A69B00372C00 /* registerStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerStrings.swift; sourceTree = "<group>"; };
+		A158390D2A5721DA001A0A03 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A160A1042A568C8700A0D7DC /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		A16636EB29DE1A9400162872 /* TransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A16636EE29DE33C500162872 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
@@ -708,6 +710,14 @@
 				A152AA412A21A69B00372C00 /* registerStrings.swift */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		A158390C2A5721C6001A0A03 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A158390D2A5721DA001A0A03 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A16636ED29DE1B0400162872 /* Models */ = {
@@ -1562,6 +1572,7 @@
 				E35D085A29BDAD110098F0B5 /* Info.plist */,
 				A1F86CB42A4F493700D2534A /* GoogleService-Info.plist */,
 				A1FDB7E52A45F1BA006B3459 /* Services */,
+				A158390C2A5721C6001A0A03 /* Utils */,
 				A16688E529F06D4C00568217 /* Resources */,
 				A19742D92A227E6000455DB0 /* Extensions */,
 				A1CE09292A001B410028028B /* GlobalStrings */,
@@ -1857,6 +1868,7 @@
 				E3E9089129BFAF1B00B34864 /* CategoriesGraphViewController.swift in Sources */,
 				A16636EF29DE33C500162872 /* Transactions.swift in Sources */,
 				A1FDB7ED2A4636D4006B3459 /* CurrencyPickerOptions.swift in Sources */,
+				A158390E2A5721DA001A0A03 /* Utils.swift in Sources */,
 				A101916C29FAB3FA00776A67 /* AccountCollectionViewCell.swift in Sources */,
 				A14F99942A250A3800257B67 /* goalStrings.swift in Sources */,
 				A16688FC29F17E5200568217 /* TransactionsViewModel.swift in Sources */,

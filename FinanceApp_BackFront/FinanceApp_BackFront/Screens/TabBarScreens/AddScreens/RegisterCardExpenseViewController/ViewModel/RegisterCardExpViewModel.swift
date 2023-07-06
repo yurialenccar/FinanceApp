@@ -106,6 +106,4 @@ class RegisterCardExpViewModel{
         
         return formatter.string(from: date)
     }
-    
-    
 }

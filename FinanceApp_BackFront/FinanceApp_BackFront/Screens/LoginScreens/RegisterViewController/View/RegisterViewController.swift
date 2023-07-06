@@ -64,12 +64,18 @@ class RegisterViewController: UIViewController {
         }
         
         viewModel.createUser(email: email, password: password) { resultRegister in
-            if resultRegister == registerStrings.registerSuccessText {
+            if resultRegister == registerStrings.registerAndLoginSuccessText {
                 self.showSimpleAlert(title: registerStrings.registerSuccessMessage, message: globalStrings.emptyString) {
                     let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
                     if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
                         self.present(tbc, animated: true)
                     }
+                }
+            } else if resultRegister == registerStrings.onlyRegisterSuccessText {
+                self.showSimpleAlert(title: registerStrings.registerSuccessMessage, message: globalStrings.emptyString) {
+                    let storyboard: UIStoryboard = UIStoryboard(name: LoginViewController.identifier, bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier:LoginViewController.identifier)
+                    self.present(vc, animated: true)
                 }
             } else {
                 self.showSimpleAlert(title: globalStrings.attention, message: resultRegister)

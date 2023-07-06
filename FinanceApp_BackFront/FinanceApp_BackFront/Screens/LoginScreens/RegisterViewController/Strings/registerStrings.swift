@@ -26,7 +26,8 @@ enum registerStrings {
     static let invalidEmailMessage = "Email inválido"
     static let invalidPasswordMessage = "Senha inválida"
     static let incompatiblePasswordsMessage = "Senhas não compatíveis"
-    static let registerSuccessText = "Sucesso Cadastro!"
+    static let onlyRegisterSuccessText = "Sucesso Cadastro!"
+    static let registerAndLoginSuccessText = "Sucesso Cadastro e Login!"
     
     static let emailAlreadyInUse = "email já foi cadastrado no sistema!"
     static let followError = "segue o erro "
