@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     static let identifier:String = String(describing: HomeViewController.self)
     var  viewModel : HomeViewModel = HomeViewModel()
     var hideInformations = false
+    var dataLoaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,18 +29,23 @@ class HomeViewController: UIViewController {
         viewModel.confirmAllCardsIDs()
         setupStrings()
         setupUIComponents()
-        setupHorizontalCollectionView()
-        setupVerticalCollectionView()
         setupObserver()
+        viewModel.updateObjects {
+            self.viewModel.updateBalanceValues()
+            self.setupHorizontalCollectionView()
+            self.setupVerticalCollectionView()
+            self.dataLoaded = true
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        viewModel.updateBalanceValues()
-        horizontalCollectionView.reloadData()
-        setupVerticalCollectionView()
-        verticalCollectionView.reloadData()
+        if dataLoaded {
+            self.viewModel.updateBalanceValues()
+            self.horizontalCollectionView.reloadData()
+            self.verticalCollectionView.reloadData()
+        }
     }
 
     @IBAction func tappedShowGraphScreen(_ sender: UIButton) {
@@ -224,7 +230,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
             if collectionView == verticalCollectionView {
-                return CGSize(width: collectionView.frame.width, height: 50) // Altura do cabeçalho da seção
+                return CGSize(width: collectionView.frame.width, height: 50)
             }
             return CGSize()
         }

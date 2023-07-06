@@ -47,15 +47,8 @@ struct BankAccount: Codable {
     }
     
     public mutating func setId(_ newId: String) {
-        
         if id == ""{
             id = newId
         }
     }
 }
-
-var bankAccountsList : [BankAccount] = [
-    BankAccount(desc: "Conta Banco do Brasil", bank: .bancoDoBrasil, overdraft: 100.0, standardAccount: true, obs:""),
-    BankAccount(desc: "Conta Bradesco", bank: .bradesco, overdraft: 100.0, standardAccount: false, obs:""),
-    BankAccount(desc: "Conta Caixa", bank: .caixa, overdraft: 100.0, standardAccount: false, obs:"")
-]

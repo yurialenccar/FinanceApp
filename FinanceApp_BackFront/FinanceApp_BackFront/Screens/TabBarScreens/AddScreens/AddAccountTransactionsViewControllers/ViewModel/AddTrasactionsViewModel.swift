@@ -10,6 +10,8 @@ import UIKit
 
 class AddAccountTransactionsViewModel{
     
+    private var service: FirestoreService = FirestoreService(documentName: "transactionsList")
+    
     public var dataSelecionada = Date()
     private var transactionType:TransactionType
     
@@ -17,7 +19,7 @@ class AddAccountTransactionsViewModel{
         transactionType=type
     }
     
-    public func setTransactionsValues(transaction: Transactions) {
+    public func setTransactionsValues(transaction: Transactions, completion: @escaping () -> Void) {
         var newTransaction: Transactions = transaction
         
         if newTransaction.desc.isEmptyTest() {
@@ -30,6 +32,18 @@ class AddAccountTransactionsViewModel{
             }
         }
         transactions.append(newTransaction)
+        setTransactionsInFirebase(transactions, completion: completion)
+    }
+    
+    public func setTransactionsInFirebase(_ transactionsList: [Transactions], completion: @escaping () -> Void) {
+        service.setArrayObject(transactionsList) { result in
+            if result != "Success" {
+                print(result)
+                completion()
+                return
+            }
+            completion()
+        }
     }
     
     var standardAccountIndex: Int {

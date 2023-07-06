@@ -18,11 +18,13 @@ class BankAccountsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
-        setupCollectionView()
+        viewModel.updateAccounts() {
+            self.setupCollectionView()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        collectionView.reloadData()
+        //collectionView.reloadData()
         navigationController?.isNavigationBarHidden = false
     }
     
@@ -45,14 +47,14 @@ class BankAccountsViewController: UIViewController {
     }
 }
 
-extension BankAccountsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CreateItemButtonCellDelegate {
+extension BankAccountsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getAccountsCount()
+        return viewModel.getAccountsCount() + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if  indexPath.row < bankAccountsList.count{
+        if  indexPath.row < viewModel.getAccountsCount() {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AccountCollectionViewCell.identifier, for: indexPath) as? AccountCollectionViewCell
             cell?.layer.cornerRadius = viewModel.getCellCornerRadius()
             cell?.layer.masksToBounds = true
@@ -77,23 +79,34 @@ extension BankAccountsViewController: UICollectionViewDelegate, UICollectionView
         
         let storyboard = UIStoryboard(name: EditBankAccountsViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: EditBankAccountsViewController.identifier) {coder -> EditBankAccountsViewController? in
-            return EditBankAccountsViewController(coder: coder, indexAccount: indexPath.row, configType: .editExisting)
+            return EditBankAccountsViewController(coder: coder, account: self.viewModel.getAccount(indexPath.row), indexAccount: indexPath.row, configType: .editExisting)
         }
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
-        
+    }
+}
+
+extension BankAccountsViewController: CreateItemButtonCellDelegate, EditBankAccountsViewControllerProtocol {
+    func didSaveAccount(account: BankAccount, indexAccount: Int, configType: ConfigType, newBalance: Double) {
+        switch configType {
+        case .createNew:
+            viewModel.createNewAccount(account, newBalance: newBalance) {
+                self.collectionView.reloadData()
+            }
+        case .editExisting:
+            viewModel.editAccount(account: account, indexAccount: indexAccount, newBalance: newBalance){
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     func didTappedNewItemButton() {
+        let emptyAccount = BankAccount(desc: globalStrings.emptyString, bank: .bancoDoBrasil, overdraft: 0.0, standardAccount: false, obs: globalStrings.emptyString)
         let storyboard = UIStoryboard(name: EditBankAccountsViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: EditBankAccountsViewController.identifier) {coder -> EditBankAccountsViewController? in
-            return EditBankAccountsViewController(coder: coder, indexAccount: 0, configType: .createNew)
+            return EditBankAccountsViewController(coder: coder, account: emptyAccount, indexAccount: 0, configType: .createNew)
         }
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func didCreatedBankAccount() {
-        collectionView.reloadData()
-    }
-
-
 }

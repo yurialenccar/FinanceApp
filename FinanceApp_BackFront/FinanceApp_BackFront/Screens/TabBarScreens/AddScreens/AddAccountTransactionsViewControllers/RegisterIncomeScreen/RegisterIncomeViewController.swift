@@ -106,8 +106,9 @@ class RegisterIncomeViewController: UIViewController {
                 type: .income,
                 accountId: idAccountSelected,
                 obs: obsTextField.text.orEmpty
-            ))
-            dismiss(animated: true, completion: nil)
+            )) {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     

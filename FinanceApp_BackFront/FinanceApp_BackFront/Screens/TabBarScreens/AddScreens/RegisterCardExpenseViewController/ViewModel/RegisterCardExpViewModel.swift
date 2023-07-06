@@ -36,7 +36,7 @@ class RegisterCardExpViewModel{
                 return card.getId()
             }
         }
-        return bankAccountsList[0].getId()
+        return creditCardsList[0].getId()
     }
     
     public func getCategoryLabel(_ indexCategory:Int) -> String {

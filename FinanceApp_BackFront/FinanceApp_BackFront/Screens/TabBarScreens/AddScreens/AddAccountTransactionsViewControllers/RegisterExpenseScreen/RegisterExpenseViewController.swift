@@ -101,14 +101,15 @@ class RegisterExpenseViewController: UIViewController {
         } else {
             viewModel.setTransactionsValues(transaction: Transactions(
                 desc: descTextField.text.orEmpty,
-                amount: amount,
+                amount: -amount,
                 categoryIndex: indexCategorySelected,
                 date: viewModel.dataSelecionada.toString(format: globalStrings.dateFormat),
                 type: .expense,
                 accountId: idAccountSelected,
                 obs: obsTextField.text.orEmpty
-            ))
-            dismiss(animated: true, completion: nil)
+            )) {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     

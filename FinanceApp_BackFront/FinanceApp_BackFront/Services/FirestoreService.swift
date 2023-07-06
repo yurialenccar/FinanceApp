@@ -47,6 +47,23 @@ class FirestoreService {
         }
     }
     
+    public func setArrayObject<T: Encodable>(_ objects: [T], completion: @escaping (String) -> Void) {
+        do {
+            var dataArray = [[String: Any]]()
+            
+            for object in objects {
+                let objectData = try Firestore.Encoder().encode(object)
+                dataArray.append(objectData as [String: Any])
+            }
+            
+            let data = [self.documentName: dataArray]
+            
+            self.setDataInDocument(data: data, completion: completion)
+        } catch {
+            completion("Error encoding objects: \(error.localizedDescription)")
+        }
+    }
+    
     public func deleteObjectInArray(index: Int, completion: @escaping (String) -> Void) {
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
@@ -67,24 +84,8 @@ class FirestoreService {
         }
     }
     
-    public func readDocument() -> [[String: Any]] {
-        var dataReturn:[[String: Any]] = []
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                if let dataArray = document.data(), let objectsReadData = dataArray[self.documentName] as? [[String: Any]] {
-                    dataReturn = objectsReadData
-                } else {
-                    //print("Document does not contain goals field")
-                }
-            } else {
-                //print("Document does not exist or there was an error: \(error?.localizedDescription ?? "")")
-            }
-        }
-        return dataReturn
-    }
-    
-    public func getObjectData<T: Codable>(forObjectType objectType: T.Type, completion: @escaping (Result<[T], Error>) -> Void) {
-        docRef.getDocument { document, error in
+    public func getObjectData<T: Codable>(forObjectType objectType: T.Type, documentReadName: String, completion: @escaping (Result<[T], Error>) -> Void) {
+        db.collection(user).document(documentReadName).getDocument { document, error in
             
             if let error = error {
                 completion(.failure(error))
@@ -92,11 +93,12 @@ class FirestoreService {
             }
             
             guard let document = document, document.exists else {
-                completion(.failure(NSError(domain: "FirestoreManager", code: -2, userInfo: [NSLocalizedDescriptionKey: "Documento não existe ou houve um erro"])))
+                let emptyArray: [T] = []
+                completion(.success(emptyArray))
                 return
             }
             
-            if let data = document.data(), let objectsReadData = data[self.documentName] as? [[String: Any]] {
+            if let data = document.data(), let objectsReadData = data[documentReadName] as? [[String: Any]] {
                 
                 var objectList: [T] = []
                 

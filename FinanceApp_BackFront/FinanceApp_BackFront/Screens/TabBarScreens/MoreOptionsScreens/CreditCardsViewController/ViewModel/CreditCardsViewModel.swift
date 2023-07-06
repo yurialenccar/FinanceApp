@@ -11,7 +11,11 @@ import UIKit
 class CreditCardsViewModel {
     
     public func getCardsCount() -> Int {
-        return creditCardsList.count + 1
+        if creditCardsList.count > 0 {
+            return creditCardsList.count + 1
+        } else {
+            return creditCardsList.count
+        }
     }
     
     public func getCard(_ index:Int) -> CreditCard {

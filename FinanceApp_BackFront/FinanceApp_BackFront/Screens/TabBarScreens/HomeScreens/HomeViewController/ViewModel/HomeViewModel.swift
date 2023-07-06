@@ -9,11 +9,46 @@ import Foundation
 
 struct HomeViewModel {
     
+    private var service: FirestoreService = FirestoreService(documentName: "Home")
+    
     private var incomesTotal: Double = 0.0
     private var expensesTotal: Double = 0.0
     private var balanceTotal: Double = 0.0
     private var lastIncomeDate: String = globalStrings.emptyString
     private var lastExpenseDate: String = globalStrings.emptyString
+    
+    public func updateObjects(completion: @escaping () -> Void) {
+        updateAccounts() {
+            updateTransactions {
+                completion()
+            }
+        }
+    }
+    
+    public func updateTransactions(completion: @escaping () -> Void) {
+        service.getObjectData(forObjectType: Transactions.self, documentReadName: "transactionsList") { result in
+            switch result {
+            case .success(let objectsArray):
+                transactions = objectsArray
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            completion()
+        }
+    }
+    
+    public func updateAccounts(completion: @escaping () -> Void) {
+        service.getObjectData(forObjectType: BankAccount.self, documentReadName: "bankAccountsList") { result in
+            switch result {
+            case .success(let object):
+                bankAccountsList = object
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            completion()
+        }
+    }
+    
     
     public func confirmAllAccountsIDs(){
         for i in 0..<bankAccountsList.count {

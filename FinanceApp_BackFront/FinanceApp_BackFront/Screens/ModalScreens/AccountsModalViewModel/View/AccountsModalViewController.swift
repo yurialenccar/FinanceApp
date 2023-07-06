@@ -31,7 +31,7 @@ class AccountsModalViewController: UIViewController {
         titleLabel.text = accountsModalStrings.titleText
     }
     
-    func setupTableView() {
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AccountsTableViewCell.nib(), forCellReuseIdentifier: AccountsTableViewCell.identifier)

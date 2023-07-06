@@ -10,65 +10,21 @@ import UIKit
 
 class EditBankAccountsViewModel{
     
-    public var configType:ConfigType
-    private var indexAccount:Int
+    public var configType: ConfigType
+    private var account: BankAccount
     
-    init(configType: ConfigType, indexAccount:Int) {
+    init(account: BankAccount, configType: ConfigType) {
+        self.account = account
         self.configType = configType
-        self.indexAccount = indexAccount
     }
     
-    public func populateFieldsInfos() -> BankAccount{
-        if self.configType == .createNew{
-            return BankAccount(desc: globalStrings.emptyString, bank: .bancoDoBrasil, overdraft: 0.0, standardAccount: false, obs: globalStrings.emptyString)
-        } else {
-            return bankAccountsList[indexAccount]
-        }
-    }
-    
-    public func saveBankAccount(newBalance: Double, newAccount: BankAccount) {
+    public func saveBankAccount(newAccount: BankAccount) -> BankAccount {
         var bankAccount: BankAccount = newAccount
         
         if newAccount.desc.isEmptyTest() {
             bankAccount.desc = "\(moreOptionsStrings.accountText) \(bankProperties[newAccount.bank]?.textNameBank ?? moreOptionsStrings.currentText)"
         }
-        
-        if bankAccount.standardAccount == true {
-            for i in 0..<bankAccountsList.count{
-                bankAccountsList[i].standardAccount = false
-            }
-        }
-        
-        if configType == .createNew{
-            bankAccount.setId(createNewBankAccountId())
-            if newBalance != 0{
-                bankAccount.adjustBalance(newBalance: newBalance)
-            }
-            bankAccountsList.append(bankAccount)
-        } else {
-            
-            if newBalance != bankAccount.balance {
-                bankAccountsList[indexAccount].adjustBalance(newBalance: newBalance)
-            }
-            bankAccountsList[indexAccount].desc = bankAccount.desc
-            bankAccountsList[indexAccount].bank = bankAccount.bank
-            bankAccountsList[indexAccount].overdraft = bankAccount.overdraft
-            bankAccountsList[indexAccount].standardAccount = bankAccount.standardAccount
-            bankAccountsList[indexAccount].obs = bankAccount.obs
-        }
-        
-    }
-    
-    private func createNewBankAccountId() -> String {
-        var num = bankAccountsList.count
-        
-        let existingIds = Set(bankAccountsList.map { $0.getId() })
-        
-        while existingIds.contains(moreOptionsStrings.accountIdText + num.toStringTwoDigits()) {
-            num += 1
-        }
-        
-        return moreOptionsStrings.accountIdText + num.toStringTwoDigits()
+        return bankAccount
     }
     
     public func getBankListCount() -> Int {

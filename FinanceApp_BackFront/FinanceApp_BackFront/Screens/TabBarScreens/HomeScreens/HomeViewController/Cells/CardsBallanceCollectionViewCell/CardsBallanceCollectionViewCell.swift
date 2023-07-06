@@ -26,7 +26,7 @@ class CardsBallanceCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupTableView()
-        tableViewHeightConstraint.constant = CGFloat(bankAccountsList.count * 60)
+        
     }
     
     func setupTableView(){
@@ -37,7 +37,6 @@ class CardsBallanceCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCell(cardsList: [CreditCard], hideInformations: Bool) {
-        
         if hideInformations {
             totalInvoiceValueLabel.text = globalStrings.dashHiddenInformation
             totalInvoiceValueLabel.textColor = .black
@@ -53,9 +52,10 @@ class CardsBallanceCollectionViewCell: UICollectionViewCell {
             }
         }
             
-        cardsTableView.reloadData()
         self.creditCardList = cardsList
         self.hideInformations = hideInformations
+        tableViewHeightConstraint.constant = CGFloat(cardsList.count * 60)
+        cardsTableView.reloadData()
     }
 }
 
