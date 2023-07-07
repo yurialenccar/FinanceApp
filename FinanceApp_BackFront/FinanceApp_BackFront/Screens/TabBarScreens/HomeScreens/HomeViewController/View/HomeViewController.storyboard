@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="270" id="peD-LD-ZYG"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mask.png" translatesAutoresizingMaskIntoConstraints="NO" id="bSx-uW-gGX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefault" translatesAutoresizingMaskIntoConstraints="NO" id="bSx-uW-gGX">
                                 <rect key="frame" x="20" y="79" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="D2v-8p-iZg"/>
@@ -46,14 +46,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zUy-dD-DCP">
                                 <rect key="frame" x="95" y="89" width="180" height="47"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwk-nB-YRV">
-                                        <rect key="frame" x="0.0" y="0.0" width="32" height="21.666666666666668"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwk-nB-YRV">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estela" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgU-BM-Q9s">
-                                        <rect key="frame" x="0.0" y="25.666666666666671" width="52.666666666666664" height="21.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgU-BM-Q9s">
+                                        <rect key="frame" x="0.0" y="47" width="50" height="0.0"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -127,7 +127,7 @@
     </scenes>
     <resources>
         <image name="BackGroundHome" width="395" height="270"/>
-        <image name="Mask.png" width="65" height="65"/>
+        <image name="UserDefault" width="242" height="240"/>
         <image name="eye" width="24" height="24"/>
         <namedColor name="BackgroundColor">
             <color red="0.94117647058823528" green="0.94901960784313721" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

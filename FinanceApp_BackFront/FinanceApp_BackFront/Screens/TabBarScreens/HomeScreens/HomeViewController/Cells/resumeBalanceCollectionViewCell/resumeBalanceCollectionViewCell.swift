@@ -48,7 +48,7 @@ class resumeBalanceCollectionViewCell: UICollectionViewCell {
             } else if card.balance < 0 {
                 backgroundColor = .RedGeneralExpenses
             } else {
-                backgroundColor = .lightGray
+                backgroundColor = .systemGray4
             }
         }
        

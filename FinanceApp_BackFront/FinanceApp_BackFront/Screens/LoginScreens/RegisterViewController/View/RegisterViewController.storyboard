@@ -55,7 +55,7 @@
                                                             <constraint firstAttribute="width" constant="30" id="EmN-zK-6Kx"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Completo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A9d-yx-2jC">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A9d-yx-2jC">
                                                         <rect key="frame" x="40" y="0.0" width="313" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="aoX-sz-RKE"/>

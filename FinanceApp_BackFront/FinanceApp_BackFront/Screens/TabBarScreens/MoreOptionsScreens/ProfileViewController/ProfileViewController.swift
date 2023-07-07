@@ -16,8 +16,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
@@ -34,6 +32,7 @@ class ProfileViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
+        setupUserInformation()
     }
     
     @IBAction func tappedChangeProfileImage(_ sender: UIButton) {
@@ -42,6 +41,13 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func tappedSaveButton(_ sender: UIButton) {
+        if someTextFieldIsEmpty() {
+            showSimpleAlert(title: globalStrings.attention, message: "Algum campo está vazio!")
+        } else {
+            Utils.saveUserDefaults(value: nameTextField.text.orEmpty, key: "userName")
+            Utils.saveUserDefaults(value: emailTextField.text.orEmpty, key: "userEmail")
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     private func setupStrings() {
@@ -49,7 +55,6 @@ class ProfileViewController: UIViewController {
         titleLabel.text = moreOptionsStrings.profileTitle
         nameLabel.text = moreOptionsStrings.fullNameText
         emailLabel.text = moreOptionsStrings.emailText
-        phoneLabel.text = moreOptionsStrings.phoneNumberText
         passwordLabel.text = moreOptionsStrings.passwordText
         changeProfileImageButton.setTitle(moreOptionsStrings.changeProfileImageButtonTitle, for: .normal)
         saveButton.setTitle(moreOptionsStrings.saveButtonTitle, for: .normal)
@@ -61,17 +66,24 @@ class ProfileViewController: UIViewController {
         
         nameTextField.delegate = self
         emailTextField.delegate = self
-        phoneTextField.delegate = self
         passwordTextField.delegate = self
         
         nameTextField.returnKeyType = .done
         emailTextField.returnKeyType = .done
-        phoneTextField.returnKeyType = .done
         passwordTextField.returnKeyType = .done
     }
     
     private func setupImagePicker(){
         imagePicker.delegate = self
+    }
+    
+    private func setupUserInformation() {
+        self.nameTextField.text = Utils.getUserDefaults(key: "userName") as? String ?? globalStrings.error
+        self.emailTextField.text = Utils.getUserDefaults(key: "userEmail") as? String ?? globalStrings.error
+    }
+    
+    private func someTextFieldIsEmpty() -> Bool {
+        return nameTextField.text.orEmpty.isEmptyTest() || emailTextField.text.orEmpty.isEmptyTest() || passwordTextField.text.orEmpty.isEmptyTest()
     }
 
 }
@@ -97,5 +109,15 @@ extension ProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text.orEmpty.isEmptyTest() {
+            textField.layer.borderColor = UIColor.red.cgColor
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.systemGray.cgColor
     }
 }

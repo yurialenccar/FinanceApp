@@ -19,8 +19,6 @@ class MoreOptionsViewController: UIViewController {
     @IBOutlet weak var currencyConverterButton: UIButton!
     @IBOutlet weak var settingsLabel: UILabel!
     @IBOutlet weak var profileButton: UIButton!
-    @IBOutlet weak var currencySelectionButton: UIButton!
-    @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
     
     var viewModel: MoreOptionsViewModel = MoreOptionsViewModel()
@@ -79,7 +77,6 @@ class MoreOptionsViewController: UIViewController {
         currencyConverterButton.setTitle(moreOptionsStrings.currencyExchangeText, for: .normal)
         settingsLabel.text = moreOptionsStrings.settingsText
         profileButton.setTitle(moreOptionsStrings.profileText, for: .normal)
-        currencySelectionButton.setTitle(moreOptionsStrings.currencyText, for: .normal)
         logoutButton.setTitle(moreOptionsStrings.logoutText, for: .normal)
     }
     
