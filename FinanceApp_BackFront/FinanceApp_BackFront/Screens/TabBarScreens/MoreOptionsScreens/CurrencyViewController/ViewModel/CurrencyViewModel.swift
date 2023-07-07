@@ -27,7 +27,7 @@ class CurrencyViewModel {
     public func updateExchangeRate() {
         let today: String = Date().toString(format: globalStrings.dateFormat)
         if lastRequestDate != today {
-            service.getExchangeRateFromJson { result in
+            service.getExchangeRate { result in
                 switch result {
                 case .success(let success):
                     self.exchangeRate = success

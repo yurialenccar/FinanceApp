@@ -14,7 +14,7 @@ class BankAccountsViewModel {
     
     
     public func updateAccounts(completion: @escaping () -> Void) {
-        service.getObjectData(forObjectType: BankAccount.self, documentReadName: "bankAccountsList") { result in
+        service.getObjectsArrayData(forObjectType: BankAccount.self, documentReadName: "bankAccountsList") { result in
             switch result {
             case .success(let objectArray):
                 bankAccountsList = objectArray

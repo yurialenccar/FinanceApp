@@ -13,7 +13,7 @@ class CreditCardsViewModel {
     private var service: FirestoreService = FirestoreService(documentName: "creditCardsList")
     
     public func updateCards(completion: @escaping () -> Void) {
-        service.getObjectData(forObjectType: CreditCard.self, documentReadName: "creditCardsList") { result in
+        service.getObjectsArrayData(forObjectType: CreditCard.self, documentReadName: "creditCardsList") { result in
             switch result {
             case .success(let objectArray):
                 creditCardsList = objectArray

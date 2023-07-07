@@ -65,12 +65,15 @@ class RegisterViewController: UIViewController {
         
         viewModel.createUser(email: email, password: password) { resultRegister in
             if resultRegister == registerStrings.registerAndLoginSuccessText {
-                self.showSimpleAlert(title: registerStrings.registerSuccessMessage, message: globalStrings.emptyString) {
-                    let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
-                    if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
-                        self.present(tbc, animated: true)
+                self.viewModel.setProfileValues(profile: Profile(name: self.nameTextfield.text.orEmpty, email: self.emailTextfield.text.orEmpty)) {
+                    self.showSimpleAlert(title: registerStrings.registerSuccessMessage, message: globalStrings.emptyString) {
+                        let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
+                        if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
+                            self.present(tbc, animated: true)
+                        }
                     }
                 }
+                
             } else if resultRegister == registerStrings.onlyRegisterSuccessText {
                 self.showSimpleAlert(title: registerStrings.registerSuccessMessage, message: globalStrings.emptyString) {
                     let storyboard: UIStoryboard = UIStoryboard(name: LoginViewController.identifier, bundle: nil)
@@ -82,6 +85,8 @@ class RegisterViewController: UIViewController {
             }
         }
     }
+                                                
+                                                
 
     @IBAction func tappedLoginButton(_ sender: UIButton) {
         let vc: LoginViewController? = UIStoryboard(name: LoginViewController.identifier, bundle: nil).instantiateViewController(withIdentifier: LoginViewController.identifier) as? LoginViewController
@@ -96,6 +101,11 @@ class RegisterViewController: UIViewController {
         passwordRepeatTextfield.placeholder = registerStrings.passwordRepeatPlaceholderText
         registerButton.setTitle(registerStrings.registerButtonTitle, for: .normal)
         loginScreenButton.setTitle(registerStrings.loginScreenButtonTitle, for: .normal)
+                    
+                    
+                    viewModel.setProfileValues(profile: Profile(name: "", email: "")) {
+                        print("")
+                    }
     }
     
     private func setupElements() {

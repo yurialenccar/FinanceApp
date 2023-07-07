@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 class FirestoreService {
     private let db = Firestore.firestore()
-    public var user: String = userLogged ?? "default"
+    public var user: String = "user_" + (userLogged ?? "default")
     private var documentName: String
     private let docRef: DocumentReference
     
@@ -84,7 +84,7 @@ class FirestoreService {
         }
     }
     
-    public func getObjectData<T: Codable>(forObjectType objectType: T.Type, documentReadName: String, completion: @escaping (Result<[T], Error>) -> Void) {
+    public func getObjectsArrayData<T: Codable>(forObjectType objectType: T.Type, documentReadName: String, completion: @escaping (Result<[T], Error>) -> Void) {
         db.collection(user).document(documentReadName).getDocument { document, error in
             
             if let error = error {
@@ -121,11 +121,45 @@ class FirestoreService {
     private func setDataInDocument(data: [String: Any], completion: @escaping (String) -> Void) {
         let docRefSet = db.collection(user).document(documentName)
         docRefSet.setData(data) { error in
-                if let error = error {
-                    completion("Error writing document: \(error.localizedDescription)!")
-                } else {
-                    completion("Success")
-                }
+            if let error = error {
+                completion("Error writing document: \(error.localizedDescription)!")
+            } else {
+                completion("Success")
             }
         }
+    }
+    
+    public func setObject<T: Encodable>(_ object: T, documentName: String, completion: @escaping () -> Void) {
+        do {
+            let objectData = try Firestore.Encoder().encode(object) // Converte o objeto goal em um dicionário
+            let data: [String: Any] = [documentName: objectData] // Cria um dicionário com o campo "objeto1" contendo o objeto goal
+
+            db.collection(user).document(documentName).setData(data)
+            completion()
+        } catch let error {
+            print("Error writing document: \(error.localizedDescription)!")
+            completion()
+        }
+    }
+    
+    public func getObject<T: Decodable>(documentName: String, objectType: T.Type, completion: @escaping (T?) -> Void) {
+        db.collection(user).document(documentName).getDocument { (document, error) in
+            if let document = document, document.exists {
+                guard let documentData = document.data(), let objectData = documentData[documentName] as? [String: Any] else {
+                    completion(nil)
+                    return
+                }
+                do {
+                    let object = try Firestore.Decoder().decode(objectType, from: objectData)
+                    completion(object)
+                } catch let error {
+                    print("Error decoding document: \(error.localizedDescription)!")
+                    completion(nil)
+                }
+            } else {
+                print("Document does not exist!")
+                completion(nil)
+            }
+        }
+    }
 }

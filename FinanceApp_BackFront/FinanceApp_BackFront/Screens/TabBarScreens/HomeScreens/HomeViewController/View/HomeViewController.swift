@@ -30,11 +30,14 @@ class HomeViewController: UIViewController {
         setupStrings()
         setupUIComponents()
         setupObserver()
-        viewModel.updateObjects {
-            self.viewModel.updateBalanceValues()
-            self.setupHorizontalCollectionView()
-            self.setupVerticalCollectionView()
-            self.dataLoaded = true
+        viewModel.updateProfileInformations() {
+            self.nameLabel.text = Utils.getUserDefaults(key: "userName") as? String ?? globalStrings.error
+            self.viewModel.updateObjects {
+                self.viewModel.updateBalanceValues()
+                self.setupHorizontalCollectionView()
+                self.setupVerticalCollectionView()
+                self.dataLoaded = true
+            }
         }
     }
 

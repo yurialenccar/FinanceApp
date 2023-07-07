@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct Profile {
+struct Profile: Codable {
     var name: String
     var email: String
-    var telefone: String
 }

@@ -10,6 +10,8 @@ import UIKit
 class MoreOptionsViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var resourcesLabel: UILabel!
     @IBOutlet weak var accountsButton: UIButton!
     @IBOutlet weak var creditCardsButton: UIButton!
@@ -32,6 +34,7 @@ class MoreOptionsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+        setupUserInformation()
     }
     
     @IBAction func tappedCategoriesButton(_ sender: UIButton) {
@@ -78,6 +81,11 @@ class MoreOptionsViewController: UIViewController {
         profileButton.setTitle(moreOptionsStrings.profileText, for: .normal)
         currencySelectionButton.setTitle(moreOptionsStrings.currencyText, for: .normal)
         logoutButton.setTitle(moreOptionsStrings.logoutText, for: .normal)
+    }
+    
+    private func setupUserInformation() {
+        self.nameLabel.text = Utils.getUserDefaults(key: "userName") as? String ?? globalStrings.error
+        self.emailLabel.text = Utils.getUserDefaults(key: "userEmail") as? String ?? globalStrings.error
     }
 }
 

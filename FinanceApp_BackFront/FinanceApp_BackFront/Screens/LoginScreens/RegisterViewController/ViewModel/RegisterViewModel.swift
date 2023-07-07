@@ -17,8 +17,8 @@ class RegisterViewModel {
             if error == nil {
                 self.loginUser(email: email, password: password) { result in
                     if result {
-                        self.serviceFirestore.user = authResult?.user.uid ?? "Default"
-                        self.setProfileValues() {
+                        self.serviceFirestore.user = "user_" + (authResult?.user.uid ?? "")
+                        self.createDefaultAccount() {
                             completion(registerStrings.registerAndLoginSuccessText)
                         }
                     } else {
@@ -44,12 +44,18 @@ class RegisterViewModel {
         }
     }
     
-    private func setProfileValues(completion: @escaping () -> Void) {
+    private func createDefaultAccount(completion: @escaping () -> Void) {
         let defaultAccount: [BankAccount] = [BankAccount(desc: "Minha Conta", bank: .other, overdraft: 0.0, standardAccount: true, obs: globalStrings.emptyString)]
         serviceFirestore.setArrayObject(defaultAccount) { result in
             if result != "Success" {
                 print(result)
             }
+            completion()
+        }
+    }
+    
+    public func setProfileValues(profile: Profile, completion: @escaping () -> Void) {
+        serviceFirestore.setObject(profile, documentName: "profile") {
             completion()
         }
     }

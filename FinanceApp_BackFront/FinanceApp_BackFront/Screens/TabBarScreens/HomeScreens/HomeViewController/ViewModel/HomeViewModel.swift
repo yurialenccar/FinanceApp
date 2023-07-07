@@ -10,6 +10,7 @@ import Foundation
 struct HomeViewModel {
     
     private var service: FirestoreService = FirestoreService(documentName: "Home")
+    //private var utils: Utils = Utils()
     
     private var incomesTotal: Double = 0.0
     private var expensesTotal: Double = 0.0
@@ -26,7 +27,7 @@ struct HomeViewModel {
     }
     
     public func updateTransactions(completion: @escaping () -> Void) {
-        service.getObjectData(forObjectType: Transactions.self, documentReadName: "transactionsList") { result in
+        service.getObjectsArrayData(forObjectType: Transactions.self, documentReadName: "transactionsList") { result in
             switch result {
             case .success(let objectsArray):
                 transactions = objectsArray
@@ -38,12 +39,24 @@ struct HomeViewModel {
     }
     
     public func updateAccounts(completion: @escaping () -> Void) {
-        service.getObjectData(forObjectType: BankAccount.self, documentReadName: "bankAccountsList") { result in
+        service.getObjectsArrayData(forObjectType: BankAccount.self, documentReadName: "bankAccountsList") { result in
             switch result {
             case .success(let object):
                 bankAccountsList = object
             case .failure(let error):
                 print(error.localizedDescription)
+            }
+            completion()
+        }
+    }
+    
+    public func updateProfileInformations(completion: @escaping () -> Void) {
+        var profile: Profile = Profile(name: "", email: "")
+        service.getObject(documentName: "profile", objectType: Profile.self) { result in
+            if let objet = result {
+                profile = objet
+                Utils.saveUserDefaults(value: profile.name, key: "userName")
+                Utils.saveUserDefaults(value: profile.email, key: "userEmail")
             }
             completion()
         }

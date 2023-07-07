@@ -16,7 +16,7 @@ class GoalsViewModel {
     private var goalsList: [Goal] = []
     
     public func updateGoals(completion: @escaping () -> Void) {
-        service.getObjectData(forObjectType: Goal.self, documentReadName: "goalsList") { result in
+        service.getObjectsArrayData(forObjectType: Goal.self, documentReadName: "goalsList") { result in
             switch result {
             case .success(let objectsArray):
                 self.goalsList = objectsArray
