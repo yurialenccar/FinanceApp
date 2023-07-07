@@ -218,7 +218,7 @@ extension EditBankAccountsViewController: UITableViewDelegate, UITableViewDataSo
 }
 
 extension EditBankAccountsViewController: InsertNumbersModalProtocol {
-    func numberSelected(_ value: Double, id: Int) {
+    func didSelectedNumber(_ value: Double, id: Int) {
         if id == 0 {
             updateBalanceValue(value)
         } else if id == 1 {

@@ -124,7 +124,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case horizontalCollectionView:
             return 1
         case verticalCollectionView:
-            return 4
+            if transactions.count > 0 {
+                return 4
+            } else {
+                return 2
+            }
         default:
             return 0
         }

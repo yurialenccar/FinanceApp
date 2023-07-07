@@ -23,7 +23,6 @@ let bankProperties: [Banks: BankProperties] = [
     .inter: BankProperties(textNameBank:"Banco Inter", logoTextLabel: "INTER", logoTextSize: 13, backgroundColor: .orange, labelBankColor: .white),
     .santander: BankProperties(textNameBank:"Banco Santander", logoTextLabel: "SANT", logoTextSize: 16, backgroundColor: .red, labelBankColor: .white),
     .caixa: BankProperties(textNameBank:"Banco Caixa", logoTextLabel: "CAIXA", logoTextSize: 13, backgroundColor: .blue, labelBankColor: .orange),
-    .bancoDoBrasil: BankProperties(textNameBank:"Banco do Brasil", logoTextLabel: "Banco Brasil", logoTextSize: 13, backgroundColor: .yellow, labelBankColor: .blue)
+    .bancoDoBrasil: BankProperties(textNameBank:"Banco do Brasil", logoTextLabel: "Banco Brasil", logoTextSize: 13, backgroundColor: .yellow, labelBankColor: .blue),
+    .other: BankProperties(textNameBank: "Outro", logoTextLabel: "MC", logoTextSize: 17, backgroundColor: .lightGray, labelBankColor: .black)
 ]
-
-

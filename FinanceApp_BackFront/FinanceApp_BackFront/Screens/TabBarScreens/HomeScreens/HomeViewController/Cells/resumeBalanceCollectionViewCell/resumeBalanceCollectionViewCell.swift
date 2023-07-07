@@ -48,22 +48,15 @@ class resumeBalanceCollectionViewCell: UICollectionViewCell {
             } else if card.balance < 0 {
                 backgroundColor = .RedGeneralExpenses
             } else {
-                backgroundColor = .backgroundColor
+                backgroundColor = .lightGray
             }
         }
-
-        //typeImage.image?.renderingMode = .alwaysTemplate
        
-        
         if hideInformations == true {
             valueLabel.text = globalStrings.circleHiddenInformation
         } else {
             valueLabel.text = card.balance.toStringMoney()
         }
-        
-        
-        
-        
     }
 
 }

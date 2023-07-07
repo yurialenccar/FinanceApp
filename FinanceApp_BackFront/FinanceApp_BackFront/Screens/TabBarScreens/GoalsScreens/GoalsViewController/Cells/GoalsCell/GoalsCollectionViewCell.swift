@@ -24,12 +24,13 @@ class GoalsCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
     
-    func setupCell(goal:Goal){
+    func setupCell(goal:Goal) {
         descLabel.text = goal.desc
-        goalImage.image = UIImage(imageLiteralResourceName: goal.imageName)
+        goalImage.image = UIImage(named: goal.imageName)?.withRenderingMode(.alwaysTemplate)
+        goalImage.tintColor = .systemGray
         dateLabel.text = goal.targetDate
         savedAmountLabel.text = goal.savedAmount.toStringMoney()
         goalValueLabel.text = "/ \(goal.goalValue.toStringMoney())"

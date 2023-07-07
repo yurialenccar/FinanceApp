@@ -31,6 +31,7 @@ class EditGoalViewController: UIViewController {
     var viewModel:EditGoalViewModel=EditGoalViewModel()
     var initialAmountValue: Double = 0.0
     var targetValue: Double = 0.0
+    var imageName: String = "image04"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,14 @@ class EditGoalViewController: UIViewController {
     }
     
     @IBAction func tappedChangeImageButton(_ sender: UIButton) {
-        //função de escolha de imagens será criada assim que o conjunto de imagens for definido
+
+        let storyboard = UIStoryboard(name: CategoryImagesModalViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: CategoryImagesModalViewController.identifier) as? CategoryImagesModalViewController
+        vc?.delegate = self
+        if let presentationController = vc?.presentationController as? UISheetPresentationController{
+            presentationController.detents = [.medium()]
+        }
+        self.present(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func tappedCreateGoalButton(_ sender: UIButton) {
@@ -80,7 +88,7 @@ class EditGoalViewController: UIViewController {
         } else {
             delegate?.didSavedGoal(Goal(
                 desc: descTextField.text.orEmpty,
-                imageName: goalStrings.casaText,
+                imageName: imageName,
                 savedAmount: initialAmountValue,
                 goalValue: targetValue,
                 targetDate: targetDateTextField.text.orEmpty
@@ -162,6 +170,10 @@ class EditGoalViewController: UIViewController {
         }
         return missing
     }
+    
+    private func updateCategoryImage(_ imageName: String) {
+        goalImage.image = UIImage(named: imageName)
+    }
 }
 
 extension EditGoalViewController: UITextFieldDelegate {
@@ -171,12 +183,17 @@ extension EditGoalViewController: UITextFieldDelegate {
     }
 }
 
-extension EditGoalViewController: InsertNumbersModalProtocol {
-    func numberSelected(_ value: Double, id: Int) {
+extension EditGoalViewController: InsertNumbersModalProtocol, CategoryImagesModalProtocol {
+    func didSelectedNumber(_ value: Double, id: Int) {
         if id == 0 {
             updateInitialAmountValue(value)
         } else if id == 1 {
             updateTargetValue(value)
         }
+    }
+    
+    func didSelectedImage(imageIndex: String) {
+        imageName = "image" + imageIndex
+        updateCategoryImage(imageName)
     }
 }

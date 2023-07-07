@@ -8,7 +8,7 @@
 import UIKit
 
 protocol InsertNumbersModalProtocol: AnyObject {
-    func numberSelected(_ value: Double, id: Int)
+    func didSelectedNumber(_ value: Double, id: Int)
 }
 
 class InsertNumbersModalViewController: UIViewController {
@@ -171,7 +171,7 @@ class InsertNumbersModalViewController: UIViewController {
             let numbers = expression.suffix(from: expression.index(expression.startIndex, offsetBy: 3))
             value = Double(numbers) ?? 0.0
         }
-        delegate?.numberSelected(value, id: id)
+        delegate?.didSelectedNumber(value, id: id)
         dismiss(animated: true)
     }
     

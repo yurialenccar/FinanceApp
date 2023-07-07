@@ -193,7 +193,7 @@ extension RegisterCardExpenseViewController:CategoriesModalDelegate, CardModalDe
         idCardSelected = creditCardsList[indexCard].getId()
     }
     
-    func numberSelected(_ value: Double, id: Int) {
+    func didSelectedNumber(_ value: Double, id: Int) {
         updateAmountValue(value)
     }
 }

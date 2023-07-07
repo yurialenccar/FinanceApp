@@ -33,6 +33,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Cancelar"/>
+                                        <connections>
+                                            <action selector="tappedCancelButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="U6W-a6-2FY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0g-No-n4w">
                                         <rect key="frame" x="233" y="315" width="120" height="35"/>
@@ -41,6 +44,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Selecionar"/>
+                                        <connections>
+                                            <action selector="tappedSelectButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="x7I-6y-1lq"/>
+                                        </connections>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IGo-Ug-gcL">
                                         <rect key="frame" x="0.0" y="56" width="393" height="249"/>

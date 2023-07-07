@@ -160,7 +160,7 @@ class CurrencyViewController: UIViewController {
 }
 
 extension CurrencyViewController: InsertNumbersModalProtocol {
-    func numberSelected(_ value: Double, id: Int) {
+    func didSelectedNumber(_ value: Double, id: Int) {
         updateSourceValue(value)
         updateQuoteValues()
     }
