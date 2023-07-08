@@ -20,6 +20,7 @@ class MoreOptionsViewController: UIViewController {
     @IBOutlet weak var settingsLabel: UILabel!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var profileImage: UIImageView!
     
     var viewModel: MoreOptionsViewModel = MoreOptionsViewModel()
     
@@ -28,6 +29,8 @@ class MoreOptionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStrings()
+        setupUIComponents()
+        setupObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,9 +83,22 @@ class MoreOptionsViewController: UIViewController {
         logoutButton.setTitle(moreOptionsStrings.logoutText, for: .normal)
     }
     
+    private func setupUIComponents(){
+        profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
+        profileImage.clipsToBounds = true
+    }
+    
     private func setupUserInformation() {
         self.nameLabel.text = Utils.getUserDefaults(key: "userName") as? String ?? globalStrings.error
         self.emailLabel.text = Utils.getUserDefaults(key: "userEmail") as? String ?? globalStrings.error
+    }
+    
+    private func setupObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProfileImage), name: Notification.Name(rawValue: homeStrings.profileImageUpdatedNotification), object: nil)
+    }
+    
+    @objc func updateProfileImage(notification:NSNotification) {
+        profileImage.image = notification.object as? UIImage
     }
 }
 

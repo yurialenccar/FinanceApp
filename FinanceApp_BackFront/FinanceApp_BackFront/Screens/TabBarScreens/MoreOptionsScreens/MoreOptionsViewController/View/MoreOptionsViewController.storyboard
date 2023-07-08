@@ -34,7 +34,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kDK-Iu-RQV">
                                 <rect key="frame" x="15" y="94" width="350" height="42"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefault" translatesAutoresizingMaskIntoConstraints="NO" id="N9C-H8-16H">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefault" translatesAutoresizingMaskIntoConstraints="NO" id="N9C-H8-16H">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="ExV-qW-uDA"/>
@@ -236,6 +236,7 @@
                         <outlet property="logoutButton" destination="jrD-2y-RWb" id="GSC-x9-JQk"/>
                         <outlet property="nameLabel" destination="wsG-Cl-Na9" id="1wa-f2-2HX"/>
                         <outlet property="profileButton" destination="0He-xf-M5o" id="Cgt-2W-uSA"/>
+                        <outlet property="profileImage" destination="N9C-H8-16H" id="zsd-sA-WwC"/>
                         <outlet property="resourcesLabel" destination="L0U-Ei-stp" id="S56-Yg-eu1"/>
                         <outlet property="settingsLabel" destination="FyF-Rs-5Mq" id="SaU-ep-ORc"/>
                         <outlet property="titleLabel" destination="V5W-h3-JTJ" id="UYh-qK-qqB"/>

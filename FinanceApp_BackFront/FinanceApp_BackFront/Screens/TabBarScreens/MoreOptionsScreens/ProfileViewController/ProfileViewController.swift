@@ -60,7 +60,7 @@ class ProfileViewController: UIViewController {
         saveButton.setTitle(moreOptionsStrings.saveButtonTitle, for: .normal)
     }
     
-    private func setupElements(){
+    private func setupElements() {
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.clipsToBounds = true
         
@@ -95,6 +95,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             profileImage.image = image
+            profileImage.setNeedsLayout()
+            setupElements()
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: moreOptionsStrings.notificationNameProfileImage), object: image)
         }

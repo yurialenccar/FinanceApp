@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import Lottie
 
 class HomeViewController: UIViewController {
     
@@ -20,6 +21,7 @@ class HomeViewController: UIViewController {
     
     static let identifier:String = String(describing: HomeViewController.self)
     var  viewModel : HomeViewModel = HomeViewModel()
+    let animationView: LottieAnimationView = .init(name: globalStrings.loadingLottie)
     var hideInformations = false
     var dataLoaded: Bool = false
     
@@ -30,6 +32,7 @@ class HomeViewController: UIViewController {
         setupStrings()
         setupUIComponents()
         setupObserver()
+        setupLottie()
         viewModel.updateProfileInformations() {
             self.viewModel.updateObjects {
                 self.nameLabel.text = Utils.getUserDefaults(key: "userName") as? String ?? globalStrings.error
@@ -37,6 +40,7 @@ class HomeViewController: UIViewController {
                 self.setupHorizontalCollectionView()
                 self.setupVerticalCollectionView()
                 self.dataLoaded = true
+                self.showData()
             }
         }
     }
@@ -70,6 +74,9 @@ class HomeViewController: UIViewController {
     private func setupUIComponents(){
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.clipsToBounds = true
+        
+        horizontalCollectionView.isHidden = true
+        verticalCollectionView.isHidden = true
     }
     
     private func setupHorizontalCollectionView() {
@@ -102,6 +109,29 @@ class HomeViewController: UIViewController {
         verticalCollectionView.register(TransactionsCollectionViewCell.nib(), forCellWithReuseIdentifier: TransactionsCollectionViewCell.identifier)
     }
     
+    private func setupLottie() {
+            animationView.translatesAutoresizingMaskIntoConstraints = false
+            animationView.frame = view.frame
+            animationView.contentMode = .scaleAspectFit
+            animationView.loopMode = .loop
+            animationView.animationSpeed = 1.0
+            view.addSubview(animationView)
+            animationView.play()
+            
+            NSLayoutConstraint.activate([
+                animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 60),
+                animationView.heightAnchor.constraint(equalToConstant: 100),
+                animationView.widthAnchor.constraint(equalToConstant: 100),
+            ])
+    }
+    
+    private func showData() {
+        animationView.isHidden = true
+        horizontalCollectionView.isHidden = false
+        verticalCollectionView.isHidden = false
+    }
+    
     private func updateInformationsVisibility(informationsHidden: Bool) {
         if informationsHidden == true {
             hideInformationsButton.setImage(.closedEye, for: .normal)
@@ -119,6 +149,7 @@ class HomeViewController: UIViewController {
     @objc func updateProfileImage(notification:NSNotification) {
         profileImage.image = notification.object as? UIImage
     }
+    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

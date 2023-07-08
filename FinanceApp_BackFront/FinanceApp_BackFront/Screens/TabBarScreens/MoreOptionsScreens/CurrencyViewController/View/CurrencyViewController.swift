@@ -85,7 +85,7 @@ class CurrencyViewController: UIViewController {
     }
     
     
-    func setupLottie() {
+    private func setupLottie() {
             animationView.translatesAutoresizingMaskIntoConstraints = false
             animationView.frame = view.frame
             animationView.contentMode = .scaleAspectFit
