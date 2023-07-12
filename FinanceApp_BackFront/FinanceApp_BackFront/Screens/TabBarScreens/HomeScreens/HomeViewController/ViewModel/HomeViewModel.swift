@@ -9,8 +9,7 @@ import Foundation
 
 struct HomeViewModel {
     
-    private var service: FirestoreService = FirestoreService(documentName: "Home")
-    //private var utils: Utils = Utils()
+    private var service: FirestoreService = FirestoreService()
     
     private var incomesTotal: Double = 0.0
     private var expensesTotal: Double = 0.0
@@ -18,19 +17,39 @@ struct HomeViewModel {
     private var lastIncomeDate: String = globalStrings.emptyString
     private var lastExpenseDate: String = globalStrings.emptyString
     
-    public func updateObjects(completion: @escaping () -> Void) {
-        updateAccounts() {
-            updateTransactions {
-                completion()
-            }
+    public func getAllData(completion: @escaping () -> Void) {
+        let group = DispatchGroup()
+        
+        group.enter()
+        getTransactions() {
+            group.leave()
+        }
+        
+        group.enter()
+        getAccounts() {
+            group.leave()
+        }
+        
+        group.enter()
+        getCreditCards() {
+            group.leave()
+        }
+        
+        group.enter()
+        getProfileInformations() {
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            completion()
         }
     }
     
-    public func updateTransactions(completion: @escaping () -> Void) {
-        service.getObjectsArrayData(forObjectType: Transactions.self, documentReadName: "transactionsList") { result in
+    private func getTransactions(completion: @escaping () -> Void) {
+        service.getObjectsArrayData(forObjectType: Transactions.self, documentReadName: firebaseDocumentNames.transactions) { result in
             switch result {
             case .success(let objectsArray):
-                transactions = objectsArray
+                transactionsList = objectsArray
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -38,8 +57,8 @@ struct HomeViewModel {
         }
     }
     
-    public func updateAccounts(completion: @escaping () -> Void) {
-        service.getObjectsArrayData(forObjectType: BankAccount.self, documentReadName: "bankAccountsList") { result in
+    private func getAccounts(completion: @escaping () -> Void) {
+        service.getObjectsArrayData(forObjectType: BankAccount.self, documentReadName: firebaseDocumentNames.bankAccounts) { result in
             switch result {
             case .success(let object):
                 bankAccountsList = object
@@ -50,28 +69,25 @@ struct HomeViewModel {
         }
     }
     
-    public func updateProfileInformations(completion: @escaping () -> Void) {
-        var profile: Profile = Profile(name: "", email: "")
-        service.getObject(documentName: "profile", objectType: Profile.self) { result in
-            if let objet = result {
-                profile = objet
-                Utils.saveUserDefaults(value: profile.name, key: "userName")
-                Utils.saveUserDefaults(value: profile.email, key: "userEmail")
+    private func getCreditCards(completion: @escaping () -> Void) {
+        service.getObjectsArrayData(forObjectType: CreditCard.self, documentReadName: firebaseDocumentNames.creditCards) { result in
+            switch result {
+            case .success(let object):
+                creditCardsList = object
+            case .failure(let error):
+                print(error.localizedDescription)
             }
             completion()
         }
     }
     
-    
-    public func confirmAllAccountsIDs(){
-        for i in 0..<bankAccountsList.count {
-            bankAccountsList[i].setId(homeStrings.accountIdText + i.toStringTwoDigits())
-        }
-    }
-    
-    public func confirmAllCardsIDs(){
-        for i in 0..<creditCardsList.count {
-            creditCardsList[i].setId(homeStrings.cardIdText + i.toStringTwoDigits())
+    public func getProfileInformations(completion: @escaping () -> Void) {
+        service.getObject(documentName: firebaseDocumentNames.profile, objectType: Profile.self) { result in
+            if let objet = result {
+                Utils.saveUserDefaults(value: objet.name, key: "userName")
+                Utils.saveUserDefaults(value: objet.email, key: "userEmail")
+            }
+            completion()
         }
     }
     
@@ -82,7 +98,7 @@ struct HomeViewModel {
         lastIncomeDate = globalStrings.emptyString
         lastExpenseDate = globalStrings.emptyString
         
-        for transaction in transactions {
+        for transaction in transactionsList {
             if transaction.type == .income {
                 incomesTotal += transaction.amount
                 if lastIncomeDate.isEmpty {

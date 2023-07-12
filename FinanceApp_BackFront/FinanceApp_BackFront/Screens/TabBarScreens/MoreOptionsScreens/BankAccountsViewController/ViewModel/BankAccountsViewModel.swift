@@ -10,11 +10,11 @@ import UIKit
  
 class BankAccountsViewModel {
     
-    private var service: FirestoreService = FirestoreService(documentName: "bankAccountsList")
+    private var service: FirestoreService = FirestoreService(documentName: firebaseDocumentNames.bankAccounts)
     
     
     public func updateAccounts(completion: @escaping () -> Void) {
-        service.getObjectsArrayData(forObjectType: BankAccount.self, documentReadName: "bankAccountsList") { result in
+        service.getObjectsArrayData(forObjectType: BankAccount.self, documentReadName: firebaseDocumentNames.bankAccounts) { result in
             switch result {
             case .success(let objectArray):
                 bankAccountsList = objectArray
@@ -55,20 +55,18 @@ class BankAccountsViewModel {
     }
     
     public func createNewAccount(_ newAccount: BankAccount, newBalance: Double, completion: @escaping () -> Void) {
-        var account = newAccount
-        account.setId(createNewBankAccountId())
-        
-        if account.standardAccount {
+        if newAccount.standardAccount {
             clearStandardAccount()
         }
         
         if newBalance != 0{
-            account.adjustBalance(newBalance: newBalance)
+            adjustBalance(newBalance: newBalance, oldBalance: 0, account: newAccount, completion: completion)
         }
         
-        bankAccountsList.append(account)
+        bankAccountsList.append(newAccount)
         
-        service.setArrayObject(bankAccountsList) { result in
+        service.setDocumentName(firebaseDocumentNames.bankAccounts)
+        service.addObjectInArray(newAccount) { result in
             if result != "Success" {
                 print(result)
             }
@@ -77,16 +75,52 @@ class BankAccountsViewModel {
     }
     
     public func editAccount(account: BankAccount, indexAccount: Int, newBalance: Double, completion: @escaping () -> Void) {
+        let oldBalance: Double = bankAccountsList[indexAccount].balance
+        
         if account.standardAccount {
             clearStandardAccount()
         }
-        bankAccountsList[indexAccount] = account
+        bankAccountsList[indexAccount].desc = account.desc
+        bankAccountsList[indexAccount].overdraft = account.overdraft
+        bankAccountsList[indexAccount].bank = account.bank
+        bankAccountsList[indexAccount].standardAccount = account.standardAccount
+        bankAccountsList[indexAccount].obs = account.obs
         
-        if newBalance != account.balance {
-            account.adjustBalance(newBalance: newBalance)
+        if newBalance != oldBalance {
+            adjustBalance(newBalance: newBalance, oldBalance: oldBalance, account: bankAccountsList[indexAccount], completion: completion)
         }
         
+        service.setDocumentName(firebaseDocumentNames.bankAccounts)
         service.setArrayObject(bankAccountsList) { result in
+            if result != "Success" {
+                print(result)
+            }
+            completion()
+        }
+    }
+    
+    private func adjustBalance(newBalance: Double, oldBalance: Double, account: BankAccount, completion: @escaping () -> Void) {
+        let valueNewTransaction: Double = newBalance - oldBalance
+        var transactionType: TransactionType
+        
+        if valueNewTransaction >= 0 {
+            transactionType = .income
+        } else{
+            transactionType = .expense
+        }
+        
+        transactionsList.append(Transactions(
+                                    desc: "Ajuste de saldo na Conta",
+                                    amount: valueNewTransaction,
+                                    categoryIndex: 0,
+                                    date: Date().toString(format: "dd/MM/yyyy"),
+                                    type: transactionType,
+                                    accountId: account.getId(),
+                                    obs: "Conta: \(account.desc)"
+        ))
+        
+        service.setDocumentName(firebaseDocumentNames.transactions)
+        service.setArrayObject(transactionsList) { result in
             if result != "Success" {
                 print(result)
             }
@@ -103,18 +137,6 @@ class BankAccountsViewModel {
             }
             completion()
         }
-    }
-    
-    private func createNewBankAccountId() -> String {
-        var num = bankAccountsList.count
-        
-        let existingIds = Set(bankAccountsList.map { $0.getId() })
-        
-        while existingIds.contains(moreOptionsStrings.accountIdText + num.toStringTwoDigits()) {
-            num += 1
-        }
-        
-        return moreOptionsStrings.accountIdText + num.toStringTwoDigits()
     }
     
     private func clearStandardAccount() {

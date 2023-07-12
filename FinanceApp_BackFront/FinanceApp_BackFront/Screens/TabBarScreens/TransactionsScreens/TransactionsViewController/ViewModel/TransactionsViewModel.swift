@@ -13,7 +13,7 @@ struct TransactionsViewModel {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = globalStrings.dateFormat
 
-        transactions = transactions.sorted(by: { transaction1, transaction2 in
+        transactionsList = transactionsList.sorted(by: { transaction1, transaction2 in
             let data1 = dateFormatter.date(from: transaction1.date)!
             let data2 = dateFormatter.date(from: transaction2.date)!
             return data1 > data2
@@ -21,11 +21,11 @@ struct TransactionsViewModel {
     }
     
     public func getTransactionsCount() -> Int {
-        return transactions.count
+        return transactionsList.count
     }
     
     public func getItemTransactions(_ index:Int) -> Transactions {
-        return transactions[index]
+        return transactionsList[index]
     }
     
     public func getCellSize(viewWidth:CGFloat) -> CGSize {
@@ -33,7 +33,7 @@ struct TransactionsViewModel {
     }
 }
 
-var transactions: [Transactions] = [
+var transactionsList: [Transactions] = [
 //    Transactions(desc: "Hamburgueria", amount: -59.00, categoryIndex: 0, date: "29/03/2023",type: .expense, accountId: "account01", obs: ""),
 //    Transactions(desc: "Aluguel", amount: -1500.00, categoryIndex: 1, date: "28/03/2023",type: .expense, accountId: "account01", obs: ""),
 //    Transactions(desc: "Pizza", amount: -41.00, categoryIndex: 0, date: "29/03/2023",type: .expense, accountId: "account01", obs: ""),

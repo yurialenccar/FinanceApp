@@ -26,7 +26,6 @@ class AccountsBallanceCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupTableView()
-        tableViewHeightConstraint.constant = CGFloat(bankAccountsList.count * 60)
     }
     
     func setupTableView(){
@@ -37,7 +36,6 @@ class AccountsBallanceCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCell(accountsList: [BankAccount], hideInformations: Bool) {
-        
         if hideInformations {
             totalBalanceValueLabel.text =  globalStrings.dashHiddenInformation
             totalBalanceValueLabel.textColor = .black
@@ -53,9 +51,10 @@ class AccountsBallanceCollectionViewCell: UICollectionViewCell {
             }
         }
         
-        accountsTableView.reloadData()
         self.bankAccountList = accountsList
         self.hideInformations = hideInformations
+        tableViewHeightConstraint.constant = CGFloat(bankAccountsList.count * 60)
+        accountsTableView.reloadData()
     }
 }
 

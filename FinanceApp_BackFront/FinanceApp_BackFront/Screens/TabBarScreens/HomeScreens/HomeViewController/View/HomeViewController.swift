@@ -27,21 +27,17 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.confirmAllAccountsIDs()
-        viewModel.confirmAllCardsIDs()
         setupStrings()
         setupUIComponents()
         setupObserver()
         setupLottie()
-        viewModel.updateProfileInformations() {
-            self.viewModel.updateObjects {
-                self.nameLabel.text = Utils.getUserDefaults(key: "userName") as? String ?? globalStrings.error
-                self.viewModel.updateBalanceValues()
-                self.setupHorizontalCollectionView()
-                self.setupVerticalCollectionView()
-                self.dataLoaded = true
-                self.showData()
-            }
+        viewModel.getAllData {
+            self.nameLabel.text = Utils.getUserDefaults(key: "userName") as? String ?? globalStrings.error
+            self.viewModel.updateBalanceValues()
+            self.setupHorizontalCollectionView()
+            self.setupVerticalCollectionView()
+            self.dataLoaded = true
+            self.showData()
         }
     }
 
@@ -159,7 +155,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case horizontalCollectionView:
             return 1
         case verticalCollectionView:
-            if transactions.count > 0 {
+            if transactionsList.count > 0 {
                 return 4
             } else {
                 return 2
@@ -178,7 +174,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 return 1
             } else {
                 let maxVisibleTransactions = 4
-                return min(transactions.count, maxVisibleTransactions)
+                return min(transactionsList.count, maxVisibleTransactions)
             }
         default:
             return 0
@@ -216,7 +212,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionsCollectionViewCell.identifier, for: indexPath) as! TransactionsCollectionViewCell
                 cell.layer.cornerRadius = 10
                 cell.layer.masksToBounds = true
-                cell.setup(with: transactions[indexPath.row])
+                cell.setup(with: transactionsList[indexPath.row])
                 return cell
             default:
                 return UICollectionViewCell()

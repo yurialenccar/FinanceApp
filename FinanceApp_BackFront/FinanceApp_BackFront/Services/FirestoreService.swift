@@ -11,13 +11,24 @@ import FirebaseFirestoreSwift
 
 class FirestoreService {
     private let db = Firestore.firestore()
-    public var user: String = "user_" + (userLogged ?? "default")
+    public var user: String
     private var documentName: String
-    private let docRef: DocumentReference
     
-    init(documentName: String) {
+    private var docRef: DocumentReference {
+        return db.collection(user).document(documentName)
+    }
+    
+    init(documentName: String = "default") {
+        self.user = "user_" + (userLogged ?? "default")
         self.documentName = documentName
-        self.docRef = db.collection(user).document(documentName)
+    }
+    
+    public func setUser(_ userUid: String) {
+        user = "user_" + (userLogged ?? "default")
+    }
+    
+    public func setDocumentName(_ name: String) {
+        self.documentName = name
     }
     
     public func addObjectInArray <T: Encodable> (_ object: T, completion: @escaping (String) -> Void) {

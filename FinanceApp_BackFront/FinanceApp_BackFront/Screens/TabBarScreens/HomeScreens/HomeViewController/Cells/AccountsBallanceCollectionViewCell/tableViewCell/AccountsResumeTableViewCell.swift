@@ -25,7 +25,7 @@ class AccountsResumeTableViewCell: UITableViewCell {
         
     }
     
-    func setupCell(bankAccount:BankAccount, hideInformations: Bool){
+    func setupCell(bankAccount: BankAccount, hideInformations: Bool){
         descAccountLabel.text = bankAccount.desc
         
         if hideInformations {

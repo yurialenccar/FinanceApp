@@ -18,7 +18,7 @@ func sumExpensesByCategory() -> [CategoriesSum] {
     var list = [String:Double] ()
     var totalAmount:Double = 0.0
     
-    for transaction in transactions where transaction.type == .expense{
+    for transaction in transactionsList where transaction.type == .expense{
 
         let category: String = expenseCategories[transaction.categoryIndex].name
         

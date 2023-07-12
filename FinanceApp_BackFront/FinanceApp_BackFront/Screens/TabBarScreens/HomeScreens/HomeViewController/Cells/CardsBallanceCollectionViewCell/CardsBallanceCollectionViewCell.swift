@@ -11,8 +11,11 @@ class CardsBallanceCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var cardsTableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var separatorLineView: UIView!
     @IBOutlet weak var totalInvoiceTextLabel: UILabel!
     @IBOutlet weak var totalInvoiceValueLabel: UILabel!
+    @IBOutlet weak var noCardsLabel: UILabel!
+    @IBOutlet weak var createCardButton: UIButton!
     
     static let identifier:String = String(describing: CardsBallanceCollectionViewCell.self)
     
@@ -26,36 +29,61 @@ class CardsBallanceCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupTableView()
-        
     }
     
-    func setupTableView(){
+    private func setupTableView(){
         cardsTableView.delegate = self
         cardsTableView.dataSource = self
         cardsTableView.separatorStyle = .none
         cardsTableView.register(CardsResumeTableViewCell.nib(), forCellReuseIdentifier: CardsResumeTableViewCell.identifier)
     }
     
-    func setupCell(cardsList: [CreditCard], hideInformations: Bool) {
-        if hideInformations {
-            totalInvoiceValueLabel.text = globalStrings.dashHiddenInformation
-            totalInvoiceValueLabel.textColor = .black
-        } else {
-            let total:Double = cardsList.reduce(0) { $0 + $1.invoiceTotal}
-            totalInvoiceValueLabel.text = total.toStringMoney()
-            if total > 0 {
-                totalInvoiceValueLabel.textColor = .GreenGeneralIncomes
-            } else if total < 0 {
-                totalInvoiceValueLabel.textColor = .RedGeneralExpenses
-            } else {
-                totalInvoiceValueLabel.textColor = .black
-            }
-        }
+    private func noCardsToShow(noCards: Bool) {
+        if noCards {
+            cardsTableView.isHidden = true
+            totalInvoiceTextLabel.isHidden = true
+            totalInvoiceValueLabel.isHidden = true
+            separatorLineView.isHidden = true
+            noCardsLabel.isHidden = false
+            createCardButton.isHidden = false
             
-        self.creditCardList = cardsList
-        self.hideInformations = hideInformations
-        tableViewHeightConstraint.constant = CGFloat(cardsList.count * 60)
-        cardsTableView.reloadData()
+        } else {
+            cardsTableView.isHidden = false
+            totalInvoiceTextLabel.isHidden = false
+            totalInvoiceValueLabel.isHidden = false
+            separatorLineView.isHidden = false
+            noCardsLabel.isHidden = true
+            createCardButton.isHidden = true
+        }
+    }
+    
+    public func setupCell(cardsList: [CreditCard], hideInformations: Bool) {
+        if cardsList.isEmpty {
+            noCardsToShow(noCards: true)
+            tableViewHeightConstraint.constant = CGFloat(60)
+        } else{
+            noCardsToShow(noCards: false)
+            if hideInformations {
+                totalInvoiceValueLabel.text = globalStrings.dashHiddenInformation
+                totalInvoiceValueLabel.textColor = .black
+            } else {
+                let total:Double = cardsList.reduce(0) { $0 + $1.invoiceTotal}
+                totalInvoiceValueLabel.text = total.toStringMoney()
+                if total > 0 {
+                    totalInvoiceValueLabel.textColor = .GreenGeneralIncomes
+                } else if total < 0 {
+                    totalInvoiceValueLabel.textColor = .RedGeneralExpenses
+                } else {
+                    totalInvoiceValueLabel.textColor = .black
+                }
+            }
+                
+            self.creditCardList = cardsList
+            self.hideInformations = hideInformations
+            tableViewHeightConstraint.constant = CGFloat(cardsList.count * 60)
+            cardsTableView.reloadData()
+        }
+        
     }
 }
 

@@ -31,8 +31,8 @@ class AddAccountTransactionsViewModel{
                 newTransaction.desc = incomeCategories[newTransaction.categoryIndex].name
             }
         }
-        transactions.append(newTransaction)
-        setTransactionsInFirebase(transactions, completion: completion)
+        transactionsList.append(newTransaction)
+        setTransactionsInFirebase(transactionsList, completion: completion)
     }
     
     public func setTransactionsInFirebase(_ transactionsList: [Transactions], completion: @escaping () -> Void) {

@@ -12,11 +12,11 @@ import FirebaseFirestoreSwift
 
 class GoalsViewModel {
     
-    private var service: FirestoreService = FirestoreService(documentName: "goalsList")
+    private var service: FirestoreService = FirestoreService(documentName: firebaseDocumentNames.goals)
     private var goalsList: [Goal] = []
     
     public func updateGoals(completion: @escaping () -> Void) {
-        service.getObjectsArrayData(forObjectType: Goal.self, documentReadName: "goalsList") { result in
+        service.getObjectsArrayData(forObjectType: Goal.self, documentReadName: firebaseDocumentNames.goals) { result in
             switch result {
             case .success(let objectsArray):
                 self.goalsList = objectsArray

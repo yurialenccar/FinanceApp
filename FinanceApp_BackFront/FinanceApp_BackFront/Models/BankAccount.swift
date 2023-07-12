@@ -9,7 +9,7 @@ import Foundation
 
 struct BankAccount: Codable {
     
-    private var id: String = ""
+    private var id: String = UUID().uuidString
     var desc : String
     var bank : Banks
     var overdraft: Double
@@ -17,7 +17,7 @@ struct BankAccount: Codable {
     var obs: String
     
     var balance: Double {
-        let filteredTransactions = transactions.filter{ $0.accountId == id}
+        let filteredTransactions = transactionsList.filter { $0.accountId == id}
         return filteredTransactions.reduce(0, {$0 + $1.amount})
     }
     
@@ -28,27 +28,8 @@ struct BankAccount: Codable {
         self.standardAccount = standardAccount
         self.obs = obs
     }
-
-    public func adjustBalance(newBalance:Double){
-        let valueNewTransaction:Double = newBalance - balance
-        var transactionType:TransactionType
-        
-        if valueNewTransaction >= 0{
-            transactionType = .income
-        } else{
-            transactionType = .expense
-        }
-        
-        transactions.append(Transactions(desc: "Ajuste de saldo na Conta", amount: valueNewTransaction, categoryIndex: 0, date: Date().toString(format: "dd/MM/yyyy"), type: transactionType, accountId: id, obs: ""))
-    }
     
     public func getId() -> String {
         return id
-    }
-    
-    public mutating func setId(_ newId: String) {
-        if id == ""{
-            id = newId
-        }
     }
 }

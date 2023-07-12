@@ -10,10 +10,10 @@ import UIKit
 
 class CreditCardsViewModel {
     
-    private var service: FirestoreService = FirestoreService(documentName: "creditCardsList")
+    private var service: FirestoreService = FirestoreService(documentName: firebaseDocumentNames.creditCards)
     
     public func updateCards(completion: @escaping () -> Void) {
-        service.getObjectsArrayData(forObjectType: CreditCard.self, documentReadName: "creditCardsList") { result in
+        service.getObjectsArrayData(forObjectType: CreditCard.self, documentReadName: firebaseDocumentNames.creditCards) { result in
             switch result {
             case .success(let objectArray):
                 creditCardsList = objectArray
@@ -49,14 +49,11 @@ class CreditCardsViewModel {
     }
     
     public func createNewCard(_ newCard: CreditCard, completion: @escaping () -> Void) {
-        var card = newCard
-        card.setId(createNewCreditCardId())
-        
-        if card.standardCard {
+        if newCard.standardCard {
             clearStandardCard()
         }
         
-        creditCardsList.append(card)
+        creditCardsList.append(newCard)
         
         service.setArrayObject(creditCardsList) { result in
             if result != "Success" {
@@ -91,18 +88,6 @@ class CreditCardsViewModel {
         }
     }
     
-    private func createNewCreditCardId() -> String {
-        var num = creditCardsList.count
-        
-        let existingIds = Set(creditCardsList.map { $0.getId() })
-        
-        while existingIds.contains(moreOptionsStrings.cardIdText + num.toStringTwoDigits()) {
-            num += 1
-        }
-        
-        return moreOptionsStrings.accountIdText + num.toStringTwoDigits()
-    }
-    
     private func clearStandardCard() {
         for i in 0..<creditCardsList.count {
             creditCardsList[i].standardCard = false
@@ -110,6 +95,4 @@ class CreditCardsViewModel {
     }
 }
 
-var creditCardsList : [CreditCard] = [
-    CreditCard(desc: "Meu Cartão de Crédito", limit: 2000.0, bank: .other, closingDay: 25, dueDate: 30, standardCard: false, obs: ""),
-]
+var creditCardsList : [CreditCard] = []

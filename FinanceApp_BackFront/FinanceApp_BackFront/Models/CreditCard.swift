@@ -9,7 +9,7 @@ import Foundation
 
 struct CreditCard: Codable {
     
-    private var id: String = ""
+    private var id: String = UUID().uuidString
     var desc : String
     var limit: Double
     var bank : Banks
@@ -48,14 +48,6 @@ struct CreditCard: Codable {
     
     public func getId() -> String {
         return id
-    }
-    
-    public mutating func setId(_ newId: String) {
-        
-        if self.id == "" {
-            self.id = newId
-        }
-            
     }
 }
 

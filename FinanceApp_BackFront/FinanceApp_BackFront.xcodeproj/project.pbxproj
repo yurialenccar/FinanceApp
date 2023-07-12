@@ -24,6 +24,7 @@
 		A11BDA8029F4CC7E006CF6B2 /* AccountsModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA7F29F4CC7E006CF6B2 /* AccountsModalViewController.swift */; };
 		A11BDA8629F4CFB6006CF6B2 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11BDA8429F4CFB6006CF6B2 /* AccountsTableViewCell.swift */; };
 		A11BDA8729F4CFB6006CF6B2 /* AccountsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11BDA8529F4CFB6006CF6B2 /* AccountsTableViewCell.xib */; };
+		A12222F02A5B8BF200304E6C /* FirebaseDocumentNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12222EF2A5B8BF200304E6C /* FirebaseDocumentNames.swift */; };
 		A12329F129FB0F2C0053AC38 /* BankAccountsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12329EF29FB0F2C0053AC38 /* BankAccountsViewController.storyboard */; };
 		A12329F229FB0F2C0053AC38 /* BankAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12329F029FB0F2C0053AC38 /* BankAccountsViewController.swift */; };
 		A125C1052A3A24CA00A78390 /* InsertNumbersModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A125C1042A3A24CA00A78390 /* InsertNumbersModalViewController.storyboard */; };
@@ -201,6 +202,7 @@
 		A11BDA7F29F4CC7E006CF6B2 /* AccountsModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsModalViewController.swift; sourceTree = "<group>"; };
 		A11BDA8429F4CFB6006CF6B2 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
 		A11BDA8529F4CFB6006CF6B2 /* AccountsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsTableViewCell.xib; sourceTree = "<group>"; };
+		A12222EF2A5B8BF200304E6C /* FirebaseDocumentNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDocumentNames.swift; sourceTree = "<group>"; };
 		A12329EF29FB0F2C0053AC38 /* BankAccountsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BankAccountsViewController.storyboard; sourceTree = "<group>"; };
 		A12329F029FB0F2C0053AC38 /* BankAccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccountsViewController.swift; sourceTree = "<group>"; };
 		A125C1042A3A24CA00A78390 /* InsertNumbersModalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InsertNumbersModalViewController.storyboard; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 				A18299C62A01AC7F00E72936 /* ConfigType.swift */,
 				A17C89EA2A09F5DE00B5DB2F /* CreditCardDayPickerOptions.swift */,
 				A1FDB7EC2A4636D3006B3459 /* CurrencyPickerOptions.swift */,
+				A12222EF2A5B8BF200304E6C /* FirebaseDocumentNames.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1881,6 +1884,7 @@
 				A1A92BC429F81C1D00E14EE8 /* RegisterCardExpViewModel.swift in Sources */,
 				E35D084C29BDAD100098F0B5 /* SceneDelegate.swift in Sources */,
 				A11BDA7429F4C173006CF6B2 /* Banks.swift in Sources */,
+				A12222F02A5B8BF200304E6C /* FirebaseDocumentNames.swift in Sources */,
 				A1C9EFE729E60BB60029B69F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ class LoginViewModel {
                 completion(loginStrings.loginSuccessMessage)
             } else {
                 let errorMessage = self.getLocalizedErrorMessage(for: error)
-                userLogged = "userError"
+                userLogged = "user_Error"
                 completion(loginStrings.failToLoginErrorMessage + errorMessage)
             }
         }

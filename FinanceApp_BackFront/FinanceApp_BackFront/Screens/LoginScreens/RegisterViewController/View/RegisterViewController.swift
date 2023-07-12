@@ -36,52 +36,24 @@ class RegisterViewController: UIViewController {
     
     @IBAction func tappedCreateButton(_ sender: UIButton) {
         view.endEditing(true)
-    
-        let email = emailTextfield.text.orEmpty
-        let password = passwordTextfield.text.orEmpty
         
         if !checkTextFields() {
             showSimpleAlert(title: globalStrings.attention, message: registerStrings.someEmptyTextFieldMessage)
             return
         }
-
-        if !viewModel.checkEmail(email: email) {
-            setErrorInTextField(textField: emailTextfield)
-            showSimpleAlert(title: registerStrings.invalidEmailMessage, message: registerStrings.typeEmailAgainMessage)
-            return
-        }
-         
-        if !viewModel.checkPassword(password: password) {
-            setErrorInTextField(textField: passwordTextfield)
-            setErrorInTextField(textField: passwordRepeatTextfield)
-            showSimpleAlert(title: registerStrings.invalidPasswordMessage, message: registerStrings.password8CharsMessage)
-            return
-        }
-
-        if !checkEqualPasswords() {
-            showSimpleAlert(title: registerStrings.incompatiblePasswordsMessage, message: registerStrings.differentPasswordsMessage)
-            return
-        }
         
-        viewModel.createUser(email: email, password: password) { resultRegister in
-            if resultRegister == registerStrings.registerAndLoginSuccessText {
-                self.viewModel.setProfileValues(profile: Profile(name: self.nameTextfield.text.orEmpty, email: self.emailTextfield.text.orEmpty)) {
-                    self.showSimpleAlert(title: registerStrings.registerSuccessMessage, message: globalStrings.emptyString) {
-                        let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
-                        if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
-                            self.present(tbc, animated: true)
-                        }
+        let email = emailTextfield.text.orEmpty
+        let password = passwordTextfield.text.orEmpty
+
+        createUser(email: email, password: password) { registerSuccess in
+            if registerSuccess {
+                self.showSimpleAlert(title: registerStrings.registerSuccessMessage, message: globalStrings.emptyString) {
+                    
+                    let storyboard:UIStoryboard = UIStoryboard(name: TabBarController.identifier, bundle: nil)
+                    if let tbc = storyboard.instantiateViewController(withIdentifier:TabBarController.identifier) as? UITabBarController{
+                        self.present(tbc, animated: true)
                     }
                 }
-                
-            } else if resultRegister == registerStrings.onlyRegisterSuccessText {
-                self.showSimpleAlert(title: registerStrings.registerSuccessMessage, message: globalStrings.emptyString) {
-                    let storyboard: UIStoryboard = UIStoryboard(name: LoginViewController.identifier, bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier:LoginViewController.identifier)
-                    self.present(vc, animated: true)
-                }
-            } else {
-                self.showSimpleAlert(title: globalStrings.attention, message: resultRegister)
             }
         }
     }
@@ -101,11 +73,6 @@ class RegisterViewController: UIViewController {
         passwordRepeatTextfield.placeholder = registerStrings.passwordRepeatPlaceholderText
         registerButton.setTitle(registerStrings.registerButtonTitle, for: .normal)
         loginScreenButton.setTitle(registerStrings.loginScreenButtonTitle, for: .normal)
-                    
-                    
-                    viewModel.setProfileValues(profile: Profile(name: "", email: "")) {
-                        print("")
-                    }
     }
     
     private func setupElements() {
@@ -131,26 +98,69 @@ class RegisterViewController: UIViewController {
         newConstraint.isActive = true
     }
     
+    private func createUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
+        viewModel.createUser(email: email, password: password) { resultRegister in
+            if resultRegister == registerStrings.registerSuccessText {
+                let profile: Profile = Profile(
+                    name: self.nameTextfield.text.orEmpty,
+                    email: self.emailTextfield.text.orEmpty
+                )
+                
+                self.viewModel.setProfileValues(profile: profile) {
+                    completion(true)
+                }
+            } else {
+                self.showSimpleAlert(title: globalStrings.attention, message: resultRegister) {
+                    completion(false)
+                }
+            }
+        }
+    }
+    
     private func checkTextFields() -> Bool {
-        var okStatus: Bool = true
+        let email = emailTextfield.text.orEmpty
+        let password = passwordTextfield.text.orEmpty
+        var fieldEmpty: Bool = false
         
         if !checkTextFieldEmpty(nameTextfield) {
-            okStatus = false
+            fieldEmpty = true
         }
         
         if !checkTextFieldEmpty(emailTextfield) {
-            okStatus = false
+            fieldEmpty = true
         }
         
         if !checkTextFieldEmpty(passwordTextfield) {
-            okStatus = false
+            fieldEmpty = true
         }
         
         if !checkTextFieldEmpty(passwordRepeatTextfield) {
-            okStatus = false
+            fieldEmpty = true
         }
         
-        return okStatus
+        if fieldEmpty {
+            return false
+        }
+        
+        if !viewModel.checkEmail(email: email) {
+            setErrorInTextField(textField: emailTextfield)
+            showSimpleAlert(title: registerStrings.invalidEmailMessage, message: registerStrings.typeEmailAgainMessage)
+            return false
+        }
+         
+        if !viewModel.checkPassword(password: password) {
+            setErrorInTextField(textField: passwordTextfield)
+            setErrorInTextField(textField: passwordRepeatTextfield)
+            showSimpleAlert(title: registerStrings.invalidPasswordMessage, message: registerStrings.password8CharsMessage)
+            return false
+        }
+
+        if !checkEqualPasswords() {
+            showSimpleAlert(title: registerStrings.incompatiblePasswordsMessage, message: registerStrings.differentPasswordsMessage)
+            return false
+        }
+        
+        return true
     }
 
     private func checkTextFieldEmpty(_ textField: UITextField) -> Bool {
