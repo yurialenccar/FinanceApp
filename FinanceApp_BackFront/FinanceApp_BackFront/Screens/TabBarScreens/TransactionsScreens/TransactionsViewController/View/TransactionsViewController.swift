@@ -11,6 +11,7 @@ class TransactionsViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var transactionsCollectionView: UICollectionView!
+    @IBOutlet weak var noTransactionsLabel: UILabel!
     
     static let identifier:String = String(describing: TransactionsViewController.self)
     private var viewModel : TransactionsViewModel = TransactionsViewModel()
@@ -23,6 +24,7 @@ class TransactionsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+        showNoTransactionsLabel()
         viewModel.reordenateTransactions()
         setupCollectionView()
         transactionsCollectionView.reloadData()
@@ -31,6 +33,16 @@ class TransactionsViewController: UIViewController {
     private func setupStrings() {
         navigationItem.backButtonTitle = globalStrings.backButtonTitle
         titleLabel.text = transactionsStrings.title
+    }
+    
+    private func showNoTransactionsLabel() {
+        if transactionsList.count <= 0 {
+            noTransactionsLabel.isHidden = false
+            transactionsCollectionView.isHidden = true
+        } else {
+            noTransactionsLabel.isHidden = true
+            transactionsCollectionView.isHidden = false
+        }
     }
     
     private func setupCollectionView(){

@@ -13,6 +13,9 @@ class AccountsBallanceCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var totalBalanceTextLabel: UILabel!
     @IBOutlet weak var totalBalanceValueLabel: UILabel!
+    @IBOutlet weak var separatorLineView: UIView!
+    @IBOutlet weak var noAccountsLabel: UILabel!
+    @IBOutlet weak var createAccountButton: UIButton!
     
     static let identifier:String = String(describing: AccountsBallanceCollectionViewCell.self)
     
@@ -28,33 +31,55 @@ class AccountsBallanceCollectionViewCell: UICollectionViewCell {
         setupTableView()
     }
     
-    func setupTableView(){
+    private func setupTableView(){
         accountsTableView.delegate = self
         accountsTableView.dataSource = self
         accountsTableView.separatorStyle = .none
         accountsTableView.register(AccountsResumeTableViewCell.nib(), forCellReuseIdentifier: AccountsResumeTableViewCell.identifier)
     }
     
-    func setupCell(accountsList: [BankAccount], hideInformations: Bool) {
-        if hideInformations {
-            totalBalanceValueLabel.text =  globalStrings.dashHiddenInformation
-            totalBalanceValueLabel.textColor = .black
+    private func noAccountsToShow(noCards: Bool) {
+        if noCards {
+            accountsTableView.isHidden = true
+            totalBalanceTextLabel.isHidden = true
+            totalBalanceValueLabel.isHidden = true
+            separatorLineView.isHidden = true
+            noAccountsLabel.isHidden = false
+            createAccountButton.isHidden = false
+            
         } else {
-            let total:Double = accountsList.reduce(0) { $0 + $1.balance}
-            totalBalanceValueLabel.text = total.toStringMoney()
-            if total > 0 {
-                totalBalanceValueLabel.textColor = .GreenGeneralIncomes
-            } else if total < 0 {
-                totalBalanceValueLabel.textColor = .RedGeneralExpenses
-            } else {
-                totalBalanceValueLabel.textColor = .black
-            }
+            accountsTableView.isHidden = false
+            totalBalanceTextLabel.isHidden = false
+            totalBalanceValueLabel.isHidden = false
+            separatorLineView.isHidden = false
+            noAccountsLabel.isHidden = true
+            createAccountButton.isHidden = true
         }
-        
-        self.bankAccountList = accountsList
-        self.hideInformations = hideInformations
-        tableViewHeightConstraint.constant = CGFloat(bankAccountsList.count * 60)
-        accountsTableView.reloadData()
+    }
+    
+    public func setupCell(accountsList: [BankAccount], hideInformations: Bool) {
+        if accountsList.isEmpty {
+            noAccountsToShow(noCards: true)
+        } else {
+            if hideInformations {
+                totalBalanceValueLabel.text =  globalStrings.dashHiddenInformation
+                totalBalanceValueLabel.textColor = .black
+            } else {
+                let total:Double = accountsList.reduce(0) { $0 + $1.balance}
+                totalBalanceValueLabel.text = total.toStringMoney()
+                if total > 0 {
+                    totalBalanceValueLabel.textColor = .GreenGeneralIncomes
+                } else if total < 0 {
+                    totalBalanceValueLabel.textColor = .RedGeneralExpenses
+                } else {
+                    totalBalanceValueLabel.textColor = .black
+                }
+            }
+            self.bankAccountList = accountsList
+            self.hideInformations = hideInformations
+            tableViewHeightConstraint.constant = CGFloat(bankAccountsList.count * 60)
+            accountsTableView.reloadData()
+        }
     }
 }
 

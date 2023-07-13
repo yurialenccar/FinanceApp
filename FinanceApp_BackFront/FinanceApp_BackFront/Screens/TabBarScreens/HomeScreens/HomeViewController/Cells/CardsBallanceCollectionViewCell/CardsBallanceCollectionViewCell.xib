@@ -50,9 +50,11 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CS-sN-lnj">
-                        <rect key="frame" x="102" y="65" width="117" height="35"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CS-sN-lnj">
+                        <rect key="frame" x="100" y="70.666666666666671" width="120" height="34.333333333333329"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="kvJ-tw-RmF"/>
+                        </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Criar Cartão">
                             <backgroundConfiguration key="background">
@@ -61,11 +63,10 @@
                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </buttonConfiguration>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Parece que não existe nenhum cartão criado. Por favor, tente criar um." textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cL1-Bk-0es">
-                        <rect key="frame" x="20" y="0.0" width="540" height="69"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parece que ainda não foi cadastrado nenhum cartão." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cL1-Bk-0es">
+                        <rect key="frame" x="40" y="10" width="240" height="40.666666666666671"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                        <color key="textColor" name="GreyInformations"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -73,14 +74,19 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="9CS-sN-lnj" secondAttribute="bottom" constant="15" id="0GN-5E-lvf"/>
+                <constraint firstItem="cL1-Bk-0es" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="40" id="3us-Jc-HDV"/>
                 <constraint firstItem="usI-CC-kAF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="DWt-Td-PgP"/>
                 <constraint firstItem="usI-CC-kAF" firstAttribute="top" secondItem="c9G-fe-cHo" secondAttribute="bottom" constant="5" id="H5x-iX-i8l"/>
                 <constraint firstAttribute="trailing" secondItem="usI-CC-kAF" secondAttribute="trailing" constant="10" id="JJO-0V-HPj"/>
                 <constraint firstAttribute="trailing" secondItem="c9G-fe-cHo" secondAttribute="trailing" id="JP1-Qw-gVD"/>
+                <constraint firstItem="9CS-sN-lnj" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="QTD-bk-gyV"/>
+                <constraint firstAttribute="trailing" secondItem="cL1-Bk-0es" secondAttribute="trailing" constant="40" id="TdE-Rj-enW"/>
                 <constraint firstItem="c9G-fe-cHo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YUE-k8-Xgu"/>
                 <constraint firstItem="c9G-fe-cHo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="gbz-Z0-bh3"/>
                 <constraint firstItem="qRS-Jv-MSO" firstAttribute="top" secondItem="usI-CC-kAF" secondAttribute="bottom" constant="15" id="nea-zD-kWr"/>
                 <constraint firstAttribute="trailing" secondItem="qRS-Jv-MSO" secondAttribute="trailing" constant="15" id="orR-nq-1UB"/>
+                <constraint firstItem="cL1-Bk-0es" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="u36-6c-0aJ"/>
                 <constraint firstItem="qRS-Jv-MSO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="uMK-mZ-3zp"/>
             </constraints>
             <connections>
@@ -98,6 +104,9 @@
     <resources>
         <namedColor name="GreenGeneralIncomes">
             <color red="0.070588235294117646" green="0.64313725490196083" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GreyInformations">
+            <color red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

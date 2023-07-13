@@ -226,9 +226,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             switch indexPath.section {
             case 0:
-                return CGSize(width: Int(view.frame.width) - 30, height: (60 + bankAccountsList.count * 60))
+                var height: Int
+                if bankAccountsList.isEmpty {
+                    height = 110
+                } else {
+                    height = (60 + bankAccountsList.count * 60)
+                }
+                return CGSize(width: Int(view.frame.width) - 30, height: height)
             case 1:
-                return CGSize(width: Int(view.frame.width) - 30, height: (60 + creditCardsList.count * 60))
+                var height: Int
+                if creditCardsList.isEmpty {
+                    height = 110
+                } else {
+                    height = (60 + creditCardsList.count * 60)
+                }
+                return CGSize(width: Int(view.frame.width) - 30, height: height)
             case 2:
                 return CGSize(width: Int(view.frame.width) - 30, height: 200)
             case 3:

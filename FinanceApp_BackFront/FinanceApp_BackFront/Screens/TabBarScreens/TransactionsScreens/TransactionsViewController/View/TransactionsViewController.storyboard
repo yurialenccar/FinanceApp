@@ -45,6 +45,16 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nenhuma transação cadastrada por enquanto!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXu-Bn-doJ">
+                                <rect key="frame" x="71.666666666666686" y="420" width="250" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="5kx-FM-QKA"/>
+                                    <constraint firstAttribute="height" constant="42" id="cJR-on-4Qq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" name="GreyInformations"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yTs-lZ-WbB"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -56,6 +66,8 @@
                             <constraint firstItem="xUZ-uS-HtM" firstAttribute="leading" secondItem="ZeL-Ov-oQu" secondAttribute="leading" constant="20" id="Sjh-JO-HFs"/>
                             <constraint firstItem="ubS-ol-4ID" firstAttribute="leading" secondItem="yTs-lZ-WbB" secondAttribute="leading" id="UmR-mo-Uhe"/>
                             <constraint firstItem="yTs-lZ-WbB" firstAttribute="trailing" secondItem="ubS-ol-4ID" secondAttribute="trailing" id="XlM-Gj-qUw"/>
+                            <constraint firstItem="DXu-Bn-doJ" firstAttribute="centerY" secondItem="ZeL-Ov-oQu" secondAttribute="centerY" constant="15" id="fWj-75-xc2"/>
+                            <constraint firstItem="DXu-Bn-doJ" firstAttribute="centerX" secondItem="ZeL-Ov-oQu" secondAttribute="centerX" id="feO-0R-mtH"/>
                             <constraint firstItem="362-gn-C9v" firstAttribute="trailing" secondItem="yTs-lZ-WbB" secondAttribute="trailing" id="ih6-wg-8XA"/>
                             <constraint firstItem="ubS-ol-4ID" firstAttribute="top" secondItem="362-gn-C9v" secondAttribute="bottom" id="kw3-Ym-Lgn"/>
                             <constraint firstAttribute="trailing" secondItem="xUZ-uS-HtM" secondAttribute="trailing" constant="20" id="n7K-Kk-0YY"/>
@@ -63,6 +75,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WEc-bv-5Q3"/>
                     <connections>
+                        <outlet property="noTransactionsLabel" destination="DXu-Bn-doJ" id="GER-lV-WcB"/>
                         <outlet property="titleLabel" destination="xUZ-uS-HtM" id="u24-Sa-eka"/>
                         <outlet property="transactionsCollectionView" destination="ubS-ol-4ID" id="drk-jF-hFe"/>
                     </connections>
@@ -76,6 +89,9 @@
         <image name="TopBackGround" width="375" height="129"/>
         <namedColor name="BackgroundColor">
             <color red="0.94117647058823528" green="0.94901960784313721" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GreyInformations">
+            <color red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
