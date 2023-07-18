@@ -106,20 +106,20 @@ class HomeViewController: UIViewController {
     }
     
     private func setupLottie() {
-            animationView.translatesAutoresizingMaskIntoConstraints = false
-            animationView.frame = view.frame
-            animationView.contentMode = .scaleAspectFit
-            animationView.loopMode = .loop
-            animationView.animationSpeed = 1.0
-            view.addSubview(animationView)
-            animationView.play()
-            
-            NSLayoutConstraint.activate([
-                animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 60),
-                animationView.heightAnchor.constraint(equalToConstant: 100),
-                animationView.widthAnchor.constraint(equalToConstant: 100),
-            ])
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.frame = view.frame
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 1.0
+        view.addSubview(animationView)
+        animationView.play()
+        
+        NSLayoutConstraint.activate([
+            animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 60),
+            animationView.heightAnchor.constraint(equalToConstant: 100),
+            animationView.widthAnchor.constraint(equalToConstant: 100),
+        ])
     }
     
     private func showData() {

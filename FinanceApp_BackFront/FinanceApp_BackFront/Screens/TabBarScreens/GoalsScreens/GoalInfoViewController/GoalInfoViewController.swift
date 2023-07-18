@@ -30,7 +30,7 @@ class GoalInfoViewController: UIViewController {
     var goal: Goal
     var index: Int
     
-    init?(coder:NSCoder, goal:Goal, index: Int){
+    init?(coder: NSCoder, goal: Goal, index: Int){
         self.goal = goal
         self.index = index
         super.init(coder: coder)

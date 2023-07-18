@@ -61,6 +61,7 @@ class AccountsBallanceCollectionViewCell: UICollectionViewCell {
         if accountsList.isEmpty {
             noAccountsToShow(noCards: true)
         } else {
+            noAccountsToShow(noCards: false)
             if hideInformations {
                 totalBalanceValueLabel.text =  globalStrings.dashHiddenInformation
                 totalBalanceValueLabel.textColor = .black

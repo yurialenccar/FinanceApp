@@ -46,6 +46,6 @@ class TransactionsCollectionViewCell: UICollectionViewCell {
             valueLabel.textColor = .GreenGeneralIncomes
         }
         
-        categoryImage.tintColor = .white
+        categoryImage.tintColor = .black
     }
 }
