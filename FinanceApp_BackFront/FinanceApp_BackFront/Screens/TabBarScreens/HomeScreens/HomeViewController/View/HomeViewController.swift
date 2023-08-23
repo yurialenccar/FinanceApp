@@ -291,5 +291,4 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
         }
     }
-    
 }

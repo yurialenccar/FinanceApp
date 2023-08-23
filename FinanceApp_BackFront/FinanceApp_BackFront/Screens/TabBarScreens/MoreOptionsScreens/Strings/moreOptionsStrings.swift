@@ -89,6 +89,5 @@ enum moreOptionsStrings {
     static let passwordText = "Senha"
     
     static let notificationNameProfileImage = "profileImageUpdated"
-    
 }
 

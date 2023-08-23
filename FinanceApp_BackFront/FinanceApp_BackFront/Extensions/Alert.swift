@@ -17,7 +17,6 @@ extension UIViewController {
         }
         alertController.addAction(okButton)
         self.present(alertController, animated: true, completion: nil)
-        
     }
     
     public func showAlertWithCancelOption(title:String, message: String, completion:(() -> Void)? = nil) {
